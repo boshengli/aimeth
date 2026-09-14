@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+config/*.env
+runs/
+data/
+models/
+private/
+evaluation_keys/
+reference_solutions/
+*.sif
+*.safetensors
+*.log

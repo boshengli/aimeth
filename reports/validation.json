@@ -1,0 +1,20 @@
+{
+  "validated_at": "2026-09-14T09:23:30.849620+00:00",
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "output": "test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok\ntest_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok\ntest_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok\ntest_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok\ntest_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok\ntest_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok\ntest_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok\ntest_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.006s\n\nOK\n"
+  },
+  "fixture_integrity": {
+    "status": "hash_integrity_passed",
+    "artifacts_checked": 1,
+    "scientific_validity_checked": false
+  },
+  "json_files_parsed": 6,
+  "local_markdown_links_checked": 5,
+  "python_syntax": "all repository Python sources passed ast.parse",
+  "hosted_ci_executed": false,
+  "cluster_jobs": 0,
+  "model_calls": 0,
+  "mathematical_proof_verified": false
+}

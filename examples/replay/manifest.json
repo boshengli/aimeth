@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "kind": "synthetic_integrity_fixture",
+  "artifacts": [
+    {
+      "id": "synthetic-payload",
+      "path": "payload.txt",
+      "bytes": 88,
+      "sha256": "1de8d4db50d21ce6cc776bad2fe62bed1a2a6a756b578e1d76e18ab5b9df368b"
+    }
+  ]
+}

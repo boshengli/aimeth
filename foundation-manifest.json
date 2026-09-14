@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "kind": "research_foundation_not_experimental_results",
+  "artifacts": [
+    {
+      "id": ".github/pull_request_template.md",
+      "path": ".github/pull_request_template.md",
+      "bytes": 132,
+      "sha256": "64b07c4bae7966b540bc86fd2c3f30bac12ccc663e2919e75def80ef42ee529b"
+    },
+    {
+      "id": ".github/workflows/checks.yml",
+      "path": ".github/workflows/checks.yml",
+      "bytes": 427,
+      "sha256": "48c62deff396b97af41dd66566df44f3464f63afeedd7b61f4edb65d9bdcd6c6"
+    },
+    {
+      "id": ".gitignore",
+      "path": ".gitignore",
+      "bytes": 172,
+      "sha256": "3b63f3a52a08b5ebdee664f5047e2490a36b42334a457701e3bb1a34fdab728f"
+    },
+    {
+      "id": "README.md",
+      "path": "README.md",
+      "bytes": 2062,
+      "sha256": "6fff6f38c702dfa5252b3fd7d29a57bfd33ca4d1c968107c82335d1c851af793"
+    },
+    {
+      "id": "docs/engineering-contract.md",
+      "path": "docs/engineering-contract.md",
+      "bytes": 6064,
+      "sha256": "c20f4942f453012decd41ba743de8a534737adbc1459569662e81e3843927659"
+    },
+    {
+      "id": "docs/evidence-audit.md",
+      "path": "docs/evidence-audit.md",
+      "bytes": 6877,
+      "sha256": "1ef3dcd26715ecca19305b1c2c39495facacdcc0ea23d695b011c48956478e2a"
+    },
+    {
+      "id": "docs/publication-contract.md",
+      "path": "docs/publication-contract.md",
+      "bytes": 4562,
+      "sha256": "2ab49a82c737aaf9d60e3e2326203ecfa80c58268809ed02531a6a0c3ad2d579"
+    },
+    {
+      "id": "docs/research-protocol.md",
+      "path": "docs/research-protocol.md",
+      "bytes": 12271,
+      "sha256": "f22c3315dc296671f1b316736f30aeeb4d79a23be000823162ae1592c079f6e3"
+    },
+    {
+      "id": "examples/replay/manifest.json",
+      "path": "examples/replay/manifest.json",
+      "bytes": 269,
+      "sha256": "e3f30f9249698a4676b96d21876905bc6f98996b8d564babe646f23b8ad704b8"
+    },
+    {
+      "id": "examples/replay/payload.txt",
+      "path": "examples/replay/payload.txt",
+      "bytes": 88,
+      "sha256": "1de8d4db50d21ce6cc776bad2fe62bed1a2a6a756b578e1d76e18ab5b9df368b"
+    },
+    {
+      "id": "references/search-log.json",
+      "path": "references/search-log.json",
+      "bytes": 746,
+      "sha256": "48f8a1387988d81bbb0b762ccb80fb0376091bf7947bcf62328f577cb2a7e38e"
+    },
+    {
+      "id": "references/sources.json",
+      "path": "references/sources.json",
+      "bytes": 4026,
+      "sha256": "153bf51a33807b8c215919001428bc8257de1b088878adb9584df7829c8579c8"
+    },
+    {
+      "id": "reports/handoff-audit.json",
+      "path": "reports/handoff-audit.json",
+      "bytes": 6267,
+      "sha256": "79b969e604fbb3c132e61ab6f30b9b2cdc28f8edbade9cae402758f45f8d6abf"
+    },
+    {
+      "id": "reports/local-environment.json",
+      "path": "reports/local-environment.json",
+      "bytes": 391,
+      "sha256": "85da59535b525d55d1b09be02992e7b84cec98d918c56c08a8f3ade5022761fd"
+    },
+    {
+      "id": "reports/validation.json",
+      "path": "reports/validation.json",
+      "bytes": 1709,
+      "sha256": "18ade086f878f2494bd47f7b47f101da898b819ca3ecb50ca6665b6c8724dc09"
+    },
+    {
+      "id": "templates/result.md",
+      "path": "templates/result.md",
+      "bytes": 1087,
+      "sha256": "a4b72529d842de4a39c0f428d4e50e771016cec25586d5755398e108247e60ac"
+    },
+    {
+      "id": "templates/run-manifest.json",
+      "path": "templates/run-manifest.json",
+      "bytes": 1595,
+      "sha256": "c73f176e99511ae6af0a1c9b9dc1cc32703185287721dc6a42b2fa8d322631bb"
+    },
+    {
+      "id": "tests/test_artifact_integrity.py",
+      "path": "tests/test_artifact_integrity.py",
+      "bytes": 2535,
+      "sha256": "0808af4bbc6f4ab2a43f424d146b509dc1a0944e56f7581605ba5dabf0917981"
+    },
+    {
+      "id": "tools/audit_handoff.py",
+      "path": "tools/audit_handoff.py",
+      "bytes": 6792,
+      "sha256": "2be492dad31ec4afb7a5df8dcd7ca85acb460720d5b2aca412b866e3aa9051cc"
+    },
+    {
+      "id": "tools/verify_artifacts.py",
+      "path": "tools/verify_artifacts.py",
+      "bytes": 3041,
+      "sha256": "f5c1a0837f3d92a82d02a33a5c32b947aaf2b897f1075dadab74aa13e8e9b1ac"
+    }
+  ]
+}

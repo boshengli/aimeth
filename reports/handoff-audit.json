@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "audited_at": "2026-09-14T09:19:46.538262+00:00",
+  "live_cluster_tested": false,
+  "proof_verified": false,
+  "checksum_checks": [
+    {
+      "path": "CHAT_TRANSCRIPT.md",
+      "sha256": "1388eba9eae3a0df3f2c55c842741fdf6c9e7bac9cf0eebbeeb703910eee7ee0",
+      "match": true
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "3dd6a55742ced38e5e2d87d08aff098ec7fbfac76f0e8b9ffafefeeada91a3ab",
+      "match": true
+    },
+    {
+      "path": "MANIFEST.md",
+      "sha256": "4f76036b27841fdbac01eab26693b7690e726f7bf6458bed9a202ed5c50c06b4",
+      "match": true
+    },
+    {
+      "path": "NEXT_AGENT_PROMPT.md",
+      "sha256": "a4507f71aab53f7621e65225e504865271a4226795288347f7d3531a8744e6f7",
+      "match": true
+    },
+    {
+      "path": "README_FIRST.md",
+      "sha256": "a8d994857e159f17561aefe20cd3ee70c62f94853fd50913dcf18480d0a28676",
+      "match": true
+    },
+    {
+      "path": "notes/VALIDATION.md",
+      "sha256": "d9db83ae73a757bc7c5555868be13cc0abf91a42654a70c715689659aec72c8d",
+      "match": true
+    },
+    {
+      "path": "notes/VERIFIED_VS_ASSUMED.md",
+      "sha256": "5e44d36bec0e166754f4723f993afa59120498ae14aded65f0eb5713f3ca45f1",
+      "match": true
+    },
+    {
+      "path": "references/navier-stokes.pdf",
+      "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill.zip",
+      "sha256": "3c5412b7cc2b299ed3f814ed3c8ef5d97e462505a9c11ed1ab4c96a38baf3a58",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/ARCHITECTURE.md",
+      "sha256": "23a9f165d5a673a2c8d04dca4e7d26ca3c6055e55d1a0aa9585a09c4f0d11ee1",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/README.md",
+      "sha256": "3dafeffdea6c857c4a84357ca72aa668a2e255f96cc2820be51fb2c889ab394c",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/SKILL.md",
+      "sha256": "3a22628ba6fb5996e96cd5a3f77d2344d050cfc595cc1306863e215395067398",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/config/h20_8gpu.env",
+      "sha256": "3390df930c8e6bc665a73ed854bbe49937b473e39ff95fe70d76c0ec41b9df8e",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/config/h20_8gpu.env.example",
+      "sha256": "3390df930c8e6bc665a73ed854bbe49937b473e39ff95fe70d76c0ec41b9df8e",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/calibrate_concurrency.sh",
+      "sha256": "01247c6e84b8a1dd76449b4f306c951d62a1cd8f542d1b0ff479a8f6ee160c7c",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/generate_population.py",
+      "sha256": "bb9a5f9aed3fe60f757c27086138105230226d816613ca28a3fac1e813e41688",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/submit_10k.py",
+      "sha256": "3ce992ec1fbd5e7c094e065c3d6b85c8fdffeacc7f7b2ad965356a47417a887c",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/wait_for_server.py",
+      "sha256": "6164e714da8aa1a6efc04a4ddf3c0980e091085c3856df44c8560640999a854a",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/slurm/navier_10k.sbatch",
+      "sha256": "c8d1f2a4741f51da1269cab48d921f32543c45bdfcbb189894fca075fe395b52",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/tasks/navier_stokes_problem.md",
+      "sha256": "aa15fc29c83b2b8a131ef34b9a5e9c84922f197602bed079eb50bce1896666e3",
+      "match": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/tasks/system_prompt.md",
+      "sha256": "707821d77da5a6f97cc46b2f22dfc599e23fde8c0ddb120085d8f8cf246dfe59",
+      "match": true
+    }
+  ],
+  "syntax_checks": [
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/generate_population.py",
+      "check": "ast.parse",
+      "passed": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/submit_10k.py",
+      "check": "ast.parse",
+      "passed": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/wait_for_server.py",
+      "check": "ast.parse",
+      "passed": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/scripts/calibrate_concurrency.sh",
+      "check": "bash -n",
+      "passed": true
+    },
+    {
+      "path": "skill/h20_10k_navier_agent_skill/slurm/navier_10k.sbatch",
+      "check": "bash -n",
+      "passed": true
+    }
+  ],
+  "calibration": {
+    "task_limit": 128,
+    "client_settings": [
+      64,
+      128,
+      192,
+      256,
+      384,
+      512
+    ],
+    "upper_bound_actual_requests": [
+      64,
+      128,
+      128,
+      128,
+      128,
+      128
+    ]
+  },
+  "finding_locations": {
+    "E01": {
+      "path": "scripts/calibrate_concurrency.sh",
+      "lines": [
+        17
+      ]
+    },
+    "E02": {
+      "path": "scripts/submit_10k.py",
+      "lines": [
+        35
+      ]
+    },
+    "E03": {
+      "path": "scripts/submit_10k.py",
+      "lines": [
+        61
+      ]
+    },
+    "E04": {
+      "path": "slurm/navier_10k.sbatch",
+      "lines": [
+        114
+      ]
+    },
+    "E05": {
+      "path": "scripts/submit_10k.py",
+      "lines": [
+        84
+      ]
+    },
+    "E06": {
+      "path": "scripts/submit_10k.py",
+      "lines": [
+        36,
+        96
+      ]
+    },
+    "E07": {
+      "path": "scripts/generate_population.py",
+      "lines": [
+        44
+      ]
+    },
+    "E08": {
+      "path": "slurm/navier_10k.sbatch",
+      "lines": [
+        16,
+        93
+      ]
+    },
+    "E09": {
+      "path": "scripts/submit_10k.py",
+      "lines": [
+        174
+      ]
+    }
+  },
+  "mock_observations": {
+    "fixture_only_not_model_output": true,
+    "seed_field_sent_when_default_false": false,
+    "truncated_null_content_status": "ok",
+    "finish_reason_preserved": false,
+    "arm_id_preserved": false,
+    "resume_ids_without_model_check": [
+      "synthetic-agent"
+    ]
+  },
+  "pdf": {
+    "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+    "pages": 166,
+    "keyword_matches": {
+      "\\bagents?\\b": 0,
+      "10,000": 0,
+      "multi.agent": 0
+    }
+  }
+}

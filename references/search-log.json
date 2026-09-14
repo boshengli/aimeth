@@ -1,0 +1,18 @@
+{
+  "searched_on": "2026-09-14",
+  "method": "Targeted web search and linked primary-page inspection; not systematic review",
+  "queries": [
+    "site.openai.com \"Navier\" \"2026\"",
+    "site.claymath.org Navier Stokes problem solution 2026",
+    "multi agent topology controlled compute scaling agents mathematics benchmark paper",
+    "site.science.org content page science journals editorial policies data code availability reproducibility",
+    "site.docs.vllm.ai reproducibility online serving seed deterministic"
+  ],
+  "discovery_only_not_used_as_evidence": [
+    "Secondary news/social posts",
+    "arXiv:2406.07155; metadata lead only"
+  ],
+  "failed_reads": [
+    "Science editorial policies; two opens returned Internal Error"
+  ]
+}
