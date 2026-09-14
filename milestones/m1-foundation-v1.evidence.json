@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1",
+  "report_version": "1.0",
+  "summary": {
+    "baseline_commit": "934cce636fa1a77c6daccc57655eb4d8b4eb07c9",
+    "source_hashes_matched": 21,
+    "source_hashes_total": 21,
+    "syntax_checks_passed": 5,
+    "integrity_tests_passed": 8,
+    "baseline_artifacts_checked": 20,
+    "prototype_findings": 9,
+    "model_calls": 0,
+    "cluster_jobs": 0,
+    "proof_verified": false,
+    "hosted_ci_executed": false
+  },
+  "clean_checkout_scope": "Fresh local checkout; same machine and same assistant. Not an independent scientific review.",
+  "inputs": [
+    {
+      "path": "milestones/m1-foundation-v1.json",
+      "sha256": "214445131beff0da18453c0c92436bf75fa482843341b3957cd861e56f849b82"
+    },
+    {
+      "path": "templates/milestone-foundation.html",
+      "sha256": "1a51fc5e8fcfe9cb0397221772627548c959e9f44a7caf4fdcfe9fec24dcb147"
+    },
+    {
+      "path": "milestones/m1-foundation-v1.clean-checkout.json",
+      "sha256": "5dba6257efd88c31daec837bca23c19f5a8b09bcae75bcd06f155d07877b5820"
+    },
+    {
+      "path": "reports/handoff-audit.json",
+      "sha256": "79b969e604fbb3c132e61ab6f30b9b2cdc28f8edbade9cae402758f45f8d6abf"
+    },
+    {
+      "path": "reports/validation.json",
+      "sha256": "18ade086f878f2494bd47f7b47f101da898b819ca3ecb50ca6665b6c8724dc09"
+    },
+    {
+      "path": "foundation-manifest.json",
+      "sha256": "6f6dea3515811de36cda314ef26a4d7b54696a79e80651f0ef8a01658a58ba7f"
+    },
+    {
+      "path": "references/sources.json",
+      "sha256": "153bf51a33807b8c215919001428bc8257de1b088878adb9584df7829c8579c8"
+    }
+  ]
+}

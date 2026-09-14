@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "kind": "milestone_report_not_experimental_results",
+  "artifacts": [
+    {
+      "id": "m1-foundation-v1.html",
+      "path": "m1-foundation-v1.html",
+      "bytes": 44881,
+      "sha256": "62ebbba89a84c565f4b0fce7deb42bd4eb87b46474d7ebd3e111f65495cadb53"
+    },
+    {
+      "id": "m1-foundation-v1.json",
+      "path": "m1-foundation-v1.json",
+      "bytes": 5188,
+      "sha256": "214445131beff0da18453c0c92436bf75fa482843341b3957cd861e56f849b82"
+    },
+    {
+      "id": "m1-foundation-v1.evidence.json",
+      "path": "m1-foundation-v1.evidence.json",
+      "bytes": 1614,
+      "sha256": "7812fff936ba5d1e19826ae62b82273fb8803cbdcb5b0fbf1c32fad0444293bb"
+    },
+    {
+      "id": "m1-foundation-v1.clean-checkout.json",
+      "path": "m1-foundation-v1.clean-checkout.json",
+      "bytes": 1580,
+      "sha256": "5dba6257efd88c31daec837bca23c19f5a8b09bcae75bcd06f155d07877b5820"
+    },
+    {
+      "id": "m1-foundation-v1.browser-qa.json",
+      "path": "m1-foundation-v1.browser-qa.json",
+      "bytes": 1427,
+      "sha256": "1832187d5308b85ebd4d1e85fa075ae9498094503b4a5837bab9c97693324e2c"
+    }
+  ]
+}

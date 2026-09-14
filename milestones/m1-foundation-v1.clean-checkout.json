@@ -1,0 +1,12 @@
+{
+  "unit_tests": {
+    "exit_code": 0,
+    "output": "test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok\ntest_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok\ntest_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok\ntest_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok\ntest_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok\ntest_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok\ntest_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok\ntest_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.006s\n\nOK\n"
+  },
+  "foundation_integrity": {
+    "exit_code": 0,
+    "output": "{\n  \"status\": \"hash_integrity_passed\",\n  \"artifacts_checked\": 20,\n  \"scientific_validity_checked\": false\n}\n"
+  },
+  "commit": "934cce636fa1a77c6daccc57655eb4d8b4eb07c9",
+  "independence_scope": "Fresh local checkout; same machine and same assistant. Not an independent scientific review."
+}

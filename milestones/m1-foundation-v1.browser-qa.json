@@ -1,0 +1,59 @@
+{
+  "report_path": "/Users/ba/projects/0023-aimeth/milestones/m1-foundation-v1.html",
+  "browser": "153.0.8010.36",
+  "topologies": [
+    {
+      "arm": "S",
+      "nodes": 1,
+      "cross_edges": 0,
+      "edge_count": 0
+    },
+    {
+      "arm": "I",
+      "nodes": 32,
+      "cross_edges": 0,
+      "edge_count": 0
+    },
+    {
+      "arm": "L",
+      "nodes": 32,
+      "degree_min": 2,
+      "degree_max": 2,
+      "cross_edges": 0,
+      "edge_count": 32
+    },
+    {
+      "arm": "X",
+      "nodes": 32,
+      "degree_min": 2,
+      "degree_max": 2,
+      "cross_edges": 8,
+      "edge_count": 32
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "page_errors": [],
+  "external_resource_requests": [],
+  "print_css_checked": true,
+  "print_button_connected": true,
+  "evidence_detail_opened": true,
+  "no_js_core_content": true,
+  "status": "passed",
+  "scope": "HTML layout, interaction, offline-content checks only; no cluster or mathematical validation.",
+  "tested_html_sha256": "62ebbba89a84c565f4b0fce7deb42bd4eb87b46474d7ebd3e111f65495cadb53",
+  "visual_review": "Desktop overview, requirements matrix, topology, mobile overview/topology and print styling inspected; labels moved away from central crossing lines.",
+  "local_source_links_checked": 21
+}

@@ -1,0 +1,36 @@
+{
+  "id": "M1",
+  "version": "1.0",
+  "date": "2026-09-14",
+  "title": "第一阶段：建立可检验的研究起点",
+  "baseline_commit": "934cce636fa1a77c6daccc57655eb4d8b4eb07c9",
+  "conclusion": "已具备进入第二阶段 Agent 组织设计的条件。",
+  "scope": "研究规范、证据审计与本地仓库已经建立；组织设计尚未冻结，集群性能与数学正确性尚未实测。",
+  "requirements": [
+    {"need":"科学期刊的文章逻辑","set":"把问题写成可证伪假设 H1–H4；以问题、证据、机制与边界组织 Results；对应 Introduction、Methods、Discussion 和补充材料。","evidence":"research-protocol.md §1–2；publication-contract.md","state":"specified","gap":"当前是研究协议草案，没有实验结果；最新 Science 投稿政策仍需核验。"},
+    {"need":"可溯源、可记录过程","set":"保留原始来源校验和与检索记录；规定运行、Agent、步骤、尝试、消息、工具调用和候选成果的身份及依赖链。","evidence":"sources.json；handoff-audit.json；engineering-contract.md","state":"mixed","gap":"来源与审计已记录；生产级事件记录、断点恢复及跨轮消息链尚待实现。"},
+    {"need":"可复现、可验证","set":"保存环境与输入身份；提供可执行完整性检查；分开文件复核、过程重跑、统计重复和数学证明验证。","evidence":"8 项本地测试；20 个基线文件哈希；verify_artifacts.py","state":"local","gap":"已验证文件完整性工具；尚未复现 GPU 实验或独立核验数学证明。"},
+    {"need":"假设检验、证实与证伪","set":"以独立群体运行为实验单位；设正负控制、任务隔离、随机化、配对比较、效应量、失败与反例记录。","evidence":"research-protocol.md §2、4、6–7","state":"specified","gap":"任务集、主要预算及正式样本量待 pilot 后冻结；统计显著性不能代替数学证明。"},
+    {"need":"可传播、适合人阅读","set":"每个完成的里程碑交付版本化 HTML；正文解释要求、证据与缺口，附出处，并支持离线阅读和打印。","evidence":"本报告 M1 v1.0；milestone-reporting.md","state":"implemented","gap":"本次补齐第一阶段报告；以后成为每个里程碑的完成条件。"},
+    {"need":"GitHub 提交与记录","set":"独立代码仓库、任务分支、真实提交、内容清单、PR 模板和轻量 CI 定义；保留历史基线。","evidence":"基线提交 934cce6；foundation-manifest.json；.github/","state":"local","gap":"本地 Git 已建立；尚未设置 GitHub remote、公共许可或运行托管 CI。"},
+    {"need":"Agent 组织形式的设计","set":"将组织定义为通信图、角色、消息、记忆、选择、验证和调度；提出 S/I/L/X 对照并隔离资源混杂。","evidence":"research-protocol.md §3；organization-design-brief.md","state":"design","gap":"已准备设计输入和候选对照；具体消息、角色、记忆和调度规则尚未定稿。"},
+    {"need":"工程提交、实现与效率","set":"区分逻辑群体、客户端并发和 GPU 活跃序列；分离组织策略与底层执行，审计现有提交原型。","evidence":"9 项原型发现；engineering-contract.md","state":"mixed","gap":"原型尚待修复；未测 H20 吞吐量、长任务稳定性或最优 TP/DP。"}
+  ],
+  "findings": [
+    {"id":"E01","title":"并发校准的负载不够","body":"每档只提交 128 个任务，因此不能实际测到 192–512 个请求的并发。","type":"源码可复核"},
+    {"id":"E02","title":"续跑可能混入旧实验","body":"只按 agent_id 跳过已完成记录；换模型或提示词后可能复用旧结果。","type":"源码 + 本地 mock"},
+    {"id":"E05","title":"响应成功与成果有效混淆","body":"本地模拟中，截断或空内容仍可记为 ok；结束原因和部分组织元数据未保留。","type":"源码 + 本地 mock"}
+  ],
+  "readiness": [
+    {"title":"进入组织设计","state":"ready","body":"研究问题、比较原则、实验单位、验证边界与候选对照已经明确。可立即细化组织规则。"},
+    {"title":"冻结组织方案","state":"pending","body":"还需定义状态、角色、通信、记忆、选择和验证规则，以及每项对照究竟改变什么。"},
+    {"title":"开始集群实验","state":"pending","body":"还需核实集群/模型/容器、修复运行身份和计费等缺口，并确定实际算力上限。"}
+  ],
+  "next_outputs": [
+    {"title":"组织规范","body":"状态机、角色与权限矩阵、消息格式、图策略、记忆规则、选择及纠错机制。"},
+    {"title":"公平对照","body":"S/I/L/X 的参数表，固定模型与评估器，明确哪些预算相同、哪些变量改变。"},
+    {"title":"本地可检查示例","body":"先用无模型消息轨迹检查权限、配额与依赖关系，再为真实 pilot 准备配置。"},
+    {"title":"M2 人类评审报告","body":"交付组织图、对照解释、验收证据、未定事项及下一步门槛，形成第二份 HTML。"}
+  ],
+  "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07"]
+}
