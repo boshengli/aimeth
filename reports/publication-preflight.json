@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "scope": "Tracked files at runtime implementation commit; limited pattern and filename checks, not a comprehensive secret audit",
+  "commit": "313b85fba53a99f75e7a0a1b674e10c82931e18c",
+  "tracked_files": 64,
+  "tracked_bytes": 326372,
+  "findings": [],
+  "original_pdf_or_handoff_bundle_included": false,
+  "public_repository_created": false
+}

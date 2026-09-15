@@ -1,0 +1,55 @@
+{
+  "agents": [
+    "a00000",
+    "a00001",
+    "a00002",
+    "a00003"
+  ],
+  "base_messages": [
+    {
+      "content": "Return a candidate explanation. This is an engineering fixture, not mathematical evidence.",
+      "role": "system"
+    }
+  ],
+  "identities": {
+    "code": "sha256:600c96dd69444bc38a3d204d117c436b9d4ff439b1f11798a0d0e23909355323",
+    "model": "deterministic-mock.v1",
+    "policy": "candidate-broadcast.v1",
+    "task": "synthetic-plumbing.v1"
+  },
+  "max_attempts": 3,
+  "max_inflight": 4,
+  "max_message_chars": 4096,
+  "max_messages_per_step": 1,
+  "max_output_tokens": 256,
+  "model_name": "mock",
+  "round_edges": {
+    "0": [
+      [
+        "a00000",
+        "a00001"
+      ],
+      [
+        "a00001",
+        "a00002"
+      ],
+      [
+        "a00002",
+        "a00003"
+      ],
+      [
+        "a00003",
+        "a00000"
+      ]
+    ],
+    "1": []
+  },
+  "rounds": 2,
+  "schema_version": "1.0",
+  "seed": 914,
+  "temperature": 0,
+  "top_p": 1,
+  "transport": {
+    "kind": "mock"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-15",
+  "user_authorized_public_repository": true,
+  "status": "pending_owner_identity",
+  "planned_repository_name": "aimeth",
+  "planned_visibility": "public",
+  "authenticated_login": "boshengli",
+  "target_owner_verified": false,
+  "remote_url": null,
+  "repository_created": false,
+  "history_pushed": false,
+  "hosted_ci_executed": false,
+  "human_status_zh": "公开发布已获授权。当前 CLI 登录用户名为 boshengli，但现有凭据无权核对用户提供的邮箱，浏览器设置页也未能加载。目标用户名确认后即可创建 aimeth 并推送原始历史；本报告不将本地提交表述为已公开。"
+}

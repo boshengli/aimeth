@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-09-15T03:27:30.293184+00:00",
+  "code_commit": "313b85fba53a99f75e7a0a1b674e10c82931e18c",
+  "code_identity": "sha256:600c96dd69444bc38a3d204d117c436b9d4ff439b1f11798a0d0e23909355323",
+  "checkout_scope": "Fresh local Git clone on the same Mac; not independent scientific review",
+  "unit_tests": {
+    "command": [
+      "/Users/ba/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output": "test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok\ntest_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok\ntest_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok\ntest_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok\ntest_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok\ntest_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok\ntest_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok\ntest_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok\ntest_atomic_message_checkpoint_and_recorded_next_request (test_runtime.RuntimeTests.test_atomic_message_checkpoint_and_recorded_next_request) ... ok\ntest_backup_restore_and_export_from_snapshot (test_runtime.RuntimeTests.test_backup_restore_and_export_from_snapshot) ... ok\ntest_concurrent_processes_have_one_canonical_result_per_step (test_runtime.RuntimeTests.test_concurrent_processes_have_one_canonical_result_per_step) ... ok\ntest_deleted_checkpoint_detected (test_runtime.RuntimeTests.test_deleted_checkpoint_detected) ... ok\ntest_duplicate_receipt_and_conflicting_repeat (test_runtime.RuntimeTests.test_duplicate_receipt_and_conflicting_repeat) ... ok\ntest_empty_and_truncated_outputs_preserved_but_not_promoted (test_runtime.RuntimeTests.test_empty_and_truncated_outputs_preserved_but_not_promoted) ... ok\ntest_expired_worker_cannot_overwrite_new_attempt (test_runtime.RuntimeTests.test_expired_worker_cannot_overwrite_new_attempt) ... ok\ntest_frozen_identity_and_no_secret_manifest (test_runtime.RuntimeTests.test_frozen_identity_and_no_secret_manifest) ... ok\ntest_heartbeat_and_global_inflight_limit (test_runtime.RuntimeTests.test_heartbeat_and_global_inflight_limit) ... ok\ntest_invalid_route_is_retained_and_rolls_back_checkpoint (test_runtime.RuntimeTests.test_invalid_route_is_retained_and_rolls_back_checkpoint) ... ok\ntest_journal_is_append_only_and_detects_offline_tampering (test_runtime.RuntimeTests.test_journal_is_append_only_and_detects_offline_tampering) ... ok\ntest_observation_idempotency_and_cross_run_parent_rejection (test_runtime.RuntimeTests.test_observation_idempotency_and_cross_run_parent_rejection) ... ok\ntest_projection_tampering_detected (test_runtime.RuntimeTests.test_projection_tampering_detected) ... ok\ntest_retry_exhaustion_and_unknown_usage (test_runtime.RuntimeTests.test_retry_exhaustion_and_unknown_usage) ... ok\ntest_round_barrier_and_idempotent_materialization (test_runtime.RuntimeTests.test_round_barrier_and_idempotent_materialization) ... ok\ntest_sigkill_after_claim (test_runtime.RuntimeTests.test_sigkill_after_claim) ... ok\ntest_sigkill_after_commit_before_ack (test_runtime.RuntimeTests.test_sigkill_after_commit_before_ack) ... ok\ntest_sigkill_inside_result_transaction (test_runtime.RuntimeTests.test_sigkill_inside_result_transaction) ... ok\ntest_worker_identity_is_checked_before_claim (test_runtime.RuntimeTests.test_worker_identity_is_checked_before_claim) ... ok\ntest_http_request_sends_seed_and_env_credential_without_journaling_it (test_transport.TransportTests.test_http_request_sends_seed_and_env_credential_without_journaling_it) ... ok\ntest_http_retryable_and_terminal_statuses (test_transport.TransportTests.test_http_retryable_and_terminal_statuses) ... ok\ntest_invalid_oversized_nonfinite_responses (test_transport.TransportTests.test_invalid_oversized_nonfinite_responses) ... ok\ntest_redirect_is_not_followed (test_transport.TransportTests.test_redirect_is_not_followed) ... ok\ntest_timeout_classification (test_transport.TransportTests.test_timeout_classification) ... ok\n\n----------------------------------------------------------------------\nRan 32 tests in 10.074s\n\nOK\n"
+  },
+  "tests_passed": 32,
+  "checks": [
+    {
+      "command": [
+        "/Users/ba/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/bin/python3",
+        "tools/verify_artifacts.py",
+        "archives/foundation-v1/foundation-manifest.json"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"hash_integrity_passed\",\n  \"artifacts_checked\": 20,\n  \"scientific_validity_checked\": false\n}\n"
+    },
+    {
+      "command": [
+        "/Users/ba/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/bin/python3",
+        "tools/verify_artifacts.py",
+        "examples/replay/manifest.json"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"hash_integrity_passed\",\n  \"artifacts_checked\": 1,\n  \"scientific_validity_checked\": false\n}\n"
+    },
+    {
+      "command": [
+        "/Users/ba/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/bin/python3",
+        "tools/verify_artifacts.py",
+        "milestones/m1-foundation-v1.manifest.json"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"hash_integrity_passed\",\n  \"artifacts_checked\": 5,\n  \"scientific_validity_checked\": false\n}\n"
+    }
+  ],
+  "m1_html_rebuild_byte_identical": true,
+  "m1_evidence_rebuild_byte_identical": true,
+  "initial_git_tree_archived_byte_identical": true,
+  "initial_git_tree_files": 21,
+  "synthetic_demo": {
+    "run_id": "public-demo",
+    "fingerprint": "053912bc21f3082223da323170c2b0e91e35b27910d3b568cfd6926ee03160c6",
+    "planned_total_steps": 8,
+    "materialized_steps": 8,
+    "steps": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 8,
+      "failed": 0
+    },
+    "attempts": 8,
+    "known_total_tokens": 0,
+    "unknown_usage_attempts": 0,
+    "complete": true,
+    "events": 41,
+    "messages": 4,
+    "checkpoints": 8,
+    "verification": {
+      "status": "verified",
+      "events": 41,
+      "tail_hash": "a37f4ef51733ee290edb18197c5e7f9628cfd42f95521b648ab96f792d45164c",
+      "scientific_validity_checked": false
+    },
+    "elapsed_seconds": 0.3518444588407874,
+    "model_calls": 0,
+    "scope": "Synthetic local persistence test; no model, GPU or mathematics evaluated"
+  },
+  "external_model_calls": 0,
+  "cluster_jobs": 0,
+  "proof_verified": false,
+  "hosted_github_ci_executed": false
+}

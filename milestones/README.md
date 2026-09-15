@@ -20,3 +20,15 @@ node tools/check_milestone_browser.cjs milestones/m1-foundation-v1.html /path/to
 ```
 
 `AIMETH_BROWSER_EXECUTABLE` can select an installed Chrome executable. The checker starts an isolated temporary profile and blocks HTTP(S) resource requests. It checks four diagram states, matched graph degrees, desktop/tablet/mobile overflow, evidence disclosure, print wiring, and JavaScript-disabled core content. Screenshots need human/visual inspection; a passing script alone does not judge editorial quality.
+
+## M1.1 — Durable runtime, local engineering report
+
+[M1.1 v1.0 HTML](m1-1-runtime-v1.html) records transactional events, recovery and cross-round messages. Public GitHub publication remains pending owner identification in this snapshot.
+
+```bash
+python3 tools/build_runtime_milestone.py
+python3 tools/verify_artifacts.py runtime-report-manifest.json
+node tools/check_runtime_milestone.cjs milestones/m1-1-runtime-v1.html /path/to/qa.json
+```
+
+The builder checks the frozen `archives/runtime-v0.1/aimeth_runtime` snapshot, derived exactly from commit `313b85f`, so later runtime edits do not rewrite this report. The report manifest covers its immutable inputs/outputs; current code evolves in later commits. Live databases and large synthetic stress traces stay in ignored `runs/`; small synthetic examples and all load summaries are retained for review.

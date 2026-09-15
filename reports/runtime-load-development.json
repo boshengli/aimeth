@@ -1,0 +1,28 @@
+{
+  "run_id": "load-10000",
+  "fingerprint": "4959440d0844483410d3d9a0158d27942a516bc914cea221fb9149369be8c10d",
+  "planned_total_steps": 20000,
+  "materialized_steps": 20000,
+  "steps": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 20000,
+    "failed": 0
+  },
+  "attempts": 20000,
+  "known_total_tokens": 0,
+  "unknown_usage_attempts": 0,
+  "complete": true,
+  "events": 100001,
+  "messages": 10000,
+  "checkpoints": 20000,
+  "verification": {
+    "status": "verified",
+    "events": 100001,
+    "tail_hash": "9b37f57b43d887b7170295f697053a178cdb7132428ad2906ed66963fbf99ba8",
+    "scientific_validity_checked": false
+  },
+  "elapsed_seconds": 153.049115416,
+  "model_calls": 0,
+  "scope": "Synthetic local persistence test; no model, GPU or mathematics evaluated"
+}

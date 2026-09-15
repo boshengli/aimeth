@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "started_utc": "2026-09-15T03:27:42.238766+00:00",
+  "code_identity": "sha256:600c96dd69444bc38a3d204d117c436b9d4ff439b1f11798a0d0e23909355323",
+  "environment": {
+    "python": "3.11.15",
+    "sqlite": "3.50.4",
+    "os": "Darwin",
+    "os_release": "25.5.0",
+    "architecture": "arm64"
+  },
+  "design": {
+    "logical_agents": 10000,
+    "rounds": 2,
+    "worker_processes": 1,
+    "repetitions": 1,
+    "transport": "mock",
+    "comparison_arms": 0
+  },
+  "sqlite_pragmas": {
+    "journal_mode": "delete",
+    "synchronous": 2,
+    "fullfsync": 1
+  },
+  "status": {
+    "run_id": "synthetic-load",
+    "fingerprint": "e9ae9b1511f3184cf67acce4a3d3285feeb9371910fbc8c89bec1c5c6e74b394",
+    "planned_total_steps": 20000,
+    "materialized_steps": 20000,
+    "steps": {
+      "pending": 0,
+      "running": 0,
+      "succeeded": 20000,
+      "failed": 0
+    },
+    "attempts": 20000,
+    "known_total_tokens": 0,
+    "unknown_usage_attempts": 0,
+    "complete": true,
+    "events": 100001,
+    "messages": 10000,
+    "checkpoints": 20000
+  },
+  "verification": {
+    "status": "verified",
+    "events": 100001,
+    "tail_hash": "5bc58c65c3e3d5bae34e27062e4c485c2c1170b8806cb15a8849996ac982123e",
+    "scientific_validity_checked": false
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "elapsed_seconds": 345.49704766692594
+    },
+    {
+      "round": 1,
+      "elapsed_seconds": 352.60802370798774
+    }
+  ],
+  "elapsed_seconds": 701.6163227090146,
+  "canonical_steps_per_second": 28.505608197337672,
+  "database_bytes": 150654976,
+  "database_sha256": "d2842d0256a8fa092111b7e60219d8ff6d96e074d3dbd3f1b5c3544456ba6559",
+  "external_model_calls": 0,
+  "cluster_jobs": 0,
+  "proof_verified": false,
+  "scope": "Single-host synthetic persistence check; no inference, scientific comparison, power-loss or cluster validation"
+}

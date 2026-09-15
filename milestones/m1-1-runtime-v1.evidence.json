@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1.1",
+  "code_commit": "313b85fba53a99f75e7a0a1b674e10c82931e18c",
+  "inputs": [
+    {
+      "path": "milestones/m1-1-runtime-v1.json",
+      "sha256": "343c0c3d42bbb58e8b1186b2e188ce4e137cd38611ff7705a81a10a0e8c073b7"
+    },
+    {
+      "path": "reports/runtime-validation.json",
+      "sha256": "f5c6f8e70f1c2b20b75b400713233c740bc685c2b33db3d015fa521def7ed087"
+    },
+    {
+      "path": "reports/runtime-load-10000.json",
+      "sha256": "14f05e1eefd9e47390d835825625ab8771619670eceb9b348c4abe1e17b9f99d"
+    },
+    {
+      "path": "reports/github-publication.json",
+      "sha256": "45c08d56268df80ec849f4e23f76bd024a316fef0d3f1be7d832b678a49e0c78"
+    },
+    {
+      "path": "examples/runtime/demo.events.jsonl",
+      "sha256": "74a30dcf19e72ece2e3d16b16ffc1a6767b928fe65916be7f7457fd83a08c35c"
+    },
+    {
+      "path": "templates/milestone-runtime-v1.html",
+      "sha256": "165076b24ee30a4812f336f845efed105877fc607a8cc696cb227d6360bc8c34"
+    },
+    {
+      "path": "tools/build_runtime_milestone.py",
+      "sha256": "39fd1f4440a9f7522729095c37596442aabec68a79d0486352558cb48e7e29cb"
+    },
+    {
+      "path": "archives/runtime-v0.1/aimeth_runtime/__init__.py",
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "path": "archives/runtime-v0.1/aimeth_runtime/__main__.py",
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "path": "archives/runtime-v0.1/aimeth_runtime/runner.py",
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "path": "archives/runtime-v0.1/aimeth_runtime/store.py",
+      "sha256": "02f7730dd93581a7cd5fed47ec63a3fe5d43fd267b866a658b460528cb055559"
+    }
+  ],
+  "scientific_validity_checked": false
+}

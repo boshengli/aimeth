@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1.1",
+  "code_commit": "313b85fba53a99f75e7a0a1b674e10c82931e18c",
+  "scope": "Immutable local milestone snapshot; future publication creates a new version without rewriting this evidence",
+  "artifacts": [
+    {
+      "id": "archives/runtime-v0.1/aimeth_runtime/__init__.py",
+      "path": "archives/runtime-v0.1/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "archives/runtime-v0.1/aimeth_runtime/__main__.py",
+      "path": "archives/runtime-v0.1/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "archives/runtime-v0.1/aimeth_runtime/runner.py",
+      "path": "archives/runtime-v0.1/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "archives/runtime-v0.1/aimeth_runtime/store.py",
+      "path": "archives/runtime-v0.1/aimeth_runtime/store.py",
+      "bytes": 41436,
+      "sha256": "02f7730dd93581a7cd5fed47ec63a3fe5d43fd267b866a658b460528cb055559"
+    },
+    {
+      "id": "examples/runtime/demo.events.jsonl",
+      "path": "examples/runtime/demo.events.jsonl",
+      "bytes": 40830,
+      "sha256": "74a30dcf19e72ece2e3d16b16ffc1a6767b928fe65916be7f7457fd83a08c35c"
+    },
+    {
+      "id": "examples/runtime/demo.manifest.json",
+      "path": "examples/runtime/demo.manifest.json",
+      "bytes": 1019,
+      "sha256": "05e925908cfdf58e7efbf4edd4f43bb06fcf881ba961388016360cdbe592afe5"
+    },
+    {
+      "id": "examples/runtime/demo.summary.json",
+      "path": "examples/runtime/demo.summary.json",
+      "bytes": 751,
+      "sha256": "8f351b10ebce55d55017be8a6787c95ac2bb4187e7367349d984a0c798731be3"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1-1440-top.png",
+      "path": "milestones/m1-1-runtime-v1-1440-top.png",
+      "bytes": 139948,
+      "sha256": "184011a8567263dd4d97cad0c868f5056f4dceaf84c51e1ed91b7a3f925d4cc7"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1-1440.png",
+      "path": "milestones/m1-1-runtime-v1-1440.png",
+      "bytes": 1049132,
+      "sha256": "a65e7fe81a4a3cd6a5349a19ecda87016420e112fa279447e5068c11c8bc5c72"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1-390-top.png",
+      "path": "milestones/m1-1-runtime-v1-390-top.png",
+      "bytes": 87869,
+      "sha256": "af47270cd10f34736469414dcdbf65861f9029aec022647ca486ae2f4f19ecae"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1-390.png",
+      "path": "milestones/m1-1-runtime-v1-390.png",
+      "bytes": 979518,
+      "sha256": "4544dd2ec7375080976a7143a318212d2a63482db43cca75b41ba83b2979ee2e"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1-768.png",
+      "path": "milestones/m1-1-runtime-v1-768.png",
+      "bytes": 1014831,
+      "sha256": "7ef8bd371ab1be4a7dfc790bf6717fe237dd9d428bc98fc744d7716710888b72"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1.browser-qa.json",
+      "path": "milestones/m1-1-runtime-v1.browser-qa.json",
+      "bytes": 1085,
+      "sha256": "4e6925993dc617af3965640faa75e60a925ae4ba96d8dfec49e632ef40e4abc2"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1.evidence.json",
+      "path": "milestones/m1-1-runtime-v1.evidence.json",
+      "bytes": 1838,
+      "sha256": "23f4d8a7b605edd6394314473d7ab39384814d0f75c9063df234017ddf901a25"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1.html",
+      "path": "milestones/m1-1-runtime-v1.html",
+      "bytes": 32532,
+      "sha256": "ee6625a6fb59d717c30092de51fbcd8370c6788850051d83928cc4dd8533d9c5"
+    },
+    {
+      "id": "milestones/m1-1-runtime-v1.json",
+      "path": "milestones/m1-1-runtime-v1.json",
+      "bytes": 4463,
+      "sha256": "343c0c3d42bbb58e8b1186b2e188ce4e137cd38611ff7705a81a10a0e8c073b7"
+    },
+    {
+      "id": "reports/github-publication.json",
+      "path": "reports/github-publication.json",
+      "bytes": 690,
+      "sha256": "45c08d56268df80ec849f4e23f76bd024a316fef0d3f1be7d832b678a49e0c78"
+    },
+    {
+      "id": "reports/publication-preflight.json",
+      "path": "reports/publication-preflight.json",
+      "bytes": 376,
+      "sha256": "ac1db23b2bae189a7b3ff62c889799e4bb0d5db8bffa230f5e01aba61cc23912"
+    },
+    {
+      "id": "reports/runtime-load-10000.json",
+      "path": "reports/runtime-load-10000.json",
+      "bytes": 1857,
+      "sha256": "14f05e1eefd9e47390d835825625ab8771619670eceb9b348c4abe1e17b9f99d"
+    },
+    {
+      "id": "reports/runtime-load-development.json",
+      "path": "reports/runtime-load-development.json",
+      "bytes": 777,
+      "sha256": "5d3efed14244ba80f043a822ab3658a3d5ce2c8636e7ba8b92a298541115efca"
+    },
+    {
+      "id": "reports/runtime-load-python39.json",
+      "path": "reports/runtime-load-python39.json",
+      "bytes": 1844,
+      "sha256": "d00a7ea71cac02347c05e993781da05af063bbb2fb04782c0a5f7e5a8d7e1b95"
+    },
+    {
+      "id": "reports/runtime-validation.json",
+      "path": "reports/runtime-validation.json",
+      "bytes": 7111,
+      "sha256": "f5c6f8e70f1c2b20b75b400713233c740bc685c2b33db3d015fa521def7ed087"
+    },
+    {
+      "id": "templates/milestone-runtime-v1.html",
+      "path": "templates/milestone-runtime-v1.html",
+      "bytes": 17725,
+      "sha256": "165076b24ee30a4812f336f845efed105877fc607a8cc696cb227d6360bc8c34"
+    },
+    {
+      "id": "tools/build_runtime_milestone.py",
+      "path": "tools/build_runtime_milestone.py",
+      "bytes": 4541,
+      "sha256": "39fd1f4440a9f7522729095c37596442aabec68a79d0486352558cb48e7e29cb"
+    },
+    {
+      "id": "tools/check_runtime_milestone.cjs",
+      "path": "tools/check_runtime_milestone.cjs",
+      "bytes": 3761,
+      "sha256": "8763762a2d29b6f62eb7305bae13a5e8bd4c456a052d901458e06c058b721f6a"
+    }
+  ]
+}

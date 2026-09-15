@@ -21,7 +21,7 @@ The demo makes no model calls. Its policy and ring graph are engineering fixture
 - [Research protocol v0.1](docs/research-protocol.md): proposed hypotheses, controls, independent population runs, evaluation and stopping rules.
 - [Evidence audit](docs/evidence-audit.md) and [sources](references/sources.json): observed checks and source-reading boundaries.
 - [Publication contract](docs/publication-contract.md) and [milestone policy](docs/milestone-reporting.md): traceable records and a readable HTML at every completed milestone.
-- [M1 HTML](milestones/m1-foundation-v1.html) and [M2 brief](docs/organization-design-brief.md).
+- [M1 HTML](milestones/m1-foundation-v1.html), [M1.1 runtime HTML](milestones/m1-1-runtime-v1.html), and [M2 brief](docs/organization-design-brief.md).
 
 The initial commit `934cce6` and original M1 report are retained. `archives/foundation-v1/` contains the exact initial Git tree; the original `foundation-manifest.json` is preserved byte-for-byte. Verify that historical snapshot with:
 

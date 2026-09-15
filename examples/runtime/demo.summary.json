@@ -1,0 +1,28 @@
+{
+  "run_id": "public-demo",
+  "fingerprint": "053912bc21f3082223da323170c2b0e91e35b27910d3b568cfd6926ee03160c6",
+  "planned_total_steps": 8,
+  "materialized_steps": 8,
+  "steps": {
+    "pending": 0,
+    "running": 0,
+    "succeeded": 8,
+    "failed": 0
+  },
+  "attempts": 8,
+  "known_total_tokens": 0,
+  "unknown_usage_attempts": 0,
+  "complete": true,
+  "events": 41,
+  "messages": 4,
+  "checkpoints": 8,
+  "verification": {
+    "status": "verified",
+    "events": 41,
+    "tail_hash": "a37f4ef51733ee290edb18197c5e7f9628cfd42f95521b648ab96f792d45164c",
+    "scientific_validity_checked": false
+  },
+  "elapsed_seconds": 0.3518444588407874,
+  "model_calls": 0,
+  "scope": "Synthetic local persistence test; no model, GPU or mathematics evaluated"
+}
