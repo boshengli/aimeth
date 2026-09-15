@@ -1,4 +1,4 @@
-name: Runtime and integrity checks
+name: Foundation checks
 on: [push, pull_request]
 permissions:
   contents: read
@@ -12,7 +12,3 @@ jobs:
           python3 --version
           python3 -m unittest discover -s tests -v
           python3 tools/verify_artifacts.py examples/replay/manifest.json
-          python3 tools/verify_artifacts.py archives/foundation-v1/foundation-manifest.json
-          python3 tools/verify_artifacts.py milestones/m1-foundation-v1.manifest.json
-          python3 tools/build_milestone.py --output /tmp/m1.html
-          cmp milestones/m1-foundation-v1.html /tmp/m1.html

@@ -1,0 +1,1 @@
+Synthetic integrity fixture only. No model call, cluster result, or mathematical claim.

@@ -2,30 +2,38 @@
 
 **Agent organization and verifiable mathematical discovery under constrained compute.**
 
-Status: research foundation, 2026-09-14. No cluster experiment, topology superiority claim, or independent Navier–Stokes proof verification is included in this release.
+M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 organization design is next; no topology-superiority claim, live cluster experiment or independently verified mathematical proof is included.
 
-## Read first
+## Try the runtime
 
-- [Research protocol v0.1](docs/research-protocol.md) — hypotheses, controls, experimental units, budgets, evaluation, and decision gates.
-- [Evidence and prototype audit](docs/evidence-audit.md) — sources, actual checks, limitations.
-- [Engineering contract](docs/engineering-contract.md) — required behavior for the future runner.
-- [Publication and GitHub contract](docs/publication-contract.md) — reviewable results and release requirements.
-- [Source registry](references/sources.json) — URLs, dates, scope of inspection.
-
-## Local checks
-
-Python 3.11 or later; the tools in this foundation use only the standard library.
+Python 3.11+, standard library only. Run from this repository on local durable storage.
 
 ```bash
+python3 -m aimeth_runtime --db runs/demo.sqlite demo demo --agents 4 --rounds 2
+python3 -m aimeth_runtime --db runs/demo.sqlite verify demo
 python3 -m unittest discover -s tests -v
-python3 tools/verify_artifacts.py examples/replay/manifest.json
-python3 tools/audit_handoff.py --source /path/to/H20_10K_Navier_Handoff_20260914 --output /path/to/audit.json
 ```
 
-The example is synthetic integrity-test data, not mathematical or cluster evidence. The artifact verifier validates declared file identities and hashes only; it does not validate mathematical correctness or completeness of an experiment. The handoff audit parses source and uses local mocks; it never submits jobs or makes model requests.
+The demo makes no model calls. Its policy and ring graph are engineering fixtures. [Runtime contract](docs/runtime-contract-v1.md) explains guarantees and limitations; [operations](docs/runtime-operations.md) covers restart, multi-process workers, backup, export and the optional local inference adapter. Multiple hosts must not write this SQLite database over a shared filesystem.
 
-## Boundaries
+## Research and review
 
-The supplied handoff is retained externally as an unchanged source package, not installed as an operational skill. Its scripts are not yet production-ready. Reference solutions must never be mounted in a generator environment. This repository is a research/control foundation, not a deployed 10K-agent runner.
+- [Research protocol v0.1](docs/research-protocol.md): proposed hypotheses, controls, independent population runs, evaluation and stopping rules.
+- [Evidence audit](docs/evidence-audit.md) and [sources](references/sources.json): observed checks and source-reading boundaries.
+- [Publication contract](docs/publication-contract.md) and [milestone policy](docs/milestone-reporting.md): traceable records and a readable HTML at every completed milestone.
+- [M1 HTML](milestones/m1-foundation-v1.html) and [M2 brief](docs/organization-design-brief.md).
 
-Project administration lives in the separate `0023-AIMeth` iCloud control directory. Large traces, model files, evaluation keys, and credentials stay outside Git. No GitHub remote, public release, DOI, or project license has been assigned yet.
+The initial commit `934cce6` and original M1 report are retained. `archives/foundation-v1/` contains the exact initial Git tree; the original `foundation-manifest.json` is preserved byte-for-byte. Verify that historical snapshot with:
+
+```bash
+python3 tools/verify_artifacts.py archives/foundation-v1/foundation-manifest.json
+python3 tools/verify_artifacts.py examples/replay/manifest.json
+```
+
+The root historical manifest describes the initial tree, not later README/runtime changes. Existing M1 report snapshots remain valid. All new milestones have separate evidence and content hashes.
+
+## Scope
+
+Passing integrity/fault tests does not verify a proof. Production database/trace archives, models, evaluator keys and credentials stay out of Git. Seeds do not guarantee deterministic inference; retain realized requests, responses, schedules and software/model identities. Whole-run compute accounting, real H20 deployment and proof/evaluator integration are outstanding.
+
+Public GitHub publication was requested on 2026-09-15; owner verification is pending. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.

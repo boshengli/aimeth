@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1-draft",
+  "status": "design_template_not_a_run",
+  "run_id": null,
+  "run_fingerprint": null,
+  "protocol": {"id": null, "version": null, "sha256": null},
+  "task": {"family_id": null, "id": null, "statement_sha256": null, "split": null, "allowed_sources_manifest_sha256": null, "hint_condition": null},
+  "code": {"commit": null, "dirty_diff_sha256": null},
+  "model": {"id": null, "revision": null, "weights_manifest_sha256": null, "tokenizer_sha256": null, "chat_template_sha256": null},
+  "environment": {"container_digest": null, "vllm_version": null, "gpu_model": null, "gpu_count": null, "driver": null, "cuda": null, "tp": null, "dp": null},
+  "organization": {"arm_id": null, "population": null, "policy_sha256": null, "graph_sha256": null, "roles_sha256": null, "memory_policy": null, "schedule_policy": null},
+  "sampling": {"master_seed": null, "seed_derivation_version": null, "temperature": null, "top_p": null, "max_output_tokens": null},
+  "prompts_manifest_sha256": null,
+  "client_inflight": null,
+  "budget": {"primary_currency": null, "input_token_cap": null, "output_token_cap": null, "gpu_seconds_cap": null, "tool_seconds_cap": null, "verification_reserve": null, "overshoot_policy": null},
+  "evaluation": {"policy_sha256": null, "candidate_limit_k": null, "blinding": null, "proof_checker_version": null},
+  "replicate_id": null,
+  "randomization_block": null,
+  "stopping_policy_sha256": null,
+  "artifacts_manifest": null,
+  "deviations": [],
+  "missing_required_information": ["No real cluster/model/task-set settings have been frozen."]
+}

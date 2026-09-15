@@ -15,11 +15,3 @@ reference_solutions/
 *.sif
 *.safetensors
 *.log
-
-# Runtime traces belong in private, host-local run storage.
-*.sqlite
-*.sqlite-*
-*.db
-*.db-*
-*.pem
-*.key

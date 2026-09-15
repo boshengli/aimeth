@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "S01",
+      "author_or_owner": "OpenAI",
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "publication_or_revision_date": "2026-09-08",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "inspection_scope": "Author announcement; organization and scale statements read. Not an independent causal experiment.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S02",
+      "author_or_owner": "Clay Mathematics Institute",
+      "title": "Navier-Stokes Announcement",
+      "publication_or_revision_date": "2026-09-11",
+      "url": "https://www.claymath.org/news/navier-stokes-announcement/",
+      "inspection_scope": "Full announcement read; no final award adjudication inferred.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S03",
+      "author_or_owner": "Charles L. Fefferman",
+      "title": "Existence and Smoothness of the Navier–Stokes Equation",
+      "publication_or_revision_date": null,
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "inspection_scope": "Official problem statements and assumptions, pages 1–2, inspected through extracted text.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S04",
+      "author_or_owner": "OpenAI",
+      "title": "NavierStokesAndEuler",
+      "publication_or_revision_date": null,
+      "url": "https://github.com/openai/NavierStokesAndEuler",
+      "inspection_scope": "README read; source/proof dependencies not independently audited or built.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S05",
+      "author_or_owner": "Yubin Kim et al.",
+      "title": "Towards a Science of Scaling Agent Systems",
+      "publication_or_revision_date": "2026-04-08",
+      "url": "https://arxiv.org/abs/2512.08296v3",
+      "inspection_scope": "Preprint v3. Abstract and system/method sections read; numerical results not reproduced. Full text: https://arxiv.org/html/2512.08296v3",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S06",
+      "author_or_owner": "vLLM contributors",
+      "title": "Reproducibility",
+      "publication_or_revision_date": null,
+      "url": "https://docs.vllm.ai/en/latest/usage/reproducibility/",
+      "inspection_scope": "Current official documentation; installed cluster version unknown.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S07",
+      "author_or_owner": "AAAS / Science",
+      "title": "Science journals editorial policies",
+      "publication_or_revision_date": null,
+      "url": "https://www.science.org/content/page/science-journals-editorial-policies",
+      "inspection_scope": "Access failed twice; no current policy compliance claim.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S08",
+      "author_or_owner": "SchedMD",
+      "title": "sbatch",
+      "publication_or_revision_date": null,
+      "url": "https://slurm.schedmd.com/sbatch.html",
+      "inspection_scope": "Script transfer and path/working-directory behavior inspected; local Slurm not tested.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "S09",
+      "author_or_owner": "GitHub Actions",
+      "title": "actions/checkout v4.2.2 commit",
+      "publication_or_revision_date": null,
+      "url": "https://github.com/actions/checkout/commit/11bd71901bbe5b1630ceea73d27597364c9af683",
+      "inspection_scope": "Pinned commit identity verified; hosted CI not executed.",
+      "accessed_on": "2026-09-14"
+    },
+    {
+      "id": "L01",
+      "title": "Finite Time Blowup for Navier–Stokes",
+      "author_or_owner": "OpenAI",
+      "source_kind": "user_supplied_pdf",
+      "relative_to_handoff": "references/navier-stokes.pdf",
+      "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+      "pages": 166,
+      "inspection_scope": "Pages 1–2 visually reviewed; full-text keyword search. Proof not independently checked.",
+      "accessed_on": "2026-09-14"
+    }
+  ]
+}

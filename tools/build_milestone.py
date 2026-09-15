@@ -29,7 +29,8 @@ def main():
     sys.path.insert(0, str(repo / "tools"))
     from verify_artifacts import verify
     # M1 keeps its original scientific/code baseline intact; adding a report is a separate release.
-    verified = verify(repo / "foundation-manifest.json")
+    baseline = repo / "archives/foundation-v1/foundation-manifest.json"
+    verified = verify(baseline if baseline.exists() else repo / "foundation-manifest.json")
     audit = load(repo / "reports/handoff-audit.json")
     validation = load(repo / "reports/validation.json")
     sources = load(repo / "references/sources.json")["sources"]
