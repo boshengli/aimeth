@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "scope": "Corrected v2 report; original v1 manifest retained as dependency; all original data unchanged",
+  "artifacts": [
+    {
+      "id": "cluster-v2-001",
+      "path": "cluster-report-manifest.json",
+      "sha256": "829dc2ed5627d46498738c7c0b911aa8e63fbba3df05d1e145513c9c74ad6a72",
+      "bytes": 9492
+    },
+    {
+      "id": "cluster-v2-002",
+      "path": "milestones/m2-1-cluster-pilot-v2-1440-top.png",
+      "sha256": "08dc8166de840a28a6c2a1dee949f24ab7a8fff0648bd0b3e4a89062734117cf",
+      "bytes": 204893
+    },
+    {
+      "id": "cluster-v2-003",
+      "path": "milestones/m2-1-cluster-pilot-v2-1440.png",
+      "sha256": "ec43108286e0140a7022ba6fbf67f7d071bc287036202946a9d938a25f687329",
+      "bytes": 1394828
+    },
+    {
+      "id": "cluster-v2-004",
+      "path": "milestones/m2-1-cluster-pilot-v2-390-top.png",
+      "sha256": "6f6cd4d8e258fc3e8345ff6c3634eaa408b159fcb307677b3a795d2d9d3f0174",
+      "bytes": 117963
+    },
+    {
+      "id": "cluster-v2-005",
+      "path": "milestones/m2-1-cluster-pilot-v2-390.png",
+      "sha256": "a96da1ff27b3660a98990075ae3952cc7a47a30b0ebf87a46d83aad866c0fa8c",
+      "bytes": 1176457
+    },
+    {
+      "id": "cluster-v2-006",
+      "path": "milestones/m2-1-cluster-pilot-v2.browser-qa.json",
+      "sha256": "834c0ceaadfcc355e4606fa03dd03f183d7b1762a7809e20cf5ff47e61783b5c",
+      "bytes": 677
+    },
+    {
+      "id": "cluster-v2-007",
+      "path": "milestones/m2-1-cluster-pilot-v2.evidence.json",
+      "sha256": "b334a1bd9f14aa6f47150cf4d72dfc34f3d258e528173bfb2451b15c5e16da69",
+      "bytes": 3100
+    },
+    {
+      "id": "cluster-v2-008",
+      "path": "milestones/m2-1-cluster-pilot-v2.html",
+      "sha256": "feb6f5521757bba3bdcfe48648c75078073414f6ad88877634fa83d0cd2a0ae0",
+      "bytes": 88535
+    },
+    {
+      "id": "cluster-v2-009",
+      "path": "milestones/m2-1-cluster-pilot-v2.visual-review.json",
+      "sha256": "8df7d2b19d641fc85732c94badb94856d580c2334c45d5aa41835e0bb653a323",
+      "bytes": 460
+    },
+    {
+      "id": "cluster-v2-010",
+      "path": "tools/build_cluster_milestone_v2.py",
+      "sha256": "92e09fcd72024015e1372d798c9d28dc99289b9f5e1ab63ec7402371ccb34c10",
+      "bytes": 3193
+    },
+    {
+      "id": "cluster-v2-011",
+      "path": "tools/check_cluster_milestone_v2.cjs",
+      "sha256": "20e30d8c93d1cd531a1dd8573f7ab67f2a17aa19008737a3501eff195dff010c",
+      "bytes": 4038
+    }
+  ]
+}

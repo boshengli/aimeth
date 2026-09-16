@@ -30,3 +30,6 @@ jobs:
           python3 tools/verify_artifacts.py cluster-report-manifest.json
           python3 tools/build_cluster_milestone.py --output /tmp/cluster.html
           cmp milestones/m2-1-cluster-pilot-v1.html /tmp/cluster.html
+          python3 tools/verify_artifacts.py cluster-report-v2-manifest.json
+          python3 tools/build_cluster_milestone_v2.py --output /tmp/cluster-v2.html
+          cmp milestones/m2-1-cluster-pilot-v2.html /tmp/cluster-v2.html

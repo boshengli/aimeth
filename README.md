@@ -62,7 +62,7 @@ M2.1 deliverable: [interactive HTML report](milestones/m2-1-organization-v1.html
 
 ## M2.1c institutional cluster calibration
 
-[HTML report](milestones/m2-1-cluster-pilot-v1.html) · [frozen protocol and deviations](docs/cluster-pilot-v1.md) · [public results](reports/cluster-pilot-v1/v3/summary.json) · [all-attempt accounting](reports/cluster-pilot-v1/execution-audit.json).
+[HTML report](milestones/m2-1-cluster-pilot-v2.html) · [frozen protocol and deviations](docs/cluster-pilot-v1.md) · [public results](reports/cluster-pilot-v1/v3/summary.json) · [all-attempt accounting](reports/cluster-pilot-v1/execution-audit.json).
 
 Job 190043 completed the planned 32-population loop with 472 requests: 13 selected certificates passed, 9 were wrong, 4 malformed, and 6 populations stopped on truncated generation. N=8 for I/L/X, client concurrency <=2. Existing institutional model services were used; service names are not independently attested model weights. No direct public-provider API call was made. This is exploratory calibration on two public exact controls, not a frontier test, powered topology comparison, demonstrated two-node inference run or 10K inference launch.
 
@@ -70,9 +70,11 @@ The canceled routing trial and the complete v2 engineering-failed trial are reta
 
 ```bash
 python3 tools/check_cluster_evidence.py
-python3 tools/verify_artifacts.py cluster-report-manifest.json
-python3 tools/build_cluster_milestone.py --output /tmp/cluster.html
-cmp milestones/m2-1-cluster-pilot-v1.html /tmp/cluster.html
+python3 tools/verify_artifacts.py cluster-report-v2-manifest.json
+python3 tools/build_cluster_milestone_v2.py --output /tmp/cluster.html
+cmp milestones/m2-1-cluster-pilot-v2.html /tmp/cluster.html
 ```
 
 The optional cluster driver uses `python3 -m aimeth_pilot.run --config <private-config.json> --local-root <node-local-directory> --output-root <shared-output-directory>` inside `cluster/pilot.sbatch`. Credentials enter through `AIMETH_API_KEY`, not source files or prompts. Site paths and scheduling flags must come from the authorized project registry. Use a new immutable experiment directory after protocol changes; do not submit the old development manifests blindly.
+
+Report v2 corrects v2-trial failure attribution (14 coordinator exits, 7 truncated-generation stops). The published v1 report and `cluster-report-manifest.json` remain unchanged and verifiable. V3 scientific outcomes are unchanged.
