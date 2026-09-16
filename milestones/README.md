@@ -57,3 +57,17 @@ node tools/check_cluster_milestone_v2.cjs milestones/m2-1-cluster-pilot-v2.html 
 ```
 
 Report v2 corrects v2-trial failure attribution (14 coordinator exits, 7 truncated-generation stops). The published v1 report and `cluster-report-manifest.json` remain unchanged and verifiable. V3 scientific outcomes are unchanged.
+
+## M2.1d — Service and output calibration
+
+[Service calibration HTML v1](m2-1-service-calibration-v1.html) separates 48 institutional one-step cases from 8 post-observation public API diagnostics. It records metadata identity limits, all certificate failures, an exact scaling-algebra control and the unimplemented H/F design proposal.
+
+```bash
+python3 tools/check_service_evidence.py
+python3 tools/check_public_sanity.py
+python3 tools/build_service_milestone.py
+python3 tools/verify_artifacts.py service-calibration-report-manifest.json
+node tools/check_service_milestone.cjs milestones/m2-1-service-calibration-v1.html /path/to/browser-qa.json
+```
+
+Execution archives are `archives/service-calibration-v1` (a03dad6) and `archives/public-sanity-v1` (7211541). They are separate from the later report delivery commit. Browser screenshots and source-backed evidence accompany the HTML. This milestone does not establish population superiority, frontier proof or 10K inference readiness.

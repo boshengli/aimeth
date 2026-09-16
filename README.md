@@ -78,3 +78,21 @@ cmp milestones/m2-1-cluster-pilot-v2.html /tmp/cluster.html
 The optional cluster driver uses `python3 -m aimeth_pilot.run --config <private-config.json> --local-root <node-local-directory> --output-root <shared-output-directory>` inside `cluster/pilot.sbatch`. Credentials enter through `AIMETH_API_KEY`, not source files or prompts. Site paths and scheduling flags must come from the authorized project registry. Use a new immutable experiment directory after protocol changes; do not submit the old development manifests blindly.
 
 Report v2 corrects v2-trial failure attribution (14 coordinator exits, 7 truncated-generation stops). The published v1 report and `cluster-report-manifest.json` remain unchanged and verifiable. V3 scientific outcomes are unchanged.
+
+## M2.1d service identity and output-contract calibration
+
+[HTML report](milestones/m2-1-service-calibration-v1.html) · [frozen calibration](docs/service-calibration-v1.md) · [separate public API diagnostic](docs/public-sanity-v1.md) · [H/F routing proposal](docs/hierarchy-routing-proposal-v1.md).
+
+Institutional job 190045 ran 48 one-step cases: 18 exact certificates passed, 21 were wrong, 8 malformed, and 1 truncated; 18,256 reported tokens. These are output-contract diagnostics, not population organization comparisons. After all 16 local antiderivative cases failed, a separately frozen 8-call official DeepSeek/GLM diagnostic produced 2 passes and 6 invalid certificates (2,033 tokens). The model versions differ, so these data cannot identify deployment quality or rank model families.
+
+Read-only job 190044 preserved configuration/tokenizer hashes and shard sizes for four model directories. Weight bytes, gateway routes and two-node inference participation remain unattested. The new Navier–Stokes scaling control checks exact exponent equations, not a PDE proof or regularity. H/F role-routing graphs are degree-matched proposals; their runtime and live comparison are not implemented.
+
+```bash
+python3 tools/check_service_evidence.py
+python3 tools/check_public_sanity.py
+python3 tools/verify_artifacts.py service-calibration-report-manifest.json
+python3 tools/build_service_milestone.py --output /tmp/service.html
+cmp milestones/m2-1-service-calibration-v1.html /tmp/service.html
+```
+
+Both execution sources and all reviewed development events are archived separately. Old reports remain unchanged. Input-token admission, role-message contracts, independently reviewed harder tasks and identity attestation precede the next organization pilot and scale-up.

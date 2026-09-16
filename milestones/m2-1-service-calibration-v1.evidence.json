@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.1d",
+  "date": "2026-09-16",
+  "version": "1.0",
+  "scope": "Service metadata, 48 institutional one-step cases, 8 post-observation public sanity cases, H/F design proposal",
+  "execution_sources": {
+    "service-calibration-v1": "a03dad629c9bc9e9866e4ce01d8c864e594e8d5b",
+    "public-sanity-v1": "7211541d8e95649cf8c7d4460d7cc16438a7c7bf"
+  },
+  "counts": {
+    "institutional_cases": 48,
+    "institutional_tokens": {
+      "prompt_tokens": 12772,
+      "completion_tokens": 5484,
+      "total_tokens": 18256
+    },
+    "institutional_verdicts": {
+      "MALFORMED": 8,
+      "VERIFIED_WITHIN_SCOPE": 18,
+      "INVALID_CERTIFICATE": 21,
+      "TRUNCATED_GENERATION": 1
+    },
+    "public_cases": 8,
+    "public_tokens": {
+      "prompt_tokens": 1869,
+      "completion_tokens": 164,
+      "total_tokens": 2033
+    },
+    "public_verdicts": {
+      "INVALID_CERTIFICATE": 6,
+      "VERIFIED_WITHIN_SCOPE": 2
+    }
+  },
+  "validation": {
+    "schema_version": "1.0",
+    "remote_source_matches_archive": [
+      "aimeth_design/__init__.py",
+      "aimeth_design/__main__.py",
+      "aimeth_design/execution.py",
+      "aimeth_design/organizations.py",
+      "aimeth_evaluation/__init__.py",
+      "aimeth_evaluation/controls.py",
+      "aimeth_evaluation/pde_scaling.py",
+      "aimeth_pilot/__init__.py",
+      "aimeth_pilot/calibration.py",
+      "aimeth_pilot/quota.py",
+      "aimeth_pilot/run.py",
+      "aimeth_runtime/__init__.py",
+      "aimeth_runtime/__main__.py",
+      "aimeth_runtime/runner.py",
+      "aimeth_runtime/store.py"
+    ],
+    "private_sqlite_journals_verified": 56,
+    "institutional_events": 381,
+    "public_events": 64,
+    "private_identity_limit": "Full raw inventory and first institutional event hashes require restricted originals",
+    "output_validation_scope": "Exact development certificates only; no frontier theorem",
+    "unit_tests": {
+      "status": "passed",
+      "count": 59,
+      "command": "python3 -m unittest discover -s tests -v",
+      "log_sha256": "8d996f843f3a77242f3341f905dd92a452922f7bceaebc13d21f445e6035e7b0"
+    },
+    "scheduler_jobs": [
+      {
+        "id": 190044,
+        "state": "COMPLETED",
+        "exit_code": "0:0",
+        "elapsed": "00:00:01",
+        "cpus": 2,
+        "mem": "512M",
+        "new_gpu_allocation": false
+      },
+      {
+        "id": 190045,
+        "state": "COMPLETED",
+        "exit_code": "0:0",
+        "elapsed": "00:02:20",
+        "cpus": 2,
+        "mem": "2G",
+        "new_gpu_allocation": false
+      }
+    ]
+  },
+  "input_hashes": {
+    "reports/service-calibration-v1/summary.json": "eb8ece5e9f634fdd190c07914591b4bee1067d506ebe8b216e5f07a09cdf0b0a",
+    "reports/service-calibration-v1/events.jsonl": "4650a249dfc9d1bd16df930a2c4a75605540731ea9089e3f49a9e6c49a5e1a13",
+    "reports/service-calibration-v1/inventory.json": "47efc6993f99a30674d05d23db4fe2e603759c1670d6dcdb35c85039a2c94731",
+    "reports/service-calibration-v1/validation.json": "5f0bd3adc421691dd1661e584c48cc970f46e5f6519578635e529b91bbdef8f0",
+    "reports/public-sanity-v1/summary.json": "0f4df8f07be3a190779929eced2955f877c2b31bbd96d36ff7dfe478b2f0dc49",
+    "reports/public-sanity-v1/events.jsonl": "63d649b6d51f03b42b3dd3b60a68da69ace0df31fc1e436e29409ed63f4815af",
+    "examples/hierarchy-routing-proposal-v1.json": "f0cf4fa4c880a56908104ecf1ee6a433871f152f90c820188282cc7aaaa15d24",
+    "docs/service-calibration-v1.md": "e70d709ee69b36133a894e0c5d2d81dbff2115d18a37924eb59126198986216e",
+    "docs/public-sanity-v1.md": "0e24e5526f0774872bb22c632e645bda9fa0d3e6e1780fdaede8dfbb79af08c0",
+    "docs/hierarchy-routing-proposal-v1.md": "3df039c0ff2acc50ffbd0c831ad23008ffab299a0403054b7ec02105531162f4"
+  },
+  "limitations": [
+    "Served names and file metadata do not attest weight bytes or gateway routes",
+    "Single-step calibration is not a population comparison",
+    "Public providers use different model identities and were tested post-observation",
+    "Scaling algebra is not a PDE theorem proof",
+    "No input-token admission, GPU-hour attribution or demonstrated multi-host failover"
+  ],
+  "delivery_identity": "The Git commit containing this report is its delivery identity, separate from execution source commits. Final hosted CI is recorded in the control handoff."
+}

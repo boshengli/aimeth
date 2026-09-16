@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "status": "proposal; role prompts and compiler not implemented; no live H/F result",
+  "nodes": [
+    "E0",
+    "E1",
+    "C",
+    "S"
+  ],
+  "roles": {
+    "E0": "explorer",
+    "E1": "explorer",
+    "C": "critic",
+    "S": "synthesizer"
+  },
+  "graphs": {
+    "H": [
+      [
+        "E0",
+        "C"
+      ],
+      [
+        "E1",
+        "C"
+      ],
+      [
+        "C",
+        "S"
+      ],
+      [
+        "S",
+        "E0"
+      ],
+      [
+        "S",
+        "E1"
+      ]
+    ],
+    "F": [
+      [
+        "E0",
+        "E1"
+      ],
+      [
+        "E1",
+        "C"
+      ],
+      [
+        "C",
+        "S"
+      ],
+      [
+        "S",
+        "E0"
+      ],
+      [
+        "S",
+        "C"
+      ]
+    ]
+  },
+  "structural_checks": {
+    "H": {
+      "in_degree": {
+        "E0": 1,
+        "E1": 1,
+        "C": 2,
+        "S": 1
+      },
+      "out_degree": {
+        "E0": 1,
+        "E1": 1,
+        "C": 1,
+        "S": 2
+      },
+      "strongly_connected": true,
+      "diameter": 3,
+      "edges_per_group": 5
+    },
+    "F": {
+      "in_degree": {
+        "E0": 1,
+        "E1": 1,
+        "C": 2,
+        "S": 1
+      },
+      "out_degree": {
+        "E0": 1,
+        "E1": 1,
+        "C": 1,
+        "S": 2
+      },
+      "strongly_connected": true,
+      "diameter": 3,
+      "edges_per_group": 5
+    }
+  },
+  "conditional_first_pilot": {
+    "groups": 2,
+    "logical_agents": 8,
+    "rounds": 4,
+    "calls_per_population": 32,
+    "messages_per_population": 30,
+    "terminal_pool": [
+      "S in group 0",
+      "S in group 1"
+    ],
+    "terminal_candidate_limit": 1,
+    "live_launch_ready": false
+  }
+}
