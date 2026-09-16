@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from aimeth_pilot.quota import Quota
 from aimeth_runtime.store import Store,validate_manifest
 from aimeth_design.organizations import compile_arm
-from aimeth_pilot.run import run_population
+from aimeth_pilot.run import run_population,bounded_response,STOP
 from aimeth_evaluation.controls import public_tasks
 
 class LivePilotTests(unittest.TestCase):
@@ -86,3 +86,9 @@ class LivePilotTests(unittest.TestCase):
                 run_population(root,'run',config,q,'prime-counterexample')
             self.assertEqual(q.summary()['reserved_calls'],0)
             q.db.close()
+
+    def test_stop_prevents_new_dispatch_and_preserves_quota(self):
+        STOP.set()
+        try:
+            self.assertEqual(bounded_response({}, {}, time.time()+60)['error']['category'],'coordinator_stop')
+        finally:STOP.clear()

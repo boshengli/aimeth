@@ -12,13 +12,17 @@ import shutil
 import socket
 import sqlite3
 import time
+import threading
+from urllib import request
 
 from aimeth_runtime.store import Store, canonical, digest
-from aimeth_runtime.runner import http_response, TransportFailure
+from aimeth_runtime.runner import http_response, TransportFailure, NoRedirect
 from aimeth_design.organizations import compile_arm, pilot_schedule
 from aimeth_design.execution import select_terminal
 from aimeth_evaluation.controls import public_tasks, evaluate
 from .quota import Quota
+
+STOP=threading.Event()
 
 
 def save(path, value):
@@ -39,15 +43,18 @@ def call_child(claim, transport, pipe):
 
 
 def bounded_response(claim,transport,deadline):
+    if STOP.is_set():return {'error':{'category':'coordinator_stop'}}
     context=multiprocessing.get_context('spawn')
     reader,writer=context.Pipe(duplex=False)
     process=context.Process(target=call_child,args=(claim,transport,writer))
     process.start();writer.close()
     try:
-        if reader.poll(max(0,min(120,deadline-time.time()))):
-            try:return reader.recv()
-            except EOFError:return {'error':{'category':'child_exit_without_receipt'}}
-        return {'error':{'category':'absolute_request_deadline'}}
+        limit=min(time.time()+120,deadline)
+        while time.time()<limit and not STOP.is_set():
+            if reader.poll(min(0.2,max(0,limit-time.time()))):
+                try:return reader.recv()
+                except EOFError:return {'error':{'category':'child_exit_without_receipt'}}
+        return {'error':{'category':'coordinator_stop' if STOP.is_set() else 'absolute_request_deadline'}}
     finally:
         reader.close()
         process.join(timeout=0.2)
@@ -85,6 +92,7 @@ def run_population(root,run_id,config,quota,task_id):
                 store.enqueue_round(run_id,r)
                 active={}; halted=False
                 while True:
+                    if STOP.is_set():halted=True
                     while not halted and len(active)<config['max_inflight']:
                         claim=store.claim(run_id,'supervised-pilot',lease_seconds=150)
                         if claim is None:break
@@ -150,7 +158,17 @@ def main():
     def stop_handler(signum,frame):
         nonlocal stop
         stop=True
+        STOP.set()
     signal.signal(signal.SIGTERM,stop_handler);signal.signal(signal.SIGINT,stop_handler)
+    catalog_url=cfg['endpoint'].removesuffix('/chat/completions')+'/models'
+    headers={}
+    if os.environ.get('AIMETH_API_KEY'):headers['Authorization']='Bearer '+os.environ['AIMETH_API_KEY']
+    opener=request.build_opener(request.ProxyHandler({}),NoRedirect())
+    with opener.open(request.Request(catalog_url,headers=headers),timeout=10) as response:
+        catalog=json.loads(response.read(262144))
+    served={item['id'] for item in catalog.get('data',[])}
+    if not set(cfg['models'])<=served:raise ValueError('Frozen model IDs are absent from cluster catalog')
+    save(output/'model-catalog.json',{'served_ids':sorted(served),'observed_at':time.time()})
     tasks={task['id']:task for task in public_tasks()}
     results=[]
     # Freeze task/repetition blocks, then randomize model order within each block.
