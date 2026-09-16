@@ -69,9 +69,10 @@ def evaluate(task_id,candidate):
     return evaluate_scaling(candidate) if task_id==TASK['id'] else evaluate_control(task_id,candidate)
 
 
-def run_case(root,cell,endpoint,quota):
+def run_case(root,cell,endpoint,quota,*,provider_options=None):
     rid=cell['case_id'];directory=root/rid;directory.mkdir(exist_ok=True)
     config=manifest(cell,endpoint);started=time.monotonic()
+    if provider_options is not None:config['request_options']=provider_options
     with Store(directory/'journal.sqlite') as store:
         store.create_run(rid,config);store.enqueue_round(rid,0)
         if not STOP.is_set():
