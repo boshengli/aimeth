@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.1 model-free engineering and evaluator validation",
+  "python": "3.11.15",
+  "sqlite": "3.50.4",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "baseline_commit": "d53d6c16b72b089fc4e5719a4b178bd26312918e",
+  "unit_tests": {
+    "returncode": 0,
+    "log_sha256": "78333de696b74bf62e538d130264c627ca65332910730c5bd2c7727e7003b6ac",
+    "count": 46
+  },
+  "trace_runs": [
+    {
+      "schema_version": "1.0",
+      "evidence_kind": "synthetic-engineering-trace",
+      "model_calls": 0,
+      "mathematical_effect_measured": false,
+      "status": {
+        "run_id": "m2-S",
+        "fingerprint": "141aac54143b44e7de2e823b56a25597dffd0472c851a230f637c39a6c49565f",
+        "planned_total_steps": 96,
+        "materialized_steps": 96,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 96,
+          "failed": 0
+        },
+        "attempts": 96,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 386,
+        "messages": 0,
+        "checkpoints": 96
+      },
+      "verification": {
+        "status": "verified",
+        "events": 386,
+        "tail_hash": "1187dc116c537f5682aac187c06cc172ed9432b0b785bc5c03d6a89f387e7b1a",
+        "scientific_validity_checked": false
+      },
+      "delivered_and_consumed_messages": 0,
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 20260916,
+        "agent_id": "a00000",
+        "source_event": "5db3ffa4-a8ec-4d02-b580-9ffdd8301ebe",
+        "candidate": "Synthetic candidate for a00000.r95",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "wall_seconds": 5.06959,
+      "arm": "S",
+      "graph": {
+        "logical_agents": 1,
+        "rounds": 96,
+        "edges_per_communicating_round": 0,
+        "cross_group_edges": 0,
+        "in_degree_range": [
+          0,
+          0
+        ],
+        "out_degree_range": [
+          0,
+          0
+        ],
+        "total_planned_messages": 0,
+        "canonical_call_slots": 96,
+        "graph_sha256": "f095a0393484e2615abbfccd3c59853404e68a5c6f6c9c54980e57148ef8c2a9"
+      },
+      "manifest_sha256": "141aac54143b44e7de2e823b56a25597dffd0472c851a230f637c39a6c49565f"
+    },
+    {
+      "schema_version": "1.0",
+      "evidence_kind": "synthetic-engineering-trace",
+      "model_calls": 0,
+      "mathematical_effect_measured": false,
+      "status": {
+        "run_id": "m2-I",
+        "fingerprint": "95a6d945c84293e381226b30c2572402a4218ec39071b0f0e448baa6947453a6",
+        "planned_total_steps": 96,
+        "materialized_steps": 96,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 96,
+          "failed": 0
+        },
+        "attempts": 96,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 386,
+        "messages": 0,
+        "checkpoints": 96
+      },
+      "verification": {
+        "status": "verified",
+        "events": 386,
+        "tail_hash": "4346ec330b84be330432f3f2b5bab14c82473f1188176af5aa1cdd4a4e50ac8f",
+        "scientific_validity_checked": false
+      },
+      "delivered_and_consumed_messages": 0,
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 20260916,
+        "agent_id": "a00017",
+        "source_event": "29042bf9-fdcb-4f66-90c9-400d3784e604",
+        "candidate": "Synthetic candidate for a00017.r2",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "wall_seconds": 3.576933,
+      "arm": "I",
+      "graph": {
+        "logical_agents": 32,
+        "rounds": 3,
+        "edges_per_communicating_round": 0,
+        "cross_group_edges": 0,
+        "in_degree_range": [
+          0,
+          0
+        ],
+        "out_degree_range": [
+          0,
+          0
+        ],
+        "total_planned_messages": 0,
+        "canonical_call_slots": 96,
+        "graph_sha256": "4534a20170e3d83fb553f3efdc7e6993d7e36853dd5b2f1343af292ce22ada40"
+      },
+      "manifest_sha256": "95a6d945c84293e381226b30c2572402a4218ec39071b0f0e448baa6947453a6"
+    },
+    {
+      "schema_version": "1.0",
+      "evidence_kind": "synthetic-engineering-trace",
+      "model_calls": 0,
+      "mathematical_effect_measured": false,
+      "status": {
+        "run_id": "m2-L",
+        "fingerprint": "8ea83815b37aaf4d8818740cbac0557e5ca5ac478613c4963d2618ed0b4c507a",
+        "planned_total_steps": 96,
+        "materialized_steps": 96,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 96,
+          "failed": 0
+        },
+        "attempts": 96,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 642,
+        "messages": 128,
+        "checkpoints": 96
+      },
+      "verification": {
+        "status": "verified",
+        "events": 642,
+        "tail_hash": "29c6ed6ecb43fd87f53f5c72cc4b03f37753b24ee8a7e597bab8efb217669e1c",
+        "scientific_validity_checked": false
+      },
+      "delivered_and_consumed_messages": 128,
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 20260916,
+        "agent_id": "a00017",
+        "source_event": "d2aba544-480a-4c0c-a7a0-ada0b01380dd",
+        "candidate": "Synthetic candidate for a00017.r2",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "wall_seconds": 3.567885,
+      "arm": "L",
+      "graph": {
+        "logical_agents": 32,
+        "rounds": 3,
+        "edges_per_communicating_round": 64,
+        "cross_group_edges": 0,
+        "in_degree_range": [
+          2,
+          2
+        ],
+        "out_degree_range": [
+          2,
+          2
+        ],
+        "total_planned_messages": 128,
+        "canonical_call_slots": 96,
+        "graph_sha256": "9af01f347207163b57646545ee6727625b9f1b0fb63392dd6b09135d0ddc6df4"
+      },
+      "manifest_sha256": "8ea83815b37aaf4d8818740cbac0557e5ca5ac478613c4963d2618ed0b4c507a"
+    },
+    {
+      "schema_version": "1.0",
+      "evidence_kind": "synthetic-engineering-trace",
+      "model_calls": 0,
+      "mathematical_effect_measured": false,
+      "status": {
+        "run_id": "m2-X",
+        "fingerprint": "bbb4bd7d7fe3b6aa169462b91f5599e8d3dcf132ad6172ebb58bb03a2e0fb812",
+        "planned_total_steps": 96,
+        "materialized_steps": 96,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 96,
+          "failed": 0
+        },
+        "attempts": 96,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 642,
+        "messages": 128,
+        "checkpoints": 96
+      },
+      "verification": {
+        "status": "verified",
+        "events": 642,
+        "tail_hash": "a075977ed7679615ab2b10545ec16405765e03d5a8e666fc9330284aa84816cc",
+        "scientific_validity_checked": false
+      },
+      "delivered_and_consumed_messages": 128,
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 20260916,
+        "agent_id": "a00017",
+        "source_event": "3301fe38-3f28-4fac-b655-669066f87346",
+        "candidate": "Synthetic candidate for a00017.r2",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "wall_seconds": 3.461408,
+      "arm": "X",
+      "graph": {
+        "logical_agents": 32,
+        "rounds": 3,
+        "edges_per_communicating_round": 64,
+        "cross_group_edges": 32,
+        "in_degree_range": [
+          2,
+          2
+        ],
+        "out_degree_range": [
+          2,
+          2
+        ],
+        "total_planned_messages": 128,
+        "canonical_call_slots": 96,
+        "graph_sha256": "06cb21c62f67078490b1754a3cbf634b8b657d79ea4bd09f3ded27fdd3cb084b"
+      },
+      "manifest_sha256": "bbb4bd7d7fe3b6aa169462b91f5599e8d3dcf132ad6172ebb58bb03a2e0fb812"
+    }
+  ],
+  "large_plan": {
+    "schema_version": "1.0",
+    "scope": "conditional-arithmetic-plan; not admission enforcement",
+    "manifest_sha256": "d68b41382fd1ff34bcf5d4a8e4b5a7d5ec4e86e6819bf38c60cec9286ec10650",
+    "graph": {
+      "logical_agents": 10000,
+      "rounds": 3,
+      "edges_per_communicating_round": 20000,
+      "cross_group_edges": 10000,
+      "in_degree_range": [
+        2,
+        2
+      ],
+      "out_degree_range": [
+        2,
+        2
+      ],
+      "total_planned_messages": 40000,
+      "canonical_call_slots": 30000,
+      "graph_sha256": "993ed0be979046b92cd1392816224555bd72c233f9f9889a015e58efef821e95"
+    },
+    "logical_population": 10000,
+    "client_inflight_cap": 4,
+    "gpu_active_sequences": null,
+    "max_attempts_total": 90000,
+    "max_output_tokens_all_attempts": 46080000,
+    "prompt_token_cap_per_attempt": 4096,
+    "max_total_tokens_all_attempts": 414720000,
+    "scale_regime": "fixed-per-agent-slots; total-budget-grows-with-reference-N",
+    "allocation_unit": "population-run; never one GPU allocation per agent",
+    "single_host_local_journal": true,
+    "live_launch_ready": false,
+    "missing_gates": [
+      "site/model/container attestation",
+      "authorized compute ceiling",
+      "atomic whole-run budget reservation",
+      "supervised workers and deadlines",
+      "verified evaluator isolation",
+      "concurrency and prompt-length calibration"
+    ],
+    "manifest_journal_acceptance": {
+      "status": "verified",
+      "events": 1,
+      "tail_hash": "a99fea22d903f8c8ce6454b831b615e2347254401c31d39d7d45c25f46663a71",
+      "scientific_validity_checked": false
+    },
+    "executed_steps": 0
+  },
+  "math_fixture_checks": [
+    {
+      "task_id": "poly-square",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "155d225c61489ebc5420a436855bd0d33dd23704801d4109628537d372b4931a",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: poly-square",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "poly-square",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "dba2551b6e77d139729a9513c93bcd47c6864170353cc9ec7179ffc864462163",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: poly-square",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "poly-difference",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "d7c2410e469dcaa4edcb83a612061ea4181ed536214edb986be6f31af2bf65a0",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: poly-difference",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "poly-difference",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "91f5d935f161b1937dd39818071cf054ca64baa018bc7ec838ac799ec49dff89",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: poly-difference",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "integral-cubic",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "5e3214ef2db927903df892cc9aeeb21ed55750ea539e715b099dddc99e2a5a82",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: integral-cubic",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "integral-cubic",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "36225e739c98a644b9ebfb308c8e174ef789d183512bdd2690c8e02af868fbc7",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-cubic",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "integral-rational",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "92b75d4bbe186d57378223f9c0578045d5ef2a0e59ab773081e6759d57fedce9",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "integral-rational",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "602fda4967ccef3758deaa010f12d88c39922a0ab8a9fb49173d4c9334a99395",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "bezout",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "654517897f441b6c8b2f7368c6b516968f3c482f67f4ab9a9c5b1f7670a6757d",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: bezout",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "bezout",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "4f06dd537d97b204043a39cc6a8469ae594f7ed0adf2fa79fd6dfd6802eb6839",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: bezout",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "prime-counterexample",
+      "fixture_kind": "valid-fixture",
+      "certificate_sha256": "824d966e6534422ea4b10e49259dd33960bf5778001a3de3ba705cc3cb822977",
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      }
+    },
+    {
+      "task_id": "prime-counterexample",
+      "fixture_kind": "invalid-fixture",
+      "certificate_sha256": "85766cf73af1e8701dc647a7e52e9786e3666380ce3e6504bd3d0889a7e38c44",
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      }
+    }
+  ],
+  "planned_population_runs": 72,
+  "actual_model_calls": 0,
+  "actual_cluster_jobs": 0,
+  "organization_effect_estimated": false,
+  "frontier_proof_verified": false,
+  "limitations": [
+    "No model-generated mathematical answers evaluated",
+    "Public algebra controls are evaluator fixtures, not held-out performance",
+    "10K run only compiled and journal-admitted; no 10K inference or routing execution here",
+    "Global token/GPU budget admission and cluster supervision remain unimplemented"
+  ],
+  "development_corrections": [
+    "Initial integration test failed on verifier valid/status API mismatch; corrected before successful evidence run"
+  ]
+}

@@ -1,0 +1,51 @@
+test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok
+test_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok
+test_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok
+test_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok
+test_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok
+test_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok
+test_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok
+test_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok
+test_alternative_certificates_and_global_identity (test_organization_design.ExactControlTests.test_alternative_certificates_and_global_identity) ... ok
+test_every_public_task_accepts_an_exact_witness (test_organization_design.ExactControlTests.test_every_public_task_accepts_an_exact_witness) ... ok
+test_rejects_plausible_wrong_mathematics (test_organization_design.ExactControlTests.test_rejects_plausible_wrong_mathematics) ... ok
+test_untrusted_schema_and_overclaims (test_organization_design.ExactControlTests.test_untrusted_schema_and_overclaims) ... ok
+test_budget_bounds_include_retries_and_unknown_inputs (test_organization_design.OrganizationTests.test_budget_bounds_include_retries_and_unknown_inputs) ... ok
+test_connectivity_is_local_or_global_as_specified (test_organization_design.OrganizationTests.test_connectivity_is_local_or_global_as_specified) ... ok
+test_degree_budget_and_cross_group_contrast_at_four_scales (test_organization_design.OrganizationTests.test_degree_budget_and_cross_group_contrast_at_four_scales) ... ok
+test_determinism_permutation_and_no_final_messages (test_organization_design.OrganizationTests.test_determinism_permutation_and_no_final_messages) ... ok
+test_invalid_configuration_fails (test_organization_design.OrganizationTests.test_invalid_configuration_fails) ... ok
+test_manifest_event_size_is_checked_before_submission (test_organization_design.OrganizationTests.test_manifest_event_size_is_checked_before_submission) ... ok
+test_no_live_calls_and_no_early_selection (test_organization_design.OrganizationTests.test_no_live_calls_and_no_early_selection) ... ok
+test_randomized_pilot_preserves_paired_blocks (test_organization_design.OrganizationTests.test_randomized_pilot_preserves_paired_blocks) ... ok
+test_real_journal_inboxes_selection_and_resume (test_organization_design.OrganizationTests.test_real_journal_inboxes_selection_and_resume) ... ok
+test_selection_is_content_blind_and_repeatable (test_organization_design.OrganizationTests.test_selection_is_content_blind_and_repeatable) ... ok
+test_atomic_message_checkpoint_and_recorded_next_request (test_runtime.RuntimeTests.test_atomic_message_checkpoint_and_recorded_next_request) ... ok
+test_backup_restore_and_export_from_snapshot (test_runtime.RuntimeTests.test_backup_restore_and_export_from_snapshot) ... ok
+test_concurrent_processes_have_one_canonical_result_per_step (test_runtime.RuntimeTests.test_concurrent_processes_have_one_canonical_result_per_step) ... ok
+test_deleted_checkpoint_detected (test_runtime.RuntimeTests.test_deleted_checkpoint_detected) ... ok
+test_duplicate_receipt_and_conflicting_repeat (test_runtime.RuntimeTests.test_duplicate_receipt_and_conflicting_repeat) ... ok
+test_empty_and_truncated_outputs_preserved_but_not_promoted (test_runtime.RuntimeTests.test_empty_and_truncated_outputs_preserved_but_not_promoted) ... ok
+test_expired_worker_cannot_overwrite_new_attempt (test_runtime.RuntimeTests.test_expired_worker_cannot_overwrite_new_attempt) ... ok
+test_frozen_identity_and_no_secret_manifest (test_runtime.RuntimeTests.test_frozen_identity_and_no_secret_manifest) ... ok
+test_heartbeat_and_global_inflight_limit (test_runtime.RuntimeTests.test_heartbeat_and_global_inflight_limit) ... ok
+test_invalid_route_is_retained_and_rolls_back_checkpoint (test_runtime.RuntimeTests.test_invalid_route_is_retained_and_rolls_back_checkpoint) ... ok
+test_journal_is_append_only_and_detects_offline_tampering (test_runtime.RuntimeTests.test_journal_is_append_only_and_detects_offline_tampering) ... ok
+test_observation_idempotency_and_cross_run_parent_rejection (test_runtime.RuntimeTests.test_observation_idempotency_and_cross_run_parent_rejection) ... ok
+test_projection_tampering_detected (test_runtime.RuntimeTests.test_projection_tampering_detected) ... ok
+test_retry_exhaustion_and_unknown_usage (test_runtime.RuntimeTests.test_retry_exhaustion_and_unknown_usage) ... ok
+test_round_barrier_and_idempotent_materialization (test_runtime.RuntimeTests.test_round_barrier_and_idempotent_materialization) ... ok
+test_sigkill_after_claim (test_runtime.RuntimeTests.test_sigkill_after_claim) ... ok
+test_sigkill_after_commit_before_ack (test_runtime.RuntimeTests.test_sigkill_after_commit_before_ack) ... ok
+test_sigkill_inside_result_transaction (test_runtime.RuntimeTests.test_sigkill_inside_result_transaction) ... ok
+test_worker_identity_is_checked_before_claim (test_runtime.RuntimeTests.test_worker_identity_is_checked_before_claim) ... ok
+test_http_request_sends_seed_and_env_credential_without_journaling_it (test_transport.TransportTests.test_http_request_sends_seed_and_env_credential_without_journaling_it) ... ok
+test_http_retryable_and_terminal_statuses (test_transport.TransportTests.test_http_retryable_and_terminal_statuses) ... ok
+test_invalid_oversized_nonfinite_responses (test_transport.TransportTests.test_invalid_oversized_nonfinite_responses) ... ok
+test_redirect_is_not_followed (test_transport.TransportTests.test_redirect_is_not_followed) ... ok
+test_timeout_classification (test_transport.TransportTests.test_timeout_classification) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 14.667s
+
+OK
