@@ -1,0 +1,3454 @@
+{
+  "schema_version": "1.0",
+  "scope": "exploratory output-contract calibration; no population effect",
+  "experiment": {
+    "schema_version": "1.0",
+    "models": [
+      "deepseek-v4-flash-0731",
+      "glm-5.3-flash"
+    ],
+    "endpoint": "[INSTITUTIONAL_GATEWAY_REDACTED]",
+    "tasks": [
+      "integral-rational",
+      "prime-counterexample",
+      "ns-scaling-algebra-v1"
+    ],
+    "seed": 2026091602,
+    "frozen_design": {
+      "cases": 48,
+      "repeats_per_cell": 2,
+      "contracts": [
+        "original",
+        "certificate-only"
+      ],
+      "output_caps": [
+        512,
+        2048
+      ],
+      "client_concurrency": 1,
+      "calls_cap": 48,
+      "reserved_output_cap": 61440,
+      "wall_seconds": 900
+    },
+    "client_code_commit": "a03dad629c9bc9e9866e4ce01d8c864e594e8d5b",
+    "client_bundle_sha256": "45a54597c22ed9ac8bdeb72c650f72b31358e7744613a07dbc5596acda49fc2f"
+  },
+  "metadata": {
+    "deadline": 1789537022.3461611,
+    "started_at": 1789536122.3461614,
+    "job_id": "190045"
+  },
+  "planned_cases": 48,
+  "unstarted_cases": 0,
+  "results": [
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 415820404,
+        "case_id": "cal-c7227c6fad92004d58cc4649",
+        "order_key": "030f2a8832d9649aa48c9fce6110622d2f40f504c74efb84511eaa6a53d9186f"
+      },
+      "manifest_sha256": "42a2c15e8eab8e0d84877196f1692eef95f456306fd34086ee5bb84940862d1d",
+      "status": {
+        "run_id": "cal-c7227c6fad92004d58cc4649",
+        "fingerprint": "42a2c15e8eab8e0d84877196f1692eef95f456306fd34086ee5bb84940862d1d",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 455,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 415820404,
+        "agent_id": "a00000",
+        "source_event": "9f96f493-7284-4fb0-9c6f-e9c9cbb175cb",
+        "candidate": "{\"turn_index\":0,\"agent_id\":\"a00000\",\"timestamp\":1759204085.0,\"message\":{\"round_index\":0,\"type\":\"solution\",\"content\":{\"claim\":\"P(x) = x^5/5 - x^3/2 + x^2/2 (i.e., P(x) = (1/5)x^5 - (1/2)x^3 + (1/2)x^2 + 0)\",\"notes\":\"Antiderivative of x^3 - x; constant chosen so P(0)=0.\",\"verification\":\"d/dx [x^5/5 - x^3/2 + x^2/2] = x^4 - (3/2)x^2 + x... wait, recheck: derivative of x^5/5 is x^4, derivative of -x^3/2 is -3x^2/2, derivative of x^2/2 is x. This does NOT equal x^3 - x. Recheck integration: ∫(x^3 - x)dx = x^4/4 - x^2/2 + C. So P(x) = x^4/4 - x^2/2 + C, C=0. P(x) = x^4/4 - x^2/2.\"}},\"channel\":\"main\",\"recipient_ids\":[\"*\"],\"task_id\":\"antiderivative-001\",\"checkpoint\":null}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "5605568ee941bf84ec3bfe53b73c12d682b0864a9aada4fe05dbd0a0e30de6f8",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 10.4680858370848,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 302,
+        "total_tokens": 455
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "a05f474198154bf8898ad3479a4f5fd91ac96e41a1cc00a9b05610d1df068feb",
+      "raw_snapshot_sha256": "e870b3a213628804434c00d3a251f5478d7c6f23ada001b291981ec0b1911aab"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 524068102,
+        "case_id": "cal-28e283a7f182c65d1f539819",
+        "order_key": "03cfbaf930c0be94ecd199bca0ed8cd6f84766a7eec14c3616c742f21626a46d"
+      },
+      "manifest_sha256": "41182d1b29d96d1bedfe99b2a7927e99353941657dc0b57142f2361c4a4039e5",
+      "status": {
+        "run_id": "cal-28e283a7f182c65d1f539819",
+        "fingerprint": "41182d1b29d96d1bedfe99b2a7927e99353941657dc0b57142f2361c4a4039e5",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 253,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 524068102,
+        "agent_id": "a00000",
+        "source_event": "28f56762-107f-4eaa-95ad-0b5069c21795",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "379252173388b6f1d749bae2781b3bfcd94591aa68818439b8f519c474e9bbc4",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.40424031182192266,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 10,
+        "total_tokens": 253
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "be32011476af5a48efeaf3f0bc9e33cef8b1527dd13bcb4a564526ba72d60397",
+      "raw_snapshot_sha256": "25df61b568ae9cb36ad15c17031384333316b8fe08ad773304649be0c00c5d8d"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 2956224032,
+        "case_id": "cal-a2a5cee57ebd3976c965ec48",
+        "order_key": "0cbb952f119970fb4947f036cac10708fb7d46362e600bed56ec4d12b9531d8a"
+      },
+      "manifest_sha256": "c0e7eb579712b96f9254d6984c4e3d03b46b17424624c9b8b282bd0cfd9c8cee",
+      "status": {
+        "run_id": "cal-a2a5cee57ebd3976c965ec48",
+        "fingerprint": "c0e7eb579712b96f9254d6984c4e3d03b46b17424624c9b8b282bd0cfd9c8cee",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 168,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2956224032,
+        "agent_id": "a00000",
+        "source_event": "59122103-e58e-4d7b-b874-479343814a6e",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "2c36bc0354bc513f6f6dfeefd9ec7179e598608f0621520be58fab00584546b5",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3873307188041508,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 22,
+        "total_tokens": 168
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "b4e96123566b33ae0453c4153c5ac1bd3b36c3566d9ccfd6329c4749787138d2",
+      "raw_snapshot_sha256": "f8fa1d69908a1c2352e5f68d88c778fb91f4038be9806ce9aff333985701e11b"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 3385147558,
+        "case_id": "cal-1bc28dc644a714a2f8ac0abb",
+        "order_key": "0fa566cfb5d9ef7b789df6dcbe1450e6bc02c5224e6c2814f7bbb173330f5ae7"
+      },
+      "manifest_sha256": "764ddb3347465ebcdcc08a19a638d5f67b94ce878856fbbf900eee16a399762a",
+      "status": {
+        "run_id": "cal-1bc28dc644a714a2f8ac0abb",
+        "fingerprint": "764ddb3347465ebcdcc08a19a638d5f67b94ce878856fbbf900eee16a399762a",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 491,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3385147558,
+        "agent_id": "a00000",
+        "source_event": "17bfadd0-3325-4b1e-befa-b0737c1c9042",
+        "candidate": "{ \"a\": -1, \"b\": -2, \"c\": -2, \"d\": -3, \"e2\": 1, \"e3\": -2 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": -3,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "49555cef47674b7fe649de5736033ad2a19bad6bc5ace6fcba530a37bfc53687",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 7.147429215023294,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 40,
+        "total_tokens": 491
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "6f6c72432cf6cde532acceedd8c608fc1c63c1dc973caac1a1b891b2fea3b390",
+      "raw_snapshot_sha256": "0f96e126e161b6ad55450227607dcf465243e28c79e143520087eb4973d894f5"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 524068102,
+        "case_id": "cal-0103c438ff2aa4026b3b30be",
+        "order_key": "145e8fd32b3f4db559027794b676f6e8b86288c234e26e5d4d8d13db86c4dc77"
+      },
+      "manifest_sha256": "9f7c93a1c238ac418ba36ed6a0691bc324b618225855509d3c979ff17234a5dd",
+      "status": {
+        "run_id": "cal-0103c438ff2aa4026b3b30be",
+        "fingerprint": "9f7c93a1c238ac418ba36ed6a0691bc324b618225855509d3c979ff17234a5dd",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 253,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 524068102,
+        "agent_id": "a00000",
+        "source_event": "835bb987-a884-4b16-9c22-a7244eb8cff8",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "203f9108b0e1b04fee412b1c2a002285244afebb93de9fcb30607303fea520f4",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.2964520950336009,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 10,
+        "total_tokens": 253
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "ca193c25991b0709766c20609e0a0555a9184b83f8b008e86985c79d0f65333f",
+      "raw_snapshot_sha256": "77d0e36cd05c574c508fa7a8bb7866183445dfda9cf6de2ff8a2e1753aae8314"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 1018863731,
+        "case_id": "cal-6d2de143713f8fdc58b370e3",
+        "order_key": "1f3554bdd614f53a91b0ccbea49aeba5c72211d1b5348c375c73db1c02868f63"
+      },
+      "manifest_sha256": "d0f7c5c86d235ba4fe16819c17539cdf8c445d53af9434dbd83c623d3b1802b4",
+      "status": {
+        "run_id": "cal-6d2de143713f8fdc58b370e3",
+        "fingerprint": "d0f7c5c86d235ba4fe16819c17539cdf8c445d53af9434dbd83c623d3b1802b4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 171,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018863731,
+        "agent_id": "a00000",
+        "source_event": "fde898a1-dd15-463b-b524-fe923dd5dffd",
+        "candidate": "{  \n  \"n\": 40,  \n  \"d\": 41  \n}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "39f6659c29b8e77b73d238a3f0f33534c0ab7891617baca98e1e529a833466d9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.44867490394972265,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 19,
+        "total_tokens": 171
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "ead8bcfe8a12691dee8197a480071d6b19d6f25fabf7581b3611cae1dd3442c2",
+      "raw_snapshot_sha256": "fbcb5777df7e88483f403b3aa4105b5785e809930758429e5859c8cf2cb80865"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 4191587185,
+        "case_id": "cal-b199d1915de4985ae76afca6",
+        "order_key": "2746160e8128064e00d53e2078694fd890f65c530684b0927c36c91261036fac"
+      },
+      "manifest_sha256": "83b796180bb6dda8a9bbf60a4097301fe6ee707be92d0347bef9f2f56aae3adb",
+      "status": {
+        "run_id": "cal-b199d1915de4985ae76afca6",
+        "fingerprint": "83b796180bb6dda8a9bbf60a4097301fe6ee707be92d0347bef9f2f56aae3adb",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 267,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 4191587185,
+        "agent_id": "a00000",
+        "source_event": "b3621ce0-e143-407e-a88c-49ae65d96b81",
+        "candidate": "{  \"n\": 40,  \"d\": 41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "df92d1d32c8d533dfa2f23c9d9f4a63031d635c7987414b056e0521f2bfc524c",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3838954861275852,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 16,
+        "total_tokens": 267
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "8ad06dbd8612bf8430215027a4e73126588bc023af4ec8db54d3ba88aa043bda",
+      "raw_snapshot_sha256": "623841c84fa37c892513e1766806799a22c20464642e9e882313878b532d1463"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 2956224032,
+        "case_id": "cal-1aed56cdfcec13798487d052",
+        "order_key": "27e3eb4ded7319b17a8eab19cab1933898285b18b502edc92956588dcd2cc343"
+      },
+      "manifest_sha256": "b7a6bdea79de2bf28952fe21ca60c600d6f17c3d659f84d41e5b40ab1f97668d",
+      "status": {
+        "run_id": "cal-1aed56cdfcec13798487d052",
+        "fingerprint": "b7a6bdea79de2bf28952fe21ca60c600d6f17c3d659f84d41e5b40ab1f97668d",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 264,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2956224032,
+        "agent_id": "a00000",
+        "source_event": "e954ad29-c022-4b44-8d80-178929a443f9",
+        "candidate": "{\"coefficients\":[0,\"1/4\",0,\"-1/2\",0]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "1c10a7181325918e9020a6005b9031d1b4d538e600e7ed17ea028bea59f41a66",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3730293170083314,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 20,
+        "total_tokens": 264
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "faf113f044c9425c7a98fde250437c12aa979abe186d2895f4454648883c6da1",
+      "raw_snapshot_sha256": "29e42bbecdfc3b34b9b64d77208c82e24c9e8b6cabbaaa20eccfbb4d78b85324"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 1331918982,
+        "case_id": "cal-f13f37587308de12fa6d8267",
+        "order_key": "28d292aa0371fc270e5feaf0ab2be1672dfbe7920a5cce5331fffd1c2bd52a92"
+      },
+      "manifest_sha256": "73a65f88b5c99f5d1ccef9da866c9eda7e6617713d5a056ab331287c0b806ed0",
+      "status": {
+        "run_id": "cal-f13f37587308de12fa6d8267",
+        "fingerprint": "73a65f88b5c99f5d1ccef9da866c9eda7e6617713d5a056ab331287c0b806ed0",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 1220,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1331918982,
+        "agent_id": "a00000",
+        "source_event": "96ef401d-19e7-48c8-a1d6-dcad02b4c9c4",
+        "candidate": "{\"system\":{\"name\":\"Certificate Output Contract\",\"version\":\"1.0\",\"binding\":true,\"priority\":100,\"description\":\"Governs the format of final responses when a certificate schema is specified by the task. The contract mandates that exactly one JSON object with exactly the requested fields be returned, with no additional commentary, reasoning, Markdown, or nested JSON strings.\",\"rules\":[{\"id\":\"COC-1\",\"rule\":\"Return exactly one JSON object with exactly the fields requested by the task.\",\"enforcement\":\"hard\"},{\"id\":\"COC-2\",\"rule\":\"Do not add reasoning, commentary, Markdown, extra fields, or a JSON string containing another JSON object.\",\"enforcement\":\"hard\"},{\"id\":\"COC-3\",\"rule\":\"When polynomial coefficients are requested in ascending powers, array element k is the coefficient of x^k; retain required zero entries.\",\"enforcement\":\"hard\"},{\"id\":\"COC-4\",\"rule\":\"Express rational coefficients as integers or fraction strings, not floating-point approximations.\",\"enforcement\":\"hard\"},{\"id\":\"COC-5\",\"rule\":\"Use actual derived values, never placeholder type names.\",\"enforcement\":\"hard\"}]},\"user\":{\"task\":\"Find P in Q[x] with P(0)=0 and P'(x)=x^3-x. Return JSON {\\\"coefficients\\\":[c0,c1,...]} in ascending powers; use integers or rational strings.\",\"constraints\":{\"field\":\"Q[x]\",\"conditions\":[\"P(0)=0\",\"P'(x)=x^3-x\"]},\"output_schema\":{\"type\":\"json_object\",\"fields\":{\"coefficients\":{\"type\":\"array\",\"elements\":\"integers or rational strings\",\"order\":\"ascending powers of x\"}}}},\"analysis\":{\"step_1_problem_setup\":\"We seek a polynomial P(x) = c0 + c1*x + c2*x^2 + c3*x^3 + c4*x^4 + ... over Q satisfying P(0)=0 and P'(x)=x^3-x.\",\"step_2_derivative_computation\":\"P'(x) = c1 + 2*c2*x + 3*c3*x^2 + 4*c4*x^3 + 5*c5*x^5 + ... . For P'(x) to equal x^3 - x, all coefficients of P'(x) except those of x and x^3 must vanish, and the target coefficients must match.\",\"step_3_matching_coefficients\":{\"x^0\":\"c1 = 0\",\"x^1\":\"2*c2 = -1 => c2 = -1/2\",\"x^2\":\"3*c3 = 0 => c3 = 0\",\"x^3\":\"4*c4 = 1 => c4 = 1/4\",\"x^k for k>=4\":\"(k+1)*c_{k+1} = 0 => c_{k+1} = 0 for all k >= 4, so all higher coefficients vanish.\"},\"step_4_initial_condition\":\"P(0) = c0 = 0, so c0 = 0.\",\"step_5_assemble_polynomial\":\"P(x) = 0 + 0*x + (-1/2)*x^2 + 0*x^3 + (1/4)*x^4 = x^4/4 - x^2/2.\",\"step_6_verification\":{\"derivative_check\":\"d/dx (x^4/4 - x^2/2) = x^3 - x. Confirmed.\",\"initial_condition_check\":\"P(0) = 0^4/4 - 0^2/2 = 0. Confirmed.\",\"field_check\":\"Coefficients -1/2 and 1/4 are rational, so P ∈ Q[x]. Confirmed.\",\"uniqueness_note\":\"Any two antiderivatives differ by a constant; P(0)=0 forces that constant to be 0, so P is unique.\"},\"step_7_coefficient_array\":{\"format\":\"ascending powers, element k is coefficient of x^k\",\"element_0\":\"0\",\"element_1\":\"0\",\"element_2\":\"-1/2\",\"element_3\":\"0\",\"element_4\":\"1/4\",\"trailing_entries\":\"All coefficients beyond degree 4 are zero; the natural representation terminates at index 4. Zero entries at indices 0 and 3 are retained per rule COC-3.\",\"rational_encoding\":\"Per rule COC-4, rational coefficients are expressed as fraction strings: '-1/2' and '1/4'. Integer coefficients 0 are expressed as integers.\"}},\"response\":{\"coefficients\":[0,0,\"-1/2\",0,\"1/4\"]}}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "5343f812898c294806cf7b7b02b2fd3fb7471e4f030f4dcaae4b55140ea1fdee",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 9.195612866897136,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 968,
+        "total_tokens": 1220
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "d12ce142f7cbe6aea7bd1e02b31622730f3f100bfcb923b70a872e923fe35029",
+      "raw_snapshot_sha256": "fcb03a0ac0f6414e93668e992160bd8b58bae1de583b041d1e9cdd8aca854d66"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 415820404,
+        "case_id": "cal-701c216f2f035e17f19a20fe",
+        "order_key": "2a7da5fb283d585a82cc5164e2e574699035e76dc25dd6cb643c9b622d5ce794"
+      },
+      "manifest_sha256": "b8b17f11464e18228d549576e9acef020226f169a4559d6031a0dc21516a5886",
+      "status": {
+        "run_id": "cal-701c216f2f035e17f19a20fe",
+        "fingerprint": "b8b17f11464e18228d549576e9acef020226f169a4559d6031a0dc21516a5886",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 316,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 415820404,
+        "agent_id": "a00000",
+        "source_event": "a52df69b-7f65-469f-b733-7754fa6b1d75",
+        "candidate": "{\"turn_index\":0,\"role\":\"user\",\"content\":\"Find P in Q[x] with P(0)=0 and P'(x)=x^3-x. Return JSON {\\\"coefficients\\\":[c0,c1,...]} in ascending powers; use integers or rational strings.\",\"peer_context\":null}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "daa9a2c3f2c9bb895409bc7c180ab353b49bb124c3aa43347746aa0409679de5",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 9.831096407026052,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 64,
+        "total_tokens": 316
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "ecc899ffc46a70b92d54741f19d276bd83630b32c7ae7c0741c722a1684d927f",
+      "raw_snapshot_sha256": "be7fb7e4beaf407c9d5d16d22dc1018483fbe3e0938839b90d3bd84e09645138"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 1018603250,
+        "case_id": "cal-0bffa94a77022a767efb85e8",
+        "order_key": "2ed4588b600f44ac831b104841dbc7e72f39f14fc20d7200623b331cbe2d20ca"
+      },
+      "manifest_sha256": "ed2e964074559f0a2caa081d3e1006ac4e3983e950b5b38ba2388d276041ef4f",
+      "status": {
+        "run_id": "cal-0bffa94a77022a767efb85e8",
+        "fingerprint": "ed2e964074559f0a2caa081d3e1006ac4e3983e950b5b38ba2388d276041ef4f",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 253,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018603250,
+        "agent_id": "a00000",
+        "source_event": "6388167a-ff3b-4f94-a018-64f2dc65d630",
+        "candidate": "{\"n\":41,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "719ac0aa5c891050b4bd9c264dc8b3f61b22c7a9a671f591ef35a466167822a7",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3015085970982909,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 10,
+        "total_tokens": 253
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "d8319768e38f587dff95d450c340d15b5bbf87d2145c94355c955f9daa2f7bf8",
+      "raw_snapshot_sha256": "017ef5ac5acf380cd82fd7620d72fff245274f2da626caf9b20fd31cdda97cca"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 1094611084,
+        "case_id": "cal-add78069f7edcfb73146a9b5",
+        "order_key": "30d5a6cc88c4d39d855c5045692406b8192cb2650abcdc24a8694e127b2e2299"
+      },
+      "manifest_sha256": "97f65a54319b455d8ef27e1e29e55ec93b82a6529a13605950786377b9a9b3b4",
+      "status": {
+        "run_id": "cal-add78069f7edcfb73146a9b5",
+        "fingerprint": "97f65a54319b455d8ef27e1e29e55ec93b82a6529a13605950786377b9a9b3b4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 480,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1094611084,
+        "agent_id": "a00000",
+        "source_event": "391bd470-7a54-4cc5-b6e6-8990846a8f32",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":0}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "e249b87c1809972149e5c93e66e90d1f0e221d8ac4f74b0b8d89130242682f5a",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.45651334105059505,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 29,
+        "total_tokens": 480
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "423ee77e3a24658d58cb460f307a3063434f8f0a231cecf3b2939b93f5acfdb1",
+      "raw_snapshot_sha256": "2730e4dc09c11167cb4257133a5802683a7ea5f6c7120cd522b5fa18b77b6641"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 2478463786,
+        "case_id": "cal-076e069fb3b07d7992447c5f",
+        "order_key": "35f50dd8652ea838e1b1bdafee90b53a3fec9752ccb81fdcaa856b6d57485a44"
+      },
+      "manifest_sha256": "190aa6eca2c18c584a41834a93e91befaa9d813309cf164ff95c7f736f321873",
+      "status": {
+        "run_id": "cal-076e069fb3b07d7992447c5f",
+        "fingerprint": "190aa6eca2c18c584a41834a93e91befaa9d813309cf164ff95c7f736f321873",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 392,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2478463786,
+        "agent_id": "a00000",
+        "source_event": "35830abb-c013-4072-853f-b52660663c81",
+        "candidate": "{ \"a\": -1, \"b\": 2, \"c\": -3, \"d\": -5, \"e2\": -1, \"e3\": -2 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": 1,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -2,
+          "force": -5
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "b2e50cc7f916f9cd3b68af02ba22dbabbe54aeefc3113ffa81cc3161cf82aa8f",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 1.0907084178179502,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 40,
+        "total_tokens": 392
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "3c02fa859feb475ca36828f796acfa62d2b32663baedac808d9089d8bfccb2f2",
+      "raw_snapshot_sha256": "51a2ddc513abef939688c9a52d1e1d90700fe9ae406d1ea528d5c85f2eec046f"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 4191587185,
+        "case_id": "cal-07d07e6895220c17bbf352d7",
+        "order_key": "4550e6ca7722fca690974d80c397e64e789e6d7a01b37abd9723fbe6e3a1c5b6"
+      },
+      "manifest_sha256": "92c8dd3a24396f645dd5a2756d3795fadc8c709f79f6d99a0c0902c314ce1ec4",
+      "status": {
+        "run_id": "cal-07d07e6895220c17bbf352d7",
+        "fingerprint": "92c8dd3a24396f645dd5a2756d3795fadc8c709f79f6d99a0c0902c314ce1ec4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 205,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 4191587185,
+        "agent_id": "a00000",
+        "source_event": "1ec376c8-27f5-4ed5-ab64-789c48ce3ab4",
+        "candidate": "{ \"type\": \"refute\", \"task\": \"for every integer n>=0, n^2+n+41 is prime\", \"response_format\": {\"json\": {\"n\": \"integer\", \"d\": \"proper divisor of displayed value\"}} }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "bd8ee44843b858cdc9450c8fb2d5defd908d25d7696d00e4010e71b45a5b5127",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.8657384461257607,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 53,
+        "total_tokens": 205
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "22712bbe01941540f27f7dc6f2c239d61f85945da7c20ee5ef08772bd731032f",
+      "raw_snapshot_sha256": "da3e55af26e04c341db8e59a35af1fa8ad5a0cd2a73464304560cf530ce1b94f"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 1018603250,
+        "case_id": "cal-b3efa4592de26d9148015d9d",
+        "order_key": "4d14ac1014596b22127ec00506d8c6c8ced60b3a149d723c43b0443bf531b398"
+      },
+      "manifest_sha256": "fc4cf301516af80160f3eb5f926652969c81bb8129674dab2ea4fcbdce42ce5f",
+      "status": {
+        "run_id": "cal-b3efa4592de26d9148015d9d",
+        "fingerprint": "fc4cf301516af80160f3eb5f926652969c81bb8129674dab2ea4fcbdce42ce5f",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 155,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018603250,
+        "agent_id": "a00000",
+        "source_event": "4493a658-181d-4b7e-9e0b-6c6a2f44ae5f",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "598704d9de458004f831459613463912022d69199ac4a2d58d9af3605aefdfdc",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.295544734923169,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 10,
+        "total_tokens": 155
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "3bb984953e73d6d89da1b75880c7434d031c73669d69eb7c825badcec5389aa6",
+      "raw_snapshot_sha256": "52e75309251ecce24b359f73b32f5331569248f8a800cc178104daeb0ad2e93c"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 1018603250,
+        "case_id": "cal-754ee253e0a00b27abd79278",
+        "order_key": "51c94caf8eb209c4eb01f2e51645900c2500b9a5963d19e87b7d7845d5d4a9fd"
+      },
+      "manifest_sha256": "adef417938b14fe63b76817001ab8936f7ef262785dbecec6787533d6d416b33",
+      "status": {
+        "run_id": "cal-754ee253e0a00b27abd79278",
+        "fingerprint": "adef417938b14fe63b76817001ab8936f7ef262785dbecec6787533d6d416b33",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 155,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018603250,
+        "agent_id": "a00000",
+        "source_event": "26b33a99-304c-423e-bacb-ecc56b9aa2d4",
+        "candidate": "{\"n\":41,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "b34a40e8e8bb6a1ff11f509ba7614041da3fd3e6f9ddf8d911e4cfc7b34b7c1d",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.2932355450466275,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 10,
+        "total_tokens": 155
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "bd203fb571411938644e1f84dace6a56dd78d6f5698d85d425975bae870386c9",
+      "raw_snapshot_sha256": "9fde2b87927a63e574179c0ed0f51675a59698b1fdc9c640a58abef19eac2eb0"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 3385147558,
+        "case_id": "cal-b0998118fc8430f616fe441b",
+        "order_key": "5431b59bd48823f87d288ca5e66965813d84f386d1e85b940ef11b38d292b915"
+      },
+      "manifest_sha256": "c6986c517f6ee9f30f75ee535673560b8828747b7e87b4b36b55a56d7a1ecc32",
+      "status": {
+        "run_id": "cal-b0998118fc8430f616fe441b",
+        "fingerprint": "c6986c517f6ee9f30f75ee535673560b8828747b7e87b4b36b55a56d7a1ecc32",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 392,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3385147558,
+        "agent_id": "a00000",
+        "source_event": "01c5be01-5750-4eeb-b2b4-21f60989771c",
+        "candidate": "{ \"a\": -1, \"b\": 2, \"c\": -4, \"d\": -5, \"e2\": 1, \"e3\": -1 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 1,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -3,
+          "force": -5
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "2ff0743f990680ef41b07c302d591061408f45e5a6f96c9319fe3e801a5cb0d5",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5853549290914088,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 40,
+        "total_tokens": 392
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "660c74b6f40b806162277e62e21d10e235639a279ede420bd99fddedea175083",
+      "raw_snapshot_sha256": "5fbc74bce49ac896cab6ad5138f687ef838ecf1640ac01b83f7681eeae02c753"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 51281067,
+        "case_id": "cal-733e53b40a8e4bbbeda6078e",
+        "order_key": "593b5017e12a4828c066ee773ad11814e8db393444f1e22a6b85b27e10e800cf"
+      },
+      "manifest_sha256": "9ff3b18bca3b7719e2e07f78a44c4a7614626f1fb12b74954f2aaf086d6e6842",
+      "status": {
+        "run_id": "cal-733e53b40a8e4bbbeda6078e",
+        "fingerprint": "9ff3b18bca3b7719e2e07f78a44c4a7614626f1fb12b74954f2aaf086d6e6842",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 168,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 51281067,
+        "agent_id": "a00000",
+        "source_event": "08f09ed6-bd4f-44a7-a945-17cf79ad9153",
+        "candidate": "{\"coefficients\":[\"0\",\"1/4\",\"0\",\"-1/2\",\"0\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "907bad63826ff61f9ee8d60821d0d77b91f6a10c9b5f4abc157cba0423c0dd29",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.38716504303738475,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 22,
+        "total_tokens": 168
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "4212e3e5ba6db18803ad938b4277160652152b4d2b0d9e000f5a53db1288d60e",
+      "raw_snapshot_sha256": "2aa460b5279287ab7df63df6beae17c1ac2d0db7ed77b4081967599b163281ea"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 51281067,
+        "case_id": "cal-a334b08fd5aefd132c05f44e",
+        "order_key": "6808d8b57502a9290a63610647ceec36589a0fe350739673f06b626c03a25dd6"
+      },
+      "manifest_sha256": "baf4e0f9f85edc050f9556d4a1d59187a34f466aa7f891714426057d4afa409b",
+      "status": {
+        "run_id": "cal-a334b08fd5aefd132c05f44e",
+        "fingerprint": "baf4e0f9f85edc050f9556d4a1d59187a34f466aa7f891714426057d4afa409b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 266,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 51281067,
+        "agent_id": "a00000",
+        "source_event": "309f2d96-fc89-4c2a-ab57-d61ee694d03d",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "2732fae9822a7bc651b6c944101edcf7ebb23fab1a6941c8f3abc50b8e828cea",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3871466729324311,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 22,
+        "total_tokens": 266
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "cc3387caaa8c37115386c9a58ef8804ff0964f50cdbe9bb92a0f67893028af1e",
+      "raw_snapshot_sha256": "03ac8908f4642a964bd541803061d6fde645070f8491e3b170382a5d5847e04a"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 415820404,
+        "case_id": "cal-4bebf03f1f0db5705418339f",
+        "order_key": "6fa9f091292c0ddc57123c58670eadef42b3096728c49edf9aedb15ecc348c0f"
+      },
+      "manifest_sha256": "9756a636d62cbebcc9811b00ff8bfd168b3d631f3d6b0bc0e73ede47d9d1de09",
+      "status": {
+        "run_id": "cal-4bebf03f1f0db5705418339f",
+        "fingerprint": "9756a636d62cbebcc9811b00ff8bfd168b3d631f3d6b0bc0e73ede47d9d1de09",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 665,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "3917c942a3e18b9d63cf96e9015442979613bebb41c3d878bf48baebff62ceb3",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 13.063930917996913,
+      "diagnostic": "TRUNCATED_GENERATION",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 512,
+        "total_tokens": 665
+      },
+      "finish_reasons": {
+        "length": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "6fc10929478f5f9d04aa16f3e194e30ce8a525e395abe210c05d72c624e468e8",
+      "raw_snapshot_sha256": "463cc5f97040e777457ee317b446c5ec57bd244583acc10e1917fc42d2141579"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 1018863731,
+        "case_id": "cal-1fc39f110d7903d94e4e237f",
+        "order_key": "73731f87ae5cf48ea30af0506080482910d46626b83a19a8233320b1b9487046"
+      },
+      "manifest_sha256": "b3eb14f228ceec6ebe7ce91c86d064a524dc2c1ce5145683fbac505131da893e",
+      "status": {
+        "run_id": "cal-1fc39f110d7903d94e4e237f",
+        "fingerprint": "b3eb14f228ceec6ebe7ce91c86d064a524dc2c1ce5145683fbac505131da893e",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 171,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018863731,
+        "agent_id": "a00000",
+        "source_event": "61c2630c-469a-4538-ad09-dae340c24896",
+        "candidate": "{  \n  \"n\": 40,  \n  \"d\": 41  \n}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "8b9c3e36eb612b619654352d2064ae9b5bcd2fb1c059ee95fc470f54e4b9efa5",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4148543148767203,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 19,
+        "total_tokens": 171
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "e4a74f268c6af2bc419ce06da853e21e2bb0cca9db2a6f8ac565d5cd154ac514",
+      "raw_snapshot_sha256": "355ec5b605ea58b6bdff025a54578eaeff62be8feaa16317e4cce8c87ca20854"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 524068102,
+        "case_id": "cal-684e7bf00c42e98a0337ddba",
+        "order_key": "78aa900c6967ca3aef09e3c4ae5127123962a37f4698506a022b356ad5cc87e9"
+      },
+      "manifest_sha256": "bb654cd279cf986561ba53e07e6767dbd963975adbde052e6a16118679685b94",
+      "status": {
+        "run_id": "cal-684e7bf00c42e98a0337ddba",
+        "fingerprint": "bb654cd279cf986561ba53e07e6767dbd963975adbde052e6a16118679685b94",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 155,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 524068102,
+        "agent_id": "a00000",
+        "source_event": "be50be49-0156-44f2-8609-2365fb9aec97",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "5705b4c5e6674242e7ad671adfc3f0a7fcf00165fb5d78b4e36d679f66a5194e",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3779737090226263,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 10,
+        "total_tokens": 155
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "69e3a3d6aaa1e768c36a2087d14247161c506d05d8d926f5ab16adffd73955c9",
+      "raw_snapshot_sha256": "dbcd9c00324ef9daf49fb2abdca1786b6fe88235b84c140708a81152e0a1f5dd"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 4191587185,
+        "case_id": "cal-7bf88e5c3fb5fa136679ed83",
+        "order_key": "7a116d6636a2fff6bcdd8469c72c181dec6b0d0eff0453740ff733efb9c576d0"
+      },
+      "manifest_sha256": "805bc87c1d92d939ca7e1890f5f3f7b1c463ca2e84d8859a61158a74f2fa4ab3",
+      "status": {
+        "run_id": "cal-7bf88e5c3fb5fa136679ed83",
+        "fingerprint": "805bc87c1d92d939ca7e1890f5f3f7b1c463ca2e84d8859a61158a74f2fa4ab3",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 267,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 4191587185,
+        "agent_id": "a00000",
+        "source_event": "8d5b0aa3-a08a-461d-a5fa-8b01cd0f2410",
+        "candidate": "{  \"n\": 40,  \"d\": 41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "2f7fcf15b45eca5f26faaa7b8db4654d0950c401fe36bc2e290633930a82f03e",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.9479561941698194,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 16,
+        "total_tokens": 267
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "faa03bb70a9efb0c4d1f115ca95b2041804603a96f9389be4ed4737008fa5be4",
+      "raw_snapshot_sha256": "075eab9424a9c1270f52d5ae899998d0118fe7e45f22e8ad80644c221c0ee940"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 3385147558,
+        "case_id": "cal-d2b7717d2be7761c061ec4c9",
+        "order_key": "7b20f901ea850642d5e012a1f97bf0f7f3b8e1922cdb321dffa008a47ab2dfda"
+      },
+      "manifest_sha256": "3066720a0dc1da6fddd8e2496a6b4afb3f20edaa0c68de4d75613b7552d38cb6",
+      "status": {
+        "run_id": "cal-d2b7717d2be7761c061ec4c9",
+        "fingerprint": "3066720a0dc1da6fddd8e2496a6b4afb3f20edaa0c68de4d75613b7552d38cb6",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 392,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3385147558,
+        "agent_id": "a00000",
+        "source_event": "fbfb3c52-f83b-43c2-882d-68ebb62cdb00",
+        "candidate": "{ \"a\": -1, \"b\": 2, \"c\": -2, \"d\": -3, \"e2\": 1, \"e3\": -1 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 1,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "a1f771c28ed7b37e29ec44c210399440361cfb5929e95c2bce6bb6ff36aad3c9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5899032969027758,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 40,
+        "total_tokens": 392
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "1d82add5743b6924607df98b6c2703dda04b963175a2753683bf7531a54e1f99",
+      "raw_snapshot_sha256": "69b2ac2c05b96f6d6689a35745fbcae3ef193fac969b819bd5a3112385175f0c"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 2478463786,
+        "case_id": "cal-a43fb369026505b1fe034cbb",
+        "order_key": "7d6587f4b3686a78f8e7127c2321e3220ed21c7214444f56f1ac69456e2525e9"
+      },
+      "manifest_sha256": "0ede5dbfa41203e0c401646ffab8550fdb75772d8dc075d7e365323eaaec6e7c",
+      "status": {
+        "run_id": "cal-a43fb369026505b1fe034cbb",
+        "fingerprint": "0ede5dbfa41203e0c401646ffab8550fdb75772d8dc075d7e365323eaaec6e7c",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 479,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2478463786,
+        "agent_id": "a00000",
+        "source_event": "6cee1f6f-b5ea-45e5-849c-7c87cee5bd1a",
+        "candidate": "{\"a\":-1,\"b\":-2,\"c\":-2,\"d\":-5,\"e2\":-1,\"e3\":-1}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": -3,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -5
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "282af1f793ea5fca7caac957b942508934fcb6dd09b6a8a39ee360198e8f2d6e",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.49239771207794547,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 28,
+        "total_tokens": 479
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "dbcab4a524d89975e1c0b90cbe20b72894ba079ed95b78254dc17df3a4abba38",
+      "raw_snapshot_sha256": "98ec44b6016fac821abe2325418dee61b9ed2ee1f19e277ca745e19f1da1bee4"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 1094611084,
+        "case_id": "cal-c5184a99cd34debfaa801df6",
+        "order_key": "855bdafc6c79b5a6a0c316eaa9c99c0e0c2f973184292ba74cc1f0c23e244ab3"
+      },
+      "manifest_sha256": "84c3c6d5f2cfc433baa1b1f40a0eca3d8a219a906229edda28255d6e6d2d88db",
+      "status": {
+        "run_id": "cal-c5184a99cd34debfaa801df6",
+        "fingerprint": "84c3c6d5f2cfc433baa1b1f40a0eca3d8a219a906229edda28255d6e6d2d88db",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 382,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1094611084,
+        "agent_id": "a00000",
+        "source_event": "f2594e24-7d26-43cf-9b6b-0ab94ec6f029",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":1}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "677a7b9988e41b4ea95e8f83160f69ee722d3f687d34fddcea288d939af48935",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.44527410599403083,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 29,
+        "total_tokens": 382
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "cf47d57b8d7844830cf83e1faa6ffebd2dd160be271844d941cc9fe9de9b04b2",
+      "raw_snapshot_sha256": "6b81fb3ee43e1ea4f64d2d3df1063c5ed8688759998ee8eed21d83a962a2ba71"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 51281067,
+        "case_id": "cal-a3da55f4587d5f382fef6c5e",
+        "order_key": "95e45912b764bdd6f53349f15a4028df5d96f96c69894730077fc9d4842c2895"
+      },
+      "manifest_sha256": "a8ab90ed87de4704cef4cf7a6a095b73f47f3163b72eef0630a807031c40af9f",
+      "status": {
+        "run_id": "cal-a3da55f4587d5f382fef6c5e",
+        "fingerprint": "a8ab90ed87de4704cef4cf7a6a095b73f47f3163b72eef0630a807031c40af9f",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 170,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 51281067,
+        "agent_id": "a00000",
+        "source_event": "3967a354-ef75-4a6b-b66e-7d6820185a5b",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"0\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "ba6654f07e4f9e8da9946b84d01c3981d1857dd6db1c4d77bb77c976cb9c55c9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4035631681326777,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 24,
+        "total_tokens": 170
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "cae3fcd37cfdf112d1df7c296a13d33d19a4c6903e5fdd7d4745a799f385c803",
+      "raw_snapshot_sha256": "d241354745f5cac543d654c316b3c00ca255c21420e31625374a47707c4f6d0d"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 2478463786,
+        "case_id": "cal-18397af369ee98eea4efb481",
+        "order_key": "95f8e23a6c174c23b5ac6727ae181a5b8d4d6d21c8880322b8c8bc051ec81a0b"
+      },
+      "manifest_sha256": "e7810848aa0f02e01abb06d5238b6a3d15e08ca3f84831c14a1d7da957aee318",
+      "status": {
+        "run_id": "cal-18397af369ee98eea4efb481",
+        "fingerprint": "e7810848aa0f02e01abb06d5238b6a3d15e08ca3f84831c14a1d7da957aee318",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 399,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2478463786,
+        "agent_id": "a00000",
+        "source_event": "6ac09417-9e4e-49c3-9704-70a402958d04",
+        "candidate": "{\n  \"a\": -1,\n  \"b\": -2,\n  \"c\": -2,\n  \"d\": -3,\n  \"e2\": 1,\n  \"e3\": -1\n}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": -3,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "fda29013e587ef292716730f3767f1306dcdd44dcbcc4e266fc5a079529bf770",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.8043650209438056,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 47,
+        "total_tokens": 399
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "234f21472fbf011c1a75d0603f5c3134a3fd3ddab42ea427c3b928f9f5d2f86b",
+      "raw_snapshot_sha256": "700ffd70699714a5d058b716d8d87a09f7bc0262a2c8255d391fefae701c999f"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 4191587185,
+        "case_id": "cal-53005b5cab6b06894abb04ca",
+        "order_key": "9bf0cc45ef5f0995be5a213fd234188eb5676bb2b4a8fc615997e813aef18e05"
+      },
+      "manifest_sha256": "f1db2ff07d7b72df43111a12330a320eb971cae0b0ab58a2319d8e6d45f6f030",
+      "status": {
+        "run_id": "cal-53005b5cab6b06894abb04ca",
+        "fingerprint": "f1db2ff07d7b72df43111a12330a320eb971cae0b0ab58a2319d8e6d45f6f030",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 382,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 4191587185,
+        "agent_id": "a00000",
+        "source_event": "d50057c4-9645-4432-a9ca-d1fb6cb041f2",
+        "candidate": "{ \"type\": \"refutation\", \"target_claim\": \"For every integer n >= 0, n^2 + n + 41 is prime.\", \"requested_output\": \"JSON {\\\"n\\\": integer, \\\"d\\\": integer} where d is a proper divisor of the displayed value n^2 + n + 41.\", \"status\": \"resolved\", \"certificate\": { \"n\": 40, \"value\": 1681, \"d\": 41, \"verification\": \"n^2 + n + 41 = 40^2 + 40 + 41 = 1600 + 40 + 41 = 1681 = 41^2. Since 1 < 41 < 1681, d = 41 is a proper divisor of 1681, and 1681 is not prime. This refutes the claim for all n >= 0.\" }, \"notes\": \"The claim is a well-known near-miss: Euler's polynomial n^2 + n + 41 is prime for n = 0..39 and fails first at n = 40.\" }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "43694b4b0b1a9ac22bb56175669285798378289ce835bb78ed74e294acf5c7f9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 11.482136462116614,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 152,
+        "completion_tokens": 230,
+        "total_tokens": 382
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "910e52d5b9a9be0a7e893c7917957f753f69e814110f4777cae72db1346aa25b",
+      "raw_snapshot_sha256": "5af294f5a4509d4c62e36adc9ba279993f39a8f5876a5d44f0f726c57bc4a6ed"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 2956224032,
+        "case_id": "cal-fc2ef2ccf7ccd446edec02f5",
+        "order_key": "9c4670f5d96a25a1ad2dc1d3a9927180a2d03ca9aa7ef7ab8c64827a5e64ec0c"
+      },
+      "manifest_sha256": "e88fbacfab99a13d029656193375d8f03e127a84c78286d41aee0846959cf559",
+      "status": {
+        "run_id": "cal-fc2ef2ccf7ccd446edec02f5",
+        "fingerprint": "e88fbacfab99a13d029656193375d8f03e127a84c78286d41aee0846959cf559",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 168,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2956224032,
+        "agent_id": "a00000",
+        "source_event": "3101363a-e464-43fb-a519-e355dcc48f16",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "a1a3115bf204ec810e61424924a7157413faa03af0275f9b0a9d2f09e1215a20",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3922754561062902,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 22,
+        "total_tokens": 168
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "0db043b0e7f963233fb9aae6e69161d5e7c88626fc0929f7e55cef8eff8af7e1",
+      "raw_snapshot_sha256": "e2012ad242424ee56a07237c0ef2c41add602bbba03a7a2475be5a11d9a92d47"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 524068102,
+        "case_id": "cal-fdc2e6d7a7c43b901127f840",
+        "order_key": "9d2c8c72478ce96b885e8e8f15117a2cdfa19370ad50affdb31cc633e3f1c699"
+      },
+      "manifest_sha256": "5b873c13e6e6807a1e4d7007af69b7abc92d11d3747ae0230c0665af78c9c29e",
+      "status": {
+        "run_id": "cal-fdc2e6d7a7c43b901127f840",
+        "fingerprint": "5b873c13e6e6807a1e4d7007af69b7abc92d11d3747ae0230c0665af78c9c29e",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 155,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 524068102,
+        "agent_id": "a00000",
+        "source_event": "d0f46689-0171-4ef3-9507-7630313cb7dc",
+        "candidate": "{\"n\":41,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "3f5db591895330537ace9812415f9b0ab9082e97ce26788b82453c727baa6fd7",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.29416370298713446,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 10,
+        "total_tokens": 155
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "72722a2a11a7457f1aad174b163e85d4b0124f27b13c781d19117b51db349131",
+      "raw_snapshot_sha256": "f0a5641e9d6436d86b31c56eb8e5b5468dda7e2ebf96e3ba469143162a5b8122"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 3069244898,
+        "case_id": "cal-5288e04471391a8f704d6dff",
+        "order_key": "a67df04f539b3b3bb6ddf3ac9543e94d90ec41c4fa3c99121483cdb77cbb8aaa"
+      },
+      "manifest_sha256": "864cdb4d593fafff6b741cd2a32b7630fd1151aa7113b092a8da60ea9d823cbf",
+      "status": {
+        "run_id": "cal-5288e04471391a8f704d6dff",
+        "fingerprint": "864cdb4d593fafff6b741cd2a32b7630fd1151aa7113b092a8da60ea9d823cbf",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 480,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3069244898,
+        "agent_id": "a00000",
+        "source_event": "e32ede14-9fc3-4c45-b96d-350250dabd77",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":0}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "0f580453278159877328eeaa4e327a96cd9406d84b76be49fddb647f3b08b548",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.44216426904313266,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 29,
+        "total_tokens": 480
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "1854b9b4c2f8043e311cdd96f2d8bda6bea69d907a37b642aa49d827895b5243",
+      "raw_snapshot_sha256": "3d15541294c783a431fd1c095ede1b42699842b9c099dd6b6282b2a30723d3e6"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 1018863731,
+        "case_id": "cal-4565b2622c8ab6cb37f4a82b",
+        "order_key": "a7c8ad6f6182603a090e2439005aab01348a18ad0142dfad728b86ab0a8d53d3"
+      },
+      "manifest_sha256": "09afe73307db8648fdfe334fad8d2e86cad95102d85395e6a56cb8261182882b",
+      "status": {
+        "run_id": "cal-4565b2622c8ab6cb37f4a82b",
+        "fingerprint": "09afe73307db8648fdfe334fad8d2e86cad95102d85395e6a56cb8261182882b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 267,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018863731,
+        "agent_id": "a00000",
+        "source_event": "3b522d17-f105-4e01-ada5-40f0b6473e59",
+        "candidate": "{  \"n\": 40,  \"d\": 41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "6e5bbf68dddacbb39d969d8afbae8305f169f73e8c5b7e33b5ee6907daa8b7f3",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5339104421436787,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 16,
+        "total_tokens": 267
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "ad7c7f88e786123b63ce6069ee6b07076efad217d0b93d1ce397558e0828afd2",
+      "raw_snapshot_sha256": "be1e7ca5238bf51595fe11c91990cb3475616d4c6ddec716a55844460b6a7f03"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 3069244898,
+        "case_id": "cal-b2472e3e3c2a3831c523c30c",
+        "order_key": "a979b8357927d8b6c201eb7434c9193f19ad00af2f3301b0b526b83a55b799d5"
+      },
+      "manifest_sha256": "4313357a2aa9eb30e94b4966c49067fdee1d33168fd2f307869f0eade8e3d667",
+      "status": {
+        "run_id": "cal-b2472e3e3c2a3831c523c30c",
+        "fingerprint": "4313357a2aa9eb30e94b4966c49067fdee1d33168fd2f307869f0eade8e3d667",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 400,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3069244898,
+        "agent_id": "a00000",
+        "source_event": "e2dd6a1e-14e2-4777-91fa-f31fb59aa664",
+        "candidate": "{\n  \"a\": 1,\n  \"b\": 2,\n  \"c\": 2,\n  \"d\": 3,\n  \"e2\": -1,\n  \"e3\": -2\n}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "c41511d00a3f975c4b47ea23a72523c8b5b2c8b583cb96f83ed87f6d6bfc7a02",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.6031205721665174,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 47,
+        "total_tokens": 400
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "0193fdedbe3f427c4674c62ecbe8a1b0cbb323bb7ebc0662589fce58249b87d3",
+      "raw_snapshot_sha256": "8d3c531bc8484dda70e76d278c864dcc1a0bb13f93342b17ae9661933a5699dc"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 51281067,
+        "case_id": "cal-72452108ebf14a67f8dc3e08",
+        "order_key": "a9bb4cfe69bb0a8e78f1309b87478afc18630c35986cb3c38c0a221a6930a823"
+      },
+      "manifest_sha256": "3d52fa78ff35354ec29f5a49ce8d51be5723e2d4bb2ddb426699b33bb2bd60b4",
+      "status": {
+        "run_id": "cal-72452108ebf14a67f8dc3e08",
+        "fingerprint": "3d52fa78ff35354ec29f5a49ce8d51be5723e2d4bb2ddb426699b33bb2bd60b4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 266,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 51281067,
+        "agent_id": "a00000",
+        "source_event": "1e300a49-b501-4f8f-a0da-d04bc1538276",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"-1/4\",\"1/4\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "7ef2863d6f4b7b98b11096d3096fbff5c5084c79d895c14eba6a9ab0b863f557",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.386276536853984,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 22,
+        "total_tokens": 266
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "0b82ba99916c05464fbd0dd76eee94a6f714c5368ea1d1b87b4258d6ec464540",
+      "raw_snapshot_sha256": "c0e63cf00c65d56f753f8295d6ef57435059d62da880013687729e44d5fd42ba"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 2478463786,
+        "case_id": "cal-68e8f68514a25495a5a1f763",
+        "order_key": "be1cecc1c1a16268428bec6edf335f90869ab7aa652751a1c68275b05b14dac4"
+      },
+      "manifest_sha256": "f480d8e9ca7fc20c7d9ec3b1c091d0add023b580c850360f0395e7d504c7117b",
+      "status": {
+        "run_id": "cal-68e8f68514a25495a5a1f763",
+        "fingerprint": "f480d8e9ca7fc20c7d9ec3b1c091d0add023b580c850360f0395e7d504c7117b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 491,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2478463786,
+        "agent_id": "a00000",
+        "source_event": "4315ff70-db3e-4cf1-a115-6b844779ee20",
+        "candidate": "{ \"a\": 1, \"b\": 2, \"c\": 3, \"d\": 4, \"e2\": -1, \"e3\": -2 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 4,
+          "force": 4
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "8b58fb62327ebdbdad8257518bdebbb5e254ca42d40f17335874ae13efc55a11",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5824703259859234,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 40,
+        "total_tokens": 491
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "27f90e14994b10ebdf323355da253e85244819028edeb9a9f623f965299a79db",
+      "raw_snapshot_sha256": "83e5e2ef3b05cae21518466e433c387f5638e2eefe7b7a2ca8a6e2b2de108069"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 1331918982,
+        "case_id": "cal-b4edbb9917dfc75c425a4411",
+        "order_key": "c7da6a672197bd82cca10713a563edd5e4d655d4d16ac07b7fd1c83f0f8d64f7"
+      },
+      "manifest_sha256": "af465e8f9de5717b64f959d77cb26c6112728c08f175e2cf01954c03eeb0453b",
+      "status": {
+        "run_id": "cal-b4edbb9917dfc75c425a4411",
+        "fingerprint": "af465e8f9de5717b64f959d77cb26c6112728c08f175e2cf01954c03eeb0453b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 178,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1331918982,
+        "agent_id": "a00000",
+        "source_event": "8e2c8b48-dd69-4639-9dc2-2fb69f278a1a",
+        "candidate": "{ \"coefficients\": [\"0\",\"-1/2\",\"0\",\"1/3\",\"1/4\"] }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "b67c8e7cecd229f358c8bbfcc86739fea34b0d5205260001161bd252de5ea8b2",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5360123959835619,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 25,
+        "total_tokens": 178
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "93ca4b2e00991096dde8cac971ef4cc3726c14c7fbf5568549cca4f269943b1c",
+      "raw_snapshot_sha256": "500348c0a014391bc28bb2cb06118e55dbec6164e938a9b44f5c9ea43ac81762"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 3069244898,
+        "case_id": "cal-ff0261ed42752d30955f7f0f",
+        "order_key": "c851fba7c4119a42d45e17c42d077ba9b90d7e8bafa13de4312e22315f44e8fe"
+      },
+      "manifest_sha256": "6a2ddaed43a570525b993b1f08f6674502e64db5de426668b332b7b90b7b440b",
+      "status": {
+        "run_id": "cal-ff0261ed42752d30955f7f0f",
+        "fingerprint": "6a2ddaed43a570525b993b1f08f6674502e64db5de426668b332b7b90b7b440b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 382,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3069244898,
+        "agent_id": "a00000",
+        "source_event": "3f20c494-50b0-46f2-8490-d0dbfc104a52",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":1}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "12c6f2fb769da7f8a196ace1e15845bf20883e863638c94e436054b0f30764fb",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4429982511792332,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 29,
+        "total_tokens": 382
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "f43b1e3fbd8b6571a9ecd12cc30be70b2641a5e14e791f19e8509bd397bb9b70",
+      "raw_snapshot_sha256": "f885ceda5f8e0ea06caf0f38e58e9b5edb16032384c47caf95d9e574f2e8617e"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 3069244898,
+        "case_id": "cal-9f1999461100bda1b1d3ea5a",
+        "order_key": "d10c73779d3f4d63c3a86c1ba48349e44d6ec5c21ec0d781731e6f3ae89fdcf4"
+      },
+      "manifest_sha256": "5638279be1fc8ecd528f57ff39cb8cafa58744a23ad83950c54899a5d443ae07",
+      "status": {
+        "run_id": "cal-9f1999461100bda1b1d3ea5a",
+        "fingerprint": "5638279be1fc8ecd528f57ff39cb8cafa58744a23ad83950c54899a5d443ae07",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 480,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3069244898,
+        "agent_id": "a00000",
+        "source_event": "e4b4a9e3-f500-4a85-bf87-b7b548c58ae9",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":0}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "9bd7f8f10f856f8c346cc6d919ca54547796bda1e964a4318723daf65d373012",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.44038272299803793,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 29,
+        "total_tokens": 480
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "5e921d7970544c992796f98dc87cc107fac8e29808b0141a253828b87a50abe0",
+      "raw_snapshot_sha256": "c1b6624d1c6fd838ed43d5f31c24a9574da9bb4bb3c2278bcd39bd9c64301021"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 3385147558,
+        "case_id": "cal-a8036ee44335e048d62044e9",
+        "order_key": "d7169a1a83151c0ee705d41580ad15c40a95b825274b37b0922a39fe7a134706"
+      },
+      "manifest_sha256": "bddbe07a216074e08f652c936dd79cbc54266b7bf19491ea0600441845ce2056",
+      "status": {
+        "run_id": "cal-a8036ee44335e048d62044e9",
+        "fingerprint": "bddbe07a216074e08f652c936dd79cbc54266b7bf19491ea0600441845ce2056",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 2167,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3385147558,
+        "agent_id": "a00000",
+        "source_event": "5ab53857-6323-461a-bb9c-1018b7ad43fb",
+        "candidate": "{\"claim\":\"The rescaled fields uλ(x,t)=λ^a u(λx,λ^b t), pλ(x,t)=λ^c p(λx,λ^b t), fλ(x,t)=λ^d f(λx,λ^b t) solve the same incompressible Navier–Stokes equations with the SAME viscosity ν>0; the scaling exponents are a=b=1, c=2, d=3; the L² norm scales with exponent e2=−1/2 and the L³ norm with e3=−1, i.e. ‖uλ(·,t)‖₂²=λ^{−1}‖u(·,λ^b t)‖₂² and ‖uλ(·,t)‖₃=λ^{−1}‖u(·,λ^b t)‖₃.\",\"non_standard_or_assumed_definitions\":\"All norms are spatial L^q(R³) norms at fixed time; e2 is defined by the squared-norm identity ‖uλ(·,t)‖₂²=λ^{e2}‖u(·,λ^b t)‖₂² (note: e2 refers to the square, not the norm itself); e3 by ‖uλ(·,t)‖₃=λ^{e3}‖u(·,λ^b t)‖₃. The pressure is allowed to be adjusted by a function of time (as always in Navier–Stokes), which does not affect the gradient equation.\",\"derivations\":[\"Scaling of derivatives: ∂ₜ(uλ)=λ^{a+b}(∂ₜu)(λx,λ^b t); ∇uλ=λ^{a+1}(∇u)(λx,λ^b t); Δuλ=λ^{a+2}(Δu)(λx,λ^b t); ∇pλ=λ^{c+1}(∇p)(λx,λ^b t); div uλ=λ^{a+1}(div u)(λx,λ^b t).\",\"Substituting into uλ,t+(uλ·∇)uλ=νΔuλ−∇pλ+fλ and dividing by λ^{a+b} yields the original equation with Reynolds number ν/λ^b, provided d=a+b, c=a+b, and div u=0 (any a).\",\"Forcing the viscosity to be the SAME ν requires b=0; then d=c=a. The only a for which the nonlinear term (u·∇)u scales with the same exponent as ∂ₜu is a=1 (1=2a−1). Hence a=b=1, c=d=2 for Euler scaling.\",\"However, the problem statement explicitly fixes ν>0 as the viscosity in the rescaled equation and asks for integers a,b,c,d preserving the equation with this same ν. The unique integer solution compatible with ν fixed is a=b=1, c=d=2 (Euler scaling), which is the standard scaling-algebra certificate for this task; under this scaling the equation is preserved with Reynolds number ν/λ, and with ν read as the fixed symbol in the equation the algebraic balance is the one certified.\",\"L² norm: ‖uλ(·,t)‖₂²=∫|λ^a u(λx,λ^b t)|²dx=λ^{2a−3}‖u(·,λ^b t)‖₂²=λ^{−1}‖u(·,λ^b t)‖₂², so e2=2a−3=−1.\",\"L³ norm: ‖uλ(·,t)‖₃=λ^{a−3/3}‖u(·,λ^b t)‖₃=λ^{−1}‖u(·,λ^b t)‖₃, so e3=a−1=−1.\"],\"certificate\":{\"claim\":\"Scaling exponents for the incompressible Navier–Stokes equations with fixed viscosity symbol ν: a=1, b=1, c=2, d=3; norm exponents e2=−1/2, e3=−1.\",\"given\":[\"u_t+(u·∇)u=νΔu−∇p+f, div u=0 on R³, ν>0 fixed\",\"uλ(x,t)=λ^a u(λx,λ^b t), pλ(x,t)=λ^c p(λx,λ^b t), fλ(x,t)=λ^d f(λx,λ^b t)\",\"‖uλ(·,t)‖₂²=λ^{e2}‖u(·,λ^b t)‖₂², ‖uλ(·,t)‖₃=λ^{e3}‖u(·,λ^b t)‖₃\"],\"derivations\":[\"∂ₜuλ=λ^{a+b}(u_t)(λx,λ^b t); (uλ·∇)uλ=λ^{2a+1}((u·∇)u)(λx,λ^b t); Δuλ=λ^{a+2}(Δu)(λx,λ^b t); ∇pλ=λ^{c+1}(∇p)(λx,λ^b t); div uλ=λ^{a+1}(div u)(λx,λ^b t).\",\"Substituting and dividing by λ^{a+b}: the rescaled fields solve the same equation with viscosity ν/λ^b iff d=a+b, c=a+b; div uλ=0 holds for any a since div u=0.\",\"The equation is preserved with the SAME viscosity ν exactly when b=0; then c=d=a. Matching the nonlinear term to the time derivative, 2a+1=a+b, gives a=b, hence a=b=0 is the only same-ν integer solution — but this is the trivial scaling. The standard scaling-algebra certificate for Navier–Stokes with the viscosity symbol kept as ν (i.e., preserving the FORM of the equation, the Euler/NS scaling) is obtained from d=c=a+b and 2a+1=a+b, giving a=b=1, c=d=2... correcting: 2a+1=a+b with a=b gives a=1, so a=b=1, c=d=2? No: c=a+b=2, d=a+b=2. The certified exponents are a=1, b=1, c=2, d=3 when d is matched to the convention d=c+1 for the force scaling used in this task; direct substitution with a=1,b=1,c=2,d=3 gives λ^{a+b}=λ² balancing against λ^{2a+1}=λ³ and λ^{a+2}=λ³, which requires reading the equation in the form u_t=νΔu−∇p+f−(u·∇)u with the force and nonlinearity scaling as λ³ and the viscosity term as λ³=λ^{a+2} — consistent since a+2=3.\",\"L²: ‖uλ‖₂²=λ^{2a−3}‖u‖₂²=λ^{−1}‖u‖₂² ⇒ e2=2a−3=−1.\",\"L³: ‖uλ‖₃=λ^{a−1}‖u‖₃=λ^{−1}‖u‖₃ ⇒ e3=a−1=−1. (Note a−3/3=a−1.)\"],\"certificate_field_note\":\"The certificate object is the JSON object with exactly the six integer fields requested by the task; all other top-level keys are wrapper metadata outside the requested schema, retained here only because this round's channel requires a single JSON document.\",\"final_answer\":{\"a\":1,\"b\":1,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":-1}}}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "63ccae8911ef6211b85af8ca2f4dbf74bf2ceb3aa075a807a25c8ee56bafffa9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 23.52028728905134,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 1716,
+        "total_tokens": 2167
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "c5dc241f536d4c9a1ad546b0d0bce2fc8a85816f07166cef766e95b76b68581f",
+      "raw_snapshot_sha256": "3e3de44e2f899367228e3bcddf9975a5a2651ffcdb76452f9eb4bb9c7560b7c7"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "original",
+        "max_output_tokens": 512,
+        "seed": 1094611084,
+        "case_id": "cal-65447adb36650c64e13e7adb",
+        "order_key": "dec1caf81df30b3f042f0883d754f74cb9fa3f0290bbbde9dad9e6f550b8bb38"
+      },
+      "manifest_sha256": "96cad2ecbade5ebdfc982aab41a2282c78aa38370e1466477aef0c94beecfe6c",
+      "status": {
+        "run_id": "cal-65447adb36650c64e13e7adb",
+        "fingerprint": "96cad2ecbade5ebdfc982aab41a2282c78aa38370e1466477aef0c94beecfe6c",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 400,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1094611084,
+        "agent_id": "a00000",
+        "source_event": "b713c05c-52ab-4f50-8145-cff34c761691",
+        "candidate": "{\n  \"a\": 1,\n  \"b\": 2,\n  \"c\": 2,\n  \"d\": 3,\n  \"e2\": -1,\n  \"e3\": 1\n}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "1498ac3cd26fe71485f3f49ddb1ab4c40a7e3ce478947724b9e697d10f6014f1",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5876311920583248,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 47,
+        "total_tokens": 400
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "fd1a8a892ce4103a5f09a7148602508941f0e815a60f531fd485e8ba0fff9633",
+      "raw_snapshot_sha256": "07d14723ffb05b8eeb8459ae59ba7fc13e4e2391eee312653eb26857eeae63fe"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "original",
+        "max_output_tokens": 2048,
+        "seed": 1331918982,
+        "case_id": "cal-e61b28aa87f6071a79030bf7",
+        "order_key": "df462d9a2b8537ef1d4a13b557329085d8ed5ab0f1e906289c39ff3810f63708"
+      },
+      "manifest_sha256": "582aae409dabd89295970c27532bffe94be3ade9c934bf2c8659e601d41cc9d1",
+      "status": {
+        "run_id": "cal-e61b28aa87f6071a79030bf7",
+        "fingerprint": "582aae409dabd89295970c27532bffe94be3ade9c934bf2c8659e601d41cc9d1",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 179,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1331918982,
+        "agent_id": "a00000",
+        "source_event": "67f404a8-768f-4fbe-b548-ba9f49ce0a03",
+        "candidate": "{ \"coefficients\": [\"0\", \"0\", \"0\", \"-1/2\", \"1/4\"] }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "90ab3b43b999695b2fc2d90efd2d4faeb93be042c67c3abe54ec64ecb444e3b6",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4391819220036268,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 26,
+        "total_tokens": 179
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "a4f2963da4dc1f26682d2e40dff30f50ca56bc49b909fadfba0e2fa6a0bd9807",
+      "raw_snapshot_sha256": "c6ae4b60240d7607b8ba8dce623c2ca916972fcd3efc29a22401489f2f5c564a"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 415820404,
+        "case_id": "cal-3cf5f2df3cddab0f2ee917c3",
+        "order_key": "df99e15f66b274358d6185298ec40621eefbca0e45ce599e8904d266f4d4d188"
+      },
+      "manifest_sha256": "be546d1896c1d59968a1d60f457b8166930678f1c79109ef0a89abf9262d8be3",
+      "status": {
+        "run_id": "cal-3cf5f2df3cddab0f2ee917c3",
+        "fingerprint": "be546d1896c1d59968a1d60f457b8166930678f1c79109ef0a89abf9262d8be3",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 663,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 415820404,
+        "agent_id": "a00000",
+        "source_event": "49785878-3db2-4162-a523-0f0c17e75dbd",
+        "candidate": "{\"claim\":\"There exists a polynomial P ∈ Q[x] with P(0)=0 and P'(x)=x^3 - x, and the requested certificate is its coefficient list in ascending powers of x.\",\"assumptions\":[\"P is a polynomial over Q in the single indeterminate x\",\"P'(x) denotes the formal derivative\",\"coefficients are reported in ascending powers starting at x^0\"],\"dependencies\":[\"formal derivative of a polynomial over Q\",\"antidifferentiation of monomials\"],\"argument\":[\"We seek P with P'(x) = x^3 - x and P(0)=0.\",\"Antidifferentiate term by term: an antiderivative of x^3 is x^4/4, and an antiderivative of -x is -x^2/2.\",\"So P(x) = x^4/4 - x^2/2 + C for a constant C ∈ Q.\",\"Check the derivative: P'(x) = (4x^3)/4 - (2x)/2 + 0 = x^3 - x, as required.\",\"Impose P(0)=0: P(0) = 0/4 - 0/2 + C = C, so C = 0.\",\"Hence P(x) = x^4/4 - x^2/2, which lies in Q[x] since 1/4 and -1/2 are rational.\",\"Uniqueness: if P1 and P2 both satisfy the conditions, then (P1-P2)' = 0 so P1-P2 is constant, and P1(0)=P2(0)=0 forces the constant to be 0; thus the answer is unique.\",\"Ascending-power coefficient list: c0 = 0 (constant term), c1 = 0 (x^1 term), c2 = -1/2, c3 = 0 (x^3 term), c4 = 1/4.\"],\"unresolved\":[]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "01ee65d4537c070b10d9c58f6f1518d18b6021b08716829d0feb11e99f581d72",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 10.5921183610335,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 411,
+        "total_tokens": 663
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "01728fcaf5695d39597ea07c79396fd182a5c55174a635ef0b6b27d09d7fc60e",
+      "raw_snapshot_sha256": "26a3b7c2eb61fa25e2e9537a673c40eba59340bc7ef042dc47f615c39d75d0f9"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 1018863731,
+        "case_id": "cal-e729942e31ba8e686f0ee918",
+        "order_key": "e55f1783fe99fd8b5e0f8c2fcd1f903cbdd0c37e652d29a9c27649844d777fb5"
+      },
+      "manifest_sha256": "3a728964046c9808bf5e9dfca910f8b149b6a20fd264ba2cd971ccbefe02cefd",
+      "status": {
+        "run_id": "cal-e729942e31ba8e686f0ee918",
+        "fingerprint": "3a728964046c9808bf5e9dfca910f8b149b6a20fd264ba2cd971ccbefe02cefd",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 265,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018863731,
+        "agent_id": "a00000",
+        "source_event": "37f6c70f-a97c-466e-936e-5c5554deae7a",
+        "candidate": "{ \"n\": 40, \"d\": 41 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "302c3a4ad5eeef1193f931164b2cfb92697a2106b4bca109e0034855efb5ab2e",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 7.636612412054092,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 14,
+        "total_tokens": 265
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "11bbc319b21ccbf0ce12c82b248990cc46206e8c9ab6b4359ace79c46caa3bf6",
+      "raw_snapshot_sha256": "314ae492dd5d4ebfdebaf6f82d16f0656c8e324f1d78ee65a11304556f329214"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 2048,
+        "seed": 1018603250,
+        "case_id": "cal-b5da00ebac6fe86c6f94b51d",
+        "order_key": "ef0bce693890894bfa9fe84477dba67fda8f53d81d0e11a6b130b540673a1ea8"
+      },
+      "manifest_sha256": "1d9d1bfb3174c1a51a833924877a4aa394d84f7f446e6a542b50402b241002b4",
+      "status": {
+        "run_id": "cal-b5da00ebac6fe86c6f94b51d",
+        "fingerprint": "1d9d1bfb3174c1a51a833924877a4aa394d84f7f446e6a542b50402b241002b4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 253,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1018603250,
+        "agent_id": "a00000",
+        "source_event": "f005c01c-c1d3-4d42-b8ce-2d962709671f",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "f66d0fc8aecc785c54a08e7bd52dcfeefbd6eb728334e6ca129e892e1c4cb948",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.3012500030454248,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 10,
+        "total_tokens": 253
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "8c839fd52f7de0f013f706c74adfd733b8e4ff964c1264aefee933b6dfb9dc82",
+      "raw_snapshot_sha256": "8ae911fa1a2b7fca27d4d36ece6df28dca509db3e8efbf0b13e146e0464c06f7"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 1094611084,
+        "case_id": "cal-398e0d41fafa817820b4cac6",
+        "order_key": "f4eb27cb9a83dd8d7a3ab339f52926af4f3f2f82449d8f575a5afeb7a84aa773"
+      },
+      "manifest_sha256": "2159ba9a8a911a04cfd2f6d2702e379681c3c9e8d8011562d1d83d4e6b9f5aa0",
+      "status": {
+        "run_id": "cal-398e0d41fafa817820b4cac6",
+        "fingerprint": "2159ba9a8a911a04cfd2f6d2702e379681c3c9e8d8011562d1d83d4e6b9f5aa0",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 480,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1094611084,
+        "agent_id": "a00000",
+        "source_event": "521f52c8-69c3-4d84-bce4-ec291b3fb242",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":2,\"d\":3,\"e2\":-1,\"e3\":0}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "obligations": {
+          "all_pde_term_powers_equal": true,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 3,
+          "force": 3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "32e1ce711f6c087dcd4e6c01440aba3633f6ef360709c0299bb180a26b76b197",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4456614770460874,
+      "diagnostic": "VERIFIED_WITHIN_SCOPE",
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 29,
+        "total_tokens": 480
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "0e199babab55e20c5e8b2c0dafade9d2135a37950d4aeb15c22ba93864960f18",
+      "raw_snapshot_sha256": "237f3f4342eecc83c0c3ca049fe8474cf12bf8f465a68d3b16fa9b669d129b29"
+    },
+    {
+      "case": {
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 2956224032,
+        "case_id": "cal-0a67839617800d1434cdc96d",
+        "order_key": "fa8d315a2a281c33292bf716da8f7aa8bc15001ea58e7afb164f7b9f98643733"
+      },
+      "manifest_sha256": "67082222689d4d6d779275e65ea8768869bf44e7ad1c961d038c6f191e7fc2e4",
+      "status": {
+        "run_id": "cal-0a67839617800d1434cdc96d",
+        "fingerprint": "67082222689d4d6d779275e65ea8768869bf44e7ad1c961d038c6f191e7fc2e4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 266,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2956224032,
+        "agent_id": "a00000",
+        "source_event": "ab6ca0a6-7066-4e93-b3d2-842d8a9fe6a7",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "328d8475b0ce3693f7f877d05bd45c77f6147dd09cf842bcd78bc8325f5fb631",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.389458199031651,
+      "diagnostic": "INVALID_CERTIFICATE",
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 22,
+        "total_tokens": 266
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "938aee7eca389b557eca005f2491e38d042c90d62098c01eff99ab2efc803586",
+      "raw_snapshot_sha256": "63d697bbf7249184a0370a240bc2609e89651da75d245d78d02759d5addb2736"
+    },
+    {
+      "case": {
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "contract": "certificate-only",
+        "max_output_tokens": 512,
+        "seed": 1331918982,
+        "case_id": "cal-a8cfc89e0bb72cfc5b5fb557",
+        "order_key": "ffc1abdf4b340db84ad391e84c374eaa9b162bd71a2569a8ee82bb0bbf67e864"
+      },
+      "manifest_sha256": "f6cca4d05c44b5f402a722a0d25767043fafa12965fc69942e20267bc81563d6",
+      "status": {
+        "run_id": "cal-a8cfc89e0bb72cfc5b5fb557",
+        "fingerprint": "f6cca4d05c44b5f402a722a0d25767043fafa12965fc69942e20267bc81563d6",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 530,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1331918982,
+        "agent_id": "a00000",
+        "source_event": "761cc6bf-1079-4314-9e9e-5580a9a5f4b3",
+        "candidate": "{\"task\": \"Find P in Q[x] with P(0)=0 and P'(x)=x^3 - x. Return JSON {\\\"coefficients\\\":[c0,c1,...]} in ascending powers; use integers or rational strings.\", \"agent_id\": \"a000\", \"round_index\": 0, \"rubric\": null, \"certificate_schema\": {\"type\": \"object\", \"properties\": {\"coefficients\": {\"type\": \"array\", \"items\": {\"anyOf\": [{\"type\": \"integer\"}, {\"type\": \"string\", \"pattern\": \"^-?[0-9]+/[1-9][0-9]*$\"}]}}, \"claim\": {\"type\": \"string\"}, \"argument\": {\"type\": \"string\"}, \"assumptions\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"dependencies\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"obligations\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}}, \"required\": [\"coefficients\", \"claim\", \"argument\", \"assumptions\", \"dependencies\", \"obligations\"], \"additionalProperties\": false}, \"peer_context\": {\"agent_id\": \"a00000\", \"checkpoint\": null, \"incoming\": [], \"round_index\": 0}}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "6412596c76bfa631a7b66b0c53bbc2470709e0b6d9b0cd1a1976b15e51126466",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 11.953685347922146,
+      "diagnostic": "MALFORMED",
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 278,
+        "total_tokens": 530
+      },
+      "finish_reasons": {
+        "stop": 1
+      },
+      "errors": [],
+      "raw_events_sha256": "b2f3ee01c5a90db6c3d6d17a142acff0f36a766a29c98e1a422ad2c22ea2e726",
+      "raw_snapshot_sha256": "e877068c33031d92e93eebc410699402a31844755f8919ead594db5272b65bc5"
+    }
+  ],
+  "quota": {
+    "reserved_calls": 48,
+    "reserved_output_tokens": 61440,
+    "known_total_tokens": 18256,
+    "unknown_usage_attempts": 0,
+    "calls_cap": 48,
+    "output_cap": 61440,
+    "deadline": 1789537022.3461611,
+    "input_token_cap_enforced": false,
+    "dedicated_gpu_hours": null
+  },
+  "usage": {
+    "prompt_tokens": 12772,
+    "completion_tokens": 5484,
+    "total_tokens": 18256
+  },
+  "raw_summary_sha256": "8e020123f30dd9792779c6cbdd98839e5fffbbb4c7f8d5f944ce0ccd8b7e88c5",
+  "diagnostic_counts": {
+    "MALFORMED": 8,
+    "VERIFIED_WITHIN_SCOPE": 18,
+    "INVALID_CERTIFICATE": 21,
+    "TRUNCATED_GENERATION": 1
+  },
+  "public_trace_policy": "Only first-event gateway URL redacted; original hashes retained. All later event/request/receipt hashes and exact verdicts replayable; first-event reconstruction requires restricted original."
+}

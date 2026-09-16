@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "remote_source_matches_archive": [
+    "aimeth_design/__init__.py",
+    "aimeth_design/__main__.py",
+    "aimeth_design/execution.py",
+    "aimeth_design/organizations.py",
+    "aimeth_evaluation/__init__.py",
+    "aimeth_evaluation/controls.py",
+    "aimeth_evaluation/pde_scaling.py",
+    "aimeth_pilot/__init__.py",
+    "aimeth_pilot/calibration.py",
+    "aimeth_pilot/quota.py",
+    "aimeth_pilot/run.py",
+    "aimeth_runtime/__init__.py",
+    "aimeth_runtime/__main__.py",
+    "aimeth_runtime/runner.py",
+    "aimeth_runtime/store.py"
+  ],
+  "private_sqlite_journals_verified": 56,
+  "institutional_events": 381,
+  "public_events": 64,
+  "private_identity_limit": "Full raw inventory and first institutional event hashes require restricted originals",
+  "output_validation_scope": "Exact development certificates only; no frontier theorem",
+  "unit_tests": {
+    "status": "passed",
+    "count": 59,
+    "command": "python3 -m unittest discover -s tests -v",
+    "log_sha256": "8d996f843f3a77242f3341f905dd92a452922f7bceaebc13d21f445e6035e7b0"
+  },
+  "scheduler_jobs": [
+    {
+      "id": 190044,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:01",
+      "cpus": 2,
+      "mem": "512M",
+      "new_gpu_allocation": false
+    },
+    {
+      "id": 190045,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:02:20",
+      "cpus": 2,
+      "mem": "2G",
+      "new_gpu_allocation": false
+    }
+  ]
+}

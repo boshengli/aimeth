@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "observed_at": "2026-09-16T05:17:29.208530+00:00",
+  "node": "gpu08",
+  "scope": "read-only metadata inventory; no model load, weight-content hash or GPU probe",
+  "raw_inventory_sha256": "79fb96cbadc40db424a5a8ab2694fae4094c80ce84d1b94a5c175bc9fc33b81a",
+  "metadata_job": 190044,
+  "models": [
+    {
+      "model_type": "deepseek_v4",
+      "architectures": [
+        "DeepseekV4ForCausalLM"
+      ],
+      "weight_bytes": 166886535336,
+      "weights_content_verified": false,
+      "files": {
+        "config.json": {
+          "bytes": 1888,
+          "sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023"
+        },
+        "generation_config.json": {
+          "bytes": 170,
+          "sha256": "5fccff80f55a4d455bbe516bdd552edf3e9623df95e99fbf2a3c3389fdf91af0"
+        },
+        "tokenizer_config.json": {
+          "bytes": 801,
+          "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+        },
+        "tokenizer.json": {
+          "bytes": 6367146,
+          "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 5602871,
+          "sha256": "98efab455cf08dfbbbaaba6f570e1bf10bf927d2b4c3c453a59c2f6f0e3be92b"
+        }
+      },
+      "directory_label": "active-deepseek-directory",
+      "weight_shards": 48,
+      "active_process_observed": true
+    },
+    {
+      "model_type": "qwen3_5",
+      "architectures": [
+        "Qwen3_5ForConditionalGeneration"
+      ],
+      "weight_bytes": 30866866928,
+      "weights_content_verified": false,
+      "files": {
+        "config.json": {
+          "bytes": 51350,
+          "sha256": "74227dd615bf1ea975aa676bdf355a0379858c12f394b5365cd9dfa5fc2c70bc"
+        },
+        "generation_config.json": {
+          "bytes": 202,
+          "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+        },
+        "tokenizer_config.json": {
+          "bytes": 17928,
+          "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+        },
+        "tokenizer.json": {
+          "bytes": 12809320,
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+        },
+        "chat_template.jinja": {
+          "bytes": 8952,
+          "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 137335,
+          "sha256": "f0838c766951bdfe76d6afbdb2771a8f67aaa2231dedb3d33cebd817729843a2"
+        }
+      },
+      "directory_label": "Qwen3.8-27B-FP8",
+      "weight_shards": 66,
+      "active_process_observed": false
+    },
+    {
+      "model_type": "qwen4_exp",
+      "architectures": [
+        "Qwen4ExpForConditionalGeneration"
+      ],
+      "weight_bytes": 185523317458,
+      "weights_content_verified": false,
+      "files": {
+        "config.json": {
+          "bytes": 72514,
+          "sha256": "c22eb0a053eed62e18f0184d3ca62d3798f208c3e00b9feee939fc3dbacdc8ca"
+        },
+        "generation_config.json": {
+          "bytes": 202,
+          "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+        },
+        "tokenizer_config.json": {
+          "bytes": 17928,
+          "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+        },
+        "tokenizer.json": {
+          "bytes": 12809320,
+          "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+        },
+        "chat_template.jinja": {
+          "bytes": 8952,
+          "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 17410140,
+          "sha256": "0419e2c2dfbb925257d7409405433a793cf7ff7d96f3eba882a815ec6d9fe7a6"
+        }
+      },
+      "directory_label": "Qwen3.8-Flash-Next-FP8",
+      "weight_shards": 131,
+      "active_process_observed": false
+    },
+    {
+      "model_type": "step3p7",
+      "architectures": [
+        "Step3p7ForConditionalGeneration"
+      ],
+      "weight_bytes": 212523666872,
+      "weights_content_verified": false,
+      "files": {
+        "config.json": {
+          "bytes": 48851,
+          "sha256": "4cff5ed015bff319274d0967aeca5a4753ad718c3ca4cdcf8216fcd93ba44037"
+        },
+        "tokenizer_config.json": {
+          "bytes": 163405,
+          "sha256": "78202af487f4d4360e8d15cb0506d60718f8599770599c6f28f7f1fa045a591f"
+        },
+        "tokenizer.json": {
+          "bytes": 9976972,
+          "sha256": "b564c620eb77fa11d0926011c2202347d6cfc358d79724ee04ae7007e13636f0"
+        },
+        "chat_template.jinja": {
+          "bytes": 5723,
+          "sha256": "f428623fc81c940c35be3509fbffc086b4b4360d8800e46103e6f34d02891633"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 119419,
+          "sha256": "aac0a86e46d5bc212ace03d824d893d17ecef09cf3621fde0f79c3847e03ae1e"
+        }
+      },
+      "directory_label": "Step-3.7-Flash-FP8",
+      "weight_shards": 26,
+      "active_process_observed": false
+    }
+  ],
+  "active_process": {
+    "model_alias": "active-deepseek-directory",
+    "served_name": "deepseek-v4-flash",
+    "port": 8000,
+    "tensor_parallel_size": 8,
+    "max_model_len": 1048576
+  },
+  "local_service_reads": [
+    {
+      "port": 8000,
+      "http_status": 401
+    },
+    {
+      "port": 30000,
+      "error": "URLError"
+    }
+  ],
+  "gateway_mapping_verified": false,
+  "gpu02_current_inference_verified": false,
+  "gateway_read_access": "PermissionError: route configuration owned by another account; no privilege change attempted",
+  "metadata_probe_errors": [
+    "Python 3.6 rejected subprocess capture_output option; corrected read-only probe used PIPE",
+    "ss command unavailable on gateway host"
+  ],
+  "weights_content_verified": false
+}
