@@ -1,0 +1,234 @@
+[
+  {
+    "kind": "live-transport-probe",
+    "model": "deepseek-v4-flash-0731",
+    "request": {
+      "model": "deepseek-v4-flash-0731",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return only the JSON object {\"a\":-9,\"b\":47}. No explanation."
+        }
+      ],
+      "max_tokens": 512,
+      "temperature": 0,
+      "stream": false,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "id": "058460b64abc4c5aacb0e7c210d523e8",
+      "object": "chat.completion",
+      "created": 1789531236,
+      "model": "deepseek-v4-flash-0731",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"a\":-9,\"b\":47}",
+            "reasoning_content": null,
+            "tool_calls": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "matched_stop": 1
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 22,
+        "total_tokens": 33,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "metadata": {
+        "weight_version": "default"
+      }
+    },
+    "wall_seconds": 0.48486516694538295,
+    "private_source_sha256": "9ef70e8be6e1e7ab99488c7657a5d8d92df77e3f55fbf40a98ad672f0acc354d"
+  },
+  {
+    "kind": "live-transport-probe",
+    "model": "deepseek-v4-flash-0731",
+    "request": {
+      "model": "deepseek-v4-flash-0731",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return only the JSON object {\"a\":-9,\"b\":47}. No explanation."
+        }
+      ],
+      "max_tokens": 512,
+      "temperature": 0,
+      "stream": false,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "id": "0d086b77d48a404e9dff165e2db2cf29",
+      "object": "chat.completion",
+      "created": 1789530848,
+      "model": "deepseek-v4-flash-0731",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"a\":-9,\"b\":47}",
+            "reasoning_content": null,
+            "tool_calls": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "matched_stop": 1
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 22,
+        "total_tokens": 33,
+        "completion_tokens": 11,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "metadata": {
+        "weight_version": "default"
+      }
+    },
+    "wall_seconds": 0.604037167,
+    "private_source_sha256": "42ea5e9bc993d8f5ac0a97e07d0a7cdea05a0b99f767f421a7ab16dbe9ee99c1"
+  },
+  {
+    "kind": "live-transport-probe",
+    "model": "glm-5.3-flash",
+    "request": {
+      "model": "glm-5.3-flash",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return only the JSON object {\"a\":-9,\"b\":47}. No explanation."
+        }
+      ],
+      "max_tokens": 512,
+      "temperature": 0,
+      "stream": false,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "id": "chatcmpl-9aa230e1537289de",
+      "object": "chat.completion",
+      "created": 1789530959,
+      "model": "glm-5.3-flash",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"a\": -9, \"b\": 47}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 154827,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-tp8-15805103",
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 42,
+        "completion_tokens": 13,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    },
+    "wall_seconds": 1.4854470000136644,
+    "private_source_sha256": "995586a86a5b7843a750a0ca2b81cf6a40f9db6eda92bb127824e77e918c4fa5"
+  },
+  {
+    "kind": "live-transport-probe",
+    "model": "glm-5.3-flash",
+    "request": {
+      "model": "glm-5.3-flash",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Return only the JSON object {\"a\":-9,\"b\":47}. No explanation."
+        }
+      ],
+      "max_tokens": 512,
+      "temperature": 0,
+      "stream": false,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "http_status": 200,
+    "response": {
+      "id": "chatcmpl-b82a74372cbd4c37",
+      "object": "chat.completion",
+      "created": 1789530848,
+      "model": "glm-5.3-flash",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The user wants me to return only the JSON object {\"a\":-9,\"b\":47} with no explanation. This is a simple, harmless request. I should just output the JSON object exactly as requested.{\"a\":-9,\"b\":47}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": 154827,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.1.dev20051+g487ecf187-tp8-15805103",
+      "usage": {
+        "prompt_tokens": 29,
+        "total_tokens": 82,
+        "completion_tokens": 53,
+        "prompt_tokens_details": null
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    },
+    "wall_seconds": 1.16358075,
+    "private_source_sha256": "0169e519b6973eeb21b4a9f643204c302f1b571fa0b9cc330d9400de3d5c44a8"
+  }
+]

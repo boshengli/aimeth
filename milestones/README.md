@@ -44,3 +44,14 @@ node tools/check_publication_milestone.cjs milestones/m1-1-publication-v1.html /
 ```
 
 The report cites the published, tested source baseline; its own delivery is a later Git commit. Final delivery-head CI is linked in the project handoff, avoiding a self-referential report hash.
+
+## M2.1c — Institutional cluster calibration
+
+[Cluster calibration HTML](m2-1-cluster-pilot-v1.html) retains all four jobs, failures, mathematical verdicts and readiness limits. Public data are reviewed live development traces, with only the first-event gateway URL redacted. The execution source is frozen under `archives/cluster-pilot-v1`; future evaluator changes must not silently reclassify this report.
+
+```bash
+python3 tools/check_cluster_evidence.py
+python3 tools/build_cluster_milestone.py
+python3 tools/verify_artifacts.py cluster-report-manifest.json
+node tools/check_cluster_milestone.cjs milestones/m2-1-cluster-pilot-v1.html milestones/m2-1-cluster-pilot-v1.browser-qa.json
+```

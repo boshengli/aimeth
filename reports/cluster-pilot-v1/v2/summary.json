@@ -1,0 +1,2033 @@
+{
+  "schema_version": "1.0",
+  "scope": "public-development live calibration; no frontier/confirmatory claim",
+  "experiment": {
+    "schema_version": "1.0",
+    "models": [
+      "deepseek-v4-flash-0731",
+      "glm-5.3-flash"
+    ],
+    "endpoint": "[INSTITUTIONAL_GATEWAY_REDACTED]",
+    "tasks": [
+      "integral-rational",
+      "prime-counterexample"
+    ],
+    "repeats": 2,
+    "seed": 20260916,
+    "population": 8,
+    "rounds": 2,
+    "concurrency": 2,
+    "max_output_tokens": 512,
+    "calls_cap": 512,
+    "output_cap": 262144,
+    "wall_seconds": 1500,
+    "request_options": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "client_code_commit": "0e55cd804884719248a91933c62ed7f42ac89b9d",
+    "client_bundle_sha256": "d005d7cee6dcb9cb7f670a5386a3710931348f24a67ee6461ac1aff5f2c10f44"
+  },
+  "metadata": {
+    "deadline": 1789533153.3739395,
+    "started_at": 1789531653.37394,
+    "job_id": "190042"
+  },
+  "planned_populations": 32,
+  "unstarted_populations": 0,
+  "quota": {
+    "reserved_calls": 272,
+    "reserved_output_tokens": 139264,
+    "known_total_tokens": 95153,
+    "unknown_usage_attempts": 0,
+    "calls_cap": 512,
+    "output_cap": 262144,
+    "deadline": 1789533153.3739395,
+    "input_token_cap_enforced": false,
+    "dedicated_gpu_hours": null
+  },
+  "results": [
+    {
+      "run_id": "ec17c9b3a0658efe-0d872417-I",
+      "arm": "I",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "489ee357eb934048fb0a7087e059b11ad9604f82b282faeee5de743658b1de5b",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-0d872417-I",
+        "fingerprint": "489ee357eb934048fb0a7087e059b11ad9604f82b282faeee5de743658b1de5b",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 10,
+          "failed": 0
+        },
+        "attempts": 10,
+        "known_total_tokens": 1707,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 57,
+        "messages": 0,
+        "checkpoints": 10
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 57,
+        "tail_hash": "663dc70cd75adcfabfdcfda9b5eb2949c844728cb8ec01340d7d7c00dbb2a990",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 2.7391136169899255,
+      "usage": {
+        "prompt_tokens": 1564,
+        "completion_tokens": 143,
+        "total_tokens": 1707
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 10,
+        "observation.budget_reserved": 10,
+        "attempt.received": 10,
+        "checkpoint.saved": 10
+      },
+      "finish_reasons": {
+        "stop": 10
+      },
+      "raw_events_sha256": "0fdc00092f9e41083279b925cbfa38196899a0ad47ae3bd100da34ff1a37b3ec",
+      "raw_snapshot_sha256": "2c05edc3facd129821d252b70dffb3710ebad94268c684aa91d68c5c414db6e7"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-0d872417-L",
+      "arm": "L",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "c66a2e48b6da4bfe01541b1e62f820bd753bbcc43ad351d4a4e490a1ddf521f2",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-0d872417-L",
+        "fingerprint": "c66a2e48b6da4bfe01541b1e62f820bd753bbcc43ad351d4a4e490a1ddf521f2",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 5438,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 113,
+        "messages": 16,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 829342453,
+        "agent_id": "a00000",
+        "source_event": "bbf27650-6a2a-4eb2-8c8f-eead47516412",
+        "candidate": "{  \"n\": 40,  \"d\": 41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 115,
+        "tail_hash": "ce9f63f4e6f4b142584d5860227c8252acb24990dda1143ab5930d6f5a9d751b",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 7.113758073886856,
+      "usage": {
+        "prompt_tokens": 4782,
+        "completion_tokens": 656,
+        "total_tokens": 5438
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "message.sent": 16,
+        "message.bound": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "ce687bd1d28de35ca6d38ff9a1073bafe0f6bc79a57f9ca997334fa472d4cfd3",
+      "raw_snapshot_sha256": "585c0687c42b29d1b598f017883c61bbcdb5981ae11fbd5518255356ce64eebd"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-0d872417-X",
+      "arm": "X",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "d9e4c07709d93d12d571e056534406c3002c56f3296041292def3bcc6fae5fb0",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-0d872417-X",
+        "fingerprint": "d9e4c07709d93d12d571e056534406c3002c56f3296041292def3bcc6fae5fb0",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 1987,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 54,
+        "messages": 14,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 54,
+        "tail_hash": "d8abc5df5d71d9ef578a32014caacefe814d67ca9ce629734c4b5daba8faf35b",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 5.980263165896758,
+      "usage": {
+        "prompt_tokens": 1216,
+        "completion_tokens": 771,
+        "total_tokens": 1987
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7,
+        "message.sent": 14
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "c2f6ecffa44603e3a718afea2601f42a1383938b6b2c35a2939fb036bd3f31cc",
+      "raw_snapshot_sha256": "3b2b2143849fc130c7db4fe0cd8dcb28471ec650462f33dca51d7a5daf9d5fa1"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-0d872417-S",
+      "arm": "S",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "f28167c84f23f79ab671a7c78e0e444c43b3ec667898c2c3293f0c98d0c62d8d",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-0d872417-S",
+        "fingerprint": "f28167c84f23f79ab671a7c78e0e444c43b3ec667898c2c3293f0c98d0c62d8d",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 2979,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 829342453,
+        "agent_id": "a00000",
+        "source_event": "c8d0030a-8eaf-4452-aa81-601defb0c4a2",
+        "candidate": "{ \"n\": 40, \"d\": 41 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "862c3601931917a13f3c797195d69b427e720e3c64605265d346a9827170a4a0",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 7.6397523090709,
+      "usage": {
+        "prompt_tokens": 2751,
+        "completion_tokens": 228,
+        "total_tokens": 2979
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "e688428f66b6d94b2ab964dbadc4aa6af4ef82af6a4a61ab01314b609b7222ca",
+      "raw_snapshot_sha256": "925e9e478e03db5ab0cf87ed5f511153f6f806b882e0cb49ed02e0639bb56b33"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-52f67337-I",
+      "arm": "I",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "ce828903909fe6490ab70b7dce22d0f3f0d454cc3e3ba4b454ac343bb9542abb",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-52f67337-I",
+        "fingerprint": "ce828903909fe6490ab70b7dce22d0f3f0d454cc3e3ba4b454ac343bb9542abb",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 17,
+        "messages": 0,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 17,
+        "tail_hash": "2cd4be920d60030585fa4a59ed96508fb00d10f419b2929e85bd9411854a152b",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 5.444677612977102,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "e542fe1adb868e96c7db628809f662c94b0d047c2540aa572d0998ac75e3eb6d",
+      "raw_snapshot_sha256": "d7916c35db8b9c3b295549a243db3b5951b168d77e4ccd167609e296a8c5773e"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-52f67337-L",
+      "arm": "L",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "f51337b7a1174633f3339e1b67c57c17fa3c7ebcb1ac175357f0796d6aef6907",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-52f67337-L",
+        "fingerprint": "f51337b7a1174633f3339e1b67c57c17fa3c7ebcb1ac175357f0796d6aef6907",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "9a11702706bbf85fd9a98bd79a3316ca8fba59d4b6540133240fa94d988b63ce",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5113443220034242,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "276ba3a27f6ff0246f96bd4d49330a67960b564190dd9aecd68041ba236302b9",
+      "raw_snapshot_sha256": "bd16b8ca09773744217215c0282a4e787dfe3f678d03202dcac29f29eda19e00"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-52f67337-X",
+      "arm": "X",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "889c8c7feb5bf1cf650b436096e25cef3dd33d460cbc8127ebb1fec3e8b0d4fe",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-52f67337-X",
+        "fingerprint": "889c8c7feb5bf1cf650b436096e25cef3dd33d460cbc8127ebb1fec3e8b0d4fe",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "7df534821e274317b4ea064a6f40e3c0872b4626e522e35b9510ba025e103dd3",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.49138900195248425,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "8e1a70691a926a4b5a39f5ee1a2d7ca5155fdc517913502e30adc9a1ce53f9d5",
+      "raw_snapshot_sha256": "8775837959bbb81dcc33c86f4fb4ef3a2327a8e1115d8eed38ea6e70102643ad"
+    },
+    {
+      "run_id": "ec17c9b3a0658efe-52f67337-S",
+      "arm": "S",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "f00e4b33fe04528f42d80d263f1dc59816561f522222072efaa31f73b0be592c",
+      "status": {
+        "run_id": "ec17c9b3a0658efe-52f67337-S",
+        "fingerprint": "f00e4b33fe04528f42d80d263f1dc59816561f522222072efaa31f73b0be592c",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 2825,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 829342453,
+        "agent_id": "a00000",
+        "source_event": "eee36452-c6ed-4103-933d-6a9e08cd636e",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "534a5f9e318f9fa308c72ad7924b78ae08cdf4e55220f651664b02cfffdf44ca",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 4.851740967016667,
+      "usage": {
+        "prompt_tokens": 2665,
+        "completion_tokens": 160,
+        "total_tokens": 2825
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "376c912a3ab6ff02c9e3472950f44b63c302fbd46591bcc830f31819b8065b0c",
+      "raw_snapshot_sha256": "ef0cb5e684185e4402feab5e24b555d7f88ee1429c70a825de59230dc393a312"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-52f67337-I",
+      "arm": "I",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "29b62936f8cfbff9782d6eaab10b88d74800350bb9b8cfff703c381d302b9e1b",
+      "status": {
+        "run_id": "9dc1fce9270370e1-52f67337-I",
+        "fingerprint": "29b62936f8cfbff9782d6eaab10b88d74800350bb9b8cfff703c381d302b9e1b",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 336,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 17,
+        "messages": 0,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 17,
+        "tail_hash": "b8f4e8e7c18c0c486877533f85233e29060c2408205cf84e628a4d94b6638fbe",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.5708633589092642,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 44,
+        "total_tokens": 336
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "8b7e6c73027d74995b66b380c87b8fcdf99f89fd8bea73bb5fef7efa20fb0d36",
+      "raw_snapshot_sha256": "1366ad1cdfb5f7a25f79c6b3faa369dcd4f46d43536b73dc9d86ad2e3ca8ed0a"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-52f67337-L",
+      "arm": "L",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "ea2e79a4f2306bbec3017ea6d6d97d9be23fecf8c29d0c039aeb51022d92c5c5",
+      "status": {
+        "run_id": "9dc1fce9270370e1-52f67337-L",
+        "fingerprint": "ea2e79a4f2306bbec3017ea6d6d97d9be23fecf8c29d0c039aeb51022d92c5c5",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 2,
+          "running": 0,
+          "succeeded": 6,
+          "failed": 0
+        },
+        "attempts": 6,
+        "known_total_tokens": 1012,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 45,
+        "messages": 12,
+        "checkpoints": 6
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 45,
+        "tail_hash": "9db6e5922b0af6d8e7ca0579830be0b45620a584ff45423e483418bc0701349b",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 1.7095372930634767,
+      "usage": {
+        "prompt_tokens": 876,
+        "completion_tokens": 136,
+        "total_tokens": 1012
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 6,
+        "observation.budget_reserved": 6,
+        "attempt.received": 6,
+        "checkpoint.saved": 6,
+        "message.sent": 12
+      },
+      "finish_reasons": {
+        "stop": 6
+      },
+      "raw_events_sha256": "32e85f1e4fe67e98dce558f8fca6f6f4e6f45d3282f17aed91aa39e97c0045ed",
+      "raw_snapshot_sha256": "7b5a1c4ac4610d0f9f4b02ff5eafb38d8bca0227acaf6ea800fdbf086752fadc"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-52f67337-X",
+      "arm": "X",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "681b28de12602442671b8fa6bfa5f44a36bb7fa3b3d6e6f43bbac92e808a777e",
+      "status": {
+        "run_id": "9dc1fce9270370e1-52f67337-X",
+        "fingerprint": "681b28de12602442671b8fa6bfa5f44a36bb7fa3b3d6e6f43bbac92e808a777e",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 336,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "7c758f5e35e074e6b2ff2b779d7ae919f8032373f64cfd524a491dffc156e5e6",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4332519418094307,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 44,
+        "total_tokens": 336
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "20c54cec622f0e84c0c4991a2d4517522138eb178c3d06f7bb7b579f64a5c95f",
+      "raw_snapshot_sha256": "1d8f6f16738d825622a16cc7e35d6cd95fd7a3e85e2e413c34f8aec73ff60519"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-52f67337-S",
+      "arm": "S",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "921ac3a66461b38595318c2add60db14d85d0ebae7fc6dcbb103d9fe78245a91",
+      "status": {
+        "run_id": "9dc1fce9270370e1-52f67337-S",
+        "fingerprint": "921ac3a66461b38595318c2add60db14d85d0ebae7fc6dcbb103d9fe78245a91",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 3288,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2794191127,
+        "agent_id": "a00000",
+        "source_event": "ef8c8b0c-3639-4be1-92f6-af46a9faea6d",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "1c9b8836f84e36495be8d0d5321e037a2d5e7804d6a964691f56bfc3851a57ca",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 6.31619573594071,
+      "usage": {
+        "prompt_tokens": 2936,
+        "completion_tokens": 352,
+        "total_tokens": 3288
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "77a9bb1dfedef7fde92d2b71f5765410586754515512cc8e85474ec6a7167c03",
+      "raw_snapshot_sha256": "23a3a97c8f4e12cd351b6474e404bac97da3d54896fa5b8b6f4b7b1d7156b72f"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-0d872417-I",
+      "arm": "I",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "167c98d9472b3dbfc985f5bb5e68871432fff2435dfc721e8f63d8ac5c0fe10c",
+      "status": {
+        "run_id": "9dc1fce9270370e1-0d872417-I",
+        "fingerprint": "167c98d9472b3dbfc985f5bb5e68871432fff2435dfc721e8f63d8ac5c0fe10c",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 3316,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 40,
+        "messages": 0,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 40,
+        "tail_hash": "9ab53309d9b6474a31072d946a992b091952c07c9ecc143425a5cd7fbdc89f17",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 17.031161456136033,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 2092,
+        "total_tokens": 3316
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "a2cae336eee7deed22b271d2bbd867bcfd32b56c2581d9a147a53232f4191b4a",
+      "raw_snapshot_sha256": "5f76283a05e72ed34b9f64aaa79770ebd030153d23f71f2f41d31ac177e03040"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-0d872417-L",
+      "arm": "L",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "272e5074355d5b52e5969d48c06ab26994bb74d3ec1041d59101c8061025cf38",
+      "status": {
+        "run_id": "9dc1fce9270370e1-0d872417-L",
+        "fingerprint": "272e5074355d5b52e5969d48c06ab26994bb74d3ec1041d59101c8061025cf38",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 3421,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 54,
+        "messages": 14,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 54,
+        "tail_hash": "e7a0743fa560e17456fc965d3b5c5b02bd73e44760633871f94e669d55608785",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 17.55697311484255,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 2197,
+        "total_tokens": 3421
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7,
+        "message.sent": 14
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "dde9f13d3ce7e7e688cf8d837956c4b70a40e67bce0ca1a04138cf720c4f1163",
+      "raw_snapshot_sha256": "041e7560b57767fca6b85a5638aadeac2b5d3b019e7b74ff7d06571b13344070"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-0d872417-X",
+      "arm": "X",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "febb42bf56fc871b0c7d782090dbe07d7b016b1f726b032b8faa3c84623de8ed",
+      "status": {
+        "run_id": "9dc1fce9270370e1-0d872417-X",
+        "fingerprint": "febb42bf56fc871b0c7d782090dbe07d7b016b1f726b032b8faa3c84623de8ed",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 2972,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 54,
+        "messages": 14,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 54,
+        "tail_hash": "57c90607f882ca5f4937ec476e4578eb0ee43b2615dc5d28b920b8234dd6933f",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 11.877354657975957,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 1748,
+        "total_tokens": 2972
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7,
+        "message.sent": 14
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "58b1d387b19645f5790fb79a4476fd3005de47c6104aa67c5942bd1635366b76",
+      "raw_snapshot_sha256": "91eda71b90f08e4383b3f7efd5c15c71714401c5e6fed46b6b1c13ea579e680f"
+    },
+    {
+      "run_id": "9dc1fce9270370e1-0d872417-S",
+      "arm": "S",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "0dbcdc7c92f46a826a28e519a9b55a6ce9ec9ffd6314ea13b56a4deaa5aeacf7",
+      "status": {
+        "run_id": "9dc1fce9270370e1-0d872417-S",
+        "fingerprint": "0dbcdc7c92f46a826a28e519a9b55a6ce9ec9ffd6314ea13b56a4deaa5aeacf7",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 9852,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2794191127,
+        "agent_id": "a00000",
+        "source_event": "ffe6d406-fa5a-47fc-ac9f-bdb68a00b26d",
+        "candidate": "{\"claim\":\"P(x) = (1/4)x⁴ − (1/2)x² is the unique polynomial in Q[x] satisfying P(0) = 0 and P'(x) = x³ − x.\",\"dependencies\":[],\"argument\":\"Integrating P'(x) = x³ − x term by term gives P(x) = x⁴/4 − x²/2 + C for some constant C. Since P(0) = 0, we get C = 0, so P(x) = x⁴/4 − x²/2, which lies in Q[x]. Verification: P(0) = 0 and P'(x) = 4·(x³/4) − 2·(x/2) = x³ − x. Uniqueness: if Q ∈ Q[x] also satisfies Q(0) = 0 and Q'(x) = x³ − x, then (P − Q)' = 0, so P − Q is a constant, and P(0) = Q(0) = 0 forces that constant to be 0. Coefficients in ascending powers: c0 = 0, c1 = 0, c2 = −1/2, c3 = 0, c4 = 1/4.\",\"unresolved\":[]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "34bdb74b4082712a2e35b58c7a3c017392bc0a74dbce0c3b9f026bdcb41b1ae3",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 43.947004148038104,
+      "usage": {
+        "prompt_tokens": 6109,
+        "completion_tokens": 3743,
+        "total_tokens": 9852
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "236b4ab51448871bf8b85f2a077d5540283972163e0f159426d8f8082802f3de",
+      "raw_snapshot_sha256": "fb46d28205c9588e35a231549a7a2cf063abbe23d3ffebe289ba47d2172c6940"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-52f67337-S",
+      "arm": "S",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "7ecba93eb1eae827242a732b5bd0fae6aa11c3cbf1bb72b4f3d8eee36da4217b",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-52f67337-S",
+        "fingerprint": "7ecba93eb1eae827242a732b5bd0fae6aa11c3cbf1bb72b4f3d8eee36da4217b",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 2825,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2361948518,
+        "agent_id": "a00000",
+        "source_event": "85b51a4a-66a0-4b37-adbf-dbf4ad695006",
+        "candidate": "{\"n\":40,\"d\":41}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "11466d7487b499fcac6adb2f34d580c7b8f748ea3fe79549dbe4a101eec31a4c",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 4.852176557993516,
+      "usage": {
+        "prompt_tokens": 2665,
+        "completion_tokens": 160,
+        "total_tokens": 2825
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "f83343832f8ab8e4fd2db222f356c2c4a19ddbd6baf9cd06812a4c740c19532b",
+      "raw_snapshot_sha256": "4f65f8774251c4c50a5b2de1704a14a20515117516131499a8a8204608d4a1e6"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-52f67337-I",
+      "arm": "I",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "39eb9b5b580551dbd75c9b3f49a39cfbd6d3e3d95883ef129010bab701c4d023",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-52f67337-I",
+        "fingerprint": "39eb9b5b580551dbd75c9b3f49a39cfbd6d3e3d95883ef129010bab701c4d023",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 17,
+        "messages": 0,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 17,
+        "tail_hash": "299cfc6f8bcdaa14d5afe4723fcf6690f64b67226111b060e8bb5e6071070aaa",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4906256110407412,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "d5f5d2acb7a92462b83552fd824a41e787103bd8c31b2e193bcf8a80e4de53de",
+      "raw_snapshot_sha256": "b88fc24faa22f068a8369877662bf689efdfedd87e80879310e8220b0557ef8b"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-52f67337-L",
+      "arm": "L",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "e5105c4a50d6743326fc04ac0d591d45fed0b53d0ed58e64cf3fda8dc9d3c052",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-52f67337-L",
+        "fingerprint": "e5105c4a50d6743326fc04ac0d591d45fed0b53d0ed58e64cf3fda8dc9d3c052",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "dacfe53de0f672716dd4790684e53f092d2dea2c479733a67b9f27d65865eda4",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.35088179796002805,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "c991d132f7e3404537e6e551af1f6087181a08abe2e31f1346b944abe48d730c",
+      "raw_snapshot_sha256": "fe9e9aed6013165dfc14a10b8cfefdf3a576fbc5819f2024e72bd39eefe1a103"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-52f67337-X",
+      "arm": "X",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "1c2ed2f7462f452eba5a1de5d016f669ae619ee2cf5a33faefea0eb0fb47b74b",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-52f67337-X",
+        "fingerprint": "1c2ed2f7462f452eba5a1de5d016f669ae619ee2cf5a33faefea0eb0fb47b74b",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 310,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "ab7c93e90b63785401e698d6e7cd062dcdbb4b1321a0ef27c1f1f074243486b8",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.35092359501868486,
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 20,
+        "total_tokens": 310
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "45cc1a7064e03702d690b1c728cd2f2c311328faa8848236f06b812d6104c8e9",
+      "raw_snapshot_sha256": "60f921a80e06fb856d4397a52ba5b0df4c5131e1698e45206773d377bd523f86"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-0d872417-S",
+      "arm": "S",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "9e76e47c4358b2d9bf41d3c5d2e685d19809664deed6e366a68a942d25eeb68d",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-0d872417-S",
+        "fingerprint": "9e76e47c4358b2d9bf41d3c5d2e685d19809664deed6e366a68a942d25eeb68d",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 3864,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2361948518,
+        "agent_id": "a00000",
+        "source_event": "4da7a9db-589e-4663-afc3-cbba42803933",
+        "candidate": "{ \"n\": 40, \"d\": 1681 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "4ad0faa8855e6754d32c1df691d270afbd89653278f0ab6c7b4f493b1d5db076",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 10.288359691854566,
+      "usage": {
+        "prompt_tokens": 3198,
+        "completion_tokens": 666,
+        "total_tokens": 3864
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "ca242a55e367740637d3debfe409694f83e12feb9678e1f8704e29db5762ce1e",
+      "raw_snapshot_sha256": "36777d1eee5b2431b1731e4b109ed1f8be6859422aa5f53f098414edbe6e00c4"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-0d872417-I",
+      "arm": "I",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "9aa2b49655bbc1daa925320d8022a5debc5c8c00cc35837841437f99f0596a7d",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-0d872417-I",
+        "fingerprint": "9aa2b49655bbc1daa925320d8022a5debc5c8c00cc35837841437f99f0596a7d",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 1833,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 40,
+        "messages": 0,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 40,
+        "tail_hash": "1ab1e9a6ef0750aaa9c4e70b12ecedfdde4cd8bdebf5fd290123e4133a42b2cd",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 5.6385271260514855,
+      "usage": {
+        "prompt_tokens": 1216,
+        "completion_tokens": 617,
+        "total_tokens": 1833
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "375a57e5d2766d02e099cc6272d427c071ac4c488744412fcea7c376e89b773d",
+      "raw_snapshot_sha256": "e6fe556cefb94912e019df13ad72db342e01d407b3e7e36a7e78ed69203c1bfb"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-0d872417-L",
+      "arm": "L",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "3b1841a186ea461495385fa62e4a77eaae8fd2e609a02e7d5ea1d72179ddb438",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-0d872417-L",
+        "fingerprint": "3b1841a186ea461495385fa62e4a77eaae8fd2e609a02e7d5ea1d72179ddb438",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 4670,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 113,
+        "messages": 16,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2361948518,
+        "agent_id": "a00001",
+        "source_event": "0bb7a66a-2718-4174-a3ea-8da03e10ef72",
+        "candidate": "{ \"n\": 40, \"d\": 41 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 115,
+        "tail_hash": "4cfd89e14abbfc7f74679da411249135e9ed40604253b131099885914f06c8c9",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 4.614894900936633,
+      "usage": {
+        "prompt_tokens": 4432,
+        "completion_tokens": 238,
+        "total_tokens": 4670
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "message.sent": 16,
+        "message.bound": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "16db32517d92808e85aba43266767e54e87645450e26a539774b6bcfc10e6767",
+      "raw_snapshot_sha256": "24ce67dc839e73ebfc7f50979793c44c9f186c88f0df96cc102fd0ee97c0f078"
+    },
+    {
+      "run_id": "ef7d6f835ec3ea84-0d872417-X",
+      "arm": "X",
+      "model": "glm-5.3-flash",
+      "task_id": "prime-counterexample",
+      "manifest_sha256": "bfe516bacd363ce50ccbe5f10450aea0ad9c935c58a7994d4b43cfd9e6ec4fa0",
+      "status": {
+        "run_id": "ef7d6f835ec3ea84-0d872417-X",
+        "fingerprint": "bfe516bacd363ce50ccbe5f10450aea0ad9c935c58a7994d4b43cfd9e6ec4fa0",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 332,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "031e5d0365dc7f0be89e3890df0dd9855129adb4795ee97d5a4580c5134b5db0",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4111233060248196,
+      "usage": {
+        "prompt_tokens": 304,
+        "completion_tokens": 28,
+        "total_tokens": 332
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "e0ffdc50562e003dde181e048573a4aa20d18bdbbb67b803ef70a932f2b51543",
+      "raw_snapshot_sha256": "ebbc64b0ce5b6baf47d8788aaf30ac7569ccbc67dc4ca68fe1cfc6a1ba08ae2d"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-0d872417-X",
+      "arm": "X",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "876d2427bb3e95bf632e094582e720d075d21a5146fe2f790a8fe74916eea134",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-0d872417-X",
+        "fingerprint": "876d2427bb3e95bf632e094582e720d075d21a5146fe2f790a8fe74916eea134",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 3293,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 54,
+        "messages": 14,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 54,
+        "tail_hash": "cac08a65fe993e3349ec07245f71602b7f0abb71489a879cd5d58b834ef088ac",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 16.13295723614283,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 2069,
+        "total_tokens": 3293
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 7,
+        "message.sent": 14
+      },
+      "finish_reasons": {
+        "stop": 7,
+        "length": 1
+      },
+      "raw_events_sha256": "cb21ed3819674923fe6c938b9c56d89e287fe47c64d209e165f6b650b4dfe7da",
+      "raw_snapshot_sha256": "cb2cf66391417256c1bbe5914d1ce854b5750f1d3fa377f64dd00ed5bdc1a9b4"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-0d872417-L",
+      "arm": "L",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "02d477d1b02bf25503745444c2132dc3b6d84b4fbca7311549bacf9f3f8aa692",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-0d872417-L",
+        "fingerprint": "02d477d1b02bf25503745444c2132dc3b6d84b4fbca7311549bacf9f3f8aa692",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 16755,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 113,
+        "messages": 16,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1357528319,
+        "agent_id": "a00005",
+        "source_event": "df8866fd-b43f-412c-9f73-bf48b4b0e21a",
+        "candidate": "{\"claim\":\"P in Q[x] with P(0)=0 and P'(x)=x^3-x\",\"assumptions\":[],\"dependencies\":[\"power rule d/dx x^n = n x^(n-1)\",\"linearity of differentiation\",\"a polynomial with identically zero derivative is a constant\"],\"argument\":\"Integrate termwise: ∫x^3 dx = x^4/4 and ∫(-x) dx = -x^2/2, so P(x)=x^4/4 - x^2/2 + C for some C∈Q. P(0)=0 forces C=0. Check: P'(x)=4·x^3/4 - 2·x/2 = x^3 - x, and P(0)=0. Uniqueness: any two solutions differ by a constant, which P(0)=0 forces to be zero.\",\"unresolved_obligations\":[],\"certificate\":{\"coefficients\":[\"0\",\"0\",\"-1/2\",\"0\",\"1/4\"]}}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 115,
+        "tail_hash": "00f48a8aab3ad1cf573ceaad271b6644a9b26f9b13700fdd39bfa4120289cdb1",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 39.938959571998566,
+      "usage": {
+        "prompt_tokens": 11691,
+        "completion_tokens": 5064,
+        "total_tokens": 16755
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "message.sent": 16,
+        "message.bound": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "ff957c45d9c5d57bef93ba770d425d51654e135d5b1979b5f31e7e36808db5a7",
+      "raw_snapshot_sha256": "e9052f0471ca871e73beccbbbf017efc13c39ae0b26a6460a80899475d8bb452"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-0d872417-S",
+      "arm": "S",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "568b88e5469974ebb4bde7085117efc10bb4c577a2b3c32b8f374a6eb59a50dc",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-0d872417-S",
+        "fingerprint": "568b88e5469974ebb4bde7085117efc10bb4c577a2b3c32b8f374a6eb59a50dc",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 12210,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1357528319,
+        "agent_id": "a00000",
+        "source_event": "824e9e1e-3fb7-4ba2-bb0d-a2357db99c53",
+        "candidate": "{\"claim\":\"The unique polynomial P in Q[x] with P(0)=0 and P'(x)=x^3−x is P(x)=(1/4)x^4−(1/2)x^2.\",\"assumptions\":[\"Formal derivative on Q[x] is Q-linear and termwise: (a x^n)' = n a x^(n−1)\",\"Termwise antiderivative: ∫x^k dx = x^(k+1)/(k+1) for k≥0, valid in Q[x] since k+1≠0 in Q\",\"A polynomial over Q with identically zero formal derivative is constant\"],\"dependencies\":[],\"argument\":[\"Seek P = Σ c_k x^k. Then P' = Σ k c_k x^(k−1). Matching coefficients with x^3−x gives: constant term of P' is c_1 = 0; x^1 coefficient is 2c_2 = −1, so c_2 = −1/2; x^2 coefficient is 3c_3 = 0, so c_3 = 0; x^3 coefficient is 4c_4 = 1, so c_4 = 1/4; for k≥5, k c_k = 0 forces c_k = 0 since char(Q)=0\",\"c_0 is unconstrained by P', so P(0)=c_0=0 pins it down\",\"Verification: P(x)=(1/4)x^4−(1/2)x^2 gives P'(x)=x^3−x and P(0)=0\",\"Uniqueness: if P1,P2 both satisfy the conditions, then (P1−P2)'=0, so P1−P2 is constant; evaluating at 0 gives P1−P2=0\"],\"certificate\":{\"coefficients\":[\"0\",\"0\",\"-1/2\",\"0\",\"1/4\"]},\"unresolved_obligations\":[]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "8cf31133e8dd13d5d79230dc1bdff9a374dc0403916595f43e25693cd3d5954d",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 68.83863976993598,
+      "usage": {
+        "prompt_tokens": 7286,
+        "completion_tokens": 4924,
+        "total_tokens": 12210
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "96e1e0bd320e996e250b783ddda4c026687ecc35f06971ac495224916cd3640f",
+      "raw_snapshot_sha256": "b2fbd622075c8be25f11ddff058d782a1922fd15fb4d3f6d303bdd3b3a735953"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-0d872417-I",
+      "arm": "I",
+      "model": "glm-5.3-flash",
+      "task_id": "integral-rational",
+      "manifest_sha256": "98667debd1ac60740472d09a3a00c7b42c2017a864b4cfbbe974c2970593dfe4",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-0d872417-I",
+        "fingerprint": "98667debd1ac60740472d09a3a00c7b42c2017a864b4cfbbe974c2970593dfe4",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 6,
+          "failed": 2
+        },
+        "attempts": 8,
+        "known_total_tokens": 3744,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 39,
+        "messages": 0,
+        "checkpoints": 6
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 39,
+        "tail_hash": "18b626f15de5dcc63afbf27dd6b0e9a63e70c439013b5920c0d203333abf3228",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 22.450099428882822,
+      "usage": {
+        "prompt_tokens": 1224,
+        "completion_tokens": 2520,
+        "total_tokens": 3744
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 8,
+        "observation.budget_reserved": 8,
+        "attempt.received": 8,
+        "checkpoint.saved": 6
+      },
+      "finish_reasons": {
+        "stop": 6,
+        "length": 2
+      },
+      "raw_events_sha256": "ce9aee4ef4cb1c92ef05278aa3c53643788df4722b6f016afdca6a36d849ddcf",
+      "raw_snapshot_sha256": "9d9360965d2d9cb63bfd35b4402124bd0cc2915ea3e21d59420a6cee5284c456"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-52f67337-X",
+      "arm": "X",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "1a8e48841d57f3dda0e44546c20a625b8bd2f395a46d902761453f2e40517d6e",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-52f67337-X",
+        "fingerprint": "1a8e48841d57f3dda0e44546c20a625b8bd2f395a46d902761453f2e40517d6e",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 336,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "e53e67eccef920addf1c798cff67b0ba2a30dc9715cc9a4fce89e2047d1931fa",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.4513802130240947,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 44,
+        "total_tokens": 336
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "869205004d8dc35dfded8f867010966c6c89c44a7841d1f7e91ba2d2b8f97313",
+      "raw_snapshot_sha256": "a2f0d1d3775f1e5903dc001e41f7a1a42a981aee32e8b804874c265d8914c0a3"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-52f67337-L",
+      "arm": "L",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "92abfa3d4052e7347a13933569c09e25b8473d2587270d1f44ac59926171a503",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-52f67337-L",
+        "fingerprint": "92abfa3d4052e7347a13933569c09e25b8473d2587270d1f44ac59926171a503",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 338,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 21,
+        "messages": 4,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 21,
+        "tail_hash": "54a17c99647590e261a1701fb2acd910826cda38eaf52867cd3f081e85d07857",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.45128528005443513,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 46,
+        "total_tokens": 338
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2,
+        "message.sent": 4
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "43b3a785c61a67de458be7f1f9e20bbdfc7ee42b69f6d6b8ae1c2e49b184bb75",
+      "raw_snapshot_sha256": "a8ee466655409f8067d2f0614007c2e8be874ed66f3a1a62b03d255089a866ee"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-52f67337-S",
+      "arm": "S",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "249c99c8401d64389bc543b21e64257ab0cc2ccf9d2afb67068df568bfc3faff",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-52f67337-S",
+        "fingerprint": "249c99c8401d64389bc543b21e64257ab0cc2ccf9d2afb67068df568bfc3faff",
+        "planned_total_steps": 16,
+        "materialized_steps": 16,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 16,
+          "failed": 0
+        },
+        "attempts": 16,
+        "known_total_tokens": 3288,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 81,
+        "messages": 0,
+        "checkpoints": 16
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 1357528319,
+        "agent_id": "a00000",
+        "source_event": "7e8999ee-7707-4784-872e-964ea5c4493d",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"1/4\",\"-1/2\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 83,
+        "tail_hash": "9f5a33b0d95a333e86c4df4154b6d436ddda957cd5c7630c9b350123c98d67ca",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 6.336268047103658,
+      "usage": {
+        "prompt_tokens": 2936,
+        "completion_tokens": 352,
+        "total_tokens": 3288
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 16,
+        "attempt.started": 16,
+        "observation.budget_reserved": 16,
+        "attempt.received": 16,
+        "checkpoint.saved": 16,
+        "observation.terminal_selection": 1,
+        "observation.terminal_evaluation": 1
+      },
+      "finish_reasons": {
+        "stop": 16
+      },
+      "raw_events_sha256": "d81754658d73571a8bd4f4518ee0a2ba6893b3dba22a0b1fefeb03ed2b28df7b",
+      "raw_snapshot_sha256": "6a0c8b4f9f84e2bb9d112a1b8c484fd110e36f65efbb4ae9e33dee851be0ca3a"
+    },
+    {
+      "run_id": "76ca9ec5b4e6f4ad-52f67337-I",
+      "arm": "I",
+      "model": "deepseek-v4-flash-0731",
+      "task_id": "integral-rational",
+      "manifest_sha256": "abd9c67f6e109dd343eadfbbcb5b024924ae0b7e01ebe7e4fd5794502b296f2c",
+      "status": {
+        "run_id": "76ca9ec5b4e6f4ad-52f67337-I",
+        "fingerprint": "abd9c67f6e109dd343eadfbbcb5b024924ae0b7e01ebe7e4fd5794502b296f2c",
+        "planned_total_steps": 16,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 6,
+          "running": 0,
+          "succeeded": 2,
+          "failed": 0
+        },
+        "attempts": 2,
+        "known_total_tokens": 336,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 17,
+        "messages": 0,
+        "checkpoints": 2
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 17,
+        "tail_hash": "830de0c6ae63d97364e114a3a5e25c9c909b2cb46566327de2b2bda0cfa5db97",
+        "scientific_validity_checked": false
+      },
+      "elapsed_seconds": 0.43051068391650915,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 44,
+        "total_tokens": 336
+      },
+      "event_kinds": {
+        "run.created": 1,
+        "step.enqueued": 8,
+        "attempt.started": 2,
+        "observation.budget_reserved": 2,
+        "attempt.received": 2,
+        "checkpoint.saved": 2
+      },
+      "finish_reasons": {
+        "stop": 2
+      },
+      "raw_events_sha256": "e1171dcebd44ca0c51dbcf72347510ab59020794e8aab1affbe600e452e7243e",
+      "raw_snapshot_sha256": "db184dfdcd2b395ba6a1384061aefbc877d0c6cb23594163e250ed25ccc832b4"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 65947,
+    "completion_tokens": 29206,
+    "total_tokens": 95153
+  },
+  "finish_reasons": {
+    "stop": 264,
+    "length": 8
+  },
+  "response_models": {
+    "glm-5.3-flash": 180,
+    "deepseek-v4-flash-0731": 92
+  },
+  "raw_summary_sha256": "99ba2ee743bb493db239190f0db230ec14de884ff3fdd4ecd8cf6c50e84a6c0d",
+  "public_trace_policy": "Original event hashes retained; only run.created gateway URL redacted. First-event hash requires restricted original; all later hashes, request/receipt hashes, selection and exact verdicts publicly replayable.",
+  "frontier_proof_verified": false,
+  "weights_independently_attested": false
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "trial": "v2",
+      "populations": 32,
+      "calls": 272,
+      "events": 1682,
+      "message_events": 148,
+      "exact_verdicts_replayed": 11,
+      "first_event_hashes_require_private_original": 32
+    },
+    {
+      "trial": "v3",
+      "populations": 32,
+      "calls": 472,
+      "events": 2895,
+      "message_events": 250,
+      "exact_verdicts_replayed": 26,
+      "first_event_hashes_require_private_original": 32
+    }
+  ]
+}

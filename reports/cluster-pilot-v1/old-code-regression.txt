@@ -1,0 +1,14 @@
+test_simultaneous_batch_completion_refills_pending_steps (tests.test_live_pilot.LivePilotTests) ... FAIL
+
+======================================================================
+FAIL: test_simultaneous_batch_completion_refills_pending_steps (tests.test_live_pilot.LivePilotTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<archived-source>/tests/test_live_pilot.py", line 33, in test_simultaneous_batch_completion_refills_pending_steps
+    self.assertTrue(result['status']['complete'])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.088s
+
+FAILED (failures=1)

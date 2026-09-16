@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "jobs": [
+    {
+      "job_id": "190040",
+      "job_name": "aimeth-site-probe",
+      "state": "FAILED",
+      "exit_code": "6:0",
+      "elapsed": "00:00:01",
+      "allocated_cpus": "2",
+      "allocated_resources": "billing=2,cpu=2,mem=1G,node=1",
+      "node": "gpu08",
+      "started_at_cluster_clock": "2026-09-16T11:53:07",
+      "ended_at_cluster_clock": "2026-09-16T11:53:08"
+    },
+    {
+      "job_id": "190041",
+      "job_name": "aimeth-population-pilot",
+      "state": "CANCELLED by experiment owner",
+      "exit_code": "0:0",
+      "elapsed": "00:04:22",
+      "allocated_cpus": "2",
+      "allocated_resources": "billing=2,cpu=2,mem=2G,node=1",
+      "node": "gpu08",
+      "started_at_cluster_clock": "2026-09-16T12:02:31",
+      "ended_at_cluster_clock": "2026-09-16T12:06:53"
+    },
+    {
+      "job_id": "190042",
+      "job_name": "aimeth-population-pilot",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:05:22",
+      "allocated_cpus": "2",
+      "allocated_resources": "billing=2,cpu=2,mem=2G,node=1",
+      "node": "gpu08",
+      "started_at_cluster_clock": "2026-09-16T12:07:32",
+      "ended_at_cluster_clock": "2026-09-16T12:12:54"
+    },
+    {
+      "job_id": "190043",
+      "job_name": "aimeth-population-pilot",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:06:03",
+      "allocated_cpus": "2",
+      "allocated_resources": "billing=2,cpu=2,mem=2G,node=1",
+      "node": "gpu08",
+      "started_at_cluster_clock": "2026-09-16T12:16:26",
+      "ended_at_cluster_clock": "2026-09-16T12:22:29"
+    }
+  ],
+  "v1": {
+    "scope": "aborted engineering route test; excluded from math comparison",
+    "reserved_calls": 6,
+    "known_failure_receipts": 4,
+    "no_receipt_at_cancellation": 2,
+    "usage_unknown_attempts": 6,
+    "receipts": [
+      {
+        "error": {
+          "category": "network_or_timeout",
+          "http_status": null
+        },
+        "usage": null
+      },
+      {
+        "error": {
+          "category": "network_or_timeout",
+          "http_status": null
+        },
+        "usage": null
+      },
+      {
+        "error": {
+          "category": "network_or_timeout",
+          "http_status": null
+        },
+        "usage": null
+      },
+      {
+        "error": {
+          "category": "network_or_timeout",
+          "http_status": null
+        },
+        "usage": null
+      },
+      null,
+      null
+    ],
+    "private_archive_sha256": "0bdb8fa76678ed6f5b6a9ce44288a8d4de2aaa021a34961317f54994d335c072",
+    "private_final_quota_sha256": "a31defe48d9f707617451f73a9bd0bdfcb07271c340df26b4de827d6d57b9b01"
+  },
+  "all_trials": {
+    "population_attempt_reservations": 750,
+    "transport_probe_calls": 4,
+    "known_total_tokens": 241180,
+    "unknown_usage_attempts": 6,
+    "direct_public_provider_calls": 0,
+    "gateway_backend_route_independently_attested": false
+  },
+  "v2_excluded_in_full": true,
+  "v3_role": "exploratory calibration after engineering corrections",
+  "node_observation": {
+    "scope": "selected process arguments on client node; not model-weight attestation",
+    "served_model_name": "deepseek-v4-flash",
+    "tensor_parallel_size": 8,
+    "max_model_len": 1048576,
+    "gateway_mapping_verified": false,
+    "weight_hash_verified": false,
+    "private_probe_sha256": "8e7e88c0e54d78e6f972c5380236310a3d5dd164ccc8086bdb3267a26f46c4f7"
+  }
+}

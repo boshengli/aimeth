@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0",
+  "scope": "Frozen cluster calibration code/data/report; artifact identity is not a mathematical proof",
+  "artifacts": [
+    {
+      "id": "cluster-001",
+      "path": "archives/cluster-pilot-v1/aimeth_design/__init__.py",
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af",
+      "bytes": 67
+    },
+    {
+      "id": "cluster-002",
+      "path": "archives/cluster-pilot-v1/aimeth_design/__main__.py",
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950",
+      "bytes": 3402
+    },
+    {
+      "id": "cluster-003",
+      "path": "archives/cluster-pilot-v1/aimeth_design/execution.py",
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514",
+      "bytes": 3007
+    },
+    {
+      "id": "cluster-004",
+      "path": "archives/cluster-pilot-v1/aimeth_design/organizations.py",
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25",
+      "bytes": 7898
+    },
+    {
+      "id": "cluster-005",
+      "path": "archives/cluster-pilot-v1/aimeth_evaluation/__init__.py",
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74",
+      "bytes": 86
+    },
+    {
+      "id": "cluster-006",
+      "path": "archives/cluster-pilot-v1/aimeth_evaluation/controls.py",
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686",
+      "bytes": 4807
+    },
+    {
+      "id": "cluster-007",
+      "path": "archives/cluster-pilot-v1/aimeth_pilot/__init__.py",
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1",
+      "bytes": 79
+    },
+    {
+      "id": "cluster-008",
+      "path": "archives/cluster-pilot-v1/aimeth_pilot/quota.py",
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a",
+      "bytes": 3181
+    },
+    {
+      "id": "cluster-009",
+      "path": "archives/cluster-pilot-v1/aimeth_pilot/run.py",
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205",
+      "bytes": 12225
+    },
+    {
+      "id": "cluster-010",
+      "path": "archives/cluster-pilot-v1/aimeth_runtime/__init__.py",
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3",
+      "bytes": 174
+    },
+    {
+      "id": "cluster-011",
+      "path": "archives/cluster-pilot-v1/aimeth_runtime/__main__.py",
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346",
+      "bytes": 3451
+    },
+    {
+      "id": "cluster-012",
+      "path": "archives/cluster-pilot-v1/aimeth_runtime/runner.py",
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf",
+      "bytes": 7525
+    },
+    {
+      "id": "cluster-013",
+      "path": "archives/cluster-pilot-v1/aimeth_runtime/store.py",
+      "sha256": "ce427cd875847aea637d075a0f5ba8ea692aa867f8a37e80851c38265544f370",
+      "bytes": 41930
+    },
+    {
+      "id": "cluster-014",
+      "path": "archives/cluster-pilot-v1/cluster/pilot.sbatch",
+      "sha256": "792bebbf5190b3029ddb550858c94187344bc3e5cab4ddaa97084048d9e3a726",
+      "bytes": 415
+    },
+    {
+      "id": "cluster-015",
+      "path": "archives/cluster-pilot-v1/docs/cluster-pilot-v1.md",
+      "sha256": "31f966ca4dc99d24f7b564fcdd5fab5f902db0e2ca1f2a64ace47a116c323aee",
+      "bytes": 7013
+    },
+    {
+      "id": "cluster-016",
+      "path": "archives/cluster-pilot-v1/source.json",
+      "sha256": "bda4e3483dc659f32cd23958abe128a891317915feba0ecf6c4720b67db49021",
+      "bytes": 226
+    },
+    {
+      "id": "cluster-017",
+      "path": "archives/cluster-pilot-v1/tasks/math-development-v1.json",
+      "sha256": "a1a7545c6d37988e843fbeb051e1f883f1dad5ad460eab57c7ea6e864f54d3b7",
+      "bytes": 1596
+    },
+    {
+      "id": "cluster-018",
+      "path": "archives/cluster-pilot-v1/tests/test_artifact_integrity.py",
+      "sha256": "0808af4bbc6f4ab2a43f424d146b509dc1a0944e56f7581605ba5dabf0917981",
+      "bytes": 2535
+    },
+    {
+      "id": "cluster-019",
+      "path": "archives/cluster-pilot-v1/tests/test_live_pilot.py",
+      "sha256": "bdc6a1f1373f6f59a5a0458914784af7bc31a06207f9b20262717fe799dcd482",
+      "bytes": 6800
+    },
+    {
+      "id": "cluster-020",
+      "path": "archives/cluster-pilot-v1/tests/test_organization_design.py",
+      "sha256": "cdc7e845e4cf9b9290be7e6ac8991d787061c516a5bb9a0800d00e6b904928a9",
+      "bytes": 9365
+    },
+    {
+      "id": "cluster-021",
+      "path": "archives/cluster-pilot-v1/tests/test_runtime.py",
+      "sha256": "c3739a2d924eabd52cf80f5d7c447d4da8ebb598912b13b6166d6fff4f7b8ce8",
+      "bytes": 13699
+    },
+    {
+      "id": "cluster-022",
+      "path": "archives/cluster-pilot-v1/tests/test_transport.py",
+      "sha256": "d49d91877443b4a36170b4e3928f974052ba5d9d19fbe4d2460d5fbdbe5839e0",
+      "bytes": 4307
+    },
+    {
+      "id": "cluster-023",
+      "path": "docs/cluster-pilot-v1.md",
+      "sha256": "31f966ca4dc99d24f7b564fcdd5fab5f902db0e2ca1f2a64ace47a116c323aee",
+      "bytes": 7013
+    },
+    {
+      "id": "cluster-024",
+      "path": "milestones/m2-1-cluster-pilot-v1-1440-top.png",
+      "sha256": "ebebabbf88fc4ead97edaa47371dae8c5d7b3711d16e3b595bc7355558d6b47b",
+      "bytes": 204528
+    },
+    {
+      "id": "cluster-025",
+      "path": "milestones/m2-1-cluster-pilot-v1-1440.png",
+      "sha256": "756727ecfd755d7830cabe5b09d3803cb40f59ad8c6b5e4e158bd6f8af14b9b2",
+      "bytes": 1363115
+    },
+    {
+      "id": "cluster-026",
+      "path": "milestones/m2-1-cluster-pilot-v1-390-top.png",
+      "sha256": "dd47a7789d8d3556d136974753d3ee3583c8b14da4f78d6b5f3cf88b43e29238",
+      "bytes": 117514
+    },
+    {
+      "id": "cluster-027",
+      "path": "milestones/m2-1-cluster-pilot-v1-390.png",
+      "sha256": "4e6a5eb11645407dd06d698fa3b82b0d5e52c41377684b34b809a16be23b9151",
+      "bytes": 1142974
+    },
+    {
+      "id": "cluster-028",
+      "path": "milestones/m2-1-cluster-pilot-v1.browser-qa.json",
+      "sha256": "834c0ceaadfcc355e4606fa03dd03f183d7b1762a7809e20cf5ff47e61783b5c",
+      "bytes": 677
+    },
+    {
+      "id": "cluster-029",
+      "path": "milestones/m2-1-cluster-pilot-v1.evidence.json",
+      "sha256": "011891b721979740765f9cdb0906adf3a27ebc96ed955b267fa65e9816aa10fe",
+      "bytes": 2572
+    },
+    {
+      "id": "cluster-030",
+      "path": "milestones/m2-1-cluster-pilot-v1.html",
+      "sha256": "5372f52371a6b1b7fd14953da6c3acb45e40532eca232c05c11a6b9883a6a1bd",
+      "bytes": 87511
+    },
+    {
+      "id": "cluster-031",
+      "path": "milestones/m2-1-cluster-pilot-v1.visual-review.json",
+      "sha256": "c50f72fa1bd2b7b60227e542cd5472579c8ab7d7f4ae56374e8deb0c2c0fdaa6",
+      "bytes": 417
+    },
+    {
+      "id": "cluster-032",
+      "path": "reports/cluster-pilot-v1/execution-audit.json",
+      "sha256": "8a7941e38e8884cf1a91e285564700bd7121baeb73d3af38e186b00cacc3ccc9",
+      "bytes": 3422
+    },
+    {
+      "id": "cluster-033",
+      "path": "reports/cluster-pilot-v1/old-code-regression.txt",
+      "sha256": "6f1eeee4b9a8e4980a0972bd9f43dbbf8b159c0470aa6668e94dde9b0c4468c7",
+      "bytes": 705
+    },
+    {
+      "id": "cluster-034",
+      "path": "reports/cluster-pilot-v1/public-replay-check.json",
+      "sha256": "eefaaece0d8a856fe0afdd0b244ea468d373777a1da0094a07ef1eac774dcdf1",
+      "bytes": 487
+    },
+    {
+      "id": "cluster-035",
+      "path": "reports/cluster-pilot-v1/transport-probes.json",
+      "sha256": "b315db507a2412aeac3494b05e6d65d985853a5d5dc356c3ba4c364151e8917d",
+      "bytes": 6474
+    },
+    {
+      "id": "cluster-036",
+      "path": "reports/cluster-pilot-v1/unit-tests.txt",
+      "sha256": "c092299a0abc4c5c21c652f6b5610d1c9ee76e69cc076e86079aba19e983b8bb",
+      "bytes": 4951
+    },
+    {
+      "id": "cluster-037",
+      "path": "reports/cluster-pilot-v1/v2/events.jsonl",
+      "sha256": "bd4dcf767b998e75731340d26a1fc538e825c7c7fcae3f4791892a44618ded3f",
+      "bytes": 2458538
+    },
+    {
+      "id": "cluster-038",
+      "path": "reports/cluster-pilot-v1/v2/summary.json",
+      "sha256": "8eff000c08ea409af6d93e8b8c57efdfa9661395320da5d0da66416a47e0945d",
+      "bytes": 67961
+    },
+    {
+      "id": "cluster-039",
+      "path": "reports/cluster-pilot-v1/v3/events.jsonl",
+      "sha256": "bbd957ce68f39ec4b5e378ac237fa079d55c99d56436711dbf8a90c5ec22362d",
+      "bytes": 3817297
+    },
+    {
+      "id": "cluster-040",
+      "path": "reports/cluster-pilot-v1/v3/summary.json",
+      "sha256": "9e7dffe2a731cd307609f1c137cdeb268f5f01b9758ef7cc9e6bb517ec577e9c",
+      "bytes": 76844
+    },
+    {
+      "id": "cluster-041",
+      "path": "templates/cluster-pilot-v1.html",
+      "sha256": "126860c06c93f72af23c06075aa5cd6253f563be595d13381e27f566affd2640",
+      "bytes": 16418
+    },
+    {
+      "id": "cluster-042",
+      "path": "tools/build_cluster_milestone.py",
+      "sha256": "be7bb2f71fb4bd93dda83ac643081db88d302b6408a81ac4456bae0ae3d769e4",
+      "bytes": 3480
+    },
+    {
+      "id": "cluster-043",
+      "path": "tools/check_cluster_evidence.py",
+      "sha256": "ccc96d772a75697c08406765be3a2abe6395ad537ad6752aed77e237fb0a32ca",
+      "bytes": 4764
+    },
+    {
+      "id": "cluster-044",
+      "path": "tools/check_cluster_milestone.cjs",
+      "sha256": "9745f6d2b91611c4c1297628e624826edab901e515a48247159a5d0d29de8468",
+      "bytes": 3937
+    },
+    {
+      "id": "cluster-045",
+      "path": "tools/export_cluster_pilot.py",
+      "sha256": "e248ef92ed23c5076eb5b38d9bf404f057343ddbab9e3c81e288ffcab51c11ad",
+      "bytes": 5098
+    }
+  ]
+}
