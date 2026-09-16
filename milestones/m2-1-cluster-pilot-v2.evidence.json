@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.1c",
+  "date": "2026-09-16",
+  "version": "2.0",
+  "status": "institutional bounded pilot executed; calibration findings; no confirmatory topology claim",
+  "implementation_commit": "786987ece28c217f559225013a9b00de7b2ae1f4",
+  "report_delivery_commit": "resolve through Git history after implementation commit",
+  "protocol": "docs/cluster-pilot-v1.md",
+  "final_job": {
+    "job_id": "190043",
+    "job_name": "aimeth-population-pilot",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:06:03",
+    "allocated_cpus": "2",
+    "allocated_resources": "billing=2,cpu=2,mem=2G,node=1",
+    "node": "gpu08",
+    "started_at_cluster_clock": "2026-09-16T12:16:26",
+    "ended_at_cluster_clock": "2026-09-16T12:22:29"
+  },
+  "results": {
+    "planned_populations": 32,
+    "complete_populations": 26,
+    "verdicts": {
+      "VERIFIED_WITHIN_SCOPE": 13,
+      "MALFORMED": 4,
+      "INVALID_CERTIFICATE": 9,
+      "TECHNICAL_FAILURE": 6
+    },
+    "calls": 472,
+    "tokens": {
+      "prompt_tokens": 116109,
+      "completion_tokens": 29728,
+      "total_tokens": 145837
+    },
+    "unknown_usage_attempts": 0,
+    "events": 2895,
+    "messages_sent": 250,
+    "generation_length_responses": 7
+  },
+  "validation": {
+    "unit_tests_passed": 54,
+    "regression_failed_old_commit": "0e55cd8",
+    "private_sqlite_journals_verified": 64,
+    "public_selected_certificates_replayed": 37,
+    "first_event_hash_requires_private_original": true,
+    "code_deployment_matching_python_files": 13
+  },
+  "all_attempts": "reports/cluster-pilot-v1/execution-audit.json",
+  "public_data": "reports/cluster-pilot-v1/v3/summary.json",
+  "browser_qa": "milestones/m2-1-cluster-pilot-v2.browser-qa.json",
+  "private_record_locations": "Registered in project control PROJECT.yaml; not distributed with public code",
+  "readiness": {
+    "next_design": true,
+    "small_new_calibration": true,
+    "confirmatory_topology_comparison": false,
+    "frontier_proof_test": false,
+    "10k_inference_launch": false
+  },
+  "limits": [
+    "Served model IDs are not weight attestations; gateway-to-inference-node mapping unknown",
+    "Two public easy tasks and two repeats; cannot generalize to frontier mathematics",
+    "One CPU client job, not a demonstrated two-node inference experiment",
+    "Calls/output caps bounded; input token budget and attributable GPU-hours not enforced",
+    "V3 follows observed V2 failures; exploratory only",
+    "Hard node loss failover not demonstrated; no seed-only reproducibility claim"
+  ],
+  "correction": {
+    "supersedes": "m2-1-cluster-pilot-v1.html",
+    "previous_report_sha256": "5372f52371a6b1b7fd14953da6c3acb45e40532eca232c05c11a6b9883a6a1bd",
+    "reason": "V1 incorrectly attributed all 21 incomplete v2 populations to the coordinator; 14 had pending work without failed generations, while 7 stopped on 8 length-limited generations.",
+    "v2_failure_causes": {
+      "premature_coordinator_exit": 14,
+      "generation_length": 7
+    },
+    "v3_results_changed": false,
+    "raw_data_changed": false
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "poly-square",
+    "split": "public-development-only",
+    "family": "polynomial-identity",
+    "statement": "Over Q[x], expand (x+1)^2. Return JSON {\"coefficients\":[c0,c1,c2]} in ascending powers; coefficients are integers or rational strings."
+  },
+  {
+    "id": "poly-difference",
+    "split": "public-development-only",
+    "family": "polynomial-identity",
+    "statement": "Over Q[x], expand (2*x-3)*(x+4). Return JSON {\"coefficients\":[c0,c1,c2]} in ascending powers; coefficients are integers or rational strings."
+  },
+  {
+    "id": "integral-cubic",
+    "split": "public-development-only",
+    "family": "antiderivative",
+    "statement": "Find P in Q[x] with P(0)=0 and P'(x)=3*x^2+2*x+1. Return JSON {\"coefficients\":[c0,c1,...]} in ascending powers; use integers or rational strings."
+  },
+  {
+    "id": "integral-rational",
+    "split": "public-development-only",
+    "family": "antiderivative",
+    "statement": "Find P in Q[x] with P(0)=0 and P'(x)=x^3-x. Return JSON {\"coefficients\":[c0,c1,...]} in ascending powers; use integers or rational strings."
+  },
+  {
+    "id": "bezout",
+    "split": "public-development-only",
+    "family": "integer-certificate",
+    "statement": "Find integers a,b such that 240*a+46*b=2. Return JSON {\"a\":integer,\"b\":integer}."
+  },
+  {
+    "id": "prime-counterexample",
+    "split": "public-development-only",
+    "family": "counterexample",
+    "statement": "Refute the claim: for every integer n>=0, n^2+n+41 is prime. Return JSON {\"n\":integer,\"d\":integer}, where d is a proper divisor of the displayed value."
+  }
+]

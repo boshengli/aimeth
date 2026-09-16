@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "status": "reviewed",
+  "inspected": [
+    "m2-1-cluster-pilot-v2-1440-top.png",
+    "m2-1-cluster-pilot-v2-390-top.png"
+  ],
+  "correction": "14 premature coordinator exits and 7 generation-truncation stops checked against frozen per-run statuses and all 8 rejected receipt events; v3 results unchanged.",
+  "layout": "Desktop and narrow top layouts remain legible; browser QA checked full-page overflow and correction text."
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "status": "reviewed",
+  "inspected": [
+    "m2-1-cluster-pilot-v1-1440-top.png",
+    "m2-1-cluster-pilot-v1-390-top.png"
+  ],
+  "observation": "Headline, narrative, navigation and metrics are legible at desktop/narrow widths. Tables scroll locally without page overflow. Full-page screenshots retained; programmatic QA also covers all rows, filters, links, offline and print states."
+}
