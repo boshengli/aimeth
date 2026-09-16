@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "scope": "public synthetic text export; SQLite snapshot remains in local run storage",
+  "artifacts": [
+    {
+      "id": "events.jsonl",
+      "path": "events.jsonl",
+      "bytes": 699325,
+      "sha256": "8a63d3a3e9d2cfb35855b5b162a277525177f1e3ca9d2ac1bafa8d6758e02537"
+    },
+    {
+      "id": "state.json",
+      "path": "state.json",
+      "bytes": 317918,
+      "sha256": "4631e553058812d7de973386aa83395d863423249e9dc837347efd53bc291804"
+    },
+    {
+      "id": "verification.json",
+      "path": "verification.json",
+      "bytes": 150,
+      "sha256": "0676951843328eae03cf3b6fc04bb068da156e27847b8a468da8368a32dec36d"
+    }
+  ]
+}

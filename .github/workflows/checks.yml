@@ -22,3 +22,7 @@ jobs:
           python3 tools/verify_artifacts.py publication-report-manifest.json
           python3 tools/build_publication_milestone.py --output /tmp/publication.html
           cmp milestones/m1-1-publication-v1.html /tmp/publication.html
+          python3 tools/check_organization_evidence.py
+          python3 tools/verify_artifacts.py organization-report-manifest.json
+          python3 tools/build_organization_milestone.py --output /tmp/m2-1.html
+          cmp milestones/m2-1-organization-v1.html /tmp/m2-1.html

@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "status": "planned-not-executed",
+  "unit": "isolated population run; inference paired by task/repetition block",
+  "seed_policy": "same seed within paired block; different across blocks; no memory sharing",
+  "run_count": 72,
+  "blocks": [
+    {
+      "block_id": "7165ba7481890fbf",
+      "task_id": "integral-cubic",
+      "repetition": 0,
+      "seed": 2625721110,
+      "selection_seed": 3689427893,
+      "arm_order": [
+        "S",
+        "L",
+        "I",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "ec17c9b3a0658efe",
+      "task_id": "prime-counterexample",
+      "repetition": 1,
+      "seed": 1892598279,
+      "selection_seed": 829342453,
+      "arm_order": [
+        "I",
+        "L",
+        "X",
+        "S"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "23797fc11fa768ab",
+      "task_id": "poly-square",
+      "repetition": 0,
+      "seed": 3293970655,
+      "selection_seed": 4261193020,
+      "arm_order": [
+        "L",
+        "S",
+        "I",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "97733429dfd47647",
+      "task_id": "poly-difference",
+      "repetition": 1,
+      "seed": 1148199159,
+      "selection_seed": 3340149114,
+      "arm_order": [
+        "L",
+        "X",
+        "I",
+        "S"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "102e2dba146f0ac9",
+      "task_id": "poly-difference",
+      "repetition": 0,
+      "seed": 1438507243,
+      "selection_seed": 1223786448,
+      "arm_order": [
+        "S",
+        "I",
+        "L",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "9dc1fce9270370e1",
+      "task_id": "integral-rational",
+      "repetition": 1,
+      "seed": 3734976161,
+      "selection_seed": 2794191127,
+      "arm_order": [
+        "I",
+        "L",
+        "X",
+        "S"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "776d667f7a08cf6f",
+      "task_id": "integral-cubic",
+      "repetition": 1,
+      "seed": 2738170236,
+      "selection_seed": 2600242195,
+      "arm_order": [
+        "L",
+        "I",
+        "X",
+        "S"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "f45ba4b2c912a6f7",
+      "task_id": "bezout",
+      "repetition": 1,
+      "seed": 2673089962,
+      "selection_seed": 1963141684,
+      "arm_order": [
+        "X",
+        "I",
+        "L",
+        "S"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "10d422dfd59d03aa",
+      "task_id": "integral-rational",
+      "repetition": 2,
+      "seed": 2066938949,
+      "selection_seed": 78557499,
+      "arm_order": [
+        "L",
+        "X",
+        "S",
+        "I"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "9ccc4626886bd862",
+      "task_id": "poly-square",
+      "repetition": 2,
+      "seed": 329358348,
+      "selection_seed": 3786352860,
+      "arm_order": [
+        "S",
+        "L",
+        "I",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "b43d4d199b3776da",
+      "task_id": "poly-square",
+      "repetition": 1,
+      "seed": 2959854973,
+      "selection_seed": 689487694,
+      "arm_order": [
+        "S",
+        "I",
+        "L",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "ef7d6f835ec3ea84",
+      "task_id": "prime-counterexample",
+      "repetition": 0,
+      "seed": 615352281,
+      "selection_seed": 2361948518,
+      "arm_order": [
+        "S",
+        "I",
+        "L",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "760ac95c1802bcd4",
+      "task_id": "prime-counterexample",
+      "repetition": 2,
+      "seed": 1419628879,
+      "selection_seed": 902464884,
+      "arm_order": [
+        "I",
+        "S",
+        "X",
+        "L"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "1c16504bc389eb5c",
+      "task_id": "integral-cubic",
+      "repetition": 2,
+      "seed": 1110515569,
+      "selection_seed": 1412727021,
+      "arm_order": [
+        "L",
+        "S",
+        "X",
+        "I"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "76ca9ec5b4e6f4ad",
+      "task_id": "integral-rational",
+      "repetition": 0,
+      "seed": 2479839099,
+      "selection_seed": 1357528319,
+      "arm_order": [
+        "X",
+        "L",
+        "S",
+        "I"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "af6626c54012da5d",
+      "task_id": "bezout",
+      "repetition": 0,
+      "seed": 3979512448,
+      "selection_seed": 1308202468,
+      "arm_order": [
+        "L",
+        "X",
+        "S",
+        "I"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "87b1abca71bc8e38",
+      "task_id": "bezout",
+      "repetition": 2,
+      "seed": 2097301961,
+      "selection_seed": 3170601450,
+      "arm_order": [
+        "S",
+        "L",
+        "I",
+        "X"
+      ],
+      "executed": false
+    },
+    {
+      "block_id": "b4ba07914316feb4",
+      "task_id": "poly-difference",
+      "repetition": 2,
+      "seed": 703195558,
+      "selection_seed": 2458320717,
+      "arm_order": [
+        "I",
+        "S",
+        "L",
+        "X"
+      ],
+      "executed": false
+    }
+  ],
+  "confirmatory_power_established": false
+}

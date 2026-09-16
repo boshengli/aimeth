@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.1",
+  "artifacts": [
+    {
+      "id": "archives/organization-v0.1/aimeth_design/__init__.py",
+      "path": "archives/organization-v0.1/aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "id": "archives/organization-v0.1/aimeth_design/__main__.py",
+      "path": "archives/organization-v0.1/aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "id": "archives/organization-v0.1/aimeth_design/execution.py",
+      "path": "archives/organization-v0.1/aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "id": "archives/organization-v0.1/aimeth_design/organizations.py",
+      "path": "archives/organization-v0.1/aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "id": "archives/organization-v0.1/aimeth_evaluation/__init__.py",
+      "path": "archives/organization-v0.1/aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "id": "archives/organization-v0.1/aimeth_evaluation/controls.py",
+      "path": "archives/organization-v0.1/aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "id": "archives/organization-v0.1/test_organization_design.py",
+      "path": "archives/organization-v0.1/test_organization_design.py",
+      "bytes": 9365,
+      "sha256": "cdc7e845e4cf9b9290be7e6ac8991d787061c516a5bb9a0800d00e6b904928a9"
+    },
+    {
+      "id": "archives/organization-v0.1/validate_design.py",
+      "path": "archives/organization-v0.1/validate_design.py",
+      "bytes": 5229,
+      "sha256": "48d600d545beb13ff2b4b1c817df4c7c55cad5593bc0fb7a0659b80ce1720706"
+    },
+    {
+      "id": "docs/math-evaluation-v1.md",
+      "path": "docs/math-evaluation-v1.md",
+      "bytes": 4881,
+      "sha256": "5bed2de999e8b479713aca0cb76c5fe2bacec382203e9b3f5bae3c3ce865ec58"
+    },
+    {
+      "id": "docs/organization-pilot-v1.md",
+      "path": "docs/organization-pilot-v1.md",
+      "bytes": 14058,
+      "sha256": "a3caf801a1e15390398e627bcdd905dd6ef8313bc625084fe9458f67c2fd68c9"
+    },
+    {
+      "id": "examples/organizations/I.manifest.json",
+      "path": "examples/organizations/I.manifest.json",
+      "bytes": 3745,
+      "sha256": "19e023f4a1ddb9db97323c752aab652db00b3bfacfc56cfd85af6f96c97cb58c"
+    },
+    {
+      "id": "examples/organizations/L.manifest.json",
+      "path": "examples/organizations/L.manifest.json",
+      "bytes": 10409,
+      "sha256": "18cdfe5bfd76c01cdfb7a272616eeb170b32eaf4609e53bc0474bf41d6b3427c"
+    },
+    {
+      "id": "examples/organizations/S.manifest.json",
+      "path": "examples/organizations/S.manifest.json",
+      "bytes": 3195,
+      "sha256": "0c93ff7ff9968de3760cdee2f64d9ea324b03f3b82315de0b4d52e581fa9872f"
+    },
+    {
+      "id": "examples/organizations/X.manifest.json",
+      "path": "examples/organizations/X.manifest.json",
+      "bytes": 10409,
+      "sha256": "e4596978d9768c71804ebc0c731ae5c37c5dd978339fc534c350b172405afa42"
+    },
+    {
+      "id": "examples/organizations/traces/I/events.jsonl",
+      "path": "examples/organizations/traces/I/events.jsonl",
+      "bytes": 417350,
+      "sha256": "978bbc3efe6455337dcc91a605dbf77e70947b50044843f68a9cce4ed1cd04f7"
+    },
+    {
+      "id": "examples/organizations/traces/I/manifest.json",
+      "path": "examples/organizations/traces/I/manifest.json",
+      "bytes": 674,
+      "sha256": "b174b28a93e5965083e639db90bec7900c5bfaac8e6e785e74ee10755de4f025"
+    },
+    {
+      "id": "examples/organizations/traces/I/state.json",
+      "path": "examples/organizations/traces/I/state.json",
+      "bytes": 198440,
+      "sha256": "a76006406c96def2341842db28ae675a5bab74e3b6ad735f70d635eae99a04dd"
+    },
+    {
+      "id": "examples/organizations/traces/I/verification.json",
+      "path": "examples/organizations/traces/I/verification.json",
+      "bytes": 150,
+      "sha256": "d614c3c112e802725f260798b2d38c26781f96542429e9b5cad04a15393d5ffb"
+    },
+    {
+      "id": "examples/organizations/traces/L/events.jsonl",
+      "path": "examples/organizations/traces/L/events.jsonl",
+      "bytes": 699325,
+      "sha256": "8a63d3a3e9d2cfb35855b5b162a277525177f1e3ca9d2ac1bafa8d6758e02537"
+    },
+    {
+      "id": "examples/organizations/traces/L/manifest.json",
+      "path": "examples/organizations/traces/L/manifest.json",
+      "bytes": 674,
+      "sha256": "9189e796ffad1944e22876aebba9797d247903c2a17583e34e61bec9aad781e2"
+    },
+    {
+      "id": "examples/organizations/traces/L/state.json",
+      "path": "examples/organizations/traces/L/state.json",
+      "bytes": 317918,
+      "sha256": "4631e553058812d7de973386aa83395d863423249e9dc837347efd53bc291804"
+    },
+    {
+      "id": "examples/organizations/traces/L/verification.json",
+      "path": "examples/organizations/traces/L/verification.json",
+      "bytes": 150,
+      "sha256": "0676951843328eae03cf3b6fc04bb068da156e27847b8a468da8368a32dec36d"
+    },
+    {
+      "id": "examples/organizations/traces/S/events.jsonl",
+      "path": "examples/organizations/traces/S/events.jsonl",
+      "bytes": 422478,
+      "sha256": "12c88d2bbf4459c5534ac229af4fb0891e5863bb69b901a71939a35b8d7ca542"
+    },
+    {
+      "id": "examples/organizations/traces/S/manifest.json",
+      "path": "examples/organizations/traces/S/manifest.json",
+      "bytes": 674,
+      "sha256": "d5be6da544de418def5d2ade5e5ce8a0f4fbfcfb9c37af75dae54517f1e74c47"
+    },
+    {
+      "id": "examples/organizations/traces/S/state.json",
+      "path": "examples/organizations/traces/S/state.json",
+      "bytes": 202104,
+      "sha256": "51deb43d248bc7f9c614408db700cfa085c6bb1bc9cf71ae0858770bfb782a99"
+    },
+    {
+      "id": "examples/organizations/traces/S/verification.json",
+      "path": "examples/organizations/traces/S/verification.json",
+      "bytes": 150,
+      "sha256": "efd09cf5579ea738bc5f2ee9c701dbad6707279747c2a90c7839cf05635e7afc"
+    },
+    {
+      "id": "examples/organizations/traces/X/events.jsonl",
+      "path": "examples/organizations/traces/X/events.jsonl",
+      "bytes": 699340,
+      "sha256": "c84c807e29a3e6e9f04c4838e4fabcbf48733bb0fe2189ce436ea96c4832e9f1"
+    },
+    {
+      "id": "examples/organizations/traces/X/manifest.json",
+      "path": "examples/organizations/traces/X/manifest.json",
+      "bytes": 674,
+      "sha256": "53609bee0fcc818467e02777ee86752217b1a35394c3ade2c395cd8ac694b336"
+    },
+    {
+      "id": "examples/organizations/traces/X/state.json",
+      "path": "examples/organizations/traces/X/state.json",
+      "bytes": 317933,
+      "sha256": "0e7134f00a077b87026fe58ba0bd0c9760903134f537d762986e0f9782594ad0"
+    },
+    {
+      "id": "examples/organizations/traces/X/verification.json",
+      "path": "examples/organizations/traces/X/verification.json",
+      "bytes": 150,
+      "sha256": "d14ccef306ccc8818efa56690b78757c37c207e7fd4ffe7176e0cdd0bb3aec99"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1-1440-top.png",
+      "path": "milestones/m2-1-organization-v1-1440-top.png",
+      "bytes": 180196,
+      "sha256": "a1ff25c4aa215d3ecb33d503ec4aa41006d78c73338054229ae20364f5b70066"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1-1440.png",
+      "path": "milestones/m2-1-organization-v1-1440.png",
+      "bytes": 1043708,
+      "sha256": "b67dd0aa0fcd3324ba8d2f38c3582c7f70354b35c3457dd1994c71bdb4b6ce80"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1-390-top.png",
+      "path": "milestones/m2-1-organization-v1-390-top.png",
+      "bytes": 95658,
+      "sha256": "4b65ac60463a9ab9d74731d146a38be1e026662736c66d42f1f1318e54143532"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1-390.png",
+      "path": "milestones/m2-1-organization-v1-390.png",
+      "bytes": 1009188,
+      "sha256": "d1b2612a01e763ec347294828f1a175facde30c4718160f234a9d50b976e3bc6"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1.browser-qa.json",
+      "path": "milestones/m2-1-organization-v1.browser-qa.json",
+      "bytes": 876,
+      "sha256": "c1181f84758aeed26e6f6012a960f41b79a27ba395aaa9316219064023d1d4f1"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1.evidence.json",
+      "path": "milestones/m2-1-organization-v1.evidence.json",
+      "bytes": 1658,
+      "sha256": "4ec0ac890bf7769fb531d00cd17977c53cfe691cb43c968b306ecd5e58c80d7c"
+    },
+    {
+      "id": "milestones/m2-1-organization-v1.html",
+      "path": "milestones/m2-1-organization-v1.html",
+      "bytes": 64949,
+      "sha256": "06d269ba5f72551ed933b7a8c733258c5318ed51c685bbfab6ed443805e0dfba"
+    },
+    {
+      "id": "reports/m2-1-pilot-schedule.json",
+      "path": "reports/m2-1-pilot-schedule.json",
+      "bytes": 5277,
+      "sha256": "8239a92970713e5658b170df526e0044c97070c77ba7050693e6cebdc799bf1b"
+    },
+    {
+      "id": "reports/m2-1-source-audit.json",
+      "path": "reports/m2-1-source-audit.json",
+      "bytes": 6101,
+      "sha256": "9e3a6bd9e869e4bd6023b6da87fbc767308bc7e52d9c3598e333ddef5a472f3a"
+    },
+    {
+      "id": "reports/m2-1-unittest.txt",
+      "path": "reports/m2-1-unittest.txt",
+      "bytes": 6236,
+      "sha256": "78333de696b74bf62e538d130264c627ca65332910730c5bd2c7727e7003b6ac"
+    },
+    {
+      "id": "reports/m2-1-validation.json",
+      "path": "reports/m2-1-validation.json",
+      "bytes": 15265,
+      "sha256": "3f160c55393e0d9f168f4c00f675316da7b1741f2b9cbab306d8b788068ee263"
+    },
+    {
+      "id": "tasks/math-development-v1.json",
+      "path": "tasks/math-development-v1.json",
+      "bytes": 1596,
+      "sha256": "a1a7545c6d37988e843fbeb051e1f883f1dad5ad460eab57c7ea6e864f54d3b7"
+    },
+    {
+      "id": "templates/milestone-organization-v1.html",
+      "path": "templates/milestone-organization-v1.html",
+      "bytes": 19535,
+      "sha256": "36f6b7c260827ed2ab76b261d9a47e1f9d5d71d5c737232e0a829700636f2bb1"
+    },
+    {
+      "id": "tools/build_organization_milestone.py",
+      "path": "tools/build_organization_milestone.py",
+      "bytes": 3100,
+      "sha256": "b79cbed160ce8eb30c171d0d40e2efc65508251551ce3972aa61b263900b14df"
+    },
+    {
+      "id": "tools/check_organization_evidence.py",
+      "path": "tools/check_organization_evidence.py",
+      "bytes": 1904,
+      "sha256": "369cb1329b1504633315cfee8763c15b5b414ae540480f67f3940028b6ad602f"
+    },
+    {
+      "id": "tools/check_organization_milestone.cjs",
+      "path": "tools/check_organization_milestone.cjs",
+      "bytes": 4096,
+      "sha256": "1ac9ae13726b7e165c171df96d2c14fa7dda8713d9d1f224bfcd0cdfa7fc26fc"
+    }
+  ]
+}

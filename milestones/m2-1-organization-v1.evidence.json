@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.1",
+  "date": "2026-09-16",
+  "version": "1.0",
+  "status": "baseline-design-and-model-free-validation-complete; live-effect-pilot-pending",
+  "baseline_commit": "75f44c91c5857f66aea01661069d2c8944abdcdc",
+  "design_commit": "d53d6c1",
+  "implementation_commit": "9c507d49aa452d52829f2fa857a531892f9d05bc",
+  "validation_baseline_note": "Validation ran after design commit with implementation working tree; package identities are frozen in manifests. Only validation driver test-count parsing changed before implementation commit; tested algorithm modules did not change.",
+  "report_delivery_commit": "resolve from Git history after the implementation commit",
+  "source_audit": "reports/m2-1-source-audit.json",
+  "validation": "reports/m2-1-validation.json",
+  "raw_synthetic_trace_exports": "examples/organizations/traces/{S,I,L,X}/",
+  "independent_experimental_unit": "isolated population x task x repetition; paired within blocks",
+  "actual_model_calls": 0,
+  "cluster_jobs": 0,
+  "effect_estimate": null,
+  "mathematical_frontier_result": null,
+  "next_design_ready": true,
+  "live_launch_ready": false,
+  "remaining": [
+    "cluster/model/compute ceiling not supplied",
+    "atomic whole-run budget admission",
+    "supervision and deadlines",
+    "PDE task and evaluator review",
+    "generator/evaluator isolation",
+    "live pilot and power estimation"
+  ],
+  "browser_validation": "milestones/m2-1-organization-v1.browser-qa.json (separate post-build record)",
+  "public_data_policy": "Only synthetic development traces are exported; no private source project payloads or reference solutions."
+}

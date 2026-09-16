@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "accessed_on": "2026-09-16",
+  "local_sources": [
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Universal_Project_Kit/README.md",
+      "sha256": "e8bd2a51eeb7702aba83d724a73b9fd5a5794a7106588005f18645a1fc2a893f",
+      "bytes": 571,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Universal_Project_Kit/skill/slcw-discovery/SKILL.md",
+      "sha256": "dfbbb50135c3088f7b33b966fd51b36324de5430c6081041bd86e90551113d6d",
+      "bytes": 892,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Runtime_v0.1/README.md",
+      "sha256": "596a53607ad9dec9d75b1d796b59d863116c5048b80416ef4f4c1a2a1c7b1671",
+      "bytes": 3343,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Runtime_v0.1/spec/SLCW_Final_DiscoveryTissue/ARCHITECTURE.md",
+      "sha256": "6dce7f37e5e7486fa5ee144803dc6e03a23713add01e2c22baf3eeabbfe167d9",
+      "bytes": 3993,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/S0003-Codex/SLCW_CORE_V1.0.md",
+      "sha256": "2e87c7732c67b9a85c883b957904d518092484f437878d48bfad120ba9bb3956",
+      "bytes": 1594,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/patterning.py",
+      "sha256": "1c64e713449c4dc37b4f7b023a9ccdc7cd0bf1d8cc3a1817f0273f9ee4eb423e",
+      "bytes": 2736,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/messaging.py",
+      "sha256": "094f256416bb1a2204d74079e64b1fa3bdd43ea49f7929a0f8c0d06a696745ed",
+      "bytes": 3778,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/S0002-DPV4/step6/bench/report_20260811_143211.md",
+      "sha256": "f716e4a48a048f43dd0fd9b25e951166ffc87956b08cec7174a515154102e4ba",
+      "bytes": 3145,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "0013-Workflow",
+      "relative_path": "S0001-Layer/SLCW_Universal_Project_Kit/benchmark/PEPPER_BENCHMARK_PLAN.md",
+      "sha256": "777b3af65fb9dc8b7e8a4c3d755b44bf61ee74fdb34b5642d35cfced8b83e11a",
+      "bytes": 853,
+      "inspection": "read; not executed or independently reproduced",
+      "public_copy": false
+    },
+    {
+      "project": "H20_10K_Navier_Handoff_20260914",
+      "relative_path": "CHAT_TRANSCRIPT.md",
+      "sha256": "1388eba9eae3a0df3f2c55c842741fdf6c9e7bac9cf0eebbeeb703910eee7ee0",
+      "bytes": 5529,
+      "inspection": "read as source material; site claims unverified",
+      "public_copy": false
+    },
+    {
+      "project": "H20_10K_Navier_Handoff_20260914",
+      "relative_path": "skill/h20_10k_navier_agent_skill/SKILL.md",
+      "sha256": "3a22628ba6fb5996e96cd5a3f77d2344d050cfc595cc1306863e215395067398",
+      "bytes": 2874,
+      "inspection": "read as source material; site claims unverified",
+      "public_copy": false
+    },
+    {
+      "project": "H20_10K_Navier_Handoff_20260914",
+      "relative_path": "skill/h20_10k_navier_agent_skill/ARCHITECTURE.md",
+      "sha256": "23a9f165d5a673a2c8d04dca4e7d26ca3c6055e55d1a0aa9585a09c4f0d11ee1",
+      "bytes": 2098,
+      "inspection": "read as source material; site claims unverified",
+      "public_copy": false
+    },
+    {
+      "project": "H20_10K_Navier_Handoff_20260914",
+      "relative_path": "notes/VERIFIED_VS_ASSUMED.md",
+      "sha256": "5e44d36bec0e166754f4723f993afa59120498ae14aded65f0eb5713f3ca45f1",
+      "bytes": 1907,
+      "inspection": "read as source material; site claims unverified",
+      "public_copy": false
+    }
+  ],
+  "web_sources": [
+    {
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "scope": "original statement and quantifiers"
+    },
+    {
+      "url": "https://www.claymath.org/news/navier-stokes-announcement/",
+      "scope": "announcement, not final prize adjudication"
+    },
+    {
+      "url": "https://github.com/openai/NavierStokesAndEuler",
+      "scope": "README only; no proof build"
+    },
+    {
+      "url": "https://arxiv.org/html/2512.08296v3",
+      "scope": "preprint architecture context; not evidence about 10K mathematics"
+    },
+    {
+      "url": "https://slurm.schedmd.com/job_array.html",
+      "scope": "arrays and concurrency; site configuration unverified"
+    },
+    {
+      "url": "https://docs.vllm.ai/en/latest/usage/reproducibility/",
+      "scope": "software reproducibility boundary; installed cluster version unknown"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "SLCW patterning superiority transfers to mathematics",
+      "status": "not-supported",
+      "reason": "source comparison changes models/calls; single project; no independent reproduction"
+    },
+    {
+      "claim": "SLCW multiplex overlay transmits candidate knowledge in digest",
+      "status": "limited",
+      "reason": "inspected inbox_digest returns mode/type/sender/receiver labels, not candidate payload"
+    },
+    {
+      "claim": "10K agents are necessary",
+      "status": "hypothesis",
+      "reason": "no matched scaling experiment in inspected material"
+    },
+    {
+      "claim": "DP2/TP4 and C384 are optimal on this cluster",
+      "status": "unverified",
+      "reason": "actual model/site calibration not available"
+    }
+  ]
+}
