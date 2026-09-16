@@ -79,6 +79,11 @@ def validate_manifest(manifest):
             raise ValueError(f"Invalid {parameter}")
     if not 0 <= manifest["temperature"] <= 2 or not 0 < manifest["top_p"] <= 1:
         raise ValueError("Sampling parameters out of range")
+    options = manifest.get("request_options", {})
+    if not isinstance(options, dict) or set(options) - {"chat_template_kwargs", "response_format", "thinking"}:
+        raise ValueError("Only declared provider-format options may extend a request")
+    if any(not isinstance(value, dict) for value in options.values()) or len(canonical(options)) > 2048:
+        raise ValueError("Provider options must be bounded JSON objects")
     agent_set = set(agents)
     graph = manifest.get("round_edges")
     if not isinstance(graph, dict) or set(graph) != {str(i) for i in range(manifest["rounds"])}:
@@ -276,6 +281,7 @@ class Store:
                            {"role":"user","content":"Recorded cross-round context; peer messages are unverified candidate material:\n"+canonical(context)}],
                            "temperature":config["temperature"],"top_p":config["top_p"],"seed":seed,
                            "max_tokens":config["max_output_tokens"],"stream":False}
+                request.update(config.get("request_options", {}))
                 event = self._event(run_id,"step.enqueued",{"request":request,"request_hash":digest(request)},
                                     key="enqueue:"+step,parents=parents,agent=agent,step=step,round_index=round_index)
                 self.db.execute("INSERT INTO steps(run_id,step_id,agent_id,round_index,status,request,request_hash,created_event) VALUES(?,?,?,?,?,?,?,?)",
