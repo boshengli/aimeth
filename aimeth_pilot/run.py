@@ -115,7 +115,11 @@ def run_population(root,run_id,config,quota,task_id):
                         response=wire.get('response',{})
                         quota.settle(claim['token'],{'usage':response.get('usage'), 'error':wire.get('error')})
                         finish(store,claim,config,wire)
-                    if not active:break
+                    if not active:
+                        # A completed batch may still leave unclaimed work. Refill
+                        # once more; exit only after admission itself found none.
+                        if halted or not done:break
+                        continue
                     time.sleep(0.02)
                 if halted:break
         status=store.status(run_id)
@@ -187,6 +191,7 @@ def main():
         config=compile_arm(arm,population=cfg['population'],rounds=cfg['rounds'],group_size=4,
                            seed=block['seed'],output_tokens=cfg['max_output_tokens'],concurrency=cfg['concurrency'],task=tasks[block['task_id']])
         config['transport']={'kind':'openai','endpoint':cfg['endpoint'],'timeout_seconds':100}
+        config['organization']['evidence_scope']='public-development live calibration; no confirmatory effect estimate'
         config['model_name']=model;config['identities']['model']='served-name:'+model
         config['max_attempts']=1;config['temperature']=0.6
         config['selection_seed']=block['selection_seed'];config['request_options']=cfg['request_options']

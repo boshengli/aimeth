@@ -31,3 +31,9 @@ Deliver another versioned HTML with actual job IDs, results, limitations, hashes
 ## Recorded route correction before mathematical outcomes
 
 Initial Slurm job 190041 used the gateway's campus address, which was reachable from the Mac but timed out from gpu08. Its partial database/quota snapshot was preserved and this owned job was canceled. A compute-node probe verified the internal gateway hostname tln02 responds (unauthenticated HTTP 401). The replacement uses a new experiment directory and immutable manifest, not an in-place edit. This is an engineering protocol deviation, excluded from mathematical-success comparisons and retained in failure accounting. The supervisor was also tightened to stop new dispatch and terminate pending child requests on cancellation; no model result informed that change.
+
+## Coordinator correction after v2 engineering calibration
+
+Job 190042 completed its population loop, but journal inspection showed some populations had pending steps and no failed requests. The coordinator incorrectly exited whenever all currently active futures completed together, before refilling pending work. A synchronous-future regression test reproduced the defect deterministically before the fix. The corrected coordinator refills after a completed batch and exits only when admission finds no work or a stop/budget condition applies.
+
+The entire v2 run is retained as an engineering-failed trial and excluded from organization comparisons, including its completed populations. A new immutable v3 experiment repeats the same tasks, seeds, ordering, model IDs, options and bounds with corrected client code. Task/model outputs were observed during diagnosis; therefore this remains an exploratory development pilot, not a fresh confirmatory test. No mathematical threshold or candidate selection rule changed.

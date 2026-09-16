@@ -4,7 +4,7 @@ import tempfile
 import time
 import unittest
 from unittest.mock import patch
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import Future, ThreadPoolExecutor
 from aimeth_pilot.quota import Quota
 from aimeth_runtime.store import Store,validate_manifest
 from aimeth_design.organizations import compile_arm
@@ -12,6 +12,30 @@ from aimeth_pilot.run import run_population,bounded_response,STOP
 from aimeth_evaluation.controls import public_tasks
 
 class LivePilotTests(unittest.TestCase):
+    def test_simultaneous_batch_completion_refills_pending_steps(self):
+        class ImmediatePool:
+            def __init__(self, **kwargs):pass
+            def __enter__(self):return self
+            def __exit__(self, *args):pass
+            def submit(self, function, *args):
+                future=Future();future.set_result(function(*args));return future
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            task=next(t for t in public_tasks() if t['id']=='prime-counterexample')
+            config=compile_arm('X',population=8,rounds=2,group_size=4,concurrency=2,task=task)
+            response={'choices':[{'message':{'content':'{"n":40,"d":41}'},'finish_reason':'stop'}],
+                      'usage':{'total_tokens':30}}
+            q=Quota(root/'quota.sqlite',calls=16,output_tokens=8192,deadline=time.time()+60)
+            try:
+                with patch('aimeth_pilot.run.ThreadPoolExecutor',ImmediatePool), \
+                     patch('aimeth_pilot.run.bounded_response',return_value={'response':response}):
+                    result=run_population(root,'simultaneous',config,q,'prime-counterexample')
+                self.assertTrue(result['status']['complete'])
+                self.assertEqual(result['status']['steps']['succeeded'],16)
+                self.assertEqual(q.summary()['reserved_calls'],16)
+                self.assertEqual(result['status']['messages'],16)
+            finally:q.db.close()
+
     def test_options_are_frozen_in_actual_request_and_cannot_override_model(self):
         config=compile_arm('I',population=8,rounds=2,group_size=4)
         config['request_options']={'response_format':{'type':'json_object'}}
