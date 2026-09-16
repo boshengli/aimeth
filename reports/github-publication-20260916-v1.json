@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1.1-publication",
+  "version": "1.0",
+  "date": "2026-09-16",
+  "observed_utc": "2026-09-16T03:09:09.102370+00:00",
+  "repository": {
+    "full_name": "boshengli/aimeth",
+    "html_url": "https://github.com/boshengli/aimeth",
+    "private": false,
+    "visibility": "public",
+    "default_branch": "main",
+    "created_at": "2026-09-16T03:01:02Z"
+  },
+  "account_identity_basis": "The user explicitly confirmed the GitHub username boshengli on 2026-09-16; no additional authentication scope was requested.",
+  "anonymous_access_verified": true,
+  "anonymous_request": "GET https://api.github.com/repos/boshengli/aimeth without an Authorization header; private=false, visibility=public",
+  "published_baseline_commit": "908bca17fffb8e4092b92b266d90228521ae488f",
+  "original_commits": [
+    {
+      "sha": "934cce636fa1a77c6daccc57655eb4d8b4eb07c9",
+      "message": "Establish research protocol, source audit, and artifact integrity checks",
+      "title_zh": "研究基础与证据规范",
+      "url": "https://github.com/boshengli/aimeth/commit/934cce636fa1a77c6daccc57655eb4d8b4eb07c9"
+    },
+    {
+      "sha": "6c41b2fe0eb9f8d3c9d98664af34ff16fb386b7f",
+      "message": "Add human-readable milestone reporting and organization design readiness",
+      "title_zh": "第一阶段 HTML 与设计准备",
+      "url": "https://github.com/boshengli/aimeth/commit/6c41b2fe0eb9f8d3c9d98664af34ff16fb386b7f"
+    },
+    {
+      "sha": "313b85fba53a99f75e7a0a1b674e10c82931e18c",
+      "message": "Implement durable events, fenced recovery, and cross-round messages",
+      "title_zh": "事件记录、恢复与跨轮消息实现",
+      "url": "https://github.com/boshengli/aimeth/commit/313b85fba53a99f75e7a0a1b674e10c82931e18c"
+    },
+    {
+      "sha": "908bca17fffb8e4092b92b266d90228521ae488f",
+      "message": "Document and validate the M1.1 runtime milestone",
+      "title_zh": "工程里程碑报告与验证证据",
+      "url": "https://github.com/boshengli/aimeth/commit/908bca17fffb8e4092b92b266d90228521ae488f"
+    }
+  ],
+  "original_milestone_tag": {
+    "name": "milestone/m1.1-local-v1.0",
+    "tag_object": "2cf56660d752ed030d3d66f6af22497e1ce0bcc5",
+    "target_commit": "908bca17fffb8e4092b92b266d90228521ae488f"
+  },
+  "ci": {
+    "conclusion": "success",
+    "createdAt": "2026-09-16T03:01:47Z",
+    "databaseId": 35050227524,
+    "event": "push",
+    "headSha": "908bca17fffb8e4092b92b266d90228521ae488f",
+    "jobs": [
+      {
+        "completedAt": "2026-09-16T03:01:57Z",
+        "conclusion": "success",
+        "databaseId": 104648785613,
+        "name": "integrity",
+        "startedAt": "2026-09-16T03:01:50Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-16T03:01:51Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-16T03:01:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-16T03:01:52Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 2,
+            "startedAt": "2026-09-16T03:01:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-16T03:01:54Z",
+            "conclusion": "success",
+            "name": "Run standard-library checks",
+            "number": 3,
+            "startedAt": "2026-09-16T03:01:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-16T03:01:55Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 6,
+            "startedAt": "2026-09-16T03:01:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-16T03:01:55Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 7,
+            "startedAt": "2026-09-16T03:01:55Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/boshengli/aimeth/actions/runs/35050227524/job/104648785613"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-09-16T03:01:57Z",
+    "url": "https://github.com/boshengli/aimeth/actions/runs/35050227524"
+  },
+  "ci_tests_passed": 32,
+  "ci_python_version": "3.12.3",
+  "interpretation": "Hosted engineering verification on the published baseline; not independent mathematical verification or a cluster experiment.",
+  "external_model_calls": 0,
+  "cluster_jobs": 0,
+  "new_10k_load_runs": 0,
+  "mathematical_proof_verified": false,
+  "publication_scope": "Tracked code, protocols, small synthetic examples and reviewed evidence; private runtime databases, credentials, models, evaluator keys and original attachments excluded.",
+  "ci_log_excerpt_normalization": "Selected the Run standard-library checks step, removed job/step columns and trailing whitespace, and preserved timestamps and content."
+}

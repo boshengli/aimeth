@@ -1,5 +1,7 @@
 # AIMeth
 
+[![Runtime and integrity checks](https://github.com/boshengli/aimeth/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/boshengli/aimeth/actions/workflows/checks.yml)
+
 **Agent organization and verifiable mathematical discovery under constrained compute.**
 
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 organization design is next; no topology-superiority claim, live cluster experiment or independently verified mathematical proof is included.
@@ -36,4 +38,4 @@ The root historical manifest describes the initial tree, not later README/runtim
 
 Passing integrity/fault tests does not verify a proof. Production database/trace archives, models, evaluator keys and credentials stay out of Git. Seeds do not guarantee deterministic inference; retain realized requests, responses, schedules and software/model identities. Whole-run compute accounting, real H20 deployment and proof/evaluator integration are outstanding.
 
-Public GitHub publication was requested on 2026-09-15; owner verification is pending. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.
+Public repository: [boshengli/aimeth](https://github.com/boshengli/aimeth), published on 2026-09-16 with the original commit history and milestone tag. The [publication HTML](milestones/m1-1-publication-v1.html) and [observed hosted checks](https://github.com/boshengli/aimeth/actions/runs/35050227524) document that transition; earlier reports retain their original dates and status. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.

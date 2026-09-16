@@ -1,0 +1,89 @@
+﻿2026-09-16T03:01:52.8606448Z ##[group]Run python3 --version
+2026-09-16T03:01:52.8607555Z ^[[36;1mpython3 --version^[[0m
+2026-09-16T03:01:52.8608607Z ^[[36;1mpython3 -m unittest discover -s tests -v^[[0m
+2026-09-16T03:01:52.8610153Z ^[[36;1mpython3 tools/verify_artifacts.py examples/replay/manifest.json^[[0m
+2026-09-16T03:01:52.8612134Z ^[[36;1mpython3 tools/verify_artifacts.py archives/foundation-v1/foundation-manifest.json^[[0m
+2026-09-16T03:01:52.8614269Z ^[[36;1mpython3 tools/verify_artifacts.py milestones/m1-foundation-v1.manifest.json^[[0m
+2026-09-16T03:01:52.8616579Z ^[[36;1mpython3 tools/build_milestone.py --output /tmp/m1.html^[[0m
+2026-09-16T03:01:52.8618054Z ^[[36;1mcmp milestones/m1-foundation-v1.html /tmp/m1.html^[[0m
+2026-09-16T03:01:52.8619623Z ^[[36;1mpython3 tools/verify_artifacts.py runtime-report-manifest.json^[[0m
+2026-09-16T03:01:52.8621404Z ^[[36;1mpython3 tools/build_runtime_milestone.py --output /tmp/m1-1.html^[[0m
+2026-09-16T03:01:52.8622996Z ^[[36;1mcmp milestones/m1-1-runtime-v1.html /tmp/m1-1.html^[[0m
+2026-09-16T03:01:52.8660292Z shell: /usr/bin/bash -e {0}
+2026-09-16T03:01:52.8661267Z ##[endgroup]
+2026-09-16T03:01:52.8746090Z Python 3.12.3
+2026-09-16T03:01:53.0500927Z test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok
+2026-09-16T03:01:53.0507078Z test_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok
+2026-09-16T03:01:53.0511369Z test_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok
+2026-09-16T03:01:53.0515676Z test_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok
+2026-09-16T03:01:53.0520255Z test_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok
+2026-09-16T03:01:53.0524607Z test_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok
+2026-09-16T03:01:53.0530379Z test_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok
+2026-09-16T03:01:53.0535549Z test_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok
+2026-09-16T03:01:53.0973629Z test_atomic_message_checkpoint_and_recorded_next_request (test_runtime.RuntimeTests.test_atomic_message_checkpoint_and_recorded_next_request) ... ok
+2026-09-16T03:01:53.1399695Z test_backup_restore_and_export_from_snapshot (test_runtime.RuntimeTests.test_backup_restore_and_export_from_snapshot) ... ok
+2026-09-16T03:01:53.4966704Z test_concurrent_processes_have_one_canonical_result_per_step (test_runtime.RuntimeTests.test_concurrent_processes_have_one_canonical_result_per_step) ... ok
+2026-09-16T03:01:53.5217031Z test_deleted_checkpoint_detected (test_runtime.RuntimeTests.test_deleted_checkpoint_detected) ... ok
+2026-09-16T03:01:53.5438170Z test_duplicate_receipt_and_conflicting_repeat (test_runtime.RuntimeTests.test_duplicate_receipt_and_conflicting_repeat) ... ok
+2026-09-16T03:01:53.5684106Z test_empty_and_truncated_outputs_preserved_but_not_promoted (test_runtime.RuntimeTests.test_empty_and_truncated_outputs_preserved_but_not_promoted) ... ok
+2026-09-16T03:01:53.5946177Z test_expired_worker_cannot_overwrite_new_attempt (test_runtime.RuntimeTests.test_expired_worker_cannot_overwrite_new_attempt) ... ok
+2026-09-16T03:01:53.6128322Z test_frozen_identity_and_no_secret_manifest (test_runtime.RuntimeTests.test_frozen_identity_and_no_secret_manifest) ... ok
+2026-09-16T03:01:53.6376421Z test_heartbeat_and_global_inflight_limit (test_runtime.RuntimeTests.test_heartbeat_and_global_inflight_limit) ... ok
+2026-09-16T03:01:53.6625201Z test_invalid_route_is_retained_and_rolls_back_checkpoint (test_runtime.RuntimeTests.test_invalid_route_is_retained_and_rolls_back_checkpoint) ... ok
+2026-09-16T03:01:53.6833226Z test_journal_is_append_only_and_detects_offline_tampering (test_runtime.RuntimeTests.test_journal_is_append_only_and_detects_offline_tampering) ... ok
+2026-09-16T03:01:53.7016369Z test_observation_idempotency_and_cross_run_parent_rejection (test_runtime.RuntimeTests.test_observation_idempotency_and_cross_run_parent_rejection) ... ok
+2026-09-16T03:01:53.7227234Z test_projection_tampering_detected (test_runtime.RuntimeTests.test_projection_tampering_detected) ... ok
+2026-09-16T03:01:53.7465797Z test_retry_exhaustion_and_unknown_usage (test_runtime.RuntimeTests.test_retry_exhaustion_and_unknown_usage) ... ok
+2026-09-16T03:01:53.7637911Z test_round_barrier_and_idempotent_materialization (test_runtime.RuntimeTests.test_round_barrier_and_idempotent_materialization) ... ok
+2026-09-16T03:01:53.8557166Z test_sigkill_after_claim (test_runtime.RuntimeTests.test_sigkill_after_claim) ... ok
+2026-09-16T03:01:53.9423675Z test_sigkill_after_commit_before_ack (test_runtime.RuntimeTests.test_sigkill_after_commit_before_ack) ... ok
+2026-09-16T03:01:54.0304608Z test_sigkill_inside_result_transaction (test_runtime.RuntimeTests.test_sigkill_inside_result_transaction) ... ok
+2026-09-16T03:01:54.0498248Z test_worker_identity_is_checked_before_claim (test_runtime.RuntimeTests.test_worker_identity_is_checked_before_claim) ... ok
+2026-09-16T03:01:54.0901040Z test_http_request_sends_seed_and_env_credential_without_journaling_it (test_transport.TransportTests.test_http_request_sends_seed_and_env_credential_without_journaling_it) ... ok
+2026-09-16T03:01:54.1746498Z test_http_retryable_and_terminal_statuses (test_transport.TransportTests.test_http_retryable_and_terminal_statuses) ... ok
+2026-09-16T03:01:54.2161268Z test_invalid_oversized_nonfinite_responses (test_transport.TransportTests.test_invalid_oversized_nonfinite_responses) ... ok
+2026-09-16T03:01:54.2297589Z test_redirect_is_not_followed (test_transport.TransportTests.test_redirect_is_not_followed) ... ok
+2026-09-16T03:01:54.2489981Z test_timeout_classification (test_transport.TransportTests.test_timeout_classification) ... ok
+2026-09-16T03:01:54.7302614Z
+2026-09-16T03:01:54.7303663Z ----------------------------------------------------------------------
+2026-09-16T03:01:54.7304223Z Ran 32 tests in 1.681s
+2026-09-16T03:01:54.7304356Z
+2026-09-16T03:01:54.7304424Z OK
+2026-09-16T03:01:54.7715399Z {
+2026-09-16T03:01:54.7715754Z   "status": "hash_integrity_passed",
+2026-09-16T03:01:54.7716193Z   "artifacts_checked": 1,
+2026-09-16T03:01:54.7716492Z   "scientific_validity_checked": false
+2026-09-16T03:01:54.7716714Z }
+2026-09-16T03:01:54.8031831Z {
+2026-09-16T03:01:54.8032103Z   "status": "hash_integrity_passed",
+2026-09-16T03:01:54.8032364Z   "artifacts_checked": 20,
+2026-09-16T03:01:54.8032584Z   "scientific_validity_checked": false
+2026-09-16T03:01:54.8032825Z }
+2026-09-16T03:01:54.8325547Z {
+2026-09-16T03:01:54.8325857Z   "status": "hash_integrity_passed",
+2026-09-16T03:01:54.8326217Z   "artifacts_checked": 5,
+2026-09-16T03:01:54.8326531Z   "scientific_validity_checked": false
+2026-09-16T03:01:54.8326862Z }
+2026-09-16T03:01:54.8673225Z {
+2026-09-16T03:01:54.8673558Z   "html": "/tmp/m1.html",
+2026-09-16T03:01:54.8673872Z   "bytes": 44881,
+2026-09-16T03:01:54.8674154Z   "evidence_summary": {
+2026-09-16T03:01:54.8674552Z     "baseline_commit": "934cce636fa1a77c6daccc57655eb4d8b4eb07c9",
+2026-09-16T03:01:54.8675012Z     "source_hashes_matched": 21,
+2026-09-16T03:01:54.8675614Z     "source_hashes_total": 21,
+2026-09-16T03:01:54.8675942Z     "syntax_checks_passed": 5,
+2026-09-16T03:01:54.8676261Z     "integrity_tests_passed": 8,
+2026-09-16T03:01:54.8676632Z     "baseline_artifacts_checked": 20,
+2026-09-16T03:01:54.8676990Z     "prototype_findings": 9,
+2026-09-16T03:01:54.8677294Z     "model_calls": 0,
+2026-09-16T03:01:54.8677569Z     "cluster_jobs": 0,
+2026-09-16T03:01:54.8677857Z     "proof_verified": false,
+2026-09-16T03:01:54.8678177Z     "hosted_ci_executed": false
+2026-09-16T03:01:54.8678472Z   }
+2026-09-16T03:01:54.8678689Z }
+2026-09-16T03:01:54.9027009Z {
+2026-09-16T03:01:54.9027336Z   "status": "hash_integrity_passed",
+2026-09-16T03:01:54.9028018Z   "artifacts_checked": 25,
+2026-09-16T03:01:54.9028348Z   "scientific_validity_checked": false
+2026-09-16T03:01:54.9028678Z }
+2026-09-16T03:01:54.9344437Z {"html": "/tmp/m1-1.html", "bytes": 32532, "tests": 32, "trace_events": 41}

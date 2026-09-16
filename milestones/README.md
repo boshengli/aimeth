@@ -32,3 +32,15 @@ node tools/check_runtime_milestone.cjs milestones/m1-1-runtime-v1.html /path/to/
 ```
 
 The builder checks the frozen `archives/runtime-v0.1/aimeth_runtime` snapshot, derived exactly from commit `313b85f`, so later runtime edits do not rewrite this report. The report manifest covers its immutable inputs/outputs; current code evolves in later commits. Live databases and large synthetic stress traces stay in ignored `runs/`; small synthetic examples and all load summaries are retained for review.
+
+## M1.1 publication supplement — 2026-09-16
+
+[Public GitHub release record v1.0](m1-1-publication-v1.html) records the confirmed owner, anonymous public access, retained initial history and successful hosted checks. This supplements the preserved local report rather than rewriting it.
+
+```bash
+python3 tools/build_publication_milestone.py
+python3 tools/verify_artifacts.py publication-report-manifest.json
+node tools/check_publication_milestone.cjs milestones/m1-1-publication-v1.html /path/to/qa.json
+```
+
+The report cites the published, tested source baseline; its own delivery is a later Git commit. Final delivery-head CI is linked in the project handoff, avoiding a self-referential report hash.

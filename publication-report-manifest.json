@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1.1-publication",
+  "published_baseline_commit": "908bca17fffb8e4092b92b266d90228521ae488f",
+  "artifacts": [
+    {
+      "id": "milestones/m1-1-publication-v1-1440.png",
+      "path": "milestones/m1-1-publication-v1-1440.png",
+      "bytes": 454792,
+      "sha256": "2dcc8678863d42ef5f25fe48591d6dbf843e8ffdf6295a321f78dc62d953be15"
+    },
+    {
+      "id": "milestones/m1-1-publication-v1-390.png",
+      "path": "milestones/m1-1-publication-v1-390.png",
+      "bytes": 422806,
+      "sha256": "60d6094286ae3fff3f9b2babec7a123c51469d7c51522047dd6dd706a0ab47e1"
+    },
+    {
+      "id": "milestones/m1-1-publication-v1.browser-qa.json",
+      "path": "milestones/m1-1-publication-v1.browser-qa.json",
+      "bytes": 951,
+      "sha256": "22b330c4ba87c0240d67c69eed93f0080fc5e1d56ba0fdd86a424f5b05bf1bc3"
+    },
+    {
+      "id": "milestones/m1-1-publication-v1.evidence.json",
+      "path": "milestones/m1-1-publication-v1.evidence.json",
+      "bytes": 982,
+      "sha256": "5b06803ad45dffd55fb841377124ba6506000bb7cdd905defacd4120bd73f5e7"
+    },
+    {
+      "id": "milestones/m1-1-publication-v1.html",
+      "path": "milestones/m1-1-publication-v1.html",
+      "bytes": 27823,
+      "sha256": "277649cb4fdf56993f2da9ff811a3d4ab29b690dd27b53813e36025cfe63642c"
+    },
+    {
+      "id": "reports/github-ci-35050227524.txt",
+      "path": "reports/github-ci-35050227524.txt",
+      "bytes": 8498,
+      "sha256": "a7c10ed113d200aef6da29781005679e1f401b6ffd7c03623fb67861ce092c9d"
+    },
+    {
+      "id": "reports/github-publication-20260916-v1.json",
+      "path": "reports/github-publication-20260916-v1.json",
+      "bytes": 5097,
+      "sha256": "29ff147ae3584eabbfa5416fdc26c110ec4cd708718fda11655fe3bf041c2505"
+    },
+    {
+      "id": "reports/publication-preflight-20260916.json",
+      "path": "reports/publication-preflight-20260916.json",
+      "bytes": 250,
+      "sha256": "c129d21c7181d51cf9e7a842322af7e83de87c2661111c414e8a6c93afeb3bb2"
+    },
+    {
+      "id": "templates/milestone-publication-v1.html",
+      "path": "templates/milestone-publication-v1.html",
+      "bytes": 10985,
+      "sha256": "5db0cee68c69d88c9f4f27a89b1e00430e50c4da1cf74e298073ade6c4b32e91"
+    },
+    {
+      "id": "tools/build_publication_milestone.py",
+      "path": "tools/build_publication_milestone.py",
+      "bytes": 2772,
+      "sha256": "8c9ee5f040a409107854358784467d2a88902982a8b3a76cb72594afdb8c22ea"
+    },
+    {
+      "id": "tools/check_publication_milestone.cjs",
+      "path": "tools/check_publication_milestone.cjs",
+      "bytes": 2937,
+      "sha256": "79c6c37d7138a2742991ea4892287555e31ed52ff4b7bf610ed75bb50b78fb3e"
+    }
+  ]
+}

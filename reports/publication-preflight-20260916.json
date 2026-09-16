@@ -1,0 +1,6 @@
+{
+  "scope": "All reachable Git history; limited credential-pattern and excluded-file-name review, not a comprehensive security audit",
+  "reachable_blobs_checked": 72,
+  "findings": [],
+  "reviewed_tip": "908bca17fffb8e4092b92b266d90228521ae488f"
+}

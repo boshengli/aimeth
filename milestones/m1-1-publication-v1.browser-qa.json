@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "browser_version": "153.0.8010.48",
+  "views": [
+    {
+      "width": 1440,
+      "core_readable": true,
+      "no_page_overflow": true
+    },
+    {
+      "width": 768,
+      "core_readable": true,
+      "no_page_overflow": true
+    },
+    {
+      "width": 390,
+      "core_readable": true,
+      "no_page_overflow": true
+    }
+  ],
+  "repository_link": true,
+  "local_file_links": true,
+  "evidence_disclosure": true,
+  "print_wiring": true,
+  "print_media": true,
+  "no_javascript_core_content": true,
+  "page_errors": [],
+  "http_runtime_resources": [],
+  "visual_review": {
+    "reviewer": "Codex visual inspection",
+    "views": [
+      "1440px full report",
+      "390px full report"
+    ],
+    "result": "Readable hierarchy and complete content; no overlapping elements observed. CI-excerpt whitespace normalization did not change the visible layout. Not an independent human review."
+  }
+}

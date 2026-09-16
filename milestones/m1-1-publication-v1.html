@@ -1,0 +1,224 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIMeth · GitHub 公网发布记录</title><style>
+:root{--ink:#16323a;--green:#1b705c;--muted:#53676c;--line:#d5dfdb;--bg:#f9faf6}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--green);text-underline-offset:4px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #bb8c31;outline-offset:4px}.wrap{max-width:1100px;margin:auto;padding:0 38px}header{background:var(--ink);color:white}.top{display:flex;justify-content:space-between;gap:24px;padding:26px 0;border-bottom:1px solid #47636a;font-size:12px;letter-spacing:.1em}.top b{font-size:21px;letter-spacing:.06em}.hero{padding:45px 0 49px}.kicker{font-size:12px;letter-spacing:.13em;font-weight:650;color:#8fd2b5}h1{font-size:44px;line-height:1.3;font-weight:650;margin:16px 0 20px}.hero p{color:#d5e6df;font-size:18px;max-width:850px}.repo{display:inline-block;background:#e7f3ed;color:#164c3d;text-decoration:none;border-radius:5px;padding:12px 20px;font-weight:650;overflow-wrap:anywhere;margin-top:10px}.statuses{display:flex;gap:15px;flex-wrap:wrap;margin-top:24px;font-size:13px;color:#bde5d4}.toolbar{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 0;border-bottom:1px solid var(--line);font-size:14px}.toolbar a{text-decoration:none}button{margin-left:auto;font:inherit;padding:8px 15px;border:1px solid #a5b8af;color:var(--ink);background:white;border-radius:4px;cursor:pointer}section{padding:36px 0;border-bottom:1px solid var(--line)}h2{font-size:26px;margin:0 0 20px;line-height:1.4}h3{font-size:19px}.num{display:block;font:600 12px/1.5 ui-monospace,monospace;color:var(--green);letter-spacing:.08em;margin-bottom:9px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:white;margin-bottom:24px}.metric{padding:20px;border-right:1px solid var(--line)}.metric:last-child{border-right:0}.metric strong{display:block;font:600 31px/1.4 ui-monospace,monospace;letter-spacing:-.04em}.metric span{font-size:13px;color:var(--muted)}.note{padding:16px 21px;background:#eaf2ed;border-left:3px solid var(--green);margin:22px 0}.note.amber{background:#f5efe3;border-color:#92703b;color:#66502d}.small{font-size:13px;color:var(--muted)}code{font:.88em/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}.history{list-style:none;padding:0;display:grid;gap:0}.history li{display:flex;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}.history li:last-child{border-bottom:0}.history small{display:block;color:var(--muted);font-size:13px;margin-top:3px}.history a{background:#e8efe9;padding:3px 10px;flex-shrink:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{border:1px solid var(--line);background:white;padding:23px}.card h3{margin:0 0 12px}.card p{margin:8px 0;font-size:15px}table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}th,td{padding:14px 17px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}th{background:#eaf0ec}th:first-child{width:24%}details{padding:16px 20px;background:white;border:1px solid var(--line);margin-top:20px}summary{font-weight:650;cursor:pointer}pre{padding:18px;background:#f0f4f1;white-space:pre-wrap;word-break:break-word;font:12px/1.75 ui-monospace,monospace;max-height:450px;overflow:auto}footer{font-size:13px;color:var(--muted);padding:24px 0 35px}.steps{padding-left:22px}.steps li{margin:11px 0}
+@media(max-width:750px){.wrap{padding:0 23px}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.grid{grid-template-columns:1fr}.top{align-items:flex-start}.hero{padding:34px 0}.hero p{font-size:17px}h1{font-size:36px}.top span{text-align:right;max-width:190px}.history li{gap:17px}}
+@media(max-width:480px){.wrap{padding:0 19px}.top{display:block}.top span{display:block;text-align:left;max-width:none;margin-top:8px;font-size:10px}.hero h1{font-size:34px}.repo{font-size:15px;padding:11px 14px}.toolbar{gap:13px}button{margin-left:0}h2{font-size:24px}.metric{padding:15px}.metric strong{font-size:28px}.history li{display:block}.history li div{margin-top:10px}.card{padding:19px}table,tbody,tr,td{display:block;width:100%}thead{display:none}tr{border:1px solid var(--line);margin-bottom:14px}td:first-child{font-weight:650;background:#eaf0ec}section{padding:29px 0}}
+@media print{body{background:white;font-size:11pt}.wrap{padding:0}header{background:white;color:var(--ink);border-bottom:2px solid var(--ink)}.hero p,.kicker,.statuses{color:var(--ink)}.hero{padding:20px 0}h1{font-size:27pt}.toolbar{display:none}.repo{border:1px solid #aaa;background:white}.metrics{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:1fr 1fr}section{padding:20px 0}.card,.note,.history li,tr{break-inside:avoid}h2,h3,summary{break-after:avoid}pre{max-height:none;font-size:8pt}}
+</style></head><body><header><div class="wrap"><div class="top"><b>AIMeth / 10K</b><span>M1.1 · 公网发布补充 v1.0<br>2026-09-16</span></div><div class="hero"><div class="kicker">PUBLIC REPOSITORY · PRESERVED HISTORY · HOSTED CHECKS</div><h1>研究记录，开始公开</h1><p>目标账户已由用户确认。代码、研究规范、原始提交历史与里程碑证据已发布到 GitHub；匿名访问和首次云端检查均已验证。</p><a class="repo" id="repository" href="https://github.com/boshengli/aimeth" target="_blank" rel="noopener noreferrer">boshengli / aimeth ↗</a><div class="statuses"><span>✓ Public</span><span>✓ 默认分支 main</span><span>✓ 云端检查通过</span></div></div></div></header><main class="wrap"><nav class="toolbar" aria-label="报告导航"><a href="#result">发布结果</a><a href="#history">历史记录</a><a href="#checks">验证证据</a><a href="#next">下一阶段</a><button id="print" type="button">打印 / 保存 PDF</button></nav>
+<section id="result"><span class="num">01 / RELEASE</span><h2>公网发布已完成</h2><div class="metrics"><div class="metric"><strong>PUBLIC</strong><span>匿名 API 可访问</span></div><div class="metric"><strong>4</strong><span>原有提交完整保留</span></div><div class="metric"><strong>32 / 32</strong><span>首次云端测试通过</span></div><div class="metric"><strong>main</strong><span>远程默认分支</span></div></div>
+<table><thead><tr><th>用户要求</th><th>已执行</th><th>可检查的证据</th></tr></thead><tbody><tr><td>在指定账户开启公网 GitHub</td><td>用户确认 boshengli 对应其提供的邮箱后创建仓库，公开可见。</td><td><a href="https://github.com/boshengli/aimeth" target="_blank" rel="noopener">仓库页面</a>；匿名请求返回 private=false、visibility=public。</td></tr><tr><td>从一开始就记录</td><td>推送现有完整 Git 历史及原始里程碑标签，追加发布记录。</td><td>934cce6 → 6c41b2f → 313b85f → 908bca1，原提交 SHA 保留。</td></tr><tr><td>过程可追溯、可复查</td><td>云端运行故障测试、证据哈希校验、旧 HTML 确定性重建；保存实际检查元数据。</td><td><a href="https://github.com/boshengli/aimeth/actions/runs/35050227524" target="_blank" rel="noopener">GitHub Actions #35050227524</a>，成功状态及日志可追溯。</td></tr><tr><td>每步都有可读 HTML</td><td>新增本发布补充报告；M1 与 M1.1 本地报告保持原样。</td><td>本报告、结构化元数据、构建脚本和文件哈希清单一同纳入新提交。</td></tr></tbody></table>
+<div class="note"><strong>历史状态保留：</strong>昨天的 M1.1 报告仍显示“GitHub 待账户核实”，那是当时的真实状态。本报告补充今天的公开发布事实；后续交付提交继续追加到已推送的历史之后。</div></section>
+<section id="history"><span class="num">02 / PROVENANCE</span><h2>起点与每一步，都能回到原始提交</h2><ol class="history"><li><a href="https://github.com/boshengli/aimeth/commit/934cce636fa1a77c6daccc57655eb4d8b4eb07c9"><code>934cce6</code></a><div><strong>研究基础与证据规范</strong><small>Establish research protocol, source audit, and artifact integrity checks</small></div></li><li><a href="https://github.com/boshengli/aimeth/commit/6c41b2fe0eb9f8d3c9d98664af34ff16fb386b7f"><code>6c41b2f</code></a><div><strong>第一阶段 HTML 与设计准备</strong><small>Add human-readable milestone reporting and organization design readiness</small></div></li><li><a href="https://github.com/boshengli/aimeth/commit/313b85fba53a99f75e7a0a1b674e10c82931e18c"><code>313b85f</code></a><div><strong>事件记录、恢复与跨轮消息实现</strong><small>Implement durable events, fenced recovery, and cross-round messages</small></div></li><li><a href="https://github.com/boshengli/aimeth/commit/908bca17fffb8e4092b92b266d90228521ae488f"><code>908bca1</code></a><div><strong>工程里程碑报告与验证证据</strong><small>Document and validate the M1.1 runtime milestone</small></div></li></ol><p class="small">已发布标签：<code>milestone/m1.1-local-v1.0</code>，指向 <code>908bca1</code>。本报告引用的云端受测基线为 <code>908bca17fffb8e4092b92b266d90228521ae488f</code>；报告交付版本由其新增 Git 提交标识。</p></section>
+<section id="checks"><span class="num">03 / OBSERVED CHECKS</span><h2>云端通过了什么</h2><div class="grid"><article class="card"><h3>实际 GitHub Actions</h3><p>Ubuntu 托管 runner，Python 3.12.3。全部 32 项测试通过，覆盖进程强杀恢复、重复与迟到结果、多进程竞争、消息链、快照恢复、篡改检查和本地 HTTP 假服务。</p><p><a href="https://github.com/boshengli/aimeth/actions/runs/35050227524" target="_blank" rel="noopener">打开首次主分支检查 ↗</a></p></article><article class="card"><h3>证据与报告完整性</h3><p>初始快照 20 项哈希、M1 报告 5 项哈希、M1.1 报告 25 项哈希通过。M1 与 M1.1 HTML 重建后字节一致；原始源码与旧报告可复查。</p><p><a href="../reports/github-publication-20260916-v1.json">发布元数据</a> · <a href="../reports/github-ci-35050227524.txt">受测步骤日志</a></p></article></div>
+<details id="ci-evidence"><summary>展开原始受测步骤日志</summary><pre>﻿2026-09-16T03:01:52.8606448Z ##[group]Run python3 --version
+2026-09-16T03:01:52.8607555Z ^[[36;1mpython3 --version^[[0m
+2026-09-16T03:01:52.8608607Z ^[[36;1mpython3 -m unittest discover -s tests -v^[[0m
+2026-09-16T03:01:52.8610153Z ^[[36;1mpython3 tools/verify_artifacts.py examples/replay/manifest.json^[[0m
+2026-09-16T03:01:52.8612134Z ^[[36;1mpython3 tools/verify_artifacts.py archives/foundation-v1/foundation-manifest.json^[[0m
+2026-09-16T03:01:52.8614269Z ^[[36;1mpython3 tools/verify_artifacts.py milestones/m1-foundation-v1.manifest.json^[[0m
+2026-09-16T03:01:52.8616579Z ^[[36;1mpython3 tools/build_milestone.py --output /tmp/m1.html^[[0m
+2026-09-16T03:01:52.8618054Z ^[[36;1mcmp milestones/m1-foundation-v1.html /tmp/m1.html^[[0m
+2026-09-16T03:01:52.8619623Z ^[[36;1mpython3 tools/verify_artifacts.py runtime-report-manifest.json^[[0m
+2026-09-16T03:01:52.8621404Z ^[[36;1mpython3 tools/build_runtime_milestone.py --output /tmp/m1-1.html^[[0m
+2026-09-16T03:01:52.8622996Z ^[[36;1mcmp milestones/m1-1-runtime-v1.html /tmp/m1-1.html^[[0m
+2026-09-16T03:01:52.8660292Z shell: /usr/bin/bash -e {0}
+2026-09-16T03:01:52.8661267Z ##[endgroup]
+2026-09-16T03:01:52.8746090Z Python 3.12.3
+2026-09-16T03:01:53.0500927Z test_duplicate_id_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_id_is_rejected) ... ok
+2026-09-16T03:01:53.0507078Z test_duplicate_resolved_path_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_duplicate_resolved_path_is_rejected) ... ok
+2026-09-16T03:01:53.0511369Z test_empty_manifest_is_not_a_success (test_artifact_integrity.ArtifactIntegrityTests.test_empty_manifest_is_not_a_success) ... ok
+2026-09-16T03:01:53.0515676Z test_missing_artifact_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_missing_artifact_is_rejected) ... ok
+2026-09-16T03:01:53.0520255Z test_original_is_valid_but_not_scientifically_verified (test_artifact_integrity.ArtifactIntegrityTests.test_original_is_valid_but_not_scientifically_verified) ... ok
+2026-09-16T03:01:53.0524607Z test_path_escape_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_path_escape_is_rejected) ... ok
+2026-09-16T03:01:53.0530379Z test_same_length_tampering_is_detected (test_artifact_integrity.ArtifactIntegrityTests.test_same_length_tampering_is_detected) ... ok
+2026-09-16T03:01:53.0535549Z test_symbolic_link_is_rejected (test_artifact_integrity.ArtifactIntegrityTests.test_symbolic_link_is_rejected) ... ok
+2026-09-16T03:01:53.0973629Z test_atomic_message_checkpoint_and_recorded_next_request (test_runtime.RuntimeTests.test_atomic_message_checkpoint_and_recorded_next_request) ... ok
+2026-09-16T03:01:53.1399695Z test_backup_restore_and_export_from_snapshot (test_runtime.RuntimeTests.test_backup_restore_and_export_from_snapshot) ... ok
+2026-09-16T03:01:53.4966704Z test_concurrent_processes_have_one_canonical_result_per_step (test_runtime.RuntimeTests.test_concurrent_processes_have_one_canonical_result_per_step) ... ok
+2026-09-16T03:01:53.5217031Z test_deleted_checkpoint_detected (test_runtime.RuntimeTests.test_deleted_checkpoint_detected) ... ok
+2026-09-16T03:01:53.5438170Z test_duplicate_receipt_and_conflicting_repeat (test_runtime.RuntimeTests.test_duplicate_receipt_and_conflicting_repeat) ... ok
+2026-09-16T03:01:53.5684106Z test_empty_and_truncated_outputs_preserved_but_not_promoted (test_runtime.RuntimeTests.test_empty_and_truncated_outputs_preserved_but_not_promoted) ... ok
+2026-09-16T03:01:53.5946177Z test_expired_worker_cannot_overwrite_new_attempt (test_runtime.RuntimeTests.test_expired_worker_cannot_overwrite_new_attempt) ... ok
+2026-09-16T03:01:53.6128322Z test_frozen_identity_and_no_secret_manifest (test_runtime.RuntimeTests.test_frozen_identity_and_no_secret_manifest) ... ok
+2026-09-16T03:01:53.6376421Z test_heartbeat_and_global_inflight_limit (test_runtime.RuntimeTests.test_heartbeat_and_global_inflight_limit) ... ok
+2026-09-16T03:01:53.6625201Z test_invalid_route_is_retained_and_rolls_back_checkpoint (test_runtime.RuntimeTests.test_invalid_route_is_retained_and_rolls_back_checkpoint) ... ok
+2026-09-16T03:01:53.6833226Z test_journal_is_append_only_and_detects_offline_tampering (test_runtime.RuntimeTests.test_journal_is_append_only_and_detects_offline_tampering) ... ok
+2026-09-16T03:01:53.7016369Z test_observation_idempotency_and_cross_run_parent_rejection (test_runtime.RuntimeTests.test_observation_idempotency_and_cross_run_parent_rejection) ... ok
+2026-09-16T03:01:53.7227234Z test_projection_tampering_detected (test_runtime.RuntimeTests.test_projection_tampering_detected) ... ok
+2026-09-16T03:01:53.7465797Z test_retry_exhaustion_and_unknown_usage (test_runtime.RuntimeTests.test_retry_exhaustion_and_unknown_usage) ... ok
+2026-09-16T03:01:53.7637911Z test_round_barrier_and_idempotent_materialization (test_runtime.RuntimeTests.test_round_barrier_and_idempotent_materialization) ... ok
+2026-09-16T03:01:53.8557166Z test_sigkill_after_claim (test_runtime.RuntimeTests.test_sigkill_after_claim) ... ok
+2026-09-16T03:01:53.9423675Z test_sigkill_after_commit_before_ack (test_runtime.RuntimeTests.test_sigkill_after_commit_before_ack) ... ok
+2026-09-16T03:01:54.0304608Z test_sigkill_inside_result_transaction (test_runtime.RuntimeTests.test_sigkill_inside_result_transaction) ... ok
+2026-09-16T03:01:54.0498248Z test_worker_identity_is_checked_before_claim (test_runtime.RuntimeTests.test_worker_identity_is_checked_before_claim) ... ok
+2026-09-16T03:01:54.0901040Z test_http_request_sends_seed_and_env_credential_without_journaling_it (test_transport.TransportTests.test_http_request_sends_seed_and_env_credential_without_journaling_it) ... ok
+2026-09-16T03:01:54.1746498Z test_http_retryable_and_terminal_statuses (test_transport.TransportTests.test_http_retryable_and_terminal_statuses) ... ok
+2026-09-16T03:01:54.2161268Z test_invalid_oversized_nonfinite_responses (test_transport.TransportTests.test_invalid_oversized_nonfinite_responses) ... ok
+2026-09-16T03:01:54.2297589Z test_redirect_is_not_followed (test_transport.TransportTests.test_redirect_is_not_followed) ... ok
+2026-09-16T03:01:54.2489981Z test_timeout_classification (test_transport.TransportTests.test_timeout_classification) ... ok
+2026-09-16T03:01:54.7302614Z
+2026-09-16T03:01:54.7303663Z ----------------------------------------------------------------------
+2026-09-16T03:01:54.7304223Z Ran 32 tests in 1.681s
+2026-09-16T03:01:54.7304356Z
+2026-09-16T03:01:54.7304424Z OK
+2026-09-16T03:01:54.7715399Z {
+2026-09-16T03:01:54.7715754Z   &quot;status&quot;: &quot;hash_integrity_passed&quot;,
+2026-09-16T03:01:54.7716193Z   &quot;artifacts_checked&quot;: 1,
+2026-09-16T03:01:54.7716492Z   &quot;scientific_validity_checked&quot;: false
+2026-09-16T03:01:54.7716714Z }
+2026-09-16T03:01:54.8031831Z {
+2026-09-16T03:01:54.8032103Z   &quot;status&quot;: &quot;hash_integrity_passed&quot;,
+2026-09-16T03:01:54.8032364Z   &quot;artifacts_checked&quot;: 20,
+2026-09-16T03:01:54.8032584Z   &quot;scientific_validity_checked&quot;: false
+2026-09-16T03:01:54.8032825Z }
+2026-09-16T03:01:54.8325547Z {
+2026-09-16T03:01:54.8325857Z   &quot;status&quot;: &quot;hash_integrity_passed&quot;,
+2026-09-16T03:01:54.8326217Z   &quot;artifacts_checked&quot;: 5,
+2026-09-16T03:01:54.8326531Z   &quot;scientific_validity_checked&quot;: false
+2026-09-16T03:01:54.8326862Z }
+2026-09-16T03:01:54.8673225Z {
+2026-09-16T03:01:54.8673558Z   &quot;html&quot;: &quot;/tmp/m1.html&quot;,
+2026-09-16T03:01:54.8673872Z   &quot;bytes&quot;: 44881,
+2026-09-16T03:01:54.8674154Z   &quot;evidence_summary&quot;: {
+2026-09-16T03:01:54.8674552Z     &quot;baseline_commit&quot;: &quot;934cce636fa1a77c6daccc57655eb4d8b4eb07c9&quot;,
+2026-09-16T03:01:54.8675012Z     &quot;source_hashes_matched&quot;: 21,
+2026-09-16T03:01:54.8675614Z     &quot;source_hashes_total&quot;: 21,
+2026-09-16T03:01:54.8675942Z     &quot;syntax_checks_passed&quot;: 5,
+2026-09-16T03:01:54.8676261Z     &quot;integrity_tests_passed&quot;: 8,
+2026-09-16T03:01:54.8676632Z     &quot;baseline_artifacts_checked&quot;: 20,
+2026-09-16T03:01:54.8676990Z     &quot;prototype_findings&quot;: 9,
+2026-09-16T03:01:54.8677294Z     &quot;model_calls&quot;: 0,
+2026-09-16T03:01:54.8677569Z     &quot;cluster_jobs&quot;: 0,
+2026-09-16T03:01:54.8677857Z     &quot;proof_verified&quot;: false,
+2026-09-16T03:01:54.8678177Z     &quot;hosted_ci_executed&quot;: false
+2026-09-16T03:01:54.8678472Z   }
+2026-09-16T03:01:54.8678689Z }
+2026-09-16T03:01:54.9027009Z {
+2026-09-16T03:01:54.9027336Z   &quot;status&quot;: &quot;hash_integrity_passed&quot;,
+2026-09-16T03:01:54.9028018Z   &quot;artifacts_checked&quot;: 25,
+2026-09-16T03:01:54.9028348Z   &quot;scientific_validity_checked&quot;: false
+2026-09-16T03:01:54.9028678Z }
+2026-09-16T03:01:54.9344437Z {&quot;html&quot;: &quot;/tmp/m1-1.html&quot;, &quot;bytes&quot;: 32532, &quot;tests&quot;: 32, &quot;trace_events&quot;: 41}
+</pre></details><details><summary>展开机器可读的发布与版本证据</summary><pre>{
+  &quot;schema_version&quot;: &quot;1.0&quot;,
+  &quot;milestone&quot;: &quot;M1.1-publication&quot;,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;date&quot;: &quot;2026-09-16&quot;,
+  &quot;observed_utc&quot;: &quot;2026-09-16T03:09:09.102370+00:00&quot;,
+  &quot;repository&quot;: {
+    &quot;full_name&quot;: &quot;boshengli/aimeth&quot;,
+    &quot;html_url&quot;: &quot;https://github.com/boshengli/aimeth&quot;,
+    &quot;private&quot;: false,
+    &quot;visibility&quot;: &quot;public&quot;,
+    &quot;default_branch&quot;: &quot;main&quot;,
+    &quot;created_at&quot;: &quot;2026-09-16T03:01:02Z&quot;
+  },
+  &quot;account_identity_basis&quot;: &quot;The user explicitly confirmed the GitHub username boshengli on 2026-09-16; no additional authentication scope was requested.&quot;,
+  &quot;anonymous_access_verified&quot;: true,
+  &quot;anonymous_request&quot;: &quot;GET https://api.github.com/repos/boshengli/aimeth without an Authorization header; private=false, visibility=public&quot;,
+  &quot;published_baseline_commit&quot;: &quot;908bca17fffb8e4092b92b266d90228521ae488f&quot;,
+  &quot;original_commits&quot;: [
+    {
+      &quot;sha&quot;: &quot;934cce636fa1a77c6daccc57655eb4d8b4eb07c9&quot;,
+      &quot;message&quot;: &quot;Establish research protocol, source audit, and artifact integrity checks&quot;,
+      &quot;title_zh&quot;: &quot;研究基础与证据规范&quot;,
+      &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/commit/934cce636fa1a77c6daccc57655eb4d8b4eb07c9&quot;
+    },
+    {
+      &quot;sha&quot;: &quot;6c41b2fe0eb9f8d3c9d98664af34ff16fb386b7f&quot;,
+      &quot;message&quot;: &quot;Add human-readable milestone reporting and organization design readiness&quot;,
+      &quot;title_zh&quot;: &quot;第一阶段 HTML 与设计准备&quot;,
+      &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/commit/6c41b2fe0eb9f8d3c9d98664af34ff16fb386b7f&quot;
+    },
+    {
+      &quot;sha&quot;: &quot;313b85fba53a99f75e7a0a1b674e10c82931e18c&quot;,
+      &quot;message&quot;: &quot;Implement durable events, fenced recovery, and cross-round messages&quot;,
+      &quot;title_zh&quot;: &quot;事件记录、恢复与跨轮消息实现&quot;,
+      &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/commit/313b85fba53a99f75e7a0a1b674e10c82931e18c&quot;
+    },
+    {
+      &quot;sha&quot;: &quot;908bca17fffb8e4092b92b266d90228521ae488f&quot;,
+      &quot;message&quot;: &quot;Document and validate the M1.1 runtime milestone&quot;,
+      &quot;title_zh&quot;: &quot;工程里程碑报告与验证证据&quot;,
+      &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/commit/908bca17fffb8e4092b92b266d90228521ae488f&quot;
+    }
+  ],
+  &quot;original_milestone_tag&quot;: {
+    &quot;name&quot;: &quot;milestone/m1.1-local-v1.0&quot;,
+    &quot;tag_object&quot;: &quot;2cf56660d752ed030d3d66f6af22497e1ce0bcc5&quot;,
+    &quot;target_commit&quot;: &quot;908bca17fffb8e4092b92b266d90228521ae488f&quot;
+  },
+  &quot;ci&quot;: {
+    &quot;conclusion&quot;: &quot;success&quot;,
+    &quot;createdAt&quot;: &quot;2026-09-16T03:01:47Z&quot;,
+    &quot;databaseId&quot;: 35050227524,
+    &quot;event&quot;: &quot;push&quot;,
+    &quot;headSha&quot;: &quot;908bca17fffb8e4092b92b266d90228521ae488f&quot;,
+    &quot;jobs&quot;: [
+      {
+        &quot;completedAt&quot;: &quot;2026-09-16T03:01:57Z&quot;,
+        &quot;conclusion&quot;: &quot;success&quot;,
+        &quot;databaseId&quot;: 104648785613,
+        &quot;name&quot;: &quot;integrity&quot;,
+        &quot;startedAt&quot;: &quot;2026-09-16T03:01:50Z&quot;,
+        &quot;status&quot;: &quot;completed&quot;,
+        &quot;steps&quot;: [
+          {
+            &quot;completedAt&quot;: &quot;2026-09-16T03:01:51Z&quot;,
+            &quot;conclusion&quot;: &quot;success&quot;,
+            &quot;name&quot;: &quot;Set up job&quot;,
+            &quot;number&quot;: 1,
+            &quot;startedAt&quot;: &quot;2026-09-16T03:01:51Z&quot;,
+            &quot;status&quot;: &quot;completed&quot;
+          },
+          {
+            &quot;completedAt&quot;: &quot;2026-09-16T03:01:52Z&quot;,
+            &quot;conclusion&quot;: &quot;success&quot;,
+            &quot;name&quot;: &quot;Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683&quot;,
+            &quot;number&quot;: 2,
+            &quot;startedAt&quot;: &quot;2026-09-16T03:01:51Z&quot;,
+            &quot;status&quot;: &quot;completed&quot;
+          },
+          {
+            &quot;completedAt&quot;: &quot;2026-09-16T03:01:54Z&quot;,
+            &quot;conclusion&quot;: &quot;success&quot;,
+            &quot;name&quot;: &quot;Run standard-library checks&quot;,
+            &quot;number&quot;: 3,
+            &quot;startedAt&quot;: &quot;2026-09-16T03:01:52Z&quot;,
+            &quot;status&quot;: &quot;completed&quot;
+          },
+          {
+            &quot;completedAt&quot;: &quot;2026-09-16T03:01:55Z&quot;,
+            &quot;conclusion&quot;: &quot;success&quot;,
+            &quot;name&quot;: &quot;Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683&quot;,
+            &quot;number&quot;: 6,
+            &quot;startedAt&quot;: &quot;2026-09-16T03:01:54Z&quot;,
+            &quot;status&quot;: &quot;completed&quot;
+          },
+          {
+            &quot;completedAt&quot;: &quot;2026-09-16T03:01:55Z&quot;,
+            &quot;conclusion&quot;: &quot;success&quot;,
+            &quot;name&quot;: &quot;Complete job&quot;,
+            &quot;number&quot;: 7,
+            &quot;startedAt&quot;: &quot;2026-09-16T03:01:55Z&quot;,
+            &quot;status&quot;: &quot;completed&quot;
+          }
+        ],
+        &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/actions/runs/35050227524/job/104648785613&quot;
+      }
+    ],
+    &quot;status&quot;: &quot;completed&quot;,
+    &quot;updatedAt&quot;: &quot;2026-09-16T03:01:57Z&quot;,
+    &quot;url&quot;: &quot;https://github.com/boshengli/aimeth/actions/runs/35050227524&quot;
+  },
+  &quot;ci_tests_passed&quot;: 32,
+  &quot;ci_python_version&quot;: &quot;3.12.3&quot;,
+  &quot;interpretation&quot;: &quot;Hosted engineering verification on the published baseline; not independent mathematical verification or a cluster experiment.&quot;,
+  &quot;external_model_calls&quot;: 0,
+  &quot;cluster_jobs&quot;: 0,
+  &quot;new_10k_load_runs&quot;: 0,
+  &quot;mathematical_proof_verified&quot;: false,
+  &quot;publication_scope&quot;: &quot;Tracked code, protocols, small synthetic examples and reviewed evidence; private runtime databases, credentials, models, evaluator keys and original attachments excluded.&quot;,
+  &quot;ci_log_excerpt_normalization&quot;: &quot;Selected the Run standard-library checks step, removed job/step columns and trailing whitespace, and preserved timestamps and content.&quot;
+}</pre></details>
+<div class="note amber"><strong>结论边界：</strong>这是新增的 GitHub 托管环境工程验证。本次没有重新运行 10K 负载、没有 H20 集群作业或真实模型调用，也没有独立验证数学证明。工程检查通过不代表组织优越性、数学正确性或期刊合规认证。</div></section>
+<section id="next"><span class="num">04 / READINESS</span><h2>继续进入 M2：Agent 组织设计</h2><p>公开仓库与审计记录已具备。下一阶段围绕已有状态、事件和消息接口，明确可区分的组织设计与公平比较条件：</p><ol class="steps"><li>冻结角色、访问权限、记忆、消息、候选筛选和独立验证边界。</li><li>构造匹配模型、任务、资源与停机规则的比较矩阵；以独立群体运行为实验单位。</li><li>用模型无关轨迹检查组织配置，再补齐集群与算力预算准入条件。</li></ol><p class="small"><a href="../docs/organization-design-brief.md">M2 任务入口</a> · <a href="m1-1-runtime-v1.html">M1.1 本地工程报告</a> · <a href="m1-foundation-v1.html">M1 研究基础报告</a></p></section></main><footer><div class="wrap">AIMeth · M1.1 公网发布补充 v1.0 · 2026-09-16<br>仓库中的公开内容为代码、规范、小型合成样例和经检查的证据。完整运行数据库、模型、凭据、评价密钥与原始附件保留在本地。</div></footer><script>document.getElementById('print').addEventListener('click',()=>window.print());</script></body></html>

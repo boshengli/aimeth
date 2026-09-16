@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M1.1-publication",
+  "version": "1.0",
+  "published_baseline_commit": "908bca17fffb8e4092b92b266d90228521ae488f",
+  "inputs": [
+    {
+      "path": "reports/github-publication-20260916-v1.json",
+      "sha256": "29ff147ae3584eabbfa5416fdc26c110ec4cd708718fda11655fe3bf041c2505"
+    },
+    {
+      "path": "templates/milestone-publication-v1.html",
+      "sha256": "5db0cee68c69d88c9f4f27a89b1e00430e50c4da1cf74e298073ade6c4b32e91"
+    },
+    {
+      "path": "tools/build_publication_milestone.py",
+      "sha256": "8c9ee5f040a409107854358784467d2a88902982a8b3a76cb72594afdb8c22ea"
+    },
+    {
+      "path": "reports/github-ci-35050227524.txt",
+      "sha256": "a7c10ed113d200aef6da29781005679e1f401b6ffd7c03623fb67861ce092c9d"
+    },
+    {
+      "path": "reports/publication-preflight-20260916.json",
+      "sha256": "c129d21c7181d51cf9e7a842322af7e83de87c2661111c414e8a6c93afeb3bb2"
+    }
+  ],
+  "scientific_validity_checked": false
+}
