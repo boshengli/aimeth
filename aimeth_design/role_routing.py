@@ -65,7 +65,8 @@ def compile_roles(arm, task, *, population=8, rounds=4, seed=920,
                   max_messages_per_step=2, max_message_chars=2048,
                   temperature=0.6, top_p=1,
                   base_messages=messages(task, 'E0'),
-                  agent_base_messages={a: messages(task, roles[a]) for a in config['agents']},
+                  message_templates={role: messages(task, role) for role in ROLE_ORDER},
+                  agent_template_ids=dict(roles),
                   round_edges={str(r): edges if r < rounds-1 else [] for r in range(rounds)})
     config['identities'].update(task=task['id']+':sha256:'+digest(task), policy=POLICY)
     config['organization'] = {
@@ -73,6 +74,7 @@ def compile_roles(arm, task, *, population=8, rounds=4, seed=920,
         'groups': groups, 'roles': roles, 'role_prompt_sha256': {r: digest(messages(task, r)) for r in ROLE_ORDER},
         'reference_population': population, 'reference_rounds': rounds, 'group_size': 4,
         'schedule': 'synchronous-barrier.v1', 'memory': 'full-bounded-envelope.v1',
+        'prompt_storage': 'role-templates.v2',
         'selection': 'terminal-synthesizer-lottery.v1', 'terminal_agents': sorted(a for a in roles if roles[a] == 'S'),
         'evidence_scope': 'exploratory development pilot; no powered effect or frontier proof',
     }

@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import patch
 from io import StringIO
 
-from aimeth_runtime.store import Store, Conflict, canonical, validate_manifest
+from aimeth_runtime.store import Store, Conflict, canonical, validate_manifest, base_messages_for
 from aimeth_design.role_routing import compile_roles, parse_envelope, finish_role, select_synthesizer
 from aimeth_pilot.calibration import tasks
 from aimeth_pilot.role_budget import RoleBudget
@@ -38,14 +38,15 @@ class RoleRoutingTests(unittest.TestCase):
 
     def test_matched_roles_prompts_degrees_and_terminal_pool(self):
         task=tasks()['prime-counterexample'];h=compile_roles('H',task);f=compile_roles('F',task)
-        self.assertEqual(h['agent_base_messages'],f['agent_base_messages'])
+        self.assertEqual(h['message_templates'],f['message_templates'])
+        self.assertEqual(h['agent_template_ids'],f['agent_template_ids'])
         self.assertEqual(h['organization']['terminal_agents'],f['organization']['terminal_agents'])
         for cfg in (h,f):
             self.assertEqual(sum(map(len,cfg['round_edges'].values())),30)
             self.assertEqual(len(cfg['agents'])*cfg['rounds'],32)
             for a in cfg['agents']:
                 role=cfg['organization']['roles'][a]
-                self.assertIn('Role:',cfg['agent_base_messages'][a][0]['content'])
+                self.assertIn('Role:',base_messages_for(cfg,a)[0]['content'])
                 for direction in (0,1):
                     self.assertEqual(sum(e[direction]==a for e in h['round_edges']['0']),
                                      sum(e[direction]==a for e in f['round_edges']['0']))
@@ -78,9 +79,25 @@ class RoleRoutingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp,Store(Path(tmp)/'x.sqlite') as store:
             store.create_run('x',config);store.enqueue_round('x',0)
             for row in store.db.execute('SELECT agent_id,request FROM steps'):
-                self.assertEqual(json.loads(row['request'])['messages'][:-1],config['agent_base_messages'][row['agent_id']])
-        broken=copy.deepcopy(config);broken['agent_base_messages'].pop(config['agents'][0])
+                self.assertEqual(json.loads(row['request'])['messages'][:-1],base_messages_for(config,row['agent_id']))
+        broken=copy.deepcopy(config);broken['agent_template_ids'].pop(config['agents'][0])
         with self.assertRaises(ValueError):validate_manifest(broken)
+
+    def test_template_bindings_cannot_change_role_or_mix_storage_modes(self):
+        config=compile_roles('F',tasks()['prime-counterexample'])
+        broken=copy.deepcopy(config);broken['agent_template_ids'][config['agents'][0]]='missing-role'
+        with self.assertRaises(ValueError):validate_manifest(broken)
+        broken=copy.deepcopy(config);broken['agent_base_messages']={a:base_messages_for(config,a) for a in config['agents']}
+        with self.assertRaises(ValueError):validate_manifest(broken)
+        broken=copy.deepcopy(config);broken['message_templates']['C'][0]['content']=None
+        with self.assertRaises(ValueError):validate_manifest(broken)
+
+    def test_ten_thousand_role_agents_fit_manifest_without_inference(self):
+        config=compile_roles('H',tasks()['prime-counterexample'],population=10000)
+        self.assertLess(len(canonical({'manifest':config,'fingerprint':'0'*64}).encode()),2*1024*1024)
+        self.assertEqual(len(config['message_templates']),4)
+        self.assertEqual(len(config['agent_template_ids']),10000)
+        self.assertEqual(sum(map(len,config['round_edges'].values())),37500)
 
     def test_full_population_messages_selection_and_idempotent_resume(self):
         cell=next(c for c in schedule(CFG)[1] if c['arm']=='H' and c['task_id']=='prime-counterexample')
