@@ -220,6 +220,7 @@ def main():
     for b in budgets.values(): b.db.close()
     if not (output/'complete-record').exists(): shutil.copytree(root, output/'complete-record')
     print(json.dumps({'finished': True, 'completed_units': len(results), 'unstarted_units': len(unstarted)}), flush=True)
+    lock.close()
 
 
 if __name__ == '__main__': main()
