@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "browser_version": "153.0.8010.48",
+  "views": [
+    {
+      "width": 1440,
+      "core_readable": true,
+      "no_page_overflow": true
+    },
+    {
+      "width": 768,
+      "core_readable": true,
+      "no_page_overflow": true
+    },
+    {
+      "width": 390,
+      "core_readable": true,
+      "no_page_overflow": true
+    }
+  ],
+  "model_arm_filters_reset": true,
+  "unstarted_populations_retained": true,
+  "static_table_counts": true,
+  "wide_tables_horizontal_scroll": true,
+  "source_links_except_postbuilt_manifest_and_qa": true,
+  "candidate_and_evidence_disclosure": true,
+  "print_wiring": true,
+  "print_restores_full_denominator": true,
+  "no_javascript_core_content": true,
+  "page_errors": [],
+  "http_runtime_resources": []
+}

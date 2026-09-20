@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "scope": "operational diagnostic, not mathematical result",
+  "records": [
+    {
+      "index": 0,
+      "request": {
+        "model": "deepseek-v4-flash-0731",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return exactly one JSON object with status equal to ok."
+          }
+        ],
+        "max_tokens": 32,
+        "temperature": 0
+      },
+      "request_sha256": "2bae0da661ddef2088a1d5eeadecac6edcd5ce67b0122444e4c4188efc3260d4",
+      "started_at": 1789884677.36694,
+      "reserved_output_tokens": 32,
+      "source_commit": "70a67c2855d74330f593662346ce47b6d93627d6",
+      "http_status": 502,
+      "finished_at": 1789884677.4814389,
+      "restricted_error_body_sha256": "ff384c94b719429772e7cb88573c537ed8ac5b97209d575b8bb0e0395523fd6f",
+      "sanitized_error_excerpt": "{\"error\":{\"message\":\"backend unavailable: \\u003curlopen error [Errno 111] Connection refused\\u003e\",\"type\":\"server_error\",\"param\":\"\",\"code\":502}}",
+      "known_total_tokens": null
+    }
+  ],
+  "requests": 1,
+  "reserved_output_tokens": 32,
+  "unknown_usage_attempts": 1
+}

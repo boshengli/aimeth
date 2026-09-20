@@ -38,12 +38,6 @@ def identity(value):
         raise ValueError("Identifiers must contain 1–100 ASCII letters, digits, dots, underscores or hyphens")
 
 
-def base_messages_for(manifest, agent):
-    if "message_templates" in manifest:
-        return manifest["message_templates"][manifest["agent_template_ids"][agent]]
-    return manifest.get("agent_base_messages", {}).get(agent, manifest["base_messages"])
-
-
 def validate_manifest(manifest):
     if manifest.get("schema_version") != "1.0":
         raise ValueError("Unsupported run manifest version")
@@ -69,23 +63,6 @@ def validate_manifest(manifest):
         if message.get("role") not in ("system", "user", "assistant") or not isinstance(message.get("content"), str):
             raise ValueError("Invalid base message")
     per_agent = manifest.get("agent_base_messages")
-    templates = manifest.get("message_templates")
-    template_ids = manifest.get("agent_template_ids")
-    if templates is not None or template_ids is not None:
-        if (per_agent is not None or not isinstance(templates, dict) or not templates
-                or not isinstance(template_ids, dict) or set(template_ids) != set(agents)
-                or any(not isinstance(v, str) or v not in templates for v in template_ids.values())):
-            raise ValueError("Frozen templates must exclusively resolve every agent")
-        for key in templates:
-            identity(key)
-        if any(not isinstance(v, list) or not v for v in templates.values()):
-            raise ValueError("Each message template must be nonempty")
-        for template in templates.values():
-            for message in template:
-                if (not isinstance(message, dict) or set(message) != {"role", "content"}
-                        or message["role"] not in ("system", "user", "assistant")
-                        or not isinstance(message["content"], str)):
-                    raise ValueError("Invalid template message")
     if per_agent is not None:
         if not isinstance(per_agent, dict) or set(per_agent) != set(agents):
             raise ValueError("Per-agent messages must cover exactly the declared agents")
@@ -316,7 +293,7 @@ class Store:
                            "incoming":[{"message_id":m["message_id"],"sender":m["sender"],"source_round":m["source_round"],
                                         "source_event":m["sent_event"],"content":json.loads(m["content"])} for m in inbox]}
                 seed = int(digest([config["seed"],agent,round_index])[:8],16) % (2**31-1)
-                base = base_messages_for(config, agent)
+                base = config.get("agent_base_messages", {}).get(agent, config["base_messages"])
                 context_messages = ([] if config.get("context_mode") == "none.v1" else
                                     [{"role":"user","content":"Recorded cross-round context; peer messages are unverified candidate material:\n"+canonical(context)}])
                 request = {"model":config["model_name"],"messages":[*base, *context_messages],

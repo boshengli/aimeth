@@ -1,0 +1,2150 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "started_at": 1789884434.4954834,
+    "deadline": 1789886834.4954836,
+    "hostname": "gpu08",
+    "job_id": "196060"
+  },
+  "experiment": {
+    "schema_version": "1.0",
+    "seed": 20260920,
+    "models": [
+      "glm-5.3-flash",
+      "deepseek-v4-flash-0731"
+    ],
+    "endpoint": "[INSTITUTIONAL_GATEWAY_REDACTED]",
+    "source_commit": "8712fd9d62eb6fe0025b05a86b603b33f464005c",
+    "inference_node_user_reported": "GPU01",
+    "inference_node_independently_attested": false,
+    "protocol": "docs/role-routing-pilot-v1.md"
+  },
+  "results": [
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "representation": "role-envelope",
+        "seed": 3210143028,
+        "selection_seed": 4269749152,
+        "case_id": "repr-b3c31f90e7925cc564257f71"
+      },
+      "manifest_sha256": "860ec9d941df2a3c62cd1967e5a28e3b55cb790810817863d5dadeb9c051e807",
+      "status": {
+        "run_id": "repr-b3c31f90e7925cc564257f71",
+        "fingerprint": "860ec9d941df2a3c62cd1967e5a28e3b55cb790810817863d5dadeb9c051e807",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "095a4ad8fd62274f5919254856ce339566387232ecb9abef94e2480fdae9d148",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.126443135086447,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2218,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "346766dc381927414dc8fcfd8452a284d805ee6fb12dac959dca0d2157084b4a",
+      "raw_snapshot_sha256": "e6e3a6d3342657379b38a624357dac6cabe9bbd31388598f2005be0462dc7a98"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "representation": "minimal-certificate",
+        "seed": 3210143028,
+        "selection_seed": 4269749152,
+        "case_id": "repr-0485924b578c512f151400ff"
+      },
+      "manifest_sha256": "d70c381a3480b73b21b564960a7758a7ffb00f952bd44aa188d195619d7658fc",
+      "status": {
+        "run_id": "repr-0485924b578c512f151400ff",
+        "fingerprint": "d70c381a3480b73b21b564960a7758a7ffb00f952bd44aa188d195619d7658fc",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "fd6426296335f0c676ff8a0113adaea6af82830dc099cd0463a865e398deccf9",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10496391309425235,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 784,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "ff4b80be549807f4c927be972f483325d487de0642047483e3f6c3d6d7530c23",
+      "raw_snapshot_sha256": "794efaeca440fd245f6c1c0c5e576d1fa7ab2725f3f239e6c7ba49d8f0e88d89"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "representation": "role-envelope",
+        "seed": 1835424971,
+        "selection_seed": 3824537015,
+        "case_id": "repr-bcb905eb5c3bfa4307c8767c"
+      },
+      "manifest_sha256": "40789a1ffc5f94591ec3be8c83907dec00b27f5c51887c4987fabb1aedd11f60",
+      "status": {
+        "run_id": "repr-bcb905eb5c3bfa4307c8767c",
+        "fingerprint": "40789a1ffc5f94591ec3be8c83907dec00b27f5c51887c4987fabb1aedd11f60",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 746,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3824537015,
+        "agent_id": "a00000",
+        "source_event": "9a61382b-78b2-45a8-8be4-e2e7e219bf5f",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":3,\"d\":0,\"e2\":-1,\"e3\":-2}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 4,
+          "force": 0
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "465183015155c198f529ae80348edc78164d50d7b9df486771c470c0c7873b64",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 1,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.270481918938458,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 579,
+          "completion_tokens": 167,
+          "total_tokens": 746
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "valid": 1
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2861,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "a156906386244649ea921531f2db42dd112f15efbbcc4f15f55fbc722e37e2e2",
+      "raw_snapshot_sha256": "862437f66bf5c2e7acb010532d2d82924977b4b26fbb9339d81741f4e173e616"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "representation": "minimal-certificate",
+        "seed": 3248606830,
+        "selection_seed": 2829450244,
+        "case_id": "repr-ace1b15f7f284d5dbb3f246d"
+      },
+      "manifest_sha256": "321c50f5285df2af8d84580cf623feca1a352b6c3aaa8147f04b27cdbfde676c",
+      "status": {
+        "run_id": "repr-ace1b15f7f284d5dbb3f246d",
+        "fingerprint": "321c50f5285df2af8d84580cf623feca1a352b6c3aaa8147f04b27cdbfde676c",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "ecf8a5e34f6085015ba4dddd1e3a37c49e8dc2196329b4b1f1e4a079fee09e7c",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10504991607740521,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 1435,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "a0cb9b8669b421e53b7abc12a55c99953e2bf66231795c8d60820a94a5f55d4a",
+      "raw_snapshot_sha256": "3eed01b41b5f279662ebe79169f1c91531086945661ca9e0cd45218db4fa8cc9"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "representation": "minimal-certificate",
+        "seed": 1180472754,
+        "selection_seed": 580260146,
+        "case_id": "repr-b84a9deafa0204167b42faa2"
+      },
+      "manifest_sha256": "dd4bedb8980a32430b51c037bfdf9f68c4791a85957b47b079ac4e099b5787f3",
+      "status": {
+        "run_id": "repr-b84a9deafa0204167b42faa2",
+        "fingerprint": "dd4bedb8980a32430b51c037bfdf9f68c4791a85957b47b079ac4e099b5787f3",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 357,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 580260146,
+        "agent_id": "a00000",
+        "source_event": "2805b956-0b6d-4eb5-bd7d-2d13f28e28af",
+        "candidate": "{ \"a\": -1, \"b\": -2, \"c\": -2, \"d\": -3, \"e2\": -1, \"e3\": -2 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": true
+        },
+        "derived_term_exponents": {
+          "time": -3,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "47d8aeb1375f0ad3974aa93de1ad225a98e57d22d817027d28caa03b2e940929",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.4876793618313968,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 317,
+          "completion_tokens": 40,
+          "total_tokens": 357
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 1427,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "a8cde2327902a0cc6644b858d38707df9099bd91da56f1f0daf0bfde599fc3f1",
+      "raw_snapshot_sha256": "448d10874c0a11eca290c11a51830b82a9d2588a14abef02b138f6e8e2c6564e"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "representation": "minimal-certificate",
+        "seed": 1835424971,
+        "selection_seed": 3824537015,
+        "case_id": "repr-0f401e15735b8630d56af0ef"
+      },
+      "manifest_sha256": "a179c349864fa0f840bc0495af8f3197e5e44db4a6076f9461ac77f4448339f5",
+      "status": {
+        "run_id": "repr-0f401e15735b8630d56af0ef",
+        "fingerprint": "a179c349864fa0f840bc0495af8f3197e5e44db4a6076f9461ac77f4448339f5",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 357,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3824537015,
+        "agent_id": "a00000",
+        "source_event": "6c127cb4-10d7-4740-ba4b-5219a4995022",
+        "candidate": "{ \"a\": -1, \"b\": -2, \"c\": -2, \"d\": -3, \"e2\": 1, \"e3\": -1 }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": false,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": -3,
+          "transport": -1,
+          "viscosity": 1,
+          "pressure": -1,
+          "force": -3
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "1cd90519d9394bbba4952cec2583029374ed1672b67c545f1853f2dbe5b1952b",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.5077071469277143,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 317,
+          "completion_tokens": 40,
+          "total_tokens": 357
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 1427,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "31910dd8114db36122a1a8b7f8329005d5d5fc8eb81f628fcbd6ccadaa3cc8d6",
+      "raw_snapshot_sha256": "2f3e87df53b7de1eefac01e82302b9843c3c35c2edfc20dbba9409f819eb8432"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "representation": "minimal-certificate",
+        "seed": 1636443617,
+        "selection_seed": 444586390,
+        "case_id": "repr-c0667535b5c46e1c6fd422c0"
+      },
+      "manifest_sha256": "4f8e1baa3b1a7f70ac510cc87aab7278252d6dd25b818ce0ab089be11fde0826",
+      "status": {
+        "run_id": "repr-c0667535b5c46e1c6fd422c0",
+        "fingerprint": "4f8e1baa3b1a7f70ac510cc87aab7278252d6dd25b818ce0ab089be11fde0826",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "ff332ada0c275fcf3f5ca21e9755e9adfbe55ee8e8646a709d6d70c6e6f5ae64",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10508644673973322,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 1436,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "649bef000ba691fd165a1fba83e4af62fb21892a1ece2edb88e312063f29f32f",
+      "raw_snapshot_sha256": "bd3f4d448448ffab756aafdc4d65a725e60a5e3229849f17d9d9a7d6dba1e398"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "representation": "role-envelope",
+        "seed": 3370441854,
+        "selection_seed": 261182695,
+        "case_id": "repr-b8f4640ac207f3b1a5c2ff44"
+      },
+      "manifest_sha256": "ecf5a2423c38f56aa30dff6216a45aa7ed71f4f1d2cd29cd18a54440c0a2d5a3",
+      "status": {
+        "run_id": "repr-b8f4640ac207f3b1a5c2ff44",
+        "fingerprint": "ecf5a2423c38f56aa30dff6216a45aa7ed71f4f1d2cd29cd18a54440c0a2d5a3",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 693,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 261182695,
+        "agent_id": "a00000",
+        "source_event": "c050a5fa-3478-468a-8b45-f23573a5cde9",
+        "candidate": null,
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "25be919054a644ca4e991f49682a1aee35db678d69dd277705e48fe836a36815",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 1,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 2.1124693951569498,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 380,
+          "completion_tokens": 313,
+          "total_tokens": 693
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 1
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2208,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "28fd08ebdd884983ca3c757f079a3aa86ffda61f57d6c5ff17507677da195018",
+      "raw_snapshot_sha256": "37dca67f4c3c60902a04a858b0aa2e72028cdc38675c02c268b50c211da8be4a"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "representation": "role-envelope",
+        "seed": 1636443617,
+        "selection_seed": 444586390,
+        "case_id": "repr-7dfd3bc05d92cc8ac30796c8"
+      },
+      "manifest_sha256": "1b4e0f9da09c43ac351e01519c00ca0cbf60d78c4d92e1fc4df557a724ca05f3",
+      "status": {
+        "run_id": "repr-7dfd3bc05d92cc8ac30796c8",
+        "fingerprint": "1b4e0f9da09c43ac351e01519c00ca0cbf60d78c4d92e1fc4df557a724ca05f3",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "981552b7b32e7f35c668d6d25d906bc4e0cc3fde6caaa77f9629990ab262002b",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10528364963829517,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2870,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "b05a4f70d7c977ef0ac79b41dd981d3afe1b10d2d730c9bfd88422969cc3eeaf",
+      "raw_snapshot_sha256": "2a947ebb90c2e67726ff576dbfe210d01125988444673dcedd00f8f06a405564"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "representation": "role-envelope",
+        "seed": 1458782810,
+        "selection_seed": 554535033,
+        "case_id": "repr-0c845454d2fa9c96d67094c0"
+      },
+      "manifest_sha256": "7caa74564eb841d600fc34c1542348347553b5778dee227f16c0bfc5611f8a9b",
+      "status": {
+        "run_id": "repr-0c845454d2fa9c96d67094c0",
+        "fingerprint": "7caa74564eb841d600fc34c1542348347553b5778dee227f16c0bfc5611f8a9b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 502,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 554535033,
+        "agent_id": "a00000",
+        "source_event": "8e4d2b92-8767-4f64-9924-4328c967dda6",
+        "candidate": "{\"coefficients\":[\"0\",\"0\",\"0\",\"-1/2\",\"1/4\"]}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "d95a3fdb4a092eb662f2c5f5356d315ce0d416503f314f2e8791f78a98282100",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 1,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.9697165773250163,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 380,
+          "completion_tokens": 122,
+          "total_tokens": 502
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "valid": 1
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2208,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "633d40c58803c738090fc45223eb0c587fc7538016c990ea229493a8b8b318e4",
+      "raw_snapshot_sha256": "594845ad94313cd0a4ad40b209126b9f218516427bca37e1223080c9d8de2319"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "representation": "minimal-certificate",
+        "seed": 11267268,
+        "selection_seed": 3341516330,
+        "case_id": "repr-07ca75c91bb73905ae74ccbb"
+      },
+      "manifest_sha256": "fb9be4f07f49f1d79c661aff8eba371fd5cf9c2044878ece67f3083294826dee",
+      "status": {
+        "run_id": "repr-07ca75c91bb73905ae74ccbb",
+        "fingerprint": "fb9be4f07f49f1d79c661aff8eba371fd5cf9c2044878ece67f3083294826dee",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "e1fc28a95534923cad303f628960e9d9bbeb1e13d36c095dfc32c066da4cf537",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.1050208150409162,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 782,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "5e485fb308a7a79602d0ce3c09cc90ae52791150b94ad01de5951b9a537e2d13",
+      "raw_snapshot_sha256": "d904f1cc3b7d6a82695019d9ae25b52b8f80989588f98dae1c9e891ddd19baff"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "representation": "role-envelope",
+        "seed": 11267268,
+        "selection_seed": 3341516330,
+        "case_id": "repr-c165f3fa6f99d0ed6a0b4f49"
+      },
+      "manifest_sha256": "9cb96e8ea344f2d43ea9bb647cd1810a3fe2af04c8b488efd6b3207340ef0010",
+      "status": {
+        "run_id": "repr-c165f3fa6f99d0ed6a0b4f49",
+        "fingerprint": "9cb96e8ea344f2d43ea9bb647cd1810a3fe2af04c8b488efd6b3207340ef0010",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "537870957f3bd1a5c8b552e082ed7bb2b0a69e3639944274cd193087166cdfb7",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10523182898759842,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2216,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "8d486af5ad1a06f5003e9b47b7e1cde0f1f79d54738c4d03c11f079c2e6f9931",
+      "raw_snapshot_sha256": "350a29455ddace58ea01b6027ad368a565981e13ce0c50a44bac9c2f628be6bc"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 0,
+        "representation": "minimal-certificate",
+        "seed": 3370441854,
+        "selection_seed": 261182695,
+        "case_id": "repr-d26393a60dde11f4457af2de"
+      },
+      "manifest_sha256": "d0bb4dfc762bb234365e5653ddd2434c3551a044a83b593f4fb6a7c527cd166b",
+      "status": {
+        "run_id": "repr-d26393a60dde11f4457af2de",
+        "fingerprint": "d0bb4dfc762bb234365e5653ddd2434c3551a044a83b593f4fb6a7c527cd166b",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 267,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 261182695,
+        "agent_id": "a00000",
+        "source_event": "0790a12f-a1a2-46fe-9259-a49bd26fded6",
+        "candidate": "{\"claim\": \"P ∈ Q[x] with P(0)=0 and P'(x)=x^3 - x\", \"degree\": 4, \"coefficients_ascending\": [\"0\", \"0\", \"-1/2\", \"0\", \"1/4\"], \"derivation\": \"Antiderivative of x^3 - x is x^4/4 - x^2/2 + C; P(0)=0 forces C=0.\", \"verification\": \"P'(x) = 4·(1/4)x^3 - 2·(1/2)x = x^3 - x; P(0) = 0.\", \"unresolved_obligations\": []}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "a29d99b8df78aa99848bce7dfcaa966aac53b7997dd86e2bb0eee7db50909536",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.1294825240038335,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 118,
+          "completion_tokens": 149,
+          "total_tokens": 267
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 774,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "87735041be3d6851baa34832db0e9aae5876b4cc103753174925298d999ad258",
+      "raw_snapshot_sha256": "7a10a564fdab2ad57b89bf0e46780563d8165c547c83c8eedaf9e491073d8915"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "representation": "role-envelope",
+        "seed": 1180472754,
+        "selection_seed": 580260146,
+        "case_id": "repr-984e4bdc88f16702f6197ce1"
+      },
+      "manifest_sha256": "78bbdfbffe38ce8c62167c461149ba15fff2800a81f6e350e7d875df2624f764",
+      "status": {
+        "run_id": "repr-984e4bdc88f16702f6197ce1",
+        "fingerprint": "78bbdfbffe38ce8c62167c461149ba15fff2800a81f6e350e7d875df2624f764",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 872,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 580260146,
+        "agent_id": "a00000",
+        "source_event": "8b8b5c75-e5b0-43bb-b71d-a7518ff48059",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":3,\"d\":4,\"e2\":-1,\"e3\":-2}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 4,
+          "force": 4
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "028d45976f8d0fb6f9f428d8d2d6f237879faa2db170c734f0a221697aebd0e7",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 1,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.992657118011266,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 579,
+          "completion_tokens": 293,
+          "total_tokens": 872
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "valid": 1
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2861,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "54f78c6f39f97b64812c3679c1502d079020af2c6c16d474912db4b463d88e09",
+      "raw_snapshot_sha256": "fb839969d6f2c5a9fb85c7c94db7e6595f5bdc1f42fe135050774889a39d03bb"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "glm-5.3-flash",
+        "task_id": "integral-rational",
+        "repetition": 1,
+        "representation": "minimal-certificate",
+        "seed": 1458782810,
+        "selection_seed": 554535033,
+        "case_id": "repr-3283ec830c131030836f95ba"
+      },
+      "manifest_sha256": "8a84a537f458ab8bbd85f18a255f7376263e6c9903a74088befc6cd99ef82615",
+      "status": {
+        "run_id": "repr-3283ec830c131030836f95ba",
+        "fingerprint": "8a84a537f458ab8bbd85f18a255f7376263e6c9903a74088befc6cd99ef82615",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 144,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 554535033,
+        "agent_id": "a00000",
+        "source_event": "a37431be-794d-4d87-ac51-c51f8620f69b",
+        "candidate": "{ \"coefficients\": [\"0\", \"0\", \"-1/2\", \"0\", \"1/4\"] }",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: integral-rational",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "04c2e6be723e719939d9a96a7d31c47038e873b9e3c6aaef72977aaa9f215141",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.4074062891304493,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 118,
+          "completion_tokens": 26,
+          "total_tokens": 144
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 774,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "c0c9729958769e612bf93498cc000d9407eb6c4c1282f5a3b473ba240c1febae",
+      "raw_snapshot_sha256": "f7c816efbb2c66334316eff698e69953517afe5de5a5fb18b16edda716ce606d"
+    },
+    {
+      "case": {
+        "phase": "representation",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "representation": "role-envelope",
+        "seed": 3248606830,
+        "selection_seed": 2829450244,
+        "case_id": "repr-3165a3162bf88bb46a067829"
+      },
+      "manifest_sha256": "eeba24b3e7c25235345fdf95b9e7cebe6257553a4a88f344763d8e85de5d9b87",
+      "status": {
+        "run_id": "repr-3165a3162bf88bb46a067829",
+        "fingerprint": "eeba24b3e7c25235345fdf95b9e7cebe6257553a4a88f344763d8e85de5d9b87",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 5,
+        "tail_hash": "8ab28a8635376feea09e8df260e2969fe22657aeda48b632a59659ffef62926f",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 0,
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.10535738803446293,
+      "metrics": {
+        "usage": {},
+        "finish_reasons": {},
+        "failure_labels": {
+          "transport_failed": 1,
+          "http_502": 1
+        },
+        "accepted_envelope_diagnostics": {},
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 1,
+        "input_request_bytes": 2869,
+        "unknown_usage_attempts": 1,
+        "peak_claimed_attempts": 1,
+        "messages_sent": 0,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "29af3bc8968c1b641f867d5b925eb1156d908a1d8e320bf60ea791aefb3becd8",
+      "raw_snapshot_sha256": "d4db9855504caa7c20d078065a02638e7ebe15e0da05a3082632126db838365c"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "arm": "H",
+        "seed": 1835424971,
+        "selection_seed": 3824537015,
+        "case_id": "hf-a1ad56b702e2c41cb5140879",
+        "block_order": "078d417316d14dca72a5e19d76f26380ccd8165a478c024c999447c6b0c580b4"
+      },
+      "manifest_sha256": "357c13152ee16239ae8fdbc92dd2d78825660add608b31e5c8539030cfd4610a",
+      "status": {
+        "run_id": "hf-a1ad56b702e2c41cb5140879",
+        "fingerprint": "357c13152ee16239ae8fdbc92dd2d78825660add608b31e5c8539030cfd4610a",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 39649,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 3824537015,
+        "agent_id": "a00000",
+        "source_event": "d368d009-820c-40cb-a1a4-3bab5dcb1613",
+        "candidate": null,
+        "envelope_status": "malformed",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "156421db59f8ff27df65b5b1949ac2c7390b26ddaf72e7e4cfb753938d4c9e35",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 22,
+      "malformed_envelopes": 10,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 38.3216775120236,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 31636,
+          "completion_tokens": 8013,
+          "total_tokens": 39649
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "valid": 22,
+          "envelope_keys": 9,
+          "justification_limit": 1
+        },
+        "model_reported_valid_references": 6,
+        "dispatched_requests": 32,
+        "input_request_bytes": 125131,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "a789f4ff4bd1d9c2980dff513b551fe3665990fe27c7df76bac3c4783f2edbef",
+      "raw_snapshot_sha256": "7f652e9842e01242b72579906341544eedab80d25c884cbf7561006635b98ea9"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "arm": "F",
+        "seed": 1835424971,
+        "selection_seed": 3824537015,
+        "case_id": "hf-08bfc4259c846c2bf5c7fcfb",
+        "block_order": "078d417316d14dca72a5e19d76f26380ccd8165a478c024c999447c6b0c580b4"
+      },
+      "manifest_sha256": "a0af9b115cccf6b677d6f83a72b662e9452828f65f45ff6195b1e475f52114b0",
+      "status": {
+        "run_id": "hf-08bfc4259c846c2bf5c7fcfb",
+        "fingerprint": "a0af9b115cccf6b677d6f83a72b662e9452828f65f45ff6195b1e475f52114b0",
+        "planned_total_steps": 32,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 7396,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 48,
+        "messages": 8,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 48,
+        "tail_hash": "7b2931d29b2aec1bcadac22a749015a435b8df2a3a73f9386873f8f8d706acbe",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 5,
+      "malformed_envelopes": 2,
+      "dispatched_requests": 8,
+      "elapsed_seconds": 12.549204800277948,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 4710,
+          "completion_tokens": 2686,
+          "total_tokens": 7396
+        },
+        "finish_reasons": {
+          "stop": 7,
+          "length": 1
+        },
+        "failure_labels": {
+          "incomplete_generation": 1
+        },
+        "accepted_envelope_diagnostics": {
+          "valid": 5,
+          "justification_limit": 1,
+          "envelope_keys": 1
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 8,
+        "input_request_bytes": 23428,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 8,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "3260c6e09924b17522f71e799b8d36a737e6cf710b83dc2742646bb1b7e38346",
+      "raw_snapshot_sha256": "152ad9e9708a7216a3580a9c03ffe4633a4da9ae5ffae714f8796b0be3118913"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "arm": "H",
+        "seed": 819559147,
+        "selection_seed": 2082083260,
+        "case_id": "hf-878275434c87bce8c8590e88",
+        "block_order": "83d98406e35ed47c58d1215bc752ba3a182d8bb29d3e3b68201167bb06468074"
+      },
+      "manifest_sha256": "ae035f858e4e1c5362ce4f357c503b06ad511f043f0457d7d769178fab2d9bc9",
+      "status": {
+        "run_id": "hf-878275434c87bce8c8590e88",
+        "fingerprint": "ae035f858e4e1c5362ce4f357c503b06ad511f043f0457d7d769178fab2d9bc9",
+        "planned_total_steps": 32,
+        "materialized_steps": 8,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 7,
+          "failed": 1
+        },
+        "attempts": 8,
+        "known_total_tokens": 4881,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 49,
+        "messages": 9,
+        "checkpoints": 7
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 49,
+        "tail_hash": "daffd499d9071652b452a173c14bcaf4b4c743affb0df761551392d27bfbace4",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 0,
+      "malformed_envelopes": 7,
+      "dispatched_requests": 8,
+      "elapsed_seconds": 7.96948204562068,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 3110,
+          "completion_tokens": 1771,
+          "total_tokens": 4881
+        },
+        "finish_reasons": {
+          "stop": 7,
+          "length": 1
+        },
+        "failure_labels": {
+          "incomplete_generation": 1
+        },
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 7
+        },
+        "model_reported_valid_references": 0,
+        "dispatched_requests": 8,
+        "input_request_bytes": 18323,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 9,
+        "messages_consumed": 0
+      },
+      "raw_events_sha256": "d0d8e569fe912b3206a891566138dbec23a7fd74c427fd7a1e20373097824b20",
+      "raw_snapshot_sha256": "4dd8fecbd5631a7bad36c0a3b1fcfc6c96c8eb081ef4559687a07930a6a471db"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "arm": "F",
+        "seed": 819559147,
+        "selection_seed": 2082083260,
+        "case_id": "hf-24b97f331aeb56b3f3cae950",
+        "block_order": "83d98406e35ed47c58d1215bc752ba3a182d8bb29d3e3b68201167bb06468074"
+      },
+      "manifest_sha256": "0540cd78cf633b3e80870557b6b89bafa86ad957a416aeaa666bc47c4b220b86",
+      "status": {
+        "run_id": "hf-24b97f331aeb56b3f3cae950",
+        "fingerprint": "0540cd78cf633b3e80870557b6b89bafa86ad957a416aeaa666bc47c4b220b86",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 20828,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 2082083260,
+        "agent_id": "a00006",
+        "source_event": "f04b8159-5164-42cc-ab89-c51c10036eac",
+        "candidate": null,
+        "envelope_status": "malformed",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "364e50626acd7362298855b419f35d6625094b4fbb4d6c62c01346613833cbf1",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 14,
+      "malformed_envelopes": 18,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 17.454374391119927,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 18124,
+          "completion_tokens": 2704,
+          "total_tokens": 20828
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 17,
+          "valid": 14,
+          "invalid_dependency_reference": 1
+        },
+        "model_reported_valid_references": 5,
+        "dispatched_requests": 32,
+        "input_request_bytes": 90420,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "481f0a6d42a3323f6f9df3cf2bbe24a6977124289990cb906d1d3f86a3c2c73e",
+      "raw_snapshot_sha256": "6c41eadecba003f4e09ea848b0ee5f1f34d62890ec8b7fb2dc97a4a7335352e1"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "arm": "H",
+        "seed": 1180472754,
+        "selection_seed": 580260146,
+        "case_id": "hf-12a3f3241cb283e7dba00d1c",
+        "block_order": "916e8986eafbc20f1984f025496ce6bf3e5193ffbf8ab886a8984903b14e7250"
+      },
+      "manifest_sha256": "6a27c176da4dd93e27b458a475c8098919dec4537d8ac12ca9430cff5fbe1267",
+      "status": {
+        "run_id": "hf-12a3f3241cb283e7dba00d1c",
+        "fingerprint": "6a27c176da4dd93e27b458a475c8098919dec4537d8ac12ca9430cff5fbe1267",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 36418,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 580260146,
+        "agent_id": "a00004",
+        "source_event": "e8de8cff-0609-4bf4-8278-7c67ab7c8e2b",
+        "candidate": "{\"a\":1,\"b\":2,\"c\":3,\"d\":4,\"e2\":-1,\"e3\":-1}",
+        "envelope_status": "valid",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "INVALID_CERTIFICATE",
+        "passed": false,
+        "obligations": {
+          "all_pde_term_powers_equal": false,
+          "L2_squared_change_of_variables": true,
+          "L3_norm_change_of_variables": false
+        },
+        "derived_term_exponents": {
+          "time": 3,
+          "transport": 3,
+          "viscosity": 3,
+          "pressure": 4,
+          "force": 4
+        }
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "146fbe0cdf7cb5759257ca3537b140bbf4f186b23ba16a74bcf3142f4ffbdb71",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 19,
+      "malformed_envelopes": 13,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 33.45771627034992,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 30050,
+          "completion_tokens": 6368,
+          "total_tokens": 36418
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 12,
+          "valid": 19,
+          "justification_limit": 1
+        },
+        "model_reported_valid_references": 4,
+        "dispatched_requests": 32,
+        "input_request_bytes": 122004,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "0dedd9a42ee730690239387d248fa0635d1256949af4038b9ac4037490b45649",
+      "raw_snapshot_sha256": "bb4052beea798b36eb071ceb9a4919b0061c2356a39d08e9565db74a2031ad27"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "arm": "F",
+        "seed": 1180472754,
+        "selection_seed": 580260146,
+        "case_id": "hf-9ff30c60ba7cfc14cb4ba1c2",
+        "block_order": "916e8986eafbc20f1984f025496ce6bf3e5193ffbf8ab886a8984903b14e7250"
+      },
+      "manifest_sha256": "ab18e5ad2cbb20130736410ff4ce236bb16ed0b81e582450fca4be4f7b913853",
+      "status": {
+        "run_id": "hf-9ff30c60ba7cfc14cb4ba1c2",
+        "fingerprint": "ab18e5ad2cbb20130736410ff4ce236bb16ed0b81e582450fca4be4f7b913853",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 38155,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 580260146,
+        "agent_id": "a00004",
+        "source_event": "0b9f2bd8-3ad6-4d1c-96e5-5537225f9c70",
+        "candidate": null,
+        "envelope_status": "malformed",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "49af5d089fda0f4729c5a01265f50eef8976cfc740206533797a970c0fb80952",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 23,
+      "malformed_envelopes": 9,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 35.30526941688731,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 30955,
+          "completion_tokens": 7200,
+          "total_tokens": 38155
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 8,
+          "valid": 23,
+          "justification_limit": 1
+        },
+        "model_reported_valid_references": 6,
+        "dispatched_requests": 32,
+        "input_request_bytes": 123449,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "a2ec2bdb7e0e92deedb1c436a8fd58223d203c63ceca5d42928423b5e3991338",
+      "raw_snapshot_sha256": "4fd37788a95bc258fea23fd0d29a0e1007f1072ad12fe10fc0be34117bf8e10f"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "arm": "F",
+        "seed": 4242494668,
+        "selection_seed": 3455463650,
+        "case_id": "hf-0924233bec6c26ecf580454d",
+        "block_order": "d2da1b1d2e2339a2dbca42de34040732358f54c37ac24f6b28bcce9377611109"
+      },
+      "manifest_sha256": "b4eca941bb697290aa866da4aca62aa9de2abfb0dabe7b0355e3b485d1c06584",
+      "status": {
+        "run_id": "hf-0924233bec6c26ecf580454d",
+        "fingerprint": "b4eca941bb697290aa866da4aca62aa9de2abfb0dabe7b0355e3b485d1c06584",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 21088,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 3455463650,
+        "agent_id": "a00005",
+        "source_event": "91bc1f9b-9431-4b93-8c3a-c4d1e7b6084d",
+        "candidate": "{\"d\":41,\"n\":40}",
+        "envelope_status": "valid",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "5ee3ad0cdef0ec4f936418510134d730e1847f7626ad3319a3e0717d98e0bf45",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 14,
+      "malformed_envelopes": 18,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 18.015682650264353,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 18528,
+          "completion_tokens": 2560,
+          "total_tokens": 21088
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 18,
+          "valid": 14
+        },
+        "model_reported_valid_references": 7,
+        "dispatched_requests": 32,
+        "input_request_bytes": 91219,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "b532932ce88ccb4b975093e0e39c0fa4331f88b68b792ba1290f890742981d27",
+      "raw_snapshot_sha256": "09bbd2f2cd6d1ace8e3f1b27836e2fb5feb79950d755cdd4308b1a382d0a05c5"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "arm": "H",
+        "seed": 4242494668,
+        "selection_seed": 3455463650,
+        "case_id": "hf-93e010dc98fc3e6f96f4026a",
+        "block_order": "d2da1b1d2e2339a2dbca42de34040732358f54c37ac24f6b28bcce9377611109"
+      },
+      "manifest_sha256": "a0108978135c510abee21a683acb831ffd1f074cc749bb6dc634ed2dca6cbd89",
+      "status": {
+        "run_id": "hf-93e010dc98fc3e6f96f4026a",
+        "fingerprint": "a0108978135c510abee21a683acb831ffd1f074cc749bb6dc634ed2dca6cbd89",
+        "planned_total_steps": 32,
+        "materialized_steps": 32,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 32,
+          "failed": 0
+        },
+        "attempts": 32,
+        "known_total_tokens": 22999,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 221,
+        "messages": 30,
+        "checkpoints": 32
+      },
+      "selection": {
+        "selector": "terminal-synthesizer-lottery.v1",
+        "selection_seed": 3455463650,
+        "agent_id": "a00005",
+        "source_event": "774e47fe-a77f-4fa9-8a18-51fec8369da9",
+        "candidate": null,
+        "envelope_status": "malformed",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-synthesizer; not best-of-N"
+      },
+      "verdict": {
+        "status": "MALFORMED",
+        "passed": false,
+        "scope": "bounded certificate schema",
+        "frontier_proof_verified": false
+      },
+      "verification": {
+        "status": "verified",
+        "events": 223,
+        "tail_hash": "135cc139bf433d8db60b41df00273b754174acbf11da3cac5fa8787595ee43aa",
+        "scientific_validity_checked": false
+      },
+      "fatal_http": [],
+      "valid_envelopes": 24,
+      "malformed_envelopes": 8,
+      "dispatched_requests": 32,
+      "elapsed_seconds": 20.094219960737973,
+      "metrics": {
+        "usage": {
+          "prompt_tokens": 19982,
+          "completion_tokens": 3017,
+          "total_tokens": 22999
+        },
+        "finish_reasons": {
+          "stop": 32
+        },
+        "failure_labels": {},
+        "accepted_envelope_diagnostics": {
+          "envelope_keys": 8,
+          "valid": 24
+        },
+        "model_reported_valid_references": 16,
+        "dispatched_requests": 32,
+        "input_request_bytes": 94958,
+        "unknown_usage_attempts": 0,
+        "peak_claimed_attempts": 2,
+        "messages_sent": 30,
+        "messages_consumed": 30
+      },
+      "raw_events_sha256": "2e1de1684092beb517de479bf2849728b83a44c60efb887e5a725427fe0121e4",
+      "raw_snapshot_sha256": "3015cdbd74a67a7cc96ccecdd9ee8f33594be8cd86e8638955697a56d8de3ba2"
+    }
+  ],
+  "unstarted": [
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "arm": "H",
+        "seed": 1936591314,
+        "selection_seed": 83345031,
+        "case_id": "hf-f5a2373eee7908ec4816e813",
+        "block_order": "7efccdbd8418f0a4e7636660b2b0f55538a9540d0792fcc180e2b353e83f4e0a"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 1,
+        "arm": "F",
+        "seed": 1936591314,
+        "selection_seed": 83345031,
+        "case_id": "hf-cadd83f3b6e9a202d4001b73",
+        "block_order": "7efccdbd8418f0a4e7636660b2b0f55538a9540d0792fcc180e2b353e83f4e0a"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "arm": "H",
+        "seed": 2625921500,
+        "selection_seed": 3838671724,
+        "case_id": "hf-542f984f23235666507be85b",
+        "block_order": "7f22871360f52b3af3525420c4d948d2485cf54faf02a007e484e154d7bdd942"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "repetition": 0,
+        "arm": "F",
+        "seed": 2625921500,
+        "selection_seed": 3838671724,
+        "case_id": "hf-365446f5fc38794ecd44a17e",
+        "block_order": "7f22871360f52b3af3525420c4d948d2485cf54faf02a007e484e154d7bdd942"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "arm": "F",
+        "seed": 1636443617,
+        "selection_seed": 444586390,
+        "case_id": "hf-ca33e07bf15b267c292dc284",
+        "block_order": "d053477ae5193b50fcd86b8d5ea004fb8c151ba0a93e85de0dc0aa542a3f1791"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 0,
+        "arm": "H",
+        "seed": 1636443617,
+        "selection_seed": 444586390,
+        "case_id": "hf-a82e336c00d9145fedfe22f4",
+        "block_order": "d053477ae5193b50fcd86b8d5ea004fb8c151ba0a93e85de0dc0aa542a3f1791"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "arm": "H",
+        "seed": 3248606830,
+        "selection_seed": 2829450244,
+        "case_id": "hf-2a94bfc8ef9b1da9bfe8cada",
+        "block_order": "e465b8c29d726677650906088ec319bcd84dc3b0ac63dbc2abde7e675e5b110b"
+      },
+      "reason": "envelope_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "population",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "repetition": 1,
+        "arm": "F",
+        "seed": 3248606830,
+        "selection_seed": 2829450244,
+        "case_id": "hf-033233ac1e4c31977ef5ae8b",
+        "block_order": "e465b8c29d726677650906088ec319bcd84dc3b0ac63dbc2abde7e675e5b110b"
+      },
+      "reason": "envelope_gate_failed"
+    }
+  ],
+  "gates": {
+    "glm-5.3-flash": {
+      "valid_envelopes": 3,
+      "planned_envelopes": 4,
+      "required": 3,
+      "admitted": true
+    },
+    "deepseek-v4-flash-0731": {
+      "valid_envelopes": 0,
+      "planned_envelopes": 4,
+      "required": 3,
+      "admitted": false
+    }
+  },
+  "planned_representation_cases": 16,
+  "planned_populations": 16,
+  "budgets": {
+    "representation": {
+      "reserved_calls": 16,
+      "reserved_output_tokens": 16384,
+      "reserved_input_bytes": 29150,
+      "known_total_tokens": 3938,
+      "unknown_usage_attempts": 8,
+      "settings": {
+        "calls": 16,
+        "output_tokens": 16384,
+        "input_bytes": 262144,
+        "request_bytes": 16384,
+        "observed_token_stop": 32768,
+        "deadline": 1789886834.4954836
+      },
+      "hard_input_token_cap": false,
+      "hard_input_request_byte_cap": true,
+      "observed_token_stop_can_overshoot_by_inflight_requests": true,
+      "attributable_gpu_hours": null
+    },
+    "population": {
+      "reserved_calls": 208,
+      "reserved_output_tokens": 212992,
+      "reserved_input_bytes": 688932,
+      "known_total_tokens": 191414,
+      "unknown_usage_attempts": 0,
+      "settings": {
+        "calls": 512,
+        "output_tokens": 524288,
+        "input_bytes": 8388608,
+        "request_bytes": 16384,
+        "observed_token_stop": 786432,
+        "deadline": 1789886834.4954836
+      },
+      "hard_input_token_cap": false,
+      "hard_input_request_byte_cap": true,
+      "observed_token_stop_can_overshoot_by_inflight_requests": true,
+      "attributable_gpu_hours": null
+    }
+  },
+  "frontier_proof_verified": false,
+  "weights_independently_attested": false,
+  "raw_summary_sha256": "424620ba08df400d35d3189d885a382b9cce8e99757e66e6cd5d3893eb8c1d30",
+  "public_trace_policy": "Only first-event endpoint redacted, original hash retained. First-event hash reconstruction requires restricted originals. Later events and complete requests/receipts/role routing/verdicts replay offline.",
+  "phases": {
+    "representation": {
+      "started_units": 16,
+      "unstarted_units": 0,
+      "verdicts": {
+        "TECHNICAL_FAILURE": 8,
+        "INVALID_CERTIFICATE": 5,
+        "MALFORMED": 2,
+        "VERIFIED_WITHIN_SCOPE": 1
+      },
+      "usage": {
+        "prompt_tokens": 2788,
+        "completion_tokens": 1150,
+        "total_tokens": 3938
+      },
+      "accepted_envelope_diagnostics": {
+        "valid": 3,
+        "envelope_keys": 1
+      },
+      "events": 104,
+      "messages_sent": 0,
+      "messages_consumed": 0,
+      "model_reported_valid_references": 0
+    },
+    "population": {
+      "started_units": 8,
+      "unstarted_units": 8,
+      "verdicts": {
+        "MALFORMED": 4,
+        "TECHNICAL_FAILURE": 2,
+        "INVALID_CERTIFICATE": 1,
+        "VERIFIED_WITHIN_SCOPE": 1
+      },
+      "usage": {
+        "prompt_tokens": 157095,
+        "completion_tokens": 34319,
+        "total_tokens": 191414
+      },
+      "accepted_envelope_diagnostics": {
+        "valid": 121,
+        "envelope_keys": 80,
+        "justification_limit": 4,
+        "invalid_dependency_reference": 1
+      },
+      "events": 1435,
+      "messages_sent": 197,
+      "messages_consumed": 180,
+      "model_reported_valid_references": 44
+    }
+  }
+}

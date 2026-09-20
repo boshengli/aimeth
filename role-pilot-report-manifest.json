@@ -1,0 +1,480 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.2 immutable report, exact executed code, post-pilot code and reviewed evidence; no frontier proof",
+  "artifacts": [
+    {
+      "id": "artifact-1",
+      "path": "archives/gateway-diagnostic-v1/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "artifact-2",
+      "path": "archives/gateway-diagnostic-v1/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "artifact-3",
+      "path": "archives/gateway-diagnostic-v1/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "artifact-4",
+      "path": "archives/gateway-diagnostic-v1/aimeth_runtime/store.py",
+      "bytes": 43307,
+      "sha256": "d81272b9efd08383629aab1bcedfe3771919a2445e8dc5543362aa4c0233cc2e"
+    },
+    {
+      "id": "artifact-5",
+      "path": "archives/gateway-diagnostic-v1/docs/gateway-diagnostic-v1.md",
+      "bytes": 1285,
+      "sha256": "fb76e797cf1784a99155aab062b1acfc3a8a5c5f30f59be7ceb5bfb814fe5d21"
+    },
+    {
+      "id": "artifact-6",
+      "path": "archives/gateway-diagnostic-v1/source.json",
+      "bytes": 1073,
+      "sha256": "c20ed73d3d533041a611ce0035d0afdc010c001b578275d1751eb0a07472ee8c"
+    },
+    {
+      "id": "artifact-7",
+      "path": "archives/gateway-diagnostic-v1/tools/diagnose_gateway.py",
+      "bytes": 4247,
+      "sha256": "2f04c2aebf9a79470e7ae85c483920453a217a0553460728f8470f8e28b55c05"
+    },
+    {
+      "id": "artifact-8",
+      "path": "archives/role-pilot-v1/aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "id": "artifact-9",
+      "path": "archives/role-pilot-v1/aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "id": "artifact-10",
+      "path": "archives/role-pilot-v1/aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "id": "artifact-11",
+      "path": "archives/role-pilot-v1/aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "id": "artifact-12",
+      "path": "archives/role-pilot-v1/aimeth_design/role_routing.py",
+      "bytes": 9965,
+      "sha256": "621ca7595d39f4d71a156f452643f11efbc792b41883fb9e5cb93abfcb44f10d"
+    },
+    {
+      "id": "artifact-13",
+      "path": "archives/role-pilot-v1/aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "id": "artifact-14",
+      "path": "archives/role-pilot-v1/aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "id": "artifact-15",
+      "path": "archives/role-pilot-v1/aimeth_evaluation/pde_scaling.py",
+      "bytes": 2642,
+      "sha256": "9b1cac59c97c174a68edca2b2525424099749bd15c6179ada24f4318bbfeb20a"
+    },
+    {
+      "id": "artifact-16",
+      "path": "archives/role-pilot-v1/aimeth_pilot/__init__.py",
+      "bytes": 79,
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1"
+    },
+    {
+      "id": "artifact-17",
+      "path": "archives/role-pilot-v1/aimeth_pilot/calibration.py",
+      "bytes": 8925,
+      "sha256": "8d6dae606468cabad643736699464f73beb69944d0da7ef4a93875d7c5818fae"
+    },
+    {
+      "id": "artifact-18",
+      "path": "archives/role-pilot-v1/aimeth_pilot/quota.py",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a"
+    },
+    {
+      "id": "artifact-19",
+      "path": "archives/role-pilot-v1/aimeth_pilot/role_budget.py",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8"
+    },
+    {
+      "id": "artifact-20",
+      "path": "archives/role-pilot-v1/aimeth_pilot/role_run.py",
+      "bytes": 15093,
+      "sha256": "36d989c4b547bd10a1fc9abd232da61ec2efeb0a301cb147947b9ccf39a01656"
+    },
+    {
+      "id": "artifact-21",
+      "path": "archives/role-pilot-v1/aimeth_pilot/run.py",
+      "bytes": 12225,
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205"
+    },
+    {
+      "id": "artifact-22",
+      "path": "archives/role-pilot-v1/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "artifact-23",
+      "path": "archives/role-pilot-v1/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "artifact-24",
+      "path": "archives/role-pilot-v1/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "artifact-25",
+      "path": "archives/role-pilot-v1/aimeth_runtime/store.py",
+      "bytes": 43307,
+      "sha256": "d81272b9efd08383629aab1bcedfe3771919a2445e8dc5543362aa4c0233cc2e"
+    },
+    {
+      "id": "artifact-26",
+      "path": "archives/role-pilot-v1/cluster/role-pilot.sbatch",
+      "bytes": 416,
+      "sha256": "79a22036cc6d65f89a889c48c0c20a04a23b3d6fda6eddb6df5b435fac3a7118"
+    },
+    {
+      "id": "artifact-27",
+      "path": "archives/role-pilot-v1/docs/role-routing-pilot-v1.md",
+      "bytes": 8445,
+      "sha256": "ec9849a67da7242c4c61dc13662e5ed8a48be381cdf5bc47f7a6cffde95dd819"
+    },
+    {
+      "id": "artifact-28",
+      "path": "archives/role-pilot-v1/source.json",
+      "bytes": 3487,
+      "sha256": "cb6b529e266a830a3f369ca8765d9bd8f7a8690a4ca66966ff61d2240e9e6de8"
+    },
+    {
+      "id": "artifact-29",
+      "path": "archives/role-pilot-v1/tests/test_role_routing.py",
+      "bytes": 14267,
+      "sha256": "bbe2ba939c048a26585ddea6124e883b5a68ec82dae61f96de98ed5ae0940806"
+    },
+    {
+      "id": "artifact-30",
+      "path": "archives/role-prompt-storage-v2/aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "id": "artifact-31",
+      "path": "archives/role-prompt-storage-v2/aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "id": "artifact-32",
+      "path": "archives/role-prompt-storage-v2/aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "id": "artifact-33",
+      "path": "archives/role-prompt-storage-v2/aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "id": "artifact-34",
+      "path": "archives/role-prompt-storage-v2/aimeth_design/role_routing.py",
+      "bytes": 10056,
+      "sha256": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd"
+    },
+    {
+      "id": "artifact-35",
+      "path": "archives/role-prompt-storage-v2/aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "id": "artifact-36",
+      "path": "archives/role-prompt-storage-v2/aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "id": "artifact-37",
+      "path": "archives/role-prompt-storage-v2/aimeth_evaluation/pde_scaling.py",
+      "bytes": 2642,
+      "sha256": "9b1cac59c97c174a68edca2b2525424099749bd15c6179ada24f4318bbfeb20a"
+    },
+    {
+      "id": "artifact-38",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/__init__.py",
+      "bytes": 79,
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1"
+    },
+    {
+      "id": "artifact-39",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/calibration.py",
+      "bytes": 8925,
+      "sha256": "8d6dae606468cabad643736699464f73beb69944d0da7ef4a93875d7c5818fae"
+    },
+    {
+      "id": "artifact-40",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/quota.py",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a"
+    },
+    {
+      "id": "artifact-41",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/role_budget.py",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8"
+    },
+    {
+      "id": "artifact-42",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/role_run.py",
+      "bytes": 15110,
+      "sha256": "96435ab52cf9ae896f907dd43950ee0a297d3ad507dd5da1de5caddf4292d8e0"
+    },
+    {
+      "id": "artifact-43",
+      "path": "archives/role-prompt-storage-v2/aimeth_pilot/run.py",
+      "bytes": 12225,
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205"
+    },
+    {
+      "id": "artifact-44",
+      "path": "archives/role-prompt-storage-v2/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "artifact-45",
+      "path": "archives/role-prompt-storage-v2/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "artifact-46",
+      "path": "archives/role-prompt-storage-v2/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "artifact-47",
+      "path": "archives/role-prompt-storage-v2/aimeth_runtime/store.py",
+      "bytes": 44638,
+      "sha256": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef"
+    },
+    {
+      "id": "artifact-48",
+      "path": "archives/role-prompt-storage-v2/docs/role-prompt-storage-v2.md",
+      "bytes": 1593,
+      "sha256": "6d07c5163fec6292f6a90477578209f487e06d0aa26f1dfbb5ce041aab140fd1"
+    },
+    {
+      "id": "artifact-49",
+      "path": "archives/role-prompt-storage-v2/source.json",
+      "bytes": 3493,
+      "sha256": "d1528eff3b65ec41bb7f93c8af6bd94669da313775ceb4b32987a2fffadd4548"
+    },
+    {
+      "id": "artifact-50",
+      "path": "archives/role-prompt-storage-v2/tests/test_role_routing.py",
+      "bytes": 15480,
+      "sha256": "a74dac9d282003d28b81d1fd76317b037dcf9bb5ccf0d78ec3a49fb9e057cb5c"
+    },
+    {
+      "id": "artifact-51",
+      "path": "archives/role-prompt-storage-v2/tools/validate_role_scale.py",
+      "bytes": 3635,
+      "sha256": "216c07529a6e4a4e36c50db1d1f37a07f832b03473dc72a396ac04725b74bda4"
+    },
+    {
+      "id": "artifact-52",
+      "path": "docs/gateway-diagnostic-v1.md",
+      "bytes": 1285,
+      "sha256": "fb76e797cf1784a99155aab062b1acfc3a8a5c5f30f59be7ceb5bfb814fe5d21"
+    },
+    {
+      "id": "artifact-53",
+      "path": "docs/role-prompt-storage-v2.md",
+      "bytes": 1593,
+      "sha256": "6d07c5163fec6292f6a90477578209f487e06d0aa26f1dfbb5ce041aab140fd1"
+    },
+    {
+      "id": "artifact-54",
+      "path": "docs/role-routing-pilot-v1.md",
+      "bytes": 8445,
+      "sha256": "ec9849a67da7242c4c61dc13662e5ed8a48be381cdf5bc47f7a6cffde95dd819"
+    },
+    {
+      "id": "artifact-55",
+      "path": "examples/hierarchy-routing-proposal-v1.json",
+      "bytes": 1668,
+      "sha256": "f0cf4fa4c880a56908104ecf1ee6a433871f152f90c820188282cc7aaaa15d24"
+    },
+    {
+      "id": "artifact-56",
+      "path": "milestones/m2-2-role-routing-v1-1440-scale.png",
+      "bytes": 208833,
+      "sha256": "c6d1141c89f4ce2f3571b9ccbdf23d581ae95de37ca9732bcb74c974984f1c14"
+    },
+    {
+      "id": "artifact-57",
+      "path": "milestones/m2-2-role-routing-v1-1440-top.png",
+      "bytes": 174105,
+      "sha256": "e9eba7d502da823ee3bb9b3c3b163a00fb00ee21e5666d95e1d183730f4a35e2"
+    },
+    {
+      "id": "artifact-58",
+      "path": "milestones/m2-2-role-routing-v1-1440.png",
+      "bytes": 1536766,
+      "sha256": "d3d955236cf3304b963c141bbe76c243f2230f054cb31d26b2b681d500e0086f"
+    },
+    {
+      "id": "artifact-59",
+      "path": "milestones/m2-2-role-routing-v1-390-scale.png",
+      "bytes": 206345,
+      "sha256": "171c5e4e451b269948eca10b39e41061541e2a29a03f5be3abc4e613eed9b130"
+    },
+    {
+      "id": "artifact-60",
+      "path": "milestones/m2-2-role-routing-v1-390-top.png",
+      "bytes": 115288,
+      "sha256": "36da691b68349e56a46f4c0f6da655ab2c5a1a10815327520db08f97b7fe3f19"
+    },
+    {
+      "id": "artifact-61",
+      "path": "milestones/m2-2-role-routing-v1-390.png",
+      "bytes": 1393245,
+      "sha256": "ddac44f687081fdb1c8a42a61e90501957e35525e64aee5c613343ce8b11072b"
+    },
+    {
+      "id": "artifact-62",
+      "path": "milestones/m2-2-role-routing-v1.browser-qa.json",
+      "bytes": 796,
+      "sha256": "6853d97a5bf3254d07d93a501278fb123e96b741496ce94fc7927d35e4ac13a1"
+    },
+    {
+      "id": "artifact-63",
+      "path": "milestones/m2-2-role-routing-v1.evidence.json",
+      "bytes": 5313,
+      "sha256": "c4a1f6b57b4cdd1d58d0aca4f4777488f111efabde1a9e2e510234b1c6473b5d"
+    },
+    {
+      "id": "artifact-64",
+      "path": "milestones/m2-2-role-routing-v1.html",
+      "bytes": 40843,
+      "sha256": "3d0e51765b706c9a1e6c9423f4b08d157075d788d1fcba9239408ceddd1eb7c2"
+    },
+    {
+      "id": "artifact-65",
+      "path": "milestones/m2-2-role-routing-v1.visual-review.json",
+      "bytes": 552,
+      "sha256": "68e5244d9edfdae432a09c197906fc2561042b347efeb093190ec50a824c1ff9"
+    },
+    {
+      "id": "artifact-66",
+      "path": "reports/role-pilot-v1/events.jsonl",
+      "bytes": 2800818,
+      "sha256": "ae2a94477a17a85c9fc5baf7b087b0581515f70898d80f8c46c3b2585844589a"
+    },
+    {
+      "id": "artifact-67",
+      "path": "reports/role-pilot-v1/gateway-diagnostic.json",
+      "bytes": 1149,
+      "sha256": "f0bc90118c9dd994bb4196a677544c7ae7c55460248c496e7d595fe3cf11d611"
+    },
+    {
+      "id": "artifact-68",
+      "path": "reports/role-pilot-v1/post-pilot-tests.txt",
+      "bytes": 6989,
+      "sha256": "b0f24ac6c8d77abb23ede4675dcf4fdf0604a9b6808948d2219ccb7bedadf174"
+    },
+    {
+      "id": "artifact-69",
+      "path": "reports/role-pilot-v1/preflight-tests.txt",
+      "bytes": 7283,
+      "sha256": "153e67a07625f597d6b4ea4f5cbfaa3c80ca953f049eccb70a97462f6df1aca3"
+    },
+    {
+      "id": "artifact-70",
+      "path": "reports/role-pilot-v1/scale-validation.json",
+      "bytes": 3572,
+      "sha256": "a5279317fcb7edc698cd4eff7b34e588b32396f0ced88136fd4c101c9c516eb7"
+    },
+    {
+      "id": "artifact-71",
+      "path": "reports/role-pilot-v1/summary.json",
+      "bytes": 70800,
+      "sha256": "5b6d8cc9c124ca4e3202b0db17856242cd42d14147c3a2102edeca8075af390f"
+    },
+    {
+      "id": "artifact-72",
+      "path": "reports/role-pilot-v1/validation.json",
+      "bytes": 2014,
+      "sha256": "889ef3d78cdb5907c81dbe16b63850ba2fe365541cde50e6d8362520455f7b95"
+    },
+    {
+      "id": "artifact-73",
+      "path": "templates/role-milestone-v1.html",
+      "bytes": 20337,
+      "sha256": "9792b4241a744861d60608457188a579238a94fbbb06a9b67aada09ede87cece"
+    },
+    {
+      "id": "artifact-74",
+      "path": "tools/build_role_milestone.py",
+      "bytes": 7430,
+      "sha256": "530164befd3c262f19226dae5dc6b5b38f5f2d98d0b45dde52b043d4107f21e1"
+    },
+    {
+      "id": "artifact-75",
+      "path": "tools/build_service_milestone.py",
+      "bytes": 8602,
+      "sha256": "c0555a71aa249f34342868c0e8e4cff1f971f29c4b8498068ef3ec4da032c1e5"
+    },
+    {
+      "id": "artifact-76",
+      "path": "tools/check_role_evidence.py",
+      "bytes": 11637,
+      "sha256": "c11a94f4f9a0ad175b1a8fe3a894d2b5bf1423b2e9db9bc7c1da4ace94136bdb"
+    },
+    {
+      "id": "artifact-77",
+      "path": "tools/check_role_milestone.cjs",
+      "bytes": 5180,
+      "sha256": "b534a3356883d52d58a89843d575a0452b279275db3fe27786e0533070a8e7ec"
+    },
+    {
+      "id": "artifact-78",
+      "path": "tools/export_role_evidence.py",
+      "bytes": 4038,
+      "sha256": "9043c35dae6a7eb1412694a7d5be760ea11a1100edec666e149a139ed4fc8a99"
+    },
+    {
+      "id": "artifact-79",
+      "path": "tools/role_evidence.py",
+      "bytes": 4304,
+      "sha256": "0666d15afcb72da4483314d60204e02fc71c0a34a53394d349afa3caf7e2e4b9"
+    }
+  ]
+}

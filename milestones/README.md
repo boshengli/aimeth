@@ -71,3 +71,9 @@ node tools/check_service_milestone.cjs milestones/m2-1-service-calibration-v1.ht
 ```
 
 Execution archives are `archives/service-calibration-v1` (a03dad6) and `archives/public-sanity-v1` (7211541). They are separate from the later report delivery commit. Browser screenshots and source-backed evidence accompany the HTML. This milestone does not establish population superiority, frontier proof or 10K inference readiness.
+
+## M2.2 — Matched role-routing runtime and live pilot
+
+[HTML v1](m2-2-role-routing-v1.html) includes all 16 planned populations, 16 prior representation cases, a separate gateway diagnosis and post-pilot compact prompt storage. GLM started eight populations; DeepSeek's eight remain unstarted after 502 failures. The report separates engineering execution, output-contract failures and mathematical certificate outcomes.
+
+Replay with `python3 tools/check_role_evidence.py`; rebuild with `python3 tools/build_role_milestone.py`; verify `role-pilot-report-manifest.json`. Browser QA and screenshots cover desktop, narrow layouts, filters including unstarted units, horizontal table scrolling, offline/no-JS reading and printing the complete planned denominator.

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "execution_source": "8712fd9d62eb6fe0025b05a86b603b33f464005c",
+  "post_pilot_engineering_source": "9d6212064fec8cbba919b7dc2328d7c388e5a482",
+  "gateway_diagnostic_source": "70a67c2855d74330f593662346ce47b6d93627d6",
+  "preflight_tests": 72,
+  "post_pilot_tests": 74,
+  "private_journals_verified": 24,
+  "public_events_replayed": 1539,
+  "source_matches_remote": true,
+  "first_round_requests_byte_identical": 8,
+  "scheduler": {
+    "job_id": 196060,
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:03:20",
+    "cpus": 2,
+    "memory": "2G",
+    "new_gpu_allocation": false,
+    "client_node": "gpu08"
+  },
+  "inference_node": {
+    "user_reported": "GPU01",
+    "independently_attested": false
+  },
+  "gpu08_preflight": {
+    "gpus_configured": 8,
+    "gpus_allocated": 8,
+    "measured_utilization": null
+  },
+  "active_request_gpus_attested": false,
+  "weight_contents_attested": false,
+  "probe_scope": "One separately frozen local-client request to the institutional gateway; not a mathematical score",
+  "gate_outcome": "GLM 3/4 eligible; DeepSeek 0/4 and all eight representation calls HTTP 502; eight planned DeepSeek populations unstarted",
+  "engineering_limits": [
+    "Input bytes, not tokenizer-derived input-token admission",
+    "No attributable GPU hours",
+    "No live 10K inference",
+    "No automatic multi-host recovery",
+    "HTTP-only generators; evaluator not exposed via tools; stronger OS isolation pending"
+  ],
+  "compact_prompt_implementation_commit": "b95593699e4850e5f34d946f4b5fa776cfe55e4c",
+  "test_log_policy": "Repository and temporary absolute paths redacted in the preflight log; restricted raw-log hash retained. Preflight nonfatal lock warnings preserved; the post-pilot cleanup fixed them.",
+  "raw_test_logs_sha256": {
+    "preflight-tests.txt": "9e9cee48692cd97a6b5cc689e5eac62f3164ba6222432b5ac8a5f6ed5fc7349b",
+    "post-pilot-tests-v2.txt": "b0f24ac6c8d77abb23ede4675dcf4fdf0604a9b6808948d2219ccb7bedadf174"
+  }
+}

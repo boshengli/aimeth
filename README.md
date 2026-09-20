@@ -96,3 +96,21 @@ cmp milestones/m2-1-service-calibration-v1.html /tmp/service.html
 ```
 
 Both execution sources and all reviewed development events are archived separately. Old reports remain unchanged. Input-token admission, role-message contracts, independently reviewed harder tasks and identity attestation precede the next organization pilot and scale-up.
+
+## M2.2 matched role routing and institutional results
+
+[Milestone HTML](milestones/m2-2-role-routing-v1.html) · [frozen live protocol](docs/role-routing-pilot-v1.md) · [all results](reports/role-pilot-v1/summary.json).
+
+Job 196060 implemented role-bound H/F routing with N=8 and four rounds. GLM met the predeclared format gate and started eight populations: one passed, one invalid certificate, four malformed final outputs and two truncated populations. DeepSeek returned HTTP 502 in all eight representation cases; its eight planned populations remain unstarted. A separately frozen minimal operational probe returned the gateway message `backend unavailable / Connection refused`. No service configuration was changed.
+
+The institutional job made 224 requests, with 195,352 known tokens and eight unknown-usage failures. The separate gateway probe adds one request with unknown usage. All 24 journals, 1,539 public events, 197 sent messages and frozen selection/score rules are retained. These public development controls and two repeats do not support architecture superiority, a frontier proof or independently attested GPU01 routing.
+
+A post-pilot engineering increment replaces per-agent prompt copies with four role templates. The eight first-round H requests are byte-identical to the executed version. H/F N=10000 manifests now compile at 1,238,453 bytes; this is not 10K inference, and the live driver remains deliberately fixed to N=8. The executed source (8712fd9), gateway diagnosis (70a67c2), and compact implementation (b955936) have separate archives. Hard request-byte/output/call limits are enforced; tokenizer-derived input admission, GPU-hour attribution and multi-host recovery remain open.
+
+```bash
+python3 tools/check_role_evidence.py
+python3 tools/verify_artifacts.py role-pilot-report-manifest.json
+python3 tools/build_role_milestone.py --output /tmp/role.html
+cmp milestones/m2-2-role-routing-v1.html /tmp/role.html
+python3 tools/validate_role_scale.py --output runs/a-new-scale-check.json
+```
