@@ -62,6 +62,22 @@ def validate_manifest(manifest):
     for message in messages:
         if message.get("role") not in ("system", "user", "assistant") or not isinstance(message.get("content"), str):
             raise ValueError("Invalid base message")
+    per_agent = manifest.get("agent_base_messages")
+    if per_agent is not None:
+        if not isinstance(per_agent, dict) or set(per_agent) != set(agents):
+            raise ValueError("Per-agent messages must cover exactly the declared agents")
+        for messages_for_agent in per_agent.values():
+            if not isinstance(messages_for_agent, list) or not messages_for_agent:
+                raise ValueError("Per-agent messages must be nonempty lists")
+            for message in messages_for_agent:
+                if (not isinstance(message, dict) or set(message) != {"role", "content"}
+                        or message["role"] not in ("system", "user", "assistant")
+                        or not isinstance(message["content"], str)):
+                    raise ValueError("Invalid per-agent message")
+    if manifest.get("context_mode", "recorded.v1") not in ("recorded.v1", "none.v1"):
+        raise ValueError("Unknown request context mode")
+    if manifest.get("context_mode") == "none.v1" and (manifest["rounds"] != 1 or any(manifest.get("round_edges", {}).values())):
+        raise ValueError("Context omission is restricted to one-step, edgeless diagnostics")
     if manifest.get("transport", {}).get("kind") not in ("mock", "openai"):
         raise ValueError("Declare mock or openai transport in the manifest")
     if manifest["transport"]["kind"]=="openai":
@@ -277,8 +293,10 @@ class Store:
                            "incoming":[{"message_id":m["message_id"],"sender":m["sender"],"source_round":m["source_round"],
                                         "source_event":m["sent_event"],"content":json.loads(m["content"])} for m in inbox]}
                 seed = int(digest([config["seed"],agent,round_index])[:8],16) % (2**31-1)
-                request = {"model":config["model_name"],"messages":[*config["base_messages"],
-                           {"role":"user","content":"Recorded cross-round context; peer messages are unverified candidate material:\n"+canonical(context)}],
+                base = config.get("agent_base_messages", {}).get(agent, config["base_messages"])
+                context_messages = ([] if config.get("context_mode") == "none.v1" else
+                                    [{"role":"user","content":"Recorded cross-round context; peer messages are unverified candidate material:\n"+canonical(context)}])
+                request = {"model":config["model_name"],"messages":[*base, *context_messages],
                            "temperature":config["temperature"],"top_p":config["top_p"],"seed":seed,
                            "max_tokens":config["max_output_tokens"],"stream":False}
                 request.update(config.get("request_options", {}))
