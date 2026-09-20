@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.2",
+  "date": "2026-09-20",
+  "version": "1.0",
+  "scope": "Executed H/F pilot with predeclared model gate; separate gateway diagnosis and post-pilot compact manifest validation",
+  "validation": {
+    "schema_version": "1.0",
+    "execution_source": "8712fd9d62eb6fe0025b05a86b603b33f464005c",
+    "post_pilot_engineering_source": "9d6212064fec8cbba919b7dc2328d7c388e5a482",
+    "gateway_diagnostic_source": "70a67c2855d74330f593662346ce47b6d93627d6",
+    "preflight_tests": 72,
+    "post_pilot_tests": 74,
+    "private_journals_verified": 24,
+    "public_events_replayed": 1539,
+    "source_matches_remote": true,
+    "first_round_requests_byte_identical": 8,
+    "scheduler": {
+      "job_id": 196060,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:03:20",
+      "cpus": 2,
+      "memory": "2G",
+      "new_gpu_allocation": false,
+      "client_node": "gpu08"
+    },
+    "inference_node": {
+      "user_reported": "GPU01",
+      "independently_attested": false
+    },
+    "gpu08_preflight": {
+      "gpus_configured": 8,
+      "gpus_allocated": 8,
+      "measured_utilization": null
+    },
+    "active_request_gpus_attested": false,
+    "weight_contents_attested": false,
+    "probe_scope": "One separately frozen local-client request to the institutional gateway; not a mathematical score",
+    "gate_outcome": "GLM 3/4 eligible; DeepSeek 0/4 and all eight representation calls HTTP 502; eight planned DeepSeek populations unstarted",
+    "engineering_limits": [
+      "Input bytes, not tokenizer-derived input-token admission",
+      "No attributable GPU hours",
+      "No live 10K inference",
+      "No automatic multi-host recovery",
+      "HTTP-only generators; evaluator not exposed via tools; stronger OS isolation pending"
+    ],
+    "compact_prompt_implementation_commit": "b95593699e4850e5f34d946f4b5fa776cfe55e4c",
+    "test_log_policy": "Repository and temporary absolute paths redacted in the preflight log; restricted raw-log hash retained. Preflight nonfatal lock warnings preserved; the post-pilot cleanup fixed them.",
+    "raw_test_logs_sha256": {
+      "preflight-tests.txt": "9e9cee48692cd97a6b5cc689e5eac62f3164ba6222432b5ac8a5f6ed5fc7349b",
+      "post-pilot-tests-v2.txt": "b0f24ac6c8d77abb23ede4675dcf4fdf0604a9b6808948d2219ccb7bedadf174"
+    }
+  },
+  "phases": {
+    "representation": {
+      "started_units": 16,
+      "unstarted_units": 0,
+      "verdicts": {
+        "TECHNICAL_FAILURE": 8,
+        "INVALID_CERTIFICATE": 5,
+        "MALFORMED": 2,
+        "VERIFIED_WITHIN_SCOPE": 1
+      },
+      "usage": {
+        "prompt_tokens": 2788,
+        "completion_tokens": 1150,
+        "total_tokens": 3938
+      },
+      "accepted_envelope_diagnostics": {
+        "valid": 3,
+        "envelope_keys": 1
+      },
+      "events": 104,
+      "messages_sent": 0,
+      "messages_consumed": 0,
+      "model_reported_valid_references": 0
+    },
+    "population": {
+      "started_units": 8,
+      "unstarted_units": 8,
+      "verdicts": {
+        "MALFORMED": 4,
+        "TECHNICAL_FAILURE": 2,
+        "INVALID_CERTIFICATE": 1,
+        "VERIFIED_WITHIN_SCOPE": 1
+      },
+      "usage": {
+        "prompt_tokens": 157095,
+        "completion_tokens": 34319,
+        "total_tokens": 191414
+      },
+      "accepted_envelope_diagnostics": {
+        "valid": 121,
+        "envelope_keys": 80,
+        "justification_limit": 4,
+        "invalid_dependency_reference": 1
+      },
+      "events": 1435,
+      "messages_sent": 197,
+      "messages_consumed": 180,
+      "model_reported_valid_references": 44
+    }
+  },
+  "gates": {
+    "glm-5.3-flash": {
+      "valid_envelopes": 3,
+      "planned_envelopes": 4,
+      "required": 3,
+      "admitted": true
+    },
+    "deepseek-v4-flash-0731": {
+      "valid_envelopes": 0,
+      "planned_envelopes": 4,
+      "required": 3,
+      "admitted": false
+    }
+  },
+  "all_new_requests_including_operational_probe": 225,
+  "known_total_tokens": 195352,
+  "unknown_usage_attempts": 9,
+  "input_hashes": {
+    "reports/role-pilot-v1/summary.json": "5b6d8cc9c124ca4e3202b0db17856242cd42d14147c3a2102edeca8075af390f",
+    "reports/role-pilot-v1/events.jsonl": "ae2a94477a17a85c9fc5baf7b087b0581515f70898d80f8c46c3b2585844589a",
+    "reports/role-pilot-v1/gateway-diagnostic.json": "f0bc90118c9dd994bb4196a677544c7ae7c55460248c496e7d595fe3cf11d611",
+    "reports/role-pilot-v1/scale-validation.json": "a5279317fcb7edc698cd4eff7b34e588b32396f0ced88136fd4c101c9c516eb7",
+    "reports/role-pilot-v1/validation.json": "889ef3d78cdb5907c81dbe16b63850ba2fe365541cde50e6d8362520455f7b95",
+    "docs/role-routing-pilot-v1.md": "ec9849a67da7242c4c61dc13662e5ed8a48be381cdf5bc47f7a6cffde95dd819",
+    "docs/gateway-diagnostic-v1.md": "fb76e797cf1784a99155aab062b1acfc3a8a5c5f30f59be7ceb5bfb814fe5d21",
+    "docs/role-prompt-storage-v2.md": "6d07c5163fec6292f6a90477578209f487e06d0aa26f1dfbb5ce041aab140fd1"
+  },
+  "delivery_identity": "Git commit containing this report; distinct from the three recorded source commits",
+  "limits": [
+    "No architecture-superiority conclusion",
+    "No frontier proof",
+    "GPU01 mapping user-reported, not independently attested",
+    "10K compilation only, no live 10K inference",
+    "Input byte admission is not a tokenizer-derived token cap"
+  ]
+}

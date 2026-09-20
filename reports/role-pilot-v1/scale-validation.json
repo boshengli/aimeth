@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "scope": "local compiler and first-round request equivalence; no 10K inference",
+  "old_execution_source": "8712fd9d62eb6fe0025b05a86b603b33f464005c",
+  "first_round_requests_byte_identical": true,
+  "compared_requests": 8,
+  "request_set_sha256": "4577364bd13d9b2f013765452e7e4670702886a9259a180fddce311e19f558e6",
+  "old_n8_manifest_event_bytes": 19410,
+  "old_n10000_outcome": "Manifest exceeds 2 MiB journal event limit",
+  "measurements": [
+    {
+      "population": 8,
+      "arm": "H",
+      "rounds": 4,
+      "call_slots": 32,
+      "planned_messages": 30,
+      "manifest_event_bytes": 11931,
+      "elapsed_seconds": 0.001119250000000016,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 8,
+      "arm": "F",
+      "rounds": 4,
+      "call_slots": 32,
+      "planned_messages": 30,
+      "manifest_event_bytes": 11931,
+      "elapsed_seconds": 0.0008815420000000129,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 32,
+      "arm": "H",
+      "rounds": 4,
+      "call_slots": 128,
+      "planned_messages": 120,
+      "manifest_event_bytes": 14878,
+      "elapsed_seconds": 0.001265457999999997,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 32,
+      "arm": "F",
+      "rounds": 4,
+      "call_slots": 128,
+      "planned_messages": 120,
+      "manifest_event_bytes": 14878,
+      "elapsed_seconds": 0.0012702500000000283,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 128,
+      "arm": "H",
+      "rounds": 4,
+      "call_slots": 512,
+      "planned_messages": 480,
+      "manifest_event_bytes": 26663,
+      "elapsed_seconds": 0.0027956250000000793,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 128,
+      "arm": "F",
+      "rounds": 4,
+      "call_slots": 512,
+      "planned_messages": 480,
+      "manifest_event_bytes": 26663,
+      "elapsed_seconds": 0.0029039169999999226,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 512,
+      "arm": "H",
+      "rounds": 4,
+      "call_slots": 2048,
+      "planned_messages": 1920,
+      "manifest_event_bytes": 73799,
+      "elapsed_seconds": 0.009267334000000016,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 512,
+      "arm": "F",
+      "rounds": 4,
+      "call_slots": 2048,
+      "planned_messages": 1920,
+      "manifest_event_bytes": 73799,
+      "elapsed_seconds": 0.009827875000000041,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 10000,
+      "arm": "H",
+      "rounds": 4,
+      "call_slots": 40000,
+      "planned_messages": 37500,
+      "manifest_event_bytes": 1238453,
+      "elapsed_seconds": 0.18861570800000005,
+      "role_templates": 4,
+      "inference_requests": 0
+    },
+    {
+      "population": 10000,
+      "arm": "F",
+      "rounds": 4,
+      "call_slots": 40000,
+      "planned_messages": 37500,
+      "manifest_event_bytes": 1238453,
+      "elapsed_seconds": 0.186219833,
+      "role_templates": 4,
+      "inference_requests": 0
+    }
+  ],
+  "live_10k_launch_ready": false,
+  "source_files": {
+    "aimeth_runtime/store.py": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef",
+    "aimeth_design/role_routing.py": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd",
+    "tools/validate_role_scale.py": "216c07529a6e4a4e36c50db1d1f37a07f832b03473dc72a396ac04725b74bda4"
+  }
+}

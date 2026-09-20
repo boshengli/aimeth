@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "method": "assistant inspection of actual Chromium screenshots",
+  "views": [
+    "1440-top",
+    "390-top",
+    "390-scale"
+  ],
+  "observations": [
+    "Mobile title revised to avoid orphan characters",
+    "Counts distinguish planned, started, completed and unstarted units",
+    "Wide tables stay in horizontal scroll containers",
+    "10K compilation is explicitly separated from live inference"
+  ],
+  "not_claimed": "independent mathematical review or complete accessibility certification"
+}

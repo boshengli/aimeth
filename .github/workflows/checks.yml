@@ -38,3 +38,7 @@ jobs:
           python3 tools/verify_artifacts.py service-calibration-report-manifest.json
           python3 tools/build_service_milestone.py --output /tmp/service.html
           cmp milestones/m2-1-service-calibration-v1.html /tmp/service.html
+          python3 tools/check_role_evidence.py
+          python3 tools/verify_artifacts.py role-pilot-report-manifest.json
+          python3 tools/build_role_milestone.py --output /tmp/role.html
+          cmp milestones/m2-2-role-routing-v1.html /tmp/role.html
