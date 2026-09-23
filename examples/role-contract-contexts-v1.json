@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "source_events_file": "reports/role-pilot-v1/events.jsonl",
+  "source_events_sha256": "ae2a94477a17a85c9fc5baf7b087b0581515f70898d80f8c46c3b2585844589a",
+  "selection_rule": "For each task/role, select lexicographically first (run_id,agent_id) GLM population request at round 0 (empty) or round 2 (recorded); no certificate/evaluation filtering.",
+  "scope": "Frozen previously generated candidate material; not reference solutions and not new inter-agent messages.",
+  "fixtures": {
+    "prime-counterexample/E0/empty": {
+      "task_id": "prime-counterexample",
+      "role": "E0",
+      "context_kind": "empty",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "842a297c-8c32-436a-b663-33ca108c6888",
+      "source_request_sha256": "81c4854d008996f9345665fce6694f4f9d995e034daf569bb57705a7d941fcba",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00003\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/E0/recorded": {
+      "task_id": "prime-counterexample",
+      "role": "E0",
+      "context_kind": "recorded",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "71973514-309a-45c1-91b7-76c0486bae8d",
+      "source_request_sha256": "a8ccf6aed2202cb80b6049a80ee5a1f4abb821c3376ede530d16ae8aba8b105c",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00003\",\"checkpoint\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"267beae98a3d433424fc5155d33541a2daa7f178709c57b2c77069c280cf41ec\",\"sender\":\"a00007\",\"source_event\":\"8a822aa5-a2d6-465f-9f11-110a00413d87\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/E1/empty": {
+      "task_id": "prime-counterexample",
+      "role": "E1",
+      "context_kind": "empty",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "23307f43-7d63-4a37-af2e-e3516ff60c08",
+      "source_request_sha256": "33e974ad0519378dacd94fdbed02998e3a4879c22dd22882868811b9cabbf9bf",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00000\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/E1/recorded": {
+      "task_id": "prime-counterexample",
+      "role": "E1",
+      "context_kind": "recorded",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "56951fec-6441-4e46-984e-8675a9d8d4d7",
+      "source_request_sha256": "332ff38069c66332e1aacb579f4df089bfe48acee62a7e3e18959615bc4c2630",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00000\",\"checkpoint\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"e47472003d8e92f8a8bca8738531b6fa9a9610a666add04c5e649235e88e11a7\",\"sender\":\"a00003\",\"source_event\":\"478e6b04-b45b-4929-bab8-fb219a77638a\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/C/empty": {
+      "task_id": "prime-counterexample",
+      "role": "C",
+      "context_kind": "empty",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "6ed265cc-b484-4404-a6fc-8592f3c42248",
+      "source_request_sha256": "79b575658b7a87656fc26bbf5d08fab8299a82bc88fc4dbd4f86bca0e13388ce",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00001\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/C/recorded": {
+      "task_id": "prime-counterexample",
+      "role": "C",
+      "context_kind": "recorded",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "40f2a6e7-9d1c-4f8b-9ae9-ac85ada04c44",
+      "source_request_sha256": "a0897f09bad478a423e5fc378e41c50b839ccbe4df88c2105127faac761ac1e0",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00001\",\"checkpoint\":{\"candidate\":\"{\\\"d\\\":41,\\\"n\\\":40}\",\"envelope\":{\"candidate\":{\"d\":41,\"n\":40},\"justification\":\"n=40: 40^2+40+41=1681=41^2, so d=41 is a proper divisor (1<41<1681), refuting primality.\",\"objections\":[],\"used_messages\":[\"21cf0a9ff36a46f040bfe4f91f9af8d994dd79684934a9a3d691ce17640c6df8\"]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"envelope\":{\"candidate\":{\"d\":41,\"n\":40},\"justification\":\"n=40: 40^2+40+41=1681=41*41, so d=41 is a proper divisor (1<41<1681), refuting primality for all n>=0.\",\"objections\":[],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"79cea572df522e7aac5ebabb31c8dffc039a4baee5e1d74b43b56d3842429220\",\"sender\":\"a00005\",\"source_event\":\"83abbc59-39c9-478b-a679-fe97573eafda\",\"source_round\":1},{\"content\":{\"envelope\":{\"candidate\":{\"d\":41,\"n\":40},\"justification\":\"n=40: n^2+n+41 = 1600+40+41 = 1681 = 41*41. d=41 is a proper divisor since 1 < 41 < 1681 and 41*41=1681. This refutes the claim for all n>=0.\",\"objections\":[],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"807c8d8aacedefbf0ce9cc9978b7ad08c90efd92dcc2bcd007e05d1aefe0e2af\",\"sender\":\"a00002\",\"source_event\":\"d3193ea9-c0f7-475d-b138-25a234ecc33f\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/S/empty": {
+      "task_id": "prime-counterexample",
+      "role": "S",
+      "context_kind": "empty",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "05261792-1bae-4e49-affa-71e531038349",
+      "source_request_sha256": "139f37a7e811f1ccf765f47497947b734d3cac64ff60384fcfabc86b60bd9cc3",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00005\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "prime-counterexample/S/recorded": {
+      "task_id": "prime-counterexample",
+      "role": "S",
+      "context_kind": "recorded",
+      "source_run_id": "hf-0924233bec6c26ecf580454d",
+      "source_event_id": "773c7400-0a46-4c05-b81f-6db78274343e",
+      "source_request_sha256": "6b0af103be78ae5343cac54fca3513175ab7697ab115e5a126a238259b780163",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00005\",\"checkpoint\":{\"candidate\":\"{\\\"d\\\":41,\\\"n\\\":40}\",\"envelope\":{\"candidate\":{\"d\":41,\"n\":40},\"justification\":\"n=40: 40^2+40+41=1681=41*41, so d=41 is a proper divisor (1<41<1681), refuting primality for all n>=0.\",\"objections\":[],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"envelope\":{\"candidate\":{\"d\":41,\"n\":40},\"justification\":\"n=40: 40^2+40+41=1681=41^2, so d=41 is a proper divisor (1<41<1681), refuting primality.\",\"objections\":[],\"used_messages\":[\"21cf0a9ff36a46f040bfe4f91f9af8d994dd79684934a9a3d691ce17640c6df8\"]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"76a1684e26d01f7fa88bd260e7e4da30b16dc90d0279290568664e1d0d7c302e\",\"sender\":\"a00001\",\"source_event\":\"ea8a88a9-6ffe-4335-9ba6-2fbcb4b2085e\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/E0/empty": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "E0",
+      "context_kind": "empty",
+      "source_run_id": "hf-08bfc4259c846c2bf5c7fcfb",
+      "source_event_id": "1b5ebf6b-c6bf-433a-9e7b-1a98ac5ff39b",
+      "source_request_sha256": "1627dae1355597d1c8849a7a4130e11ab630775292108aa65d0dfa422347154f",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00002\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/E0/recorded": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "E0",
+      "context_kind": "recorded",
+      "source_run_id": "hf-12a3f3241cb283e7dba00d1c",
+      "source_event_id": "80a1b34a-3162-4cf4-ad74-6a05fec1fd44",
+      "source_request_sha256": "c427dd337552770c959538e582002b2132b05c72b1b10b72d675217a93bc9b4f",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00000\",\"checkpoint\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"1bd59c09ec31f5914676db315204a3cfce9fb899ff8463db809d849a598f86ea\",\"sender\":\"a00004\",\"source_event\":\"1b7db947-7040-42b5-87a8-c3f4315056f7\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/E1/empty": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "E1",
+      "context_kind": "empty",
+      "source_run_id": "hf-08bfc4259c846c2bf5c7fcfb",
+      "source_event_id": "732954ef-6486-44f0-966b-ab96c9bd1454",
+      "source_request_sha256": "ff1f1c066e9129a53fc093a4448f2358982f036be21bf55428c9f20e211fd107",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00001\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/E1/recorded": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "E1",
+      "context_kind": "recorded",
+      "source_run_id": "hf-12a3f3241cb283e7dba00d1c",
+      "source_event_id": "4f6518e5-37e4-4c13-a986-c39881a00a9d",
+      "source_request_sha256": "5d75b85b8256695c9dfd68fbe82cd17283bd2087b77890b5814e9a702a7fd309",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00005\",\"checkpoint\":{\"candidate\":\"{\\\"a\\\":1,\\\"b\\\":2,\\\"c\\\":3,\\\"d\\\":5,\\\"e2\\\":-1,\\\"e3\\\":-2}\",\"envelope\":{\"candidate\":{\"a\":1,\"b\":2,\"c\":3,\"d\":5,\"e2\":-1,\"e3\":-2},\"justification\":\"uλ=λ^a u(λx,λ^b t): ∂t gives λ^(a+b), (u·∇)u λ^(2a+1), νΔu λ^(a+2); balance a+b=2a+1=a+2 ⇒ a=1,b=2. Pressure gradient λ^(c+1)=a+2 ⇒ c=3; force λ^(d+1)=a+2 ⇒ d=5. L2: 2a-3=-1; L3: a-3=-2.\",\"objections\":[],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"envelope\":{\"candidate\":{\"a\":1,\"b\":2,\"c\":3,\"d\":5,\"e2\":-1,\"e3\":-2},\"justification\":\"Scaling u_lam=lam^a u(lam x, lam^b t): u_t scales lam^(a+b), (u.grad)u lam^(2a+1), nu Delta u lam^(a+2). Balance a+b=2a+1=a+2 gives a=1, b=2. grad p_lam scales lam^(c+1)=a+2 so c=3; f_lam scales lam^(d+1)=a+2 so d=5. L2 norm: lam^(2a-3)=lam^(-1); L3 norm: lam^(a-3)=lam^(-2).\",\"objections\":[],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"360f6e6dbf06d63792eedc438db9b1ed045f6bcd73c4a7cdfe8b6ff75c715c55\",\"sender\":\"a00006\",\"source_event\":\"ffbb92d6-62c9-447d-a85d-00651ddb46ba\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/C/empty": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "C",
+      "context_kind": "empty",
+      "source_run_id": "hf-08bfc4259c846c2bf5c7fcfb",
+      "source_event_id": "fdedf7c2-a1e7-4518-b999-36fdae535624",
+      "source_request_sha256": "d08ee6c59a49f40006787e7b2ec15197139104ee714f1de49dcb89ad5986fbba",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00003\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/C/recorded": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "C",
+      "context_kind": "recorded",
+      "source_run_id": "hf-12a3f3241cb283e7dba00d1c",
+      "source_event_id": "1a75e128-d688-4413-a2c4-880e8405a0f4",
+      "source_request_sha256": "597250a110a4da809c0612549f7257b54349fb730c0c78750247e5b8c551e7a0",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00001\",\"checkpoint\":{\"candidate\":\"{\\\"a\\\":1,\\\"b\\\":2,\\\"c\\\":3,\\\"d\\\":4,\\\"e2\\\":-1,\\\"e3\\\":-0.5}\",\"envelope\":{\"candidate\":{\"a\":1,\"b\":2,\"c\":3,\"d\":4,\"e2\":-1,\"e3\":-0.5},\"justification\":\"Substitution: u_t~λ^{a+b}, (u·∇)u~λ^{2a+1}, νΔu~λ^{a+2}, ∇p~λ^{c+1}, f~λ^d. Matching exponents: a+b=a+2⇒b=2; 2a+1=a+2⇒a=1; c+1=a+2⇒c=3; d=a+2⇒d=4. Norms: ||u_λ||_2²=λ^{2a-3}=λ^{-1}⇒e2=-1; ||u_λ||_3=λ^{a-3/2}=λ^{-1/2}⇒e3=-0.5.\",\"objections\":[\"e3=-0.5 is not an integer; the task requires integer fields, no integer solution exists for the stated L³ norm identity\"],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"363371ebacf3fb80e07daa68c220005989362487359810c6642f5752ba5eac3c\",\"sender\":\"a00000\",\"source_event\":\"812930a4-e5eb-4822-aca2-bed3c5c66b86\",\"source_round\":1},{\"content\":{\"envelope\":{\"candidate\":{\"a\":1,\"b\":2,\"c\":3,\"d\":4,\"e2\":-1,\"e3\":-1},\"justification\":\"uλ=λ^a u(λx,λ^b t): u_t~λ^{a+b}, (u·∇)u~λ^{2a+1}, νΔu~λ^{a+2}, ∇pλ~λ^{c+1}, fλ~λ^d. Match: a+b=a+2⇒b=2; 2a+1=a+2⇒a=1; c+1=a+2⇒c=3; d=a+2⇒d=4. Norms: ||uλ||_2²=λ^{2a-3}=λ^{-1}⇒e2=-1; ||uλ||_3=λ^{a-3/2}=λ^{-1/2}⇒e3=-1/2, not integer; schema demands integer, so no integer satisfies the stated identity. Reporting e3=-1 is a compromise, not exact.\",\"objections\":[\"No integer e3 satisfies ||uλ||_3=λ^{e3}||u||_3; exact exponent is -1/2\",\"If e3 were meant for ||·||_3², e3 would be -1 (reported value)\",\"d=4 differs from standard NS force scaling d=0; both consistent with stated rescaling convention\"],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"5d69afdd0c9705f6e5109d4970791cb315a0af59ba9f0e9f4d953b09f08b9649\",\"sender\":\"a00007\",\"source_event\":\"5f693a2f-41c7-4e03-ba4c-59ed5e707f7f\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/S/empty": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "S",
+      "context_kind": "empty",
+      "source_run_id": "hf-08bfc4259c846c2bf5c7fcfb",
+      "source_event_id": "f8eb3590-c33b-407b-ab6e-22c545bd6c86",
+      "source_request_sha256": "7b716a061d72d61d6938e04a516597704f1f24804427db88730ef0b379b908a6",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00000\",\"checkpoint\":null,\"incoming\":[],\"round_index\":0}",
+        "role": "user"
+      }
+    },
+    "ns-scaling-algebra-v1/S/recorded": {
+      "task_id": "ns-scaling-algebra-v1",
+      "role": "S",
+      "context_kind": "recorded",
+      "source_run_id": "hf-12a3f3241cb283e7dba00d1c",
+      "source_event_id": "270b2167-eb3d-41b1-b877-54fada69e162",
+      "source_request_sha256": "054d1555fb112ef336f6d754fc77c3a4d8d6ca5907769c849a4138ed59187afe",
+      "context_message": {
+        "content": "Recorded cross-round context; peer messages are unverified candidate material:\n{\"agent_id\":\"a00004\",\"checkpoint\":{\"candidate\":null,\"envelope\":null,\"envelope_status\":\"malformed\",\"proof_verification_status\":\"unverified\"},\"incoming\":[{\"content\":{\"envelope\":{\"candidate\":{\"a\":1,\"b\":2,\"c\":3,\"d\":4,\"e2\":-1,\"e3\":-0.5},\"justification\":\"Substitution: u_t~λ^{a+b}, (u·∇)u~λ^{2a+1}, νΔu~λ^{a+2}, ∇p~λ^{c+1}, f~λ^d. Matching exponents: a+b=a+2⇒b=2; 2a+1=a+2⇒a=1; c+1=a+2⇒c=3; d=a+2⇒d=4. Norms: ||u_λ||_2²=λ^{2a-3}=λ^{-1}⇒e2=-1; ||u_λ||_3=λ^{a-3/2}=λ^{-1/2}⇒e3=-0.5.\",\"objections\":[\"e3=-0.5 is not an integer; the task requires integer fields, no integer solution exists for the stated L³ norm identity\"],\"used_messages\":[]},\"envelope_status\":\"valid\",\"proof_verification_status\":\"unverified\"},\"message_id\":\"46fd981d8118107f9607bf16879ffaba43050766d7550c4e6f55816c3212b132\",\"sender\":\"a00001\",\"source_event\":\"2fd6392f-bc74-4f96-8b63-cc7fa56c9d7f\",\"source_round\":1}],\"round_index\":2}",
+        "role": "user"
+      }
+    }
+  }
+}
