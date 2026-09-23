@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from aimeth_pilot.role_contract import (MODELS, OUTPUT_CARD, schedule, manifest,
                                       incoming_ids, run_case, failure_stop)
-from aimeth_pilot.role_contract import main as contract_main, schedule_v2
+from aimeth_pilot.role_contract import main as contract_main
 from aimeth_pilot.role_budget import RoleBudget
 from aimeth_pilot.run import STOP
 from aimeth_runtime.store import Store, canonical, digest, validate_manifest
@@ -65,17 +65,6 @@ class RoleContractTests(unittest.TestCase):
         self.assertEqual(b['base_messages'][-1],{'role':'user','content':OUTPUT_CARD})
         self.assertEqual(a['frozen_context_fixture'],b['frozen_context_fixture'])
         self.assertEqual(a['identities']['task'],b['identities']['task'])
-
-    def test_glm_continuation_is_new_paired_schedule_without_probe(self):
-        cfg={**CFG,'models':['glm-5.3-flash'],'seed':2026092302}
-        probes,cases=schedule_v2(cfg)
-        self.assertEqual(probes,[]);self.assertEqual(len(cases),64)
-        self.assertTrue(all(c['model']=='glm-5.3-flash' for c in cases))
-        self.assertFalse({c['case_id'] for c in cases}&{c['case_id'] for c in schedule(CFG)[1]})
-        for i in range(0,64,2):
-            a,b=cases[i:i+2]
-            self.assertEqual(a['seed'],b['seed']);self.assertEqual(a['block_order'],b['block_order'])
-            self.assertEqual({a['contract'],b['contract']},{'baseline','output-card'})
 
     def exercise(self, wire, *, crash=False, phase='contract'):
         cells=schedule(CFG)[0 if phase=='availability' else 1]

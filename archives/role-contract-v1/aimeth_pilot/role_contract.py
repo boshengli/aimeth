@@ -173,34 +173,14 @@ def failure_stop(result):
     return bool(result['dispatched_requests'] and result['errors'])
 
 
-def schedule_v2(cfg):
-    if cfg['models']!=['glm-5.3-flash'] or cfg['seed']!=2026092302:
-        raise ValueError('Not the frozen GLM continuation')
-    _, original = schedule({'models':list(MODELS),'seed':20260923})
-    cases=[]
-    for old in original:
-        if old['model']!=cfg['models'][0]: continue
-        cell={k:v for k,v in old.items() if k not in ('case_id','block_order','seed')}
-        block=[cfg['seed'],cell['model'],cell['task_id'],cell['role'],cell['context'],cell['repetition']]
-        cell['seed']=int(digest(['sample',block])[:8],16)
-        cell['case_id']='contract-v2-'+digest(cell)[:24]
-        cell['block_order']=digest(['block-order',block]);cases.append(cell)
-    return [],sorted(cases,key=lambda c:(c['block_order'],digest(['within-block',c['case_id']])))
-
-
-def main(version='v1'):
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for option in ('config','fixtures','local-root','output-root'): parser.add_argument('--'+option,required=True)
     args = parser.parse_args(); cfg = json.loads(Path(args.config).read_text())
     import hashlib
     raw = Path(args.fixtures).read_bytes()
     if hashlib.sha256(raw).hexdigest()!=cfg['fixture_file_sha256']: raise ValueError('Fixture bytes changed')
-    fixtures = json.loads(raw)
-    if version not in ('v1','v2'): raise ValueError('Unknown protocol version')
-    probes,cases = (schedule if version=='v1' else schedule_v2)(cfg)
-    call_cap=len(probes)+len(cases)
-    output_cap=len(probes)*32+len(cases)*1024
-    observed_stop=400000 if version=='v1' else 200000
+    fixtures = json.loads(raw); probes,cases = schedule(cfg)
     root=Path(args.local_root); output=Path(args.output_root)
     root.mkdir(parents=True,exist_ok=True); output.mkdir(parents=True,exist_ok=True)
     with (root/'coordinator.lock').open('w') as lock:
@@ -213,9 +193,9 @@ def main(version='v1'):
             save(root/'runtime.json',{'started_at':time.time(),'deadline':time.time()+1800,
                                      'job_id':os.environ.get('SLURM_JOB_ID'),'hostname':socket.gethostname()})
         metadata=json.loads((root/'runtime.json').read_text())
-        budget=RoleBudget(root/'budget.sqlite',calls=call_cap,output_tokens=output_cap,
-                          input_bytes=call_cap*16384,request_bytes=16384,
-                          observed_token_stop=observed_stop,deadline=metadata['deadline'])
+        budget=RoleBudget(root/'budget.sqlite',calls=130,output_tokens=131136,
+                          input_bytes=130*16384,request_bytes=16384,
+                          observed_token_stop=400000,deadline=metadata['deadline'])
         signal.signal(signal.SIGTERM,lambda *_:STOP.set());signal.signal(signal.SIGINT,lambda *_:STOP.set())
         results=[];unstarted=[];gates={};stopped=set()
         for cell in probes+cases:
@@ -223,9 +203,9 @@ def main(version='v1'):
             reason=None
             if not existing:
                 if STOP.is_set() or time.time()>=budget.deadline: reason='coordinator_deadline_or_stop'
-                elif probes and cell['phase']=='contract' and not gates.get(cell['model'],False): reason='availability_gate_failed'
+                elif cell['phase']=='contract' and not gates.get(cell['model'],False): reason='availability_gate_failed'
                 elif cell['model'] in stopped: reason='model_transport_circuit_open'
-                elif budget.summary()['known_total_tokens']>=observed_stop: reason='observed_token_stop'
+                elif budget.summary()['known_total_tokens']>=400000: reason='observed_token_stop'
             if reason:
                 unstarted.append({'case':cell,'reason':reason});continue
             result=run_case(root,cell,manifest(cell,cfg,fixtures),budget);results.append(result)
@@ -233,20 +213,18 @@ def main(version='v1'):
             if failure_stop(result): stopped.add(cell['model'])
             durable=output/'records'/rid
             if not durable.exists(): shutil.copytree(root/rid,durable)
-            progress={'completed_units':len(results),'planned_units':call_cap,'unstarted_units':len(unstarted),
+            progress={'completed_units':len(results),'planned_units':130,'unstarted_units':len(unstarted),
                       'last':result['verdict'],'budget':budget.summary()}
             save(output/'progress.json',progress)
             print(json.dumps({'done':len(results),'verdict':result['verdict']['status']}),flush=True)
         readiness={}
-        for model in cfg['models']:
+        for model in MODELS:
             rows=[r for r in results if r['case']['model']==model and r['case'].get('contract')=='output-card']
             valid=sum(r['status']['complete'] and r['envelope_status']=='valid' for r in rows)
             readiness[model]={'valid_complete':valid,'planned':32,'required':32,
                               'ready_for_bounded_multiround_contract_check':len(rows)==32 and valid==32,
                               'population_or_mathematical_efficacy_proven':False}
         save(output/'summary-private.json',{'schema_version':'1.0','scope':'Exploratory frozen-context prompt calibration; not population or architecture efficacy',
-             'protocol_version':version,
-             'availability_gate_policy':'32-token complete response' if probes else 'No additional probe; prior GLM transport response observed, formal 1024-token calibration starts directly',
              'experiment':cfg,'metadata':metadata,'results':results,'unstarted':unstarted,
              'availability_gates':gates,'readiness':readiness,'budget':budget.summary()})
         budget.db.close()
