@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-24",
+  "job_id": 220152,
+  "status": "partial_audit_found_difference",
+  "model_repo": "zai-org/GLM-5.3-Flash",
+  "revision": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a",
+  "file": "chat_template.jinja",
+  "local": {
+    "name": "chat_template.jinja",
+    "bytes": 10644,
+    "sha256": "34d5ee66b12fa6446cdae131c352b8f68cd85369e0e6fda115583805fada3891"
+  },
+  "official": {
+    "bytes": 10950,
+    "sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5",
+    "git_blob": "06bd89e94b96652fd5d76d9f9e11cfa15e09f49d",
+    "source": "https://huggingface.co/zai-org/GLM-5.3-Flash/resolve/eb9eb208eb0d988989d07a6a12d0fdeb5f52574a/chat_template.jinja"
+  },
+  "official_identity_verified": true,
+  "local_matches_earlier_inventory": true,
+  "administrator_files_changed": false,
+  "whole_model_identity_verified": false,
+  "interpretation": "Template mismatch against the selected revision; no causal attribution to gateway or past mathematical results."
+}

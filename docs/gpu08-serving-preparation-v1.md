@@ -34,3 +34,7 @@ Before model loading: finish file identity checks, obtain the scheduler allocati
 After loading: separately record small non-mathematical endpoint smoke requests with full responses, usage and latency. Check actual reasoning and structured-output behavior; provider-specific flags are not interchangeable. Only then freeze a new role-contract or population experiment. Model-serving success is not organization efficacy, reliable 10K execution or a mathematical proof.
 
 This preparation does not change old scores or authorize a new population comparison after M2.3's failed 32/32 format gate. A completed serving increment must include its own versioned HTML, executable source/parameter identities, full failure accounting and browser/evidence validation.
+
+## Follow-up finding during weight audit
+
+The ongoing audit found that local GLM `chat_template.jinja` has 10,644 bytes, while the pinned official revision has 10,950. Its local digest matches the earlier inventory; the separately fetched official file matches the repository Git blob identity. See `reports/gpu08-preparation-v1/template-difference.json` for both hashes and the source URL. Differences involve content handling, whitespace and tool-message serialization/control flow; they do not establish the cause of past gateway or mathematical failures. No administrator file was changed. A future independently mounted template must be separately versioned and recorded before generating new scientific data.
