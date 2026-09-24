@@ -114,3 +114,19 @@ python3 tools/build_role_milestone.py --output /tmp/role.html
 cmp milestones/m2-2-role-routing-v1.html /tmp/role.html
 python3 tools/validate_role_scale.py --output runs/a-new-scale-check.json
 ```
+
+## M2.3 four-role output-contract calibration
+
+[Milestone HTML](milestones/m2-3-role-contract-v1.html) · [v1 protocol](docs/role-contract-calibration-v1.md) · [v2 continuation](docs/role-contract-calibration-v2.md).
+
+After the M2.2 format failures, a separately frozen one-step calibration compares the old prompt with a final output card across four roles, two tasks, empty/archived contexts and two repeats. V1's DeepSeek transport error and GLM short-probe truncation are preserved with all 128 unstarted cells. A new frozen GLM-only v2 executed 64 requests: format validity rose from 15/32 to 25/32, with 14 card-only and four baseline-only valid pairs. The predeclared 32/32 readiness gate failed. All mathematical passes (6/32 vs 15/32) came from the prime control; NS scaling algebra passed 0/16 in both arms.
+
+Combined records retain 66 requests, 59,177 known tokens, one unknown-usage attempt, 524 events and both execution archives. Shared historical contexts and repeated tasks are dependent observations. These are developmental format results, not a new population comparison or frontier proof; token costs differ. GPU08 use is authorized, but scheduler admission and independently attested model serving remain open.
+
+```bash
+python3 tools/check_contract_evidence.py --batch v1
+python3 tools/check_contract_evidence.py --batch v2
+python3 tools/verify_artifacts.py role-contract-report-manifest.json
+python3 tools/build_contract_milestone.py --output /tmp/contract.html
+cmp milestones/m2-3-role-contract-v1.html /tmp/contract.html
+```

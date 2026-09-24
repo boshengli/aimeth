@@ -1,0 +1,15 @@
+# GLM formal-budget continuation · v2
+
+2026-09-23; separately frozen after v1, before these new requests. Preserve v1's source 8e92cd2, job 216243, both probes and all 128 unstarted calibration cells. Do not merge their denominators with v2 or rewrite the gate.
+
+Observed v1: DeepSeek returned HTTP 502. GLM returned a genuine model response with finish_reason=length and 55 reported tokens (23 input / 32 output), including reasoning and incomplete content. A 32-token complete-response requirement therefore withheld GLM calibration despite successful transport. This is evidence of an unsuitable probe cap, not evidence that the GLM service is unreachable, nor proof that the formal 1024-token output contract will work. The CPU-only inventory seeing no GPU devices cannot establish absence or idleness of GPU hardware; cgroup visibility is limited.
+
+The user asks not to dwell on institutional service diagnosis and permits GPU08 deployment if needed. Use the already responding GLM service now; no further DeepSeek probe, alternate model, public API call, deployment or GPU allocation is required for this calibration. A future deployment needs actual available resources and exact model/weight identity. Current scheduler allocates all eight GPUs; do not displace unrelated services. glm5.3FlashV remains a user-supplied name that has not been equated to a catalog ID or repository.
+
+## Changes from v1
+
+- Only glm-5.3-flash, 64 planned one-step calibration cells: two tasks × four roles × two unchanged context fixtures × two contracts × two repetitions. No new availability probe. The first actual calibration request uses the same 1024-token settings as all others.
+- New experiment seed 2026092302, new contract-v2 case IDs, source commit, local/shared roots and schedule. Preserve paired seeds and randomized paired order. The model and continuation decision are post-v1 observations, explicitly developmental.
+- Atomic maxima: 64 calls, 65,536 reserved output tokens, 1,048,576 serialized input bytes, 16,384 bytes/request; serial concurrency 1. Stop at 200,000 observed total tokens; in-flight overshoot possible. Thirty-minute coordinator / 35-minute Slurm / 120-second request limits. First dispatched transport error stops the model; no retries or adaptive extra calls. Truncations and malformed outputs remain scored exactly as before.
+
+Everything else stays as specified in role-contract-calibration-v1.md: actual prompts and OUTPUT_CARD, mathematical statements/evaluator, unchanged frozen fixtures, reference validation, no answer repairs, paired/stratified descriptive reporting, isolation from evaluator keys, receipt-first durable recording, and separate scientific limits. The readiness gate remains 32/32 complete format-valid output-card cells and only permits a further bounded multi-round check. No H/F superiority, reliability-at-scale, new independent task sample, or frontier proof is established. Report v1 and v2 separately in the M2.3 HTML and archive both execution sources.

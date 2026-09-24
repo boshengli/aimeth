@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-24",
+  "reviewer": "Codex",
+  "status": "passed",
+  "viewed_screenshots": [
+    "m2-3-role-contract-v1-1440-top.png",
+    "m2-3-role-contract-v1-390-top.png",
+    "m2-3-role-contract-v1-1440-deployment.png",
+    "m2-3-role-contract-v1-390-deployment.png",
+    "m2-3-role-contract-v1-1440.png"
+  ],
+  "findings": [
+    "Desktop and narrow titles, metric cards and caveats readable",
+    "No page-level overflow; narrow evidence tables scroll horizontally",
+    "Full-page structure and retained 64-case table inspected",
+    "Resource authorization is distinguished from unavailable scheduler allocation",
+    "Format improvement and failed gate remain prominent; no proof claim"
+  ],
+  "html_sha256": "5f525837da91736aa5552b84320198f8ff69c3aa12867631244c3d41b69d1f9a"
+}

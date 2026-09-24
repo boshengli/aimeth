@@ -1,0 +1,1714 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIMeth M2.3 · 四角色输出校准</title><style>
+
+:root{--ink:#19302d;--muted:#536963;--line:#d7e1da;--paper:#f4f6f1;--green:#147367;--amber:#925b16}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;line-height:1.75}a{color:#116d67;text-underline-offset:3px}header{background:#173d37;color:#f1f8f1;padding:62px max(24px,calc((100% - 1120px)/2)) 52px}header a{color:#c5efdf}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700}h1{font-size:clamp(30px,4vw,47px);line-height:1.3;font-weight:650;letter-spacing:-.02em;margin:22px 0}header p{max-width:800px;color:#d9e7dd}h2{font-size:26px;line-height:1.4;margin:8px 0 22px}h3{font-size:18px;margin:12px 0}main{max-width:1168px;margin:auto;padding:0 24px 56px}nav{display:flex;flex-wrap:wrap;gap:10px 24px;padding:22px 0;border-bottom:1px solid var(--line);font-size:14px}section{padding:40px 0;border-bottom:1px solid var(--line);scroll-margin-top:16px}.num{font-size:12px;color:var(--green);font-weight:700;letter-spacing:.12em}.muted,small{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:25px 0}.card,.pane{background:white;border:1px solid var(--line);border-radius:12px;padding:22px}.card b{display:block;font-size:33px;color:var(--green);line-height:1.2;margin:8px 0}.card small{display:block}.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}.callout{border-left:4px solid var(--green);padding:16px 20px;background:#e7f1ea;border-radius:0 8px 8px 0;margin:22px 0}.warn{border-color:#a5681d;background:#f5eddd}.pill{display:inline-block;font-size:12px;padding:3px 10px;border-radius:20px;background:#e5f0e9;color:#215e52;font-weight:600}.table-wrap{overflow:auto;max-width:100%;background:white;border:1px solid var(--line);border-radius:10px;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:14px;min-width:580px}th{text-align:left;background:#eaf0e9;white-space:nowrap;font-size:12px;color:#3b5750}td,th{padding:13px 15px;border-bottom:1px solid #e5ebe5;vertical-align:top}tbody tr:last-child td{border:0}td code{font-size:12px}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}pre{font-size:12px;line-height:1.6;white-space:pre-wrap;background:#eff3ee;padding:16px;border-radius:6px;max-width:100%;overflow:auto}p{margin:13px 0}ul,ol{padding-left:22px}li{margin:7px 0}details{margin:16px 0}summary{cursor:pointer;font-weight:600;color:#165e55}td details{margin:0;min-width:130px}td pre{min-width:240px;max-width:400px}svg{display:block;width:100%;max-height:330px}.controls{display:flex;align-items:end;flex-wrap:wrap;gap:16px;padding:15px 0}label{font-size:13px;font-weight:600}select,button{font:inherit;border:1px solid #adc3b6;border-radius:7px;background:white;color:#214b41;padding:9px 12px}select{display:block;margin-top:5px;max-width:100%}button{cursor:pointer}#filter-count{font-size:13px;color:var(--muted)}footer{font-size:12px;color:var(--muted);padding-top:25px}#evidence pre{max-height:500px}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:2;overflow-wrap:anywhere}#public-cases{min-width:850px}.scroll-note{font-size:12px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:700px){header{padding:36px 22px}main{padding:0 20px 32px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:16px}.card b{font-size:28px}.split{grid-template-columns:1fr}h2{font-size:23px}section{padding:30px 0}nav{gap:8px 16px}.pane{padding:18px}#evidence pre{font-size:11px}}@media print{body{background:white;color:black}header{background:white;color:black;padding:15px 0}header p{color:#333}main{max-width:none;padding:0}nav,.controls,#print,.scroll-note{display:none!important}section{padding:18px 0}h1{font-size:30px}h2{font-size:22px}.card,.pane{break-inside:avoid}.table-wrap{overflow:visible}table,#public-cases{min-width:0;font-size:9px}td,th{padding:6px;white-space:normal}a{color:inherit}#evidence pre{max-height:none}details pre{max-width:none;min-width:0}header a{color:inherit}}
+
+.bar{display:flex;border-radius:8px;overflow:hidden;height:18px;background:#dcded7;margin:16px 0}.bar span:first-child{background:#19786f;width:58.7379%}.bar span:last-child{background:#ba8b4b;flex:1}#runs{min-width:980px}.step-note{font-size:12px;color:#596c63}@media print{#runs{min-width:0}#runs td details{min-width:0}#runs tr[hidden]{display:table-row!important}}
+#cases{min-width:920px}.barline{display:grid;grid-template-columns:90px 1fr 75px;gap:12px;align-items:center;margin:18px 0}.track{height:22px;border-radius:5px;background:#e2e8e0;overflow:hidden}.fill{height:100%;background:#21756b}.fill.old{background:#8ba49a}.barline b{font-size:14px}@media print{#cases{min-width:0}#cases tr[hidden]{display:table-row!important}}
+</style></head><body>
+<header><div class="eyebrow">AIMeth / M2.3 / 2026.09.24</div><h1>输出格式改善，<br>仍未达到稳定门槛。</h1><p>相同任务、角色和已记录上下文下，末尾明确输出结构后，GLM 的格式合格数从 15/32 提高到 25/32。这是开发校准结果，尚不足以进入新的组织效果比较。</p><span class="pill">64 次正式校准</span> <span class="pill">旧批次失败保留</span></header>
+<main><nav aria-label="报告导航"><a href="#outcome">结果</a><a href="#design">设计</a><a href="#strata">角色与上下文</a><a href="#cases-section">全部记录</a><a href="#failure">失败批次</a><a href="#deployment">GPU08</a><a href="#evidence-section">证据</a></nav>
+<section id="outcome"><div class="num">01 / OBSERVED OUTCOME</div><h2>合格率增加 31.25 个百分点，仍有 7 个格式失败。</h2><div class="grid"><div class="card"><small>原提示 · 格式合格</small><b>15 / 32</b><small>46.875%</small></div><div class="card"><small>输出卡 · 格式合格</small><b>25 / 32</b><small>78.125%</small></div><div class="card"><small>正式校准已报告 tokens</small><b>59,122</b><small>未知用量 0 次</small></div><div class="card"><small>可复核事件</small><b>524</b><small>66 个已执行单步日志</small></div></div><div class="pane"><div class="barline"><span>原提示</span><div class="track"><div class="fill old" style="width:46.875%"></div></div><b>15 / 32</b></div><div class="barline"><span>输出卡</span><div class="track"><div class="fill" style="width:78.125%"></div></div><b>25 / 32</b></div><p>32 对条件中：11 对两者都合格，14 对仅输出卡合格，4 对仅原提示合格，3 对均不合格。新增提示并非对每个条件都有效。</p></div><div class="table-wrap"><table id="comparison"><thead><tr><th scope="col">提示</th><th scope="col">实际请求</th><th scope="col">格式合格</th><th scope="col">格式失败</th><th scope="col">技术未完成</th><th scope="col">数学通过</th><th scope="col">已报告 tokens</th></tr></thead><tbody><tr ><td>原提示</td><td>32</td><td>15</td><td>17</td><td>0</td><td>6</td><td>26,202</td></tr><tr ><td>输出卡</td><td>32</td><td>25</td><td>7</td><td>0</td><td>15</td><td>32,920</td></tr></tbody></table></div><p>数学通过数从 6/32 到 15/32，<strong>全部来自素数反例题</strong>；两种提示下 NS 缩放代数题均为 0/16。格式合格不是数学正确，更不是前沿证明。两臂输入长度及总 tokens 不相等，不能解释为等算力效果。</p><div class="callout warn"><strong>预设 32/32 格式门槛未通过。</strong>没有新的 H/F 群体比较、10K 实际推理或 Navier–Stokes 证明；不作 P 值、架构优劣或通用可靠性声明。</div></section>
+<section id="design"><div class="num">02 / FROZEN DESIGN</div><h2>保留数学内容，追加明确的输出结构说明。</h2><p>正式批次 v2：GLM × 2 个任务 × 4 种角色（E0/E1 探索、C 批评、S 综合）× 空/已记录上下文 × 原提示/输出卡 × 2 次重复，共 64 个请求。每对共用采样种子，事先随机化顺序，串行调用，无重试。</p><p>16 份上下文来自 M2.2：按任务和角色，取运行 ID、Agent ID 字典序最先的第 0 轮或第 2 轮请求，选择不读取数学评分。错误候选和格式失败标记均保留。它们是历史模型输出，<strong>不是新群体交互或参考答案</strong>。</p><p>原提示包含角色规则、原题和上下文；输出卡在末尾再次要求四个字段及证书嵌套，禁止回显输入。没有注入正确证书、修改验收器或修复旧评分。两臂 max_tokens=1024、temperature=0.6、top_p=1 和 JSON 对象选项一致。</p><p>客户端请求的思考选项不等于服务器生效设置。当前 vLLM 官方配方说明该 GLM 模型思考始终开启；这是未来独立部署需要核验的机制，不能反向认证现有网关行为。<a href="https://github.com/vllm-project/recipes/blob/main/models/zai-org/GLM-5.3-Flash.yaml">官方配方</a></p><details><summary>查看冻结的末尾输出卡</summary><pre>Now&#32;solve&#32;the&#32;mathematical&#32;task&#32;above.&#32;The&#32;preceding&#32;recorded&#32;context&#32;is&#32;input&#32;data,&#32;not&#32;an&#32;output&#32;template.&#32;Return&#32;your&#32;answer,&#32;not&#32;a&#32;description&#32;or&#32;copy&#32;of&#32;the&#32;input.&#32;Your&#32;entire&#32;response&#32;must&#32;be&#32;a&#32;JSON&#32;object&#32;with&#32;exactly&#32;four&#32;top-level&#32;keys:&#32;candidate,&#32;justification,&#32;objections,&#32;used_messages.&#32;candidate&#32;must&#32;be&#32;the&#32;task&#32;certificate&#32;object,&#32;with&#32;the&#32;task-requested&#32;fields&#32;and&#32;actual&#32;derived&#32;values&#32;nested&#32;inside&#32;it;&#32;never&#32;return&#32;those&#32;task&#32;fields&#32;at&#32;the&#32;top&#32;level.&#32;justification&#32;must&#32;be&#32;a&#32;string&#32;of&#32;at&#32;most&#32;512&#32;characters.&#32;objections&#32;must&#32;be&#32;an&#32;array&#32;of&#32;at&#32;most&#32;3&#32;strings,&#32;each&#32;at&#32;most&#32;160&#32;characters.&#32;used_messages&#32;must&#32;be&#32;an&#32;array&#32;of&#32;at&#32;most&#32;2&#32;distinct&#32;exact&#32;message_id&#32;strings&#32;from&#32;the&#32;incoming&#32;context,&#32;or&#32;[]&#32;when&#32;none&#32;were&#32;used.&#32;Do&#32;not&#32;cite&#32;a&#32;checkpoint&#32;as&#32;an&#32;incoming&#32;message.&#32;Before&#32;responding,&#32;check&#32;that&#32;the&#32;four&#32;top-level&#32;keys&#32;are&#32;present&#32;and&#32;no&#32;others&#32;are&#32;present.&#32;Do&#32;not&#32;include&#32;role,&#32;content,&#32;agent_id,&#32;checkpoint,&#32;incoming,&#32;round_index,&#32;schema,&#32;or&#32;metadata&#32;as&#32;top-level&#32;keys.&#32;No&#32;Markdown&#32;or&#32;text&#32;outside&#32;the&#32;JSON&#32;object.&#32;This&#32;output&#32;instruction&#32;contains&#32;no&#32;mathematical&#32;answer&#32;or&#32;evaluation&#32;feedback.</pre></details><p class="muted">这是观察先前失败后选择的开发干预，同时改变指令位置和输入长度。相同题目、角色和共享上下文不是独立任务样本；种子本身不构成复现证明。</p></section>
+<section id="strata"><div class="num">03 / STRATIFIED RESULTS</div><h2>批评者达到 8/8，其余角色仍有格式失败。</h2><div class="table-wrap"><table id="roles"><thead><tr><th scope="col">角色</th><th scope="col">提示</th><th scope="col">请求</th><th scope="col">格式合格</th><th scope="col">数学通过</th></tr></thead><tbody><tr ><td>C</td><td>原提示</td><td>8</td><td>4</td><td>2</td></tr><tr ><td>E0</td><td>原提示</td><td>8</td><td>3</td><td>1</td></tr><tr ><td>E1</td><td>原提示</td><td>8</td><td>5</td><td>1</td></tr><tr ><td>S</td><td>原提示</td><td>8</td><td>3</td><td>2</td></tr><tr ><td>C</td><td>输出卡</td><td>8</td><td>8</td><td>4</td></tr><tr ><td>E0</td><td>输出卡</td><td>8</td><td>5</td><td>4</td></tr><tr ><td>E1</td><td>输出卡</td><td>8</td><td>6</td><td>3</td></tr><tr ><td>S</td><td>输出卡</td><td>8</td><td>6</td><td>4</td></tr></tbody></table></div><h3>上下文条件</h3><div class="table-wrap"><table id="contexts"><thead><tr><th scope="col">上下文</th><th scope="col">提示</th><th scope="col">请求</th><th scope="col">格式合格</th><th scope="col">数学通过</th></tr></thead><tbody><tr ><td>空上下文</td><td>原提示</td><td>16</td><td>6</td><td>1</td></tr><tr ><td>已记录上下文</td><td>原提示</td><td>16</td><td>9</td><td>5</td></tr><tr ><td>空上下文</td><td>输出卡</td><td>16</td><td>13</td><td>8</td></tr><tr ><td>已记录上下文</td><td>输出卡</td><td>16</td><td>12</td><td>7</td></tr></tbody></table></div><h3>任务条件</h3><div class="table-wrap"><table id="tasks"><thead><tr><th scope="col">任务</th><th scope="col">提示</th><th scope="col">请求</th><th scope="col">格式合格</th><th scope="col">数学通过</th></tr></thead><tbody><tr ><td>NS 缩放代数</td><td>原提示</td><td>16</td><td>9</td><td>0</td></tr><tr ><td>素数反例</td><td>原提示</td><td>16</td><td>6</td><td>6</td></tr><tr ><td>NS 缩放代数</td><td>输出卡</td><td>16</td><td>10</td><td>0</td></tr><tr ><td>素数反例</td><td>输出卡</td><td>16</td><td>15</td><td>15</td></tr></tbody></table></div><details><summary>角色 × 上下文的全部交叉条件</summary><div class="table-wrap"><table id="cross"><thead><tr><th scope="col">角色</th><th scope="col">上下文</th><th scope="col">提示</th><th scope="col">请求</th><th scope="col">格式合格</th><th scope="col">数学通过</th></tr></thead><tbody><tr ><td>C</td><td>空上下文</td><td>原提示</td><td>4</td><td>2</td><td>1</td></tr><tr ><td>C</td><td>已记录上下文</td><td>原提示</td><td>4</td><td>2</td><td>1</td></tr><tr ><td>E0</td><td>空上下文</td><td>原提示</td><td>4</td><td>1</td><td>0</td></tr><tr ><td>E0</td><td>已记录上下文</td><td>原提示</td><td>4</td><td>2</td><td>1</td></tr><tr ><td>E1</td><td>空上下文</td><td>原提示</td><td>4</td><td>2</td><td>0</td></tr><tr ><td>E1</td><td>已记录上下文</td><td>原提示</td><td>4</td><td>3</td><td>1</td></tr><tr ><td>S</td><td>空上下文</td><td>原提示</td><td>4</td><td>1</td><td>0</td></tr><tr ><td>S</td><td>已记录上下文</td><td>原提示</td><td>4</td><td>2</td><td>2</td></tr><tr ><td>C</td><td>空上下文</td><td>输出卡</td><td>4</td><td>4</td><td>2</td></tr><tr ><td>C</td><td>已记录上下文</td><td>输出卡</td><td>4</td><td>4</td><td>2</td></tr><tr ><td>E0</td><td>空上下文</td><td>输出卡</td><td>4</td><td>3</td><td>2</td></tr><tr ><td>E0</td><td>已记录上下文</td><td>输出卡</td><td>4</td><td>2</td><td>2</td></tr><tr ><td>E1</td><td>空上下文</td><td>输出卡</td><td>4</td><td>3</td><td>2</td></tr><tr ><td>E1</td><td>已记录上下文</td><td>输出卡</td><td>4</td><td>3</td><td>1</td></tr><tr ><td>S</td><td>空上下文</td><td>输出卡</td><td>4</td><td>3</td><td>2</td></tr><tr ><td>S</td><td>已记录上下文</td><td>输出卡</td><td>4</td><td>3</td><td>2</td></tr></tbody></table></div></details><p>每角色每臂 8 次、每上下文每臂 16 次；角色 × 上下文每臂仅 4 次。以上均为描述性计数。</p></section>
+<section id="cases-section"><div class="num">04 / ALL FORMAL CASES</div><h2>64 个正式请求全部保留。</h2><div class="controls"><label>提示<select id="contract-filter"><option value="all">全部</option><option value="baseline">原提示</option><option value="output-card">输出卡</option></select></label><label>角色<select id="role-filter"><option value="all">全部</option><option>E0</option><option>E1</option><option>C</option><option>S</option></select></label><label>上下文<select id="context-filter"><option value="all">全部</option><option value="empty">空上下文</option><option value="recorded">已记录上下文</option></select></label><span id="filter-count" aria-live="polite">显示 64 / 64 个请求</span></div><p class="scroll-note">窄屏可在表格内横向滚动；打印显示全部记录。</p><div class="table-wrap"><table id="cases"><thead><tr><th scope="col">提示</th><th scope="col">角色</th><th scope="col">上下文</th><th scope="col">任务</th><th scope="col">重复</th><th scope="col">结果</th><th scope="col">tokens</th><th scope="col">候选</th></tr></thead><tbody><tr data-contract="output-card" data-role="E1" data-context="recorded"><td>输出卡</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1452</td><td><details><summary>候选与来源</summary><code>contract-v2-db49a258b4b7f45e2f0a8ffd</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="recorded"><td>原提示</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1345</td><td><details><summary>候选与来源</summary><code>contract-v2-edb5259f9a382d10320a327c</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="empty"><td>原提示</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>874</td><td><details><summary>候选与来源</summary><code>contract-v2-1799b6cae11f884219aae38f</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="empty"><td>输出卡</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>1080</td><td><details><summary>候选与来源</summary><code>contract-v2-56f4d88d4366a7055974f227</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-3,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="recorded"><td>输出卡</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>822</td><td><details><summary>候选与来源</summary><code>contract-v2-2c04986cd3a785f38049ce0a</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="recorded"><td>原提示</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>610</td><td><details><summary>候选与来源</summary><code>contract-v2-3cd0089e8f13fd08c45fec42</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="recorded"><td>输出卡</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>1076</td><td><details><summary>候选与来源</summary><code>contract-v2-3098bb337f951592af562ce7</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="recorded"><td>原提示</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>818</td><td><details><summary>候选与来源</summary><code>contract-v2-4041d708d2a50b3de5993d5f</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="recorded"><td>原提示</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>1041</td><td><details><summary>候选与来源</summary><code>contract-v2-77f16438af4528e925a9cc16</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="recorded"><td>输出卡</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>1189</td><td><details><summary>候选与来源</summary><code>contract-v2-2fc141b087b9ec1567774e48</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="empty"><td>输出卡</td><td>C</td><td>空上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>711</td><td><details><summary>候选与来源</summary><code>contract-v2-c112010df655407b87969a14</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="empty"><td>原提示</td><td>C</td><td>空上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>700</td><td><details><summary>候选与来源</summary><code>contract-v2-8121f4db9f35a9dc6244b036</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="recorded"><td>输出卡</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>1073</td><td><details><summary>候选与来源</summary><code>contract-v2-20eaa97962df6052aa556ca9</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="recorded"><td>原提示</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>828</td><td><details><summary>候选与来源</summary><code>contract-v2-a982e55e53aa45513b032b07</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="recorded"><td>原提示</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>752</td><td><details><summary>候选与来源</summary><code>contract-v2-49818715ad18cdb6c0f62930</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="recorded"><td>输出卡</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>981</td><td><details><summary>候选与来源</summary><code>contract-v2-d0b89f71445b9cca1f1c9164</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="recorded"><td>原提示</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>895</td><td><details><summary>候选与来源</summary><code>contract-v2-0e04bfc6ca00f8e2bc0dcac5</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="recorded"><td>输出卡</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>1255</td><td><details><summary>候选与来源</summary><code>contract-v2-c03685390e6f592ccdd64508</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="empty"><td>原提示</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>426</td><td><details><summary>候选与来源</summary><code>contract-v2-162c56dca12b678fbe137432</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="empty"><td>输出卡</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>686</td><td><details><summary>候选与来源</summary><code>contract-v2-66f3dce193fc364b744a6bee</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="empty"><td>输出卡</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1020</td><td><details><summary>候选与来源</summary><code>contract-v2-5d6745ce233f09413cac6f25</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-3,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="empty"><td>原提示</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>759</td><td><details><summary>候选与来源</summary><code>contract-v2-0918360e79db32852a1ef3aa</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-5,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="recorded"><td>原提示</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>格式失败</td><td>522</td><td><details><summary>候选与来源</summary><code>contract-v2-ccb80bdcae24dc8c5bbe9934</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="recorded"><td>输出卡</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>828</td><td><details><summary>候选与来源</summary><code>contract-v2-dd662c26d92efd3f6bd2ff54</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="empty"><td>原提示</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>874</td><td><details><summary>候选与来源</summary><code>contract-v2-818c25acf36832fb757ae2dd</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:0,&quot;e2&quot;:-2,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="empty"><td>输出卡</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>844</td><td><details><summary>候选与来源</summary><code>contract-v2-ec7048fd2ba608b59986a47d</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="empty"><td>输出卡</td><td>S</td><td>空上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>710</td><td><details><summary>候选与来源</summary><code>contract-v2-d0e28f12028fac00755e3dd6</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="empty"><td>原提示</td><td>S</td><td>空上下文</td><td>素数反例</td><td>1</td><td>格式失败</td><td>409</td><td><details><summary>候选与来源</summary><code>contract-v2-cdccb3253bbda6722c3946cd</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="recorded"><td>原提示</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>1712</td><td><details><summary>候选与来源</summary><code>contract-v2-9119d0434432efdc11f58b20</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="recorded"><td>输出卡</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>1987</td><td><details><summary>候选与来源</summary><code>contract-v2-d214b9b5bec03b389b5cb9b1</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="empty"><td>输出卡</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>1016</td><td><details><summary>候选与来源</summary><code>contract-v2-f21b4ec4b0dd64a05259c4d0</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-3,&quot;e2&quot;:-1,&quot;e3&quot;:-0.5}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="empty"><td>原提示</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>948</td><td><details><summary>候选与来源</summary><code>contract-v2-48713c0d95683ea16029a478</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="empty"><td>输出卡</td><td>S</td><td>空上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>728</td><td><details><summary>候选与来源</summary><code>contract-v2-fae331b54cf798c5f32b7b3b</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="empty"><td>原提示</td><td>S</td><td>空上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>436</td><td><details><summary>候选与来源</summary><code>contract-v2-5627c9a730338bf97280411a</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="recorded"><td>原提示</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>1349</td><td><details><summary>候选与来源</summary><code>contract-v2-9dc7208f2bfb1185403c3158</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="recorded"><td>输出卡</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>1430</td><td><details><summary>候选与来源</summary><code>contract-v2-c199064af13c46b7901073cc</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="recorded"><td>原提示</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>942</td><td><details><summary>候选与来源</summary><code>contract-v2-57ecbcf0aedd5d9c2d0efcea</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-3,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="recorded"><td>输出卡</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>977</td><td><details><summary>候选与来源</summary><code>contract-v2-dae65f67800b314fc535e293</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="empty"><td>原提示</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>1</td><td>格式失败</td><td>422</td><td><details><summary>候选与来源</summary><code>contract-v2-9b5bf7414a49bcf32c2c7995</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="empty"><td>输出卡</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>691</td><td><details><summary>候选与来源</summary><code>contract-v2-9c6d4bff688bbf22b7979237</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="recorded"><td>原提示</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>527</td><td><details><summary>候选与来源</summary><code>contract-v2-a84ee9ffcdf491bffba4db89</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="recorded"><td>输出卡</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>747</td><td><details><summary>候选与来源</summary><code>contract-v2-f60787b40aba4bdcdf75bf25</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="recorded"><td>原提示</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>577</td><td><details><summary>候选与来源</summary><code>contract-v2-b9556dd6fdbf23e61eee59fa</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="recorded"><td>输出卡</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>831</td><td><details><summary>候选与来源</summary><code>contract-v2-4d42532b767110bb1ac4e428</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="empty"><td>输出卡</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>869</td><td><details><summary>候选与来源</summary><code>contract-v2-478ad29c185c07d20811453f</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="empty"><td>原提示</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>800</td><td><details><summary>候选与来源</summary><code>contract-v2-40e637064286a9220c9041da</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:3,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="empty"><td>输出卡</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>848</td><td><details><summary>候选与来源</summary><code>contract-v2-f1ec16c763c6fd1fa19e5bd4</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="empty"><td>原提示</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>764</td><td><details><summary>候选与来源</summary><code>contract-v2-2a85eea3e6171028a75b6b16</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:1,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="output-card" data-role="E0" data-context="empty"><td>输出卡</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>693</td><td><details><summary>候选与来源</summary><code>contract-v2-1651b7f6b3efe5a58d0bda47</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E0" data-context="empty"><td>原提示</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>1</td><td>格式失败</td><td>400</td><td><details><summary>候选与来源</summary><code>contract-v2-5efdaeefa0d9d2d315bc3017</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="recorded"><td>输出卡</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1954</td><td><details><summary>候选与来源</summary><code>contract-v2-6eb07d19c14c38b942ea1478</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="recorded"><td>原提示</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1659</td><td><details><summary>候选与来源</summary><code>contract-v2-d40ae49640c6fe6daa4fffeb</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e2&quot;:-1,&quot;e3&quot;:0}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="empty"><td>原提示</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>822</td><td><details><summary>候选与来源</summary><code>contract-v2-bdc80649d3ac3dc48f78aad6</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="empty"><td>输出卡</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>1075</td><td><details><summary>候选与来源</summary><code>contract-v2-4a77189a3e39486955c53c28</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-2,&quot;d&quot;:-3,&quot;e2&quot;:-1,&quot;e3&quot;:-0.5}</pre></details></td></tr><tr data-contract="baseline" data-role="C" data-context="empty"><td>原提示</td><td>C</td><td>空上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>451</td><td><details><summary>候选与来源</summary><code>contract-v2-fc9142d9841498925dbe7a27</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="C" data-context="empty"><td>输出卡</td><td>C</td><td>空上下文</td><td>素数反例</td><td>1</td><td>数学通过</td><td>727</td><td><details><summary>候选与来源</summary><code>contract-v2-20ac97edc6b4c84f2eb4c80c</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="recorded"><td>原提示</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>1239</td><td><details><summary>候选与来源</summary><code>contract-v2-5253916c79f6972b875e5151</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="recorded"><td>输出卡</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>1518</td><td><details><summary>候选与来源</summary><code>contract-v2-8fe049063ff276b0b94ed3c8</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="baseline" data-role="E1" data-context="empty"><td>原提示</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>2</td><td>格式失败</td><td>389</td><td><details><summary>候选与来源</summary><code>contract-v2-6e03404806c9123c5580e668</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="E1" data-context="empty"><td>输出卡</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>2</td><td>数学通过</td><td>694</td><td><details><summary>候选与来源</summary><code>contract-v2-7ba9f7f8afdc4e2b3a564d8f</code><pre>{&quot;d&quot;:41,&quot;n&quot;:40}</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="empty"><td>输出卡</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>数学错误</td><td>988</td><td><details><summary>候选与来源</summary><code>contract-v2-b92c92b06f5fac560c9fd21e</code><pre>{&quot;a&quot;:-1,&quot;b&quot;:-2,&quot;c&quot;:-3,&quot;d&quot;:-5,&quot;e2&quot;:-1,&quot;e3&quot;:-2}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="empty"><td>原提示</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>1</td><td>格式失败</td><td>920</td><td><details><summary>候选与来源</summary><code>contract-v2-efc1e1466a24ce9cd2ae0d62</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr><tr data-contract="output-card" data-role="S" data-context="recorded"><td>输出卡</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>数学错误</td><td>1420</td><td><details><summary>候选与来源</summary><code>contract-v2-aaa5798df3b81899d619cde9</code><pre>{&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e2&quot;:-1,&quot;e3&quot;:-1}</pre></details></td></tr><tr data-contract="baseline" data-role="S" data-context="recorded"><td>原提示</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>2</td><td>格式失败</td><td>992</td><td><details><summary>候选与来源</summary><code>contract-v2-1a120faf7e8d620e859f4353</code><pre>没有可提取的合规候选；原始回答保存在事件中。</pre></details></td></tr></tbody></table></div></section>
+<section id="failure"><div class="num">05 / PRESERVED FAILED BATCH</div><h2>先行批次因探针门槛停止，原结果未改写。</h2><p>v1 作业 216243 完成两次探针，128 个校准单元全部未启动。DeepSeek 返回 HTTP 502；GLM 返回模型响应，但 32-token 输出预算耗尽，finish_reason=length，未达到预设完整回答门槛。不能据此宣称 GLM 网络不可用。</p><div class="table-wrap"><table id="probes"><thead><tr><th scope="col">模型</th><th scope="col">结果</th><th scope="col">已知 tokens</th><th scope="col">未知用量</th></tr></thead><tbody><tr ><td>deepseek-v4-flash-0731</td><td>HTTP 502</td><td>未知</td><td>1</td></tr><tr ><td>glm-5.3-flash</td><td>32-token 输出截断</td><td>55</td><td>0</td></tr></tbody></table></div><p>查看失败后另行冻结 v2：只对已经响应的 GLM 使用正式 1024-token 预算，新的源码、种子、运行 ID 和目录；不增加 DeepSeek 探针，不改写 v1 门槛。v1 未启动单元不混入 v2 的格式成功率。</p><details><summary>查看 v1 全部 128 个未启动单元</summary><div class="table-wrap"><table id="unstarted"><thead><tr><th scope="col">模型</th><th scope="col">角色</th><th scope="col">上下文</th><th scope="col">任务</th><th scope="col">提示</th><th scope="col">重复</th><th scope="col">状态</th><th scope="col">运行 ID</th></tr></thead><tbody><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-f4484ab90bdb8e300203bf21</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-fea8bcf29600918d7f77ae78</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-b52f691c16b073ec180c9b9d</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-b630c26166e286b1a71ed428</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-076296056736e10c0610e519</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-4d509dfaaa659a7eb2f84db7</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-9ec8bf25850eeef9e19a8963</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-e10db2bbe43f919d2f8e5d0f</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-40a306e2715d827a2c2e29ca</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-f3ba75ada97656f8c575c383</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-ca12edc182b64be745e06648</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-0a4a2b115a32fe9600814985</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-6b7331d3e0b9d9b6d6979671</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-3d5291912518d493f0b1abdc</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-a637a774d29e5f760e6672e3</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-3fefe4f120b19b382edc6f93</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-e3165ecd860047a65416ce7a</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-1029fa6bc1a2fb6fafbeb980</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-5187e79335426710caea7e16</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-34400e5e69a1ff3aa2b034d7</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-0f699b8699a828affe9bf47a</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-8fd61213d1242c7ff1e5ce4d</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-8f7829f7e5272a96d27e9b82</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-18209096cb73f2441833dea5</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-73c0a4b95b4bb0f8224acc12</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-33c2429176d1562b83130712</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-e612dcf46cbc2ff670e9bd5c</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-df8f11c00bfdd7b532dd192e</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-f50518741d0960b7d086fde8</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-296d33f1e497692407f91d99</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-60cf838b0cb3dce8011e44c8</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-b464eec5ae56112b96a8a007</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-d700d5fbc61f58a220b5aee0</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-ebb502d3564151633c25caea</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-f5911e804ec8e0985f1c073d</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-021438f8e308a63782183981</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-bd9ceef17105acb0419d0915</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-0751a44317babd849929b2ca</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-e6e031f3c389a438c917e4b5</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-4abee79bc4fc293e50d67a0e</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-13e9951d579d0bf4881ccce0</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-46ab57aa16db53c51edca894</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-301b351ecc5153f30380986c</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-dec19e9e4cf5cb056099ca9b</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-8fcb53a7c766f3fbb51c0a90</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-0101cbb03e6473890e2067bc</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-fb522fcef236a8c43269fc81</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-d7eab7ac496f7662fd3d5951</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-a6f9b21644d474b8f074ddde</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-dba1493609171ad1ecc83148</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-1f8472b2d55a3ef3ddf668e0</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-c9dbd8eebedcd036a06526b6</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-a92cf196f26b937bb986ff71</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-6b6187863f397cf278756524</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-bb248039e0608b3368264aa1</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-62d8ec96b52d223711b97342</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-932ab1734f8a6c9e5cdddd5f</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-c57ba9e1a99381c1399b1e10</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-dfc038ce8ab3b30843e46670</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-0dd7f69bf617f698ced026c2</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-09043fa961ffe121b200fe12</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-4ccad9844f47f482b7ab1005</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-38f30697fadbff356aec9d0e</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-54f0d69db47610f1b37e9ff6</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-960871c64423c8d9b7d37fa5</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-647d9baf815f44bca0562fe4</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-3a5354f4a319705ef1065036</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-c8bec0274b81e01f35a0ef5f</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-c180dddac8ed1ef9bd3c3f60</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-ded29c4e1133599cc27abf4b</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-2beacb0243dd2ea9cbb7c3cf</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-a5fd9a35322b300a6da5166b</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-e788b29db5656bbe7c9c54c6</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-749c92a7baa07eeb95dcffed</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-67e3e7ddc55e16d39665d236</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-da21246e115d317e9f45b8b8</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-50e5949e57c835ee14006836</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-e908f614049af356b8498ced</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-139cde331b1d87493cb9c9cd</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-a5dbc8a4245f3d80840f0bfa</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-e66fd3281b75605449ac06df</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-551451cacf8c6f9db1c0793c</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-bed37e813a3711f9c5b54fc0</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-da937155ee5c7ff511f9d8c8</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-23ad46b5501680302bd91780</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-d6adc21620c4db669caeb10b</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-088d23111ff56974e65099df</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-799f73df159e7388996e6e1b</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-b403c580ad861d00f159bd40</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-0c3ed2b0a395e83c3da3e05f</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-9faf7e3b7aaca242c3a6958d</td></tr><tr ><td>glm-5.3-flash</td><td>S</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-3154f25d1cdff568298b5608</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-ff3bf6a19d50f4a52b8057f4</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-7e31fd18dd8d5f4e37659cc4</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-9c8e18a3b2345e5e265d83b7</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-dc88a4c30258ccf75941bb49</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-4db6056b4a75ef5987eafa6f</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-ea45cb1d46f9a0f3dc7d95a6</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-2cb54f51055d154522ee5d99</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-6e79678c8c4ace8f8b7dfd8d</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-0a8bdc6a6dc426146525e38a</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-2bb045f8c44b42c004d046ce</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-d2cf5d152ac801bb10bf69b2</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-bd39abb436d5b9cd287e908f</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-0589e8bdc90d86e67eab646f</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-52f0f06d475ba650a45f0382</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-777e9abb0695cc69ce828744</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-375f713cddf621ce69231990</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-9de9523a8e5a24eb96c101d6</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-0215889b219aac36ee00ba83</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-60a2962a65cacdb3c5cb32ab</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-5d3543521019ca7100103bca</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-bd2598a59c32f23e8b778339</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-36785890eb037bdd0499381c</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-c7687383f46e3672159407fa</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>空上下文</td><td>NS 缩放代数</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-7828d253e560e827d89f3cd4</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-94af80cf9a04cf149d96b794</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>S</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-c5674566e555d4023a2ff9da</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>2</td><td>未启动</td><td>contract-6919c25c0b3abfce4545a05c</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>E1</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>2</td><td>未启动</td><td>contract-ce6d6b64db6dbbb533763533</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-4803f64671845f72a951a3d5</td></tr><tr ><td>glm-5.3-flash</td><td>E1</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-953fa4e9cfa50f0eac5d2d5b</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-bf0c829584e6f236b7b0908e</td></tr><tr ><td>glm-5.3-flash</td><td>E0</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-645e39d0361dab86429f327d</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-aed3091a98f9f712eb5004f6</td></tr><tr ><td>deepseek-v4-flash-0731</td><td>C</td><td>已记录上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-44fe5d6f3e11030df0fde45c</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>素数反例</td><td>原提示</td><td>1</td><td>未启动</td><td>contract-fa23c1949717e711bbc6210b</td></tr><tr ><td>glm-5.3-flash</td><td>C</td><td>空上下文</td><td>素数反例</td><td>输出卡</td><td>1</td><td>未启动</td><td>contract-80fac8757d01df65dad973d6</td></tr></tbody></table></div></details><p>两批合计 <strong>66 次请求、59,177 已知 tokens、1 次未知用量</strong>。v1 为 55 已知 tokens，v2 为 59,122；未知用量不计为零。</p></section>
+<section id="deployment"><div class="num">06 / GPU08 & NEXT STAGE</div><h2>GPU08 全部资源已获使用授权，独立部署继续推进。</h2><p>用户已明确允许本项目使用 GPU08 全部资源。已找到可读的 DeepSeek-V4-Flash-0731、GLM-5.3-Flash 权重和运行容器，可复用文件建立独立配置、端点与日志。官方 GLM-5.3-Flash 本身支持多模态；服务别名不等于权重认证。<a href="https://huggingface.co/zai-org/GLM-5.3-Flash">官方模型页</a></p><p>9 月 24 日资源复查时，Slurm 仍显示 <strong>8/8 GPU 已分配</strong>；整机短时申请返回 Requested nodes are busy。设置 PrivateData=jobs,usage 使当前账号无法识别其他用户作业。预约所属账户不等于实际占用作业账户。CPU 客户端看不到 GPU 设备不能证明物理 GPU 不存在。</p><div class="callout warn">本报告完成的是输出校准。独立服务还需要调度器释放占用、锁定容器与权重、核验实际参数并完成加载和端点验收。当前未启动新的 GPU 模型服务，也未改动其他用户作业。</div><div class="table-wrap"><table><thead><tr><th>用户要求</th><th>已完成证据</th><th>下一门槛</th></tr></thead><tbody><tr><td>组织设计和效果测试</td><td>64 次四角色校准，保留成对与分层结果</td><td>稳定输出后冻结多轮 H/F 比较</td></tr><tr><td>科学记录与阴性结果</td><td>两份独立协议、66 日志、524 事件、128 个未启动单元</td><td>独立任务实例、数学审查和证明义务</td></tr><tr><td>GPU08 自管服务</td><td>授权明确；已有权重、容器与调度限制已核对</td><td>获得调度资源，实际启动和验收</td></tr><tr><td>高效提交与生产日志</td><td>原子预算、事务回执、崩溃结算恢复、无隐藏重试</td><td>输入 token 准入、GPU 计量、多机恢复和 10K 实测</td></tr><tr><td>GitHub 和 HTML</td><td>源码归档、可回放事件、报告生成器与 QA</td><td>独立草稿审阅；历史报告保留</td></tr></tbody></table></div></section>
+<section id="evidence-section"><div class="num">07 / EVIDENCE & REPRODUCIBILITY</div><h2>两批分别归档，先验证原件再发布脱敏事件。</h2><p>v1 执行源 8e92cd2，运行前 83 项测试；v2 执行源 7b347be，运行前 84 项测试，均通过。作业 216243 / 216262 退出 0:0，分别耗时 3 / 81 秒；GPU08 客户端使用 2 CPU / 2 GB，没有新增 GPU 分配。实际推理节点和权重内容未独立认证。</p><p>66 份私有快照通过事件链检查；公开核验重建固定提示、上下文、种子、封套、引用范围、候选及数学结果。仅首个事件的院内端点脱敏，原始哈希需受限原件重建；其余请求、回执与状态可离线复核。</p><p>v2 上限 64 次调用、65,536 预留输出 tokens、每请求 16,384 字节、输入总计 1,048,576 字节；200,000 观察用量停止阈值允许在途超出。输入字节不等于精确输入 token，未声称等 GPU 时或等金额。</p><ul><li><a href="../docs/role-contract-calibration-v1.md">v1 协议</a> · <a href="../docs/role-contract-calibration-v2.md">v2 续跑协议</a> · <a href="../examples/role-contract-contexts-v1.json">上下文来源</a></li><li><a href="../reports/role-contract-v1/summary.json">v1 结果</a> · <a href="../reports/role-contract-v1/events.jsonl">v1 事件</a></li><li><a href="../reports/role-contract-v2/summary.json">v2 全部结果</a> · <a href="../reports/role-contract-v2/events.jsonl">v2 事件</a> · <a href="../reports/role-contract-v2/validation.json">验证记录</a></li><li><a href="../reports/role-contract-v2/v1-preflight-tests.txt">83 项测试</a> · <a href="../reports/role-contract-v2/v2-preflight-tests.txt">84 项测试</a> · <a href="m2-3-role-contract-v1.browser-qa.json">浏览器 QA</a> · <a href="../role-contract-report-manifest.json">SHA-256 清单</a></li><li><a href="m2-2-role-routing-v1.html">M2.2 报告</a> · <a href="https://github.com/boshengli/aimeth">GitHub 仓库</a></li></ul><pre>python3 tools/check_contract_evidence.py --batch v1
+python3 tools/check_contract_evidence.py --batch v2
+python3 tools/verify_artifacts.py role-contract-report-manifest.json
+python3 tools/build_contract_milestone.py --output /tmp/contract.html
+cmp milestones/m2-3-role-contract-v1.html /tmp/contract.html</pre><details id="evidence"><summary>结构化证据与文件哈希</summary><pre>{
+  &quot;schema_version&quot;: &quot;1.0&quot;,
+  &quot;milestone&quot;: &quot;M2.3&quot;,
+  &quot;date&quot;: &quot;2026-09-24&quot;,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;batches&quot;: {
+    &quot;v1&quot;: {
+      &quot;source&quot;: &quot;8e92cd2b9f94c7820ec43eb84a891bb63565db6e&quot;,
+      &quot;started&quot;: 2,
+      &quot;unstarted&quot;: 128,
+      &quot;aggregates&quot;: {
+        &quot;groups&quot;: [
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 32,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 32,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 32,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 32,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 8,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 16,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;deepseek-v4-flash-0731&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 0,
+            &quot;unstarted&quot;: 4,
+            &quot;format_valid&quot;: 0,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 0
+          }
+        ],
+        &quot;executed_pairs&quot;: 0,
+        &quot;paired_format_outcomes&quot;: {},
+        &quot;events&quot;: 12,
+        &quot;requests&quot;: 2,
+        &quot;known_tokens&quot;: 55,
+        &quot;unknown_usage_attempts&quot;: 1
+      }
+    },
+    &quot;v2&quot;: {
+      &quot;source&quot;: &quot;7b347be103a7df4b179a41a0482933030fbf35c6&quot;,
+      &quot;started&quot;: 64,
+      &quot;unstarted&quot;: 0,
+      &quot;aggregates&quot;: {
+        &quot;groups&quot;: [
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 32,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 15,
+            &quot;malformed&quot;: 17,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 6,
+            &quot;known_tokens&quot;: 26202
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;
+            },
+            &quot;planned&quot;: 32,
+            &quot;started&quot;: 32,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 25,
+            &quot;malformed&quot;: 7,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 15,
+            &quot;known_tokens&quot;: 32920
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 4,
+            &quot;malformed&quot;: 4,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 8091
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 5,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 5364
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 5,
+            &quot;malformed&quot;: 3,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 6195
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 5,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 6552
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 8,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 4,
+            &quot;known_tokens&quot;: 9923
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 5,
+            &quot;malformed&quot;: 3,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 4,
+            &quot;known_tokens&quot;: 6851
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 6,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 3,
+            &quot;known_tokens&quot;: 7852
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;
+            },
+            &quot;planned&quot;: 8,
+            &quot;started&quot;: 8,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 6,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 4,
+            &quot;known_tokens&quot;: 8294
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 6,
+            &quot;malformed&quot;: 10,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 10394
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 9,
+            &quot;malformed&quot;: 7,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 5,
+            &quot;known_tokens&quot;: 15808
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 13,
+            &quot;malformed&quot;: 3,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 8,
+            &quot;known_tokens&quot;: 13380
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 12,
+            &quot;malformed&quot;: 4,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 7,
+            &quot;known_tokens&quot;: 19540
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 9,
+            &quot;malformed&quot;: 7,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 16751
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 6,
+            &quot;malformed&quot;: 10,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 6,
+            &quot;known_tokens&quot;: 9451
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;ns-scaling-algebra-v1&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 10,
+            &quot;malformed&quot;: 6,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 19459
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;task_id&quot;: &quot;prime-counterexample&quot;
+            },
+            &quot;planned&quot;: 16,
+            &quot;started&quot;: 16,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 15,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 15,
+            &quot;known_tokens&quot;: 13461
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 2784
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 5307
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 1,
+            &quot;malformed&quot;: 3,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 2538
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 2826
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 2507
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 3688
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 1,
+            &quot;malformed&quot;: 3,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 0,
+            &quot;known_tokens&quot;: 2565
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;baseline&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3987
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 4,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3538
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;C&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 4,
+            &quot;malformed&quot;: 0,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 6385
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3243
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E0&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 2,
+            &quot;malformed&quot;: 2,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3608
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3304
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;E1&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 1,
+            &quot;known_tokens&quot;: 4548
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;empty&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 3295
+          },
+          {
+            &quot;dimensions&quot;: {
+              &quot;model&quot;: &quot;glm-5.3-flash&quot;,
+              &quot;contract&quot;: &quot;output-card&quot;,
+              &quot;role&quot;: &quot;S&quot;,
+              &quot;context&quot;: &quot;recorded&quot;
+            },
+            &quot;planned&quot;: 4,
+            &quot;started&quot;: 4,
+            &quot;unstarted&quot;: 0,
+            &quot;format_valid&quot;: 3,
+            &quot;malformed&quot;: 1,
+            &quot;technical&quot;: 0,
+            &quot;math_passed&quot;: 2,
+            &quot;known_tokens&quot;: 4999
+          }
+        ],
+        &quot;executed_pairs&quot;: 32,
+        &quot;paired_format_outcomes&quot;: {
+          &quot;both_valid&quot;: 11,
+          &quot;card_only_valid&quot;: 14,
+          &quot;neither_valid&quot;: 3,
+          &quot;baseline_only_valid&quot;: 4
+        },
+        &quot;events&quot;: 512,
+        &quot;requests&quot;: 64,
+        &quot;known_tokens&quot;: 59122,
+        &quot;unknown_usage_attempts&quot;: 0
+      }
+    }
+  },
+  &quot;input_hashes&quot;: {
+    &quot;reports/role-contract-v1/summary.json&quot;: &quot;32d57b2f191933840b8d23a97123d62dce67aada9c1b473d2a8047eb80f93ce1&quot;,
+    &quot;reports/role-contract-v1/events.jsonl&quot;: &quot;9a09ff07dcbf5c4c4887f760ce8332270c83c44b45145e2a4b9f1f34dcbe3987&quot;,
+    &quot;reports/role-contract-v2/summary.json&quot;: &quot;b9cf1c665ca9825f2bc6bf36ffad15e537cd1e117c341efd8385c39256a2eaf9&quot;,
+    &quot;reports/role-contract-v2/events.jsonl&quot;: &quot;67e29808649ef746c1f1d2b0f6f47efaac2a1817f4080b723cfa3973fc57eb47&quot;,
+    &quot;reports/role-contract-v2/validation.json&quot;: &quot;3d8f1c2009a76f9fd5e3a20e85c2c069db183263c66220c03ea296b8e0a17063&quot;,
+    &quot;examples/role-contract-contexts-v1.json&quot;: &quot;6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb&quot;,
+    &quot;docs/role-contract-calibration-v1.md&quot;: &quot;7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e&quot;,
+    &quot;docs/role-contract-calibration-v2.md&quot;: &quot;befa75190e7ddec59173a1b04e6f8c69502a5f5cb5cf5975f3384d39d405da60&quot;
+  },
+  &quot;validation&quot;: {
+    &quot;schema_version&quot;: &quot;1.0&quot;,
+    &quot;date&quot;: &quot;2026-09-23&quot;,
+    &quot;sources&quot;: {
+      &quot;v1&quot;: &quot;8e92cd2b9f94c7820ec43eb84a891bb63565db6e&quot;,
+      &quot;v2&quot;: &quot;7b347be103a7df4b179a41a0482933030fbf35c6&quot;
+    },
+    &quot;preflight_tests&quot;: {
+      &quot;v1&quot;: 83,
+      &quot;v2&quot;: 84
+    },
+    &quot;source_archive_matches_submission&quot;: true,
+    &quot;private_journals_verified&quot;: 66,
+    &quot;public_events_replayed&quot;: 524,
+    &quot;jobs&quot;: [
+      {
+        &quot;batch&quot;: &quot;v1&quot;,
+        &quot;id&quot;: 216243,
+        &quot;state&quot;: &quot;COMPLETED&quot;,
+        &quot;exit_code&quot;: &quot;0:0&quot;,
+        &quot;elapsed_seconds&quot;: 3,
+        &quot;cpus&quot;: 2,
+        &quot;memory_gib&quot;: 2,
+        &quot;new_gpu_allocation&quot;: false
+      },
+      {
+        &quot;batch&quot;: &quot;v2&quot;,
+        &quot;id&quot;: 216262,
+        &quot;state&quot;: &quot;COMPLETED&quot;,
+        &quot;exit_code&quot;: &quot;0:0&quot;,
+        &quot;elapsed_seconds&quot;: 81,
+        &quot;cpus&quot;: 2,
+        &quot;memory_gib&quot;: 2,
+        &quot;new_gpu_allocation&quot;: false
+      }
+    ],
+    &quot;client_node&quot;: &quot;gpu08&quot;,
+    &quot;inference_node_user_reported&quot;: &quot;GPU01&quot;,
+    &quot;inference_node_independently_attested&quot;: false,
+    &quot;gpu08_allocated_gpus&quot;: 8,
+    &quot;gpu08_measured_utilization&quot;: null,
+    &quot;cpu_only_device_inventory&quot;: &quot;No devices were found; this cannot establish physical GPU absence or idleness.&quot;,
+    &quot;deployment_direction&quot;: &quot;User prioritizes self-managed GPU08 services. Readable local model and container files found; GPU admission remains unavailable; no service replacement or new GPU allocation performed.&quot;,
+    &quot;limits&quot;: [
+      &quot;Frozen old model contexts, not new population interaction&quot;,
+      &quot;Public development tasks, no independent mathematical review or frontier proof&quot;,
+      &quot;Shared contexts and repeated same tasks, not independent task sample&quot;,
+      &quot;Output-card changes instruction placement and input length together&quot;,
+      &quot;No hard tokenizer-derived input-token cap or GPU-hour attribution&quot;,
+      &quot;Existing service options and weight identity not attested&quot;,
+      &quot;No live 10K inference or automatic multi-host recovery&quot;
+    ],
+    &quot;report_date&quot;: &quot;2026-09-24&quot;,
+    &quot;gpu08_admission&quot;: {
+      &quot;checked_date&quot;: &quot;2026-09-24&quot;,
+      &quot;user_authorized_all_node_resources&quot;: true,
+      &quot;allocated_gpus&quot;: 8,
+      &quot;occupying_job_identity_visible&quot;: false,
+      &quot;private_data&quot;: &quot;jobs,usage&quot;,
+      &quot;previous_immediate_allocation&quot;: {
+        &quot;job_id&quot;: 216301,
+        &quot;requested_gpus&quot;: 8,
+        &quot;result&quot;: &quot;Requested nodes are busy&quot;,
+        &quot;new_gpu_allocation&quot;: false
+      }
+    }
+  },
+  &quot;scope&quot;: &quot;Developmental one-step frozen-context format calibration; no population or frontier proof&quot;,
+  &quot;delivery_identity&quot;: &quot;Git commit containing this report; distinct from both execution sources&quot;
+}</pre></details><button id="print" type="button">打印 / 保存 PDF</button></section><footer>AIMeth · M2.3 v1.0 · 2026-09-24 · 核心内容可离线阅读。格式合格、工程测试和数学证明分别记录。</footer></main>
+<script>function update(){let count=0;for(const row of document.querySelectorAll('#cases tbody tr')){row.hidden=['contract','role','context'].some(k=>{const v=document.getElementById(k+'-filter').value;return v!=='all'&&row.dataset[k]!==v;});if(!row.hidden)count++;}document.getElementById('filter-count').textContent=`显示 ${count} / 64 个请求`;}for(const k of ['contract','role','context'])document.getElementById(k+'-filter').addEventListener('change',update);document.getElementById('print').addEventListener('click',()=>window.print());</script></body></html>
