@@ -1,0 +1,1694 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.3",
+  "date": "2026-09-24",
+  "version": "1.0",
+  "batches": {
+    "v1": {
+      "source": "8e92cd2b9f94c7820ec43eb84a891bb63565db6e",
+      "started": 2,
+      "unstarted": 128,
+      "aggregates": {
+        "groups": [
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline"
+            },
+            "planned": 32,
+            "started": 0,
+            "unstarted": 32,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card"
+            },
+            "planned": 32,
+            "started": 0,
+            "unstarted": 32,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline"
+            },
+            "planned": 32,
+            "started": 0,
+            "unstarted": 32,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card"
+            },
+            "planned": 32,
+            "started": 0,
+            "unstarted": 32,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 0,
+            "unstarted": 8,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 0,
+            "unstarted": 16,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "baseline",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "deepseek-v4-flash-0731",
+              "contract": "output-card",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 0,
+            "unstarted": 4,
+            "format_valid": 0,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 0
+          }
+        ],
+        "executed_pairs": 0,
+        "paired_format_outcomes": {},
+        "events": 12,
+        "requests": 2,
+        "known_tokens": 55,
+        "unknown_usage_attempts": 1
+      }
+    },
+    "v2": {
+      "source": "7b347be103a7df4b179a41a0482933030fbf35c6",
+      "started": 64,
+      "unstarted": 0,
+      "aggregates": {
+        "groups": [
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline"
+            },
+            "planned": 32,
+            "started": 32,
+            "unstarted": 0,
+            "format_valid": 15,
+            "malformed": 17,
+            "technical": 0,
+            "math_passed": 6,
+            "known_tokens": 26202
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card"
+            },
+            "planned": 32,
+            "started": 32,
+            "unstarted": 0,
+            "format_valid": 25,
+            "malformed": 7,
+            "technical": 0,
+            "math_passed": 15,
+            "known_tokens": 32920
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 4,
+            "malformed": 4,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 8091
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 5,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 5364
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 5,
+            "malformed": 3,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 6195
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 5,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 6552
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 8,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 4,
+            "known_tokens": 9923
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 5,
+            "malformed": 3,
+            "technical": 0,
+            "math_passed": 4,
+            "known_tokens": 6851
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 6,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 3,
+            "known_tokens": 7852
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S"
+            },
+            "planned": 8,
+            "started": 8,
+            "unstarted": 0,
+            "format_valid": 6,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 4,
+            "known_tokens": 8294
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 6,
+            "malformed": 10,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 10394
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 9,
+            "malformed": 7,
+            "technical": 0,
+            "math_passed": 5,
+            "known_tokens": 15808
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "context": "empty"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 13,
+            "malformed": 3,
+            "technical": 0,
+            "math_passed": 8,
+            "known_tokens": 13380
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "context": "recorded"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 12,
+            "malformed": 4,
+            "technical": 0,
+            "math_passed": 7,
+            "known_tokens": 19540
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 9,
+            "malformed": 7,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 16751
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 6,
+            "malformed": 10,
+            "technical": 0,
+            "math_passed": 6,
+            "known_tokens": 9451
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "task_id": "ns-scaling-algebra-v1"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 10,
+            "malformed": 6,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 19459
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "task_id": "prime-counterexample"
+            },
+            "planned": 16,
+            "started": 16,
+            "unstarted": 0,
+            "format_valid": 15,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 15,
+            "known_tokens": 13461
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 2784
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 5307
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 1,
+            "malformed": 3,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 2538
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 2826
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 2507
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 3688
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 1,
+            "malformed": 3,
+            "technical": 0,
+            "math_passed": 0,
+            "known_tokens": 2565
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "baseline",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3987
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 4,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3538
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "C",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 4,
+            "malformed": 0,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 6385
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3243
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E0",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 2,
+            "malformed": 2,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3608
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3304
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "E1",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 1,
+            "known_tokens": 4548
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S",
+              "context": "empty"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 3295
+          },
+          {
+            "dimensions": {
+              "model": "glm-5.3-flash",
+              "contract": "output-card",
+              "role": "S",
+              "context": "recorded"
+            },
+            "planned": 4,
+            "started": 4,
+            "unstarted": 0,
+            "format_valid": 3,
+            "malformed": 1,
+            "technical": 0,
+            "math_passed": 2,
+            "known_tokens": 4999
+          }
+        ],
+        "executed_pairs": 32,
+        "paired_format_outcomes": {
+          "both_valid": 11,
+          "card_only_valid": 14,
+          "neither_valid": 3,
+          "baseline_only_valid": 4
+        },
+        "events": 512,
+        "requests": 64,
+        "known_tokens": 59122,
+        "unknown_usage_attempts": 0
+      }
+    }
+  },
+  "input_hashes": {
+    "reports/role-contract-v1/summary.json": "32d57b2f191933840b8d23a97123d62dce67aada9c1b473d2a8047eb80f93ce1",
+    "reports/role-contract-v1/events.jsonl": "9a09ff07dcbf5c4c4887f760ce8332270c83c44b45145e2a4b9f1f34dcbe3987",
+    "reports/role-contract-v2/summary.json": "b9cf1c665ca9825f2bc6bf36ffad15e537cd1e117c341efd8385c39256a2eaf9",
+    "reports/role-contract-v2/events.jsonl": "67e29808649ef746c1f1d2b0f6f47efaac2a1817f4080b723cfa3973fc57eb47",
+    "reports/role-contract-v2/validation.json": "3d8f1c2009a76f9fd5e3a20e85c2c069db183263c66220c03ea296b8e0a17063",
+    "examples/role-contract-contexts-v1.json": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb",
+    "docs/role-contract-calibration-v1.md": "7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e",
+    "docs/role-contract-calibration-v2.md": "befa75190e7ddec59173a1b04e6f8c69502a5f5cb5cf5975f3384d39d405da60"
+  },
+  "validation": {
+    "schema_version": "1.0",
+    "date": "2026-09-23",
+    "sources": {
+      "v1": "8e92cd2b9f94c7820ec43eb84a891bb63565db6e",
+      "v2": "7b347be103a7df4b179a41a0482933030fbf35c6"
+    },
+    "preflight_tests": {
+      "v1": 83,
+      "v2": 84
+    },
+    "source_archive_matches_submission": true,
+    "private_journals_verified": 66,
+    "public_events_replayed": 524,
+    "jobs": [
+      {
+        "batch": "v1",
+        "id": 216243,
+        "state": "COMPLETED",
+        "exit_code": "0:0",
+        "elapsed_seconds": 3,
+        "cpus": 2,
+        "memory_gib": 2,
+        "new_gpu_allocation": false
+      },
+      {
+        "batch": "v2",
+        "id": 216262,
+        "state": "COMPLETED",
+        "exit_code": "0:0",
+        "elapsed_seconds": 81,
+        "cpus": 2,
+        "memory_gib": 2,
+        "new_gpu_allocation": false
+      }
+    ],
+    "client_node": "gpu08",
+    "inference_node_user_reported": "GPU01",
+    "inference_node_independently_attested": false,
+    "gpu08_allocated_gpus": 8,
+    "gpu08_measured_utilization": null,
+    "cpu_only_device_inventory": "No devices were found; this cannot establish physical GPU absence or idleness.",
+    "deployment_direction": "User prioritizes self-managed GPU08 services. Readable local model and container files found; GPU admission remains unavailable; no service replacement or new GPU allocation performed.",
+    "limits": [
+      "Frozen old model contexts, not new population interaction",
+      "Public development tasks, no independent mathematical review or frontier proof",
+      "Shared contexts and repeated same tasks, not independent task sample",
+      "Output-card changes instruction placement and input length together",
+      "No hard tokenizer-derived input-token cap or GPU-hour attribution",
+      "Existing service options and weight identity not attested",
+      "No live 10K inference or automatic multi-host recovery"
+    ],
+    "report_date": "2026-09-24",
+    "gpu08_admission": {
+      "checked_date": "2026-09-24",
+      "user_authorized_all_node_resources": true,
+      "allocated_gpus": 8,
+      "occupying_job_identity_visible": false,
+      "private_data": "jobs,usage",
+      "previous_immediate_allocation": {
+        "job_id": 216301,
+        "requested_gpus": 8,
+        "result": "Requested nodes are busy",
+        "new_gpu_allocation": false
+      }
+    }
+  },
+  "scope": "Developmental one-step frozen-context format calibration; no population or frontier proof",
+  "delivery_identity": "Git commit containing this report; distinct from both execution sources"
+}

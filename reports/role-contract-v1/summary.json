@@ -1,0 +1,3169 @@
+{
+  "schema_version": "1.0",
+  "scope": "Exploratory frozen-context prompt calibration; not population or architecture efficacy",
+  "experiment": {
+    "schema_version": "1.0",
+    "seed": 20260923,
+    "models": [
+      "glm-5.3-flash",
+      "deepseek-v4-flash-0731"
+    ],
+    "endpoint": "[INSTITUTIONAL_GATEWAY_REDACTED]",
+    "source_commit": "8e92cd2b9f94c7820ec43eb84a891bb63565db6e",
+    "inference_node_user_reported": "GPU01",
+    "inference_node_independently_attested": false,
+    "protocol": "docs/role-contract-calibration-v1.md",
+    "fixture_file_sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb"
+  },
+  "metadata": {
+    "started_at": 1790166591.4169855,
+    "deadline": 1790168391.4169858,
+    "job_id": "216243",
+    "hostname": "gpu08"
+  },
+  "results": [
+    {
+      "case": {
+        "phase": "availability",
+        "model": "deepseek-v4-flash-0731",
+        "seed": 20260923,
+        "case_id": "availability-10dff0a00ee89a1fab505d22"
+      },
+      "manifest_sha256": "65d98d4980fa87da342b7f8b14d6891da6d53c83541915b6ec4d500295409882",
+      "status": {
+        "run_id": "availability-10dff0a00ee89a1fab505d22",
+        "fingerprint": "65d98d4980fa87da342b7f8b14d6891da6d53c83541915b6ec4d500295409882",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "mathematical_evaluation": false
+      },
+      "envelope_status": null,
+      "errors": [
+        {
+          "category": "http_error",
+          "http_status": 502
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "events": 6,
+        "tail_hash": "f0991b15a479e7135b929f4a74e693f25763051e78a2cd3c01cb1c36cc5e5586",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.13928441400639713,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 205,
+        "reserved_output_tokens": 32,
+        "usage": {},
+        "unknown_usage_attempts": 1,
+        "finish_reasons": {},
+        "envelope_diagnostics": {},
+        "valid_fixture_references": 0
+      },
+      "raw_events_jsonl_sha256": "3f1c12aa85bbaf76efa2d6807cead590f387c092785fdfe7463d134a4c0efd3a",
+      "raw_snapshot_sqlite_sha256": "7cb22d603eac4f19a3ad255aa98002e28d772efd7d95c3ab7cea3c81f7a9dbd8"
+    },
+    {
+      "case": {
+        "phase": "availability",
+        "model": "glm-5.3-flash",
+        "seed": 20260923,
+        "case_id": "availability-b8ccc47c0b0b5413bf88683f"
+      },
+      "manifest_sha256": "68da9cb30bfa9a6a3f84055c1f809eb5dbf5442428e1ea97a80f5681f1a58636",
+      "status": {
+        "run_id": "availability-b8ccc47c0b0b5413bf88683f",
+        "fingerprint": "68da9cb30bfa9a6a3f84055c1f809eb5dbf5442428e1ea97a80f5681f1a58636",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 55,
+        "unknown_usage_attempts": 0,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "mathematical_evaluation": false
+      },
+      "envelope_status": null,
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 6,
+        "tail_hash": "62835a0f951c9d203adfa262c0ba3c455081ce3c295f7765ef9399e5ce790fae",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.42682196997338906,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 196,
+        "reserved_output_tokens": 32,
+        "usage": {
+          "prompt_tokens": 23,
+          "completion_tokens": 32,
+          "total_tokens": 55
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "length": 1
+        },
+        "envelope_diagnostics": {},
+        "valid_fixture_references": 0
+      },
+      "raw_events_jsonl_sha256": "b23adca55c27ebda5f94e50e1fff6aa32ad4fcc9c8e898f98882e069e2500182",
+      "raw_snapshot_sqlite_sha256": "2ba11a7fe8a93a11e719def627599a71fef34808b4c9d0243a83a002d20fe09d"
+    }
+  ],
+  "unstarted": [
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2682331398,
+        "case_id": "contract-f4484ab90bdb8e300203bf21",
+        "block_order": "0b7e35cc4011116a85aa82c346795a11b4d24af855b4e6cca95f34387b84073d"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2682331398,
+        "case_id": "contract-fea8bcf29600918d7f77ae78",
+        "block_order": "0b7e35cc4011116a85aa82c346795a11b4d24af855b4e6cca95f34387b84073d"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1556510586,
+        "case_id": "contract-b52f691c16b073ec180c9b9d",
+        "block_order": "0c094f7338e4afe595a6587591d818659d74f157eda4783140cca6a4d5c6119d"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1556510586,
+        "case_id": "contract-b630c26166e286b1a71ed428",
+        "block_order": "0c094f7338e4afe595a6587591d818659d74f157eda4783140cca6a4d5c6119d"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1865116172,
+        "case_id": "contract-076296056736e10c0610e519",
+        "block_order": "1dbe7d44129b1685655c10772cb48ffd813af080bc60f46f6dadf0765e4d5c53"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1865116172,
+        "case_id": "contract-4d509dfaaa659a7eb2f84db7",
+        "block_order": "1dbe7d44129b1685655c10772cb48ffd813af080bc60f46f6dadf0765e4d5c53"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 4174991906,
+        "case_id": "contract-9ec8bf25850eeef9e19a8963",
+        "block_order": "1fdc95435d0df0b9ce476aa918bae9ca83a412e3b9bdda16b5c0253e50f168cf"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 4174991906,
+        "case_id": "contract-e10db2bbe43f919d2f8e5d0f",
+        "block_order": "1fdc95435d0df0b9ce476aa918bae9ca83a412e3b9bdda16b5c0253e50f168cf"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3655447158,
+        "case_id": "contract-40a306e2715d827a2c2e29ca",
+        "block_order": "20d663579ab3517bcf87bc663fff9989f797b3b57f48084b17dcb0cad8abc8d1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3655447158,
+        "case_id": "contract-f3ba75ada97656f8c575c383",
+        "block_order": "20d663579ab3517bcf87bc663fff9989f797b3b57f48084b17dcb0cad8abc8d1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 669600986,
+        "case_id": "contract-ca12edc182b64be745e06648",
+        "block_order": "20d8fb6a06cc5ba13ee0b4ae7f3b6245301763e3e4dbd42b433fefc637cd71cd"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 669600986,
+        "case_id": "contract-0a4a2b115a32fe9600814985",
+        "block_order": "20d8fb6a06cc5ba13ee0b4ae7f3b6245301763e3e4dbd42b433fefc637cd71cd"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3037570417,
+        "case_id": "contract-6b7331d3e0b9d9b6d6979671",
+        "block_order": "2aeb4294030f96f8caf9132fcb6bf82878831ece682884b72d75b88219f49021"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3037570417,
+        "case_id": "contract-3d5291912518d493f0b1abdc",
+        "block_order": "2aeb4294030f96f8caf9132fcb6bf82878831ece682884b72d75b88219f49021"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 143978582,
+        "case_id": "contract-a637a774d29e5f760e6672e3",
+        "block_order": "312d5dbd6c7aab541d192a1415d88e779331641d90a46bad7f653134570964d1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 143978582,
+        "case_id": "contract-3fefe4f120b19b382edc6f93",
+        "block_order": "312d5dbd6c7aab541d192a1415d88e779331641d90a46bad7f653134570964d1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3882457100,
+        "case_id": "contract-e3165ecd860047a65416ce7a",
+        "block_order": "33b4f5ec23c497625526e5cb43258a53877ea2d67fbdd5d6ff4c37e79a23ae43"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3882457100,
+        "case_id": "contract-1029fa6bc1a2fb6fafbeb980",
+        "block_order": "33b4f5ec23c497625526e5cb43258a53877ea2d67fbdd5d6ff4c37e79a23ae43"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1706264373,
+        "case_id": "contract-5187e79335426710caea7e16",
+        "block_order": "36d92deb3f3f71d23eb47b1266e66204b8fae5c28b0ed71155d14a25532ff180"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1706264373,
+        "case_id": "contract-34400e5e69a1ff3aa2b034d7",
+        "block_order": "36d92deb3f3f71d23eb47b1266e66204b8fae5c28b0ed71155d14a25532ff180"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2007043844,
+        "case_id": "contract-0f699b8699a828affe9bf47a",
+        "block_order": "3a4086f15c9bc9aa0d088b82ae4146b8530d01734ae90383fab197232fad2687"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2007043844,
+        "case_id": "contract-8fd61213d1242c7ff1e5ce4d",
+        "block_order": "3a4086f15c9bc9aa0d088b82ae4146b8530d01734ae90383fab197232fad2687"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 878736523,
+        "case_id": "contract-8f7829f7e5272a96d27e9b82",
+        "block_order": "3c5b861bf9c0aec123717f35f02fcaf2f08b18cd58294d2cc09a34c0f8d97817"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 878736523,
+        "case_id": "contract-18209096cb73f2441833dea5",
+        "block_order": "3c5b861bf9c0aec123717f35f02fcaf2f08b18cd58294d2cc09a34c0f8d97817"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1532128300,
+        "case_id": "contract-73c0a4b95b4bb0f8224acc12",
+        "block_order": "3d321d4496947fba24c251722e3323a31202a0267d743f9db7527371ca78ea31"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1532128300,
+        "case_id": "contract-33c2429176d1562b83130712",
+        "block_order": "3d321d4496947fba24c251722e3323a31202a0267d743f9db7527371ca78ea31"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3939700179,
+        "case_id": "contract-e612dcf46cbc2ff670e9bd5c",
+        "block_order": "41195261661abf899579532d8f8ca1e703cbc2172500a18ce289380ad9bf12b2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3939700179,
+        "case_id": "contract-df8f11c00bfdd7b532dd192e",
+        "block_order": "41195261661abf899579532d8f8ca1e703cbc2172500a18ce289380ad9bf12b2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1223821805,
+        "case_id": "contract-f50518741d0960b7d086fde8",
+        "block_order": "44dc68c070835d945c13d7725d53e339bab451f7acbf61200b99b6d884970460"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1223821805,
+        "case_id": "contract-296d33f1e497692407f91d99",
+        "block_order": "44dc68c070835d945c13d7725d53e339bab451f7acbf61200b99b6d884970460"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 4135694605,
+        "case_id": "contract-60cf838b0cb3dce8011e44c8",
+        "block_order": "48803a3c9d44f4c1a301aff46af24abeab7a1f0e6f55d5ae03ace0b36e2ad3b7"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 4135694605,
+        "case_id": "contract-b464eec5ae56112b96a8a007",
+        "block_order": "48803a3c9d44f4c1a301aff46af24abeab7a1f0e6f55d5ae03ace0b36e2ad3b7"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1215184205,
+        "case_id": "contract-d700d5fbc61f58a220b5aee0",
+        "block_order": "4f708f28f62fe4b1d7371507eb1d13607dfb17aacc5d068636469f17db730b86"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1215184205,
+        "case_id": "contract-ebb502d3564151633c25caea",
+        "block_order": "4f708f28f62fe4b1d7371507eb1d13607dfb17aacc5d068636469f17db730b86"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1295012723,
+        "case_id": "contract-f5911e804ec8e0985f1c073d",
+        "block_order": "52dfb5b1a1cc4245cb06001293c9d1f15d8176f48a2454fbb68be974b30dba36"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1295012723,
+        "case_id": "contract-021438f8e308a63782183981",
+        "block_order": "52dfb5b1a1cc4245cb06001293c9d1f15d8176f48a2454fbb68be974b30dba36"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 856131659,
+        "case_id": "contract-bd9ceef17105acb0419d0915",
+        "block_order": "537fc9525a6e3b8fb6a93c0fd477d8f866a9593dbf702f7e2e3d36d7e5d54377"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 856131659,
+        "case_id": "contract-0751a44317babd849929b2ca",
+        "block_order": "537fc9525a6e3b8fb6a93c0fd477d8f866a9593dbf702f7e2e3d36d7e5d54377"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 110024924,
+        "case_id": "contract-e6e031f3c389a438c917e4b5",
+        "block_order": "54ca4c6171055012762d781299fc4cd742585170f7b5822984101efac4138582"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 110024924,
+        "case_id": "contract-4abee79bc4fc293e50d67a0e",
+        "block_order": "54ca4c6171055012762d781299fc4cd742585170f7b5822984101efac4138582"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 867318881,
+        "case_id": "contract-13e9951d579d0bf4881ccce0",
+        "block_order": "554e2e3e0bbfa124a75243782eb40f3d80c8ba60c14daaee1ef412b8c474aaa2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 867318881,
+        "case_id": "contract-46ab57aa16db53c51edca894",
+        "block_order": "554e2e3e0bbfa124a75243782eb40f3d80c8ba60c14daaee1ef412b8c474aaa2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1240376756,
+        "case_id": "contract-301b351ecc5153f30380986c",
+        "block_order": "59dfb653ca569362000e5a6fcdd3e302f4ae0b73597b636ecaa04b3ef3fe171c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1240376756,
+        "case_id": "contract-dec19e9e4cf5cb056099ca9b",
+        "block_order": "59dfb653ca569362000e5a6fcdd3e302f4ae0b73597b636ecaa04b3ef3fe171c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 468411450,
+        "case_id": "contract-8fcb53a7c766f3fbb51c0a90",
+        "block_order": "5b6c7f4ea03c96cf3ee7d7346d0832ff26b85b307450e3052e993b812dd6fa06"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 468411450,
+        "case_id": "contract-0101cbb03e6473890e2067bc",
+        "block_order": "5b6c7f4ea03c96cf3ee7d7346d0832ff26b85b307450e3052e993b812dd6fa06"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 503110431,
+        "case_id": "contract-fb522fcef236a8c43269fc81",
+        "block_order": "5c86f0eaf9d0b83de453a4db7febcbe93fc4289cac115d793c81d874bfbeb4f2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 503110431,
+        "case_id": "contract-d7eab7ac496f7662fd3d5951",
+        "block_order": "5c86f0eaf9d0b83de453a4db7febcbe93fc4289cac115d793c81d874bfbeb4f2"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1826417035,
+        "case_id": "contract-a6f9b21644d474b8f074ddde",
+        "block_order": "5d004bbc5fa70d40b35dbf14fbd60238c50f7973fe80f0ead753949f45c4685e"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1826417035,
+        "case_id": "contract-dba1493609171ad1ecc83148",
+        "block_order": "5d004bbc5fa70d40b35dbf14fbd60238c50f7973fe80f0ead753949f45c4685e"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 288889590,
+        "case_id": "contract-1f8472b2d55a3ef3ddf668e0",
+        "block_order": "5d048aace34174d1f299fef32a41acb08b22561c17c04c36a960fb28cb1e9d50"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 288889590,
+        "case_id": "contract-c9dbd8eebedcd036a06526b6",
+        "block_order": "5d048aace34174d1f299fef32a41acb08b22561c17c04c36a960fb28cb1e9d50"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2594016485,
+        "case_id": "contract-a92cf196f26b937bb986ff71",
+        "block_order": "6727e058919690cfc66f02103293a3cdef5df2a954a5d2a8f478354058d94bc0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2594016485,
+        "case_id": "contract-6b6187863f397cf278756524",
+        "block_order": "6727e058919690cfc66f02103293a3cdef5df2a954a5d2a8f478354058d94bc0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1811634233,
+        "case_id": "contract-bb248039e0608b3368264aa1",
+        "block_order": "6a69ded94b96e6d4a6071d3da6098e67591998f379442899a8311ed71ef26c24"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1811634233,
+        "case_id": "contract-62d8ec96b52d223711b97342",
+        "block_order": "6a69ded94b96e6d4a6071d3da6098e67591998f379442899a8311ed71ef26c24"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2567899461,
+        "case_id": "contract-932ab1734f8a6c9e5cdddd5f",
+        "block_order": "6c0b9d8c32a052006d410cb561530424fb2967919059434fdfb5432c74a9acaa"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2567899461,
+        "case_id": "contract-c57ba9e1a99381c1399b1e10",
+        "block_order": "6c0b9d8c32a052006d410cb561530424fb2967919059434fdfb5432c74a9acaa"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 543869060,
+        "case_id": "contract-dfc038ce8ab3b30843e46670",
+        "block_order": "7a5852249e8633e9ac53bd7f24eca750f621d94508eebb158d490340bf301b01"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 543869060,
+        "case_id": "contract-0dd7f69bf617f698ced026c2",
+        "block_order": "7a5852249e8633e9ac53bd7f24eca750f621d94508eebb158d490340bf301b01"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 547259861,
+        "case_id": "contract-09043fa961ffe121b200fe12",
+        "block_order": "7e272e5f9c8eb1a9e012676e08151ac9d1520e3b1862c26bfef72c8ed621b406"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 547259861,
+        "case_id": "contract-4ccad9844f47f482b7ab1005",
+        "block_order": "7e272e5f9c8eb1a9e012676e08151ac9d1520e3b1862c26bfef72c8ed621b406"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3671628983,
+        "case_id": "contract-38f30697fadbff356aec9d0e",
+        "block_order": "92ad00ca3dc6bbebad5c7f3c2fd080f31f4f6146f133a52bdccfc0a1500ee2e4"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3671628983,
+        "case_id": "contract-54f0d69db47610f1b37e9ff6",
+        "block_order": "92ad00ca3dc6bbebad5c7f3c2fd080f31f4f6146f133a52bdccfc0a1500ee2e4"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2913753105,
+        "case_id": "contract-960871c64423c8d9b7d37fa5",
+        "block_order": "99eefd474492dd75003c7176b7de23ef90870260ca819c703f7b647d4f787c69"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2913753105,
+        "case_id": "contract-647d9baf815f44bca0562fe4",
+        "block_order": "99eefd474492dd75003c7176b7de23ef90870260ca819c703f7b647d4f787c69"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1979212482,
+        "case_id": "contract-3a5354f4a319705ef1065036",
+        "block_order": "9c6b331c698cbda0432e181f75188a2c02faf594df7e29c64ad58793d4e6eb16"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1979212482,
+        "case_id": "contract-c8bec0274b81e01f35a0ef5f",
+        "block_order": "9c6b331c698cbda0432e181f75188a2c02faf594df7e29c64ad58793d4e6eb16"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 68620157,
+        "case_id": "contract-c180dddac8ed1ef9bd3c3f60",
+        "block_order": "a0b63ff230f6f74b5050d90cff28fdb11cebdb6985ff06337f52eb60b7917dc7"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 68620157,
+        "case_id": "contract-ded29c4e1133599cc27abf4b",
+        "block_order": "a0b63ff230f6f74b5050d90cff28fdb11cebdb6985ff06337f52eb60b7917dc7"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3730919123,
+        "case_id": "contract-2beacb0243dd2ea9cbb7c3cf",
+        "block_order": "a553bdd4ea780b2a4eed2f3a9827a389ec2feca36b3ba79892d13820ff72c0da"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3730919123,
+        "case_id": "contract-a5fd9a35322b300a6da5166b",
+        "block_order": "a553bdd4ea780b2a4eed2f3a9827a389ec2feca36b3ba79892d13820ff72c0da"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1002796130,
+        "case_id": "contract-e788b29db5656bbe7c9c54c6",
+        "block_order": "b147d1f75f09d3ba62298af56e385e4a9b1ad93a2e951fe9ce856c2001d00291"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1002796130,
+        "case_id": "contract-749c92a7baa07eeb95dcffed",
+        "block_order": "b147d1f75f09d3ba62298af56e385e4a9b1ad93a2e951fe9ce856c2001d00291"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2193551277,
+        "case_id": "contract-67e3e7ddc55e16d39665d236",
+        "block_order": "b575d0c2ed979ae2bd7023ea4f35c480cff004b863e8577eef0827e34b841792"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2193551277,
+        "case_id": "contract-da21246e115d317e9f45b8b8",
+        "block_order": "b575d0c2ed979ae2bd7023ea4f35c480cff004b863e8577eef0827e34b841792"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 950669852,
+        "case_id": "contract-50e5949e57c835ee14006836",
+        "block_order": "c0a73253b8b37bf388ad9abbab5f623db07bebd20aa794e3057a256afcb69732"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 950669852,
+        "case_id": "contract-e908f614049af356b8498ced",
+        "block_order": "c0a73253b8b37bf388ad9abbab5f623db07bebd20aa794e3057a256afcb69732"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2672904598,
+        "case_id": "contract-139cde331b1d87493cb9c9cd",
+        "block_order": "c0af4329a9e5fdf690d25097e2473216030e393d3e18cc5e0115fd948104626c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2672904598,
+        "case_id": "contract-a5dbc8a4245f3d80840f0bfa",
+        "block_order": "c0af4329a9e5fdf690d25097e2473216030e393d3e18cc5e0115fd948104626c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 4121600471,
+        "case_id": "contract-e66fd3281b75605449ac06df",
+        "block_order": "c41f0b92798e99c3c4cd2fcf1344a83ab7caf347c3c1440eeef3a6199a0f123f"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 4121600471,
+        "case_id": "contract-551451cacf8c6f9db1c0793c",
+        "block_order": "c41f0b92798e99c3c4cd2fcf1344a83ab7caf347c3c1440eeef3a6199a0f123f"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2370629935,
+        "case_id": "contract-bed37e813a3711f9c5b54fc0",
+        "block_order": "c485967672cfeac677b87bb462db7d36f3c21ed8fcb0e421f9aac77e5021f65c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2370629935,
+        "case_id": "contract-da937155ee5c7ff511f9d8c8",
+        "block_order": "c485967672cfeac677b87bb462db7d36f3c21ed8fcb0e421f9aac77e5021f65c"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3700148083,
+        "case_id": "contract-23ad46b5501680302bd91780",
+        "block_order": "c50191cd6cde540d49ed93528aa4e572019cb702a455829d1aba409b37555d3a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3700148083,
+        "case_id": "contract-d6adc21620c4db669caeb10b",
+        "block_order": "c50191cd6cde540d49ed93528aa4e572019cb702a455829d1aba409b37555d3a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 22888200,
+        "case_id": "contract-088d23111ff56974e65099df",
+        "block_order": "c52233c0275715b7f60b7a4cf26927bfb886f7814566a7995ca4ea25bb0aab87"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 22888200,
+        "case_id": "contract-799f73df159e7388996e6e1b",
+        "block_order": "c52233c0275715b7f60b7a4cf26927bfb886f7814566a7995ca4ea25bb0aab87"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2630594238,
+        "case_id": "contract-b403c580ad861d00f159bd40",
+        "block_order": "c7241cec25b095be7867ecc52a5346670b2dcbfaba1ad1d24a80e3d251ca26c0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2630594238,
+        "case_id": "contract-0c3ed2b0a395e83c3da3e05f",
+        "block_order": "c7241cec25b095be7867ecc52a5346670b2dcbfaba1ad1d24a80e3d251ca26c0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2276709304,
+        "case_id": "contract-9faf7e3b7aaca242c3a6958d",
+        "block_order": "c78be6c184d9e410d6f8ca579c962b87fd389cfc30f65ebc4bf531dc086e3564"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2276709304,
+        "case_id": "contract-3154f25d1cdff568298b5608",
+        "block_order": "c78be6c184d9e410d6f8ca579c962b87fd389cfc30f65ebc4bf531dc086e3564"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2205933279,
+        "case_id": "contract-ff3bf6a19d50f4a52b8057f4",
+        "block_order": "c9f80892e5a361e5ed37c48343aca33251fbceb68f99bca5e41c3a0b2ae8ee22"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2205933279,
+        "case_id": "contract-7e31fd18dd8d5f4e37659cc4",
+        "block_order": "c9f80892e5a361e5ed37c48343aca33251fbceb68f99bca5e41c3a0b2ae8ee22"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1545809541,
+        "case_id": "contract-9c8e18a3b2345e5e265d83b7",
+        "block_order": "ccd89f5117b507e794c85df6bdf5f43b7a47a7db328bf5a4eb964d416aa016e3"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1545809541,
+        "case_id": "contract-dc88a4c30258ccf75941bb49",
+        "block_order": "ccd89f5117b507e794c85df6bdf5f43b7a47a7db328bf5a4eb964d416aa016e3"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 373271589,
+        "case_id": "contract-4db6056b4a75ef5987eafa6f",
+        "block_order": "d0b7b372c0fc0151a16e715e1c6f074ae0f6d1075730f839db791aed981b9b31"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 373271589,
+        "case_id": "contract-ea45cb1d46f9a0f3dc7d95a6",
+        "block_order": "d0b7b372c0fc0151a16e715e1c6f074ae0f6d1075730f839db791aed981b9b31"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 92453329,
+        "case_id": "contract-2cb54f51055d154522ee5d99",
+        "block_order": "d662b1f24644d8925d93c8c527ebc0fd360d1a328cc272bef04a973c36b6b797"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 92453329,
+        "case_id": "contract-6e79678c8c4ace8f8b7dfd8d",
+        "block_order": "d662b1f24644d8925d93c8c527ebc0fd360d1a328cc272bef04a973c36b6b797"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3000239002,
+        "case_id": "contract-0a8bdc6a6dc426146525e38a",
+        "block_order": "d6c7923af20831cf44adb1bb1ae2eb7bfd4e9a267b783e799518206710f6346a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3000239002,
+        "case_id": "contract-2bb045f8c44b42c004d046ce",
+        "block_order": "d6c7923af20831cf44adb1bb1ae2eb7bfd4e9a267b783e799518206710f6346a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 1942349116,
+        "case_id": "contract-d2cf5d152ac801bb10bf69b2",
+        "block_order": "d8647e026a97f959d53177f8aa96625909563b00079811318238007fc498c592"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 1942349116,
+        "case_id": "contract-bd39abb436d5b9cd287e908f",
+        "block_order": "d8647e026a97f959d53177f8aa96625909563b00079811318238007fc498c592"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2361886078,
+        "case_id": "contract-0589e8bdc90d86e67eab646f",
+        "block_order": "ddcb06f0594e89a23498ebab6d70941ea32be1e7d0c0352625f14e7b30e143a0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2361886078,
+        "case_id": "contract-52f0f06d475ba650a45f0382",
+        "block_order": "ddcb06f0594e89a23498ebab6d70941ea32be1e7d0c0352625f14e7b30e143a0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 3723783278,
+        "case_id": "contract-777e9abb0695cc69ce828744",
+        "block_order": "def9697d45bd3576b7a593dffe4c111d8100b32747d7e576dce3f0fe30f56642"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 3723783278,
+        "case_id": "contract-375f713cddf621ce69231990",
+        "block_order": "def9697d45bd3576b7a593dffe4c111d8100b32747d7e576dce3f0fe30f56642"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3172042814,
+        "case_id": "contract-9de9523a8e5a24eb96c101d6",
+        "block_order": "df453c381f9e9873909bc17f50ef09e69ec27acfddc7894586ab8c772e9eebcb"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3172042814,
+        "case_id": "contract-0215889b219aac36ee00ba83",
+        "block_order": "df453c381f9e9873909bc17f50ef09e69ec27acfddc7894586ab8c772e9eebcb"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1658736647,
+        "case_id": "contract-60a2962a65cacdb3c5cb32ab",
+        "block_order": "e11ab45151aee840b8c04779a99c95a85698195836630778a6663b631a876ea1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1658736647,
+        "case_id": "contract-5d3543521019ca7100103bca",
+        "block_order": "e11ab45151aee840b8c04779a99c95a85698195836630778a6663b631a876ea1"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3235677089,
+        "case_id": "contract-bd2598a59c32f23e8b778339",
+        "block_order": "e3381c0ebd2a5b6a278254ce1bd24635897d9b6e170b4ee22d67dab107dd3e7e"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3235677089,
+        "case_id": "contract-36785890eb037bdd0499381c",
+        "block_order": "e3381c0ebd2a5b6a278254ce1bd24635897d9b6e170b4ee22d67dab107dd3e7e"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 3780829395,
+        "case_id": "contract-c7687383f46e3672159407fa",
+        "block_order": "f0929f684d86de85117fc0d9afb908430470928c2633ff08547dfb5cb49ff15a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 3780829395,
+        "case_id": "contract-7828d253e560e827d89f3cd4",
+        "block_order": "f0929f684d86de85117fc0d9afb908430470928c2633ff08547dfb5cb49ff15a"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 2419387696,
+        "case_id": "contract-94af80cf9a04cf149d96b794",
+        "block_order": "f29bb84c28ef941bafaffc518d9707bd69837603ab5e8a9592f7ffb0a957dbb0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "S",
+        "context": "recorded",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 2419387696,
+        "case_id": "contract-c5674566e555d4023a2ff9da",
+        "block_order": "f29bb84c28ef941bafaffc518d9707bd69837603ab5e8a9592f7ffb0a957dbb0"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "baseline",
+        "seed": 1730556706,
+        "case_id": "contract-6919c25c0b3abfce4545a05c",
+        "block_order": "f7f7fbaa2384f6bb0d76132215c10486c58e91eefaae82e3ccde003f4e31b212"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "output-card",
+        "seed": 1730556706,
+        "case_id": "contract-ce6d6b64db6dbbb533763533",
+        "block_order": "f7f7fbaa2384f6bb0d76132215c10486c58e91eefaae82e3ccde003f4e31b212"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 926405325,
+        "case_id": "contract-4803f64671845f72a951a3d5",
+        "block_order": "fc1689a2815a6bde18472d164e75ac18ac721a98bb7125beb0cb87da1955cc9f"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E1",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 926405325,
+        "case_id": "contract-953fa4e9cfa50f0eac5d2d5b",
+        "block_order": "fc1689a2815a6bde18472d164e75ac18ac721a98bb7125beb0cb87da1955cc9f"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2810923161,
+        "case_id": "contract-bf0c829584e6f236b7b0908e",
+        "block_order": "fcc6d156c61d76a8a3f72b741c406c0917011c6de3341c5f2855e809d4a05091"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2810923161,
+        "case_id": "contract-645e39d0361dab86429f327d",
+        "block_order": "fcc6d156c61d76a8a3f72b741c406c0917011c6de3341c5f2855e809d4a05091"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 476451065,
+        "case_id": "contract-aed3091a98f9f712eb5004f6",
+        "block_order": "fdb6bae76d2f8148f3a83bc005472a359297933ac73033791eb04538389bc183"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "recorded",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 476451065,
+        "case_id": "contract-44fe5d6f3e11030df0fde45c",
+        "block_order": "fdb6bae76d2f8148f3a83bc005472a359297933ac73033791eb04538389bc183"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "baseline",
+        "seed": 2449845157,
+        "case_id": "contract-fa23c1949717e711bbc6210b",
+        "block_order": "fe84e9fd019ccef5f0a824214aa7e8ce8e100c64a377161806e7f37720be7f1f"
+      },
+      "reason": "availability_gate_failed"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "C",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "output-card",
+        "seed": 2449845157,
+        "case_id": "contract-80fac8757d01df65dad973d6",
+        "block_order": "fe84e9fd019ccef5f0a824214aa7e8ce8e100c64a377161806e7f37720be7f1f"
+      },
+      "reason": "availability_gate_failed"
+    }
+  ],
+  "availability_gates": {
+    "deepseek-v4-flash-0731": false,
+    "glm-5.3-flash": false
+  },
+  "readiness": {
+    "glm-5.3-flash": {
+      "valid_complete": 0,
+      "planned": 32,
+      "required": 32,
+      "ready_for_bounded_multiround_contract_check": false,
+      "population_or_mathematical_efficacy_proven": false
+    },
+    "deepseek-v4-flash-0731": {
+      "valid_complete": 0,
+      "planned": 32,
+      "required": 32,
+      "ready_for_bounded_multiround_contract_check": false,
+      "population_or_mathematical_efficacy_proven": false
+    }
+  },
+  "budget": {
+    "reserved_calls": 2,
+    "reserved_output_tokens": 64,
+    "reserved_input_bytes": 401,
+    "known_total_tokens": 55,
+    "unknown_usage_attempts": 1,
+    "settings": {
+      "calls": 130,
+      "output_tokens": 131136,
+      "input_bytes": 2129920,
+      "request_bytes": 16384,
+      "observed_token_stop": 400000,
+      "deadline": 1790168391.4169858
+    },
+    "hard_input_token_cap": false,
+    "hard_input_request_byte_cap": true,
+    "observed_token_stop_can_overshoot_by_inflight_requests": true,
+    "attributable_gpu_hours": null
+  },
+  "batch": "v1",
+  "raw_summary_sha256": "6a74ad8b7e4b3bfc8ca67ed1e961a1b8901007b388f96c52994f033bbc2734ae",
+  "aggregates": {
+    "groups": [
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline"
+        },
+        "planned": 32,
+        "started": 0,
+        "unstarted": 32,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card"
+        },
+        "planned": 32,
+        "started": 0,
+        "unstarted": 32,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline"
+        },
+        "planned": 32,
+        "started": 0,
+        "unstarted": 32,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card"
+        },
+        "planned": 32,
+        "started": 0,
+        "unstarted": 32,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "C"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E0"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E1"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "S"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "C"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E0"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E1"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "S"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "C"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E0"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E1"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "S"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "C"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E0"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E1"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "S"
+        },
+        "planned": 8,
+        "started": 0,
+        "unstarted": 8,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "context": "empty"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "context": "recorded"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "context": "empty"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "context": "recorded"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "context": "empty"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "context": "recorded"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "context": "empty"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "context": "recorded"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "task_id": "ns-scaling-algebra-v1"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "task_id": "prime-counterexample"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "task_id": "ns-scaling-algebra-v1"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "task_id": "prime-counterexample"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "task_id": "ns-scaling-algebra-v1"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "task_id": "prime-counterexample"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "task_id": "ns-scaling-algebra-v1"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "task_id": "prime-counterexample"
+        },
+        "planned": 16,
+        "started": 0,
+        "unstarted": 16,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "C",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "C",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E0",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E0",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E1",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "E1",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "S",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "baseline",
+          "role": "S",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "C",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "C",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E0",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E0",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E1",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "E1",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "S",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "deepseek-v4-flash-0731",
+          "contract": "output-card",
+          "role": "S",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "C",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "C",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E0",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E0",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E1",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "E1",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "S",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "baseline",
+          "role": "S",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "C",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "C",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E0",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E0",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E1",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "E1",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "S",
+          "context": "empty"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      },
+      {
+        "dimensions": {
+          "model": "glm-5.3-flash",
+          "contract": "output-card",
+          "role": "S",
+          "context": "recorded"
+        },
+        "planned": 4,
+        "started": 0,
+        "unstarted": 4,
+        "format_valid": 0,
+        "malformed": 0,
+        "technical": 0,
+        "math_passed": 0,
+        "known_tokens": 0
+      }
+    ],
+    "executed_pairs": 0,
+    "paired_format_outcomes": {},
+    "events": 12,
+    "requests": 2,
+    "known_tokens": 55,
+    "unknown_usage_attempts": 1
+  },
+  "public_trace_policy": "First-event endpoint redacted; original event hash retained and requires restricted original for reconstruction. All later requests/receipts/checkpoints/selection/verdicts can replay offline."
+}

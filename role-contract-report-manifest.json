@@ -1,0 +1,480 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.3 immutable calibration report, separate execution archives and all reviewed outcomes; no population efficacy or frontier proof",
+  "artifacts": [
+    {
+      "id": "artifact-1",
+      "path": "archives/role-contract-v1/aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "id": "artifact-2",
+      "path": "archives/role-contract-v1/aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "id": "artifact-3",
+      "path": "archives/role-contract-v1/aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "id": "artifact-4",
+      "path": "archives/role-contract-v1/aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "id": "artifact-5",
+      "path": "archives/role-contract-v1/aimeth_design/role_routing.py",
+      "bytes": 10056,
+      "sha256": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd"
+    },
+    {
+      "id": "artifact-6",
+      "path": "archives/role-contract-v1/aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "id": "artifact-7",
+      "path": "archives/role-contract-v1/aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "id": "artifact-8",
+      "path": "archives/role-contract-v1/aimeth_evaluation/pde_scaling.py",
+      "bytes": 2642,
+      "sha256": "9b1cac59c97c174a68edca2b2525424099749bd15c6179ada24f4318bbfeb20a"
+    },
+    {
+      "id": "artifact-9",
+      "path": "archives/role-contract-v1/aimeth_pilot/__init__.py",
+      "bytes": 79,
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1"
+    },
+    {
+      "id": "artifact-10",
+      "path": "archives/role-contract-v1/aimeth_pilot/calibration.py",
+      "bytes": 8925,
+      "sha256": "8d6dae606468cabad643736699464f73beb69944d0da7ef4a93875d7c5818fae"
+    },
+    {
+      "id": "artifact-11",
+      "path": "archives/role-contract-v1/aimeth_pilot/quota.py",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a"
+    },
+    {
+      "id": "artifact-12",
+      "path": "archives/role-contract-v1/aimeth_pilot/role_budget.py",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8"
+    },
+    {
+      "id": "artifact-13",
+      "path": "archives/role-contract-v1/aimeth_pilot/role_contract.py",
+      "bytes": 14212,
+      "sha256": "a32c973bd59f375b5b8201c3989ed99773e631359a784b63be6a2a3099b7be58"
+    },
+    {
+      "id": "artifact-14",
+      "path": "archives/role-contract-v1/aimeth_pilot/role_run.py",
+      "bytes": 15110,
+      "sha256": "96435ab52cf9ae896f907dd43950ee0a297d3ad507dd5da1de5caddf4292d8e0"
+    },
+    {
+      "id": "artifact-15",
+      "path": "archives/role-contract-v1/aimeth_pilot/run.py",
+      "bytes": 12225,
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205"
+    },
+    {
+      "id": "artifact-16",
+      "path": "archives/role-contract-v1/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "artifact-17",
+      "path": "archives/role-contract-v1/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "artifact-18",
+      "path": "archives/role-contract-v1/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "artifact-19",
+      "path": "archives/role-contract-v1/aimeth_runtime/store.py",
+      "bytes": 44638,
+      "sha256": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef"
+    },
+    {
+      "id": "artifact-20",
+      "path": "archives/role-contract-v1/cluster/role-contract.sbatch",
+      "bytes": 701,
+      "sha256": "5c9bcc60d799426f23a302de43b2115f8af0ebd90b564c7888386c29d5ef5383"
+    },
+    {
+      "id": "artifact-21",
+      "path": "archives/role-contract-v1/docs/role-contract-calibration-v1.md",
+      "bytes": 6675,
+      "sha256": "7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e"
+    },
+    {
+      "id": "artifact-22",
+      "path": "archives/role-contract-v1/examples/role-contract-contexts-v1.json",
+      "bytes": 17837,
+      "sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb"
+    },
+    {
+      "id": "artifact-23",
+      "path": "archives/role-contract-v1/source.json",
+      "bytes": 3950,
+      "sha256": "076c7101d3d10b64f1bd048b27fb6a7c4e87b239f536203486032d2df9fe709c"
+    },
+    {
+      "id": "artifact-24",
+      "path": "archives/role-contract-v1/tests/test_role_contract.py",
+      "bytes": 8526,
+      "sha256": "1c0d0323bd648c34034359975a73df7b028453e1fefb5f89e34cfa17dfd60ae9"
+    },
+    {
+      "id": "artifact-25",
+      "path": "archives/role-contract-v2/aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "id": "artifact-26",
+      "path": "archives/role-contract-v2/aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "id": "artifact-27",
+      "path": "archives/role-contract-v2/aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "id": "artifact-28",
+      "path": "archives/role-contract-v2/aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "id": "artifact-29",
+      "path": "archives/role-contract-v2/aimeth_design/role_routing.py",
+      "bytes": 10056,
+      "sha256": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd"
+    },
+    {
+      "id": "artifact-30",
+      "path": "archives/role-contract-v2/aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "id": "artifact-31",
+      "path": "archives/role-contract-v2/aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "id": "artifact-32",
+      "path": "archives/role-contract-v2/aimeth_evaluation/pde_scaling.py",
+      "bytes": 2642,
+      "sha256": "9b1cac59c97c174a68edca2b2525424099749bd15c6179ada24f4318bbfeb20a"
+    },
+    {
+      "id": "artifact-33",
+      "path": "archives/role-contract-v2/aimeth_pilot/__init__.py",
+      "bytes": 79,
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1"
+    },
+    {
+      "id": "artifact-34",
+      "path": "archives/role-contract-v2/aimeth_pilot/calibration.py",
+      "bytes": 8925,
+      "sha256": "8d6dae606468cabad643736699464f73beb69944d0da7ef4a93875d7c5818fae"
+    },
+    {
+      "id": "artifact-35",
+      "path": "archives/role-contract-v2/aimeth_pilot/quota.py",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a"
+    },
+    {
+      "id": "artifact-36",
+      "path": "archives/role-contract-v2/aimeth_pilot/role_budget.py",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8"
+    },
+    {
+      "id": "artifact-37",
+      "path": "archives/role-contract-v2/aimeth_pilot/role_contract.py",
+      "bytes": 15557,
+      "sha256": "53af9d142435a482c70a08fdabab488063cc7d8afa6f1213d63fc170f10fbed6"
+    },
+    {
+      "id": "artifact-38",
+      "path": "archives/role-contract-v2/aimeth_pilot/role_contract_v2.py",
+      "bytes": 158,
+      "sha256": "fb9408e3253e836fb5f533e9ec0f675871b1b6f571a6bb400a1aec4a6c005aef"
+    },
+    {
+      "id": "artifact-39",
+      "path": "archives/role-contract-v2/aimeth_pilot/role_run.py",
+      "bytes": 15110,
+      "sha256": "96435ab52cf9ae896f907dd43950ee0a297d3ad507dd5da1de5caddf4292d8e0"
+    },
+    {
+      "id": "artifact-40",
+      "path": "archives/role-contract-v2/aimeth_pilot/run.py",
+      "bytes": 12225,
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205"
+    },
+    {
+      "id": "artifact-41",
+      "path": "archives/role-contract-v2/aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "id": "artifact-42",
+      "path": "archives/role-contract-v2/aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "id": "artifact-43",
+      "path": "archives/role-contract-v2/aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "id": "artifact-44",
+      "path": "archives/role-contract-v2/aimeth_runtime/store.py",
+      "bytes": 44638,
+      "sha256": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef"
+    },
+    {
+      "id": "artifact-45",
+      "path": "archives/role-contract-v2/cluster/role-contract-v2.sbatch",
+      "bytes": 351,
+      "sha256": "3d8f8db6da4e62cd8692fed5df2e4bff4f9374400446ad1150b374b1279bc82e"
+    },
+    {
+      "id": "artifact-46",
+      "path": "archives/role-contract-v2/docs/role-contract-calibration-v1.md",
+      "bytes": 6675,
+      "sha256": "7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e"
+    },
+    {
+      "id": "artifact-47",
+      "path": "archives/role-contract-v2/docs/role-contract-calibration-v2.md",
+      "bytes": 3015,
+      "sha256": "befa75190e7ddec59173a1b04e6f8c69502a5f5cb5cf5975f3384d39d405da60"
+    },
+    {
+      "id": "artifact-48",
+      "path": "archives/role-contract-v2/examples/role-contract-contexts-v1.json",
+      "bytes": 17837,
+      "sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb"
+    },
+    {
+      "id": "artifact-49",
+      "path": "archives/role-contract-v2/source.json",
+      "bytes": 4244,
+      "sha256": "49adeff059f2d2eb773573e68cf51deb5221517492fc027cee657ffe383a987d"
+    },
+    {
+      "id": "artifact-50",
+      "path": "archives/role-contract-v2/tests/test_role_contract.py",
+      "bytes": 9205,
+      "sha256": "ae0ea0e48239f99035b363d1a1c1f1d24a4e7e42ae64f8700f3f60beb68c451d"
+    },
+    {
+      "id": "artifact-51",
+      "path": "docs/role-contract-calibration-v1.md",
+      "bytes": 6675,
+      "sha256": "7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e"
+    },
+    {
+      "id": "artifact-52",
+      "path": "docs/role-contract-calibration-v2.md",
+      "bytes": 3015,
+      "sha256": "befa75190e7ddec59173a1b04e6f8c69502a5f5cb5cf5975f3384d39d405da60"
+    },
+    {
+      "id": "artifact-53",
+      "path": "examples/role-contract-contexts-v1.json",
+      "bytes": 17837,
+      "sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb"
+    },
+    {
+      "id": "artifact-54",
+      "path": "milestones/m2-3-role-contract-v1-1440-deployment.png",
+      "bytes": 174592,
+      "sha256": "84eef39fc24d9141a2c636de7cd98a3725a13a7af236e03dbab1efbb9c0cb8e9"
+    },
+    {
+      "id": "artifact-55",
+      "path": "milestones/m2-3-role-contract-v1-1440-top.png",
+      "bytes": 118990,
+      "sha256": "f338743edcb76d6369571565377307bef4ecd7703cd7b5cc8a90f585ead97260"
+    },
+    {
+      "id": "artifact-56",
+      "path": "milestones/m2-3-role-contract-v1-1440.png",
+      "bytes": 1515439,
+      "sha256": "dd7a4f79d3cc774a87f7886984f0c82ebc53729d7b8c46d356b2cb7436612f77"
+    },
+    {
+      "id": "artifact-57",
+      "path": "milestones/m2-3-role-contract-v1-390-deployment.png",
+      "bytes": 156582,
+      "sha256": "6d27f7053b581155b0ae97313ac10cc2211c62cd2cdf5f9fba22cf90cdb8245f"
+    },
+    {
+      "id": "artifact-58",
+      "path": "milestones/m2-3-role-contract-v1-390-top.png",
+      "bytes": 88094,
+      "sha256": "a86b7638a44baed639d9fb04c9220c27073b3aa5989d02d51c4f19d0e46d466e"
+    },
+    {
+      "id": "artifact-59",
+      "path": "milestones/m2-3-role-contract-v1-390.png",
+      "bytes": 1072785,
+      "sha256": "496c80e03d0e9157d02eaadab470cfbe7781bae3ced3b51803784e61758bfcf9"
+    },
+    {
+      "id": "artifact-60",
+      "path": "milestones/m2-3-role-contract-v1.browser-qa.json",
+      "bytes": 835,
+      "sha256": "5cbf10dcbd30ed86fcdd82f02865730338bacdd513fbb7a8c4a2209d53e663d3"
+    },
+    {
+      "id": "artifact-61",
+      "path": "milestones/m2-3-role-contract-v1.evidence.json",
+      "bytes": 47783,
+      "sha256": "36808bf76887423e25fc9caf1ce905860c5b5143c5af3fb7e53f10433ead9d75"
+    },
+    {
+      "id": "artifact-62",
+      "path": "milestones/m2-3-role-contract-v1.html",
+      "bytes": 136144,
+      "sha256": "5f525837da91736aa5552b84320198f8ff69c3aa12867631244c3d41b69d1f9a"
+    },
+    {
+      "id": "artifact-63",
+      "path": "milestones/m2-3-role-contract-v1.visual-review.json",
+      "bytes": 818,
+      "sha256": "54908b0ddd7700e30046b09cf221955ee3fa4b89984f49160222fae45fbff35f"
+    },
+    {
+      "id": "artifact-64",
+      "path": "reports/role-contract-v1/events.jsonl",
+      "bytes": 13117,
+      "sha256": "9a09ff07dcbf5c4c4887f760ce8332270c83c44b45145e2a4b9f1f34dcbe3987"
+    },
+    {
+      "id": "artifact-65",
+      "path": "reports/role-contract-v1/summary.json",
+      "bytes": 91874,
+      "sha256": "32d57b2f191933840b8d23a97123d62dce67aada9c1b473d2a8047eb80f93ce1"
+    },
+    {
+      "id": "artifact-66",
+      "path": "reports/role-contract-v2/events.jsonl",
+      "bytes": 1155519,
+      "sha256": "67e29808649ef746c1f1d2b0f6f47efaac2a1817f4080b723cfa3973fc57eb47"
+    },
+    {
+      "id": "artifact-67",
+      "path": "reports/role-contract-v2/summary.json",
+      "bytes": 194823,
+      "sha256": "b9cf1c665ca9825f2bc6bf36ffad15e537cd1e117c341efd8385c39256a2eaf9"
+    },
+    {
+      "id": "artifact-68",
+      "path": "reports/role-contract-v2/v1-preflight-tests.txt",
+      "bytes": 7896,
+      "sha256": "2a754474132a03b47c82d34bd9eddfbd338d8f44174914cd3588cbd7b5558196"
+    },
+    {
+      "id": "artifact-69",
+      "path": "reports/role-contract-v2/v2-preflight-tests.txt",
+      "bytes": 8001,
+      "sha256": "8b224371582275e8f10478ab6553e3a583322338b77f90c2fbe10caf6b2a3d78"
+    },
+    {
+      "id": "artifact-70",
+      "path": "reports/role-contract-v2/validation.json",
+      "bytes": 2238,
+      "sha256": "3d8f1c2009a76f9fd5e3a20e85c2c069db183263c66220c03ea296b8e0a17063"
+    },
+    {
+      "id": "artifact-71",
+      "path": "templates/contract-milestone-v1.html",
+      "bytes": 16392,
+      "sha256": "40c8bd92b9f12e65a6e29ccd4438da457607731ecadf9bb907d83d2fd2085df4"
+    },
+    {
+      "id": "artifact-72",
+      "path": "tests/test_role_contract.py",
+      "bytes": 9205,
+      "sha256": "ae0ea0e48239f99035b363d1a1c1f1d24a4e7e42ae64f8700f3f60beb68c451d"
+    },
+    {
+      "id": "artifact-73",
+      "path": "tools/build_contract_milestone.py",
+      "bytes": 5921,
+      "sha256": "0b765e16624aa6766ce9488c821aa81c5776d41e17c0a07d4de809e8dca5f117"
+    },
+    {
+      "id": "artifact-74",
+      "path": "tools/build_service_milestone.py",
+      "bytes": 8602,
+      "sha256": "c0555a71aa249f34342868c0e8e4cff1f971f29c4b8498068ef3ec4da032c1e5"
+    },
+    {
+      "id": "artifact-75",
+      "path": "tools/check_contract_evidence.py",
+      "bytes": 7609,
+      "sha256": "60dd9f63fce6dfa08269ea5eac067caa28aeca6bd3b549830f491396576d9c40"
+    },
+    {
+      "id": "artifact-76",
+      "path": "tools/check_contract_milestone.cjs",
+      "bytes": 5392,
+      "sha256": "7c5771e8d465cc9aa8716573fe0023bfc0154badc80eb67c02c1af43728865ce"
+    },
+    {
+      "id": "artifact-77",
+      "path": "tools/contract_evidence.py",
+      "bytes": 4358,
+      "sha256": "4df6397389d8d0eb8809f2a75056a25fb6a14e9089add4838c8953ece5220cc8"
+    },
+    {
+      "id": "artifact-78",
+      "path": "tools/export_contract_evidence.py",
+      "bytes": 3129,
+      "sha256": "490a21661ae89001462004c99ef257cb26aa472fa8a98442ac0d2eff4cc87db2"
+    },
+    {
+      "id": "artifact-79",
+      "path": "tools/role_evidence.py",
+      "bytes": 4304,
+      "sha256": "0666d15afcb72da4483314d60204e02fc71c0a34a53394d349afa3caf7e2e4b9"
+    }
+  ]
+}

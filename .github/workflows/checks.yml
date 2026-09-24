@@ -42,3 +42,8 @@ jobs:
           python3 tools/verify_artifacts.py role-pilot-report-manifest.json
           python3 tools/build_role_milestone.py --output /tmp/role.html
           cmp milestones/m2-2-role-routing-v1.html /tmp/role.html
+          python3 tools/check_contract_evidence.py --batch v1
+          python3 tools/check_contract_evidence.py --batch v2
+          python3 tools/verify_artifacts.py role-contract-report-manifest.json
+          python3 tools/build_contract_milestone.py --output /tmp/contract.html
+          cmp milestones/m2-3-role-contract-v1.html /tmp/contract.html

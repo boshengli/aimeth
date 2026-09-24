@@ -1,0 +1,131 @@
+{
+  "source_commit": "7b347be103a7df4b179a41a0482933030fbf35c6",
+  "scope": "Separately frozen GLM formal-budget continuation; no extra availability probe.",
+  "files": [
+    {
+      "path": "aimeth_design/__init__.py",
+      "bytes": 67,
+      "sha256": "a18c5fea83903078f86ae9014f0292d27a304fb5a87b4b00f869b203dc8bc3af"
+    },
+    {
+      "path": "aimeth_design/__main__.py",
+      "bytes": 3402,
+      "sha256": "cfe07dbf29694cdccd6f8a318d98ec164544d1b82f69c7c58a7a117d9c764950"
+    },
+    {
+      "path": "aimeth_design/execution.py",
+      "bytes": 3007,
+      "sha256": "2ac19ee8ddfc48db7ddcfd7e2bc704b21a39374b22329eaa490e5d29f301b514"
+    },
+    {
+      "path": "aimeth_design/organizations.py",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25"
+    },
+    {
+      "path": "aimeth_design/role_routing.py",
+      "bytes": 10056,
+      "sha256": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd"
+    },
+    {
+      "path": "aimeth_evaluation/__init__.py",
+      "bytes": 86,
+      "sha256": "2197390efcbf96ff0778e8322f79fcb686c703e1ca689dee37e732c01fd0de74"
+    },
+    {
+      "path": "aimeth_evaluation/controls.py",
+      "bytes": 4807,
+      "sha256": "3f95e354982619621459de9c25718c3ead3dae178d661700bddc416401cb3686"
+    },
+    {
+      "path": "aimeth_evaluation/pde_scaling.py",
+      "bytes": 2642,
+      "sha256": "9b1cac59c97c174a68edca2b2525424099749bd15c6179ada24f4318bbfeb20a"
+    },
+    {
+      "path": "aimeth_pilot/__init__.py",
+      "bytes": 79,
+      "sha256": "318cc4b1619e36d32ba49e1c7fe5a6cd0340fa24a1f83d0c41cc65d646ea0aa1"
+    },
+    {
+      "path": "aimeth_pilot/calibration.py",
+      "bytes": 8925,
+      "sha256": "8d6dae606468cabad643736699464f73beb69944d0da7ef4a93875d7c5818fae"
+    },
+    {
+      "path": "aimeth_pilot/quota.py",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a"
+    },
+    {
+      "path": "aimeth_pilot/role_budget.py",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8"
+    },
+    {
+      "path": "aimeth_pilot/role_contract.py",
+      "bytes": 15557,
+      "sha256": "53af9d142435a482c70a08fdabab488063cc7d8afa6f1213d63fc170f10fbed6"
+    },
+    {
+      "path": "aimeth_pilot/role_contract_v2.py",
+      "bytes": 158,
+      "sha256": "fb9408e3253e836fb5f533e9ec0f675871b1b6f571a6bb400a1aec4a6c005aef"
+    },
+    {
+      "path": "aimeth_pilot/role_run.py",
+      "bytes": 15110,
+      "sha256": "96435ab52cf9ae896f907dd43950ee0a297d3ad507dd5da1de5caddf4292d8e0"
+    },
+    {
+      "path": "aimeth_pilot/run.py",
+      "bytes": 12225,
+      "sha256": "ffadea5a57d4e4207ad8d1bf0cc0122078a746253c56679f5a9d01b90d8d4205"
+    },
+    {
+      "path": "aimeth_runtime/__init__.py",
+      "bytes": 174,
+      "sha256": "526125db2c6cade4a6b300237c0517c2cfedf0e7bb1b111b8f7f6d0cc4c255a3"
+    },
+    {
+      "path": "aimeth_runtime/__main__.py",
+      "bytes": 3451,
+      "sha256": "f6f69a30ebbc1aabba705d181ed5b748445a1b8946e00a1d26fd18de78b6a346"
+    },
+    {
+      "path": "aimeth_runtime/runner.py",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf"
+    },
+    {
+      "path": "aimeth_runtime/store.py",
+      "bytes": 44638,
+      "sha256": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef"
+    },
+    {
+      "path": "cluster/role-contract-v2.sbatch",
+      "bytes": 351,
+      "sha256": "3d8f8db6da4e62cd8692fed5df2e4bff4f9374400446ad1150b374b1279bc82e"
+    },
+    {
+      "path": "docs/role-contract-calibration-v1.md",
+      "bytes": 6675,
+      "sha256": "7e392bbfbf46efbd188af935e47ae4d4ec4e5d5da8110f0814e07de190b5d08e"
+    },
+    {
+      "path": "docs/role-contract-calibration-v2.md",
+      "bytes": 3015,
+      "sha256": "befa75190e7ddec59173a1b04e6f8c69502a5f5cb5cf5975f3384d39d405da60"
+    },
+    {
+      "path": "examples/role-contract-contexts-v1.json",
+      "bytes": 17837,
+      "sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb"
+    },
+    {
+      "path": "tests/test_role_contract.py",
+      "bytes": 9205,
+      "sha256": "ae0ea0e48239f99035b363d1a1c1f1d24a4e7e42ae64f8700f3f60beb68c451d"
+    }
+  ]
+}

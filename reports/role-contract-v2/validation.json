@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-23",
+  "sources": {
+    "v1": "8e92cd2b9f94c7820ec43eb84a891bb63565db6e",
+    "v2": "7b347be103a7df4b179a41a0482933030fbf35c6"
+  },
+  "preflight_tests": {
+    "v1": 83,
+    "v2": 84
+  },
+  "source_archive_matches_submission": true,
+  "private_journals_verified": 66,
+  "public_events_replayed": 524,
+  "jobs": [
+    {
+      "batch": "v1",
+      "id": 216243,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 3,
+      "cpus": 2,
+      "memory_gib": 2,
+      "new_gpu_allocation": false
+    },
+    {
+      "batch": "v2",
+      "id": 216262,
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 81,
+      "cpus": 2,
+      "memory_gib": 2,
+      "new_gpu_allocation": false
+    }
+  ],
+  "client_node": "gpu08",
+  "inference_node_user_reported": "GPU01",
+  "inference_node_independently_attested": false,
+  "gpu08_allocated_gpus": 8,
+  "gpu08_measured_utilization": null,
+  "cpu_only_device_inventory": "No devices were found; this cannot establish physical GPU absence or idleness.",
+  "deployment_direction": "User prioritizes self-managed GPU08 services. Readable local model and container files found; GPU admission remains unavailable; no service replacement or new GPU allocation performed.",
+  "limits": [
+    "Frozen old model contexts, not new population interaction",
+    "Public development tasks, no independent mathematical review or frontier proof",
+    "Shared contexts and repeated same tasks, not independent task sample",
+    "Output-card changes instruction placement and input length together",
+    "No hard tokenizer-derived input-token cap or GPU-hour attribution",
+    "Existing service options and weight identity not attested",
+    "No live 10K inference or automatic multi-host recovery"
+  ],
+  "report_date": "2026-09-24",
+  "gpu08_admission": {
+    "checked_date": "2026-09-24",
+    "user_authorized_all_node_resources": true,
+    "allocated_gpus": 8,
+    "occupying_job_identity_visible": false,
+    "private_data": "jobs,usage",
+    "previous_immediate_allocation": {
+      "job_id": 216301,
+      "requested_gpus": 8,
+      "result": "Requested nodes are busy",
+      "new_gpu_allocation": false
+    }
+  }
+}
