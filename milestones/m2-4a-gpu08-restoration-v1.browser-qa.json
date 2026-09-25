@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "browser_version": "154.0.8037.57",
+  "views": [
+    {
+      "width": 1440,
+      "no_page_overflow": true
+    },
+    {
+      "width": 768,
+      "no_page_overflow": true
+    },
+    {
+      "width": 390,
+      "no_page_overflow": true
+    }
+  ],
+  "table_counts": true,
+  "wide_tables_scroll": true,
+  "source_links_except_postbuilt_qa_and_manifest": true,
+  "evidence_disclosure": true,
+  "print_wiring_and_content": true,
+  "offline_no_javascript_core": true,
+  "page_errors": [],
+  "http_runtime_resources": []
+}

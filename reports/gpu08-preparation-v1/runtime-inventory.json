@@ -1,0 +1,532 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-24",
+  "scope": "Observed CPU-only inventory and proposed launch profiles; no GPU model deployment",
+  "jobs": [
+    {
+      "id": 220138,
+      "purpose": "image hashes and metadata",
+      "state": "COMPLETED",
+      "elapsed_seconds": 38,
+      "new_gpu_allocation": false
+    },
+    {
+      "id": 220153,
+      "purpose": "installed architecture symbols and CLI help",
+      "state": "COMPLETED",
+      "elapsed_seconds": 70,
+      "new_gpu_allocation": false
+    }
+  ],
+  "containers": [
+    {
+      "image_file": "sglang-dsv4-hopper.sif",
+      "image_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+      "packages": {
+        "vllm": null,
+        "sglang": "0.5.16",
+        "torch": "2.11.0+cu130",
+        "transformers": "5.12.1",
+        "flashinfer-python": "0.6.14",
+        "flashinfer-cubin": "0.6.14"
+      },
+      "cpu_cli_help_exit": 0,
+      "runtime_symbols": [
+        {
+          "package": "sglang",
+          "version": "0.5.16",
+          "matches": [
+            {
+              "file": "srt/server_args.py",
+              "sha256": "e04556de6d99ba8a76b91fffa49aa70ea9d65cd99f09d0da5d4cfe1228e28500",
+              "symbols": [
+                "DeepseekV4ForCausalLM",
+                "deepseek-v4",
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/arg_groups/overrides.py",
+              "sha256": "a897f4787c5d6c6c01be71dee42b5322dcb6cdf1efeb981f0d4f2efa026a5e9e",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/arg_groups/speculative_hook.py",
+              "sha256": "341b3a340ddd612ae9181c0752708dd86772ca24104b2c892bd47de232b3b3ae",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/configs/model_config.py",
+              "sha256": "60f37ccb03682c20d6a64670a9e8ff27630d76017c49ee1ab348004bdd0fd7ff",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/function_call/function_call_parser.py",
+              "sha256": "0752df192974b01d7529346f0e35d0e713c6d6e80f45e9ac0bb9877e8406c383",
+              "symbols": [
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/function_call/glm47_moe_detector.py",
+              "sha256": "4ed06f8370249f6dafd91b5a25796851845a028a3ccc79efff2f68b6971a5af1",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4.py",
+              "sha256": "cbf7f358cb173ca07019554a8a37474fd5416c20c493870d9917734b29399870",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4_dspark.py",
+              "sha256": "d9e03e950ed8b75f18e38eb17843c7ff57e6d2bb0a335cbcb8da5c06a0335779",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4_nextn.py",
+              "sha256": "4f6bf95a011be0ff4a278d8eac0952f570d6eb3e2d292571a93627f8fe2016e9",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/parser/reasoning_parser.py",
+              "sha256": "223cf218bd9fc840070db7f522a4ec008680521f93e9c2214102df8af675cb26",
+              "symbols": [
+                "deepseek-v4",
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/parser/template_detection.py",
+              "sha256": "fa849312e9c62e2f771292a01b8ec1992275231107d93b5b667193415f910f44",
+              "symbols": [
+                "deepseek-v4",
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/entrypoints/openai/protocol.py",
+              "sha256": "e032466bf673b4d2e61ba685d085596e44a906b64a1412255d27539255e37281",
+              "symbols": [
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/layers/quantization/modelslim/modelslim.py",
+              "sha256": "4a2aae53b2e8a96d0ad10bbda04416d48130dad0dbc19cd346950667a6cdcbf1",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            }
+          ]
+        }
+      ],
+      "glm_architecture_symbol_found": false,
+      "deepseek_architecture_symbol_found": true
+    },
+    {
+      "image_file": "sglang-glm53.sif",
+      "image_sha256": "fef36f9aea6d7bfa96e62bbd8182076900662eca1bceaf8336a363b7164eba15",
+      "packages": {
+        "vllm": null,
+        "sglang": "0.5.18",
+        "torch": "2.13.0+cu130",
+        "transformers": "5.12.1",
+        "flashinfer-python": "0.6.17",
+        "flashinfer-cubin": "0.6.17"
+      },
+      "cpu_cli_help_exit": 0,
+      "runtime_symbols": [
+        {
+          "package": "sglang",
+          "version": "0.5.18",
+          "matches": [
+            {
+              "file": "srt/server_args.py",
+              "sha256": "5ed5badef8dca0ee3dd2b34a1c9c417e172ff1a947d9fe802f7983fb4a2be950",
+              "symbols": [
+                "DeepseekV4ForCausalLM",
+                "deepseek-v4",
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/arg_groups/overrides.py",
+              "sha256": "c577ed29af71880f7937c8223e9f9a7b71887015ebe1e07e350780dd4a400324",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/arg_groups/speculative_hook.py",
+              "sha256": "3f958e3855b7316c616d871296fdb5b1201807698b68f22cca19f768b2a36cb0",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/configs/model_config.py",
+              "sha256": "85b640f0ad80e77a6556fdfb1838240b0080d60f18e0dcbeb507fa5d7df178a3",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/function_call/function_call_parser.py",
+              "sha256": "578defd8404b88a6dd4786a19fad9777e889898b4211a7bdde2f6ac7c11a4531",
+              "symbols": [
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/function_call/glm47_moe_detector.py",
+              "sha256": "93c882d0d3d5613c792a4a20da22a9e54d4f36ebb828846dce05a1acb81d83cb",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4.py",
+              "sha256": "a65472eb24fe6bc3582e8f46f32ebd94c27fee62907ca86e57bb7a54c0ba1d54",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4_dspark.py",
+              "sha256": "b7a0b29f19dcbe0e09f085835b9cdf2cac54df9edf1371ee4f020c2307d0ec50",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/models/deepseek_v4_nextn.py",
+              "sha256": "d3139cd8f1dce2b2100f5eaeda71bb826abf4b5fc9dc20170147f6727bd24d30",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/parser/reasoning_parser.py",
+              "sha256": "ab090130c9d0939fd2e4b67ea7da31b20a8f75f1dd62658359a69a17e3ac7aa7",
+              "symbols": [
+                "deepseek-v4",
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/parser/template_detection.py",
+              "sha256": "b81f86f61ea56619bca67ad1c37d9dc84f5a6369f36e3365f0ac135b064e9a86",
+              "symbols": [
+                "deepseek-v4",
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "srt/speculative/base_spec_worker.py",
+              "sha256": "76feed8439d5882092b953a100f4358b8c82322193652733c258347a3425d60c",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/entrypoints/openai/protocol.py",
+              "sha256": "c9aa0b5551bf5761c6e283391d70aebadb6708b69ba998cf21e00f05d2e3299f",
+              "symbols": [
+                "glm45"
+              ]
+            },
+            {
+              "file": "srt/layers/cp/cp_decode_attn_tp.py",
+              "sha256": "779c506f8c7a5e7f862d94808ab8a3b3ab74555cff86cc7201b787de19f538c0",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/layers/quantization/modelslim/modelslim.py",
+              "sha256": "c981304e11d625b0d58d2f24c1be576aadecf011603213cd0e92ae164de854cd",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "srt/model_executor/runner/eager_runner.py",
+              "sha256": "40168d097921768244166dabd3506e9f136ef7dec1455e7cef927978c790c351",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            }
+          ]
+        }
+      ],
+      "glm_architecture_symbol_found": false,
+      "deepseek_architecture_symbol_found": true
+    },
+    {
+      "image_file": "vllm-openai.sif",
+      "image_sha256": "f416beb58593cc7ad7184c1314924d7f0fcf0b2205614bfae911917179f01bcf",
+      "packages": {
+        "vllm": "0.1.dev20051+g487ecf187",
+        "sglang": null,
+        "torch": "2.13.0+cu130",
+        "transformers": "5.15.1",
+        "flashinfer-python": "0.6.17",
+        "flashinfer-cubin": "0.6.17"
+      },
+      "cpu_cli_help_exit": 1,
+      "runtime_symbols": [
+        {
+          "package": "vllm",
+          "version": "0.1.dev20051+g487ecf187",
+          "matches": [
+            {
+              "file": "config/model.py",
+              "sha256": "3bd3bd70fc03cd435db4787d35220fc9f48ce65f3d2f98d92a636a52dc7d33c9",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "config/speculative.py",
+              "sha256": "eaf52a03351398f72d3e85f0d1ce3bf80d1f92e0fddc8f28bdb11738aeab7875",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "config/vllm.py",
+              "sha256": "e535d12d22ee5c0ba06b255fcda4332a88bd74786f296921efcffb4a131b5adb",
+              "symbols": [
+                "Glm5NextForConditionalGeneration",
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "parser/glm47_moe.py",
+              "sha256": "ce3629319e56e882d25cb75d62e3e7088a4eec1518885fc69fc696eafb4a97b2",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "parser/ling3.py",
+              "sha256": "210fa663f0c3f9f2856c76a3c48ba0e620638ee31311e50fa409289470810c07",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "parser/minimax_m2.py",
+              "sha256": "31c0816e323fd957ff0a2a28222dca411e6811f914e2743a279d05413f839086",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "reasoning/__init__.py",
+              "sha256": "4bcd3a54c9658c2c7a6ed0f4f6efca13b7fdc654ceb7066a065ba423e6313b6f",
+              "symbols": [
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "tool_parsers/__init__.py",
+              "sha256": "c73fb77a3b96901f7adcf364ec323923bd5a61a3b027824bb6f99500d6cbb254",
+              "symbols": [
+                "glm45",
+                "glm47"
+              ]
+            },
+            {
+              "file": "transformers_utils/config.py",
+              "sha256": "d109d6d8dbce5a3a4a84fb8a4494533e842703891b448113695de465cb1a2ce1",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "transformers_utils/model_arch_config_convertor.py",
+              "sha256": "0fb26456e91a5275b5f5a4fc3479f84f084c9ece6e6b63dc96a280d9b31f3444",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "model_executor/models/config.py",
+              "sha256": "4111381726c3e5dc55870f4a1412c8c29c786455d024b74db34775eefb70847c",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "model_executor/models/registry.py",
+              "sha256": "396a63499bf71a5c316065a0b4f0b601dfceb3d4c40a195e6e3a1369928ddd90",
+              "symbols": [
+                "Glm5NextForConditionalGeneration",
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/__init__.py",
+              "sha256": "1d6e45ee635044f377be27ecef7a9d553f648c85ecfec138ce26752a74ec7503",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/glm5next/__init__.py",
+              "sha256": "46be0fd3c67306deab5fa8140e1150b3f78b50d85317b5b5be072d66a24df200",
+              "symbols": [
+                "Glm5NextForConditionalGeneration"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/amd/dspark.py",
+              "sha256": "3daa4ee090c3ccb9b4bab452c84e1b7b59edfca72faeb560dfe5e4c1786d629e",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/amd/model.py",
+              "sha256": "b34a21f13e7ef795c69f32ec5e1673a8b40380ba4c55cc1f37ba4426b6ed310b",
+              "symbols": [
+                "DeepseekV4ForCausalLM",
+                "deepseek-v4"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/nvidia/dspark.py",
+              "sha256": "d67554bcede4f033c1663d55f3121cc9e0c24351606ee76dc4db685525762d1d",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/nvidia/model.py",
+              "sha256": "c01be6d313f494eb38982c8f56c314267bbf67310e7f13ca53b596b31aef4e44",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/xpu/dspark.py",
+              "sha256": "2f6b3e428be3654df9360454c167b0dd1d7acdc19619e1c4e472bbfd050b65d9",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/deepseek_v4/xpu/model.py",
+              "sha256": "1bf93f392f80330d4b59c3549a975a946bd9d9b5b5fb33d63ba65c0b3dd31d88",
+              "symbols": [
+                "DeepseekV4ForCausalLM"
+              ]
+            },
+            {
+              "file": "models/glm5next/nvidia/attention.py",
+              "sha256": "a0870c317287ab444a4639ad418964e981efafb5386592540f85eb38d534c369",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "models/glm5next/nvidia/model.py",
+              "sha256": "ca6320e867b41a90b7c007d9d91021ac8bc1379292a98e8acb5ff9d01b24c2ea",
+              "symbols": [
+                "Glm5NextForConditionalGeneration",
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "models/glm5next/nvidia/mtp.py",
+              "sha256": "b183ed6e134e7126719b3c7208eef46039805d478916a5c876ec25d60be714ce",
+              "symbols": [
+                "Glm5NextForConditionalGeneration"
+              ]
+            },
+            {
+              "file": "parser/engine/registered_adapters.py",
+              "sha256": "232b7730905b3a4259cb7cf3b2c7022acaea748095488076751d9517ca32237c",
+              "symbols": [
+                "glm47"
+              ]
+            },
+            {
+              "file": "transformers_utils/configs/__init__.py",
+              "sha256": "4fe7da4637fd6efc0392fe9586b76c8e87e3c5bf9a883bf2836172f87dabe823",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "transformers_utils/configs/glm5_next.py",
+              "sha256": "0789556fa569de35c2ed8f12dde99ebbc6530a2d142a54c9291f5d69ef130c4e",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "v1/core/kv_cache_utils.py",
+              "sha256": "f1c553daa9f214e03126fe30de9c89e764b0a5168464e66fd9f739e168ffffc7",
+              "symbols": [
+                "glm5_next"
+              ]
+            },
+            {
+              "file": "v1/worker/gpu/spec_decode/speculator.py",
+              "sha256": "e1766840ee7b523ab8b6d286a88d3caaf790f26b4fa852f660cf71950b6dfc12",
+              "symbols": [
+                "glm5_next"
+              ]
+            }
+          ]
+        }
+      ],
+      "glm_architecture_symbol_found": true,
+      "deepseek_architecture_symbol_found": true
+    }
+  ],
+  "vllm_cpu_help_failure": "Failed to infer device type; CPU-only job exposed no GPU. Does not establish GPU incompatibility.",
+  "weight_check": {
+    "job_id": 220152,
+    "status_at_snapshot": "in_progress",
+    "source": "official Hugging Face revision and LFS/file hashes",
+    "verified_complete": false
+  },
+  "model_revisions": {
+    "deepseek-ai/DeepSeek-V4-Flash-0731": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+    "zai-org/GLM-5.3-Flash": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a"
+  },
+  "gpu08_admission": {
+    "user_authorized_gpus": 8,
+    "scheduler_allocated_gpus": 8,
+    "occupying_job_visible": false,
+    "new_model_service_started": false
+  },
+  "limits": [
+    "Symbol presence is not a successful import, GPU load, parser validation or inference",
+    "Container image names and package versions alone do not attest compatibility",
+    "Weight identity check still running; no completed verification claimed",
+    "Private site paths, scheduler user identities and raw build labels excluded"
+  ]
+}

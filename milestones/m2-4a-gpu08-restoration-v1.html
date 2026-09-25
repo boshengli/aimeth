@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIMeth · GPU08 恢复前核验</title>
+<style>
+:root{--ink:#203c38;--muted:#586b65;--green:#176f62;--line:#d5dfd7;--bg:#f3f5ef}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}header{background:#1b4038;color:#f4f8f0;padding:48px max(24px,calc((100% - 1060px)/2))}header p{max-width:790px;color:#dbe9df}.eyebrow{font-size:12px;letter-spacing:.12em}h1{font-size:clamp(30px,4vw,44px);line-height:1.35;margin:22px 0}h2{font-size:25px;line-height:1.45}h3{font-size:18px}main{max-width:1108px;margin:auto;padding:0 24px 44px}nav{display:flex;flex-wrap:wrap;gap:12px 25px;padding:22px 0;border-bottom:1px solid var(--line)}a{color:#146a5d;text-underline-offset:3px}section{padding:30px 0;border-bottom:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:white;border-radius:10px;padding:21px}.card b{display:block;font-size:28px;color:var(--green)}small,.muted{color:var(--muted)}.warn{padding:18px 21px;border-left:4px solid #a66f20;background:#f4ead7;margin:22px 0}.table-wrap{overflow:auto;border:1px solid var(--line);background:white;border-radius:9px}table{width:100%;min-width:630px;border-collapse:collapse;font-size:14px}td,th{padding:13px 16px;vertical-align:top;text-align:left;border-bottom:1px solid var(--line)}th{background:#e8efe6}tr:last-child td{border-bottom:0}code,pre{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,monospace}pre{font-size:12px;line-height:1.6;white-space:pre-wrap;background:#e9eee5;padding:18px;max-height:480px;overflow:auto}summary{cursor:pointer;font-weight:650}details{margin:20px 0}button{font:inherit;background:white;border:1px solid #9bb6a7;border-radius:7px;padding:8px 15px;color:var(--green);cursor:pointer}.badge{display:inline-block;border-radius:30px;padding:5px 12px;background:#e3eee1;color:#245243;font-size:13px}li{margin:9px 0}footer{font-size:12px;padding-top:25px;color:var(--muted)}@media(max-width:650px){header{padding:30px 22px}main{padding:0 20px 30px}.grid{grid-template-columns:1fr}.card b{font-size:25px}h2{font-size:22px}section{padding:24px 0}nav{gap:8px 18px}}@media print{body{background:white;color:black}header{background:white;color:black;padding:10px 0}header p{color:black}main{max-width:none;padding:0}nav,button{display:none}section{padding:18px 0}.grid{grid-template-columns:repeat(3,1fr)}.card{break-inside:avoid}table{min-width:0;font-size:10px}td,th{padding:8px}.table-wrap{overflow:visible}pre{max-height:none}a{color:inherit}}
+</style></head><body>
+<header><div class="eyebrow">AIMeth / M2.4a / 2026.09.25 / v1.0</div><h1>原有占用已保留，<br>完整恢复尚未证实。</h1><p>已完成 GPU08 恢复前的只读核验。没有发现项目用户正在运行的 basecalling 或模型服务；正式 CPU 分配下的 SSH 登录已验证。项目用户的 8 卡使用路径仍未建立，不能宣称节点已恢复到借用前的完整状态。</p><span class="badge">只读核验完成</span> <span class="badge">恢复与模型启动未完成</span></header>
+<main><nav aria-label="报告导航"><a href="#outcome">核验结果</a><a href="#access">登录原因</a><a href="#restore">恢复边界</a><a href="#next">下一步</a><a href="#evidence">证据</a></nav>
+<section id="outcome"><h2>当前能确认的状态</h2><div class="grid"><div class="card"><small>原有 GPU 分配</small><b>8 / 8 保留</b><small>不是 GPU 实际利用率</small></div><div class="card"><small>本次释放、取消、删除</small><b>均为 0</b><small>未改挂载或已有服务</small></div><div class="card"><small>项目用户进程盘点</small><b>仅核验进程</b><small>未见 basecalling / 模型服务</small></div></div><p>作业 221936 在 GPU08 完成只读检查，耗时 1 秒，1 CPU / 1 GiB；作业 221943 用于验证登录条件，耗时 91 秒，1 CPU / 512 MiB。两项均正常结束，没有新增 GPU 分配。</p><div class="table-wrap"><table id="observations"><thead><tr><th>检查项</th><th>直接观察</th><th>解释边界</th></tr></thead><tbody><tr><td>项目用户的运行进程</td><td>检查时仅有审计脚本与 ps</td><td>不代表已检查其他用户进程或全机 GPU 利用率</td></tr><tr><td>原模型目录</td><td>Qwen3.8-27B、Qwen3.8-Flash-Next、Step-3.7-Flash 目录仍在</td><td>目录存在不证明所有文件与借用前逐字节一致</td></tr><tr><td>/work</td><td>当前已挂载；/data 和 /home 也有对应挂载</td><td>历史对话称当时未挂载；谁在何时变更尚未核实</td></tr><tr><td>Dorado 目录</td><td>共享 home 中有安装目录，当前未见本用户相关进程</td><td>目录本身不构成 GPU08 的运行占用，未删除或移动</td></tr><tr><td>8 张 GPU</td><td>Slurm 显示已分配；CPU 作业内没有可见 GPU</td><td>不能推断卡被实际计算占满，也不能推断空闲</td></tr></tbody></table></div></section>
+<section id="access"><h2>同一凭据，登录结果取决于是否有自己的正式作业。</h2><ol><li>没有本账号活动作业时，直接 SSH 认证被拒绝。</li><li>读取到节点启用了 <code>pam_slurm_adopt</code>，无作业时拒绝登录。</li><li>获得短时 CPU 作业 221943 后，同一凭据成功登录，SSH 进程进入该作业的 <code>extern</code> 步骤。</li><li>该作业没有 GPU 配额，<code>nvidia-smi</code> 返回 <code>No devices were found</code>（退出码 6）。</li></ol><p>这些观察支持“登录被作业准入规则限制”的解释。CPU 登录成功不能升级为拥有 8 张 GPU 的执行权限。配置未被修改；该规则的行为可对照 <a href="https://slurm.schedmd.com/pam_slurm_adopt.html">Slurm 官方说明</a>。</p></section>
+<section id="restore"><h2>历史对话是线索，不能代替变更记录。</h2><p><strong>来源报告：</strong>用户提供的对话显示，在临时使用之前就出现了“8 卡已分配、查不到作业”；成员随后表示已经改用其他节点，现不再使用 GPU08。因此不能继续假定当前分配就是 ONT 任务残留，也不能把“先释放旧作业”作为恢复前提。</p><p><strong>已采取：</strong>保留节点分配，核对本用户进程、现有挂载、原模型目录以及正式分配下的登录行为；没有重启服务、修改权限、卸载文件系统或清理共享数据。</p><div class="warn"><strong>尚无借用前的完整快照或配置差异清单。</strong>无法证明文件系统已完整复原，也没有证据可将 /work 的当前挂载或共享 Dorado 目录归因于此次借用。当前未做猜测性回滚。</div></section>
+<section id="next"><h2>保留专用节点安排，恢复项目用户的合法 8 卡执行路径。</h2><p>需由站点管理员核对现有预留与分配，确认项目用户怎样使用这 8 张卡，并在保留专用节点安排的前提下提供相应作业或执行入口。当前普通账号未获管理员权限；没有取消未知占用或改动准入配置。</p><div class="table-wrap"><table id="readiness"><thead><tr><th>目标</th><th>当前判断</th><th>完成依据</th></tr></thead><tbody><tr><td>恢复前核验</td><td>已完成本报告范围</td><td>两项只读/准入测试，原始记录与摘要</td></tr><tr><td>恢复 8 卡科研使用</td><td>尚未完成</td><td>合法资源范围内可见 8 卡，随后验证 CUDA 与互联</td></tr><tr><td>恢复某个旧模型服务</td><td>服务目标与旧配置尚未锁定</td><td>确认目标版本和启动参数，保留失败并完成端点验收</td></tr><tr><td>新 DeepSeek / GLM 测试</td><td>尚未就绪</td><td>身份校验、8 卡准入、独立服务及另行冻结的实验协议</td></tr></tbody></table></div><p class="muted">这是运维核验，不是 Agent 组织效果、数学正确性或 10K 实际推理结果。原 M2.3 的格式门槛和全部评分保持不变。</p></section>
+<section id="evidence"><h2>证据与版本</h2><p>核验前仓库版本 <code>454355f</code>；本报告交付版本由包含该文件的 Git 提交确定。结构化证据保存实际作业、结果、未验证项与受限原件哈希；私有地址、账户 UID、挂载来源和原始配置不公开。重建 HTML 验证的是报告一致性，不能替代现场状态的再次核验。</p><p><a href="../reports/gpu08-restoration-v1/evidence.json">结构化证据</a> · <a href="m2-4a-gpu08-restoration-v1.browser-qa.json">浏览器检查</a> · <a href="../gpu08-restoration-report-manifest.json">文件哈希清单</a> · <a href="m2-3-role-contract-v1.html">前一里程碑</a> · <a href="https://github.com/boshengli/aimeth/pull/6">GitHub 记录</a></p><p class="muted">证据 SHA-256：<code>6b6a50f3512ab32e37a56828b87bdf916ddcc80add3ef9d62062761e931a7083</code></p><details id="evidence-details"><summary>展开全部结构化证据</summary><pre>{
+  &quot;schema_version&quot;: &quot;1.0&quot;,
+  &quot;date&quot;: &quot;2026-09-25&quot;,
+  &quot;milestone&quot;: &quot;M2.4a&quot;,
+  &quot;scope&quot;: &quot;Read-only restoration assessment; full restoration is not established&quot;,
+  &quot;baseline_commit&quot;: &quot;454355fdd432e94c4a3ab39b44f82587727e2ca3&quot;,
+  &quot;source_reported_history&quot;: {
+    &quot;gpu_allocation_existed_before_proposed_loan&quot;: true,
+    &quot;member_reported_using_another_node&quot;: true,
+    &quot;member_reported_no_current_gpu08_use&quot;: true,
+    &quot;changes_by_member_independently_verified&quot;: false
+  },
+  &quot;observations&quot;: {
+    &quot;node&quot;: &quot;gpu08&quot;,
+    &quot;reservation_and_allocation_preserved&quot;: true,
+    &quot;scheduler_allocated_gpus&quot;: 8,
+    &quot;project_user_active_jobs_before_audit&quot;: 0,
+    &quot;project_user_processes_in_audit&quot;: [
+      &quot;slurm_script&quot;,
+      &quot;ps&quot;
+    ],
+    &quot;project_user_basecalling_processes_seen&quot;: false,
+    &quot;project_user_model_servers_seen&quot;: false,
+    &quot;other_users_processes_inspected&quot;: false,
+    &quot;work_mount_present&quot;: true,
+    &quot;work_mount_type&quot;: &quot;storage&quot;,
+    &quot;data_mount_type&quot;: &quot;nfs&quot;,
+    &quot;home_mount_type&quot;: &quot;lustre&quot;,
+    &quot;original_model_directories_present&quot;: [
+      &quot;Qwen3.8-27B-FP8&quot;,
+      &quot;Qwen3.8-Flash-Next-FP8&quot;,
+      &quot;Step-3.7-Flash-FP8&quot;
+    ],
+    &quot;shared_home_dorado_directory_present&quot;: true,
+    &quot;full_preloan_snapshot_available&quot;: false,
+    &quot;directory_presence_proves_unchanged_contents&quot;: false
+  },
+  &quot;ssh_check&quot;: {
+    &quot;without_active_job&quot;: &quot;authentication_rejected&quot;,
+    &quot;pam_requires_own_active_job&quot;: true,
+    &quot;with_cpu_job&quot;: &quot;same_credentials_authenticated&quot;,
+    &quot;adopted_into_own_job_extern_step&quot;: true,
+    &quot;cpu_job_gpu_inventory&quot;: &quot;No devices were found&quot;,
+    &quot;gpu_inventory_exit_code&quot;: 6,
+    &quot;physical_gpu_utilization_measured&quot;: false,
+    &quot;password_change_needed&quot;: false,
+    &quot;global_ssh_or_pam_config_changed&quot;: false
+  },
+  &quot;jobs&quot;: [
+    {
+      &quot;id&quot;: 221936,
+      &quot;purpose&quot;: &quot;read-only own-process/mount/directory inventory&quot;,
+      &quot;state&quot;: &quot;COMPLETED&quot;,
+      &quot;elapsed_seconds&quot;: 1,
+      &quot;cpus&quot;: 1,
+      &quot;memory_mib&quot;: 1024,
+      &quot;new_gpu_allocation&quot;: false
+    },
+    {
+      &quot;id&quot;: 221943,
+      &quot;purpose&quot;: &quot;bounded SSH admission check under a valid own allocation&quot;,
+      &quot;state&quot;: &quot;COMPLETED&quot;,
+      &quot;elapsed_seconds&quot;: 91,
+      &quot;cpus&quot;: 1,
+      &quot;memory_mib&quot;: 512,
+      &quot;new_gpu_allocation&quot;: false
+    }
+  ],
+  &quot;actions&quot;: {
+    &quot;unknown_jobs_cancelled&quot;: 0,
+    &quot;data_deleted_or_moved&quot;: 0,
+    &quot;mounts_modified&quot;: 0,
+    &quot;services_started_or_restarted&quot;: 0,
+    &quot;existing_gpu_allocations_released&quot;: 0
+  },
+  &quot;private_evidence&quot;: {
+    &quot;audit_script_sha256&quot;: &quot;b39981c04384817b5def1e3ee424e869bf5b79864175173c0dcfe4a4380cbb5e&quot;,
+    &quot;audit_stdout_sha256&quot;: &quot;89ad17bea44b4d8dd58d612ce741b428e7a5dccd24d00e578c55610b9767bb72&quot;,
+    &quot;audit_stderr_sha256&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;ssh_with_allocation_sha256&quot;: &quot;29bf9197399c56d717ea01537b29518f41f670c8ba7596b6b07336c63ca2f00e&quot;,
+    &quot;private_origins_required_for_full_reconstruction&quot;: true,
+    &quot;redaction&quot;: &quot;No private addresses, account UID, mount sources, raw configuration or directory paths published&quot;
+  },
+  &quot;readiness&quot;: {
+    &quot;restoration_assessment_complete&quot;: true,
+    &quot;exact_preloan_state_restored&quot;: false,
+    &quot;eight_gpu_access_for_project_verified&quot;: false,
+    &quot;new_model_launch_ready&quot;: false,
+    &quot;next_action&quot;: &quot;Site administrator must identify the existing reservation/allocation and provide a legitimate eight-GPU execution path for the project user while preserving the dedicated-node reservation. Do not assume the allocation should be released.&quot;
+  },
+  &quot;references&quot;: [
+    {
+      &quot;title&quot;: &quot;Slurm pam_slurm_adopt&quot;,
+      &quot;url&quot;: &quot;https://slurm.schedmd.com/pam_slurm_adopt.html&quot;
+    }
+  ]
+}</pre></details><pre>python3 tools/build_gpu08_restoration_milestone.py --output /tmp/restoration.html
+cmp milestones/m2-4a-gpu08-restoration-v1.html /tmp/restoration.html
+python3 tools/verify_artifacts.py gpu08-restoration-report-manifest.json</pre><button id="print" type="button">打印 / 保存 PDF</button></section><footer>AIMeth · M2.4a 恢复前核验 · 离线可读 · 未声称完整恢复</footer></main><script>document.getElementById('print').addEventListener('click',()=>window.print());</script></body></html>
