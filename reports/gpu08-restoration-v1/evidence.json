@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-25",
+  "milestone": "M2.4a",
+  "scope": "Read-only restoration assessment; full restoration is not established",
+  "baseline_commit": "454355fdd432e94c4a3ab39b44f82587727e2ca3",
+  "source_reported_history": {
+    "gpu_allocation_existed_before_proposed_loan": true,
+    "member_reported_using_another_node": true,
+    "member_reported_no_current_gpu08_use": true,
+    "changes_by_member_independently_verified": false
+  },
+  "observations": {
+    "node": "gpu08",
+    "reservation_and_allocation_preserved": true,
+    "scheduler_allocated_gpus": 8,
+    "project_user_active_jobs_before_audit": 0,
+    "project_user_processes_in_audit": [
+      "slurm_script",
+      "ps"
+    ],
+    "project_user_basecalling_processes_seen": false,
+    "project_user_model_servers_seen": false,
+    "other_users_processes_inspected": false,
+    "work_mount_present": true,
+    "work_mount_type": "storage",
+    "data_mount_type": "nfs",
+    "home_mount_type": "lustre",
+    "original_model_directories_present": [
+      "Qwen3.8-27B-FP8",
+      "Qwen3.8-Flash-Next-FP8",
+      "Step-3.7-Flash-FP8"
+    ],
+    "shared_home_dorado_directory_present": true,
+    "full_preloan_snapshot_available": false,
+    "directory_presence_proves_unchanged_contents": false
+  },
+  "ssh_check": {
+    "without_active_job": "authentication_rejected",
+    "pam_requires_own_active_job": true,
+    "with_cpu_job": "same_credentials_authenticated",
+    "adopted_into_own_job_extern_step": true,
+    "cpu_job_gpu_inventory": "No devices were found",
+    "gpu_inventory_exit_code": 6,
+    "physical_gpu_utilization_measured": false,
+    "password_change_needed": false,
+    "global_ssh_or_pam_config_changed": false
+  },
+  "jobs": [
+    {
+      "id": 221936,
+      "purpose": "read-only own-process/mount/directory inventory",
+      "state": "COMPLETED",
+      "elapsed_seconds": 1,
+      "cpus": 1,
+      "memory_mib": 1024,
+      "new_gpu_allocation": false
+    },
+    {
+      "id": 221943,
+      "purpose": "bounded SSH admission check under a valid own allocation",
+      "state": "COMPLETED",
+      "elapsed_seconds": 91,
+      "cpus": 1,
+      "memory_mib": 512,
+      "new_gpu_allocation": false
+    }
+  ],
+  "actions": {
+    "unknown_jobs_cancelled": 0,
+    "data_deleted_or_moved": 0,
+    "mounts_modified": 0,
+    "services_started_or_restarted": 0,
+    "existing_gpu_allocations_released": 0
+  },
+  "private_evidence": {
+    "audit_script_sha256": "b39981c04384817b5def1e3ee424e869bf5b79864175173c0dcfe4a4380cbb5e",
+    "audit_stdout_sha256": "89ad17bea44b4d8dd58d612ce741b428e7a5dccd24d00e578c55610b9767bb72",
+    "audit_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ssh_with_allocation_sha256": "29bf9197399c56d717ea01537b29518f41f670c8ba7596b6b07336c63ca2f00e",
+    "private_origins_required_for_full_reconstruction": true,
+    "redaction": "No private addresses, account UID, mount sources, raw configuration or directory paths published"
+  },
+  "readiness": {
+    "restoration_assessment_complete": true,
+    "exact_preloan_state_restored": false,
+    "eight_gpu_access_for_project_verified": false,
+    "new_model_launch_ready": false,
+    "next_action": "Site administrator must identify the existing reservation/allocation and provide a legitimate eight-GPU execution path for the project user while preserving the dedicated-node reservation. Do not assume the allocation should be released."
+  },
+  "references": [
+    {
+      "title": "Slurm pam_slurm_adopt",
+      "url": "https://slurm.schedmd.com/pam_slurm_adopt.html"
+    }
+  ]
+}

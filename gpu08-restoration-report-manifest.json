@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.4a read-only restoration assessment; exact restoration and GPU access remain unverified",
+  "artifacts": [
+    {
+      "id": "artifact-1",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-1440-access.png",
+      "bytes": 73566,
+      "sha256": "08776ba339fe37e0cd1edbc29d08ba16891a40526fd839fd907bdc276dfb53b5"
+    },
+    {
+      "id": "artifact-2",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-1440-top.png",
+      "bytes": 164536,
+      "sha256": "33fcdf277dca2512ec8c0d52abb6598c7677425646bd7e064ed16bf93eaaa86d"
+    },
+    {
+      "id": "artifact-3",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-1440.png",
+      "bytes": 564141,
+      "sha256": "2d40e855febd49334e80c353164cbc22bb5108b5bd934519e7a0b2cee85231cc"
+    },
+    {
+      "id": "artifact-4",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-390-access.png",
+      "bytes": 74464,
+      "sha256": "1ec01822c0295a839f5e4ca1768864d5c153f408cb7657a696fe7a25ef812671"
+    },
+    {
+      "id": "artifact-5",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-390-top.png",
+      "bytes": 89005,
+      "sha256": "71cf7a9594b7599efadb9fe7f2d0565d2963f316a0d2e7ec29e05d5d059c458e"
+    },
+    {
+      "id": "artifact-6",
+      "path": "milestones/m2-4a-gpu08-restoration-v1-390.png",
+      "bytes": 497220,
+      "sha256": "e6cd17eafdddbefeb10aa4a6dfe94a35a804d20cb26c674cb2a36328075ceeb4"
+    },
+    {
+      "id": "artifact-7",
+      "path": "milestones/m2-4a-gpu08-restoration-v1.browser-qa.json",
+      "bytes": 569,
+      "sha256": "d023ac4e87d5b83b6f82bc69cb4f989e52d425105687fb9b9eb0d3014d4ffa60"
+    },
+    {
+      "id": "artifact-8",
+      "path": "milestones/m2-4a-gpu08-restoration-v1.html",
+      "bytes": 14272,
+      "sha256": "459b41eac18c3543263d741d66225ade67f16f8a22a14ab9ff8e7eb15d01a313"
+    },
+    {
+      "id": "artifact-9",
+      "path": "milestones/m2-4a-gpu08-restoration-v1.visual-review.json",
+      "bytes": 646,
+      "sha256": "a200098f5abdd1beb67813d698fa594ddc9d83de0388e7a5cfbf50f670178a0e"
+    },
+    {
+      "id": "artifact-10",
+      "path": "reports/gpu08-restoration-v1/evidence.json",
+      "bytes": 3607,
+      "sha256": "6b6a50f3512ab32e37a56828b87bdf916ddcc80add3ef9d62062761e931a7083"
+    },
+    {
+      "id": "artifact-11",
+      "path": "templates/gpu08-restoration-v1.html",
+      "bytes": 9592,
+      "sha256": "6f799f46aec4731c84d6b56b9f70259a7aae3dc537fed22a06a557b0408c9791"
+    },
+    {
+      "id": "artifact-12",
+      "path": "tools/build_gpu08_restoration_milestone.py",
+      "bytes": 1410,
+      "sha256": "38fb71ddc852f3d671a8991d0480aea95ebdd28003a86502fc5f36bce3ef8323"
+    },
+    {
+      "id": "artifact-13",
+      "path": "tools/check_gpu08_restoration_milestone.cjs",
+      "bytes": 3631,
+      "sha256": "38edfade82fcbd277729cf9573f3f00f8bec5ec96f61ab573e2d3635a04864ca"
+    }
+  ]
+}

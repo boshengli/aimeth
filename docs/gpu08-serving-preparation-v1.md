@@ -38,3 +38,13 @@ This preparation does not change old scores or authorize a new population compar
 ## Follow-up finding during weight audit
 
 The ongoing audit found that local GLM `chat_template.jinja` has 10,644 bytes, while the pinned official revision has 10,950. Its local digest matches the earlier inventory; the separately fetched official file matches the repository Git blob identity. See `reports/gpu08-preparation-v1/template-difference.json` for both hashes and the source URL. Differences involve content handling, whitespace and tool-message serialization/control flow; they do not establish the cause of past gateway or mathematical failures. No administrator file was changed. A future independently mounted template must be separately versioned and recorded before generating new scientific data.
+
+## Restoration assessment, 2026-09-25
+
+The user's supplied history reports that the eight-GPU allocation existed before the proposed temporary loan, and asks to restore the earlier usable state. Preserve that allocation; do not assume that cancelling an old ONT job is necessary. [M2.4a HTML](../milestones/m2-4a-gpu08-restoration-v1.html) records the completed read-only assessment and the limits of restoration.
+
+Job 221936 found only the project user's audit processes, existing original model directories and current /work, /data and /home mounts. The shared home also contains a Dorado directory; no basecalling process was observed for this user. No other user's processes were inspected and no data or mounts were changed. A complete pre-loan snapshot is unavailable.
+
+The node requires an own active job for SSH via pam_slurm_adopt. With valid CPU allocation 221943, the same credentials logged in and were adopted into that job's extern step. The CPU allocation exposes no GPU. Thus neither a password change nor blindly cancelling the existing allocation follows from the evidence. The site must provide a legitimate eight-GPU execution path for the project user while preserving the dedicated-node arrangement. Exact restoration and new serving remain unverified.
+
+The earlier weight audit ended at its 30-minute limit: DeepSeek completed 64/64 selected files, including 48/48 weight shards; GLM completed only 36/69 files, with 35 matches and the recorded template mismatch. The remaining 33 GLM files require a separately retained continuation; no whole-GLM-directory attestation is claimed.

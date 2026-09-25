@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-25",
+  "status": "passed",
+  "reviewer": "Codex",
+  "viewed": [
+    "m2-4a-gpu08-restoration-v1-1440-top.png",
+    "m2-4a-gpu08-restoration-v1-390-top.png",
+    "m2-4a-gpu08-restoration-v1-1440-access.png",
+    "m2-4a-gpu08-restoration-v1-390-access.png"
+  ],
+  "findings": [
+    "Incomplete restoration and preserved allocation are prominent",
+    "Desktop and narrow text/metric cards are readable",
+    "Login-policy evidence is readable at both widths",
+    "Wide tables scroll within their containers"
+  ],
+  "html_sha256": "459b41eac18c3543263d741d66225ade67f16f8a22a14ab9ff8e7eb15d01a313"
+}
