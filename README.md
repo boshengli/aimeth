@@ -4,6 +4,8 @@
 
 **Agent organization and verifiable mathematical discovery under constrained compute.**
 
+Latest: [M2.5 task analysis and bounded gateway submission](milestones/m2-5-task-continuation-v1.html). GPU08 work is paused. A frozen 16-cell diagnostic dispatched 9 requests: GLM completed eight (four prime controls passed, four NS scaling certificates failed); DeepSeek returned HTTP 502 once and seven cells remained unstarted. This is not a population comparison. [Next-stage proposal](docs/next-population-plan-v1.md): checkable mathematical task package, capable single-Agent/revision baseline, then N8 H/F with matched resources before N32/N128/10K scaling.
+
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
 
 ## Try the runtime

@@ -50,3 +50,8 @@ jobs:
           python3 tools/verify_artifacts.py gpu08-restoration-report-manifest.json
           python3 tools/build_gpu08_restoration_milestone.py --output /tmp/restoration.html
           cmp milestones/m2-4a-gpu08-restoration-v1.html /tmp/restoration.html
+          python3 tools/analyze_contract_failures.py --check reports/task-continuation-v1/prior-analysis.json
+          python3 tools/export_task_evidence.py --check
+          python3 tools/verify_artifacts.py task-continuation-report-manifest.json
+          python3 tools/build_task_milestone.py --output /tmp/task-continuation.html
+          cmp milestones/m2-5-task-continuation-v1.html /tmp/task-continuation.html
