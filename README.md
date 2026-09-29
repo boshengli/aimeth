@@ -4,7 +4,7 @@
 
 **Agent organization and verifiable mathematical discovery under constrained compute.**
 
-Latest: [M2.5 task analysis and bounded gateway submission](milestones/m2-5-task-continuation-v1.html). GPU08 work is paused. A frozen 16-cell diagnostic dispatched 9 requests: GLM completed eight (four prime controls passed, four NS scaling certificates failed); DeepSeek returned HTTP 502 once and seven cells remained unstarted. This is not a population comparison. [Next-stage proposal](docs/next-population-plan-v1.md): checkable mathematical task package, capable single-Agent/revision baseline, then N8 H/F with matched resources before N32/N128/10K scaling.
+Latest: [M2.6 SLCW source-to-mathematics reconciliation v2](milestones/m2-6-slcw-realignment-v2.html). The [source / implementation / mathematical adaptation map](docs/slcw-math-mapping-v2.md) and [current population plan v2](docs/population-plan-v2.md) restore SLCW V1 and V2 as the research architectures. Neither running nor successfully solving a task with a single Agent is a prerequisite; small-population mathematical success is not a prerequisite for scale-up. Current admission checks concern executable organization, auditable records and recovery, bounded resources, isolated evaluator validity and a frozen protocol. Full V1/V2 mathematical runtime behavior and a new live comparison remain to be delivered. GPU08 project use is authorized again; the eight-GPU smoke check did not establish a deployed inference service.
 
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
 
@@ -22,6 +22,8 @@ The demo makes no model calls. Its policy and ring graph are engineering fixture
 
 ## Research and review
 
+- [Current population plan v2](docs/population-plan-v2.md): SLCW V1/V2 implementation and experiment acceptance, superseding the future-work sequence in the historical [M2.5 proposal v1](docs/next-population-plan-v1.md).
+- [Original design → implementation → mathematical adaptation](docs/slcw-math-mapping-v2.md), [structured map](docs/slcw-math-mapping-v2.json), and [M2.6 HTML v2](milestones/m2-6-slcw-realignment-v2.html): evidence, gaps and current readiness.
 - [Research protocol v0.1](docs/research-protocol.md): proposed hypotheses, controls, independent population runs, evaluation and stopping rules.
 - [Evidence audit](docs/evidence-audit.md) and [sources](references/sources.json): observed checks and source-reading boundaries.
 - [Publication contract](docs/publication-contract.md) and [milestone policy](docs/milestone-reporting.md): traceable records and a readable HTML at every completed milestone.
@@ -41,6 +43,8 @@ The root historical manifest describes the initial tree, not later README/runtim
 Passing integrity/fault tests does not verify a proof. Private databases, infrastructure identities, models, evaluator keys and credentials stay out of Git. Reviewed development traces are published with the gateway URL redacted. Seeds do not guarantee deterministic inference; retain realized requests, responses, schedules and software/model identities. Input-token admission, attributable GPU-hours, backend weight attestation and frontier-proof evaluation are outstanding.
 
 Public repository: [boshengli/aimeth](https://github.com/boshengli/aimeth), published on 2026-09-16 with the original commit history and milestone tag. The [publication HTML](milestones/m1-1-publication-v1.html) and [observed hosted checks](https://github.com/boshengli/aimeth/actions/runs/35050227524) document that transition; earlier reports retain their original dates and status. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.
+
+The milestone sections below are historical records. Their prospective wording, capability prerequisites and GPU08 availability statements describe the plan or observation at that time; the current research sequence is [population plan v2](docs/population-plan-v2.md). Historical protocols, failed format gates, results and manifests remain unchanged.
 
 ## M2.1 organization design and model-free tests
 

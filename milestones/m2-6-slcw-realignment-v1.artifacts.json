@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.6",
+  "baseline_commit": "8b56634efae095945cc6ae7deb2cd3f7d7854fe1",
+  "builder": "tools/build_m2_6_slcw_report.py",
+  "report": "milestones/m2-6-slcw-realignment-v1.html",
+  "inputs": {
+    "milestones/m2-6-slcw-realignment-v1.html": "a5d8b8118021902d43b862907e38ae72f42e221df1599f437749b3cdc1b84a9c",
+    "docs/slcw-source-realignment-v1.md": "530335d9427081488bae235cce1fc08f8b391ea18e374491e47fc11bffec976d",
+    "milestones/m2-6-slcw-realignment-v1.sources.json": "29794e32e5e0041d2b46e655a88ebf29961da8ceec097ccd0590e60bb3019012",
+    "milestones/m2-6-slcw-realignment-v1.evidence.json": "53fe272ae7dd1c8055523585a06f1fe41f6a0dd1fc7ed436a3453495bc0b30f8",
+    "milestones/m2-6-slcw-realignment-v1.browser-qa.json": "998b6d9720c9f8e8cfc66233ac94e6b017310a48d2c5bdf03421cd69d5893853",
+    "tools/build_m2_6_slcw_report.py": "c97dc5fbf4751f739f6e2fa2b8ef2914aacd72958ef7fcfcea9e28c69ab65bad"
+  },
+  "local_reference_check": "PASS",
+  "source_entries": 13
+}

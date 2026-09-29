@@ -1,0 +1,59 @@
+{
+  "schema_version": "2.0",
+  "milestone": "M2.6",
+  "version": "v2",
+  "date": "2026-09-29",
+  "baseline_commit": "0234fb6f1e3a247cd9c889ec578a5455499e93aa",
+  "delivery_commit": "recorded by Git history; not self-embedded",
+  "new_model_calls": 0,
+  "new_cluster_jobs": 0,
+  "evidence_kind": "static source/code and effective-plan audit",
+  "mechanisms": 16,
+  "source_files": 39,
+  "full_v1_v2_math_runtime": false,
+  "organization_effect_measured": false,
+  "review": {
+    "method": "two bounded source/code audits followed by parent review",
+    "found_and_corrected": [
+      "README Latest still pointed to superseded single-Agent-first proposal",
+      "GLM quarantine reviewer is simulated release, not independent review",
+      "Step6 dictionary task routing does not enter the intended kimi branch",
+      "GLM aggregate counts only same-layer valid weighted identity votes",
+      "Chief invocation and stop-call source spans needed explicit coverage"
+    ],
+    "not_claimed": "independent scientific validation or proof review"
+  },
+  "static_validation_contract": [
+    "deterministic JSON-to-Markdown/HTML regeneration",
+    "16 mechanisms with original/source implementation/AIMeth/adaptation/acceptance fields",
+    "all source references resolve",
+    "public AIMeth source bytes match audited baseline",
+    "internal HTML anchors and relative links resolve",
+    "no script, iframe, external font or runtime resource",
+    "versioned artifact SHA-256 manifest; historical frozen bundles unchanged"
+  ],
+  "browser_visual_validation": "NOT_CHECKED; previous explicit browser policy block remains in force",
+  "runtime_tests": "unchanged runtime; existing repository CI remains applicable, not evidence of completed SLCW adaptation",
+  "reproduce": [
+    "python3 tools/build_slcw_alignment_v2.py --check",
+    "python3 tools/verify_artifacts.py slcw-alignment-v2-manifest.json"
+  ],
+  "limitations": [
+    "Private Workflow source contents are not redistributed; external source audit requires authorized access.",
+    "Original paper claims not revalidated; original SLCW ZIP not recovered.",
+    "Layer-specific TF governance is a proposed mathematical adaptation, not recovered complete code.",
+    "All matrix adaptations remain proposals until their corresponding implementation and acceptance evidence exist."
+  ],
+  "validation_observed": {
+    "static_artifacts": "PASS",
+    "v1_hashes_preserved": 6,
+    "prior_m25_manifest_artifacts_preserved": 23,
+    "local_ci_commands_passed": 48,
+    "runtime_tests_passed": 87,
+    "current_plan_entry_points": "PASS",
+    "privacy_scan": "PASS; new public files only",
+    "initial_sandbox_attempt": "82 tests ran with one setup error: local HTTP transport fixture could not bind under sandbox. No product failure asserted. Authorized rerun passed all 87 tests.",
+    "browser": "NOT_CHECKED; no bypass attempted",
+    "hosted_ci": "result attached to delivery commit on GitHub; not embedded before submission"
+  }
+}

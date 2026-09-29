@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "report": "m2-6-slcw-realignment-v1.html",
+  "date": "2026-09-29",
+  "checks": {
+    "offline_html_resources_and_section_anchors": "PASS",
+    "desktop_browser_render": "NOT_CHECKED",
+    "narrow_browser_render": "NOT_CHECKED",
+    "interactive_controls": "no script controls; section-anchor links only",
+    "visual_screenshots": "not captured"
+  },
+  "blocker": "The CUA browser policy rejected opening the local file URL and explicitly prohibited using a different browser surface or command to obtain the same visual review. No further browser or screenshot attempt was made."
+}
