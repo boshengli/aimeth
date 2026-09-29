@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.6",
+  "date": "2026-09-29",
+  "baseline_commit": "8b56634efae095945cc6ae7deb2cd3f7d7854fe1",
+  "research": {
+    "source_design_recovered": true,
+    "full_v1_v2_implementation": false,
+    "confirmatory_population_comparison": false,
+    "new_model_inference_calls": 0,
+    "single_agent_capability_gate": "superseded; optional comparator only"
+  },
+  "gpu08": {
+    "scheduler_read_only_state_before_submit": "IDLE+RESERVED; 8 NVIDIA H20; Res_libs active; Slurmctld UP",
+    "user_reported_previous_holder": "previous group Slurm job has stopped",
+    "user_authorized_action": "resubmit project job using GPU08",
+    "job_id": "230643",
+    "job_state": "COMPLETED",
+    "request": {"node": "gpu08", "gpus": 8, "cpus": 32, "memory": "128G", "time_limit": "15min", "reservation": "Res_libs"},
+    "elapsed": "00:00:32",
+    "exit_code": "0:0",
+    "observed_in_job": {"node": "gpu08", "gpu_ids": [0, 1, 2, 3, 4, 5, 6, 7], "gpu_models": ["NVIDIA H20"], "container": "SGLang DSV4 Hopper image", "torch": "2.11.0+cu130", "cuda": "13.0", "per_device_fp16_smoke_result": 1024.0, "preflight": "PASS"},
+    "ssh_during_active_gpu_job": "not verified; the short preflight exited before the authenticated SSH session was confirmed",
+    "model_load_or_inference": "not run",
+    "full_model_installation": "not performed",
+    "shared_files_or_services_changed": false,
+    "private_records_registered_in_project_control": true
+  },
+  "validation": {
+    "source_sha256_manifest": "m2-6-slcw-realignment-v1.sources.json",
+    "browser_desktop": "blocked_by_browser_policy",
+    "browser_narrow": "blocked_by_browser_policy",
+    "html_interaction": "anchor navigation only"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "access_date": "2026-09-29",
+  "project": "0013-Workflow",
+  "inspection_scope": "source/spec/code metadata only; source files stay local and are not copied into the public repo",
+  "sources": [
+    {
+      "relative_path": "S0001-Layer/za/01.GTPplant.md",
+      "bytes": 1359,
+      "sha256": "2ae9010b0527fb694af12d20af0cf7e588502e8e68b3ea4c92ec19499bc0edd4",
+      "inspected_lines": "5–11; 27–36"
+    },
+    {
+      "relative_path": "S0001-Layer/za/S0001-DPV4/20260810_层状Agent分析架构设计_DPV4.md",
+      "bytes": 15073,
+      "sha256": "2af280a44a912ce55e305bec56014960a00e627783c50ab2c7eab6275736ab84",
+      "inspected_lines": "80–138; 202–215"
+    },
+    {
+      "relative_path": "S0001-Layer/za/S0002-LUNA/reports/20260810_层状Agent架构重建_LUNA.md",
+      "bytes": 3048,
+      "sha256": "12eae43b3079c37dc044950ef57c11be86ca8aac9e53323ccddc38b24bcf423a",
+      "inspected_lines": "1–45"
+    },
+    {
+      "relative_path": "S0001-Layer/SLCW_Runtime_v0.1/spec/SLCW_Final_DiscoveryTissue/ARCHITECTURE.md",
+      "bytes": 3993,
+      "sha256": "6dce7f37e5e7486fa5ee144803dc6e03a23713add01e2c22baf3eeabbfe167d9",
+      "inspected_lines": "38–110; 111–171"
+    },
+    {
+      "relative_path": "S0001-Layer/SLCW_Runtime_v0.1/spec/SLCW_Final_DiscoveryTissue/FINAL_DECISIONS.md",
+      "bytes": 2302,
+      "sha256": "53b506b7eb3bbd7b4351f324a8dc74a0f46964cb8679d9d64be926f01a4cecb7",
+      "inspected_lines": "3–100"
+    },
+    {
+      "relative_path": "S0001-Layer/S0001-GLM/slcw_v1_glm/modes.py",
+      "bytes": 3895,
+      "sha256": "fcbc813ac06e667b010d710689c66488afc9a4f4ea48c553ab085e39af375654",
+      "inspected_lines": "13–21; 95–102"
+    },
+    {
+      "relative_path": "S0001-Layer/S0001-GLM/slcw_v1_glm/run_v1.py",
+      "bytes": 15669,
+      "sha256": "b2e91619796f825a2d8ff8182c23afab2db92bbd9a98c35cedc689f91928015f",
+      "inspected_lines": "220–238"
+    },
+    {
+      "relative_path": "S0001-Layer/S0001-GLM/slcw_v1_glm/observers_adaptive.py",
+      "bytes": 16417,
+      "sha256": "2f47ee4ba046f9901d76ed5cd0541fba08215f67710b2e5bce429d842bfd581e",
+      "inspected_lines": "167–245; 287–340"
+    },
+    {
+      "relative_path": "S0001-Layer/S0001-GLM/slcw_v1_glm/config/defaults_v1_glm.yaml",
+      "bytes": 3274,
+      "sha256": "0c76e243f4a6ebdabd8a88693e88a51c90dde0cb3684b5c95578d373f0c7ff98",
+      "inspected_lines": "15–20"
+    },
+    {
+      "relative_path": "S0001-Layer/S0003-Codex/slcw_core/engine.py",
+      "bytes": 8532,
+      "sha256": "11e36909c46488fb44fa096449ae89774b3ac2fe72d212c10ff5a0ace07786d4",
+      "inspected_lines": "42–122"
+    },
+    {
+      "relative_path": "S0001-Layer/S0003-Codex/slcw_core/worker.py",
+      "bytes": 3288,
+      "sha256": "36564c77d763e01d02dd9095547b15a0179f8162647a61cf7739679a5b9799b0",
+      "inspected_lines": "20–58"
+    },
+    {
+      "relative_path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/patterning.py",
+      "bytes": 2736,
+      "sha256": "1c64e713449c4dc37b4f7b023a9ccdc7cd0bf1d8cc3a1817f0273f9ee4eb423e",
+      "inspected_lines": "1–69"
+    },
+    {
+      "relative_path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/messaging.py",
+      "bytes": 3778,
+      "sha256": "094f256416bb1a2204d74079e64b1fa3bdd43ea49f7929a0f8c0d06a696745ed",
+      "inspected_lines": "1–88"
+    }
+  ]
+}
