@@ -1,0 +1,974 @@
+{
+  "schema_version": "1.0",
+  "scope": "Exploratory paired task-schema diagnostic; not populations",
+  "experiment": {
+    "protocol": "task-schema-diagnostic.v1",
+    "models": [
+      "glm-5.3-flash",
+      "deepseek-v4-flash-0731"
+    ],
+    "seed": 2026092801,
+    "endpoint": "[INSTITUTIONAL_GATEWAY_REDACTED]",
+    "source_commit": "0b3dfd598b7d4eedb2c36fd1afc7e78da102b3bb",
+    "fixture_file_sha256": "6772f093337277ef8eb9c48ee94bc1210173b9a52b69745403ad57910a17e4cb",
+    "protocol_sha256": "027120a00c3bb36ead8f19b29435bfc1fee540d93adddf42bac573962881c2f1"
+  },
+  "metadata": {
+    "started_at": 1790602741.623882,
+    "deadline": 1790603641.623882,
+    "execution_mode": "local-client-to-existing-institutional-gateway",
+    "hostname": "[LOCAL_CLIENT_REDACTED]",
+    "slurm_job_id": null
+  },
+  "results": [
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "unified-task-schema",
+        "seed": 2744227269,
+        "block_order": "3295223404317365bd05110580bd55d4478aefe3767a480cfbcbafcfa016eee2",
+        "case_id": "task-schema-792ccba0930e29e99f427124"
+      },
+      "manifest_sha256": "120dc48549bdb904079e4b204f70d797ed45e32881ae3d101ae11ad7a693a437",
+      "status": {
+        "run_id": "task-schema-792ccba0930e29e99f427124",
+        "fingerprint": "120dc48549bdb904079e4b204f70d797ed45e32881ae3d101ae11ad7a693a437",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 678,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2744227269,
+        "agent_id": "a00000",
+        "source_event": "0d1391ba-62b4-41e4-ab26-74a767bae0a5",
+        "candidate": "{\"d\":41,\"n\":40}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "envelope_status": "valid",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "b62cf3abd2d7f1317bf8a761ece95c799ce68094fc61ba36e1a8e7b92aa11ca2",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.0431931670755148,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 3406,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 606,
+          "completion_tokens": 72,
+          "total_tokens": 678
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "valid": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "9bcfa74ca208d1227ca59b8a5cc557b0a2736d9775abcae3b60c0b5a55c77275",
+      "raw_snapshot_sha256": "d3f8183b270d6a7495840d4aa9e0455c10422f7ce4e53a7782dc945eb5dc96cc"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "legacy-card",
+        "seed": 2744227269,
+        "block_order": "3295223404317365bd05110580bd55d4478aefe3767a480cfbcbafcfa016eee2",
+        "case_id": "task-schema-e0d0bb756759e7eae71e6a2d"
+      },
+      "manifest_sha256": "30857480a47d882d732f37f2a34628083cbb1c15f8ab168337a0269adfc276b1",
+      "status": {
+        "run_id": "task-schema-e0d0bb756759e7eae71e6a2d",
+        "fingerprint": "30857480a47d882d732f37f2a34628083cbb1c15f8ab168337a0269adfc276b1",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 706,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 2744227269,
+        "agent_id": "a00000",
+        "source_event": "bc9541aa-1846-451d-bfa5-7b62b8703d0a",
+        "candidate": "{\"d\":41,\"n\":40}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "envelope_status": "valid",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "95d64bf28dead49bcb608a5e7a556452af40304bbc8abdada00bf41539e11880",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.2277128747664392,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 3371,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 602,
+          "completion_tokens": 104,
+          "total_tokens": 706
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "valid": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "7a31c90a7abe50ef981466c4809ac570a05040b55fa6525bd3f51e0d49ef3cf6",
+      "raw_snapshot_sha256": "78f3e4f984d0c0c588e94cebb151ac66901ded8c75d611b217494f4496f986c5"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "legacy-card",
+        "seed": 2582577492,
+        "block_order": "372c34bc21a8fad856734f2c8412532370ada7413feb1dcf90ebdd34d3b50a0a",
+        "case_id": "task-schema-49e15cb0737dc7deda76951d"
+      },
+      "manifest_sha256": "7f05d241da0c1e9d8b6c06c50053c9298380c34d3afbab2f324d2d074f2b2257",
+      "status": {
+        "run_id": "task-schema-49e15cb0737dc7deda76951d",
+        "fingerprint": "7f05d241da0c1e9d8b6c06c50053c9298380c34d3afbab2f324d2d074f2b2257",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 0,
+          "failed": 1
+        },
+        "attempts": 1,
+        "known_total_tokens": 0,
+        "unknown_usage_attempts": 1,
+        "complete": false,
+        "events": 5,
+        "messages": 0,
+        "checkpoints": 0
+      },
+      "selection": null,
+      "verdict": {
+        "status": "TECHNICAL_FAILURE",
+        "passed": false
+      },
+      "envelope_status": null,
+      "errors": [
+        {
+          "category": "http_error",
+          "http_status": 502
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "events": 6,
+        "tail_hash": "7d0652ed89f1c61f8248d47b841dc35aa949843407451eb120375f3697cf5f19",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 0.4128190418705344,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 3380,
+        "reserved_output_tokens": 1024,
+        "usage": {},
+        "unknown_usage_attempts": 1,
+        "finish_reasons": {},
+        "envelope_diagnostics": {},
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "6cd654cdd4eba19fe9628a700ceb29a7059df0ad7b9e26766dc32af48f635824",
+      "raw_snapshot_sha256": "947633fe7aa6775f58074b5ab030505eb00db1a5ec067179dba860cb833b72d7"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "legacy-card",
+        "seed": 3530856625,
+        "block_order": "44113ab9e95c62cdb4eba64aea2aa2bc7c174c24eb02f93b55a2334b691c877f",
+        "case_id": "task-schema-5b8902e68e12b5ff541eae3e"
+      },
+      "manifest_sha256": "38a3eaa90dc3423d0de48ab8626dae924c6abd1642d7e64f291d4fc34b7273aa",
+      "status": {
+        "run_id": "task-schema-5b8902e68e12b5ff541eae3e",
+        "fingerprint": "38a3eaa90dc3423d0de48ab8626dae924c6abd1642d7e64f291d4fc34b7273aa",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 848,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3530856625,
+        "agent_id": "a00000",
+        "source_event": "7cd8c977-9187-4d88-a46d-d9ce8db5c10e",
+        "candidate": null,
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "envelope_status": "malformed",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "e6b2edf24821c0ed73a944af909fbb2d638b06a528e5b3985425c0405c0dfb60",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.019958124961704,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 4008,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 802,
+          "completion_tokens": 46,
+          "total_tokens": 848
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "envelope_keys": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "ad3d567cb7b1c08ae2b5a9409e010f7afefb3242b3af1342ecc7d14c11c97db4",
+      "raw_snapshot_sha256": "482ab96478e5ef564d00486be62c4ca02b8db99c2db327c10283ab8cf021de39"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "unified-task-schema",
+        "seed": 3530856625,
+        "block_order": "44113ab9e95c62cdb4eba64aea2aa2bc7c174c24eb02f93b55a2334b691c877f",
+        "case_id": "task-schema-b875e6d7965e8e8ce4b88442"
+      },
+      "manifest_sha256": "c92d85806712b9d9ec091bad39cc2a4fa9b18fc8e1ebd369d4622a37b361011f",
+      "status": {
+        "run_id": "task-schema-b875e6d7965e8e8ce4b88442",
+        "fingerprint": "c92d85806712b9d9ec091bad39cc2a4fa9b18fc8e1ebd369d4622a37b361011f",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 1145,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3530856625,
+        "agent_id": "a00000",
+        "source_event": "8d4e9cd0-8c5a-493c-bd9c-58beb9338039",
+        "candidate": null,
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "envelope_status": "malformed",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "896e7799d4e5015b8b1c83306e89d4a2f4ee33efd678d7604de880b2cde90ffc",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 2.7511837920174003,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 4032,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 806,
+          "completion_tokens": 339,
+          "total_tokens": 1145
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "justification_limit": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "34d85e3d6889e8a1a2b2724176bf4a3c4f0d4d468b4d7e5af42a5a82bee63a87",
+      "raw_snapshot_sha256": "880dfd00fdf197d2ae6f13eab30f55a6ec55bb99ea6216ef42b6734299bb4351"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "legacy-card",
+        "seed": 782739145,
+        "block_order": "7e321770bfb5a3b888105cd1d683db0695e187b9a6f5d3a442bac170f3eb7ec9",
+        "case_id": "task-schema-82c7dde3c91aa1f148794758"
+      },
+      "manifest_sha256": "a8b3fae39cdb93e147be016ebadaa10e38ebf57700d877399b46e3b69c911316",
+      "status": {
+        "run_id": "task-schema-82c7dde3c91aa1f148794758",
+        "fingerprint": "a8b3fae39cdb93e147be016ebadaa10e38ebf57700d877399b46e3b69c911316",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 1024,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 782739145,
+        "agent_id": "a00000",
+        "source_event": "dc09f1b3-4002-4e3c-9add-0b9e92ab27ba",
+        "candidate": "{\"a\":-1,\"b\":-2,\"c\":-2,\"d\":-3,\"e2\":-1,\"e3\":-0.5}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "envelope_status": "valid",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "c927594d7de58a5fe6d8b904f26486185279d5fdfde69b0a626732e99d4f508a",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.9321762081235647,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 4008,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 802,
+          "completion_tokens": 222,
+          "total_tokens": 1024
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "valid": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "be5531e43e17155b3b82664f38ec32cd5a35609851389b7a518b54b8b8ab9927",
+      "raw_snapshot_sha256": "04742107f6758ab420c525140f92ce5b74996a472b10feeff2d281e7210fb45e"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "unified-task-schema",
+        "seed": 782739145,
+        "block_order": "7e321770bfb5a3b888105cd1d683db0695e187b9a6f5d3a442bac170f3eb7ec9",
+        "case_id": "task-schema-90b0436fac880942e9aec9a8"
+      },
+      "manifest_sha256": "eade396e9f98718c52bea7c9e3fcb6c2c4f5fe2eea26e25993fc74c0b1d67074",
+      "status": {
+        "run_id": "task-schema-90b0436fac880942e9aec9a8",
+        "fingerprint": "eade396e9f98718c52bea7c9e3fcb6c2c4f5fe2eea26e25993fc74c0b1d67074",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 1371,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 782739145,
+        "agent_id": "a00000",
+        "source_event": "55afef00-5796-474d-be26-d0d0e0d65f79",
+        "candidate": null,
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "scope": "exact development exponent constraints; derivation and PDE proof unverified",
+        "frontier_proof_verified": false,
+        "status": "MALFORMED",
+        "passed": false
+      },
+      "envelope_status": "malformed",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "84682c2ef7c82cfd79a79d69cd5539f5052c69db70d1bbeb81f9b921cdae1220",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 3.990024042315781,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 4032,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 806,
+          "completion_tokens": 565,
+          "total_tokens": 1371
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "justification_limit": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "e436e9df59c83ddcf4ac36b16b5b82f2dd7933bb6d4a7f16fb9c6d40b4b24295",
+      "raw_snapshot_sha256": "e1c5c29d901200b536c9204215bd77a12a294b1e13c6943f8f98a477bbe1047d"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "unified-task-schema",
+        "seed": 3050102332,
+        "block_order": "eced2e4ecd0d042372917ebfcc9f73905117a79faa8827d6206c2c7efd3ec845",
+        "case_id": "task-schema-8ea5e473966561baac6fe569"
+      },
+      "manifest_sha256": "4154f26fee19aca28c4192645964492c978a2df23ce0cb27948ab4e07c6370d7",
+      "status": {
+        "run_id": "task-schema-8ea5e473966561baac6fe569",
+        "fingerprint": "4154f26fee19aca28c4192645964492c978a2df23ce0cb27948ab4e07c6370d7",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 711,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3050102332,
+        "agent_id": "a00000",
+        "source_event": "1fdbe7ae-4f19-4e6d-99e2-0c8d181dc579",
+        "candidate": "{\"d\":41,\"n\":40}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "envelope_status": "valid",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "b14430a35bb59c8c4ad2b47ad81db30983c6c026a6ca11f0e5a55c060b56bed0",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.2953112497925758,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 3405,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 606,
+          "completion_tokens": 105,
+          "total_tokens": 711
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "valid": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "48ba47f22250b962e962f1a01a6630a23bb77a5671e270b7129c8cc409525691",
+      "raw_snapshot_sha256": "e3189acf0621f09246792863a381b31278432c23126f9b88189aeeae31734857"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "glm-5.3-flash",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "legacy-card",
+        "seed": 3050102332,
+        "block_order": "eced2e4ecd0d042372917ebfcc9f73905117a79faa8827d6206c2c7efd3ec845",
+        "case_id": "task-schema-cdf285e4d8cf9da716814d5a"
+      },
+      "manifest_sha256": "d45f64d22d63bbe56d5d086dd7d9ea91a9d7642a93a8114ee3d1fcbeafe07cd4",
+      "status": {
+        "run_id": "task-schema-cdf285e4d8cf9da716814d5a",
+        "fingerprint": "d45f64d22d63bbe56d5d086dd7d9ea91a9d7642a93a8114ee3d1fcbeafe07cd4",
+        "planned_total_steps": 1,
+        "materialized_steps": 1,
+        "steps": {
+          "pending": 0,
+          "running": 0,
+          "succeeded": 1,
+          "failed": 0
+        },
+        "attempts": 1,
+        "known_total_tokens": 719,
+        "unknown_usage_attempts": 0,
+        "complete": true,
+        "events": 6,
+        "messages": 0,
+        "checkpoints": 1
+      },
+      "selection": {
+        "selector": "terminal-uniform-lottery.v1",
+        "selection_seed": 3050102332,
+        "agent_id": "a00000",
+        "source_event": "54165651-483c-4ca1-b13b-5cba9cfde296",
+        "candidate": "{\"d\":41,\"n\":40}",
+        "candidate_limit": 1,
+        "proof_status": "unverified",
+        "estimand": "representative-final-agent; not best-of-N discovery"
+      },
+      "verdict": {
+        "status": "VERIFIED_WITHIN_SCOPE",
+        "passed": true,
+        "scope": "exact public development task: prime-counterexample",
+        "frontier_proof_verified": false
+      },
+      "envelope_status": "valid",
+      "errors": [],
+      "verification": {
+        "status": "verified",
+        "events": 8,
+        "tail_hash": "29ee62745a54f9a4bbfed3cddd8f6646de78bf022f54be0823b8ae921cf150ae",
+        "scientific_validity_checked": false
+      },
+      "dispatched_requests": 1,
+      "elapsed_seconds": 1.3029667912051082,
+      "metrics": {
+        "dispatched_requests": 1,
+        "input_request_bytes": 3370,
+        "reserved_output_tokens": 1024,
+        "usage": {
+          "prompt_tokens": 602,
+          "completion_tokens": 117,
+          "total_tokens": 719
+        },
+        "unknown_usage_attempts": 0,
+        "finish_reasons": {
+          "stop": 1
+        },
+        "envelope_diagnostics": {
+          "valid": 1
+        },
+        "valid_fixture_references": 0
+      },
+      "raw_events_sha256": "f8c2571e83ef87a2441bf9510c2cfed106d41b99efaf7e07e9d6751ab3140871",
+      "raw_snapshot_sha256": "12ec61e08dd7a546e7183f57d0383fe6b5acb11467460f7cc87fb6a0aa14fe2a"
+    }
+  ],
+  "unstarted": [
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "unified-task-schema",
+        "seed": 2582577492,
+        "block_order": "372c34bc21a8fad856734f2c8412532370ada7413feb1dcf90ebdd34d3b50a0a",
+        "case_id": "task-schema-4f510c4cde4690acb3c956ce"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "legacy-card",
+        "seed": 3874356178,
+        "block_order": "4008da1d9f6bada044c454cc21de246e6bd27b0092246ea38b43146355020e78",
+        "case_id": "task-schema-719e7dce8d1e96bccba4da6d"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "unified-task-schema",
+        "seed": 3874356178,
+        "block_order": "4008da1d9f6bada044c454cc21de246e6bd27b0092246ea38b43146355020e78",
+        "case_id": "task-schema-78558fed7ef3e9028ffbc780"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "legacy-card",
+        "seed": 1978691470,
+        "block_order": "56f0406017a5a74942650f8d4c94250c5e646863cfefe7b8d006b7d2d50bd1dc",
+        "case_id": "task-schema-79510bd9205b40e1336fa409"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "ns-scaling-algebra-v1",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 1,
+        "contract": "unified-task-schema",
+        "seed": 1978691470,
+        "block_order": "56f0406017a5a74942650f8d4c94250c5e646863cfefe7b8d006b7d2d50bd1dc",
+        "case_id": "task-schema-c72f2e52162f098c0d3520ce"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "unified-task-schema",
+        "seed": 3765433947,
+        "block_order": "8271e0552c57202feb60006ca63a2145b9c5482794bead5d4c37af022516d161",
+        "case_id": "task-schema-bb3cb141327a26c1d766f7e2"
+      },
+      "reason": "model_transport_circuit_open"
+    },
+    {
+      "case": {
+        "phase": "contract",
+        "model": "deepseek-v4-flash-0731",
+        "task_id": "prime-counterexample",
+        "role": "E0",
+        "context": "empty",
+        "repetition": 0,
+        "contract": "legacy-card",
+        "seed": 3765433947,
+        "block_order": "8271e0552c57202feb60006ca63a2145b9c5482794bead5d4c37af022516d161",
+        "case_id": "task-schema-2dde82fddd6326bada6a06a9"
+      },
+      "reason": "model_transport_circuit_open"
+    }
+  ],
+  "budget": {
+    "reserved_calls": 9,
+    "reserved_output_tokens": 9216,
+    "reserved_input_bytes": 33012,
+    "known_total_tokens": 7202,
+    "unknown_usage_attempts": 1,
+    "settings": {
+      "calls": 16,
+      "output_tokens": 16384,
+      "input_bytes": 262144,
+      "request_bytes": 16384,
+      "observed_token_stop": 60000,
+      "deadline": 1790603641.623882
+    },
+    "hard_input_token_cap": false,
+    "hard_input_request_byte_cap": true,
+    "observed_token_stop_can_overshoot_by_inflight_requests": true,
+    "attributable_gpu_hours": null
+  },
+  "frontier_proof_verified": false,
+  "population_efficacy_verified": false,
+  "raw_summary_sha256": "fb428810c653194da452f3217c6f81215fe5e21203958aaca3fc7004d7a35101",
+  "source_archive": {
+    "source_commit": "0b3dfd598b7d4eedb2c36fd1afc7e78da102b3bb",
+    "sha256": "ce5962f72d039efe56d0adf0f53160c6dc4444038230775423b7743248f296de",
+    "bytes": 25638844
+  },
+  "aggregates": {
+    "groups": [
+      {
+        "model": "deepseek-v4-flash-0731",
+        "contract": "legacy-card",
+        "task_id": "ns-scaling-algebra-v1",
+        "planned": 2,
+        "started": 0,
+        "valid": 0,
+        "math_passed": 0,
+        "technical": 0,
+        "unstarted": 2
+      },
+      {
+        "model": "deepseek-v4-flash-0731",
+        "contract": "legacy-card",
+        "task_id": "prime-counterexample",
+        "planned": 2,
+        "started": 1,
+        "valid": 0,
+        "math_passed": 0,
+        "technical": 1,
+        "unstarted": 1
+      },
+      {
+        "model": "deepseek-v4-flash-0731",
+        "contract": "unified-task-schema",
+        "task_id": "ns-scaling-algebra-v1",
+        "planned": 2,
+        "started": 0,
+        "valid": 0,
+        "math_passed": 0,
+        "technical": 0,
+        "unstarted": 2
+      },
+      {
+        "model": "deepseek-v4-flash-0731",
+        "contract": "unified-task-schema",
+        "task_id": "prime-counterexample",
+        "planned": 2,
+        "started": 0,
+        "valid": 0,
+        "math_passed": 0,
+        "technical": 0,
+        "unstarted": 2
+      },
+      {
+        "model": "glm-5.3-flash",
+        "contract": "legacy-card",
+        "task_id": "ns-scaling-algebra-v1",
+        "planned": 2,
+        "started": 2,
+        "valid": 1,
+        "math_passed": 0,
+        "technical": 0,
+        "unstarted": 0
+      },
+      {
+        "model": "glm-5.3-flash",
+        "contract": "legacy-card",
+        "task_id": "prime-counterexample",
+        "planned": 2,
+        "started": 2,
+        "valid": 2,
+        "math_passed": 2,
+        "technical": 0,
+        "unstarted": 0
+      },
+      {
+        "model": "glm-5.3-flash",
+        "contract": "unified-task-schema",
+        "task_id": "ns-scaling-algebra-v1",
+        "planned": 2,
+        "started": 2,
+        "valid": 0,
+        "math_passed": 0,
+        "technical": 0,
+        "unstarted": 0
+      },
+      {
+        "model": "glm-5.3-flash",
+        "contract": "unified-task-schema",
+        "task_id": "prime-counterexample",
+        "planned": 2,
+        "started": 2,
+        "valid": 2,
+        "math_passed": 2,
+        "technical": 0,
+        "unstarted": 0
+      }
+    ],
+    "paired_format": {
+      "glm-5.3-flash": {
+        "executed_pairs": 4,
+        "complete_pairs": 4,
+        "both_valid": 2,
+        "neither_valid": 1,
+        "legacy_only": 1
+      }
+    },
+    "planned": 16,
+    "started": 9,
+    "unstarted": 7,
+    "events": 70,
+    "requests": 9,
+    "known_total_tokens": 7202,
+    "unknown_usage_attempts": 1
+  },
+  "public_trace_policy": "Only first-event endpoint redacted; retained original first hash requires private original for full chain reconstruction. Later hashes and outcomes replay offline."
+}

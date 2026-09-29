@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.5 task analysis and bounded gateway submission; no population effect or frontier proof",
+  "execution_source": "0b3dfd598b7d4eedb2c36fd1afc7e78da102b3bb",
+  "artifacts": [
+    {
+      "id": "artifact-1",
+      "path": "aimeth_pilot/task_continuation.py",
+      "bytes": 8466,
+      "sha256": "25bea43569f4a5755b93341fd5f42579b42fb80cb035c5816c5fde62a6953913"
+    },
+    {
+      "id": "artifact-2",
+      "path": "docs/next-population-plan-v1.md",
+      "bytes": 5010,
+      "sha256": "590a87d709168934dc7caf836ae65659b20ab16cd8dfb39065327a69f1555203"
+    },
+    {
+      "id": "artifact-3",
+      "path": "docs/task-continuation-v1.md",
+      "bytes": 4222,
+      "sha256": "027120a00c3bb36ead8f19b29435bfc1fee540d93adddf42bac573962881c2f1"
+    },
+    {
+      "id": "artifact-4",
+      "path": "docs/task-failure-analysis-v1.md",
+      "bytes": 6232,
+      "sha256": "ec5826531f4d5028b0a39a501e4b3ebb53dc6e7ec739038b5fc20fe241248f04"
+    },
+    {
+      "id": "artifact-5",
+      "path": "milestones/m2-5-task-continuation-v1-1440-readiness.png",
+      "bytes": 138652,
+      "sha256": "e181c88091dbfbb0d1de36bdce4e14c48dc0ab9c4690195a42401ba0a5a1ba43"
+    },
+    {
+      "id": "artifact-6",
+      "path": "milestones/m2-5-task-continuation-v1-1440-top.png",
+      "bytes": 168310,
+      "sha256": "48e82d8b29ff601c7d660432c01a979a351dc62c78fa440879fe0dd34c6ee884"
+    },
+    {
+      "id": "artifact-7",
+      "path": "milestones/m2-5-task-continuation-v1-1440.png",
+      "bytes": 886818,
+      "sha256": "4f6a02d28ada6e0c116ef1344c708dce87f4f81265730406f9b5c7fd7d92d359"
+    },
+    {
+      "id": "artifact-8",
+      "path": "milestones/m2-5-task-continuation-v1-390-readiness.png",
+      "bytes": 111422,
+      "sha256": "137e7ed0defb556c5505eb2a818039be3de273fd4f096a11568ada169d839165"
+    },
+    {
+      "id": "artifact-9",
+      "path": "milestones/m2-5-task-continuation-v1-390-top.png",
+      "bytes": 88147,
+      "sha256": "edaff78b3de1d1cf6e4a4697a3fe1a6087f8e187ce0360c12c572a5e02f41ed6"
+    },
+    {
+      "id": "artifact-10",
+      "path": "milestones/m2-5-task-continuation-v1-390.png",
+      "bytes": 747999,
+      "sha256": "c530f54d11ddb7eeec7890be89f47147c6d2dd767dd368c04d06e09270c5b8f8"
+    },
+    {
+      "id": "artifact-11",
+      "path": "milestones/m2-5-task-continuation-v1.browser-qa.json",
+      "bytes": 578,
+      "sha256": "b5949527922d5093c5b15dd982637ec36c939504234d96fa5ff7780e7f00e4b3"
+    },
+    {
+      "id": "artifact-12",
+      "path": "milestones/m2-5-task-continuation-v1.html",
+      "bytes": 18081,
+      "sha256": "bbf05c3601ee8d84ba2e184ed70ed6281b8889fb2d70e8d3c7fef4c2024cbba3"
+    },
+    {
+      "id": "artifact-13",
+      "path": "milestones/m2-5-task-continuation-v1.visual-review.json",
+      "bytes": 762,
+      "sha256": "1b7624f1e0060a1a46c31cb5c4a961c40f342178c1aee7ebbccd691a8ce91256"
+    },
+    {
+      "id": "artifact-14",
+      "path": "reports/task-continuation-v1/events.jsonl",
+      "bytes": 154545,
+      "sha256": "b675a6bda3e9c3a6b22668369bd789ba743f46164be2cf40120d0c0fbf43e255"
+    },
+    {
+      "id": "artifact-15",
+      "path": "reports/task-continuation-v1/prior-analysis.json",
+      "bytes": 35107,
+      "sha256": "2a2706312a174214f8ae720fee3e72e23d9c52031e6a23dc1784ad179a8350dc"
+    },
+    {
+      "id": "artifact-16",
+      "path": "reports/task-continuation-v1/summary.json",
+      "bytes": 31851,
+      "sha256": "735d99352ae9276bd21892efcb1edb599291dad40e879d45c251d482d7f62581"
+    },
+    {
+      "id": "artifact-17",
+      "path": "templates/task-milestone-v1.html",
+      "bytes": 12966,
+      "sha256": "b04561fb7383e3971ad67ebc8dec6e27add8b5505ea27e2535ee2e600bfc0ae0"
+    },
+    {
+      "id": "artifact-18",
+      "path": "tests/test_task_continuation.py",
+      "bytes": 3650,
+      "sha256": "5b573f971dad869904148a266ae1581c867e151c36d9317853d63beaa889a46d"
+    },
+    {
+      "id": "artifact-19",
+      "path": "tools/analyze_contract_failures.py",
+      "bytes": 8941,
+      "sha256": "fb76de9e97a0f0c0436ebeef8039a3cb5479d0492bd8d68761e17cd02ef18a74"
+    },
+    {
+      "id": "artifact-20",
+      "path": "tools/build_task_milestone.py",
+      "bytes": 8028,
+      "sha256": "01f290db9a3d4c11836b59ff6b503be00d59949304f29dff7de0618507fee0bf"
+    },
+    {
+      "id": "artifact-21",
+      "path": "tools/check_task_milestone.cjs",
+      "bytes": 4272,
+      "sha256": "1260a5081da4eb726d3dc0832bc65af762d8cc121a2ffcc5d97faf068d24b2de"
+    },
+    {
+      "id": "artifact-22",
+      "path": "tools/export_task_evidence.py",
+      "bytes": 7700,
+      "sha256": "27eeae7e6568ba42abd25d3ce24570c243715d29a516e77d278c00f61ec1e990"
+    },
+    {
+      "id": "artifact-23",
+      "path": "tools/package_task_report.py",
+      "bytes": 1377,
+      "sha256": "181a1c23847145743d1ea36c7bdb327a8367e97ea21e628a3e3cb6ed293a411c"
+    }
+  ]
+}
