@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.6 v2 source/implementation/math mapping and current plan snapshot; mutable README and plan pointer excluded",
+  "artifacts": [
+    {
+      "id": "slcw-v2-01",
+      "path": "docs/population-plan-v2.md",
+      "bytes": 9822,
+      "sha256": "21901dd8ace96b47c63a68c333f2e23878c57163639d702027b2769dbd7386c7"
+    },
+    {
+      "id": "slcw-v2-02",
+      "path": "docs/slcw-math-mapping-v2.json",
+      "bytes": 27491,
+      "sha256": "54439a9e4b1c0a3b9481431145558d9c637988bb20639374b92619ef9705f243"
+    },
+    {
+      "id": "slcw-v2-03",
+      "path": "docs/slcw-math-mapping-v2.md",
+      "bytes": 29760,
+      "sha256": "772015c11318ca9ca6b5d7faaaf3e680931f9351509016bf67e2fd6dd024854d"
+    },
+    {
+      "id": "slcw-v2-04",
+      "path": "tools/build_slcw_alignment_v2.py",
+      "bytes": 14786,
+      "sha256": "59344e0a280437ff23b437cc0be5243b0310f2291e09123ccdd7eba616d51d51"
+    },
+    {
+      "id": "slcw-v2-05",
+      "path": "milestones/m2-6-slcw-realignment-v2.browser-qa.json",
+      "bytes": 620,
+      "sha256": "b5a4615fd4190205ad6f0d14425e3ee3aa94bd4e590d021c170bf18b517857a9"
+    },
+    {
+      "id": "slcw-v2-06",
+      "path": "milestones/m2-6-slcw-realignment-v2.evidence.json",
+      "bytes": 2991,
+      "sha256": "5000b4f095d029464866e04f2c7f1e62438a4b8b63ff0e8f8fc1f3485ed3ca17"
+    },
+    {
+      "id": "slcw-v2-07",
+      "path": "milestones/m2-6-slcw-realignment-v2.html",
+      "bytes": 50494,
+      "sha256": "2faad7c5b6a2455432db981f5fc6483747c0c0768efc9e02f3c2dd159230f3c0"
+    },
+    {
+      "id": "slcw-v2-08",
+      "path": "milestones/m2-6-slcw-realignment-v2.sources.json",
+      "bytes": 13376,
+      "sha256": "5a12ed4859e2bb30e3b2fe3c8e7ca3756e45362f498a396456e09b6d59472759"
+    }
+  ]
+}

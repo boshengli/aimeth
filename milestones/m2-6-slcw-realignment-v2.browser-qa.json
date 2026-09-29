@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0",
+  "report": "m2-6-slcw-realignment-v2.html",
+  "date": "2026-09-29",
+  "checks": {
+    "desktop_browser_render": "NOT_CHECKED",
+    "narrow_browser_render": "NOT_CHECKED",
+    "anchor_interactions_in_browser": "NOT_CHECKED",
+    "screenshots": "not captured",
+    "static_checks": "run build_slcw_alignment_v2.py --check; not a visual review"
+  },
+  "blocker_zh": "此前 CUA 浏览器策略拒绝打开本地报告，并明确禁止换浏览器或其他路径完成同一操作；本轮没有绕过限制。",
+  "completion": "content delivered; milestone visual acceptance remains open"
+}

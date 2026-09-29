@@ -1,0 +1,568 @@
+{
+  "schema_version": "2.0",
+  "milestone": "M2.6",
+  "date": "2026-09-29",
+  "version": "v2",
+  "title": "SLCW 原设计、现有实现与数学适配",
+  "question": "补齐原设计—现有实现—数学任务适配的对照，并撤掉单 Agent 必须先解题成功的前置条件。",
+  "outcome": "16 项机制已建立来源与代码对照；当前计划以 SLCW 群体计算和治理为主线。单 Agent 运行及成功均非前置条件，小群体数学成功也不是扩规模前置。完整 V1/V2 数学运行器尚未实现。",
+  "baseline_commit": "0234fb6f1e3a247cd9c889ec578a5455499e93aa",
+  "claim_boundary": "这是一份源码和计划审计，不是新的模型试验，也没有证明任何架构优于另一架构。来源论文的生物学结论本轮未重新核验；原始 ZIP 未恢复，笔记、重建稿、规范和实现分开标注。",
+  "admission": {
+    "single_agent_success_required": false,
+    "single_agent_run_required": false,
+    "small_population_math_success_required_for_scaling": false,
+    "single_agent_comparator": "optional_matched_budget",
+    "implementation_status": "plan_contract_not_wired_to_a_new_slcw_runner",
+    "gates": [
+      {
+        "id": "G1",
+        "name": "组织语义与可执行性",
+        "requirement": "V1/V2 roster、任务分配、消息路由、合成与停止规则可执行；确定性 fixture 检查各治理环节。不得要求模型先解题成功。",
+        "evidence": "编译的 manifest、治理事件 fixture、预期输出和版本哈希",
+        "state": "partial"
+      },
+      {
+        "id": "G2",
+        "name": "日志、消息与恢复",
+        "requirement": "实际输入输出、来源链、调度、错误、预算扣减和 checkpoint 可恢复；新增动态组织需要故障注入核对。",
+        "evidence": "故障恢复记录与消息→请求→回执→候选链",
+        "state": "partial"
+      },
+      {
+        "id": "G3",
+        "name": "资源与故障边界",
+        "requirement": "授权的服务/Slurm 路径、可追溯模型身份、调用/输入输出 token/工具/时间上限和预声明技术熔断规则；无法认证的后端只用于明确标注的探索试验。",
+        "evidence": "冻结资源清单、实际用量、未知用量标记、停止记录",
+        "state": "partial"
+      },
+      {
+        "id": "G4",
+        "name": "评估器有效性与隔离",
+        "requirement": "独立评估器通过正确/错误/缺假设/循环依赖 fixture，答案密钥不进入生成端；有限数学控制与开放 NS 探索分开。",
+        "evidence": "评估器审阅、fixture 结果、隔离检查及允许反馈规范",
+        "state": "pending_math_adaptation"
+      },
+      {
+        "id": "G5",
+        "name": "试验冻结与统计单位",
+        "requirement": "发送新请求前冻结任务、模型、提示、工具、预算、重复数、产出选择与停止规则；正式比较前独立登记样本量依据和主要指标。",
+        "evidence": "不可变 run manifest、协议哈希、独立群体 run 清单",
+        "state": "pending_new_protocol"
+      }
+    ]
+  },
+  "readiness": {
+    "design": "ready: recovered sources and explicit adaptations",
+    "implementation": "ready to start: acceptance contracts specified, full runtime unfinished",
+    "cluster_experiment": "not ready for complete SLCW comparison: new runtime, evaluation and protocol gaps",
+    "milestone_handoff": "content and static validation only; browser visual QA blocked"
+  },
+  "requirements": [
+    {
+      "request": "恢复原始两版设计",
+      "response": "16 行逐项分开原规范、0013 实现与 AIMeth 实现，不把重建稿或角色名当作完整运行证据。",
+      "evidence": "M01–M15；来源快照哈希",
+      "gap": "若干机制仅有定义/状态，数学闭环未实现"
+    },
+    {
+      "request": "移除单 Agent 成功前提",
+      "response": "更新 README 当前入口与 population-plan-v2；单 Agent 运行和成功都不要求。旧计划保留为冻结历史。",
+      "evidence": "admission 合约；计划替代索引；有效任务更新",
+      "gap": "新 SLCW 运行器将据此实现，旧运行器的已冻结格式准入不回写"
+    },
+    {
+      "request": "检验大规模群体计算与治理",
+      "response": "以独立群体 run 评价，区分完整 V1/V2 对比与 P×V 机制消融；统一预算包括治理和重试。",
+      "evidence": "population-plan-v2；M08/M10/M16",
+      "gap": "协议尚未冻结，10K 实际推理及高阶能力未证实"
+    },
+    {
+      "request": "过程可追溯、每里程碑 HTML",
+      "response": "一份结构化矩阵生成 Markdown 和离线 HTML；来源及产物逐项哈希，保留 v1。",
+      "evidence": "sources/evidence/browser-qa 与根 manifest；可重复生成器",
+      "gap": "浏览器策略拒绝桌面/窄屏检查，未认定里程碑视觉验收完成"
+    }
+  ],
+  "counting_note": "原 V1：100 个分析格点 + 4 个 Observer + 1 个 Chief。用户设想的 100 组可作为扩展参数；100 组×100 工作者=10K 工作者的方案需额外计算治理角色。逻辑 Agent、并发客户端、实际请求和 GPU 使用不能互换。",
+  "gate_note": "数学错误、候选被否证、少数意见、未收敛、群体零收益都是应保存的结果。技术停机按预先冻结的故障/资源规则执行；不把答对率、全体一致或小规模正效应变成准入门槛。",
+  "gpu_note": "沿用前一版 2026-09-29 的观察：GPU08 作业 230643 已完成，8 卡 CUDA smoke 通过，未加载模型，活动 GPU 作业期间 SSH 未核实。本轮未查询节点、提交作业或调用模型；该历史观察不保证当前空闲。",
+  "rows": [
+    {
+      "id": "M01",
+      "title": "格点、层次与规模分母",
+      "version": "V1 → V2",
+      "original": {
+        "text": "原始笔记是 10×10 的 100 个分析格点、4 个 Observer、1 个 Chief；重建稿把行解释为组织层、列解释为阶段。V2 将 10×10 降为兼容布局，并不要求固定组织规模。",
+        "sources": [
+          "S01",
+          "S02",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "GLM 默认 10×10、34 个活跃格点。Codex engine 的 fixed 模式登记 100 个分析记录；另一模式登记 8 个分析 + Patterning/Interface/Vascular 各 1 个记录。登记数量不能代表同时推理数量。",
+        "sources": [
+          "S09",
+          "S12",
+          "S13"
+        ]
+      },
+      "aimeth": {
+        "text": "compile_arm 提供 S/I/L/X 固定群体图；compile_roles 提供 E0/E1/C/S 四角色 H/F 图。均不是完整 SLCW V1/V2。10K 配置可编译不等于 10K 推理已执行。",
+        "sources": [
+          "A01",
+          "A02"
+        ]
+      },
+      "adaptation": "将格点映射到证明义务、方法或反例搜索任务，另存 group_id 与 layer_id。“100 组”及“100 组×100 工作者=10K 工作者”属于扩展方案；需另加治理角色数，不能回写成原始设计。",
+      "acceptance": "导出 roster、组织图和调用账本，分别统计组数、工作者数、治理角色数、活跃客户端、并发数、GPU 数与请求数。",
+      "status": "固定图底座可复用；完整层状 roster 与任务分配待实现"
+    },
+    {
+      "id": "M02",
+      "title": "局部通信与 30% 参数",
+      "version": "V1 / V2",
+      "original": {
+        "text": "V1 重建稿的 30% 是每格点每轮参与邻接广播的概率。V2 保留局部通信并增加受限长程路径。",
+        "sources": [
+          "S02",
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "GLM VascularRouter 使用 p_comm 概率发送邻接与筛选后的长程消息；Core Step6 则按带宽额度过滤。概率与配额的分母不同，不能称作同一个实验参数。",
+        "sources": [
+          "S07",
+          "S16"
+        ]
+      },
+      "aimeth": {
+        "text": "AIMeth 固定图按轮发送带内容哈希和父事件的消息；H/F 有固定消息数与字符数限制，不是来源中的 30% 抽样规则。",
+        "sources": [
+          "A01",
+          "A02",
+          "A03"
+        ]
+      },
+      "adaptation": "冻结通信抽样单位、方向、时序、总字节及 token 预算。记录实际发送/未发送/丢弃原因；不能仅以同一名义概率宣称通信成本匹配。",
+      "acceptance": "小图 fixture 的接收集合、预算扣减和断点续接一致；实跑保留实现后的通信矩阵与完整内容。",
+      "status": "持久消息已有；SLCW 概率/配额策略待适配"
+    },
+    {
+      "id": "M03",
+      "title": "区域 Observer",
+      "version": "V1",
+      "original": {
+        "text": "4 个 Observer 监视区域并协调局部身份共识。重建稿是按组织层划域，不能假设必然四等分为每组 25 个格点。",
+        "sources": [
+          "S01",
+          "S02"
+        ]
+      },
+      "workflow": {
+        "text": "DPV4 consensus 根据区域身份和票数作判定；GLM 主循环确实调用 Observer。该实现服务生物身份分类。",
+        "sources": [
+          "S06",
+          "S10",
+          "S11"
+        ]
+      },
+      "aimeth": {
+        "text": "H/F 的 critic/synthesizer 有同伴消息，但没有 SLCW 区域 Observer 的监视状态与职责。",
+        "sources": [
+          "A02"
+        ]
+      },
+      "adaptation": "区域对应某个子定理或方法族；Observer 跟踪证明义务覆盖、相互矛盾的假设、重复依赖和预算，提出协调请求。共识只表示协调状态。",
+      "acceptance": "一条有效反例在多数错误候选下仍进入未解决清单；区域摘要能追溯到每条候选及证据。",
+      "status": "区域治理待实现"
+    },
+    {
+      "id": "M04",
+      "title": "COLOR、Quarantine 与少数意见",
+      "version": "V1 → V2",
+      "original": {
+        "text": "V1 用 COLOR 表示身份形成，Quarantine 处理冲突/证据不足；V2 要求保留替代解释和少数候选，不以一致性压制异议。",
+        "sources": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "GLM 隔离复审是模拟 PI 放行：把 confidence 提高至至少 0.75 并无条件返回 release，没有独立证据复审；Patterning 可能追加候选。Codex CandidateRegistry 提供 preserve_minority 等状态操作，但不能证明完整链路已保护少数意见。",
+        "sources": [
+          "S06",
+          "S07",
+          "S14"
+        ]
+      },
+      "aimeth": {
+        "text": "运行器保留失败与事件，但缺少候选隔离、异议上诉及复审协议；事件日志不能代替科学治理。",
+        "sources": [
+          "A03",
+          "A02"
+        ]
+      },
+      "adaptation": "把 COLOR 定义为组织状态，不赋予数学真值。隔离针对某条主张及其下游依赖；保留原文、异议与申诉路径，不因持不同结论删除 Agent。",
+      "acceptance": "隔离→复审→恢复/否证事件及预算完整；多数不接受的正确反例仍可抵达独立验证器。",
+      "status": "候选治理待实现；不得用共识过滤最终证据"
+    },
+    {
+      "id": "M05",
+      "title": "Chief、全局收敛与停止",
+      "version": "V1",
+      "original": {
+        "text": "V1 原始笔记含 80% 收敛与 STOP；重建稿还要求无隔离/冲突并设轮次上限。V2 明确停止不等于科学结论成立。",
+        "sources": [
+          "S01",
+          "S02",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "GLM 主循环 Chief 记录状态并检查停止；这是一致性与过程终止机制。它不检验 Navier–Stokes 定理。",
+        "sources": [
+          "S06"
+        ]
+      },
+      "aimeth": {
+        "text": "H/F select_synthesizer 按预定种子选一个终末 synthesizer，未形成全局 Chief 的候选证明合成；store.status 的 complete 只意味着安排的步骤成功结束。",
+        "sources": [
+          "A02",
+          "A03"
+        ]
+      },
+      "adaptation": "Chief 交付候选证明、假设清单和未完成义务图。预算耗尽、协调收敛、有效否证与证明核验分别记录；80% 不作为数学成功阈值。",
+      "acceptance": "全体一致但错误的候选被验证器拒绝；预算停止后仍能交付完整未完成/阴性报告。",
+      "status": "全局合成与科学停止语义待实现"
+    },
+    {
+      "id": "M06",
+      "title": "探索与验证双通道",
+      "version": "V2",
+      "original": {
+        "text": "V2 将 Explore Lane 与 Validation Lane 分开，探索产生候选，验证设计和执行独立检查。",
+        "sources": [
+          "S03",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "Core population 登记 Harvester、Validator、Auditor 等角色；内置 runtime CLI 有公式驱动的演示，外层 Core CLI 则真实调用 analysis_agent。角色登记不能自动证明独立验证链已执行。",
+        "sources": [
+          "S19",
+          "S22",
+          "S23"
+        ]
+      },
+      "aimeth": {
+        "text": "生成与终末 certificate evaluation 已有分离，但公开开发控制题和固定角色不构成完整的双通道数学研究系统。",
+        "sources": [
+          "A05",
+          "A02"
+        ]
+      },
+      "adaptation": "内部审查通道只接收冻结的允许工具/反馈；盲测答案及独立终末评估器密钥不进入生成上下文。允许的验证器反馈和人工提示单独留痕。",
+      "acceptance": "权限与挂载检查通过；正确、错误、缺假设和循环依赖 fixture 被正确分类；开发集与保留集分别登记。",
+      "status": "评估隔离底座可复用；双通道编排待实现"
+    },
+    {
+      "id": "M07",
+      "title": "增殖、冻结、合并与重新激活",
+      "version": "V2",
+      "original": {
+        "text": "原规范包含 explore/specialize/proliferate/freeze/merge/reactivate，按任务和信息需求调整组织。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "Codex engine 以固定 0.03 改变量写自适应标记；Core population 的扩增创建状态记录。它们不能单独证明新 Agent 真正执行了不同推理任务。",
+        "sources": [
+          "S12",
+          "S19"
+        ]
+      },
+      "aimeth": {
+        "text": "AIMeth manifest 与 schedule 是预登记固定 roster/轮次；不能不改协议就在运行中动态增殖。",
+        "sources": [
+          "A01",
+          "A03"
+        ]
+      },
+      "adaptation": "通过有版本的组织变更事件创建新任务与 Agent，冻结不删除历史；变更必须携带触发证据、预算来源和对照臂的等预算处理。",
+      "acceptance": "重启后 roster/预算/后续任务唯一一致；新增身份有实际调用或明确的未执行原因。",
+      "status": "动态调度待实现"
+    },
+    {
+      "id": "M08",
+      "title": "Patterning 与层状 TF 式调控",
+      "version": "V2",
+      "original": {
+        "text": "V2 Patterning 负责多样性、替代解释、稳健性和方法调节；原规范不等于已经实现每一层独立 TF 式治理 Agent。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "GLM 每轮调用一个 PatterningAgent，按自报信息增益选前五个格点，再调用同一 _call_llm 并按 TF 名称合并候选；没有新的层调控提示。Core Step6 有条件任务生成和路由 kimi-k3 的意图，但所检视 benchmark 用 getattr 读取 dict，仍落入默认 analysis_agent/flash，不能声称实际换模型。",
+        "sources": [
+          "S06",
+          "S07",
+          "S08",
+          "S15",
+          "S27"
+        ]
+      },
+      "aimeth": {
+        "text": "S/I/L/X 与 H/F 目前没有对应的 Patterning 策略。固定角色提示不是层间调控。",
+        "sources": [
+          "A01",
+          "A02"
+        ]
+      },
+      "adaptation": "将层定义为问题分解、局部推导、跨模块组合等可检验职责，明确调控信号如何改变分工、工具及预算。逐层 TF 式调控是本项目待冻结的适配提案。",
+      "acceptance": "每次调控有触发证据、动作和后续执行；与等调用次数的同模型重采样比较，避免将额外计算或换模型的收益归因治理。",
+      "status": "部分来源有重复查询；数学层调控待实现"
+    },
+    {
+      "id": "M09",
+      "title": "Interface 与边界兼容",
+      "version": "V2",
+      "original": {
+        "text": "Interface 检查模块边界及兼容性；相邻关系不应直接推断为调控关系。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "Codex engine 登记 interface_agent，但 worker 实际统一调用 analysis_agent；已检查链不足以证明独立边界审查已接入。",
+        "sources": [
+          "S12",
+          "S13"
+        ]
+      },
+      "aimeth": {
+        "text": "H/F critic 执行通用批评，不具有明确的定理接口或假设类型检查。",
+        "sources": [
+          "A02"
+        ]
+      },
+      "adaptation": "在引理组合边界检查函数空间、定义域、边界条件、正则性、量词和常数依赖，生成精确的兼容/不兼容记录。",
+      "acceptance": "局部推导各自正确但组合假设冲突的 fixture 被阻止；修复后形成新的候选版本且保留旧失败。",
+      "status": "数学接口协议待实现"
+    },
+    {
+      "id": "M10",
+      "title": "Vascular 类型化长程消息",
+      "version": "V2",
+      "original": {
+        "text": "Vascular 允许关键矛盾、新证据、验证请求、复现失败、工具结果及瓶颈等高价值长程消息。用户“微管束”表述与源码 Vascular 的术语对应尚未最终确认。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "GLM 同层、候选非空且权重为正的身份消息经 aggregate 累积为票，Observer 使用这些票；跨层消息及其他候选内容不在该聚合器中整合。analyzer 的模型上下文只有格点元数据和 data_slice，常规身份已存在还会跳过查询。Core Step6 inbox_digest 仅有类型和发送接收者，省略候选内容。",
+        "sources": [
+          "S07",
+          "S08",
+          "S10",
+          "S11",
+          "S16",
+          "S26"
+        ]
+      },
+      "aimeth": {
+        "text": "AIMeth enqueue_round 将真实 incoming 内容、父事件、源哈希冻结进请求，具备消息→提示记录；尚无 Vascular 类型语义与跨模块路由。消息被接收不证明模型实际理解或使用。",
+        "sources": [
+          "A03",
+          "A02"
+        ]
+      },
+      "adaptation": "携带有来源的引理、反例、验证失败及瓶颈；获准消息内容进入后续推理上下文，并保留预算和源候选版本。",
+      "acceptance": "核对 message→prompt→receipt→candidate 链；替换消息内容的确定性 fixture 能改变预期输入，随后才用消融检验科学贡献。",
+      "status": "内容链底座已实现；Vascular 策略待实现"
+    },
+    {
+      "id": "M11",
+      "title": "动态 Observer 与真实任务社区",
+      "version": "V2",
+      "original": {
+        "text": "Observer 随实际社区调整，监视多样性、来源独立性、少数意见和信息增益。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "GLM build_dynamic_observers 根据归一化代谢通路建社区；Core Observer 对调用方给出的五个数值加权。生物社区和自报数值不能直接替代数学证据独立性。",
+        "sources": [
+          "S07",
+          "S20"
+        ]
+      },
+      "aimeth": {
+        "text": "已有图与事件查询能力，没有动态任务社区或来源独立性计算器。",
+        "sources": [
+          "A01",
+          "A03"
+        ]
+      },
+      "adaptation": "按共享证明义务/证据依赖形成社区，检测候选是否只是共同祖先的复制；社区变化也需要版本化。",
+      "acceptance": "多个转述同一论据的 Agent 不被计为独立支持；重组后消息与候选来源仍可追溯。",
+      "status": "社区与依赖监视待实现"
+    },
+    {
+      "id": "M12",
+      "title": "候选收获、优先级与少数保留",
+      "version": "V2",
+      "original": {
+        "text": "候选在 COLOR 或全局 STOP 之前收获；规范定义候选状态并保留少数方向。",
+        "sources": [
+          "S03",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "Codex CandidateRegistry 有加权评分、精确归一化去重、优先级和少数状态；Core 也登记收获角色。评分或文本去重不是候选之间的逻辑等价证明。",
+        "sources": [
+          "S14",
+          "S19"
+        ]
+      },
+      "aimeth": {
+        "text": "现有终末选择器取一个预定代表，不是完整候选档案或经过预算核算的群体合成器。",
+        "sources": [
+          "A02"
+        ]
+      },
+      "adaptation": "维护候选证明/反例及证明义务 DAG，记录生成、依赖、反驳、修订和验证结果。群体产出规则预先冻结，禁止事后挑选最好结果。",
+      "acceptance": "每个终末产物可追溯到中间贡献与否证；无成功候选时仍导出完整候选和失败清单。",
+      "status": "候选底座可借鉴；群体合成待实现"
+    },
+    {
+      "id": "M13",
+      "title": "三 Chief 的制衡",
+      "version": "V2",
+      "original": {
+        "text": "V2 设综合、怀疑与校准三个 Chief，分离综合决策、反对证据及证据等级。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "Core 控制器确实调用三 Chief；其方法是确定性 Python：排序、missing_context 检查、reproducibility maturity 检查。不能称为三个独立模型已完成数学互审。",
+        "sources": [
+          "S21",
+          "S28"
+        ]
+      },
+      "aimeth": {
+        "text": "E0/E1/C/S 不是这三个 Chief，终末 synthesizer 也没有对应制衡协议。",
+        "sources": [
+          "A02"
+        ]
+      },
+      "adaptation": "综合 Chief 组装候选；怀疑 Chief 列出最强反例和遗漏；校准 Chief 标注证据等级与未完成义务。明确哪些规则执行、哪些调用模型，并核算成本。",
+      "acceptance": "三份署名决策与原始证据齐全，Chief 有分歧仍可停止并报告；数学真值由独立验证器决定。",
+      "status": "规则治理有来源实现；数学三 Chief 待实现"
+    },
+    {
+      "id": "M14",
+      "title": "反馈、依赖子图与局部重算",
+      "version": "V2",
+      "original": {
+        "text": "V2 区分验证反馈类型，并只重算受影响子图。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "Core FeedbackIntegrator 区分 NEGATIVE/FAILED_TECHNICAL、更新候选并创建依赖子图请求；RerunManager.execute 只把 Agent 置 ACTIVE、任务置 READY，然后标 COMPLETE，没有执行器调用。反馈 CLI 保存请求，不等于重执行已经完成。",
+        "sources": [
+          "S17",
+          "S18",
+          "S22"
+        ]
+      },
+      "aimeth": {
+        "text": "已有失败重试、租约恢复和按轮续接；它们处理执行故障，不会自动识别数学依赖及启动局部修订。",
+        "sources": [
+          "A03",
+          "A04"
+        ]
+      },
+      "adaptation": "建立定理/引理/证明义务依赖，数学否证与工具失败分别处理。重算必须真的执行并留下新结果，不能把排入队列视为完成。",
+      "acceptance": "反例只使受影响后代失效；恢复后不重复提交结果；新候选关联原候选和反馈事件。",
+      "status": "请求状态机制可借鉴；闭环任务执行待实现"
+    },
+    {
+      "id": "M15",
+      "title": "非 LLM 控制器、持久化与恢复",
+      "version": "V2 + 项目工程要求",
+      "original": {
+        "text": "V2 控制器负责状态、预算、缓存、重算、checkpoint 和停止，不代替科学结论。",
+        "sources": [
+          "S03"
+        ]
+      },
+      "workflow": {
+        "text": "来源包含控制状态与 checkpoint 逻辑，但本次是静态代码核对，没有据此认定多机故障恢复、全量 10K 或生产服务已经验证。",
+        "sources": [
+          "S12",
+          "S17",
+          "S18",
+          "S22"
+        ]
+      },
+      "aimeth": {
+        "text": "AIMeth 有事务事件、带 fencing 的租约、原子 receipt/checkpoint/message 提交与哈希校验。保证限于单主机本地持久 SQLite；不支持多主机在共享文件系统上写同一个库。调用/输出预留已有，完整输入 token 与 GPU 时归属仍缺。",
+        "sources": [
+          "A03",
+          "A04",
+          "A07",
+          "A08",
+          "A11"
+        ]
+      },
+      "adaptation": "将组织策略与调度/验证/报告分离；新增治理事件纳入既有原子日志，动态任务要补明确的恢复和预算语义。",
+      "acceptance": "杀进程/过期租约/重复回执 fixture 不丢消息、不双计结果；压力测试报告容量与开销，不伪装为组织科学收益。",
+      "status": "生产底座部分完成；动态组织及多机能力未完成"
+    },
+    {
+      "id": "M16",
+      "title": "数学任务接口与群体评价",
+      "version": "跨版本研究要求",
+      "original": {
+        "text": "来源是生物组织启发的研究系统；不能把生物指标、身份共识或候选数直接转换成数学成功率。V2 本身也区分停止与真值。",
+        "sources": [
+          "S03",
+          "S04"
+        ]
+      },
+      "workflow": {
+        "text": "Core compute 计算表达富集并登记观察性 claim；benchmark 按基因/概念匹配和计算提名计 recall，surfaced 也含确定性计算提名。该 recall 不是群体证明成功率。",
+        "sources": [
+          "S23",
+          "S24",
+          "S25"
+        ]
+      },
+      "aimeth": {
+        "text": "旧角色准入检查的是格式/传输，数学结果在终末评价；旧计划另加“capable single-Agent”顺序，是当前必须撤销的研究计划门槛。旧结果与冻结门槛保留不改。",
+        "sources": [
+          "A05",
+          "A06",
+          "A09",
+          "A10"
+        ]
+      },
+      "adaptation": "用有限且可独立检查的证明义务/反例任务检验机制；Navier–Stokes 保留为探索性任务。单位是独立初始化的群体 run×任务实例，模型、任务与总资源受控。单 Agent 仅可选等预算参照。",
+      "acceptance": "盲评逐项检查定理、假设、依赖和证明义务；保留数学错误、少数意见、未收敛及零收益，不以它们阻止下一轮组织研究。",
+      "status": "研究准入已纠正；完整数学适配仍待实施"
+    }
+  ]
+}

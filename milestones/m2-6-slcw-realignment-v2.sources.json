@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-09-29",
+  "workflow_root_label": "0013-Workflow (private local sources)",
+  "scope": "Static source inspection; hashes identify inspected bytes, not successful execution. Private Workflow source content is not redistributed. Public readers require authorized access to reproduce that part of the audit.",
+  "baseline_commit": "0234fb6f1e3a247cd9c889ec578a5455499e93aa",
+  "sources": [
+    {
+      "id": "S01",
+      "scope": "workflow",
+      "path": "S0001-Layer/za/01.GTPplant.md",
+      "inspected_lines": "5–11; 27–36",
+      "bytes": 1359,
+      "sha256": "2ae9010b0527fb694af12d20af0cf7e588502e8e68b3ea4c92ec19499bc0edd4",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S02",
+      "scope": "workflow",
+      "path": "S0001-Layer/za/S0001-DPV4/20260810_层状Agent分析架构设计_DPV4.md",
+      "inspected_lines": "80–138; 202–215",
+      "bytes": 15073,
+      "sha256": "2af280a44a912ce55e305bec56014960a00e627783c50ab2c7eab6275736ab84",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S03",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Runtime_v0.1/spec/SLCW_Final_DiscoveryTissue/ARCHITECTURE.md",
+      "inspected_lines": "38–171",
+      "bytes": 3993,
+      "sha256": "6dce7f37e5e7486fa5ee144803dc6e03a23713add01e2c22baf3eeabbfe167d9",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S04",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Runtime_v0.1/spec/SLCW_Final_DiscoveryTissue/FINAL_DECISIONS.md",
+      "inspected_lines": "3–100",
+      "bytes": 2302,
+      "sha256": "53b506b7eb3bbd7b4351f324a8dc74a0f46964cb8679d9d64be926f01a4cecb7",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S05",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/modes.py",
+      "inspected_lines": "13–21; 95–102",
+      "bytes": 3895,
+      "sha256": "fcbc813ac06e667b010d710689c66488afc9a4f4ea48c553ab085e39af375654",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S06",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/run_v1.py",
+      "inspected_lines": "146–159; 199–249",
+      "bytes": 15669,
+      "sha256": "b2e91619796f825a2d8ff8182c23afab2db92bbd9a98c35cedc689f91928015f",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S07",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/observers_adaptive.py",
+      "inspected_lines": "134–245; 287–340",
+      "bytes": 16417,
+      "sha256": "2f47ee4ba046f9901d76ed5cd0541fba08215f67710b2e5bce429d842bfd581e",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S08",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/analyzer.py",
+      "inspected_lines": "85–110; 183–220",
+      "bytes": 18914,
+      "sha256": "ea764926837b82e2514f664e1a3c7e9092812071afd00d91da8d64da05903d18",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S09",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/config/defaults_v1_glm.yaml",
+      "inspected_lines": "15–20",
+      "bytes": 3274,
+      "sha256": "0c76e243f4a6ebdabd8a88693e88a51c90dde0cb3684b5c95578d373f0c7ff98",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S10",
+      "scope": "workflow",
+      "path": "S0001-Layer/za/S0001-DPV4/orchestrator/router.py",
+      "inspected_lines": "83–120",
+      "bytes": 4888,
+      "sha256": "3971a1b57dc13c15ad1681edefa129e167b412297bae87ea8a17a8341e5b28cd",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S11",
+      "scope": "workflow",
+      "path": "S0001-Layer/za/S0001-DPV4/orchestrator/consensus.py",
+      "inspected_lines": "1–160",
+      "bytes": 7210,
+      "sha256": "e22ca94f6ce618162254d3482a6e2e3bc9d6c69c2dca19cd85bc6de153d92dca",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S12",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0003-Codex/slcw_core/engine.py",
+      "inspected_lines": "42–122",
+      "bytes": 8532,
+      "sha256": "11e36909c46488fb44fa096449ae89774b3ac2fe72d212c10ff5a0ace07786d4",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S13",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0003-Codex/slcw_core/worker.py",
+      "inspected_lines": "20–58",
+      "bytes": 3288,
+      "sha256": "36564c77d763e01d02dd9095547b15a0179f8162647a61cf7739679a5b9799b0",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S14",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0003-Codex/slcw_core/candidates.py",
+      "inspected_lines": "whole module",
+      "bytes": 3019,
+      "sha256": "ca27af0140909db64fc326c1f4580c8dcdbfedcbf26503f22225e17dd3a082d1",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S15",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/patterning.py",
+      "inspected_lines": "1–69",
+      "bytes": 2736,
+      "sha256": "1c64e713449c4dc37b4f7b023a9ccdc7cd0bf1d8cc3a1817f0273f9ee4eb423e",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S16",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/step6overlay/messaging.py",
+      "inspected_lines": "1–89",
+      "bytes": 3778,
+      "sha256": "094f256416bb1a2204d74079e64b1fa3bdd43ea49f7929a0f8c0d06a696745ed",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S17",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/feedback.py",
+      "inspected_lines": "17–end",
+      "bytes": 3110,
+      "sha256": "390193743875417ab1e6f0b4f71bf30a8d3a764c6ac64efa476d23ac7c8fb43e",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S18",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/rerun.py",
+      "inspected_lines": "26–end",
+      "bytes": 1569,
+      "sha256": "37e3651a96fa5506a65950a4bc50c5f04103e3badf1f7fa3bdabe6f32bd400ac",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S19",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/population.py",
+      "inspected_lines": "21–end",
+      "bytes": 2564,
+      "sha256": "b4e88ba47d3e2cf72ca5ca62712d52d0883c9697b22354ec98fb2aacd95480c2",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S20",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/observer.py",
+      "inspected_lines": "12–end",
+      "bytes": 1282,
+      "sha256": "18bcd09eeb06fa32295a7ee365d6047fa9b6f136477465315e91bb76239a0025",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S21",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/chiefs.py",
+      "inspected_lines": "12–end",
+      "bytes": 2104,
+      "sha256": "72079e252a02b56a7c9a7b66d76c7779bb2b21b750a48256a8c98fab1a88cdd9",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S22",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/cli.py",
+      "inspected_lines": "38–end",
+      "bytes": 6864,
+      "sha256": "1b3530ec9207920e39e3b17c082cd8975d88e93a1c2ce8508e375d3dd06e7e6a",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S23",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/cli.py",
+      "inspected_lines": "49–end",
+      "bytes": 7685,
+      "sha256": "c641e0f2912225e5a0e0f8e0a37ad7dd49d26d2e67d41f7017165bca3df466bc",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S24",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/compute.py",
+      "inspected_lines": "279–end",
+      "bytes": 14618,
+      "sha256": "cbe4651c37612141e5a62f7891b6e10c815397cf740fcb688bd0dbe5aa216941",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S25",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/benchmark.py",
+      "inspected_lines": "211–end",
+      "bytes": 16148,
+      "sha256": "fbc2d867cdb64fa21924e20b6bab663d9da012b21928231bfae1a073ff152fbe",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S26",
+      "scope": "workflow",
+      "path": "S0001-Layer/S0001-GLM/slcw_v1_glm/lattice_bridge.py",
+      "inspected_lines": "24–end",
+      "bytes": 2445,
+      "sha256": "f73e87ec0e2f178e383be5b8b6094506ce3bc6035d8537427d4856e5f1a48bfc",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "A01",
+      "scope": "aimeth",
+      "path": "aimeth_design/organizations.py",
+      "inspected_lines": "25–160",
+      "bytes": 7898,
+      "sha256": "af660f08defdbe6b9fdd90da2eb22e338ec0baa7d49ec122a3b90f107cfeee25",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A02",
+      "scope": "aimeth",
+      "path": "aimeth_design/role_routing.py",
+      "inspected_lines": "16–163",
+      "bytes": 10056,
+      "sha256": "28c05fb16d25781bf7b80a77981232b954dbda59d0f84b33cfbed0a96ac17bfd",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A03",
+      "scope": "aimeth",
+      "path": "aimeth_runtime/store.py",
+      "inspected_lines": "47–160; 275–369; 412–510; 619–end",
+      "bytes": 44638,
+      "sha256": "e360f45fe0f692d79b0e74914270a1b4e9a459082aac7a95e172f0fd1bf7d2ef",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A04",
+      "scope": "aimeth",
+      "path": "aimeth_runtime/runner.py",
+      "inspected_lines": "94–end",
+      "bytes": 7525,
+      "sha256": "0efc191dc03ddd35324538de865f8040ed5ca3aece44a772aebef75cb18671bf",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A05",
+      "scope": "aimeth",
+      "path": "aimeth_pilot/role_run.py",
+      "inspected_lines": "136–139; 190–197",
+      "bytes": 15110,
+      "sha256": "96435ab52cf9ae896f907dd43950ee0a297d3ad507dd5da1de5caddf4292d8e0",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A06",
+      "scope": "aimeth",
+      "path": "aimeth_pilot/role_contract.py",
+      "inspected_lines": "225–246",
+      "bytes": 15557,
+      "sha256": "53af9d142435a482c70a08fdabab488063cc7d8afa6f1213d63fc170f10fbed6",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A07",
+      "scope": "aimeth",
+      "path": "aimeth_pilot/role_budget.py",
+      "inspected_lines": "whole module",
+      "bytes": 5516,
+      "sha256": "fdb66b13bfac0f664be48e0aae2f2fc53723fe8d3ae9f549968394187ccd53e8",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A08",
+      "scope": "aimeth",
+      "path": "aimeth_pilot/quota.py",
+      "inspected_lines": "whole module",
+      "bytes": 3181,
+      "sha256": "ef8f790522a9cdcbdcb93a032ff34a7b2033d5839a6e8a5a3701e6651b224a0a",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A09",
+      "scope": "aimeth",
+      "path": "docs/next-population-plan-v1.md",
+      "inspected_lines": "1–end",
+      "bytes": 5010,
+      "sha256": "590a87d709168934dc7caf836ae65659b20ab16cd8dfb39065327a69f1555203",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A10",
+      "scope": "aimeth",
+      "path": "task-continuation-report-manifest.json",
+      "inspected_lines": "14–16",
+      "bytes": 4863,
+      "sha256": "5db8477b2a74f3331781695f3d7ba5ec3cdab0c52f85214b90dd60e89c582f13",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "A11",
+      "scope": "aimeth",
+      "path": "docs/runtime-contract-v1.md",
+      "inspected_lines": "whole document",
+      "bytes": 8060,
+      "sha256": "098a10876a4c4ed2eff695dbf633c53abd19ac181a88d0397be599833d4e6aa3",
+      "identity": "0234fb6f1e3a247cd9c889ec578a5455499e93aa"
+    },
+    {
+      "id": "S27",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/bench/comparison.py",
+      "inspected_lines": "98–130",
+      "bytes": 12067,
+      "sha256": "bf1d82a6c265a56bd2b2541e1c7a456ac3def5c5bb3c084a7047ecd3b835ca0f",
+      "identity": "local source snapshot; not a live execution"
+    },
+    {
+      "id": "S28",
+      "scope": "workflow",
+      "path": "S0001-Layer/SLCW_Core_v1.0/slcw_core/runtime_slcw/controller.py",
+      "inspected_lines": "68–74",
+      "bytes": 4775,
+      "sha256": "c123beac819537a087c8fc36f2afc2a5076744cac299ad61f4d3d0ed51e0d0e1",
+      "identity": "local source snapshot; not a live execution"
+    }
+  ]
+}

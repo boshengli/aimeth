@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-29",
+  "current_plan": "docs/population-plan-v2.md",
+  "current_mapping": "docs/slcw-math-mapping-v2.json",
+  "current_report": "milestones/m2-6-slcw-realignment-v2.html",
+  "authorization": "User requested source/implementation/math mapping and removal of the single-Agent-success prerequisite. Numerical budgets and a confirmatory protocol are not yet frozen.",
+  "superseded": [
+    {
+      "path": "docs/next-population-plan-v1.md",
+      "scope": "future-work sequence and launch prerequisites only",
+      "replacement": "docs/population-plan-v2.md",
+      "preserve": "original bytes, historical protocol gates, results and artifact hashes"
+    },
+    {
+      "path": "docs/slcw-source-realignment-v1.md",
+      "scope": "current reconciliation and readiness statements",
+      "replacement": "docs/slcw-math-mapping-v2.md",
+      "preserve": "original v1 report bundle and hashes"
+    }
+  ]
+}
