@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7",
+  "version": "v4",
+  "source_baseline_commit": "1297a7ea9199188d3fc7aca15a3e09edf767b4ca",
+  "report_delivery_commit": "18f5bae432fe5eb04311a3e6fa229ead6323c19d",
+  "files": {
+    "html": "m2-7-direct-10k-v4.html",
+    "json": "m2-7-direct-10k-v4.json",
+    "template.html": "m2-7-direct-10k-v4.template.html",
+    "validation": "m2-7-direct-10k-v4.validation.json"
+  },
+  "sha256": {
+    "html": "351496dd3e8756c90683c2b7d4b2e89854b2ea9c1e9d4fe38c1f568138f5ac5c",
+    "json": "584cb6903a739cb776eac738eee89f312e856141edc91b3786de5185c944d6c7",
+    "template.html": "351496dd3e8756c90683c2b7d4b2e89854b2ea9c1e9d4fe38c1f568138f5ac5c",
+    "validation": "89c9cf1dc097973d092d12f968fd0e60aa7965ffc3072b38abd5106e0f41cea6"
+  }
+}
