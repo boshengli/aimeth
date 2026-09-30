@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2.7 公网 GLM-5.3-Flash API 试验 v1</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f2f5f4;color:#183235;font:16px/1.65 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:980px;margin:auto;padding:24px}header,section{background:#fff;border:1px solid #d5e0dc;border-radius:12px;padding:22px;margin:14px 0}header{border-top:6px solid #08776a}h1{font-size:clamp(27px,4vw,38px);line-height:1.2}h2{font-size:22px;margin:0 0 10px}.lead{font-size:19px;font-weight:650}.pill{display:inline-block;border-radius:24px;padding:3px 10px;background:#fff0d6;color:#7b4208}a{color:#086b61}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #dce5e1}th{width:26%}code{overflow-wrap:anywhere}.note{padding:12px;background:#fff4e5;border-left:4px solid #bd761d}.ok{padding:12px;background:#e6f4ed;border-left:4px solid #16815c}nav{display:flex;gap:12px;flex-wrap:wrap}@media(max-width:620px){main{padding:10px}header,section{padding:15px}table,tbody,tr,th,td{display:block}th{width:auto;border:0;padding-bottom:0}td{padding-top:2px}}@media print{body{background:#fff;font-size:11pt}main{max-width:none;padding:0}header,section{break-inside:avoid;border:0;padding:10px 0}}
+</style></head><body><main>
+<header><small>AIMeth · M2.7 公网 API 试验 · v1 · 2026-09-30</small><h1>模型可见、同步调用通；Batch 上传拒绝 Flash，四个响应均无最终答案</h1><p class="lead"><span class="pill">4 个并发 GLM-5.3-Flash 请求 · HTTP 200</span></p><p>用户授权测试其提供的公网智谱 API。模型目录确认 glm-5.3-flash 可用；官方 Batch 文件上传却用错误码 1210 拒绝该模型。为验证同一群体任务能否走标准 API，发送了四个独立的 Navier–Stokes 审查角色请求。请求成功返回，但每条都耗尽 1,200 completion-token 上限，finish_reason=length，最终 content 为空。没有形成可供 Agent 间传递的答案。</p><nav aria-label="报告章节"><a href="#req">目标与方法</a><a href="#batch">Batch 结果</a><a href="#calls">同步调用结果</a><a href="#limits">解释与下一步</a><a href="#identity">可复现身份</a></nav></header>
+<section id="req"><h2>用户目标与执行方法</h2><table><tbody>
+<tr><th>用户要求</th><td>集群 GPU08 不可用时，测试公网 API；优先使用记忆中的 GLM-5.3-Flash，通过群体/batch 方式提交。</td></tr>
+<tr><th>模型发现</th><td>无计费 GET /models 在两个官方域名均返回 HTTP 200，模型列表 11 项并包含 glm-5.3、glm-5.3-flash、glm-5.3-flashx。没有保存或回显 API key。</td></tr>
+<tr><th>数学任务</th><td>基于项目现有的无外力、全空间 R³、光滑快速衰减无散初值 NS 范围，构造 Analyst、Adversarial Reviewer、Independent Auditor、Synthesis Chief 四个相互独立的审查请求。内容只要求列出假设、证明义务和可检验的失败模式；禁止声称解决 NS。</td></tr>
+<tr><th>运行方式</th><td>优先尝试官方 Batch API；模型被 Batch 白名单拒绝后，以并发 4 的标准 Chat Completions 调用完成接口测试。该四请求并发不是完整 SLCW 调度器，不包含跨角色反馈或治理回合。</td></tr></tbody></table></section>
+<section id="batch"><h2>Batch API：模型列表与 Batch 白名单不一致</h2><p class="note">两个 Batch 文件上传请求均返回 HTTP 400、错误码 1210：glm-5.3-flash 不在该 Batch 服务实例接受的模型白名单内。未获得文件 ID，未调用 batch create，因此没有 Batch ID 或 Batch 运行；没有将其误报为已提交。</p><table><tbody>
+<tr><th>官方 Batch 格式</th><td>JSONL 每行一个请求，批次 endpoint 为 /v4/chat/completions；本次请求文件 SHA-256 为 <code>86d13fd4294265e4e97afb39c54ebf2c1b69e94e36bcbf8bd21f5ab54f4d6154</code>。</td></tr>
+<tr><th>模型路由</th><td>GET /models 显示 Flash 可用，但 Batch 文件验证以旧模型白名单拒绝它。这个冲突是本账号、本次端点的实际响应；不推断为所有 Z.AI 批次环境的永久限制。</td></tr>
+<tr><th>官方说明</th><td><a href="https://docs.bigmodel.cn/cn/guide/tools/batch">智谱 Batch API 指南</a>描述 JSONL 文件、批次提交与结果文件；<a href="https://docs.z.ai/guides/vlm/glm-5.3-flash">GLM-5.3-Flash 指南</a>说明模型端点与参数。</td></tr></tbody></table></section>
+<section id="calls"><h2>四个同步群体角色请求</h2><div class="ok">服务端身份：4/4 HTTP 200，返回 model ID glm-5.3-flash；网络层错误 0。</div><table><tbody>
+<tr><th>最终答案</th><td>4/4 finish_reason=length；每条 completion_tokens=1,200；4/4 的最终 content 长度为 0。没有可用于阶段传递的角色产物。</td></tr>
+<tr><th>用量</th><td>输入 755 tokens，输出 4,800 tokens，总计 5,555 tokens。按服务端 usage 记录；实际货币扣费未从账户账单核验。</td></tr>
+<tr><th>含义</th><td>这证明凭据、路由、模型选择和并发 API 调用可用；不证明模型输出有效、数学任务可完成、Batch 支持 Flash 或 Agent 组织产生优势。模型 reasoning 字段未保存在正式回执中；因最终 content 为空，不能把内部推理计作 Agent 答案。</td></tr></tbody></table>
+<p class="note">官方 GLM-5.3-Flash 思考模式文档说明此系列默认强制思考且不能关闭。本次 1,200-token 截断与此机制相符，但由于没有保留 reasoning 字段，无法核实具体 token 分布或把它断言为唯一原因。参见<a href="https://docs.z.ai/guides/capabilities/thinking-mode">官方 Thinking Mode 文档</a>。</p></section>
+<section id="limits"><h2>科学边界与下一步准备度</h2><p>这次是公网 API/传输路径试验，不是单 Agent 能力基线，也不是群体数学效果试验。四个角色请求互相独立，未运行 10K 人口；没有证明、反例、统计结论或组织比较。</p><p><strong>可运行性判断：</strong>标准同步 Flash API 已连通，当前 1,200-token 请求配置不可用；官方 Batch 上传验证拒绝了该型号。因此尚不能按“Flash Batch”启动 10K。正式 10K 请求前需确定 Batch 服务支持 Flash 的模型路由，或冻结同步分阶段群体调度及能够让最终答案字段完成生成的输出预算。</p><p class="note">HTML 已离线检查标签解析、章节锚点、链接目标、响应式窄屏与打印 CSS；浏览器视觉验收未完成，沿用项目既有浏览器策略限制。</p></section>
+<section id="identity"><h2>身份、账本与文件</h2><table><tbody>
+<tr><th>运行 ID</th><td><code>slcw-public-api-batch-20260930-v1</code></td></tr>
+<tr><th>API base</th><td><code>https://open.bigmodel.cn/api/paas/v4</code>。密钥未落盘、未加入 Git。</td></tr>
+<tr><th>输入与回执</th><td><a href="m2-7-public-api-test-v1.requests.jsonl">四个实际请求</a> · <a href="m2-7-public-api-test-v1.responses.jsonl">标准化响应回执</a> · <a href="m2-7-public-api-test-v1.json">用量与终态摘要</a> · <a href="m2-7-public-api-test-v1.batch-attempts.json">Batch 上传失败记录</a> · <a href="m2-7-public-api-test-v1.provider-discovery.json">模型目录核验</a></td></tr>
+<tr><th>哈希</th><td>请求 SHA-256 <code>86d13fd4294265e4e97afb39c54ebf2c1b69e94e36bcbf8bd21f5ab54f4d6154</code><br>回执文件 SHA-256 <code>ea0f9b40999762432f944f00b447e6550a68b9bf5de014b5616053c74a24d575</code></td></tr>
+<tr><th>报告版本</th><td>源码基线 commit 与交付提交见 manifest；前序 gpu08 排队状态见 <a href="m2-7-direct-10k-v4.html">M2.7 v4</a>。</td></tr></tbody></table></section>
+<footer>本次四请求总计 5,555 服务端计费 tokens；未核验账单金额。未保存密钥、完整 reasoning 字段或批次输出文件。</footer>
+</main></body></html>
