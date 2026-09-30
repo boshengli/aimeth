@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "scope": "M2.7 GPU08 local DeepSeek serving smoke report bundle; integrity only, no scientific validity claim",
   "source_baseline_commit": "35bce3ea7daef0af7b137c5cdea3ea45fd63b17c",
-  "report_delivery_commit": "pending",
+  "report_delivery_commit": "2efb0d1e86b175c4df8f8ac60541648b9fc1dce6",
   "artifacts": [
     {
       "id": "README.md",
@@ -37,14 +37,14 @@
     {
       "id": "milestones:m2-7-gpu08-deepseek-local-v1.html",
       "path": "milestones/m2-7-gpu08-deepseek-local-v1.html",
-      "bytes": 15623,
-      "sha256": "5372a84a18f926af559fd06fbb64530d7b773e9de55b9c3c823c3570245d3929"
+      "bytes": 15656,
+      "sha256": "19dc2b24763962f2304c5c6d016e68679e931fca235bbd8a4b19108501e67d39"
     },
     {
       "id": "milestones:m2-7-gpu08-deepseek-local-v1.json",
       "path": "milestones/m2-7-gpu08-deepseek-local-v1.json",
-      "bytes": 5199,
-      "sha256": "e62e92f82a0836476f63259b66dcd6e13752e7fe1c3d2e480557c71d72a714a0"
+      "bytes": 5232,
+      "sha256": "44f571cf1512f14947b2d0080fd7815c22ad2b099012887a26070d1243b8d89f"
     },
     {
       "id": "milestones:m2-7-gpu08-deepseek-local-v1.template.html",
@@ -62,7 +62,7 @@
       "id": "milestones:m2-7-gpu08-deepseek-local-v1.validation.json",
       "path": "milestones/m2-7-gpu08-deepseek-local-v1.validation.json",
       "bytes": 922,
-      "sha256": "712d481bd4cae3aa9432bb815c4fccebe34bda7fae727c79fb0479c23b77a69c"
+      "sha256": "f83b9ce9fe64467d8b940159346997b5a03f504a9e2e20fce2efeb1ff63c4e4a"
     },
     {
       "id": "tools:build_gpu08_local_smoke_report.py",
@@ -79,8 +79,8 @@
     {
       "id": "tools:build_gpu08_local_smoke_manifest.py",
       "path": "tools/build_gpu08_local_smoke_manifest.py",
-      "bytes": 1876,
-      "sha256": "d8b03f9ef6a61678de4a7f27000201e103b922e6fa4c11460ad2c5cfce35950f"
+      "bytes": 1972,
+      "sha256": "867703c6df036611b561f4b15d77df295ab69d9154800108e3f845117280ed5c"
     },
     {
       "id": "tools:gpu08_model_smoke.sbatch",

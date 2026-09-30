@@ -41,7 +41,7 @@ def main() -> None:
         "schema_version": "1.0",
         "scope": "M2.7 GPU08 local DeepSeek serving smoke report bundle; integrity only, no scientific validity claim",
         "source_baseline_commit": "35bce3ea7daef0af7b137c5cdea3ea45fd63b17c",
-        "report_delivery_commit": "pending",
+        "report_delivery_commit": json.loads((ROOT / "milestones/m2-7-gpu08-deepseek-local-v1.json").read_text())["report_delivery_commit"],
         "artifacts": records,
     }
     (ROOT / "gpu08-local-smoke-report-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")

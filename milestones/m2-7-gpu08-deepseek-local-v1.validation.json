@@ -19,5 +19,5 @@
   "final_request_acceptance": "PASS: HTTP 200, finish_reason=stop, valid requested JSON",
   "browser_visual_qa": "PARTIAL: local HTML title loaded in Chrome; CUA screenshot was unavailable and browser-tab inventory returned a transport error, so visual desktop/narrow checks were not conclusively completed.",
   "interaction_visual_test": "NOT RUN in browser; anchor controls and semantic details disclosures were statically checked.",
-  "checked_html_sha256": "5372a84a18f926af559fd06fbb64530d7b773e9de55b9c3c823c3570245d3929"
+  "checked_html_sha256": "19dc2b24763962f2304c5c6d016e68679e931fca235bbd8a4b19108501e67d39"
 }

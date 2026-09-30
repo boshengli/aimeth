@@ -5,7 +5,7 @@
   "date": "2026-09-30",
   "outcome": "PASS for one bounded local inference request after two preserved failed startup attempts",
   "source_baseline_commit": "35bce3ea7daef0af7b137c5cdea3ea45fd63b17c",
-  "report_delivery_commit": "pending",
+  "report_delivery_commit": "2efb0d1e86b175c4df8f8ac60541648b9fc1dce6",
   "model": {
     "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
     "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
