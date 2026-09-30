@@ -4,7 +4,7 @@
 
 **Agent organization and verifiable mathematical discovery under constrained compute.**
 
-Latest: [M2.6 SLCW source-to-mathematics reconciliation v2](milestones/m2-6-slcw-realignment-v2.html). The [source / implementation / mathematical adaptation map](docs/slcw-math-mapping-v2.md) and [current population plan v2](docs/population-plan-v2.md) restore SLCW V1 and V2 as the research architectures. Neither running nor successfully solving a task with a single Agent is a prerequisite; small-population mathematical success is not a prerequisite for scale-up. Current admission checks concern executable organization, auditable records and recovery, bounded resources, isolated evaluator validity and a frozen protocol. Full V1/V2 mathematical runtime behavior and a new live comparison remain to be delivered. GPU08 project use is authorized again; the eight-GPU smoke check did not establish a deployed inference service.
+Latest: [direct 10K exploratory population](docs/direct-10k-v1.md). The first live target is 100 groups × 100 analysis Agents, plus 501 governance roles, two feedback cycles and 21,002 bounded call slots. No single-Agent capability test or N8/N32/N128 ladder is required. The SLCW V1 mathematical extension is implemented in `aimeth_swarm`; full V2 work proceeds separately. A complete 21,002-call synthetic fixture passed; this is engineering evidence, not a live-model or mathematical result. [Source/implementation/math mapping](docs/slcw-math-mapping-v2.md) remains the design reference.
 
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
 
@@ -22,7 +22,7 @@ The demo makes no model calls. Its policy and ring graph are engineering fixture
 
 ## Research and review
 
-- [Current population plan v2](docs/population-plan-v2.md): SLCW V1/V2 implementation and experiment acceptance, superseding the future-work sequence in the historical [M2.5 proposal v1](docs/next-population-plan-v1.md).
+- [Current direct 10K plan](docs/direct-10k-v1.md): first exploratory launch and bounded execution. The [v2 plan](docs/population-plan-v2.md) remains a historical design record; completing both architectures is no longer required before the first 10K run.
 - [Original design → implementation → mathematical adaptation](docs/slcw-math-mapping-v2.md), [structured map](docs/slcw-math-mapping-v2.json), and [M2.6 HTML v2](milestones/m2-6-slcw-realignment-v2.html): evidence, gaps and current readiness.
 - [Research protocol v0.1](docs/research-protocol.md): proposed hypotheses, controls, independent population runs, evaluation and stopping rules.
 - [Evidence audit](docs/evidence-audit.md) and [sources](references/sources.json): observed checks and source-reading boundaries.

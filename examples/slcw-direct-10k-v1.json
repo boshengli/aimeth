@@ -1,0 +1,22 @@
+{
+  "groups": 100,
+  "workers_per_group": 100,
+  "observers_per_group": 4,
+  "cycles": 2,
+  "max_inflight": 16,
+  "max_output_tokens": 1024,
+  "max_input_tokens": 8192,
+  "wall_seconds": 28800,
+  "seed": 20260929,
+  "model_name": "deepseek-v4-flash-0731",
+  "endpoint": "http://127.0.0.1:31008/v1/chat/completions",
+  "request_timeout_seconds": 120,
+  "population_id": "slcw10k-20260930-v1",
+  "input_token_limits": {
+    "worker": 8192,
+    "observer": 16384,
+    "chief": 8192,
+    "global": 28672
+  },
+  "consecutive_transport_error_stop": 5
+}
