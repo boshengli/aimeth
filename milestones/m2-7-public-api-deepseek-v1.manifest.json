@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7 public DeepSeek API diagnostic",
+  "version": "v1",
+  "source_baseline_commit": "a0a086162d7dc3d88fcfd8314733b421a50032e4",
+  "report_delivery_commit": "to be recorded after commit",
+  "report_html": "m2-7-public-api-deepseek-v1.html",
+  "files": {
+    "m2-7-public-api-deepseek-v1.html": "m2-7-public-api-deepseek-v1.html",
+    "m2-7-public-api-deepseek-v1.template.html": "m2-7-public-api-deepseek-v1.template.html",
+    "m2-7-public-api-deepseek-v1.json": "m2-7-public-api-deepseek-v1.json",
+    "m2-7-public-api-deepseek-v1.execution.json": "m2-7-public-api-deepseek-v1.execution.json",
+    "m2-7-public-api-deepseek-v1.validation.json": "m2-7-public-api-deepseek-v1.validation.json",
+    "m2-7-public-api-deepseek-v1.requests.jsonl": "m2-7-public-api-deepseek-v1.requests.jsonl",
+    "m2-7-public-api-deepseek-v1.responses.jsonl": "m2-7-public-api-deepseek-v1.responses.jsonl",
+    "m2-7-public-api-deepseek-v1-nothinking.json": "m2-7-public-api-deepseek-v1-nothinking.json",
+    "m2-7-public-api-deepseek-v1-nothinking.requests.jsonl": "m2-7-public-api-deepseek-v1-nothinking.requests.jsonl",
+    "m2-7-public-api-deepseek-v1-nothinking.responses.jsonl": "m2-7-public-api-deepseek-v1-nothinking.responses.jsonl"
+  },
+  "sha256": {
+    "m2-7-public-api-deepseek-v1.html": "abc8781ea26b43b0d534dc6b7f5629e14515d253ee2da863ec47e09d7f00907d",
+    "m2-7-public-api-deepseek-v1.template.html": "abc8781ea26b43b0d534dc6b7f5629e14515d253ee2da863ec47e09d7f00907d",
+    "m2-7-public-api-deepseek-v1.json": "9dfc3038817817a7d60d1fb67dcf048182984a4a7ce566286e15082d34554467",
+    "m2-7-public-api-deepseek-v1.execution.json": "3f0bae95ef8a33246540835a376f7bb3543d0adec63de60338735a6fad02822b",
+    "m2-7-public-api-deepseek-v1.validation.json": "2921d0c488b72fafd0bea9a908a2edf43b0113a2583adaee0f1b9110a8bc8e17",
+    "m2-7-public-api-deepseek-v1.requests.jsonl": "593f7c2253fc8cf6b540f069633bc72895cdbc208ba18ae1447b8d806174225c",
+    "m2-7-public-api-deepseek-v1.responses.jsonl": "a3eac320bc154e3f106bcf32125e301ea479f268d22a5694bd0b402b8b8e4ddc",
+    "m2-7-public-api-deepseek-v1-nothinking.json": "c2f69687304bb56259e51c8547227b015128c6e7495dde7d5358451ef8d884c4",
+    "m2-7-public-api-deepseek-v1-nothinking.requests.jsonl": "98f284a40e8b1e74fb9780eff90712d39b067eab2147dfedf42abba1bccc38d0",
+    "m2-7-public-api-deepseek-v1-nothinking.responses.jsonl": "1a4e2e43078087a955743eaeef66f4fb66fe156ca6cb77f11760f941749da849"
+  }
+}
