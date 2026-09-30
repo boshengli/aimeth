@@ -10,6 +10,8 @@ M2.7 runtime record: [HTML v2](milestones/m2-7-direct-10k-v2.html) documents GPU
 
 Public API follow-up: [DeepSeek API diagnostic v1](milestones/m2-7-public-api-deepseek-v1.html) records eight synchronous `deepseek-flash` calls. Default thinking exhausted a 2,048-token completion cap with empty final fields; with thinking disabled, all four calls returned parseable JSON, though the synthesis role missed its required five-item checklist. This is an API/format diagnostic only: no Batch submission, 10K population or mathematical validation occurred.
 
+GPU08 local-serving follow-up: [M2.7 GPU08 DeepSeek smoke v1](milestones/m2-7-gpu08-deepseek-local-v1.html) records three preserved startup attempts. The final run used eight H20 GPUs and completed one loopback DeepSeek-V4-Flash-0731 request with a valid JSON response. Earlier FP8 loading and Triton-cache failures remain in the evidence receipt; this is a serving check only, not a math or 10K result. GPU08 returned to `IDLE+RESERVED` after job 233657.
+
 
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
 

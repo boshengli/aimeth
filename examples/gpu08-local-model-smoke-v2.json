@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "protocol_id": "gpu08-local-model-smoke-v2",
+  "purpose": "Bounded follow-up smoke test for local DeepSeek serving; changes one runtime environment toggle based on the v1 stall; not a mathematical or organization-effect evaluation.",
+  "status": "frozen_before_execution",
+  "source_baseline_commit": "35bce3ea7daef0af7b137c5cdea3ea45fd63b17c",
+  "scheduler": {
+    "partition": "gpu",
+    "account": "libs",
+    "reservation": "Res_libs",
+    "node": "gpu08",
+    "gpus": 8,
+    "gpus_per_profile": 8,
+    "cpus": 32,
+    "memory_gb": 256,
+    "walltime_minutes": 30,
+    "models_loaded_concurrently": 1
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/chat/completions",
+    "calls_per_model": 1,
+    "timeout_seconds": 180,
+    "max_tokens": 1024,
+    "stream": false,
+    "system": "You are an API smoke-test endpoint. Do not solve or discuss any mathematical problem. Return exactly one JSON object and no other text.",
+    "user_template": "Return exactly this JSON object: {\"status\":\"ready\",\"model\":\"{served_model_name}\"}",
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "acceptance": {
+      "transport": "HTTP 200",
+      "generation": "finish_reason is stop and final content is non-empty",
+      "structured_output": "JSON parses with status=ready and model equal to requested served model name"
+    },
+    "health_timeout_seconds": 600
+  },
+  "profiles": {
+    "deepseek": {
+      "model_id": "DeepSeek-V4-Flash-0731",
+      "model_repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "model_revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "weight_identity": "64/64 official files including 48/48 safetensors matched in existing GPU08 audit; integrity summary retained in private audit root",
+      "runtime": "SGLang 0.5.16",
+      "image": "sglang-dsv4-hopper.sif",
+      "image_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+      "server_args": [
+        "--tp-size",
+        "8",
+        "--context-length",
+        "32768",
+        "--max-running-requests",
+        "1",
+        "--max-queued-requests",
+        "1",
+        "--chunked-prefill-size",
+        "4096",
+        "--mem-fraction-static",
+        "0.80",
+        "--attention-backend",
+        "dsv4",
+        "--moe-runner-backend",
+        "marlin",
+        "--kv-cache-dtype",
+        "fp8_e4m3",
+        "--reasoning-parser",
+        "deepseek-v4",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18000",
+        "--disable-cuda-graph"
+      ],
+      "hypothesis": "SGLANG_OPT_FP8_WO_A_GEMM=1 avoids the host-materializing FP8 wo_a dequantization path observed in v1; this is a runtime diagnostic hypothesis, not an H20 support claim.",
+      "environment": {
+        "SGLANG_OPT_FP8_WO_A_GEMM": "1"
+      }
+    },
+    "glm": {
+      "model_id": "GLM-5.3-Flash",
+      "model_repo": "zai-org/GLM-5.3-Flash",
+      "model_revision": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a",
+      "weight_identity": "INCOMPLETE before this test: 35 file checks matched, one size mismatch, remaining checks absent; do not claim official checkpoint reproduction",
+      "runtime": "vLLM 0.1.dev20051+g487ecf187",
+      "image": "vllm-openai.sif",
+      "image_sha256": "f416beb58593cc7ad7184c1314924d7f0fcf0b2205614bfae911917179f01bcf",
+      "server_args": [
+        "--tensor-parallel-size",
+        "8",
+        "--max-model-len",
+        "8192",
+        "--max-num-seqs",
+        "1",
+        "--max-num-batched-tokens",
+        "512",
+        "--gpu-memory-utilization",
+        "0.80",
+        "--kv-cache-dtype",
+        "bfloat16",
+        "--reasoning-parser",
+        "glm47",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18000",
+        "--enforce-eager"
+      ]
+    }
+  },
+  "privacy_and_safety": {
+    "weights_mount": "read-only",
+    "container_mount": "read-only",
+    "api_bind": "loopback only",
+    "api_key": "not used",
+    "mathematics_prompt": false,
+    "batch_submission": false,
+    "population_run": false,
+    "automatic_retries": false,
+    "server_stopped_at_job_end": true
+  },
+  "limitations": [
+    "H20 support is tested empirically by this run; vendor badges for other Hopper GPUs are not treated as H20 validation.",
+    "One deterministic non-mathematical request per model is a serving smoke test only.",
+    "The GLM checkpoint identity audit is incomplete and has a size mismatch; this profile can only diagnose the local directory unless a full audit passes.",
+    "The FP8 wo_a environment toggle is an isolated diagnostic change; whether it is numerically and operationally supported on this H20 setup remains empirical."
+  ]
+}

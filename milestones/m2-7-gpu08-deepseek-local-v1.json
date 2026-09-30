@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7 GPU08 local DeepSeek serving smoke",
+  "version": "v1",
+  "date": "2026-09-30",
+  "outcome": "PASS for one bounded local inference request after two preserved failed startup attempts",
+  "source_baseline_commit": "35bce3ea7daef0af7b137c5cdea3ea45fd63b17c",
+  "report_delivery_commit": "pending",
+  "model": {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+    "checkpoint_audit": "64/64 files matched, including 48/48 safetensors; issue list empty in the private integrity record",
+    "private_integrity_record": "/data/libs/aimeth/gpu08-deployment-20260924-v1/DeepSeek-V4-Flash-0731.integrity.json"
+  },
+  "runtime": {
+    "node": "gpu08",
+    "gpu": "8 × NVIDIA H20, 96 GB class",
+    "slurm_job": "233657",
+    "slurm_state": "COMPLETED",
+    "elapsed": "00:09:36",
+    "resources": "8 GPUs; 32 CPUs; 256 GB RAM; 30-minute limit",
+    "container": "/home/approved/dsv4/containers/sglang-dsv4-hopper.sif",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "runtime": "SGLang 0.5.16; Singularity CE 4.3.3",
+    "effective_diagnostic_settings": [
+      "tensor parallel 8",
+      "SGLANG_OPT_FP8_WO_A_GEMM=1",
+      "job-specific node-local TRITON_CACHE_DIR",
+      "loopback bind 127.0.0.1:18000",
+      "one request",
+      "1024 max output tokens"
+    ]
+  },
+  "request_result": {
+    "http_status": 200,
+    "model_returned": "DeepSeek-V4-Flash-0731",
+    "finish_reason": "stop",
+    "final_content_nonempty": true,
+    "structured_output_valid": true,
+    "content": "{\"status\":\"ready\",\"model\":\"DeepSeek-V4-Flash-0731\"}",
+    "prompt_tokens": 55,
+    "completion_tokens": 19,
+    "total_tokens": 74,
+    "elapsed_seconds": 4.4488,
+    "request_count": 1
+  },
+  "attempts": [
+    {
+      "version": "v1",
+      "job": "233598",
+      "state": "CANCELLED by project user after 00:18:37",
+      "outcome": "Weight shards were read, then the loader stopped at the FP8 wo_a dequantization stage. RSS reached 164,334,024 KiB; GPU utilization was 0% at the recorded sample. No health response or inference request."
+    },
+    {
+      "version": "v2",
+      "job": "233643",
+      "state": "CANCELLED by project user after 00:04:09",
+      "outcome": "SGLang reported application startup after loading 48/48 shards. The first scheduler request failed while reading Triton JIT metadata with JSONDecodeError; no complete inference response."
+    },
+    {
+      "version": "v3",
+      "job": "233657",
+      "state": "COMPLETED, exit 0:0",
+      "outcome": "With the FP8 wo_a toggle and isolated cache, all 48 shards loaded, the server became healthy, and one local inference request passed the frozen JSON acceptance check."
+    }
+  ],
+  "private_cluster_run_root": "/data/libs/aimeth/gpu08-local-smoke-20260930-v3/deepseek",
+  "public_evidence": {
+    "evidence_receipt": "m2-7-gpu08-deepseek-local-v1.evidence.json",
+    "checkpoint_identity_source": "../examples/gpu08-local-model-smoke-v1.json",
+    "prior_private_integrity_record_sha256": "6743ae2717361f5da1ee8607b3a40e28564ea0e1b517b8ef349c7466209f1ac1"
+  },
+  "interpretation": {
+    "observed": "A single local DeepSeek-V4-Flash-0731 request completed on GPU08 using eight allocated H20 GPUs.",
+    "inference": "The v1 stall resembles an upstream-reported SGLang FP8 wo_a host-materialization problem; v2's cache parse failure was avoided by a job-specific Triton cache. These matches guide diagnosis but do not prove identical root causes.",
+    "not_tested": "No mathematical problem, proof, population, batch request, concurrency, throughput benchmark, or organization comparison was run."
+  },
+  "readiness": {
+    "gpu08_slurm_and_in_job_ssh": "verified 2026-09-30",
+    "local_model_single_request": "verified on job 233657",
+    "repeatable_model_service": "not established; only one accepted request and one completed run",
+    "10k_population": "not launched; this milestone does not establish its readiness",
+    "math_validation": "not performed"
+  },
+  "references": [
+    {
+      "label": "SGLang issue #32311: FP8 wo_a loading stall symptoms and host-memory behavior",
+      "url": "https://github.com/sgl-project/sglang/issues/32311",
+      "scope": "A diagnostic lead from a different GPU setup; not H20-specific validation."
+    },
+    {
+      "label": "Current upstream SGLang DeepSeek V4 model loader",
+      "url": "https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/deepseek_v4.py",
+      "scope": "Current source contains a streaming FP8 wo_a loading path; the tested image was SGLang 0.5.16."
+    }
+  ],
+  "html_validation": {
+    "parser": "PASS",
+    "local_links": "PASS",
+    "responsive_css": "PASS: breakpoint <=760px and print stylesheet present",
+    "interaction_code": "PASS: anchor navigation handler and semantic disclosure controls present",
+    "browser_visual_qa": "PARTIAL: Chrome opened the local report title; screenshot unavailable; browser tab inventory transport error; desktop and narrow viewport visual review not confirmed",
+    "validation_record": "m2-7-gpu08-deepseek-local-v1.validation.json"
+  }
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>M2.7 GPU08 local DeepSeek serving smoke</title>
+  <style>
+    :root{--ink:#17232c;--muted:#526472;--line:#d6e0e7;--paper:#fff;--wash:#f3f7f8;--green:#0b6b4b;--green-bg:#e7f6ef;--amber:#79500a;--amber-bg:#fff4d7;--blue:#124c77;--blue-bg:#eaf3fa;--shadow:0 12px 32px #12202a12}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf2f4;color:var(--ink);font:16px/1.58 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:#075d91;text-underline-offset:3px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #2a81b5;outline-offset:3px}
+    .shell{max-width:1160px;margin:28px auto;padding:0 20px}.hero,.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .hero{padding:34px 38px;background:linear-gradient(125deg,#fff 45%,#edf7f5)}.eyebrow{margin:0 0 8px;color:var(--muted);font-size:.83rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.16;margin:.2rem 0 1rem;max-width:880px}.lede{font-size:1.15rem;max-width:900px;margin:.6rem 0 0}
+    .status{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green);padding:6px 12px;border-radius:999px;font-weight:750}.status:before{content:"✓";font-size:1.1rem}
+    .meta{display:flex;gap:10px 22px;flex-wrap:wrap;color:var(--muted);font-size:.93rem;margin-top:18px}.meta strong{color:var(--ink)}
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.navlink{display:inline-block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:.9rem;color:var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:16px 0}.metric{padding:18px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}.metric b{display:block;font-size:1.45rem;line-height:1.2}.metric span{color:var(--muted);font-size:.9rem}
+    .panel{padding:26px 30px;margin:16px 0;scroll-margin-top:16px}.panel h2{margin:0 0 14px;font-size:1.35rem}.panel h3{font-size:1.05rem;margin:22px 0 8px}.panel p:first-of-type{margin-top:0}
+    .notice{border-left:4px solid #16835c;background:var(--green-bg);padding:14px 16px;border-radius:8px}.caveat{border-left:4px solid #b88718;background:var(--amber-bg);padding:13px 16px;border-radius:8px}
+    .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:720px;background:#fff}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}th{background:var(--wash);font-size:.9rem}tr:last-child td{border-bottom:0}.badge{white-space:nowrap;font-weight:700}.pass{color:var(--green)}.fail{color:#9a4b00}
+    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}code{overflow-wrap:anywhere;background:#f0f4f6;padding:.08em .32em;border-radius:4px;font-size:.92em}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#10202b;color:#e4f2f8;padding:16px;border-radius:10px;font-size:.9rem}
+    details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0;background:#fff}summary{cursor:pointer;font-weight:700;color:var(--blue)}.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.list-tight li{margin:.35rem 0}.foot{color:var(--muted);font-size:.88rem;padding:10px 4px 30px}
+    @media(max-width:760px){.shell{margin:12px auto;padding:0 10px}.hero{padding:24px 20px;border-radius:14px}.panel{padding:20px 18px;border-radius:14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:13px}.metric b{font-size:1.2rem}.cols{grid-template-columns:1fr}.lede{font-size:1.04rem}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px}}
+    @media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.meta{grid-template-columns:1fr}.navlink{padding:6px 10px;font-size:.85rem}}
+    @media print{body{background:#fff;font-size:11pt}.shell{max-width:none;margin:0;padding:0}.hero,.panel{box-shadow:none;border-color:#aaa;break-inside:avoid}.hero{padding:18px}.panel{padding:16px;margin:10px 0}.navlink{border:0;padding:0 8px 0 0}.navlink:after{content:""}.grid{grid-template-columns:repeat(4,1fr)}a{color:inherit}.foot{padding-bottom:0}details{break-inside:avoid}details>summary{list-style:none}details>*:not(summary){display:block!important}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <p class="eyebrow">M2.7 GPU08 local DeepSeek serving smoke · Version v1 · 2026-09-30</p>
+    <span class="status">单次本机推理验证通过</span>
+    <h1>M2.7 GPU08 local DeepSeek serving smoke</h1>
+    <p class="lede">PASS for one bounded local inference request after two preserved failed startup attempts. 本地模型权重与服务镜像均在 GPU08；调用只经 loopback。</p>
+    <div class="meta"><span><strong>Slurm 作业</strong> 233657</span><span><strong>节点</strong> gpu08</span><span><strong>报告基线</strong> <code>35bce3ea7daef0af7b137c5cdea3ea45fd63b17c</code></span></div>
+  </header>
+  <nav aria-label="报告导航">
+    <a class="navlink" href="#requirements">需求映射</a><a class="navlink" href="#results">运行结果</a><a class="navlink" href="#evidence">证据与身份</a><a class="navlink" href="#limits">边界与下一步</a>
+  </nav>
+  <section class="grid" aria-label="关键结果">
+    <div class="metric"><b>1 / 1</b><span>本地请求通过验收</span></div>
+    <div class="metric"><b>8 × H20</b><span>GPU08 Slurm 分配</span></div>
+    <div class="metric"><b>9 分 36 秒</b><span>最终作业总时长</span></div>
+    <div class="metric"><b>74 tokens</b><span>prompt 55 · completion 19</span></div>
+  </section>
+
+  <section class="panel" id="requirements">
+    <h2>用户要求与本次实现</h2>
+    <div class="tablewrap"><table><thead><tr><th>要求</th><th>实现</th><th>实际证据</th><th>剩余边界</th></tr></thead><tbody>
+      <tr><td>在恢复后的 GPU08 测试 DeepSeek</td><td>提交自有 GPU08 作业；本地权重只读挂载；服务只绑定 <code>127.0.0.1</code></td><td>作业 233657 完成；8 张 H20；Slurm 记录 8 张 GPU 分配</td><td>只测试一个模型和一个请求</td></tr>
+      <tr><td>可复核、可重复、可追溯</td><td>冻结版本化 JSON 协议，保存实际请求、响应、服务日志和 SHA-256</td><td>报告下方列出代码、容器、权重和运行身份</td><td>复跑结果尚未重复验证；JIT 缓存是节点本地临时缓存</td></tr>
+      <tr><td>面向 10K Agent 的组织与数学评估</td><td>本次仅验证本地模型服务是否能完成单请求</td><td>返回内容通过 JSON 结构验收</td><td>未提交群体、未运行数学题；不构成能力或组织结论</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="panel" id="results">
+    <h2>三次启动尝试</h2>
+    <p>前两次失败记录均保留。第三次只改动诊断相关的 FP8 路径开关与 Triton 缓存位置后通过；不把失败样本从统计中删除。</p>
+    <div class="tablewrap"><table><thead><tr><th>尝试 / 作业</th><th>结果</th><th>观察到的证据</th><th>解释边界</th></tr></thead><tbody>
+      <tr><td><strong>v1</strong><br>Slurm 233598<br><span class="badge fail">FAILED / STOPPED</span></td><td>Weight shards were read, then the loader stopped at the FP8 wo_a dequantization stage. RSS reached 164,334,024 KiB; GPU utilization was 0% at the recorded sample. No health response or inference request.</td><td>CANCELLED by project user after 00:18:37</td><td><a href="m2-7-gpu08-deepseek-local-v1.evidence.json">public evidence receipt</a> · <a href="../examples/gpu08-local-model-smoke-v1.json">frozen protocol</a></td></tr>
+<tr><td><strong>v2</strong><br>Slurm 233643<br><span class="badge fail">FAILED / STOPPED</span></td><td>SGLang reported application startup after loading 48/48 shards. The first scheduler request failed while reading Triton JIT metadata with JSONDecodeError; no complete inference response.</td><td>CANCELLED by project user after 00:04:09</td><td><a href="m2-7-gpu08-deepseek-local-v1.evidence.json">public evidence receipt</a> · <a href="../examples/gpu08-local-model-smoke-v2.json">frozen protocol</a></td></tr>
+<tr><td><strong>v3</strong><br>Slurm 233657<br><span class="badge pass">PASS</span></td><td>With the FP8 wo_a toggle and isolated cache, all 48 shards loaded, the server became healthy, and one local inference request passed the frozen JSON acceptance check.</td><td>COMPLETED, exit 0:0</td><td><a href="m2-7-gpu08-deepseek-local-v1.evidence.json">public evidence receipt</a> · <a href="../examples/gpu08-local-model-smoke-v3.json">frozen protocol</a> · <a href="m2-7-gpu08-deepseek-local-v1.evidence.json">accepted response</a></td></tr>
+    </tbody></table></div>
+    <h3>最终请求</h3>
+    <p>请求针对本地 loopback 服务，只要求返回一段 JSON，不含数学题，也未连接公网 API。</p>
+    <pre>{&quot;status&quot;:&quot;ready&quot;,&quot;model&quot;:&quot;DeepSeek-V4-Flash-0731&quot;}</pre>
+    <div class="notice"><strong>验收：</strong>HTTP 200；返回模型名正确；<code>finish_reason=stop</code>；内容非空；JSON 解析成功且两个字段与预设值相同。生成耗时 4.4488 秒。</div>
+  </section>
+
+  <section class="panel" id="evidence">
+    <h2>模型、运行容器与原始证据</h2>
+    <div class="cols">
+      <div><h3>模型与服务身份</h3><ul class="list-tight">
+        <li>模型：<code>deepseek-ai/DeepSeek-V4-Flash-0731</code></li>
+        <li>权重 revision：<code>7872f01b1d1fe23eabc4c98b48bffcef5a386062</code></li>
+        <li>GPU08 部署审计：64/64 文件匹配，含 48/48 safetensors；问题列表为空。校验原件保存在院内受限路径。</li>
+        <li>Serving：SGLang 0.5.16，Singularity CE 4.3.3；8 路张量并行。</li>
+        <li>镜像 SHA-256：<code>f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f</code></li>
+        <li>关键设置：<code>SGLANG_OPT_FP8_WO_A_GEMM=1</code>，作业专属节点本地 <code>TRITON_CACHE_DIR</code>。</li>
+      </ul></div>
+      <div><h3>运行记录</h3><ul class="list-tight">
+        <li>最终作业：<code>233657</code>，状态 <code>COMPLETED</code>，退出码 <code>0:0</code>。</li>
+        <li>资源：8 × NVIDIA H20、32 CPU、256 GB 主机内存上限；作业总时长 00:09:36。</li>
+        <li>模型完整加载 48 个权重分片；HTTP 服务健康；一次请求完成。</li>
+        <li>运行目录：<code>/data/libs/aimeth/gpu08-local-smoke-20260930-v3/deepseek</code></li>
+        <li>作业后 GPU08 回到 <code>IDLE+RESERVED</code>，无分配作业。</li>
+      </ul></div>
+    </div>
+    <h3>可查阅的版本化证据</h3>
+    <ul class="list-tight"><li><strong>v1</strong>：<a href="m2-7-gpu08-deepseek-local-v1.evidence.json">公开运行收据与原始记录 SHA-256</a> · <a href="../examples/gpu08-local-model-smoke-v1.json">冻结协议</a></li>
+<li><strong>v2</strong>：<a href="m2-7-gpu08-deepseek-local-v1.evidence.json">公开运行收据与原始记录 SHA-256</a> · <a href="../examples/gpu08-local-model-smoke-v2.json">冻结协议</a></li>
+<li><strong>v3</strong>：<a href="m2-7-gpu08-deepseek-local-v1.evidence.json">公开运行收据与原始记录 SHA-256</a> · <a href="../examples/gpu08-local-model-smoke-v3.json">冻结协议</a></li></ul>
+    <details><summary>第一次尝试为何停在 FP8 权重阶段</summary><p>本地观察到日志停止在 FP8 <code>wo_a</code> 转换，主机 RSS 上升至 164,334,024 KiB，记录时 GPU 利用率为 0%。SGLang 上游 issue #32311 报告了其他 GPU 环境下相似的主机内存物化症状；这使它成为合理排查线索，但不足以证明两次根因完全相同。第三次通过显式 FP8 路径开关绕过了该阶段。</p><p><a href="https://github.com/sgl-project/sglang/issues/32311">SGLang issue #32311</a> · <a href="https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/models/deepseek_v4.py">当前上游模型加载源码</a>。测试镜像仍为 SGLang 0.5.16；issue 所述 GPU 与本次 H20 不同。</p></details>
+    <details><summary>第二次尝试为何未返回推理结果</summary><p>服务端日志显示 Triton 编译模块加载失败，随后多个张量并行调度器在读取 Triton JIT 元数据时收到空 JSON 并退出。第三次把 Triton 缓存设为作业专属节点本地路径，启动和请求通过。日志相似不等于已经确认是共享文件系统或缓存竞争导致。</p></details>
+  </section>
+
+  <section class="panel" id="limits">
+    <h2>研究解释与下一阶段</h2>
+    <p><strong>直接观察：</strong>DeepSeek-V4-Flash-0731 在 GPU08 的 8 张 H20 分配中，完成了 1 条 loopback Chat Completions 请求，并通过格式验收。</p>
+    <p><strong>推断：</strong>第一、二次启动现象分别与已知 FP8 权重载入和 Triton JIT 元数据问题相符；第三次配置避开了这两个阻塞点。本次没有做对照、重复抽样或性能测量，不能估计成功率或模型能力。</p>
+    <div class="caveat"><strong>未测试：</strong>Navier–Stokes 或其他数学问题、证明检查、Agent 组织架构、批量 API、并发、10K Agent、人群治理效果、吞吐量与成本。单次格式正确响应不代表数学能力，也不是 proof。</div>
+    <h3>下一步可以进入什么阶段</h3>
+    <ul class="list-tight">
+      <li><strong>GPU08 访问与模型单请求：</strong>已验证，可作为后续小型群体作业的本地推理入口。</li>
+      <li><strong>10K 组织测试：</strong>尚未验证。先冻结具体拓扑、消息配额、调度并发、checkpoint/recovery、模型服务配置及评价协议，再运行预先登记的群体测试。</li>
+      <li><strong>其他模型：</strong>GLM 本地目录的权重审计还存在尺寸不匹配且不完整，不能据此宣称 GLM 已验证；可单独完成身份审计后再测。</li>
+    </ul>
+    <h3>来源版本</h3>
+    <p>协议、脚本和报告以 <code>35bce3ea7daef0af7b137c5cdea3ea45fd63b17c</code> 为基线；报告交付 commit：<code>pending</code>。结构化报告内容和请求/响应收据保存在公开证据文件中；完整运行日志、请求/响应副本与 Slurm 原始记录保存在院内 cluster run roots。其路径和 SHA-256 已记录在证据收据；本机镜像在 Git 忽略的 <code>runs/gpu08-local-smoke-20260930-v*</code> 下。</p>
+    <p class="caveat"><strong>报告呈现检查：</strong>HTML 解析、链接目标、桌面/窄屏 CSS 断点、打印样式和导航交互代码均已检查。Chrome 打开了本地报告标题，但当前 CUA 无法提供页面截图，浏览器 tab 清单也返回传输错误；因此桌面与窄屏的人工视觉检查未能确认，Codex 预览已排队打开。</p>
+  </section>
+  <footer class="foot">此报告是一次本机 serving smoke test 的工程记录。推理通过属于运行证据，不属于数学验证、模型优劣比较或群体实验结果。</footer>
+</div>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}}));
+</script>
+</body>
+</html>
