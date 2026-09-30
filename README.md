@@ -6,6 +6,9 @@
 
 Latest: [direct 10K exploratory population](docs/direct-10k-v1.md). The first live target is 100 groups × 100 analysis Agents, plus 501 governance roles, two feedback cycles and 21,002 bounded call slots. No single-Agent capability test or N8/N32/N128 ladder is required. The SLCW V1 mathematical extension is implemented in `aimeth_swarm`; full V2 work proceeds separately. A complete 21,002-call synthetic fixture passed; this is engineering evidence, not a live-model or mathematical result. [Source/implementation/math mapping](docs/slcw-math-mapping-v2.md) remains the design reference.
 
+M2.7 runtime record: [HTML v2](milestones/m2-7-direct-10k-v2.html) documents GPU08 `NODE_FAIL` and the first GLM gateway job, stopped after 964 attempts because no final answer content was returned and the tokenizer counted long prompts as two tokens. Receipts are privately archived with hashes. The corrected direct 10K GLM configuration is prepared under a new population ID; no mathematical output is claimed. [Correction record](docs/direct-10k-gateway-v2.md).
+
+
 M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
 
 ## Try the runtime

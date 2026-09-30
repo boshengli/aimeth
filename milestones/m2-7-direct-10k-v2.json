@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "snapshot_time": "2026-09-30 10:25 Asia/Shanghai",
+  "milestone": "M2.7 direct 10K operational continuation",
+  "version": "v2",
+  "outcome": "GPU08 job 232871 failed at node level. GLM gateway job 232984 was gracefully stopped after 964 first-cycle worker attempts produced no non-empty final content. No mathematical result; all 9,036 remaining worker steps and later governance/cycles are unattempted.",
+  "gpu08_attempt": {
+    "job_id": "232871",
+    "state": "NODE_FAIL",
+    "exit_code": "1:0",
+    "elapsed": "00:29:15",
+    "node_state": "DOWN+RESERVED+NOT_RESPONDING",
+    "population_responses_observed": 0,
+    "population_usage": "unknown; no shared population log; node-local journal not recovered"
+  },
+  "gateway_v1": {
+    "job_id": "232984",
+    "slurm_state": "COMPLETED (controlled TERM; exit 0:0)",
+    "elapsed": "00:26:06",
+    "host": "tcu165",
+    "requested": "4 CPU, 16 GB RAM, no GPU",
+    "model_id": "glm-5.3-flash",
+    "requests_settled": 964,
+    "responses_with_nonempty_content": 0,
+    "responses_finish_reason_length": 964,
+    "pending_worker_steps": 9036,
+    "later_phases_attempted": 0,
+    "provider_usage": {
+      "prompt_tokens": 476378,
+      "completion_tokens": 987136,
+      "total_tokens": 1463514,
+      "unknown_usage_attempts": 0
+    },
+    "local_budget_accounting": {
+      "reserved_input_tokens": 1928,
+      "known_problem": "GLM chat_template tokenization path returned 2 for a request measured as 489-497 prompt tokens by provider"
+    },
+    "archive": {
+      "receipt_files_recovered": 964,
+      "recovery_job": "233051",
+      "sqlite_integrity": "ok",
+      "recovered_bytes": 155229040,
+      "private_manifest": "/data/libs/aimeth/slcw10k-gateway-20260930-v1/output/recovered-node-local/recovery-manifest.json"
+    },
+    "source_commit": "5e7c2b764e135860304414f24e8c011e90860a06",
+    "source_identity": "6c434ed25ba799cab18f599b0e7b23e59134e5fde1ad992a4a585b974edfe840",
+    "launcher_commit": "3a8e269",
+    "private_config_sha256": "e25907e55cec5d5362f3b55b37cb924db0936693535323602eccb3392e4a778a"
+  },
+  "corrective_changes_prepared": {
+    "token_counter": "render template then encode rendered text; captured first worker request count 490, matching provider range 489-497",
+    "glm_request": "chat_template_kwargs.thinking=false as documented by SGLang GLM-5.3-Flash guide",
+    "response_handling": "sanitize reasoning/token-ID fields; preserve final content, usage and response identity; stop admitting calls at first missing final content",
+    "new_population": "slcw10k-gateway-20260930-v2; full 10K; no single-Agent preflight"
+  },
+  "readiness": {
+    "architecture": "specified and directly instantiated at 10K",
+    "software": "corrective patch prepared, awaiting public commit/source identity",
+    "cluster": "v1 attempt preserved; corrected v2 not yet submitted",
+    "mathematics": "no candidates with final content; no independent proof review"
+  },
+  "credential_handling": "credential excluded from public files; the prior version was submitted through authorized in-memory environment",
+  "visual_qa": "not completed; project browser visual review remains blocked"
+}

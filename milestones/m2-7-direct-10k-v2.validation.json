@@ -1,0 +1,8 @@
+{
+  "browser_visual_qa": "NOT_PERFORMED; prior project record documents browser policy block",
+  "evidence_crosschecks": "PASS",
+  "html_parser": "PASS",
+  "local_and_anchor_links": "PASS",
+  "narrow_and_print_css": "PASS",
+  "offline_no_script_or_remote_assets": "PASS"
+}

@@ -55,6 +55,30 @@ def wire_call(claim, config, synthetic=False):
         return {'error': {'category': type(exc).__name__}}
 
 
+def normalized_wire(wire):
+    """Preserve final content and usage without retaining hidden reasoning."""
+    if 'error' in wire or 'response' not in wire:
+        return wire, False
+    raw = wire['response']
+    choices = []
+    raw_choices = raw.get('choices', [])
+    valid_content = bool(raw_choices)
+    for choice in raw_choices:
+        message = choice.get('message') or {}
+        content = message.get('content')
+        valid_content = valid_content and isinstance(content, str) and bool(content.strip())
+        choices.append({'index': choice.get('index'), 'finish_reason': choice.get('finish_reason'),
+                        'message': {'role': message.get('role'), 'content': content,
+                                    'refusal': message.get('refusal')}})
+    response = {key: raw[key] for key in ('id', 'model', 'created', 'object',
+                'system_fingerprint', 'service_tier', 'usage') if key in raw}
+    response['choices'] = choices
+    result = {'response': response}
+    if not valid_content:
+        result['error'] = {'category': 'missing_final_content'}
+    return result, valid_content
+
+
 def finish(store, claim, wire):
     if 'error' in wire:
         return store.fail(claim['token'], wire['error'], retryable=False)
@@ -158,8 +182,12 @@ def token_counter(model_dir, synthetic):
     from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_dir, local_files_only=True, trust_remote_code=False)
     def count(messages):
-        tokens = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
-        return len(tokens)
+        # Some recent Transformers backends return only the template's special
+        # tokens when tokenization is requested here. Render first, then encode
+        # the exact string sent as OpenAI-style messages so long inputs cannot
+        # silently collapse to a two-token count.
+        rendered = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        return len(tokenizer.encode(rendered, add_special_tokens=False))
     return count
 
 
@@ -180,6 +208,7 @@ def make_manifest(config, agents, cycle, phase, current, previous, count, synthe
     manifest['transport'] = ({'kind': 'mock'} if synthetic else
                             {'kind': 'openai', 'endpoint': config['endpoint'],
                              'timeout_seconds': config['request_timeout_seconds']})
+    manifest['request_options'] = config.get('request_options', {})
     manifest['identities'].update(model=config['model_name'], policy='slcw-phased-v1',
                                    task='navier-stokes-obligation-exploration-v1',
                                    code='sha256:' + source_identity())
@@ -282,6 +311,7 @@ def execute(config, root, output, *, synthetic=False, model_dir=None):
         signal.signal(sig, lambda *_: STOP.set())
     receipt_root = root / 'receipts'; receipt_root.mkdir(exist_ok=True)
     results, previous, halted = [], {}, False
+    halt_reason = None
     with Store(root / 'journal.sqlite') as store:
         # Reconcile receipt-first files before leases are recovered; late receipts remain evidence.
         for path in receipt_root.glob('*.json'):
@@ -309,6 +339,7 @@ def execute(config, root, output, *, synthetic=False, model_dir=None):
                     while True:
                         if STOP.is_set() or time.time() >= saved['started_unix'] + config['wall_seconds']:
                             halted = True
+                            halt_reason = halt_reason or ('signal' if STOP.is_set() else 'wall_deadline')
                         while not halted and len(active) < config['max_inflight']:
                             claim = None
                             for _ in range(len(run_ids)):
@@ -319,24 +350,27 @@ def execute(config, root, output, *, synthetic=False, model_dir=None):
                             input_count = count(claim['request']['messages'])
                             if input_count > limits.get(phase, config['max_input_tokens']):
                                 store.fail(claim['token'], {'category': 'input_token_cap'}, retryable=False)
-                                halted = True; break
+                                halted = True; halt_reason = 'input_token_cap'; break
                             try:
                                 reserved = budget.reserve(claim['token'], claim['run_id'], input_count, config['max_output_tokens'])
                             except ValueError:
                                 store.fail(claim['token'], {'category': 'budget_exhausted'}, retryable=False)
-                                halted = True; break
+                                halted = True; halt_reason = 'budget_exhausted'; break
                             if not reserved:
                                 raise ValueError('A previously reserved call must not be redispatched')
                             active[pool.submit(wire_call, claim, config, synthetic)] = claim
                         done = [future for future in active if future.done()]
                         for future in done:
-                            claim = active.pop(future); wire = future.result()
+                            claim = active.pop(future); wire, has_final_content = normalized_wire(future.result())
                             save(receipt_root / (claim['token']+'.json'), {'claim': claim, 'wire': wire})
                             finish(store, claim, wire)
                             budget.settle(claim['token'], {'usage': wire.get('response', {}).get('usage'), 'error': wire.get('error')})
+                            if 'response' in wire and not has_final_content:
+                                halted = True; halt_reason = 'missing_final_content'
                             consecutive = consecutive + 1 if 'error' in wire else 0
                             if consecutive >= config.get('consecutive_transport_error_stop', 5):
                                 halted = True
+                                halt_reason = halt_reason or 'consecutive_transport_errors'
                                 save(root / 'technical-stop.json', {'reason': 'consecutive_transport_errors', 'count': consecutive})
                             used = budget.summary()['reserved_calls']
                             if used and used % 1000 == 0:
@@ -357,6 +391,7 @@ def execute(config, root, output, *, synthetic=False, model_dir=None):
                 if halted: break
         summary = {'schema_version': '1.0', 'population_id': config['population_id'],
                    'counting': counts(config), 'synthetic': synthetic, 'halted': halted,
+                   'halt_reason': halt_reason,
                    'finished_phases': len(results), 'planned_phases': 4*config['cycles'],
                    'analysis_agent_identities_with_attempt_record': store.db.execute(
                        "SELECT COUNT(DISTINCT s.agent_id) FROM steps s JOIN attempts a ON s.run_id=a.run_id AND s.step_id=a.step_id WHERE s.run_id LIKE '%worker%'"
