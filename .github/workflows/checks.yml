@@ -57,3 +57,5 @@ jobs:
           cmp milestones/m2-5-task-continuation-v1.html /tmp/task-continuation.html
           python3 tools/build_slcw_alignment_v2.py --check
           python3 tools/verify_artifacts.py slcw-alignment-v2-manifest.json
+          python3 tools/build_direct_10k_report.py --check
+          python3 tools/verify_artifacts.py direct-10k-report-v1-manifest.json
