@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7 public API test",
+  "version": "v1",
+  "source_baseline_commit": "61036eb1dd5cf74032e748c99f977c09fd2b63d1",
+  "report_delivery_commit": "9716b454074754fd7b1a282778372219608f5ce1",
+  "files": {
+    "html": "m2-7-public-api-test-v1.html",
+    "json": "m2-7-public-api-test-v1.json",
+    "template.html": "m2-7-public-api-test-v1.template.html",
+    "validation.json": "m2-7-public-api-test-v1.validation.json",
+    "requests.jsonl": "m2-7-public-api-test-v1.requests.jsonl",
+    "responses.jsonl": "m2-7-public-api-test-v1.responses.jsonl",
+    "batch-attempts.json": "m2-7-public-api-test-v1.batch-attempts.json",
+    "provider-discovery.json": "m2-7-public-api-test-v1.provider-discovery.json"
+  },
+  "sha256": {
+    "html": "039a45e64ccf9b7697b65e9361a5d14fcfbe32b580e63d05a1100c56f8809346",
+    "json": "e228b881a86b2e7dafa1148f91ec62aeacc5e1cdb6842315624041eadda3a046",
+    "template.html": "039a45e64ccf9b7697b65e9361a5d14fcfbe32b580e63d05a1100c56f8809346",
+    "validation.json": "1d46ef48ea4561604f47b2ced4230d8fc9553d1b48c36de5028b8641c8d5d1d0",
+    "requests.jsonl": "86d13fd4294265e4e97afb39c54ebf2c1b69e94e36bcbf8bd21f5ab54f4d6154",
+    "responses.jsonl": "ea0f9b40999762432f944f00b447e6550a68b9bf5de014b5616053c74a24d575",
+    "batch-attempts.json": "6a4d1454c17d28c1423fa17312d01ef65d500cac0b79fe827b653d7d6d611ae0",
+    "provider-discovery.json": "4eea7c021a7e2e81e825638b49ee69b1b0c18fb759202a420f95177f8ffe5181"
+  }
+}
