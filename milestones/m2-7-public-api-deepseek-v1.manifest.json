@@ -3,7 +3,7 @@
   "milestone": "M2.7 public DeepSeek API diagnostic",
   "version": "v1",
   "source_baseline_commit": "a0a086162d7dc3d88fcfd8314733b421a50032e4",
-  "report_delivery_commit": "to be recorded after commit",
+  "report_delivery_commit": "c34d5f2a1614fc31baf434eeeb81f8b50492de63",
   "report_html": "m2-7-public-api-deepseek-v1.html",
   "files": {
     "m2-7-public-api-deepseek-v1.html": "m2-7-public-api-deepseek-v1.html",
