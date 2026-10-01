@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 population v8 live snapshot",
+  "version": "v1",
+  "snapshot_time": "2026-10-01 10:21 Asia/Shanghai",
+  "outcome": "The 10K run is active on GPU08. At the snapshot, 34 worker responses were accepted by runtime (all finish_reason=stop and nonempty); 28 parsed as JSON with the requested five top-level fields, 6 did not. Sixteen workers remained in flight and 9,950 were pending. This is early format/runtime evidence only, not a completed population or mathematical result.",
+  "source_commit": "480dca52300b1397fcc854397e6ecec24483a5bd",
+  "source_archive_sha256": "ecdf5fbfb51b45eedf1c6ff114684b2d41afcb19a522fd406466f9864da2bc98",
+  "config_sha256": "abd10394a48c8e92a21d20f6c2b43b91010aa74cd662f3e77a4a88bc21a545aa",
+  "slurm": {
+    "job_id": "235511",
+    "state": "RUNNING",
+    "node": "gpu08",
+    "account": "libs",
+    "allocated_gpus": "8 × NVIDIA H20 96 GB",
+    "allocated_cpus": 224,
+    "start": "2026-10-01T10:11:21+08:00",
+    "scheduled_end": "2026-10-08T07:41:21+08:00",
+    "reservation_end": "2026-10-08T11:00:00+08:00"
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+    "endpoint": "127.0.0.1:31008 loopback only",
+    "shards_loaded": "48/48",
+    "health_200": "2026-10-01T10:14:24+08:00"
+  },
+  "population": {
+    "population_id": "slcw10k-20261001-gpu08-v8",
+    "planned_analysis_workers": 10000,
+    "planned_governance_roles": 501,
+    "planned_calls": 21002,
+    "cycles": 2,
+    "max_inflight": 16,
+    "request_timeout_seconds": 1200,
+    "max_output_tokens": 3072,
+    "generation_mode": "chat",
+    "thinking": false,
+    "settled_attempts": 34,
+    "accepted_responses": 34,
+    "finish_reason_stop": 34,
+    "json_valid_requested_fields": 28,
+    "json_invalid_or_non_json": 6,
+    "prompt_tokens": 16304,
+    "completion_tokens": 36306,
+    "total_tokens": 52610,
+    "unknown_usage_attempts": 0,
+    "workers_running": 16,
+    "workers_pending": 9950,
+    "governance_started": false,
+    "journal_integrity_check": "ok",
+    "single_agent_success_gate": false
+  },
+  "evidence": {
+    "latest_checkpoint": "checkpoint-1790821290495292197-1028940",
+    "latest_checkpoint_receipt_count": 34,
+    "latest_checkpoint_journal_sha256": "d05d8f518150a8f83455bdd0cf1dd49d3640e7bf1f7a6ba24c7836717703aaac",
+    "checkpoint_manifest_sha256": "f9638190c1c6c99a99ea68293583b00736e984f9a1ffcf0ab74db4bae0594a5c",
+    "latest_pointer_sha256": "d99f437afc6660169b4b76f8691ec93927375b3f3ea6fc8b31ba2468421eb55f",
+    "response_bodies": "remain in private cluster-side checkpoint; not published"
+  },
+  "interpretation": {
+    "runtime_acceptance": "only nonempty content with finish_reason=stop; does not enforce JSON parsing or mathematical proof",
+    "mathematical_proof_verified": false,
+    "organization_effect_established": false,
+    "independent_population_replicate": false
+  },
+  "next_stage": "Keep v8 running under the frozen profile. Track JSON parse/schema validity separately from runtime acceptance and inspect observer/chief handoffs when reached; proof checking remains an independent evaluation."
+}

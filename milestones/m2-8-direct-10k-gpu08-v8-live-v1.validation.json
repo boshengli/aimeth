@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-01 10:23 Asia/Shanghai",
+  "html_parser": "PASS: Chrome loaded the offline report; its title appeared in the Chrome window",
+  "required_anchors": ["mapping", "progress", "recovery", "next"],
+  "desktop": {
+    "status": "NOT VISUALLY VERIFIED",
+    "reason": "The CUA Chrome accessibility/screenshot bridge returned no updated page tree and reported screenshot unavailable after loading the file. Page structure was checked statically; no visual pass is claimed."
+  },
+  "interaction": "NOT VERIFIED in browser; anchor ids and href targets were checked statically",
+  "narrow": {
+    "required_width_css_px": 390,
+    "status": "NOT VERIFIED",
+    "reason": "The same CUA screenshot/accessibility bridge failure prevented device emulation review. Responsive breakpoints and the horizontal table scroll wrapper were checked statically."
+  },
+  "offline_runtime_dependencies": "NONE",
+  "claim_review": "PASS: runtime acceptance, JSON parseability, and mathematical validity are separate; this is an in-progress snapshot, not a completed population or theorem result",
+  "private_data": "PASS: model response bodies remain on cluster-side restricted checkpoint"
+}
