@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "validated_at": "2026-10-01T10:33:58+08:00",
+  "static_checks": {
+    "html_parser": "passed",
+    "responsive_viewport_and_narrow_breakpoint": "passed",
+    "print_layout": "passed",
+    "offline_self_contained_core_content": "passed",
+    "report_json_version_and_snapshot_consistency": "passed",
+    "control_project_yaml_parse": "passed"
+  },
+  "browser_visual_qa": {
+    "status": "not_completed",
+    "reason": "No local Chromium/Playwright executable was available; CUA state request timed out and reset the browser-control kernel.",
+    "desktop": "not visually inspected",
+    "narrow": "not visually inspected",
+    "interaction": "No custom interactive behavior in this report; browser link/navigation test not performed"
+  },
+  "scope_note": "Validation confirms document structure and evidence consistency only. It does not verify cluster live state, mathematical claims, automation's first scheduled run, or visual rendering."
+}

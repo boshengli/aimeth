@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.9 Hourly goal review and next-cycle preparation",
+  "version": "v1",
+  "date": "2026-10-01",
+  "timezone": "Asia/Shanghai",
+  "outcome": "An hourly review automation is active on the current AIMeth task. A versioned operating plan defines evidence-driven review, efficiency rules, active-run boundaries, next-cycle preparation, and result logging. No new population was submitted.",
+  "automation": {
+    "id": "aimeth",
+    "status": "ACTIVE",
+    "cadence": "hourly",
+    "target": "current AIMeth task",
+    "notification_policy": "failed runs only; prompt instructs quiet behavior without material change"
+  },
+  "active_run_evidence": {
+    "run_id": "slcw10k-20261001-gpu08-v8",
+    "slurm_job_id": "235511",
+    "observation_time": "2026-10-01 10:27 Asia/Shanghai",
+    "state": "RUNNING (last recorded observation)",
+    "node": "gpu08",
+    "gpus": "8 × H20",
+    "accepted": 70,
+    "schema_valid_json": 55,
+    "non_json": 15,
+    "in_flight": 16,
+    "pending": 9914,
+    "sqlite_integrity": "ok",
+    "source": "Project STATUS.md live update; public immutable report snapshot is 10:21 with 34 receipts"
+  },
+  "changes": [
+    "Set hourly review heartbeat for goal, run evidence, efficiency, formal execution record, and next-cycle preparation.",
+    "Separate operational acceptance, schema validity, role compliance, and proof verification.",
+    "Use a compact append-only review record and avoid redundant probes or repeated prose.",
+    "Keep active v8 frozen; next run remains a prepared run card until v8 audit."
+  ],
+  "limits": [
+    "First scheduled automation execution has not yet been observed.",
+    "The active-run numbers are historical at the stated observation time and must be refreshed before decisions.",
+    "No mathematical proof or agent-organization effect was established.",
+    "The next run's profile awaits complete v8 audit."
+  ],
+  "readiness": {
+    "hourly_review_configured": true,
+    "next_cycle_design": "preparation ready; final profile pending v8 audit",
+    "confirmatory_comparison": "not ready",
+    "mathematical_result": "not established"
+  }
+}
