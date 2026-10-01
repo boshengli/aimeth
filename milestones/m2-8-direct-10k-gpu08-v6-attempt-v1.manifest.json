@@ -3,7 +3,7 @@
   "report": "m2-8-direct-10k-gpu08-v6-attempt-v1",
   "version": "v1",
   "source_baseline_commit": "a5cd8abe8a2fbe93c3e650a4fc91ae1d2d7bfc12",
-  "report_delivery_commit": "pending",
+  "report_delivery_commit": "7c48bc8a4f288473b3762bbc2078aaa1b0d483f8",
   "files": [
     "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.html",
     "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.json",
