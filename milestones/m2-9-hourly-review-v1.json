@@ -31,7 +31,8 @@
     "Set hourly review heartbeat for goal, run evidence, efficiency, formal execution record, and next-cycle preparation.",
     "Separate operational acceptance, schema validity, role compliance, and proof verification.",
     "Use a compact append-only review record and avoid redundant probes or repeated prose.",
-    "Keep active v8 frozen; next run remains a prepared run card until v8 audit."
+    "Keep active v8 frozen; next run remains a prepared run card until v8 audit.",
+    "Append sanitized hourly operational reviews to runs/hourly-review-log.jsonl."
   ],
   "limits": [
     "First scheduled automation execution has not yet been observed.",

@@ -38,7 +38,7 @@ Prepare, but do not submit, the next-cycle run card while v8 is active. When v8 
 
 ## Hourly record fields
 
-Append one record to a private, append-only review log: timestamp and timezone; run/job identity; scheduler state/node/GPU allocation; settled, accepted, schema-valid, in-flight, pending, and failed counts; token usage and elapsed time; checkpoint ID/hash and integrity result; governance phase; material change or `no_change`; interpretation limits; next action; source evidence locations. Never put credentials, private response bodies, or reference solutions in the public repository.
+Append one sanitized, append-only record per review to `runs/hourly-review-log.jsonl`: timestamp and timezone; run/job identity; scheduler state/node/GPU allocation; settled, accepted, schema-valid, in-flight, pending, and failed counts; token usage and elapsed time; checkpoint ID/hash and integrity result; governance phase; material change or `no_change`; interpretation limits; next action; source evidence locations. Never put credentials, private response bodies, or reference solutions in the public repository. The initial `plan_initialized` record is not an hourly execution and does not claim a fresh cluster check.
 
 ## Readiness
 

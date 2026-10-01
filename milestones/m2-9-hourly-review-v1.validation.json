@@ -1,13 +1,14 @@
 {
   "schema_version": "1.0",
-  "validated_at": "2026-10-01T10:33:58+08:00",
+  "validated_at": "2026-10-01T10:36:17+08:00",
   "static_checks": {
     "html_parser": "passed",
     "responsive_viewport_and_narrow_breakpoint": "passed",
     "print_layout": "passed",
     "offline_self_contained_core_content": "passed",
     "report_json_version_and_snapshot_consistency": "passed",
-    "control_project_yaml_parse": "passed"
+    "control_project_yaml_parse": "passed",
+    "initial_review_log_jsonl_parse": "passed"
   },
   "browser_visual_qa": {
     "status": "not_completed",
