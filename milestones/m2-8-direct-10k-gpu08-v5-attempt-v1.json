@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 population attempt v5",
+  "version": "v1",
+  "snapshot_time": "2026-10-01 09:05 Asia/Shanghai",
+  "outcome": "V5 resolved v4 client timeouts: all 16 first worker requests returned HTTP 200 with recorded usage. Every response ended at the 1,024-token length cap with empty final content, so the driver stopped safely before starting the remaining 9,984 workers or governance roles.",
+  "source_commit": "4a8ff8dac0be28f37adf586b225fc4c57719a556",
+  "source_archive_sha256": "b975617c66de95a8204a5f55d36f9d7a58ad321ab1b212c2ca7cc72c07d83822",
+  "slurm": {
+    "job_id": "235506",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "application_state": "halted=true; halt_reason=missing_final_content",
+    "node": "gpu08",
+    "account": "libs",
+    "allocated_gpus": "8 × NVIDIA H20 96 GB",
+    "allocated_cpus": 224,
+    "elapsed": "00:06:34",
+    "start": "2026-10-01T08:56:15+08:00",
+    "end": "2026-10-01T09:02:49+08:00"
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+    "endpoint": "127.0.0.1:31008 loopback only",
+    "shards_loaded": "48/48",
+    "service_start": "2026-10-01 08:58:42 Asia/Shanghai",
+    "health_200": "2026-10-01 08:59:27 Asia/Shanghai"
+  },
+  "population": {
+    "population_id": "slcw10k-20261001-gpu08-v5",
+    "planned_analysis_workers": 10000,
+    "planned_governance_roles": 501,
+    "planned_calls": 21002,
+    "cycles": 2,
+    "max_inflight": 16,
+    "request_timeout_seconds": 600,
+    "max_output_tokens": 1024,
+    "attempts": 16,
+    "http_200": 16,
+    "finish_reason_length": 16,
+    "nonempty_final_content": 0,
+    "prompt_tokens": 7673,
+    "completion_tokens": 16384,
+    "total_tokens": 24057,
+    "unknown_usage_attempts": 0,
+    "workers_not_attempted": 9984,
+    "finished_phases": 1,
+    "governance_started": false,
+    "single_agent_success_gate": false
+  },
+  "evidence": {
+    "phase_checkpoint": "output/population/cycle-0-worker.json",
+    "summary": "output/population/summary.json",
+    "rolling_backup_generations": 2,
+    "latest_checkpoint": "checkpoint-1790816561546728600-949178",
+    "checkpoint_manifest_sha256": "7a58c8d46f6680af369469e6caf2c5278c3690ca6fe4d6c86505a3d185d3973a",
+    "checkpoint_journal_sha256": "791f1b4858bde55948711ab1d499dd80d593be89a76ff58345c4f2734c8eb74f",
+    "journal_integrity_check": "ok",
+    "receipt_count": 16,
+    "receipt_finish_reasons": {
+      "length": 16
+    },
+    "receipt_content_nonempty": 0,
+    "response_bodies": "remain in private cluster-side rolling checkpoint; not published"
+  },
+  "failure": {
+    "category": "missing_final_content",
+    "server_status": "HTTP 200 for all 16",
+    "finish_reason": "length for all 16",
+    "completion_tokens": "1,024 for each of 16",
+    "content_length": "0 for each of 16",
+    "latency_evidence": "first 16-call batch completed at 09:02:19 after generation logs began 09:00:06 (about 133 seconds); exact per-call latency is not recorded",
+    "interpretation": "The 600-second client timeout removed v4 transport timeouts. The unchanged 1,024-token output cap was consumed entirely before visible final content; this is an output-budget/configuration failure, not a mathematical evaluation."
+  },
+  "interpretation": {
+    "mathematical_proof_verified": false,
+    "organization_effect_established": false,
+    "independent_population_replicate": false,
+    "scientific_result": "none; no visible candidate/final content was returned."
+  },
+  "next_stage": {
+    "ready_to_design": true,
+    "ready_to_implement": true,
+    "ready_to_run": false,
+    "planned_v6": "Keep the 10K organization, model, task and no-single-Agent gate; raise per-call output cap to 4,096, timeout to 1,200 seconds, and population deadline to 160 hours, staying within Res_libs through 2026-10-08. This is a new run identity and an engineering hypothesis, not a measured guarantee."
+  }
+}
