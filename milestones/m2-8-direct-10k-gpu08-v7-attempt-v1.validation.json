@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-01 10:05 Asia/Shanghai",
+  "html_parser": "PASS: local Chrome loaded the v7 report before the final receipt-count correction",
+  "required_anchors": ["mapping", "result", "recovery", "next"],
+  "desktop": {
+    "visual": "PASS: inspected the report's desktop layout before a text-only count correction; CSS/layout unchanged, but the final corrected text was not visually re-rendered after the CUA bridge stopped returning screenshots"
+  },
+  "interaction": "PASS on pre-correction rendering: report navigation changed URL hash to #result; anchor targets and links rechecked statically after correction",
+  "narrow": {
+    "required_width_css_px": 390,
+    "status": "NOT VERIFIED",
+    "reason": "After opening DevTools to emulate a narrow viewport, the CUA Chrome accessibility/screenshot bridge stopped returning an updated accessibility tree or screenshot. Responsive breakpoints and the horizontal table wrapper were checked statically; no narrow visual pass is claimed."
+  },
+  "offline_runtime_dependencies": "NONE",
+  "claim_review": "PASS: corrected per-receipt audit reports 16/17 finish_reason=length (14 empty content, 2 visible invalid-JSON truncations) and 1 accepted stop response; server HTTP 200 is separate from application acceptance; no mathematical validity or population success is claimed",
+  "private_data": "PASS: raw model response bodies remain only on restricted cluster storage"
+}
