@@ -174,13 +174,33 @@ def preview(record, limit):
     return result
 
 
-def token_counter(model_dir, synthetic):
+def token_counter(model_dir, synthetic, config=None):
     if synthetic:
         return lambda messages: len(canonical(messages).encode()) // 4 + 1
     if not model_dir:
         raise ValueError('Live execution requires the served local tokenizer directory')
     from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_dir, local_files_only=True, trust_remote_code=False)
+    config = config or {}
+    encoder = config.get('token_count_encoder', 'huggingface-chat-template')
+    if encoder == 'sglang-dsv4-native-v1':
+        if tokenizer.chat_template is not None:
+            raise ValueError('Frozen SGLang DSV4 mode expected a checkpoint without a Hugging Face chat template')
+        from sglang.srt.entrypoints.openai.encoding_dsv4 import encode_messages
+        thinking_mode = config.get('thinking_mode', 'thinking')
+        if thinking_mode not in ('chat', 'thinking'):
+            raise ValueError('DeepSeek-V4 thinking_mode must be chat or thinking')
+        def count(messages):
+            # DeepSeek-V4 intentionally has no tokenizer_config chat_template.
+            # Reuse the exact encoder shipped by the frozen SGLang container,
+            # then tokenize the rendered prompt as the server does.
+            rendered = encode_messages(messages, thinking_mode=thinking_mode)
+            return len(tokenizer.encode(rendered, add_special_tokens=False))
+        return count
+    if encoder != 'huggingface-chat-template':
+        raise ValueError(f'Unsupported frozen token_count_encoder: {encoder}')
+    if tokenizer.chat_template is None:
+        raise ValueError('The checkpoint has no Hugging Face chat_template; freeze a model-specific server-equivalent encoder')
     def count(messages):
         # Some recent Transformers backends return only the template's special
         # tokens when tokenization is requested here. Render first, then encode
@@ -191,11 +211,15 @@ def token_counter(model_dir, synthetic):
     return count
 
 
-def tokenizer_identity(model_dir, synthetic):
+def tokenizer_identity(model_dir, synthetic, config=None):
     if synthetic: return {'kind': 'synthetic-byte-count-fixture'}
     root = Path(model_dir)
     names = ('tokenizer.json', 'tokenizer_config.json', 'special_tokens_map.json', 'chat_template.jinja', 'config.json')
-    return {name: hashlib.sha256((root/name).read_bytes()).hexdigest() for name in names if (root/name).is_file()}
+    identity = {name: hashlib.sha256((root/name).read_bytes()).hexdigest() for name in names if (root/name).is_file()}
+    config = config or {}
+    identity['chat_encoder_mode'] = config.get('token_count_encoder', 'huggingface-chat-template')
+    identity['thinking_mode'] = config.get('thinking_mode', 'unspecified')
+    return identity
 
 
 def make_manifest(config, agents, cycle, phase, current, previous, count, synthetic):
@@ -291,8 +315,8 @@ def execute(config, root, output, *, synthetic=False, model_dir=None):
     output.mkdir(parents=True, exist_ok=True, mode=0o700)
     lock = (root / 'coordinator.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    count = token_counter(model_dir, synthetic)
-    tokenizer_hashes = tokenizer_identity(model_dir, synthetic)
+    count = token_counter(model_dir, synthetic, config)
+    tokenizer_hashes = tokenizer_identity(model_dir, synthetic, config)
     settings_path = root / 'population.json'
     if settings_path.exists():
         saved = json.loads(settings_path.read_text())

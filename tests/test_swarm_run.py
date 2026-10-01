@@ -1,6 +1,7 @@
 import contextlib
 import io
 import json
+from types import ModuleType, SimpleNamespace
 from pathlib import Path
 import tempfile
 import unittest
@@ -8,7 +9,7 @@ from unittest.mock import patch
 
 from aimeth_runtime.store import Store
 from aimeth_swarm.design import default_config
-from aimeth_swarm.run import execute, verify_imports, wire_call
+from aimeth_swarm.run import execute, token_counter, verify_imports, wire_call
 
 
 class SwarmRunTests(unittest.TestCase):
@@ -77,6 +78,40 @@ class SwarmRunTests(unittest.TestCase):
             self.assertEqual(json.loads(receipt["payload"])["receipt"]["error"]["category"], "fixture_timeout")
         self.assertTrue(summary["final_global_candidates"])
         self.assertEqual(summary["mathematical_verification"], "not performed; all candidates unverified")
+
+    def test_deepseek_v4_without_hf_template_uses_frozen_sglang_encoder(self):
+        messages = [{"role": "user", "content": "test prompt"}]
+        calls = []
+        tokenizer = SimpleNamespace(chat_template=None,
+                                    encode=lambda text, add_special_tokens=False: [1, 2, 3, 4])
+        transformers = ModuleType("transformers")
+        transformers.AutoTokenizer = SimpleNamespace(from_pretrained=lambda *a, **k: tokenizer)
+        encoder = ModuleType("sglang.srt.entrypoints.openai.encoding_dsv4")
+        def encode_messages(actual_messages, *, thinking_mode):
+            calls.append((actual_messages, thinking_mode))
+            return "server-equivalent rendered prompt"
+        encoder.encode_messages = encode_messages
+        modules = {
+            "transformers": transformers,
+            "sglang": ModuleType("sglang"),
+            "sglang.srt": ModuleType("sglang.srt"),
+            "sglang.srt.entrypoints": ModuleType("sglang.srt.entrypoints"),
+            "sglang.srt.entrypoints.openai": ModuleType("sglang.srt.entrypoints.openai"),
+            "sglang.srt.entrypoints.openai.encoding_dsv4": encoder,
+        }
+        config = {"token_count_encoder": "sglang-dsv4-native-v1", "thinking_mode": "thinking"}
+        with patch.dict("sys.modules", modules):
+            count = token_counter("/model", False, config)
+        self.assertEqual(count(messages), 4)
+        self.assertEqual(calls, [(messages, "thinking")])
+
+    def test_missing_template_without_frozen_native_encoder_fails_before_dispatch(self):
+        tokenizer = SimpleNamespace(chat_template=None)
+        transformers = ModuleType("transformers")
+        transformers.AutoTokenizer = SimpleNamespace(from_pretrained=lambda *a, **k: tokenizer)
+        with patch.dict("sys.modules", {"transformers": transformers}):
+            with self.assertRaisesRegex(ValueError, "no Hugging Face chat_template"):
+                token_counter("/model", False, {"token_count_encoder": "huggingface-chat-template"})
 
 
 if __name__ == "__main__":
