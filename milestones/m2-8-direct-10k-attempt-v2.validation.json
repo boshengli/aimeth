@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-01 08:30 Asia/Shanghai",
+  "html_parser": "PASS: Chrome loaded local self-contained HTML",
+  "required_anchors": [
+    "evidence",
+    "cause",
+    "fix",
+    "limits"
+  ],
+  "remote_runtime_dependencies": "NONE",
+  "browser_desktop": {
+    "viewport_css_px": 1440,
+    "document_width_px": 1440,
+    "body_width_px": 1440,
+    "visual": "PASS: final copy rendered and visually inspected",
+    "screenshot_sha256": "c04207ab33dda6dae16053daf04669dab81ce2de073644a9faa21daeca15e61e"
+  },
+  "browser_narrow": {
+    "viewport_css_px": 390,
+    "document_width_px": 390,
+    "body_width_px": 390,
+    "visual": "PASS on pre-copy-edit render; final text edit did not change CSS or structure",
+    "css": "responsive breakpoints and horizontal table scroller checked"
+  },
+  "interaction": "PASS: navigation click changed location hash to #evidence",
+  "print_css": "PASS: @media print rule present",
+  "offline_links": "PASS: previous launch snapshot and report HTML are local",
+  "scientific_claims": "PASS: report explicitly records 0 calls, no math result, and no organization effect",
+  "screenshots": {
+    "desktop_sha256": "c04207ab33dda6dae16053daf04669dab81ce2de073644a9faa21daeca15e61e",
+    "narrow_sha256": "b310956f13e65457f12f85119b2490eb912ee9289a053fea46ca6c82c2461628",
+    "narrow_capture_note": "captured before a text-only Chinese copy correction; CSS and document structure unchanged"
+  },
+  "screenshot_tool_note": "Chrome macOS headless emits CVDisplayLink warnings; output files were still rendered and desktop image inspected."
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "report": "m2-8-direct-10k-launch-v1",
+  "version": "v1",
+  "source_baseline_commit": "8fc51e6f9522cb8e7b2f67878c953061b8030b26",
+  "report_delivery_commit": "to be recorded by the follow-up report-index commit",
+  "files": [
+    "milestones/m2-8-direct-10k-launch-v1.html",
+    "milestones/m2-8-direct-10k-launch-v1.json",
+    "milestones/m2-8-direct-10k-launch-v1.validation.json",
+    "tools/build_direct_10k_launch_report.py"
+  ],
+  "sha256": {
+    "milestones/m2-8-direct-10k-launch-v1.html": "fbc9043e878b8f13b4376a18bc7a7b08f7534ddfd050576ed0accee87f8dce14",
+    "milestones/m2-8-direct-10k-launch-v1.json": "55b7d5834638720af9742519bee98ad6922bfe39b72fab8b137665e73a4c5612",
+    "milestones/m2-8-direct-10k-launch-v1.validation.json": "d80b1cce80de7050a82c361e51dfec24fc5e3f0d0b8b85210a0ff3a5d32a8c7b",
+    "tools/build_direct_10k_launch_report.py": "f183efda9113f19ed10af347dfdbe1b57e1887bfb3d4b52a6410c54fe2755630"
+  }
+}
