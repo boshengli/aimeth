@@ -3,7 +3,7 @@
   "report": "m2-8-direct-10k-attempt-v2",
   "version": "v2",
   "source_baseline_commit": "8fc51e6f9522cb8e7b2f67878c953061b8030b26",
-  "report_delivery_commit": "to be recorded by the follow-up report-index commit",
+  "report_delivery_commit": "f5836ad4ff74a2eb58b9693e3e6fb4c3ba2daa97",
   "files": [
     "milestones/m2-8-direct-10k-attempt-v2.html",
     "milestones/m2-8-direct-10k-attempt-v2.json",

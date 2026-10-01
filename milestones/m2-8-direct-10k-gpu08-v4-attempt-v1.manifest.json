@@ -3,7 +3,7 @@
   "report": "m2-8-direct-10k-gpu08-v4-attempt-v1",
   "version": "v1",
   "source_baseline_commit": "88b1f4b72862354f9b4c50c9359e5d4f1de09c93",
-  "report_delivery_commit": "to be recorded by the follow-up report-index commit",
+  "report_delivery_commit": "f5836ad4ff74a2eb58b9693e3e6fb4c3ba2daa97",
   "files": [
     "milestones/m2-8-direct-10k-gpu08-v4-attempt-v1.html",
     "milestones/m2-8-direct-10k-gpu08-v4-attempt-v1.json",
