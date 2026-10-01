@@ -3,7 +3,7 @@
   "report": "m2-9-hourly-review-v1",
   "version": "v1",
   "source_baseline_commit": "21f2d24024497e13dc2c2197a586b0ae0ffe7027",
-  "report_delivery_commit": "6300507b84f4d4036d1485f1ba7f8be9b5ad8f07",
+  "report_delivery_commit": "fa12c073e68f37531b1341be908ceff39fe4ab00",
   "files": [
     "docs/hourly-review-and-next-cycle-v1.md",
     "milestones/m2-9-hourly-review-v1.html",
@@ -11,9 +11,9 @@
     "milestones/m2-9-hourly-review-v1.validation.json"
   ],
   "sha256": {
-    "docs/hourly-review-and-next-cycle-v1.md": "8ac4e2c52199ec6d875d1f3e3143f6f15889dc1aec4577dcd183979bc5000c0f",
-    "milestones/m2-9-hourly-review-v1.html": "206b7578e1c1660cee6b2b567f32fd35596ae60109ff38d5800943836abee1bf",
-    "milestones/m2-9-hourly-review-v1.json": "49b47625a07012095559e4684977955c40f469ace369feb6ff29c065f9ec5ec0",
-    "milestones/m2-9-hourly-review-v1.validation.json": "705daff2c6e9ddde304600d04861ebf2daf056487a0534873683e332bae85905"
+    "docs/hourly-review-and-next-cycle-v1.md": "b5ca4908a41e52fd57fba66b2d22ec367b97dbe658494fc40da75635f80d4b05",
+    "milestones/m2-9-hourly-review-v1.html": "6af38aa64c19231c598dd18997340fbf3c770dda0f98df9b41b46074246d7a5d",
+    "milestones/m2-9-hourly-review-v1.json": "f6715744196f852b1dca08b6f03abc0b674aa198e66cc410b025832afaea9038",
+    "milestones/m2-9-hourly-review-v1.validation.json": "30233a280703f7915831ee7b25e749127a64755001e3a1ef993976834ed87637"
   }
 }
