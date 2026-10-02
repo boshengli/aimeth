@@ -2,9 +2,11 @@
 
 [![Runtime and integrity checks](https://github.com/boshengli/aimeth/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/boshengli/aimeth/actions/workflows/checks.yml)
 
-**Agent organization and verifiable mathematical discovery under constrained compute.**
+**Task-conditioned cellular development and emergent capability in artificial populations.**
 
-Latest: [direct 10K exploratory population](docs/direct-10k-v1.md). The first live target is 100 groups × 100 analysis Agents, plus 501 governance roles, two feedback cycles and 21,002 bounded call slots. No single-Agent capability test or N8/N32/N128 ladder is required. The SLCW V1 mathematical extension is implemented in `aimeth_swarm`; full V2 work proceeds separately. A complete 21,002-call synthetic fixture passed; this is engineering evidence, not a live-model or mathematical result. [Source/implementation/math mapping](docs/slcw-math-mapping-v2.md) remains the design reference.
+Current scientific plan: [task-conditioned cellular development v1](docs/organization-development-plan-v1.md). The central question is whether task-conditioned computational cells self-organize, differentiate and proliferate into mesoscopic structures and tissue-like organization that improves task adaptation and problem-solving. Mathematics is one evaluation domain; it is not the definition of intelligence. Two design principles guide work: regulated development across scales, and fast interaction assessed through task performance. The plan loads four sequential design work packages in [T-20261002-002](tasks/T-20261002-002.md). They are design tasks, not runtime implementation or permission to change a frozen run.
+
+Latest execution record: [direct 10K exploratory population](docs/direct-10k-v1.md). V8 remains a separate exploratory condition using 100 groups × 100 analysis Agents plus 501 governance roles; it did not implement the new cell-development hypothesis. No single-Agent success prerequisite or N8/N32/N128 ladder is required. The SLCW V1 mathematical extension is implemented in `aimeth_swarm`; this is engineering evidence, not proof of emergent capability.
 
 M2.7 runtime record: [HTML v2](milestones/m2-7-direct-10k-v2.html) documents GPU08 `NODE_FAIL` and the first GLM gateway job, stopped after 964 attempts because no final answer content was returned and the tokenizer counted long prompts as two tokens. Receipts are privately archived with hashes. The corrected direct 10K GLM configuration is prepared under a new population ID; no mathematical output is claimed. [Correction record](docs/direct-10k-gateway-v2.md).
 
@@ -13,7 +15,7 @@ Public API follow-up: [DeepSeek API diagnostic v1](milestones/m2-7-public-api-de
 GPU08 local-serving follow-up: [M2.7 GPU08 DeepSeek smoke v1](milestones/m2-7-gpu08-deepseek-local-v1.html) records three preserved startup attempts. The final run used eight H20 GPUs and completed one loopback DeepSeek-V4-Flash-0731 request with a valid JSON response. Earlier FP8 loading and Triton-cache failures remain in the evidence receipt; this is a serving check only, not a math or 10K result. GPU08 returned to `IDLE+RESERVED` after job 233657.
 
 
-M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
+M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. The current M2 scientific design is the task-conditioned cellular-development plan above; earlier S/I/L/X organization prototypes remain historical controls and possible comparison components. No topology-superiority or frontier-proof claim is made.
 
 ## Try the runtime
 
@@ -51,7 +53,7 @@ Passing integrity/fault tests does not verify a proof. Private databases, infras
 
 Public repository: [boshengli/aimeth](https://github.com/boshengli/aimeth), published on 2026-09-16 with the original commit history and milestone tag. The [publication HTML](milestones/m1-1-publication-v1.html) and [observed hosted checks](https://github.com/boshengli/aimeth/actions/runs/35050227524) document that transition; earlier reports retain their original dates and status. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.
 
-The milestone sections below are historical records. Their prospective wording, capability prerequisites and GPU08 availability statements describe the plan or observation at that time; the current research sequence is [population plan v2](docs/population-plan-v2.md). Historical protocols, failed format gates, results and manifests remain unchanged.
+The milestone sections below are historical records. Their prospective wording, capability prerequisites and GPU08 availability statements describe the plan or observation at that time; the current scientific direction is [task-conditioned cellular development](docs/organization-development-plan-v1.md). Historical protocols, failed format gates, results and manifests remain unchanged.
 
 ## M2.1 organization design and model-free tests
 

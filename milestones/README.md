@@ -1,5 +1,6 @@
 # Human-readable milestone reports
 
+- [M2.10 v1 — Scientific main-plan update and work-package loading](m2-10-scientific-main-plan-v1.html): the single task-conditioned cellular-development goal, two design principles, four loaded design work packages, and current readiness boundaries.
 - [M1 v1.0 — Research foundation](m1-foundation-v1.html): requirement mapping, evidence, prototype limitations, and M2 organization-design readiness.
 
 Every completed milestone requires an HTML report under [the milestone reporting policy](../docs/milestone-reporting.md).
