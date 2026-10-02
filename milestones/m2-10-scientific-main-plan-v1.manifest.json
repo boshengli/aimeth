@@ -3,7 +3,7 @@
   "milestone": "M2.10",
   "version": "v1",
   "baseline_commit": "da13962a9c0d9d56218e7545592d7532bde912bf",
-  "report_delivery_commit": "pending_report_bundle_commit",
+  "report_delivery_commit": "779130cc6497ad69cf627ef2453a380b20dfd2b7",
   "artifacts": [
     {
       "id": "m2-10-01",
