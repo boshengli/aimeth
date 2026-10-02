@@ -151,3 +151,8 @@ cmp milestones/m2-3-role-contract-v1.html /tmp/contract.html
 [HTML assessment](milestones/m2-4a-gpu08-restoration-v1.html) · [observed evidence](reports/gpu08-restoration-v1/evidence.json).
 
 The existing eight-GPU allocation was preserved. A read-only audit found no basecalling or model-serving process for the project user and confirmed the original model directories and current mounts. Under a valid CPU job, the same credentials successfully logged in and were adopted into that job; no GPUs were exposed. This establishes the own-job SSH requirement, not restored eight-GPU access or the exact pre-loan state. No unknown job, existing service, mount or shared data was changed. A legitimate GPU allocation/execution path is still required before new model loading.
+
+## Public API submission testing · M2.11
+
+[Human-readable plan](milestones/m2-11-public-api-submission-plan-v1.html) · [Protocol](docs/public-api-submission-test-plan-v1.md) · [Candidate run card](plans/public-api-submission-test-v1.json).
+Planning delivery only: 76 proposed engineering calls, existing DeepSeek evidence reused, no new population dispatched. The 10K developmental comparison remains a candidate.

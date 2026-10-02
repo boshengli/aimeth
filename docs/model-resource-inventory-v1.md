@@ -36,3 +36,7 @@
 - 私有控制记录：`PROJECT.yaml`、`STATUS.md`、`DECISIONS.md`（尤其 D-011、D-029 及 2026-10-02 GPU08 快照）。
 - 公开运行证据：`milestones/m2-7-gpu08-deepseek-local-v1.html` 与 `.json`；`milestones/m2-7-public-api-test-v1.html` 与 `.json`；`milestones/m2-7-public-api-deepseek-v1.html` 与 `.json`。
 - 院内校准边界：`docs/cluster-pilot-v1.md`；该文明确网关路由与权重身份未被独立认证。
+
+## 2026-10-02 · Receipt audit for submission plan M2.11
+
+The active worktree contains `runs/deepseek-api-cell-calibration-v1/receipts.jsonl` (SHA-256 `a65b43ad4795109608745e6ee8d513c584243605e6592ef49936185b86c923b4`). Recomputed results: fast 8/8 with mean elapsed 2.086 s and 680 input / 269 output tokens; deep 4/4 with mean elapsed 10.245 s and 492 input / 6,699 output tokens, including 5,496 reasoning tokens. Total 8,140 tokens. These are per-request averages, not batch wall time. Receipts attest JSON parsing and required-key presence only; full schema/semantic checks and mathematical correctness were not established. Final response bodies were not preserved, limiting replay. The earlier control-directory path pointed to the primary checkout; the evidence used here is in the active worktree. See [submission protocol](public-api-submission-test-plan-v1.md); no new API calls were made for this audit.
