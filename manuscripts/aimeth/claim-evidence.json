@@ -1,0 +1,63 @@
+{
+  "version": "v0.1",
+  "scope": "Working draft; no confirmatory population outcome data",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "The developmental sequence improves independently evaluated capability.",
+      "status": "untested_hypothesis",
+      "evidence": [],
+      "required": "Independent population comparisons and mechanistic interventions",
+      "estimate": null
+    },
+    {
+      "id": "C2",
+      "claim": "Twelve requests in the historical calibration returned nonempty parseable outputs with required keys.",
+      "status": "observed_engineering_metadata",
+      "evidence": [
+        "evidence-audit-v0.json"
+      ],
+      "unit": "request",
+      "limits": "Not full schema, mathematical correctness, or a population comparison."
+    },
+    {
+      "id": "C3",
+      "claim": "The fast and deep calibration channels have mean completion latencies 2.086125 and 10.2445 seconds.",
+      "status": "recomputed_descriptive",
+      "evidence": [
+        "evidence-audit-v0.json"
+      ],
+      "unit": "request",
+      "limits": "Prompts, modes, budgets, concurrency differ; no causal interpretation."
+    },
+    {
+      "id": "C4",
+      "claim": "Persistent cells and independently perturbable modules operationalize the cell/gene analogy.",
+      "status": "proposed_definition",
+      "evidence": [
+        "methods-protocol-v0.md"
+      ],
+      "limits": "Not biological equivalence, parameter learning or a completed developmental runtime."
+    },
+    {
+      "id": "C5",
+      "claim": "Local rules, collective computation and task-adaptive agent graphs have prior art.",
+      "status": "source_reported",
+      "evidence": [
+        "references-v0.json",
+        "literature-v0.md"
+      ],
+      "limits": "Targeted review; source verification depth recorded; not proof of novelty."
+    },
+    {
+      "id": "C6",
+      "claim": "An offline cell contract has 20 passing tests but a confirmed event-time defect.",
+      "status": "engineering_prototype_under_revision",
+      "evidence": [
+        "prototype-review-v0.md",
+        "../../docs/cell-contract-prototype-v0.md"
+      ],
+      "limits": "Not integrated with durable runtime or v8; no scientific outcomes."
+    }
+  ]
+}

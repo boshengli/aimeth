@@ -1,0 +1,23 @@
+{
+  "version": "v0.1",
+  "updated_at": "2026-10-03T11:17:00+08:00",
+  "cycle_started_at": "2026-10-03T11:05:43+08:00",
+  "next_scheduled_at": "2026-10-03T16:05:43+08:00",
+  "trigger": "user_requested_immediate_cycle",
+  "state_label": "正在推进：完整底稿与独立审查",
+  "completed": [
+    "已整合完整章节英文稿；核心群体结果明确待实验",
+    "核对9篇一手文献并完成独立归因审查",
+    "复算12条既有校准回执并保留全部分母",
+    "完成Methods草稿与独立统计/因果设计审查",
+    "离线契约原型20项测试通过；独立审查发现1项时间缺陷，修复中"
+  ],
+  "current_work": "生成并核验HTML；修复时间一致性；补齐辣椒论文及架构来源",
+  "quota_snapshot": {
+    "observed_at": "2026-10-03T11:05:43+08:00",
+    "five_hour_remaining_percent": 98,
+    "weekly_remaining_percent": 83,
+    "shared_account": true
+  },
+  "scientific_readiness": "not_submission_ready"
+}
