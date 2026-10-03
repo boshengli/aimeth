@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "report_id": "m2-7-direct-10k-v2",
+  "baseline_commit": "3a8e269",
+  "execution_source_commit": "5e7c2b764e135860304414f24e8c011e90860a06",
+  "artifacts": {
+    "m2-7-direct-10k-v2.html": {
+      "bytes": 7676,
+      "sha256": "d502ff22279eff80fc2c634d8d8c695f6df99f095dc5f290f21cfdd9d80e0c84"
+    },
+    "m2-7-direct-10k-v2.template.html": {
+      "bytes": 7676,
+      "sha256": "d502ff22279eff80fc2c634d8d8c695f6df99f095dc5f290f21cfdd9d80e0c84"
+    },
+    "m2-7-direct-10k-v2.json": {
+      "bytes": 3195,
+      "sha256": "e58a8557586cf071c60b3da9da73f7696c34c72d16a1a4fdbcbb5cef4e63edc1"
+    },
+    "m2-7-direct-10k-v2.validation.json": {
+      "bytes": 273,
+      "sha256": "c3b9c9db94017cb15243f1b0be4420f8b01714bfd67b661afd74d6d43ef172e2"
+    },
+    "../tools/build_direct_10k_report_v2.py": {
+      "bytes": 2539,
+      "sha256": "c552769eb6f416f57e156fc06873db9af5124c8bd3a2025abf0183e73bdd72c5"
+    }
+  },
+  "visual_browser_qa": "not completed; prior project browser policy block",
+  "report_validation": {
+    "browser_visual_qa": "NOT_PERFORMED; prior project record documents browser policy block",
+    "evidence_crosschecks": "PASS",
+    "html_parser": "PASS",
+    "local_and_anchor_links": "PASS",
+    "narrow_and_print_css": "PASS",
+    "offline_no_script_or_remote_assets": "PASS"
+  }
+}

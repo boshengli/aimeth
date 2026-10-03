@@ -1,0 +1,79 @@
+{
+  "milestone": "M2.11",
+  "version": "v1",
+  "baseline_commit": "a1b13ca0b163d7b2f0e3b1aa1b14fe1c6b1a0560",
+  "report_delivery_commit": "05de52da0d23b5f100684dc2c7caa5879b1487fc",
+  "scope": "Planning only; no dispatch",
+  "artifacts": [
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-1440-submission.png",
+      "bytes": 159448,
+      "sha256": "22f59027407ba78373e47bfbb4f6451fb4d64ce7b7b9ec2104a17e893e408482"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-1440-top.png",
+      "bytes": 208208,
+      "sha256": "ce3d274c23150fb6b51afb7f617b12fcc4e21909add35a7378e8934e3e2a7fc5"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-1440.png",
+      "bytes": 1461445,
+      "sha256": "dbeb58b152956d989d62f2516c14a3436955724d42a5eab87a210b893de77471"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-390-submission.png",
+      "bytes": 167755,
+      "sha256": "2df1c6f4498f32ddd4dd441c52f9f79a8aabce9092a1bbc9439ee3457589a1c4"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-390-top.png",
+      "bytes": 128281,
+      "sha256": "0903530aa8b261bb6fcd35fefa5d2e565396fdf4a12dc93a49007a2ade218b54"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1-390.png",
+      "bytes": 1400834,
+      "sha256": "e23adc2a972c3cd6df79b9f22bbdf369685c80591b53c0130557a1fcea3e2838"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1.html",
+      "bytes": 18812,
+      "sha256": "ccbcd22c05544ec6294ef4d7d62960b5d7cfd144d9e23b663ae1bfa7f11ddbab"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1.json",
+      "bytes": 16140,
+      "sha256": "7a83222d0c1682edb3407b89bed3c071cc0483c33e8ed3ac556e7a8a8910793b"
+    },
+    {
+      "path": "milestones/m2-11-public-api-submission-plan-v1.validation.json",
+      "bytes": 975,
+      "sha256": "23fcee30d232e012ffaaa25601cc8d7bdabe6aed37f5322fce1c3919d09ce6f3"
+    },
+    {
+      "path": "plans/public-api-submission-test-v1.json",
+      "bytes": 3427,
+      "sha256": "70937ac74385d545512df31d42c2b44abd0011e64d728b8fe8345ab7d8eb6258"
+    },
+    {
+      "path": "docs/public-api-submission-test-plan-v1.md",
+      "bytes": 12705,
+      "sha256": "090509de80f2cd052a5faac1935bb4b417498230299b27d2aeb02ba6854b8d09"
+    },
+    {
+      "path": "tools/build_m2_11_submission_plan.py",
+      "bytes": 4710,
+      "sha256": "0197dfd1456f5f532a31eaa4e3e7101c37a3558fb73805adf1a2542e06d00f8b"
+    },
+    {
+      "path": "tools/check_m2_11_submission_plan.cjs",
+      "bytes": 3046,
+      "sha256": "8d41d09ab7776b344a4d44b573df5fd28c971c4fccc4fbcb5316ecf3a072170c"
+    },
+    {
+      "path": "tasks/T-20261002-003.md",
+      "bytes": 1504,
+      "sha256": "6be07c5a6bd75721c9ebc2112a8b1287aab667603a35dc739a319d91e583cad8"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 population launch",
+  "version": "v1",
+  "snapshot_time": "2026-10-01 08:05 Asia/Shanghai",
+  "outcome": "Slurm job 235412 is RUNNING on gpu08 with all eight H20 GPUs allocated. DeepSeek-V4-Flash-0731 has loaded 48/48 shards; SGLang has not yet passed its health check. No population request has been sent.",
+  "source_baseline_commit": "8fc51e6f9522cb8e7b2f67878c953061b8030b26",
+  "slurm": {
+    "job_id": "235412",
+    "state": "RUNNING",
+    "node": "gpu08",
+    "account": "libs",
+    "reservation": "Res_libs",
+    "allocated_gpus": "8 x NVIDIA H20 96 GB class",
+    "allocated_cpus": 224,
+    "exclusive": true,
+    "time_limit": "08:30:00",
+    "observed_runtime": "00:15:50"
+  },
+  "population": {
+    "id": "slcw10k-20261001-gpu08-v3",
+    "analysis_agents": 10000,
+    "governance_agents": 501,
+    "cycles": 2,
+    "planned_calls": 21002,
+    "max_inflight": 16,
+    "completed_calls_at_snapshot": 0,
+    "single_agent_gate": false
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+    "served_model_name": "deepseek-v4-flash-0731",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+    "settings": ["SGLANG_OPT_FP8_WO_A_GEMM=1", "job-specific node-local TRITON_CACHE_DIR", "loopback-only HTTP endpoint"],
+    "load_progress": "48/48 shards; HTTP health endpoint refused connections at snapshot"
+  },
+  "source_archive_sha256": "5313d904872020401e7514e5ad5cc861b5f0555a5e27a7cec9d191bbc9bff226",
+  "evidence": {
+    "source_bundle": "restricted cluster archive staged before submission",
+    "private_cluster_output": "restricted cluster run root; includes Slurm stdout/stderr, launch identities, server log, later receipts and snapshots",
+    "local_unit_tests": "100/100 passed",
+    "math_proof_verified": false,
+    "organization_effect_established": false
+  },
+  "readiness": {
+    "design": "ready; exploratory direct-10K protocol frozen",
+    "implementation": "verified by 100 tests and shell/JSON validation",
+    "live_population": "submitted; model startup still in progress at snapshot",
+    "scientific_conclusion": "not available"
+  },
+  "limitations": [
+    "This is one exploratory population run on one mathematical task instance, not an independent replicate.",
+    "The prior one-request smoke test validated service compatibility but did not validate throughput or this 16-request scheduler configuration.",
+    "Agent outputs, consensus, and any statistical summaries will not count as proof; mathematical claims remain unverified until independent proof checking."
+  ]
+}

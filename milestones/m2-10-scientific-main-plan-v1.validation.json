@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "validated_at": "2026-10-02T09:30:40+08:00",
+  "static_checks": {
+    "html_parse": "passed",
+    "core_sections": 5,
+    "responsive_breakpoint": "present",
+    "print_styles": "present",
+    "relative_links": "all resolve",
+    "offline_assets": "no external resources or scripts",
+    "source_json_parse": "passed",
+    "control_yaml_parse": "passed"
+  },
+  "browser_visual_qa": {
+    "status": "passed",
+    "browser": "Google Chrome headless local installation",
+    "desktop": {
+      "viewport": "1440x1000",
+      "screenshot": "milestones/m2-10-scientific-main-plan-v1-1440.png",
+      "result": "heading, goal, principles and work-package table visually inspected"
+    },
+    "narrow": {
+      "viewport": "390x1000",
+      "screenshot": "milestones/m2-10-scientific-main-plan-v1-390.png",
+      "result": "mobile heading adjusted and visually inspected; one-column readiness/cards and wrapped text visible"
+    },
+    "interaction": "No custom JavaScript interactions; report core is readable without interaction"
+  },
+  "limitations": "Validation covers report structure and layout only. It does not verify cluster state, developmental architecture, mathematical claims or performance."
+}

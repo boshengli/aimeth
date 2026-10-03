@@ -1,0 +1,29 @@
+{
+  "groups": 100,
+  "workers_per_group": 100,
+  "observers_per_group": 4,
+  "cycles": 2,
+  "max_inflight": 16,
+  "max_output_tokens": 1024,
+  "max_input_tokens": 8192,
+  "wall_seconds": 28800,
+  "seed": 20260929,
+  "model_name": "glm-5.3-flash",
+  "endpoint": "REDACTED_INSTITUTIONAL_ENDPOINT",
+  "request_timeout_seconds": 120,
+  "population_id": "slcw10k-gateway-20260930-v2",
+  "input_token_limits": {
+    "worker": 8192,
+    "observer": 16384,
+    "chief": 8192,
+    "global": 28672
+  },
+  "consecutive_transport_error_stop": 5,
+  "private_config_sha256": "45f24943633a2f615c403d432613f89f6eba8637825d922b24543b026efe9cb6",
+  "status": "exploratory full 10K continuation; thinking disabled at SGLang request level; exact tokenizer rendering count; stop on missing final content; no single-agent preflight",
+  "request_options": {
+    "chat_template_kwargs": {
+      "thinking": false
+    }
+  }
+}

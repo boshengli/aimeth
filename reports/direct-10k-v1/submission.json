@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "snapshot_time": "2026-09-30 09:08:39 Asia/Shanghai",
+  "job_id": 232871,
+  "job_state": "RUNNING",
+  "allocated_h20_gpus": 8,
+  "model_status": "48/48 权重分片已加载，内核运行前处理仍在进行；HTTP尚未就绪",
+  "observed_model_responses": 0,
+  "ssh_status": "已登录 gpu08；cgroup 包含 job_232871/step_extern",
+  "source_commit": "5e7c2b764e135860304414f24e8c011e90860a06",
+  "bundle_sha256": "bc9b39d18f98b83379b2500e44c4d6f87cb97a2ec186b0d4271b9cf9a9fc23c7",
+  "outcome": "作业已运行并加载全部48个权重分片，当前仍在服务初始化。尚未观察到群体模型响应。",
+  "limitations": "模型服务GPU兼容性及完整10K真实推理尚待实际运行确认；节点GPU占用不等于已完成推理。",
+  "private_records_registered": true,
+  "readiness_tests_passed": 100,
+  "synthetic_calls_completed": 21002,
+  "browser_visual_review": "NOT_CHECKED: prior explicit browser policy prohibition",
+  "proof_verified": false,
+  "population_effect_established": false
+}

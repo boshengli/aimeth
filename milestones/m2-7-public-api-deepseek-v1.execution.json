@@ -1,0 +1,28 @@
+{
+  "run_ids": [
+    "slcw-public-api-deepseek-20260930-v1",
+    "slcw-public-api-deepseek-20260930-v1-nothinking"
+  ],
+  "observed_at_utc": [
+    "2026-09-30T06:40:08.517326+00:00",
+    "2026-09-30T06:40:58.346106+00:00"
+  ],
+  "python": "3.9.6",
+  "transport": "Python standard-library urllib.request; concurrent.futures.ThreadPoolExecutor",
+  "concurrency_per_run": 4,
+  "catalog_request": "GET /models",
+  "inference_endpoint": "POST /chat/completions",
+  "request_payload_files": [
+    "m2-7-public-api-deepseek-v1.requests.jsonl",
+    "m2-7-public-api-deepseek-v1-nothinking.requests.jsonl"
+  ],
+  "response_records": [
+    "m2-7-public-api-deepseek-v1.responses.jsonl",
+    "m2-7-public-api-deepseek-v1-nothinking.responses.jsonl"
+  ],
+  "sender_source": "ephemeral inline driver; standalone execution script not archived",
+  "response_ids_retained": false,
+  "reasoning_content_text_retained": false,
+  "api_key_retained": false,
+  "error_bodies_retained": false
+}

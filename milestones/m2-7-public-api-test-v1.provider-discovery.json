@@ -1,0 +1,19 @@
+{
+  "provider": "Z.AI / Zhipu public API",
+  "checked_at_utc": "2026-09-30T04:20:00Z",
+  "endpoints": {
+    "https://api.z.ai/api/paas/v4/models": {
+      "http_status": 200,
+      "model_count": 11,
+      "contains_glm_5_3_flash": true,
+      "matching_model_ids": ["glm-5.3", "glm-5.3-flash", "glm-5.3-flashx"]
+    },
+    "https://open.bigmodel.cn/api/paas/v4/models": {
+      "http_status": 200,
+      "model_count": 11,
+      "contains_glm_5_3_flash": true,
+      "matching_model_ids": ["glm-5.3", "glm-5.3-flash", "glm-5.3-flashx"]
+    }
+  },
+  "credential": "not stored; supplied by user and used only in process memory"
+}

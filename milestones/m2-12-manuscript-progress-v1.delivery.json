@@ -1,0 +1,9 @@
+{
+  "milestone": "M2.12",
+  "delivery_commit": "de3e1a6",
+  "first_draft_commit": "ae5933f",
+  "prototype_commit": "f1e3679",
+  "remote_branch": "codex/m2-direct-10k",
+  "push_confirmed_at": "2026-10-03T16:20:31+08:00",
+  "manifest_sha256": "702d6401069bc62fa27c52d884c424e6e77050fbc74c55cc818d7574c0a4af7e"
+}

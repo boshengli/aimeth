@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AIMeth 每小时目标回顾、效率改进、正式执行记录与下一轮准备计划">
+<title>M2.9 每小时回顾与下一轮准备 · v1</title>
+<style>
+:root{color-scheme:light;--ink:#152333;--muted:#526477;--line:#d9e2ea;--blue:#174ea6;--pale:#edf4fb;--amber:#fff4d6;--green:#e9f5ee}*{box-sizing:border-box}body{margin:0;background:#f3f6f8;color:var(--ink);font:16px/1.58 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:#102943;color:#fff;padding:30px max(22px,calc((100vw - 1040px)/2))}header p{color:#cfdae5;margin:.3rem 0}main{max-width:1040px;margin:24px auto;padding:0 20px 44px}section,.card{background:white;border:1px solid var(--line);border-radius:12px;padding:22px;margin:16px 0;box-shadow:0 2px 8px #132b3c0a}h1{font-size:clamp(1.7rem,4vw,2.45rem);line-height:1.18;margin:.2rem 0 .6rem}h2{font-size:1.25rem;margin:0 0 12px}h3{font-size:1rem;margin:14px 0 4px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:var(--pale);border-radius:10px;padding:14px}.stat b{display:block;font-size:1.55rem;color:var(--blue)}.callout{background:var(--amber);border-left:4px solid #c58b13;padding:12px 16px;border-radius:6px}.good{background:var(--green)}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:9px}th{background:#f4f7fa}code{overflow-wrap:anywhere}.muted,small{color:var(--muted)}a{color:var(--blue)}footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:14px;margin-top:22px}ul{padding-left:1.3rem} @media(max-width:650px){header{padding:24px 18px}main{padding:0 12px 30px}.grid{grid-template-columns:1fr}.scroll{overflow-x:auto}section,.card{padding:16px}table{min-width:560px}}@media print{body{background:#fff}section,.card{box-shadow:none;break-inside:avoid}header{background:#fff;color:var(--ink);padding:10px 0}header p{color:var(--muted)}main{max-width:none;margin:0;padding:0}}
+</style></head>
+<body><header><p>AIMeth · M2 Agent 组织与执行治理</p><h1>每小时目标回顾与下一轮准备</h1><p>里程碑 M2.9 · v1 · 2026-10-01 · Asia/Shanghai</p></header>
+<main>
+<section><h2>结果</h2><p>已为当前 AIMeth 任务设置<strong>每小时目标回顾</strong>。回顾将检查项目目标、GPU08 运行进度、效率瓶颈、正式结果记录和下一轮准备；无实质变化时保持安静，遇到重要进展、失败或需决策时才提醒。</p><div class="callout">当前 10K 运行继续按已冻结配置执行。下一轮先准备运行卡和分析口径；v8 结束并完成证据审计前，不提交重复的 10K 作业。</div></section>
+<section><h2>用户要求与实际交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>交付</th><th>证据与边界</th></tr></thead><tbody>
+<tr><td>每小时回顾目标</td><td>Codex 当前任务中的 ACTIVE heartbeat，频率 hourly</td><td>自动化创建成功；首次定时运行尚未观察到</td></tr>
+<tr><td>整体计划与效率升级</td><td>复用单一 live receipt；仅追踪关键变化；减少重复探测和重复叙述</td><td>已写入 v1 操作计划；效率收益尚未测量</td></tr>
+<tr><td>正式执行与结果记录</td><td>明确区分运行接纳、JSON/schema、角色遵循和数学证明；规定追加式小时记录字段</td><td>当前自动化已设；私有执行日志将由后续回顾追加，避免把设计误报成执行数据</td></tr>
+<tr><td>为下一轮做准备</td><td>终态审计清单、成本/吞吐分析、治理消息因果检查、冻结与运行卡规则</td><td>准备工作可开始；最终参数须基于完整 v8 审计</td></tr>
+</tbody></table></div></section>
+<section><h2>最近一次可引用运行快照</h2><p class="muted">注意：以下数字来自 2026-10-01 10:27 的项目状态记录，不代表本报告生成时的实时状态。下一次决策前应刷新集群状态和检查点。</p><div class="grid"><div class="stat"><b>70</b>运行接纳回执</div><div class="stat"><b>55 / 15</b>JSON有效 / 非JSON</div><div class="stat"><b>16 + 9,914</b>运行中 / 待处理</div></div><p>作业 235511，run <code>slcw10k-20261001-gpu08-v8</code>，GPU08 8×H20；当时 SQLite integrity check 为 <code>ok</code>。此为运行早期格式与运行时证据，不是数学结果或组织效果。</p></section>
+<section><h2>效率规则与下一轮决策</h2><ul><li>每小时从最新一致检查点提取一个事实源，记录结算、接纳、schema有效、运行中、待处理、失败、token、吞吐、完整性和治理阶段，并追加到 <code>runs/hourly-review-log.jsonl</code>。</li><li>只因吞吐停滞、错误结构改变、检查点异常、治理阶段推进或资源风险而触发深入诊断；无变化写简短记录，不重复长报告。</li><li>保留完整失败分母、原始回执哈希、独立 run ID、数学独立评估和必要恢复记录。</li><li>直接 10K 方向保持；没有单 Agent 成功门槛、小群体阶梯门槛或数学正结果门槛。</li><li>v8 终态后先审计输出质量、角色/治理链与证明状态，再确定单一有证据支持的工程改动。改变研究因子时冻结新协议，不混并结果。</li></ul></section>
+<section><h2>就绪度</h2><p class="good"><strong>每小时目标回顾：已配置。</strong>首次计划执行待验证。<br><strong>下一轮设计：准备中。</strong>完整参数取决于 v8 结果审计。<br><strong>确认性架构比较：未就绪。</strong>仍需预冻结评估与独立群体重复。<br><strong>数学发现：未建立。</strong>回执有效性不等于证明正确。</p></section>
+<section><h2>来源和验证</h2><ul><li>操作计划：<code>docs/hourly-review-and-next-cycle-v1.md</code></li><li>结构化证据：<code>milestones/m2-9-hourly-review-v1.json</code></li><li>结果日志：<code>runs/hourly-review-log.jsonl</code> 已建立；当前仅有明确标记为 <code>plan_initialized</code> 的基线记录，不冒充定时运行结果。</li><li>运行基线：项目控制目录 STATUS.md 的 2026-10-01 10:27 更新；v8 不可变 HTML 快照时间为 10:21。</li><li>自动化：Codex task heartbeat，ID <code>aimeth</code>，状态 ACTIVE，hourly。</li><li>HTML：内嵌样式，无外部运行依赖；适配窄屏、桌面和打印。交付时执行静态结构、链接、JSON与响应式规则校验；浏览器视觉检查单独记入验证记录。</li></ul></section>
+<footer>结果解释边界：计划和自动化配置已完成；第一次定时执行、效率改善、下一轮运行效果、数学证明及架构效应尚未实测。当前报告不包含集群原始响应正文、凭证或参考答案。</footer>
+</main></body></html>

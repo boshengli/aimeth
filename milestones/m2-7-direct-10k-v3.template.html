@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2.7 v3 · CPU 网关纠偏记录</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f4;color:#172d30;font:16px/1.65 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:980px;margin:auto;padding:24px}header,section{background:white;border:1px solid #d5e0dc;border-radius:12px;padding:22px;margin:14px 0}header{border-top:6px solid #b66a11}h1{font-size:clamp(27px,4vw,38px);line-height:1.2}h2{font-size:22px;margin:0 0 10px}.lead{font-size:20px;font-weight:650}.pill{display:inline-block;border-radius:30px;background:#fff0d6;color:#713f08;padding:3px 10px}a{color:#086b61}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #dce5e1}th{width:26%}code{overflow-wrap:anywhere}.note{padding:12px;background:#fff5e6;border-left:4px solid #bd761d}nav{display:flex;gap:12px;flex-wrap:wrap}@media(max-width:620px){main{padding:10px}header,section{padding:15px}table,tbody,tr,th,td{display:block}th{width:auto;border:0;padding-bottom:0}td{padding-top:2px}}@media print{body{background:#fff;font-size:11pt}main{max-width:none;padding:0}header,section{break-inside:avoid;border:0;padding:10px 0}}
+</style></head><body><main>
+<header><small>AIMeth · M2.7 · v3 · 2026-09-30（Asia/Shanghai）</small><h1>CPU 网关运行偏离目标，已停止</h1><p class="lead"><span class="pill">Slurm 233163 · COMPLETED 0:0 · tcu165 · 4 CPU / 16 GB / 0 GPU</span></p><p>该作业把 10K Agent 的 API 客户端放在 CPU 节点，未满足用户要求的 GPU 作业路径。用户纠正后已向该作业发出受控停止；不能把它当作 GPU 实验或推理节点证据。</p><nav aria-label="报告章节"><a href="#requirement">用户要求</a><a href="#evidence">停止时证据</a><a href="#identity">记录身份</a><a href="#limits">解释与缺口</a></nav></header>
+<section id="requirement"><h2>用户要求与执行差异</h2><table><tbody>
+<tr><th>用户明确目标</th><td>群体运行应在 gpu08 自有 Slurm 分配中执行；备选应是 GPU 节点上的 GLM 服务。单 Agent 解题成功不是前置门槛。</td></tr>
+<tr><th>实际提交</th><td>233163 在 tcu165 运行 API 客户端，没有申请 GPU。GLM served ID 为 <code>glm-5.3-flash</code>，但服务后端节点及推理位置未核实。</td></tr>
+<tr><th>纠偏动作</th><td>发出 TERM 后，Slurm 记为正常收尾。摘要标记 <code>halt_reason=signal</code>；私有最终快照保留，未删作业记录、回执或账本。</td></tr></tbody></table></section>
+<section id="evidence"><h2>可核实的最终快照</h2><table><tbody>
+<tr><th>群体计划</th><td>10,000 分析 Agent、501 治理角色、两轮 21,002 个调用槽；实际只在 cycle 0 worker 阶段活动。</td></tr>
+<tr><th>已结算请求</th><td>1,119 次；provider usage 输入 552,869、输出 1,145,856 tokens。其余 8,881 个首轮 worker 未执行；后续治理及第二轮未启动。</td></tr>
+<tr><th>任务输出状态</th><td>1,119 条均在运行记录中标为 <code>failed / incomplete_generation</code>。未进行数学内容审查或证明验证；没有数学结论。</td></tr>
+<tr><th>持久记录</th><td>summary SHA-256 <code>8c49ddf71c274ec1829c35917ba17e48a3b25c4b2e1a7a974200fdddb05452b5</code>；worker projection SHA-256 <code>a68b8d20eebc6604a10b5a94c71c141ff167d477906ea0a6f82fe3c318940bd5</code>；检查点 SQLite integrity_check 为 <code>ok</code>。原始输出留在受限集群目录。</td></tr></tbody></table>
+<p class="note">终态账本记录 1,119 次已结算，与此前 926 条中途快照不同。报告不公开完整模型响应或密钥。</p></section>
+<section id="identity"><h2>运行身份</h2><table><tbody>
+<tr><th>人口 ID</th><td><code>slcw10k-gateway-20260930-v2</code></td></tr>
+<tr><th>源码</th><td>commit <code>1297a7ea9199188d3fc7aca15a3e09edf767b4ca</code>；源码包 SHA-256 <code>c9e8ec1c80f1aeb8cd6f8405766fc922c4d4d90d3f0176add4322bb67ae6fb1f</code></td></tr>
+<tr><th>运行节点</th><td>Slurm job <code>233163</code>，分区 <code>fatPartition</code>，执行主机 <code>tcu165</code>；该事实只说明客户端执行位置。</td></tr>
+<tr><th>旧记录</th><td><a href="m2-7-direct-10k-v1.html">v1 GPU08 节点失败</a> · <a href="m2-7-direct-10k-v2.html">v2 GLM 接口修正记录</a></td></tr></tbody></table></section>
+<section id="limits"><h2>科学解释与下一步准备度</h2><p>本次运行是执行路径偏差后的失败运行记录，不能用来比较 Agent 架构优劣，也不能证明 GPU 推理、群体数学能力或 GLM 后端部署位置。用户提出“以 GPU 节点为执行条件”后，下一次尝试已改为请求 gpu08 的完整 8×H20 Slurm 分配；该新作业见 <a href="m2-7-direct-10k-v4.html">v4 提交状态</a>。</p><p class="note">HTML 已做静态标签/章节锚点、离线链接及窄屏样式检查。浏览器视觉验收未完成，沿用项目既有浏览器策略限制。</p></section>
+<footer>证据目录：<code>/data/libs/aimeth/slcw10k-gateway-20260930-v2</code>（集群私有）。本报告不包含完整响应。</footer>
+</main></body></html>

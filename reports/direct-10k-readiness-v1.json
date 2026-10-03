@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-09-30",
+  "kind": "synthetic engineering fixture; no model inference",
+  "code_sha256": "6c434ed25ba799cab18f599b0e7b23e59134e5fde1ad992a4a585b974edfe840",
+  "config": {
+    "consecutive_transport_error_stop": 5,
+    "cycles": 2,
+    "endpoint": "http://127.0.0.1:31008/v1/chat/completions",
+    "groups": 100,
+    "input_token_limits": {
+      "chief": 8192,
+      "global": 28672,
+      "observer": 16384,
+      "worker": 8192
+    },
+    "max_inflight": 16,
+    "max_input_tokens": 8192,
+    "max_output_tokens": 1024,
+    "model_name": "deepseek-v4-flash-0731",
+    "observers_per_group": 4,
+    "population_id": "slcw10k-20260929-v1",
+    "request_timeout_seconds": 120,
+    "seed": 20260929,
+    "wall_seconds": 28800,
+    "workers_per_group": 100
+  },
+  "counting": {
+    "analysis_agents": 10000,
+    "calls_per_cycle": 10501,
+    "cycles": 2,
+    "global_chief_agents": 1,
+    "group_chief_agents": 100,
+    "logical_agents": 10501,
+    "observer_agents": 400,
+    "phase_populations": {
+      "chief": 100,
+      "global": 1,
+      "observer": 400,
+      "worker": 10000
+    },
+    "planned_call_slots": 21002,
+    "single_agent_success_required": false,
+    "small_population_success_required": false
+  },
+  "finished_phases": 8,
+  "halted": false,
+  "synthetic_calls": 21002,
+  "distinct_analysis_identities": 10000,
+  "new_model_calls": 0,
+  "verification": "all event hash chains and imported references; full projection audit of one child run per phase",
+  "mathematical_validity_checked": false,
+  "first_attempt": {
+    "synthetic_calls": 10000,
+    "status": "stopped to remove quadratic verification overhead; original journal and source retained privately"
+  },
+  "unit_tests": {
+    "new_tests_passed": 13,
+    "covers": [
+      "10K design counts and deterministic routing",
+      "transactional caps, restart and conflicting reservations",
+      "resume without repeat calls, source hash tampering, failed-worker evidence reaching Observer"
+    ]
+  }
+}

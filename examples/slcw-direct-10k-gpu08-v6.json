@@ -1,0 +1,29 @@
+{
+  "groups": 100,
+  "workers_per_group": 100,
+  "observers_per_group": 4,
+  "cycles": 2,
+  "max_inflight": 16,
+  "max_output_tokens": 2048,
+  "max_input_tokens": 8192,
+  "wall_seconds": 576000,
+  "seed": 20261001,
+  "model_name": "deepseek-v4-flash-0731",
+  "endpoint": "http://127.0.0.1:31008/v1/chat/completions",
+  "request_timeout_seconds": 1200,
+  "population_id": "slcw10k-20261001-gpu08-v6",
+  "input_token_limits": {
+    "worker": 8192,
+    "observer": 16384,
+    "chief": 8192,
+    "global": 28672
+  },
+  "consecutive_transport_error_stop": 5,
+  "token_count_encoder": "sglang-dsv4-native-v1",
+  "thinking_mode": "thinking",
+  "request_options": {
+    "chat_template_kwargs": {
+      "thinking": true
+    }
+  }
+}

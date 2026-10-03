@@ -1,0 +1,13 @@
+# Direct 10K GPU08 population run · v4
+
+Version 4 preserves the 2026-10-01 exploratory task design and seed after v3 failed before dispatching any inference request. The failure remains a separate immutable record: SGLang served the model after loading 48/48 shards, but the population driver stopped because DeepSeek V4's tokenizer has no Hugging Face `chat_template`.
+
+The fix uses the native `sglang.srt.entrypoints.openai.encoding_dsv4.encode_messages` encoder bundled in the exact SGLang 0.5.16 runtime image to render each frozen request before tokenizer-based input-cap checks. This is the server-equivalent DSV4 encoding path in that SGLang release. The same mode is explicitly requested for inference through `chat_template_kwargs.thinking=true`; model-side reasoning behavior is therefore fixed rather than inferred from an environment default.
+
+- Population: 100 groups × 100 analysis workers, 4 observers per group, 100 group chiefs, and 1 global chief (10,501 roles); two cycles, 21,002 planned slots, maximum 16 in-flight calls.
+- Mathematical task: unforced incompressible Navier–Stokes on R³ with smooth rapidly decaying divergence-free initial data. All generated candidates remain unverified; no single-Agent gate or size ladder.
+- Model/profile: pinned DeepSeek-V4-Flash-0731 weight and SGLang Hopper image on all eight H20 GPUs at GPU08, loopback-only endpoint, the empirically successful FP8 wo_a switch, and a per-job node-local Triton cache.
+- Bounds: up to 30 minutes for model startup and 8 hours for the population within one exclusive 8h30m Slurm job; 16 client requests in flight, 120-second request timeout, 1,024 output tokens per call, phase-specific input caps, durable receipt-first recording, checkpoints, no hidden retries, and a five-consecutive-transport-error stop.
+- Evidence and interpretation: preserve v3's startup success and driver failure, then record v4 separately with the new source/config hashes. The two attempts are not independent population replicates. Neither model startup nor population consensus is mathematical proof or evidence of architecture superiority.
+
+The launch source is pinned to the commit containing this document, code, config, and batch file. The relevant upstream implementation is SGLang's [v0.5.16 DSV4 encoder](https://github.com/sgl-project/sglang/blob/v0.5.16/python/sglang/srt/entrypoints/openai/encoding_dsv4.py) and [v0.5.16 serving path](https://github.com/sgl-project/sglang/blob/v0.5.16/python/sglang/srt/entrypoints/openai/serving_chat.py). These sources describe encoding behavior; they do not validate model mathematical reasoning.

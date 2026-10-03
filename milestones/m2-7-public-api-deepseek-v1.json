@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7 public DeepSeek API diagnostic",
+  "version": "v1",
+  "run_id": "slcw-public-api-deepseek-20260930-v1",
+  "provider": "DeepSeek official API",
+  "base_url": "https://api.deepseek.com",
+  "catalog_http_status": 200,
+  "catalog_model_count": 2,
+  "catalog_flash_model_ids": [
+    "deepseek-flash"
+  ],
+  "requested_model": "deepseek-flash",
+  "calls": {
+    "initial_thinking_enabled": {
+      "count": 4,
+      "http_200": 4,
+      "length": 4,
+      "empty_final_content": 4,
+      "max_tokens_each": 2048,
+      "prompt_tokens": 817,
+      "completion_tokens": 8192,
+      "total_tokens": 9009,
+      "reasoning_content_present": 4
+    },
+    "retry_thinking_disabled": {
+      "count": 4,
+      "http_200": 4,
+      "stop": 4,
+      "empty_final_content": 0,
+      "max_tokens_each": 1200,
+      "prompt_tokens": 717,
+      "completion_tokens": 2118,
+      "total_tokens": 2835,
+      "reasoning_content_present": 0
+    }
+  },
+  "combined_usage": {
+    "prompt_tokens": 1534,
+    "completion_tokens": 10310,
+    "total_tokens": 11844,
+    "billing_amount_verified": false
+  },
+  "output_checks": {
+    "retry_json_parse": 4,
+    "required_keys": 4,
+    "substantive_tasks_aligned": 3,
+    "synthesis_five_item_checklist": false,
+    "formal_math_validation": false
+  },
+  "scope": "Four independent review-structure prompts about unforced incompressible 3D Navier-Stokes on R^3; no proof, disproof, solution, or organization comparison tested.",
+  "batch_api_submitted": false,
+  "full_10k_population_started": false,
+  "credential_persisted": false,
+  "sources": [
+    "https://api-docs.deepseek.com/quick_start/pricing-details-cny/",
+    "https://api-docs.deepseek.com/guides/thinking_mode/",
+    "https://api-docs.deepseek.com/api/list-models/"
+  ]
+}

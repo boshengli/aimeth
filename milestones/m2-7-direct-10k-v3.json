@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7",
+  "version": "v3",
+  "snapshot_time": "2026-09-30 12:02 Asia/Shanghai",
+  "outcome": "CPU-only GLM gateway run 233163 was stopped after user corrected the execution path. It is retained as a protocol deviation, not a GPU run.",
+  "population_id": "slcw10k-gateway-20260930-v2",
+  "slurm": {"job_id": "233163", "state": "COMPLETED", "exit_code": "0:0", "node": "tcu165", "partition": "fatPartition", "cpus": 4, "memory": "16G", "gpus": 0},
+  "population": {"analysis_agents": 10000, "governance_roles": 501, "planned_calls": 21002, "settled_calls": 1119, "unattempted_worker_slots": 8881, "phase": "cycle 0 worker", "later_phases_started": false},
+  "responses": {"model_id": "glm-5.3-flash", "failed_incomplete_generation": 1119, "prompt_tokens": 552869, "completion_tokens": 1145856, "mathematical_content_reviewed": false},
+  "evidence": {"summary_sha256": "8c49ddf71c274ec1829c35917ba17e48a3b25c4b2e1a7a974200fdddb05452b5", "worker_projection_sha256": "a68b8d20eebc6604a10b5a94c71c141ff167d477906ea0a6f82fe3c318940bd5", "sqlite_integrity_check": "ok"},
+  "identity": {"source_commit": "1297a7ea9199188d3fc7aca15a3e09edf767b4ca", "source_bundle_sha256": "c9e8ec1c80f1aeb8cd6f8405766fc922c4d4d90d3f0176add4322bb67ae6fb1f"},
+  "interpretation": {"gpu_execution_confirmed": false, "backend_placement_attested": false, "mathematical_validity_checked": false, "organization_superiority_established": false},
+  "html_qa": "static content, anchors, offline links, and narrow-screen CSS checked; browser visual QA not completed under existing project browser-policy block"
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "status": "candidate_not_frozen_not_submitted",
+  "scientific_goal": "Task-conditioned cellular development and functional improvement",
+  "engineering_run_id": "public-api-submission-test-v1",
+  "population_dispatch_allowed": false,
+  "api_dispatch_allowed": false,
+  "blocks": [
+    {
+      "id": "glm_fast",
+      "provider": "bigmodel",
+      "model": "glm-4.5-air",
+      "requests": 8,
+      "concurrency": 4,
+      "thinking": "disabled",
+      "max_input_tokens": 1024,
+      "max_tokens": 512
+    },
+    {
+      "id": "glm_deep",
+      "provider": "bigmodel",
+      "model": "glm-5.3-flash",
+      "requests": 4,
+      "concurrency": 2,
+      "thinking": "enabled",
+      "reasoning_effort": "high",
+      "max_input_tokens": 4096,
+      "max_tokens": 8192
+    },
+    {
+      "id": "glm_chains",
+      "provider": "bigmodel",
+      "model": "glm-4.5-air",
+      "requests": 32,
+      "chains": 16,
+      "hops": 2,
+      "concurrency": 16,
+      "thinking": "disabled",
+      "max_input_tokens": 1024,
+      "max_tokens": 512
+    },
+    {
+      "id": "deepseek_chains",
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "requests": 32,
+      "chains": 16,
+      "hops": 2,
+      "concurrency": 16,
+      "thinking": "disabled",
+      "max_input_tokens": 1024,
+      "max_tokens": 512
+    }
+  ],
+  "endpoints": {
+    "bigmodel": "https://open.bigmodel.cn/api/paas/v4",
+    "deepseek": "https://api.deepseek.com"
+  },
+  "transport": {
+    "api": "chat_completions",
+    "stream": false,
+    "tools": false,
+    "automatic_retries": 0,
+    "failover": false,
+    "connect_timeout_s": 10,
+    "fast_total_deadline_s": 60,
+    "deep_total_deadline_s": 180
+  },
+  "budget": {
+    "max_dispatches": 76,
+    "max_input_tokens": 90112,
+    "max_completion_tokens_including_reasoning": 69632,
+    "max_total_tokens": 159744,
+    "currency": null,
+    "money_cap": null,
+    "price_snapshot": null,
+    "token_count_enforcement": "provider-compatible tokenizer or conservative bound required before dispatch"
+  },
+  "freeze_requirements": [
+    "validate_existing_runtime_and_fault_injection",
+    "full_typed_schema_and_chain_semantics",
+    "persist_final_messages_privately",
+    "freeze_prompts_task_and_code_hashes",
+    "fill_price_and_money_cap",
+    "secure_environment_credentials"
+  ],
+  "repeat_previous_calibration": false,
+  "recovery": "Resume only never-dispatched prepared items; quarantine unknown outcomes; state application is idempotent, provider billing is not guaranteed exactly once.",
+  "population_candidate": {
+    "status": "design_only",
+    "cap_cells": 10000,
+    "development_seed_cells": 1024,
+    "arms": [
+      "adaptive_development",
+      "fixed_10000"
+    ],
+    "comparison": "whole-policy exploratory effect; starting population differs",
+    "provider_blocks": [
+      "bigmodel",
+      "deepseek"
+    ],
+    "initial_design": "one matched pair in one provider; not authorized by this card",
+    "exploratory_replicates_per_arm_per_provider": 3,
+    "full_candidate_population_runs": 12,
+    "population_call_cap": null,
+    "population_token_cap": null,
+    "population_money_cap": null,
+    "update_rule_hash": null,
+    "evaluator_hash": null,
+    "v8_reconciliation": "required; no duplicate population submission while unresolved",
+    "claims": "No power guarantee; no shape-specific causal effect from this primary contrast"
+  }
+}

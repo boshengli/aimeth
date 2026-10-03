@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "scope": "M2.7 submission snapshot; source archive is exact execution package; live code and README may evolve separately",
+  "artifacts": [
+    {
+      "id": "direct-10k-00",
+      "path": "docs/direct-10k-v1.md",
+      "bytes": 3009,
+      "sha256": "3326d1be2568705b05c64a033cf23c6b16b339641836507ef1d8713ef1a34b3d"
+    },
+    {
+      "id": "direct-10k-01",
+      "path": "examples/slcw-direct-10k-v1.json",
+      "bytes": 547,
+      "sha256": "2f58b189abe43b292d41b632b885b9b17e08d5d7fbc7c712b46cdad40eef7bd3"
+    },
+    {
+      "id": "direct-10k-02",
+      "path": "reports/direct-10k-readiness-v1.json",
+      "bytes": 2020,
+      "sha256": "bca091fc824173f68d916ce059402ff09520e0eeaf84f4e921254e10971d85d1"
+    },
+    {
+      "id": "direct-10k-03",
+      "path": "reports/direct-10k-v1/source.tar.gz",
+      "bytes": 28960,
+      "sha256": "bc9b39d18f98b83379b2500e44c4d6f87cb97a2ec186b0d4271b9cf9a9fc23c7"
+    },
+    {
+      "id": "direct-10k-04",
+      "path": "reports/direct-10k-v1/submission.json",
+      "bytes": 1054,
+      "sha256": "fa4637a77a6c19f4bb57e9df514e340d7ce28c34cccd5ca73a0bd71676f45573"
+    },
+    {
+      "id": "direct-10k-05",
+      "path": "milestones/m2-7-direct-10k-v1.html",
+      "bytes": 5652,
+      "sha256": "22b4dfa526b1e96289446302b7921c20a276ffbe87dd3dedc61ce25544b292d9"
+    },
+    {
+      "id": "direct-10k-06",
+      "path": "tools/build_direct_10k_report.py",
+      "bytes": 6643,
+      "sha256": "da80f1ae48941f82dc9dda02a1af543f593def2aae42e70999f6dd3bd0cbccad"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-01 09:09 Asia/Shanghai",
+  "html_parser": "PASS: local Chrome loaded offline report",
+  "required_anchors": [
+    "mapping",
+    "result",
+    "recovery",
+    "next"
+  ],
+  "desktop": {
+    "viewport_css_px": 1440,
+    "document_width_px": 1440,
+    "body_width_px": 1440,
+    "visual": "PASS; final desktop screenshot inspected",
+    "screenshot_sha256": "d065e6cad6740a6bc2668dc5744062ef9fc56daae7cd09fbdd413cbf5f9c1b30"
+  },
+  "narrow": {
+    "requested_device_width_px": 390,
+    "effective_css_viewport_px": 390,
+    "document_width_px": 390,
+    "body_width_px": 390,
+    "horizontal_document_overflow": "NONE",
+    "responsive_css": "PASS: max-width 740 breakpoint applies"
+  },
+  "interaction": "PASS: clicking report navigation changed URL hash to #result",
+  "offline_runtime_dependencies": "NONE",
+  "print_layout": "PASS: embedded @media print rule",
+  "claim_review": "PASS: usage and length finish reasons are reported separately from mathematical conclusions",
+  "narrow_visual": "HTML loaded and dimensions inspected; screenshot capture timed out in headless Chrome, so no narrow screenshot hash is claimed."
+}

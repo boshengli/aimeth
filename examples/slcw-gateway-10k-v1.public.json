@@ -1,0 +1,24 @@
+{
+  "groups": 100,
+  "workers_per_group": 100,
+  "observers_per_group": 4,
+  "cycles": 2,
+  "max_inflight": 16,
+  "max_output_tokens": 1024,
+  "max_input_tokens": 8192,
+  "wall_seconds": 28800,
+  "seed": 20260929,
+  "model_name": "glm-5.3-flash",
+  "endpoint": "REDACTED_INSTITUTIONAL_ENDPOINT",
+  "request_timeout_seconds": 120,
+  "population_id": "slcw10k-gateway-20260930-v1",
+  "input_token_limits": {
+    "worker": 8192,
+    "observer": 16384,
+    "chief": 8192,
+    "global": 28672
+  },
+  "consecutive_transport_error_stop": 5,
+  "private_config_sha256": "e25907e55cec5d5362f3b55b37cb924db0936693535323602eccb3392e4a778a",
+  "status": "exploratory gateway continuation after GPU08 NODE_FAIL; no backend weight/placement attestation"
+}

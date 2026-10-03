@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-03T08:14:07.984Z",
+  "browser": "154.0.8037.95",
+  "viewports": [
+    {
+      "name": "progress",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "progress",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "manuscript",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "manuscript",
+      "width": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "checks": {
+    "print_control": "passed",
+    "navigation": "passed",
+    "local_links": "passed",
+    "no_js_content": "passed",
+    "print_layout": "passed"
+  },
+  "scope": "HTML accessibility, layout and links only; not scientific validation.",
+  "external_requests": [],
+  "page_errors": [],
+  "status": "passed"
+}

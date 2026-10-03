@@ -1,0 +1,11 @@
+# Direct 10K institutional GLM run · v2
+
+The v1 gateway attempt is retained as a failed engineering run. Slurm job 232984 stopped after a controlled TERM at its first worker phase: 964 calls were settled, all stored steps failed because final `message.content` was absent, 9,036 worker steps remained unattempted, and there was no mathematical result. The provider identified responses as `glm-5.3-flash`; each observed response finished at the 1,024-token limit with output in the separate reasoning field. That field is not treated as an Agent answer.
+
+The live audit found that this image's `tokenizer.apply_chat_template(..., tokenize=True)` returned 2 tokens for messages that the provider counted at 489–497 prompt tokens. The v2 counter renders the chat template and tokenizes the rendered string; for the captured initial request, that count was 490. This enables the existing role-specific preview loop to trim before dispatch, instead of passing a false two-token count.
+
+The v2 request adds `chat_template_kwargs: {"thinking": false}` to the canonical request so GLM returns final content directly. This follows the official SGLang GLM-5.3-Flash request guidance. If a response still lacks non-empty final content, the coordinator records usage and a `missing_final_content` failure, then stops admitting new calls while in-flight work settles. Provider reasoning fields and token-ID dumps are removed from normalized receipts; final content, usage, response identity and finish reason remain.
+
+This is a full direct population run under a new population ID, not a single-Agent probe or a continuation of the failed v1 data. It keeps 10,000 analysis agents, 501 governance roles, 21,002 planned calls, concurrency 16, 1,024 output-token cap and an 8-hour population deadline. Model response validity, mathematical value, backend weights and inference placement remain unverified until observed independently.
+
+Upstream request semantics: [SGLang GLM-5.3-Flash guide](https://github.com/sgl-project/sglang/blob/main/docs/cookbook/autoregressive/GLM/GLM-5.3-Flash.mdx). The guide states that thinking is enabled by checkpoint defaults and can be disabled using `chat_template_kwargs: {"thinking": false}`.

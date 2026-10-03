@@ -1,0 +1,33 @@
+{
+  "validated_at": "2026-10-02T09:33:46.541Z",
+  "browser": "154.0.8037.95",
+  "viewports": [
+    {
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "viewport": 390,
+      "scroll": 390
+    }
+  ],
+  "checks": {
+    "navigation": "passed",
+    "source_links": "existing local sources resolve; validation/manifest checked after creation",
+    "print_css": "passed",
+    "no_js_core": "passed",
+    "budget_arithmetic": {
+      "requests": 76,
+      "input": 90112,
+      "output": 69632,
+      "total": 159744
+    }
+  },
+  "scope": "Report and candidate-card validation only; no model calls, runtime fault tests or scientific verification.",
+  "visual_review": {
+    "status": "passed",
+    "desktop": "1440px full page and top inspected: readable headings, tables and links",
+    "narrow": "390px full page, top and submission section inspected: wrapped title, stacked tables, no clipped text",
+    "limitations": "Screenshots assess presentation only."
+  }
+}

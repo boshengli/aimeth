@@ -1,0 +1,172 @@
+{
+  "verified_at": "2026-10-03",
+  "review_type": "targeted_primary_source_positioning",
+  "references": [
+    {
+      "id": "R1",
+      "title": "Growing Neural Cellular Automata",
+      "authors": [
+        "Alexander Mordvintsev",
+        "Ettore Randazzo",
+        "Eyvind Niklasson",
+        "Michael Levin"
+      ],
+      "year": 2020,
+      "url": "https://distill.pub/2020/growing-ca/",
+      "doi": "10.23915/distill.00023",
+      "verified_scope": "Full text, Model and Experiments 1–3; publisher bibliographic record."
+    },
+    {
+      "id": "R2",
+      "title": "Self-classifying MNIST Digits",
+      "authors": [
+        "Ettore Randazzo",
+        "Alexander Mordvintsev",
+        "Eyvind Niklasson",
+        "Michael Levin",
+        "Sam Greydanus"
+      ],
+      "year": 2020,
+      "url": "https://distill.pub/2020/selforg/mnist/",
+      "doi": "10.23915/distill.00027.002",
+      "verified_scope": "Full text, task definition and Model, including immutable pixel channel and connectivity caveat."
+    },
+    {
+      "id": "R3",
+      "title": "Morphogenesis in robot swarms",
+      "authors": [
+        "Ivica Slavkov",
+        "Daniel Carrillo-Zapata",
+        "Noemí Carranza",
+        "X. Diego",
+        "Fredrik Jansson",
+        "Jaap A. Kaandorp",
+        "Sabine Hauert",
+        "James Sharpe"
+      ],
+      "year": 2018,
+      "url": "https://research-information.bris.ac.uk/en/publications/morphogenesis-in-robot-swarms/",
+      "doi": "10.1126/scirobotics.aau9178",
+      "verified_scope": "Author institution abstract and bibliographic record; publisher full text inaccessible in this pass. X. Diego retained as initial because metadata given names differ."
+    },
+    {
+      "id": "R4",
+      "title": "Multi-scale organization in communicating active matter",
+      "authors": [
+        "Alexander Ziepke",
+        "Ivan Maryshev",
+        "Igor S. Aranson",
+        "Erwin Frey"
+      ],
+      "year": 2022,
+      "url": "https://www.nature.com/articles/s41467-022-34484-2",
+      "doi": "10.1038/s41467-022-34484-2",
+      "verified_scope": "Publisher-indexed full-text sections on aggregation, cluster analysis and citation metadata. Article number 6727 from publisher; conflicting lab-webpage number not used."
+    },
+    {
+      "id": "R5",
+      "title": "Smart cellular bricks for decentralized shape classification and damage recovery",
+      "authors": [
+        "Rodrigo Moreno",
+        "Andrés Faiña",
+        "Shyam Sudhakaran",
+        "Kathryn Walker",
+        "Sebastian Risi"
+      ],
+      "year": 2026,
+      "url": "https://www.nature.com/articles/s41467-026-75166-7",
+      "doi": "10.1038/s41467-026-75166-7",
+      "verified_scope": "2025 arXiv author record (https://arxiv.org/abs/2509.18659), and 2026 publisher-indexed Methods, Discussion and simulated recovery sections. No exact hardware accuracy imported."
+    },
+    {
+      "id": "R6",
+      "title": "Learning to Communicate with Deep Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Jakob N. Foerster",
+        "Yannis M. Assael",
+        "Nando de Freitas",
+        "Shimon Whiteson"
+      ],
+      "year": 2016,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2016/hash/c7635bfd99248a2cdef8249ef7bfbef4-Abstract.html",
+      "doi": null,
+      "verified_scope": "Proceedings abstract and author-paper title page (https://arxiv.org/abs/1605.06676v2). Authors follow paper title-page forms; arXiv DOI 10.48550/arXiv.1605.06676 is not a proceedings DOI."
+    },
+    {
+      "id": "R7",
+      "title": "GPTSwarm: Language Agents as Optimizable Graphs",
+      "authors": [
+        "Mingchen Zhuge",
+        "Wenyi Wang",
+        "Louis Kirsch",
+        "Francesco Faccio",
+        "Dmitrii Khizbullin",
+        "Jürgen Schmidhuber"
+      ],
+      "year": 2024,
+      "url": "https://proceedings.mlr.press/v235/zhuge24a.html",
+      "doi": null,
+      "verified_scope": "Proceedings abstract and bibliographic record; published title differs from arXiv title."
+    },
+    {
+      "id": "R8",
+      "title": "G-Designer: Architecting Multi-agent Communication Topologies via Graph Neural Networks",
+      "authors": [
+        "Guibin Zhang",
+        "Yanwei Yue",
+        "Xiangguo Sun",
+        "Guancheng Wan",
+        "Miao Yu",
+        "Junfeng Fang",
+        "Kun Wang",
+        "Tianlong Chen",
+        "Dawei Cheng"
+      ],
+      "year": 2025,
+      "url": "https://proceedings.mlr.press/v267/zhang25cu.html",
+      "doi": null,
+      "verified_scope": "Proceedings abstract and bibliographic record; headline numerical gains not imported without denominator audit."
+    },
+    {
+      "id": "R9",
+      "title": "Towards a Science of Scaling Agent Systems",
+      "authors": [
+        "Yubin Kim",
+        "Ken Gu",
+        "Chanwoo Park",
+        "Chunjong Park",
+        "Samuel Schmidgall",
+        "A. Ali Heydari",
+        "Yao Yan",
+        "Zhihan Zhang",
+        "Yuchen Zhuang",
+        "Yun Liu",
+        "Mark Malhotra",
+        "Paul Pu Liang",
+        "Hae Won Park",
+        "Yuzhe Yang",
+        "Xuhai Xu",
+        "Yilun Du",
+        "Shwetak Patel",
+        "Tim Althoff",
+        "Daniel McDuff",
+        "Xin Liu"
+      ],
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2512.08296v3",
+      "doi": "10.48550/arXiv.2512.08296",
+      "verified_scope": "Author record and version-3 abstract, revised 8 April 2026. Preprint; 260 configurations/six benchmarks apply to v3, not earlier search-snippet figures."
+    },
+    {
+      "id": "R10",
+      "title": "Laminar patterning transcription factors orchestrate spatial metabolite partitioning in Capsicum fruit",
+      "authors": [
+        "J. Han et al."
+      ],
+      "year": 2026,
+      "url": "https://www.nature.com/articles/s41477-026-02293-w",
+      "doi": "10.1038/s41477-026-02293-w",
+      "verified_scope": "Publisher metadata/abstract and relevant user-supplied PDF pages; see biological-source-audit-v0.md. Source-reported results; no raw biological data reanalysis."
+    }
+  ]
+}

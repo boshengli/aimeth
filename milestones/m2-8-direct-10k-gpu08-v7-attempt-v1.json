@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 population attempt v7",
+  "version": "v1",
+  "snapshot_time": "2026-10-01 09:58 Asia/Shanghai",
+  "outcome": "Slurm job 235509 completed normally after 16m05s, while the population stopped in the first worker phase for missing_final_content. The server recorded 17 HTTP 200 responses; the journal contains 17 settled attempts: all 16 unsuccessful generations ended with finish_reason=length (14 had empty final content and 2 had visible but JSON-invalid truncated text); 1 response ended with stop and was accepted. Usage was known for all 17 attempts (59,661 tokens total).",
+  "source_commit": "f19ab346a5431fa8ab0ff1b7de436fdb73f32835",
+  "source_archive_sha256": "722a6afa4813a2f7b747e83ae7d33d25a9b94e6ae2d8da6dc6671a64cb912771",
+  "config_sha256": "50d8e248f2e606d4037c4504d88eccda23ee40f07b5559c81f3e385a1925a50d",
+  "slurm": {
+    "job_id": "235509",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "application_state": "halted=true; halt_reason=missing_final_content",
+    "node": "gpu08",
+    "account": "libs",
+    "allocated_gpus": "8 × NVIDIA H20 96 GB",
+    "allocated_cpus": 224,
+    "elapsed": "00:16:05",
+    "start": "2026-10-01T09:42:12+08:00",
+    "end": "2026-10-01T09:58:17+08:00",
+    "reservation": "Res_libs",
+    "scheduled_end": "2026-10-08T07:12:12+08:00",
+    "reservation_end": "2026-10-08T11:00:00+08:00"
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+    "endpoint": "127.0.0.1:31008 loopback only",
+    "shards_loaded": "48/48",
+    "health_200": "2026-10-01T09:45:57+08:00",
+    "server_http_200": 17,
+    "first_server_response": "2026-10-01T09:51:00+08:00",
+    "last_server_response": "2026-10-01T09:57:47+08:00"
+  },
+  "population": {
+    "population_id": "slcw10k-20261001-gpu08-v7",
+    "planned_analysis_workers": 10000,
+    "planned_governance_roles": 501,
+    "planned_calls": 21002,
+    "cycles": 2,
+    "max_inflight": 16,
+    "request_timeout_seconds": 1200,
+    "max_output_tokens": 3072,
+    "attempts_settled": 17,
+    "accepted_responses": 1,
+    "missing_final_content": 14,
+    "finish_reason_length": 16,
+    "finish_reason_stop": 1,
+    "prompt_tokens": 8154,
+    "completion_tokens": 51507,
+    "total_tokens": 59661,
+    "unknown_usage_attempts": 0,
+    "workers_unattempted": 9983,
+    "governance_started": false,
+    "finished_phases": 1,
+    "single_agent_success_gate": false,
+    "empty_final_content": 14,
+    "nonempty_truncated_content": 2
+  },
+  "evidence": {
+    "phase_checkpoint": "output/population/cycle-0-worker.json",
+    "summary": "output/population/summary.json",
+    "rolling_backup_generations": 2,
+    "latest_checkpoint": "checkpoint-1790819889288866629-1004933",
+    "receipt_count": 17,
+    "journal_integrity_check": "ok",
+    "latest_pointer_sha256": "608c7d4341237cd0cbac65d2a800d2e9d0a7db9fd63d8a6b02fab61c4ffe6ecc",
+    "checkpoint_manifest_sha256": "ef102b0041d54b4a15bd71bb7fd15d663cf1ac88fd09a6596e98279c187a676e",
+    "checkpoint_journal_sha256": "d8f0d88e6497ed140eac182e81e700262d39c63806f835e1976b086de4545cbf",
+    "response_bodies": "remain in private cluster-side rolling checkpoint; not published"
+  },
+  "failure": {
+    "category": "missing_final_content",
+    "server_status": "17/17 HTTP 200",
+    "attempt_outcomes": "16/17 ended with finish_reason=length: 14 had empty final content and 2 had visible but invalid-JSON truncated text; 1 ended with finish_reason=stop and was accepted.",
+    "interpretation": "Raising the output cap from 2,048 to 3,072 did not yield a complete worker phase. All 16 failed generations ended at length; 14 had empty final content and 2 had visible but invalid-JSON truncated text. Server HTTP success is separated from application-level content acceptance. This is an execution/output-format failure, not a mathematical evaluation."
+  },
+  "interpretation": {
+    "mathematical_proof_verified": false,
+    "organization_effect_established": false,
+    "independent_population_replicate": false,
+    "scientific_result": "none; one accepted worker response is unverified and is not a mathematical result."
+  },
+  "next_stage": {
+    "ready_to_design": true,
+    "ready_to_run": false,
+    "planned_v8": "Inspect private receipts and server/client handling of 16 length-terminated generations, 14 empty final contents, and 2 truncated JSON bodies before another population submission; preserve direct 10K and no-single-Agent gate. Freeze any model, prompt or output-mode change as a new run profile."
+  }
+}
