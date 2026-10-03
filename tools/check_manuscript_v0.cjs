@@ -2,7 +2,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..');
-const out = path.join(root, 'milestones/m2-12-manuscript-progress-v1');
+const out = path.resolve(root, process.argv[2] || 'reports/manuscript-qa/current');
+fs.mkdirSync(path.dirname(out), {recursive:true});
+if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validation.json')) {
+  throw Error('Do not overwrite an archived milestone validation; choose a new version.');
+}
 (async () => {
   const browser = await chromium.launch({headless:true, executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
   const result = {checked_at:new Date().toISOString(), browser:await browser.version(), viewports:[], checks:{}, scope:'HTML accessibility, layout and links only; not scientific validation.'};
@@ -16,6 +20,7 @@ const out = path.join(root, 'milestones/m2-12-manuscript-progress-v1');
       await page.goto('file://'+target);
       for (const width of [1440,390]) {
         await page.setViewportSize({width,height:1000});
+        await page.evaluate(()=>scrollTo(0,0));
         const dimensions = await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));
         if(dimensions.scrollWidth>width+1) throw Error('Overflow '+name+' '+width);
         await page.screenshot({path:out+'-'+name+'-'+width+'.png'});

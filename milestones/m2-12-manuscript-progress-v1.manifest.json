@@ -1,0 +1,39 @@
+{
+  "milestone": "M2.12",
+  "version": "v1",
+  "source_baseline": "31740a2eeddeb81795f87b0bbd4c3c77c9e439ea",
+  "delivery_commit": "recorded after content commit; not part of content hashes",
+  "files": {
+    "manuscripts/aimeth/versions/v0.1/claim-evidence.json": "b5549185039962b3e02ff401a61face242e75ff1524fe5b20f2b32e62e3206bf",
+    "manuscripts/aimeth/versions/v0.1/evidence-audit-v0.json": "bef90744f713ab334c6469ef793055bf7e79a67f688416eae130c95effd62e27",
+    "manuscripts/aimeth/versions/v0.1/manifest.json": "a2abf99f4b25b4cd33d55acfe9dde8ed4cac868e20dea0c07e3df6cd72973c91",
+    "manuscripts/aimeth/versions/v0.1/manuscript.html": "452f852bbbf09ae360d033e211258f7d01cc2b88f49e0340dca1e47684d4f72d",
+    "manuscripts/aimeth/versions/v0.1/manuscript.md": "e2aa64f1d4f664aff30b931c5a84358b6175458dce475fde3463fb2a5470a03c",
+    "manuscripts/aimeth/versions/v0.1/progress.html": "d934172179b0dd1c082f42144e05e2939b456514f565a30b85e808bc8bbedb9b",
+    "manuscripts/aimeth/versions/v0.1/progress.json": "a219e92115373cb78e418d184c3a16fee1d8b7505c5149a0cc3233aeb44c95fc",
+    "manuscripts/aimeth/versions/v0.1/references-v0.json": "b2d7deb5d4535f57aa8e8a7091530721fd8533d6088d823d0eedc3d3ec4cf387",
+    "manuscripts/aimeth/versions/v0.2/claim-evidence.json": "4aa7ea18bbfde4096d328bff1b1f631084237bf71af7d9b93a028d649743e15e",
+    "manuscripts/aimeth/versions/v0.2/evidence-audit-v0.json": "bef90744f713ab334c6469ef793055bf7e79a67f688416eae130c95effd62e27",
+    "manuscripts/aimeth/versions/v0.2/manifest.json": "c016f2549ebaf73878f32c76d0e5b042876ab0691ee96137129a89fce1732b6e",
+    "manuscripts/aimeth/versions/v0.2/manuscript.html": "b90a83e68e61f21968dbbbf46e0bd8abd92de51f7b0b3de7099fabe68cdb0c1c",
+    "manuscripts/aimeth/versions/v0.2/manuscript.md": "6865225a2a4afc0f7453eb39d35fba5f1fa0bb694aba72924ca950c7bb1ca4a5",
+    "manuscripts/aimeth/versions/v0.2/progress.html": "c07b23ecbb8136081132dd1a3805635e4390f7d8cc52cba4d60c25d0eb38b6af",
+    "manuscripts/aimeth/versions/v0.2/progress.json": "8febce556f10ce1bd7bcd4ea9e12f17dfd08633470f73a4c81b9a2a58f7a49ed",
+    "manuscripts/aimeth/versions/v0.2/references-v0.json": "ea4be576e7b4efb45b888f6a4a4e110e95cc81f164d28089193c8a4d50981ae4",
+    "milestones/m2-12-manuscript-progress-v1-figure-1440.png": "3afe54e4eb12efc929124bce9f3cc9c69c8953004399c06b621b14c49d0bc47a",
+    "milestones/m2-12-manuscript-progress-v1-figure-390.png": "d9df64f3743743ffefa795a3ad83ba989ace767a5c8ee143b7fb815edacf5cd2",
+    "milestones/m2-12-manuscript-progress-v1-manuscript-1440.png": "28fbb609cf45d65b2497eaedfab684b18ce95764caab561921dce98340d58a29",
+    "milestones/m2-12-manuscript-progress-v1-manuscript-390.png": "abd7585647deb4468033dc0c58e58e1cf8d049e0f7a59cb66b06a9369a11ec87",
+    "milestones/m2-12-manuscript-progress-v1-progress-1440.png": "1b9264e76466a012fe332daa9e442343bda7ed2b9574cab162894aa6846bec1c",
+    "milestones/m2-12-manuscript-progress-v1-progress-390.png": "286689057d9843358676f18c9e31ce22b146d7594423391fa4cb4a27695fbfa0",
+    "milestones/m2-12-manuscript-progress-v1.html": "aff1c4b7072ef9e739bc9c7cc0a6fedd84a9a88f798f6fbb39bb83bb84e111dd",
+    "milestones/m2-12-manuscript-progress-v1.json": "394b7ff5657b84db0230d2d3a07ab381b0f28c8fa236f75ccbae3fcd3cbd4dff",
+    "milestones/m2-12-manuscript-progress-v1.validation.json": "131711530bfdd7106e13ed1a2782ce4ac2ac1407c67fc166f1499501e1c669ee"
+  },
+  "builder": {
+    "path": "tools/build_manuscript_v0.py",
+    "sha256": "ede74b91085341d29840f841c7a9eb205b62e40d18521a3b58670c8280ddb3c8",
+    "resolution": "Use report delivery commit for original builder and mutable source inputs; immutable draft snapshots are listed above."
+  },
+  "scope": "Integrity of the saved report and manuscript snapshots only."
+}

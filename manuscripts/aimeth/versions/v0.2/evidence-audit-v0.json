@@ -1,0 +1,301 @@
+{
+  "source": "runs/deepseek-api-cell-calibration-v1/receipts.jsonl",
+  "source_sha256": "a65b43ad4795109608745e6ee8d513c584243605e6592ef49936185b86c923b4",
+  "scope": "engineering_calibration_only",
+  "response_bodies_available": false,
+  "full_schema_revalidated": false,
+  "independent_developmental_population_results": null,
+  "channels": {
+    "fast": {
+      "n": 8,
+      "http_200": 8,
+      "stop": 8,
+      "nonempty": 8,
+      "json_parsed": 8,
+      "required_keys_present": 8,
+      "mean_elapsed_s": 2.086125,
+      "median_elapsed_s": 2.0789999999999997,
+      "min_elapsed_s": 1.849,
+      "max_elapsed_s": 2.278,
+      "prompt_tokens": 680,
+      "completion_tokens": 269,
+      "reasoning_tokens": 0
+    },
+    "deep": {
+      "n": 4,
+      "http_200": 4,
+      "stop": 4,
+      "nonempty": 4,
+      "json_parsed": 4,
+      "required_keys_present": 4,
+      "mean_elapsed_s": 10.2445,
+      "median_elapsed_s": 11.0495,
+      "min_elapsed_s": 7.227,
+      "max_elapsed_s": 11.652,
+      "prompt_tokens": 492,
+      "completion_tokens": 6699,
+      "reasoning_tokens": 5496
+    }
+  },
+  "rows": [
+    {
+      "request_id": "deep-00",
+      "channel": "deep",
+      "elapsed_s": 11.196,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 1877,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1591
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 123,
+        "prompt_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 2000
+      }
+    },
+    {
+      "request_id": "deep-01",
+      "channel": "deep",
+      "elapsed_s": 10.903,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 1811,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1500
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 123,
+        "prompt_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1934
+      }
+    },
+    {
+      "request_id": "deep-02",
+      "channel": "deep",
+      "elapsed_s": 7.227,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 979,
+        "completion_tokens_details": {
+          "reasoning_tokens": 729
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 123,
+        "prompt_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1102
+      }
+    },
+    {
+      "request_id": "deep-03",
+      "channel": "deep",
+      "elapsed_s": 11.652,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 2032,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1676
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 123,
+        "prompt_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 2155
+      }
+    },
+    {
+      "request_id": "fast-00",
+      "channel": "fast",
+      "elapsed_s": 2.172,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 35,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 120
+      }
+    },
+    {
+      "request_id": "fast-01",
+      "channel": "fast",
+      "elapsed_s": 2.238,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 36,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 121
+      }
+    },
+    {
+      "request_id": "fast-02",
+      "channel": "fast",
+      "elapsed_s": 2.278,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 34,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 119
+      }
+    },
+    {
+      "request_id": "fast-03",
+      "channel": "fast",
+      "elapsed_s": 2.072,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 31,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 116
+      }
+    },
+    {
+      "request_id": "fast-04",
+      "channel": "fast",
+      "elapsed_s": 2.086,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 30,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 115
+      }
+    },
+    {
+      "request_id": "fast-05",
+      "channel": "fast",
+      "elapsed_s": 1.849,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 31,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 116
+      }
+    },
+    {
+      "request_id": "fast-06",
+      "channel": "fast",
+      "elapsed_s": 2.054,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 36,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 121
+      }
+    },
+    {
+      "request_id": "fast-07",
+      "channel": "fast",
+      "elapsed_s": 1.94,
+      "http_status": 200,
+      "finish_reason": "stop",
+      "content_present": true,
+      "json_parse": true,
+      "schema_keys_present": true,
+      "usage": {
+        "completion_tokens": 36,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 85,
+        "prompt_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 121
+      }
+    }
+  ],
+  "total_tokens": 8140,
+  "limits": [
+    "Requests are not independent population replicates.",
+    "Different prompts, modes, budgets and concurrency confound channel comparisons.",
+    "Full response bodies are unavailable; mathematical correctness and complete schema cannot be checked.",
+    "No 10K throughput, morphogenesis or capability benefit follows from this calibration."
+  ]
+}
