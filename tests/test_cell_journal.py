@@ -55,6 +55,18 @@ class CellJournalTests(unittest.TestCase):
             self.assertEqual(journal.summary()["units_used"], 1)
             self.assertEqual(journal.verify()["receipts"], 1)
 
+    def test_older_duplicate_returns_original_receipt_after_later_commits(self):
+        with CellJournal(self.path, initial=seed_state()) as journal:
+            first = journal.apply_signal("e1", message(), now=1)
+            journal.apply_signal("e2", message(message_id="m2", receiver_version=1,
+                                                created_tick=1), now=2)
+            duplicate = journal.apply_signal("e1", message(), now=1)
+            self.assertEqual(duplicate, {**first, "applied": False})
+            self.assertEqual(duplicate["result"]["state_version"], 1)
+            self.assertEqual(journal.cell("b")["state_version"], 2)
+            self.assertEqual(journal.summary()["units_used"], 2)
+            self.assertEqual(journal.verify()["receipts"], 2)
+
     def test_reused_event_identity_with_changed_inputs_conflicts(self):
         with CellJournal(self.path, initial=seed_state()) as journal:
             journal.apply_signal("e1", message(), now=1)
@@ -153,6 +165,38 @@ with CellJournal(sys.argv[1], fault_hook=crash) as journal:
                     journal.db.execute(sql)
             self.assertTrue(journal.verify()["valid"])
 
+    def test_replace_cannot_overwrite_existing_sequence_or_event_identity(self):
+        with CellJournal(self.path, initial=seed_state()) as journal:
+            journal.apply_signal("e1", message(), now=1)
+            original = dict(journal.db.execute("SELECT * FROM receipts").fetchone())
+            before = journal.summary()
+            for changes in ({}, {"seq": 2}, {"event_id": "other"}):
+                with self.subTest(changes=changes):
+                    row = {**original, **changes, "result": '{"state_version":999}'}
+                    columns = list(row)
+                    sql = "INSERT OR REPLACE INTO receipts (" + ",".join(columns) + ") VALUES ("
+                    sql += ",".join("?" for _ in columns) + ")"
+                    with self.assertRaises(sqlite3.IntegrityError):
+                        journal.db.execute(sql, [row[column] for column in columns])
+                    self.assertEqual(dict(journal.db.execute("SELECT * FROM receipts").fetchone()), original)
+                    self.assertEqual(journal.summary(), before)
+            self.assertTrue(journal.verify()["valid"])
+
+    def test_live_duplicate_and_new_transition_reject_damaged_receipt(self):
+        with CellJournal(self.path, initial=seed_state()) as journal:
+            journal.apply_signal("e1", message(), now=1)
+            before = journal.summary()
+            # Model corruption after open, deliberately bypassing immutability.
+            journal.db.execute("DROP TRIGGER receipts_no_update")
+            journal.db.execute("UPDATE receipts SET result=?", ('{"state_version":999}',))
+            with self.assertRaises(Conflict):
+                journal.apply_signal("e1", message(), now=1)
+            with self.assertRaises(Conflict):
+                journal.apply_signal("e2", message(message_id="m2", receiver_version=1,
+                                                    created_tick=1), now=2)
+            self.assertEqual(journal.summary(), before)
+            self.assertEqual(journal.db.execute("SELECT COUNT(*) FROM receipts").fetchone()[0], 1)
+
     def test_corrupt_snapshot_prevents_startup(self):
         with CellJournal(self.path, initial=seed_state()) as journal:
             journal.apply_signal("e1", message(), now=1)
@@ -182,6 +226,29 @@ with CellJournal(sys.argv[1], fault_hook=crash) as journal:
     def test_new_store_requires_explicit_initial_state(self):
         with self.assertRaises(ValueError):
             CellJournal(self.path)
+
+    def test_failed_initialization_rolls_back_schema_and_can_retry(self):
+        with self.assertRaises(ValueError):
+            CellJournal(self.path)
+        with sqlite3.connect(str(self.path)) as db:
+            self.assertEqual(db.execute("SELECT COUNT(*) FROM sqlite_master").fetchone()[0], 0)
+        with CellJournal(self.path, initial=seed_state()) as journal:
+            self.assertEqual(journal.verify()["receipts"], 0)
+
+    def test_unsupported_schema_rejection_does_not_change_database(self):
+        with sqlite3.connect(str(self.path)) as db:
+            db.execute("CREATE TABLE metadata(key TEXT PRIMARY KEY,value TEXT NOT NULL)")
+            db.execute("INSERT INTO metadata VALUES('schema_version','cell-journal.v999')")
+            db.commit()
+            before = db.execute("SELECT type,name,sql FROM sqlite_master ORDER BY name").fetchall()
+            before_rows = db.execute("SELECT * FROM metadata").fetchall()
+            before_mode = db.execute("PRAGMA journal_mode=WAL").fetchone()[0]
+        with self.assertRaises(Conflict):
+            CellJournal(self.path)
+        with sqlite3.connect(str(self.path)) as db:
+            self.assertEqual(db.execute("SELECT type,name,sql FROM sqlite_master ORDER BY name").fetchall(), before)
+            self.assertEqual(db.execute("SELECT * FROM metadata").fetchall(), before_rows)
+            self.assertEqual(db.execute("PRAGMA journal_mode").fetchone()[0], before_mode)
 
 
 if __name__ == "__main__":

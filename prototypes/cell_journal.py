@@ -13,22 +13,25 @@ from aimeth_runtime.store import Conflict, canonical, digest, identity
 from .cell_contract import CellContract, fields
 
 
-SCHEMA = """
-CREATE TABLE IF NOT EXISTS metadata(key TEXT PRIMARY KEY, value TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS current_state(
+SCHEMA = (
+"CREATE TABLE IF NOT EXISTS metadata(key TEXT PRIMARY KEY, value TEXT NOT NULL)",
+"""CREATE TABLE IF NOT EXISTS current_state(
  singleton INTEGER PRIMARY KEY CHECK(singleton=1),
- snapshot TEXT NOT NULL, snapshot_hash TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS receipts(
+ snapshot TEXT NOT NULL, snapshot_hash TEXT NOT NULL)""",
+"""CREATE TABLE IF NOT EXISTS receipts(
  seq INTEGER PRIMARY KEY, event_id TEXT NOT NULL UNIQUE,
  request TEXT NOT NULL, request_hash TEXT NOT NULL,
  result TEXT NOT NULL, previous_snapshot_hash TEXT NOT NULL,
  snapshot_hash TEXT NOT NULL, event_hash TEXT NOT NULL,
- previous_receipt_hash TEXT NOT NULL, receipt_hash TEXT NOT NULL);
-CREATE TRIGGER IF NOT EXISTS receipts_no_update BEFORE UPDATE ON receipts
- BEGIN SELECT RAISE(ABORT,'immutable receipt'); END;
-CREATE TRIGGER IF NOT EXISTS receipts_no_delete BEFORE DELETE ON receipts
- BEGIN SELECT RAISE(ABORT,'immutable receipt'); END;
-"""
+ previous_receipt_hash TEXT NOT NULL, receipt_hash TEXT NOT NULL)""",
+"""CREATE TRIGGER IF NOT EXISTS receipts_no_update BEFORE UPDATE ON receipts
+ BEGIN SELECT RAISE(ABORT,'immutable receipt'); END""",
+"""CREATE TRIGGER IF NOT EXISTS receipts_no_delete BEFORE DELETE ON receipts
+ BEGIN SELECT RAISE(ABORT,'immutable receipt'); END""",
+"""CREATE TRIGGER IF NOT EXISTS receipts_no_replace BEFORE INSERT ON receipts
+ WHEN EXISTS(SELECT 1 FROM receipts WHERE seq=NEW.seq OR event_id=NEW.event_id)
+ BEGIN SELECT RAISE(ABORT,'immutable receipt'); END""",
+)
 
 
 class CellJournal:
@@ -49,12 +52,15 @@ class CellJournal:
         self.db.row_factory = sqlite3.Row
         self._fault_hook = fault_hook
         try:
+            self._check_schema()
             if self.db.execute("PRAGMA journal_mode=DELETE").fetchone()[0] != "delete":
                 raise ValueError("Expected local rollback-journal mode")
             self.db.execute("PRAGMA synchronous=FULL")
             self.db.execute("PRAGMA fullfsync=ON")
-            self.db.executescript(SCHEMA)
             with self._tx():
+                self._check_schema()
+                for statement in SCHEMA:
+                    self.db.execute(statement)
                 schema = self.db.execute("SELECT value FROM metadata WHERE key='schema_version'").fetchone()
                 if schema is not None and schema[0] != "cell-journal.v0":
                     raise Conflict("Unsupported cell journal schema")
@@ -83,6 +89,20 @@ class CellJournal:
         except BaseException:
             self.db.close()
             raise
+
+    def _check_schema(self):
+        """Reject incompatible existing databases before changing their schema."""
+        objects = self.db.execute("SELECT type,name FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").fetchall()
+        if not objects:
+            return
+        tables = {row["name"] for row in objects if row["type"] == "table"}
+        if "metadata" not in tables:
+            raise Conflict("Existing database has no journal schema")
+        schema = self.db.execute("SELECT value FROM metadata WHERE key='schema_version'").fetchone()
+        if schema is None or schema[0] != "cell-journal.v0":
+            raise Conflict("Unsupported cell journal schema")
+        if not {"current_state", "receipts"}.issubset(tables):
+            raise Conflict("Existing journal is missing required tables")
 
     def close(self):
         self.db.close()
@@ -144,6 +164,9 @@ class CellJournal:
         request = json.loads(request_text)
         request_hash = digest(request)
         with self._tx():
+            # Verify the receipt-to-snapshot association before acknowledging
+            # a stored result or extending the accepted history.
+            self._verify_locked()
             existing = self.db.execute("SELECT * FROM receipts WHERE event_id=?", (event_id,)).fetchone()
             if existing is not None:
                 if existing["request_hash"] != request_hash or existing["request"] != request_text:
