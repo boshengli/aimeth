@@ -53,6 +53,18 @@ class Params:
     lesion_fraction_side: str = "right"
     condition: str = "full"
     vectorized_division: bool = False  # True for tissue-scale runs (one random direction per attempt)
+    # P1 v2 mesoscopic-domain mechanisms (inactive by default; v1 results unchanged)
+    domain_mechanism: str = "none"   # "none" | "community" | "two_scale"
+    sigma_c: float = 3.0             # range of the short community signal (cells)
+    sigma_l: float = 25.0            # range of the long inhibitory signal (cells)
+    k_c: float = 14.0                # community gain
+    theta_c: float = 0.45            # community threshold
+    k_self: float = 4.0              # self-maintenance of domain state
+    k_l: float = 10.0                # long-range inhibition gain
+    theta_l: float = 0.0             # long-range inhibition offset (relative to tissue mean)
+    domain_noise: float = 0.05
+    k_org: float = 8.0               # induction of domain identity by organiser (activator-on) cells
+    domain_alpha: float = 0.3
 
 
 @dataclass
@@ -66,6 +78,7 @@ class State:
     last_div: np.ndarray
     task: np.ndarray     # task demand field in [0, 1]
     last_call: np.ndarray = None
+    dom: np.ndarray = None   # domain-identity state (P1 v2), zeros when inactive
     log: list = field(default_factory=list)
     expensive_calls: int = 0
     cheap_updates: int = 0
@@ -123,7 +136,8 @@ def init_state(p: Params, rng: np.random.Generator, fixed_n: int | None = None) 
     return State(alive=alive, x=x, a=np.zeros((n, n)), i=np.zeros((n, n)),
                  clone=clone, birth=birth, last_div=np.full((n, n), -99, dtype=np.int32),
                  task=task_field(n, p.condition == "task_blind"),
-                 last_call=np.full((n, n), -10**6, dtype=np.int64))
+                 last_call=np.full((n, n), -10**6, dtype=np.int64),
+                 dom=np.zeros((n, n)))
 
 
 def _update_fields(s: State, p: Params):
@@ -189,6 +203,7 @@ def _divide_vec(s: State, p: Params, rng: np.random.Generator, step: int):
     s.last_div[ny, nx] = step
     s.last_div[ys, xs] = step
     s.last_call[ny, nx] = s.last_call[ys, xs]
+    s.dom[ny, nx] = s.dom[ys, xs]
     s.births += len(ys)
 
 
@@ -219,6 +234,7 @@ def _divide(s: State, p: Params, rng: np.random.Generator, step: int):
                 s.last_div[ny, nx] = step
                 s.last_div[y, x0] = step
                 s.last_call[ny, nx] = s.last_call[y, x0]
+                s.dom[ny, nx] = s.dom[y, x0]
                 s.births += 1
                 living += 1
                 break
@@ -234,7 +250,40 @@ def lesion(s: State, side: str = "right"):
     s.x[kill] = 0
     s.clone[kill] = -1
     s.a[kill] = 0
+    s.dom[kill] = 0
     s.i[kill] = 0
+
+
+def _gauss_fft(f: np.ndarray, sigma: float) -> np.ndarray:
+    """Gaussian smoothing via FFT (zero-padded, normalised by smoothed support)."""
+    from scipy.signal import fftconvolve
+    r = int(3 * sigma)
+    ax = np.arange(-r, r + 1)
+    k1 = np.exp(-ax ** 2 / (2 * sigma ** 2))
+    k1 /= k1.sum()
+    return fftconvolve(fftconvolve(f, k1[None, :], mode="same"), k1[:, None], mode="same")
+
+
+def _update_domains(s: State, p: Params, rng: np.random.Generator):
+    """Community effect (short-range positive feedback) and, for two_scale, long-range inhibition.
+    Signals are quasi-steady Gaussian fields normalised by local living-cell density."""
+    alive = s.alive.astype(float)
+    dens_c = np.maximum(_gauss_fft(alive, p.sigma_c), 1e-6)
+    d = s.dom * alive
+    c = _gauss_fft(d, p.sigma_c) / dens_c
+    if p.condition == "shuffled_signal":
+        idx = np.flatnonzero(s.alive)
+        c.flat[idx] = c.flat[rng.permutation(idx)]
+    z = p.k_c * (c - p.theta_c) + p.k_self * (s.dom - 0.5) + p.k_org * s.x[..., G["EMIT_A"]]
+    if p.domain_mechanism == "two_scale":
+        dens_l = np.maximum(_gauss_fft(alive, p.sigma_l), 1e-6)
+        lfield = _gauss_fft(d, p.sigma_l) / dens_l
+        if p.condition == "shuffled_signal":
+            lfield.flat[idx] = lfield.flat[rng.permutation(idx)]
+        z -= p.k_l * (lfield - p.theta_l)
+    target = _sig(z)
+    upd = s.dom + p.domain_alpha * (target - s.dom) + rng.normal(0, p.domain_noise, s.dom.shape)
+    s.dom = np.where(s.alive, np.clip(upd, 0, 1), 0.0)
 
 
 def step_once(s: State, p: Params, rng: np.random.Generator, step: int):
@@ -245,6 +294,8 @@ def step_once(s: State, p: Params, rng: np.random.Generator, step: int):
         t = _targets(s, p, rng)
         upd = s.x + p.alpha * (t - s.x) + rng.normal(0, p.noise, s.x.shape)
         s.x = np.where(s.alive[..., None], np.clip(upd, 0, 1), 0)
+    if p.domain_mechanism != "none" and p.condition != "frozen_expression":
+        _update_domains(s, p, rng)
     s.cheap_updates += int(s.alive.sum())
     fire = s.alive & (s.x[..., G["EXPENSIVE"]] > p.expensive_threshold) & (step - s.last_call >= p.call_refractory)
     s.last_call[fire] = step

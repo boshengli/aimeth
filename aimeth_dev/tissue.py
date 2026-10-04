@@ -51,3 +51,35 @@ def clark_evans(s: State, rng: np.random.Generator, n_null: int = 200, min_size:
     out.update({"R": float(r_obs), "R_null_mean": float(null.mean()), "R_null_p95": float(np.quantile(null, 0.95)),
                 "R_exceeds_null_fraction": float((null < r_obs).mean())})
     return out
+
+
+def domain_units(s: State, rng: np.random.Generator, min_size: int = 100, n_null: int = 200) -> dict:
+    """Mesoscopic domains (P1 v2): 4-connected components of living domain-on cells (dom > 0.5)
+    with at least `min_size` cells, plus Clark-Evans spacing of their centroids."""
+    if s.dom is None:
+        return {"units": 0}
+    on = s.alive & (s.dom > 0.5)
+    lab, n = ndimage.label(on)
+    out = {"on_fraction": float(on.sum() / max(s.alive.sum(), 1))}
+    if n == 0:
+        out.update(units=0, size_median=0.0, size_p90=0.0, largest_fraction=0.0, R=float("nan"),
+                   R_null_p95=float("nan"))
+        return out
+    sizes = ndimage.sum_labels(on, lab, index=np.arange(1, n + 1)).astype(int)
+    keep = np.flatnonzero(sizes >= min_size)
+    out["largest_fraction"] = float(sizes.max() / max(s.alive.sum(), 1))
+    out["units"] = int(len(keep))
+    out["size_median"] = float(np.median(sizes[keep])) if len(keep) else 0.0
+    out["size_p90"] = float(np.quantile(sizes[keep], 0.9)) if len(keep) else 0.0
+    if len(keep) < 5:
+        out.update(R=float("nan"), R_null_p95=float("nan"))
+        return out
+    cents = np.array(ndimage.center_of_mass(on, lab, index=keep + 1))
+    k, area = len(cents), float(s.alive.sum())
+    expected = 0.5 / np.sqrt(k / area)
+    r_obs = _mean_nn(cents) / expected
+    ys, xs = np.nonzero(s.alive)
+    null = np.array([_mean_nn(np.c_[ys[p], xs[p]].astype(float)) / expected
+                     for p in (rng.choice(len(ys), size=k, replace=False) for _ in range(n_null))])
+    out.update(R=float(r_obs), R_null_mean=float(null.mean()), R_null_p95=float(np.quantile(null, 0.95)))
+    return out
