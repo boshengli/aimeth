@@ -1,0 +1,4662 @@
+[
+ {
+  "arm": "full",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2999,
+   "clones": 13,
+   "births": 2986,
+   "deaths": 0,
+   "composition": {
+    "border": 884,
+    "worker": 350,
+    "expensive": 61,
+    "other": 1704
+   },
+   "type_assortativity": {
+    "observed": 0.7360343769183548,
+    "null_mean": 0.42345917740945366,
+    "null_sd": 0.006663213204563504,
+    "z": 46.9105805131411
+   },
+   "organizer": {
+    "interior_cells": 2115,
+    "on_fraction": 0.06950354609929078,
+    "z": 11.469394128542508
+   },
+   "expensive_calls_per_1000_cell_steps": 2.1923482141012665,
+   "clone_coherence": {
+    "observed": 0.9873132801309596,
+    "null_mean": 0.37237466748516473,
+    "null_sd": 0.006527435319796587,
+    "z": 94.20830426014213
+   },
+   "radial_type_mi_bits": 0.142147074628178,
+   "task_alignment_r": 0.8529312071185652,
+   "demand_coverage": 0.3377188349452945,
+   "expensive_fraction_final": 0.020340113371123708,
+   "expensive_calls": 849,
+   "cheap_updates": 387256,
+   "expensive_cost_share": 0.6867509642015893,
+   "all_expensive_equivalent_calls": 387256
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2721,
+   "clones": 13,
+   "births": 2708,
+   "deaths": 0,
+   "composition": {
+    "border": 764,
+    "worker": 315,
+    "expensive": 53,
+    "other": 1589
+   },
+   "type_assortativity": {
+    "observed": 0.7478045485251069,
+    "null_mean": 0.4343368610673272,
+    "null_sd": 0.006842148607379741,
+    "z": 45.814217937284
+   },
+   "organizer": {
+    "interior_cells": 1957,
+    "on_fraction": 0.0633622892181911,
+    "z": 11.217889538110311
+   },
+   "expensive_calls_per_1000_cell_steps": 2.3785160009258246,
+   "clone_coherence": {
+    "observed": 0.9912181941004279,
+    "null_mean": 0.529345868047737,
+    "null_sd": 0.00694167538644372,
+    "z": 66.53614586396154
+   },
+   "radial_type_mi_bits": 0.13576530223922023,
+   "task_alignment_r": 0.849712782305305,
+   "demand_coverage": 0.3117362276008505,
+   "expensive_fraction_final": 0.01947813303932378,
+   "expensive_calls": 781,
+   "cheap_updates": 328356,
+   "expensive_cost_share": 0.7040120574459416,
+   "all_expensive_equivalent_calls": 328356
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2880,
+   "clones": 13,
+   "births": 2867,
+   "deaths": 0,
+   "composition": {
+    "border": 804,
+    "worker": 355,
+    "expensive": 71,
+    "other": 1650
+   },
+   "type_assortativity": {
+    "observed": 0.7324989393296564,
+    "null_mean": 0.42174056003394145,
+    "null_sd": 0.006496007176314933,
+    "z": 47.838367609686436
+   },
+   "organizer": {
+    "interior_cells": 2076,
+    "on_fraction": 0.06069364161849711,
+    "z": 10.077068113759317
+   },
+   "expensive_calls_per_1000_cell_steps": 2.3413741994678974,
+   "clone_coherence": {
+    "observed": 0.9910903691132796,
+    "null_mean": 0.7672825625795503,
+    "null_sd": 0.003917531602488097,
+    "z": 57.12980244794576
+   },
+   "radial_type_mi_bits": 0.11990577712144672,
+   "task_alignment_r": 0.8513234521581352,
+   "demand_coverage": 0.34511759987479124,
+   "expensive_fraction_final": 0.024652777777777777,
+   "expensive_calls": 763,
+   "cheap_updates": 325877,
+   "expensive_cost_share": 0.700721936453796,
+   "all_expensive_equivalent_calls": 325877
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2858,
+   "clones": 13,
+   "births": 2845,
+   "deaths": 0,
+   "composition": {
+    "border": 815,
+    "worker": 292,
+    "expensive": 57,
+    "other": 1694
+   },
+   "type_assortativity": {
+    "observed": 0.7425636635994008,
+    "null_mean": 0.44240851701262573,
+    "null_sd": 0.006302858433536131,
+    "z": 47.62206699578008
+   },
+   "organizer": {
+    "interior_cells": 2043,
+    "on_fraction": 0.06412139011257954,
+    "z": 12.416546112407943
+   },
+   "expensive_calls_per_1000_cell_steps": 2.123475046210721,
+   "clone_coherence": {
+    "observed": 0.9796704472501605,
+    "null_mean": 0.3956644553819816,
+    "null_sd": 0.006559527844878062,
+    "z": 89.03171168397338
+   },
+   "radial_type_mi_bits": 0.1719189921331173,
+   "task_alignment_r": 0.8554001195851554,
+   "demand_coverage": 0.2941481638739818,
+   "expensive_fraction_final": 0.01994401679496151,
+   "expensive_calls": 718,
+   "cheap_updates": 338125,
+   "expensive_cost_share": 0.6798437684933128,
+   "all_expensive_equivalent_calls": 338125
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2421,
+   "clones": 13,
+   "births": 2408,
+   "deaths": 0,
+   "composition": {
+    "border": 632,
+    "worker": 392,
+    "expensive": 44,
+    "other": 1353
+   },
+   "type_assortativity": {
+    "observed": 0.7523479980227386,
+    "null_mean": 0.40670044488383594,
+    "null_sd": 0.006640588918080505,
+    "z": 52.05073787925631
+   },
+   "organizer": {
+    "interior_cells": 1789,
+    "on_fraction": 0.07266629401900503,
+    "z": 17.77164026306287
+   },
+   "expensive_calls_per_1000_cell_steps": 2.716587320799376,
+   "clone_coherence": {
+    "observed": 0.9898665348492338,
+    "null_mean": 0.6011604053386059,
+    "null_sd": 0.006499626766986658,
+    "z": 59.80437699668698
+   },
+   "radial_type_mi_bits": 0.158217060624042,
+   "task_alignment_r": 0.8370560395455209,
+   "demand_coverage": 0.35383335602524746,
+   "expensive_fraction_final": 0.018174308137133416,
+   "expensive_calls": 707,
+   "cheap_updates": 260253,
+   "expensive_cost_share": 0.7309359598781291,
+   "all_expensive_equivalent_calls": 260253
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2940,
+   "clones": 13,
+   "births": 2927,
+   "deaths": 0,
+   "composition": {
+    "border": 839,
+    "worker": 365,
+    "expensive": 42,
+    "other": 1694
+   },
+   "type_assortativity": {
+    "observed": 0.7556996444258524,
+    "null_mean": 0.4297803806734993,
+    "null_sd": 0.006354722618565375,
+    "z": 51.28772462863717
+   },
+   "organizer": {
+    "interior_cells": 2101,
+    "on_fraction": 0.07900999524036173,
+    "z": 16.110357804529862
+   },
+   "expensive_calls_per_1000_cell_steps": 2.330879467763,
+   "clone_coherence": {
+    "observed": 0.9884961305166283,
+    "null_mean": 0.5537335285505125,
+    "null_sd": 0.0068559922715843175,
+    "z": 63.41351984424695
+   },
+   "radial_type_mi_bits": 0.16012225308316091,
+   "task_alignment_r": 0.8572315877618595,
+   "demand_coverage": 0.3375222798001371,
+   "expensive_fraction_final": 0.014285714285714285,
+   "expensive_calls": 796,
+   "cheap_updates": 341502,
+   "expensive_cost_share": 0.699778989399579,
+   "all_expensive_equivalent_calls": 341502
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2619,
+   "clones": 13,
+   "births": 2606,
+   "deaths": 0,
+   "composition": {
+    "border": 696,
+    "worker": 328,
+    "expensive": 144,
+    "other": 1451
+   },
+   "type_assortativity": {
+    "observed": 0.7148419606046724,
+    "null_mean": 0.3968048557031608,
+    "null_sd": 0.0063196149541059595,
+    "z": 50.325392798635235
+   },
+   "organizer": {
+    "interior_cells": 1923,
+    "on_fraction": 0.13000520020800832,
+    "z": 18.064234035823286
+   },
+   "expensive_calls_per_1000_cell_steps": 2.8216630908263443,
+   "clone_coherence": {
+    "observed": 0.9832798900595511,
+    "null_mean": 0.49611429225836007,
+    "null_sd": 0.006996319043323522,
+    "z": 69.63170129671052
+   },
+   "radial_type_mi_bits": 0.21941216703859895,
+   "task_alignment_r": 0.8411127764165223,
+   "demand_coverage": 0.3708912830479099,
+   "expensive_fraction_final": 0.054982817869415807,
+   "expensive_calls": 868,
+   "cheap_updates": 307620,
+   "expensive_cost_share": 0.738333815348497,
+   "all_expensive_equivalent_calls": 307620
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2023,
+   "clones": 13,
+   "births": 2010,
+   "deaths": 0,
+   "composition": {
+    "border": 600,
+    "worker": 330,
+    "expensive": 43,
+    "other": 1050
+   },
+   "type_assortativity": {
+    "observed": 0.7369054786273329,
+    "null_mean": 0.38495785671282357,
+    "null_sd": 0.007775274491403205,
+    "z": 45.26497711478136
+   },
+   "organizer": {
+    "interior_cells": 1423,
+    "on_fraction": 0.05130007027406887,
+    "z": 6.3826009453723564
+   },
+   "expensive_calls_per_1000_cell_steps": 2.4863395877302032,
+   "clone_coherence": {
+    "observed": 0.9825406381697772,
+    "null_mean": 0.6681170981336544,
+    "null_sd": 0.006004039705092703,
+    "z": 52.36866434601103
+   },
+   "radial_type_mi_bits": 0.5241564187326835,
+   "task_alignment_r": 0.8834673676954875,
+   "demand_coverage": 0.3201859587279853,
+   "expensive_fraction_final": 0.021255561047948592,
+   "expensive_calls": 602,
+   "cheap_updates": 242123,
+   "expensive_cost_share": 0.7131662091898929,
+   "all_expensive_equivalent_calls": 242123
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2489,
+   "clones": 13,
+   "births": 2476,
+   "deaths": 0,
+   "composition": {
+    "border": 644,
+    "worker": 273,
+    "expensive": 119,
+    "other": 1453
+   },
+   "type_assortativity": {
+    "observed": 0.7306210881078479,
+    "null_mean": 0.4215900337024554,
+    "null_sd": 0.0067458356923400355,
+    "z": 45.81064059361842
+   },
+   "organizer": {
+    "interior_cells": 1845,
+    "on_fraction": 0.0991869918699187,
+    "z": 15.668863452017167
+   },
+   "expensive_calls_per_1000_cell_steps": 2.3149062581476008,
+   "clone_coherence": {
+    "observed": 0.9776119402985075,
+    "null_mean": 0.3761651420317766,
+    "null_sd": 0.006668062531378358,
+    "z": 90.198134081146
+   },
+   "radial_type_mi_bits": 0.12078907404263997,
+   "task_alignment_r": 0.8592679646112131,
+   "demand_coverage": 0.33405679258907844,
+   "expensive_fraction_final": 0.047810365608678185,
+   "expensive_calls": 586,
+   "cheap_updates": 253142,
+   "expensive_cost_share": 0.6983323442277946,
+   "all_expensive_equivalent_calls": 253142
+  }
+ },
+ {
+  "arm": "full",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2841,
+   "clones": 13,
+   "births": 2828,
+   "deaths": 0,
+   "composition": {
+    "border": 810,
+    "worker": 376,
+    "expensive": 48,
+    "other": 1607
+   },
+   "type_assortativity": {
+    "observed": 0.7539323421676363,
+    "null_mean": 0.4190702434820082,
+    "null_sd": 0.006150383670719007,
+    "z": 54.44572511465471
+   },
+   "organizer": {
+    "interior_cells": 2031,
+    "on_fraction": 0.05120630231413097,
+    "z": 9.548397895011524
+   },
+   "expensive_calls_per_1000_cell_steps": 2.1782172357357847,
+   "clone_coherence": {
+    "observed": 0.9918121094591683,
+    "null_mean": 0.5030370609782375,
+    "null_sd": 0.007211550527692179,
+    "z": 67.77669332053439
+   },
+   "radial_type_mi_bits": 0.1491797610146586,
+   "task_alignment_r": 0.8667968243651302,
+   "demand_coverage": 0.3538391285225093,
+   "expensive_fraction_final": 0.01689545934530095,
+   "expensive_calls": 736,
+   "cheap_updates": 337891,
+   "expensive_cost_share": 0.6853581974334453,
+   "all_expensive_equivalent_calls": 337891
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2467,
+   "clones": 13,
+   "births": 2454,
+   "deaths": 0,
+   "composition": {
+    "border": 686,
+    "worker": 250,
+    "expensive": 0,
+    "other": 1531
+   },
+   "type_assortativity": {
+    "observed": 0.7976337194971654,
+    "null_mean": 0.4729738723194478,
+    "null_sd": 0.006828479212464988,
+    "z": 47.54497115332359
+   },
+   "organizer": {
+    "interior_cells": 1781,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.962982207808497,
+   "clone_coherence": {
+    "observed": 0.9857037219620409,
+    "null_mean": 0.7026830170076411,
+    "null_sd": 0.004798022981557789,
+    "z": 58.98694233901118
+   },
+   "radial_type_mi_bits": 0.21294174530646676,
+   "task_alignment_r": 0.9265923472512128,
+   "demand_coverage": 0.2535883582429608,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1664,
+   "cheap_updates": 279055,
+   "expensive_cost_share": 0.8563833756635814,
+   "all_expensive_equivalent_calls": 279055
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2765,
+   "clones": 13,
+   "births": 2752,
+   "deaths": 0,
+   "composition": {
+    "border": 720,
+    "worker": 240,
+    "expensive": 0,
+    "other": 1805
+   },
+   "type_assortativity": {
+    "observed": 0.8188374125874126,
+    "null_mean": 0.5010423951048951,
+    "null_sd": 0.006087570913975769,
+    "z": 52.20391219639473
+   },
+   "organizer": {
+    "interior_cells": 2045,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.682497906448139,
+   "clone_coherence": {
+    "observed": 0.9868881118881119,
+    "null_mean": 0.388558784965035,
+    "null_sd": 0.0064242415615181625,
+    "z": 93.13618132094041
+   },
+   "radial_type_mi_bits": 0.15420502194277536,
+   "task_alignment_r": 0.9317087936548031,
+   "demand_coverage": 0.24531553022837263,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1900,
+   "cheap_updates": 334360,
+   "expensive_cost_share": 0.8503553590289837,
+   "all_expensive_equivalent_calls": 334360
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2744,
+   "clones": 13,
+   "births": 2731,
+   "deaths": 0,
+   "composition": {
+    "border": 716,
+    "worker": 251,
+    "expensive": 0,
+    "other": 1777
+   },
+   "type_assortativity": {
+    "observed": 0.8063876651982379,
+    "null_mean": 0.4952940528634362,
+    "null_sd": 0.006558596222570817,
+    "z": 47.43295695871643
+   },
+   "organizer": {
+    "interior_cells": 2028,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.258168465746036,
+   "clone_coherence": {
+    "observed": 0.9936123348017621,
+    "null_mean": 0.9527213656387664,
+    "null_sd": 0.0014678427152793622,
+    "z": 27.85786837877469
+   },
+   "radial_type_mi_bits": 0.13548200439163877,
+   "task_alignment_r": 0.931459334333598,
+   "demand_coverage": 0.2544008271244593,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1810,
+   "cheap_updates": 289222,
+   "expensive_cost_share": 0.8622241954400249,
+   "all_expensive_equivalent_calls": 289222
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2671,
+   "clones": 13,
+   "births": 2658,
+   "deaths": 0,
+   "composition": {
+    "border": 713,
+    "worker": 247,
+    "expensive": 0,
+    "other": 1711
+   },
+   "type_assortativity": {
+    "observed": 0.8142889339643904,
+    "null_mean": 0.48954586432274055,
+    "null_sd": 0.006581454562262139,
+    "z": 49.342142617487134
+   },
+   "organizer": {
+    "interior_cells": 1958,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.505100001061394,
+   "clone_coherence": {
+    "observed": 0.9943655623168808,
+    "null_mean": 0.9799132296596801,
+    "null_sd": 0.0009054280142296939,
+    "z": 15.961879277057964
+   },
+   "radial_type_mi_bits": 0.10741144436687367,
+   "task_alignment_r": 0.9303323870573994,
+   "demand_coverage": 0.2511366174861204,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1556,
+   "cheap_updates": 282647,
+   "expensive_cost_share": 0.8462744616013841,
+   "all_expensive_equivalent_calls": 282647
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2199,
+   "clones": 13,
+   "births": 2186,
+   "deaths": 0,
+   "composition": {
+    "border": 573,
+    "worker": 262,
+    "expensive": 0,
+    "other": 1364
+   },
+   "type_assortativity": {
+    "observed": 0.8083604777415853,
+    "null_mean": 0.46642100977198697,
+    "null_sd": 0.006715528658745541,
+    "z": 50.91772894518069
+   },
+   "organizer": {
+    "interior_cells": 1626,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.877612131499303,
+   "clone_coherence": {
+    "observed": 0.988056460369164,
+    "null_mean": 0.8840336590662323,
+    "null_sd": 0.0025497197963603954,
+    "z": 40.797738422637366
+   },
+   "radial_type_mi_bits": 0.2349411705920955,
+   "task_alignment_r": 0.9294066859614314,
+   "demand_coverage": 0.2632011177492323,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1718,
+   "cheap_updates": 249796,
+   "expensive_cost_share": 0.8730579795873149,
+   "all_expensive_equivalent_calls": 249796
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2834,
+   "clones": 13,
+   "births": 2821,
+   "deaths": 0,
+   "composition": {
+    "border": 744,
+    "worker": 252,
+    "expensive": 0,
+    "other": 1838
+   },
+   "type_assortativity": {
+    "observed": 0.7959009393680615,
+    "null_mean": 0.49682002561912897,
+    "null_sd": 0.006394041574073619,
+    "z": 46.77494043229832
+   },
+   "organizer": {
+    "interior_cells": 2090,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.322271380465934,
+   "clone_coherence": {
+    "observed": 0.9824935952177626,
+    "null_mean": 0.37433176771989757,
+    "null_sd": 0.006029660565496382,
+    "z": 100.86170206295834
+   },
+   "radial_type_mi_bits": 0.1498731179152425,
+   "task_alignment_r": 0.9299473575895981,
+   "demand_coverage": 0.25495758140075353,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 2345,
+   "cheap_updates": 370911,
+   "expensive_cost_share": 0.863430355412972,
+   "all_expensive_equivalent_calls": 370911
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2954,
+   "clones": 13,
+   "births": 2941,
+   "deaths": 0,
+   "composition": {
+    "border": 847,
+    "worker": 242,
+    "expensive": 0,
+    "other": 1865
+   },
+   "type_assortativity": {
+    "observed": 0.80231836058787,
+    "null_mean": 0.4871134340716209,
+    "null_sd": 0.006381822615959178,
+    "z": 49.39105103423096
+   },
+   "organizer": {
+    "interior_cells": 2107,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.9017966625793035,
+   "clone_coherence": {
+    "observed": 0.9908921548333678,
+    "null_mean": 0.4845766921962327,
+    "null_sd": 0.0067076439155297025,
+    "z": 75.48335436603918
+   },
+   "radial_type_mi_bits": 0.16726361117879623,
+   "task_alignment_r": 0.9259897846572074,
+   "demand_coverage": 0.24681564562945785,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 2214,
+   "cheap_updates": 375140,
+   "expensive_cost_share": 0.8551101910286814,
+   "all_expensive_equivalent_calls": 375140
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2563,
+   "clones": 13,
+   "births": 2550,
+   "deaths": 0,
+   "composition": {
+    "border": 666,
+    "worker": 248,
+    "expensive": 0,
+    "other": 1649
+   },
+   "type_assortativity": {
+    "observed": 0.81516364492583,
+    "null_mean": 0.49054038144572637,
+    "null_sd": 0.006677819930090276,
+    "z": 48.61216188495145
+   },
+   "organizer": {
+    "interior_cells": 1897,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.782711366467711,
+   "clone_coherence": {
+    "observed": 0.9865787614786908,
+    "null_mean": 0.7343654344242995,
+    "null_sd": 0.004396539878173266,
+    "z": 57.36632307294899
+   },
+   "radial_type_mi_bits": 0.12781882651871604,
+   "task_alignment_r": 0.9333634981433242,
+   "demand_coverage": 0.2518719574617352,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 1555,
+   "cheap_updates": 268905,
+   "expensive_cost_share": 0.8525663343211406,
+   "all_expensive_equivalent_calls": 268905
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2773,
+   "clones": 13,
+   "births": 2760,
+   "deaths": 0,
+   "composition": {
+    "border": 707,
+    "worker": 250,
+    "expensive": 0,
+    "other": 1816
+   },
+   "type_assortativity": {
+    "observed": 0.8156106117079588,
+    "null_mean": 0.502022582766937,
+    "null_sd": 0.006046812115169282,
+    "z": 51.860058319712294
+   },
+   "organizer": {
+    "interior_cells": 2066,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.166774551507305,
+   "clone_coherence": {
+    "observed": 0.9879412409559307,
+    "null_mean": 0.47446174084630566,
+    "null_sd": 0.006614780004587994,
+    "z": 77.62608881224727
+   },
+   "radial_type_mi_bits": 0.1499348963599149,
+   "task_alignment_r": 0.9281543680669813,
+   "demand_coverage": 0.25346626182412463,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 2134,
+   "cheap_updates": 346048,
+   "expensive_cost_share": 0.8604672167635465,
+   "all_expensive_equivalent_calls": 346048
+  }
+ },
+ {
+  "arm": "shuffled_signal",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "shuffled_signal"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2716,
+   "clones": 13,
+   "births": 2703,
+   "deaths": 0,
+   "composition": {
+    "border": 737,
+    "worker": 260,
+    "expensive": 0,
+    "other": 1719
+   },
+   "type_assortativity": {
+    "observed": 0.8086529884032114,
+    "null_mean": 0.4820138269402319,
+    "null_sd": 0.006173402579906436,
+    "z": 52.91071775006937
+   },
+   "organizer": {
+    "interior_cells": 1979,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.094702297233943,
+   "clone_coherence": {
+    "observed": 0.9850579839429081,
+    "null_mean": 0.39973684210526317,
+    "null_sd": 0.005993275205561207,
+    "z": 97.6629842218026
+   },
+   "radial_type_mi_bits": 0.14985155939281014,
+   "task_alignment_r": 0.9339320432034844,
+   "demand_coverage": 0.2616638165441977,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 2145,
+   "cheap_updates": 351945,
+   "expensive_cost_share": 0.85904975880526,
+   "all_expensive_equivalent_calls": 351945
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 242,
+    "expensive": 0,
+    "other": 2624
+   },
+   "type_assortativity": {
+    "observed": 0.9533617021276596,
+    "null_mean": 0.7734289361702128,
+    "null_sd": 0.0022512140882160313,
+    "z": 79.92699001809909
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.096666666666667,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10323549143191948,
+   "task_alignment_r": 0.9207849367749418,
+   "demand_coverage": 0.24703150744051816,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5487,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8590887740723344,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 132,
+    "worker": 236,
+    "expensive": 0,
+    "other": 2632
+   },
+   "type_assortativity": {
+    "observed": 0.9537021276595745,
+    "null_mean": 0.7778144680851065,
+    "null_sd": 0.0024527441049124717,
+    "z": 71.71056255815351
+   },
+   "organizer": {
+    "interior_cells": 2868,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 5.998888888888889,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10158173685826644,
+   "task_alignment_r": 0.9213088111119161,
+   "demand_coverage": 0.2420430689172077,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5399,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8571201778060009,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 246,
+    "expensive": 0,
+    "other": 2620
+   },
+   "type_assortativity": {
+    "observed": 0.9531914893617022,
+    "null_mean": 0.7713548936170213,
+    "null_sd": 0.0026305770348807158,
+    "z": 69.12422382373849
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0055555555555555,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.103793742674654,
+   "task_alignment_r": 0.9212777816288801,
+   "demand_coverage": 0.25032194172733374,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5405,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8572561459159397,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 235,
+    "expensive": 0,
+    "other": 2631
+   },
+   "type_assortativity": {
+    "observed": 0.9537021276595745,
+    "null_mean": 0.7773174468085107,
+    "null_sd": 0.002224208711233549,
+    "z": 79.3022165411989
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0055555555555555,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10317568217646869,
+   "task_alignment_r": 0.9185682601163309,
+   "demand_coverage": 0.24132377332234975,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5405,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8572561459159397,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 131,
+    "worker": 237,
+    "expensive": 0,
+    "other": 2632
+   },
+   "type_assortativity": {
+    "observed": 0.9509787234042553,
+    "null_mean": 0.7777191489361702,
+    "null_sd": 0.0023785368936890807,
+    "z": 72.84292075846746
+   },
+   "organizer": {
+    "interior_cells": 2869,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.051111111111111,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10270795686218043,
+   "task_alignment_r": 0.922192754135565,
+   "demand_coverage": 0.24280430139314363,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5446,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8581783800819414,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 133,
+    "worker": 237,
+    "expensive": 0,
+    "other": 2630
+   },
+   "type_assortativity": {
+    "observed": 0.9521702127659575,
+    "null_mean": 0.7769795744680852,
+    "null_sd": 0.002445353721077189,
+    "z": 71.64224823094307
+   },
+   "organizer": {
+    "interior_cells": 2867,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0377777777777775,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.1023810684671112,
+   "task_alignment_r": 0.9209374220459168,
+   "demand_coverage": 0.24281806180345722,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5434,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8579096937164509,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 236,
+    "expensive": 0,
+    "other": 2630
+   },
+   "type_assortativity": {
+    "observed": 0.9511489361702128,
+    "null_mean": 0.7763965957446808,
+    "null_sd": 0.0024350011503246533,
+    "z": 71.76684101452382
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.014444444444444,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10422549702432848,
+   "task_alignment_r": 0.9208269643277179,
+   "demand_coverage": 0.24203219923571573,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5413,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8574370346903215,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 240,
+    "expensive": 0,
+    "other": 2626
+   },
+   "type_assortativity": {
+    "observed": 0.9523404255319149,
+    "null_mean": 0.7744229787234042,
+    "null_sd": 0.0022749671645584074,
+    "z": 78.20659989307855
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.016666666666667,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10388546416135036,
+   "task_alignment_r": 0.9221427473193651,
+   "demand_coverage": 0.24531436118090133,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5415,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8574821852731591,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 131,
+    "worker": 239,
+    "expensive": 0,
+    "other": 2630
+   },
+   "type_assortativity": {
+    "observed": 0.9531914893617022,
+    "null_mean": 0.77652,
+    "null_sd": 0.002459630272502473,
+    "z": 71.82847411532035
+   },
+   "organizer": {
+    "interior_cells": 2869,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.043333333333333,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10201999715244472,
+   "task_alignment_r": 0.9219292635344477,
+   "demand_coverage": 0.24448762709552307,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5439,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8580217699952674,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "fixed_population",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 3000,
+   "clones": 3000,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 134,
+    "worker": 240,
+    "expensive": 0,
+    "other": 2626
+   },
+   "type_assortativity": {
+    "observed": 0.9528510638297872,
+    "null_mean": 0.7744595744680851,
+    "null_sd": 0.002605298080764138,
+    "z": 68.47258311009834
+   },
+   "organizer": {
+    "interior_cells": 2866,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.10285094151635253,
+   "task_alignment_r": 0.9216303981614786,
+   "demand_coverage": 0.2454471508669186,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 5400,
+   "cheap_updates": 900000,
+   "expensive_cost_share": 0.8571428571428571,
+   "all_expensive_equivalent_calls": 900000
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": -0.3748288515062718,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.44756229620632654,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.43564388885089267,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.08330832437264572,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": -0.20793328758906324,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.37494126286017015,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": -0.480930338886637,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.25783424633073465,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.15366871544790625,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "frozen_expression",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "frozen_expression"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 13,
+   "clones": 13,
+   "births": 0,
+   "deaths": 0,
+   "composition": {
+    "border": 0,
+    "worker": 0,
+    "expensive": 0,
+    "other": 13
+   },
+   "type_assortativity": null,
+   "organizer": {
+    "interior_cells": 13,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 0.0,
+   "clone_coherence": null,
+   "radial_type_mi_bits": null,
+   "task_alignment_r": 0.20778428689813444,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 0,
+   "cheap_updates": 3900,
+   "expensive_cost_share": 0.0,
+   "all_expensive_equivalent_calls": 3900
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 193,
+    "worker": 880,
+    "expensive": 115,
+    "other": 3812
+   },
+   "type_assortativity": {
+    "observed": 0.8089452183932125,
+    "null_mean": 0.6145930658845711,
+    "null_sd": 0.0035973593050047875,
+    "z": 54.02633877529306
+   },
+   "organizer": {
+    "interior_cells": 4807,
+    "on_fraction": 0.0476388599958394,
+    "z": 25.594455406220117
+   },
+   "expensive_calls_per_1000_cell_steps": 3.876197629712359,
+   "clone_coherence": {
+    "observed": 0.9762228972452079,
+    "null_mean": 0.2552503404210747,
+    "null_sd": 0.0047385823776762695,
+    "z": 152.14941924839712
+   },
+   "radial_type_mi_bits": 0.13499206177441495,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.10796440972222222,
+   "expensive_fraction_final": 0.023,
+   "expensive_calls": 2957,
+   "cheap_updates": 762861,
+   "expensive_cost_share": 0.7949221758554956,
+   "all_expensive_equivalent_calls": 762861
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 181,
+    "worker": 851,
+    "expensive": 94,
+    "other": 3874
+   },
+   "type_assortativity": {
+    "observed": 0.8218576951206771,
+    "null_mean": 0.6307726465364121,
+    "null_sd": 0.0031292216993006336,
+    "z": 61.06472054280194
+   },
+   "organizer": {
+    "interior_cells": 4819,
+    "on_fraction": 0.03548454036107076,
+    "z": 16.969612338348416
+   },
+   "expensive_calls_per_1000_cell_steps": 3.9968397699522775,
+   "clone_coherence": {
+    "observed": 0.9753421795005747,
+    "null_mean": 0.25300491066764186,
+    "null_sd": 0.004455272241557445,
+    "z": 162.13089339304278
+   },
+   "radial_type_mi_bits": 0.13465775439923416,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.10264756944444445,
+   "expensive_fraction_final": 0.0188,
+   "expensive_calls": 3005,
+   "cheap_updates": 751844,
+   "expensive_cost_share": 0.7998735108511293,
+   "all_expensive_equivalent_calls": 751844
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 186,
+    "worker": 929,
+    "expensive": 168,
+    "other": 3717
+   },
+   "type_assortativity": {
+    "observed": 0.7915969899665551,
+    "null_mean": 0.5897434155518395,
+    "null_sd": 0.003433669791873924,
+    "z": 58.786542285580154
+   },
+   "organizer": {
+    "interior_cells": 4814,
+    "on_fraction": 0.052347320315745745,
+    "z": 20.752873784398776
+   },
+   "expensive_calls_per_1000_cell_steps": 3.743233961246059,
+   "clone_coherence": {
+    "observed": 0.9732441471571907,
+    "null_mean": 0.24731344063545152,
+    "null_sd": 0.004354601692392225,
+    "z": 166.70427235399916
+   },
+   "radial_type_mi_bits": 0.12204804154737076,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.11903211805555555,
+   "expensive_fraction_final": 0.0336,
+   "expensive_calls": 2872,
+   "cheap_updates": 767251,
+   "expensive_cost_share": 0.7891733766096375,
+   "all_expensive_equivalent_calls": 767251
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 182,
+    "worker": 814,
+    "expensive": 180,
+    "other": 3824
+   },
+   "type_assortativity": {
+    "observed": 0.810907184058731,
+    "null_mean": 0.61421027792344,
+    "null_sd": 0.003158149303412746,
+    "z": 62.28233285954442
+   },
+   "organizer": {
+    "interior_cells": 4818,
+    "on_fraction": 0.0502283105022831,
+    "z": 27.231542797617603
+   },
+   "expensive_calls_per_1000_cell_steps": 3.6838540708349155,
+   "clone_coherence": {
+    "observed": 0.9725222863135815,
+    "null_mean": 0.23110330361824855,
+    "null_sd": 0.004437087006642627,
+    "z": 167.09588556306815
+   },
+   "radial_type_mi_bits": 0.1404684362980211,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.10785590277777778,
+   "expensive_fraction_final": 0.036,
+   "expensive_calls": 2823,
+   "cheap_updates": 766317,
+   "expensive_cost_share": 0.7865006072185878,
+   "all_expensive_equivalent_calls": 766317
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 194,
+    "worker": 839,
+    "expensive": 120,
+    "other": 3847
+   },
+   "type_assortativity": {
+    "observed": 0.8152344979540447,
+    "null_mean": 0.6217521771062848,
+    "null_sd": 0.0031642334457203723,
+    "z": 61.14666448186521
+   },
+   "organizer": {
+    "interior_cells": 4806,
+    "on_fraction": 0.044735746982937995,
+    "z": 28.310523560168203
+   },
+   "expensive_calls_per_1000_cell_steps": 3.8492811567782566,
+   "clone_coherence": {
+    "observed": 0.97345504144371,
+    "null_mean": 0.2508960235022558,
+    "null_sd": 0.004584277016986934,
+    "z": 157.61678783023544
+   },
+   "radial_type_mi_bits": 0.13827964220959463,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.10405815972222222,
+   "expensive_fraction_final": 0.024,
+   "expensive_calls": 2973,
+   "cheap_updates": 772352,
+   "expensive_cost_share": 0.793783868645724,
+   "all_expensive_equivalent_calls": 772352
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 181,
+    "worker": 703,
+    "expensive": 107,
+    "other": 4009
+   },
+   "type_assortativity": {
+    "observed": 0.8310258023914412,
+    "null_mean": 0.6642028529473464,
+    "null_sd": 0.002746798031267693,
+    "z": 60.73360601875168
+   },
+   "organizer": {
+    "interior_cells": 4819,
+    "on_fraction": 0.03921975513592032,
+    "z": 25.50229828512716
+   },
+   "expensive_calls_per_1000_cell_steps": 4.00858792622918,
+   "clone_coherence": {
+    "observed": 0.9756660373400462,
+    "null_mean": 0.26227973568281937,
+    "null_sd": 0.004513434670349274,
+    "z": 158.0584086757195
+   },
+   "radial_type_mi_bits": 0.12248802512445961,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.087890625,
+   "expensive_fraction_final": 0.0214,
+   "expensive_calls": 3006,
+   "cheap_updates": 749890,
+   "expensive_cost_share": 0.8003429280410236,
+   "all_expensive_equivalent_calls": 749890
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 188,
+    "worker": 769,
+    "expensive": 127,
+    "other": 3916
+   },
+   "type_assortativity": {
+    "observed": 0.8274419577494249,
+    "null_mean": 0.6390143275465384,
+    "null_sd": 0.0032030709865257935,
+    "z": 58.82717897777976
+   },
+   "organizer": {
+    "interior_cells": 4812,
+    "on_fraction": 0.04031587697423109,
+    "z": 32.705285272456415
+   },
+   "expensive_calls_per_1000_cell_steps": 3.9657602767662246,
+   "clone_coherence": {
+    "observed": 0.9752143902949174,
+    "null_mean": 0.2586190127588371,
+    "null_sd": 0.004667001089458077,
+    "z": 153.54514897259
+   },
+   "radial_type_mi_bits": 0.14478541589218305,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.09722222222222222,
+   "expensive_fraction_final": 0.0254,
+   "expensive_calls": 2985,
+   "cheap_updates": 752693,
+   "expensive_cost_share": 0.7986209675326464,
+   "all_expensive_equivalent_calls": 752693
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 183,
+    "worker": 885,
+    "expensive": 146,
+    "other": 3786
+   },
+   "type_assortativity": {
+    "observed": 0.8032271584241408,
+    "null_mean": 0.6064286462699078,
+    "null_sd": 0.0034774810511983396,
+    "z": 56.59226010344939
+   },
+   "organizer": {
+    "interior_cells": 4817,
+    "on_fraction": 0.05272991488478306,
+    "z": 37.120457036174294
+   },
+   "expensive_calls_per_1000_cell_steps": 3.947627615007814,
+   "clone_coherence": {
+    "observed": 0.9743294216261525,
+    "null_mean": 0.25376938390611903,
+    "null_sd": 0.004547352807607311,
+    "z": 158.457033840568
+   },
+   "radial_type_mi_bits": 0.12871399590790245,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.11187065972222222,
+   "expensive_fraction_final": 0.0292,
+   "expensive_calls": 3006,
+   "cheap_updates": 761470,
+   "expensive_cost_share": 0.7978829293929348,
+   "all_expensive_equivalent_calls": 761470
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 183,
+    "worker": 928,
+    "expensive": 130,
+    "other": 3759
+   },
+   "type_assortativity": {
+    "observed": 0.7958481118297517,
+    "null_mean": 0.6013269351137075,
+    "null_sd": 0.003457861485653232,
+    "z": 56.25476252392359
+   },
+   "organizer": {
+    "interior_cells": 4817,
+    "on_fraction": 0.05086153207390492,
+    "z": 31.204144387957136
+   },
+   "expensive_calls_per_1000_cell_steps": 4.014184934846289,
+   "clone_coherence": {
+    "observed": 0.9762153139995827,
+    "null_mean": 0.27392551637805135,
+    "null_sd": 0.004212745825472705,
+    "z": 166.7059506355878
+   },
+   "radial_type_mi_bits": 0.1317165066939848,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.11480034722222222,
+   "expensive_fraction_final": 0.026,
+   "expensive_calls": 3071,
+   "cheap_updates": 765037,
+   "expensive_cost_share": 0.8005657922486149,
+   "all_expensive_equivalent_calls": 765037
+  }
+ },
+ {
+  "arm": "task_blind",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": null,
+   "lesion_fraction_side": "right",
+   "condition": "task_blind"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 5000,
+   "clones": 13,
+   "births": 4987,
+   "deaths": 0,
+   "composition": {
+    "border": 191,
+    "worker": 911,
+    "expensive": 120,
+    "other": 3778
+   },
+   "type_assortativity": {
+    "observed": 0.8020713463751439,
+    "null_mean": 0.6060157966314468,
+    "null_sd": 0.0030232672168829878,
+    "z": 64.84889878369134
+   },
+   "organizer": {
+    "interior_cells": 4809,
+    "on_fraction": 0.044291952588895823,
+    "z": 19.732975409466512
+   },
+   "expensive_calls_per_1000_cell_steps": 3.812114021800155,
+   "clone_coherence": {
+    "observed": 0.9687205774662622,
+    "null_mean": 0.24220211319175647,
+    "null_sd": 0.0038696456980704948,
+    "z": 187.7480578226494
+   },
+   "radial_type_mi_bits": 0.1394637153135707,
+   "task_alignment_r": 0.0,
+   "demand_coverage": 0.11197916666666667,
+   "expensive_fraction_final": 0.024,
+   "expensive_calls": 2879,
+   "cheap_updates": 755224,
+   "expensive_cost_share": 0.7921911252581019,
+   "all_expensive_equivalent_calls": 755224
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1999,
+   "clones": 13,
+   "births": 3019,
+   "deaths": 1033,
+   "composition": {
+    "border": 625,
+    "worker": 168,
+    "expensive": 107,
+    "other": 1099
+   },
+   "type_assortativity": {
+    "observed": 0.7175525339925835,
+    "null_mean": 0.40852132262051916,
+    "null_sd": 0.007785579030224304,
+    "z": 39.692771747917256
+   },
+   "organizer": {
+    "interior_cells": 1374,
+    "on_fraction": 0.10407569141193596,
+    "z": 13.376879694779989
+   },
+   "expensive_calls_per_1000_cell_steps": 2.53254543031057,
+   "clone_coherence": {
+    "observed": 0.9867119901112484,
+    "null_mean": 0.4205423362175526,
+    "null_sd": 0.007744410782267793,
+    "z": 73.10687279012136
+   },
+   "radial_type_mi_bits": 0.12796830562526296,
+   "task_alignment_r": 0.8425443412195905,
+   "demand_coverage": 0.2305093497205056,
+   "expensive_fraction_final": 0.053526763381690844,
+   "expensive_calls": 684,
+   "cheap_updates": 270084,
+   "expensive_cost_share": 0.7169180072194901,
+   "all_expensive_equivalent_calls": 270084
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2011,
+   "clones": 13,
+   "births": 2896,
+   "deaths": 898,
+   "composition": {
+    "border": 626,
+    "worker": 143,
+    "expensive": 138,
+    "other": 1104
+   },
+   "type_assortativity": {
+    "observed": 0.7186544342507645,
+    "null_mean": 0.40746024464831804,
+    "null_sd": 0.008206090104506573,
+    "z": 37.92234616477665
+   },
+   "organizer": {
+    "interior_cells": 1385,
+    "on_fraction": 0.1328519855595668,
+    "z": 15.952531480774883
+   },
+   "expensive_calls_per_1000_cell_steps": 2.7722905159144573,
+   "clone_coherence": {
+    "observed": 0.9859327217125382,
+    "null_mean": 0.49494036697247706,
+    "null_sd": 0.00840827328625845,
+    "z": 58.393957715727986
+   },
+   "radial_type_mi_bits": 0.1318913124417783,
+   "task_alignment_r": 0.8249259371737894,
+   "demand_coverage": 0.23982420933169712,
+   "expensive_fraction_final": 0.06862257583291895,
+   "expensive_calls": 661,
+   "cheap_updates": 238431,
+   "expensive_cost_share": 0.7349090702899944,
+   "all_expensive_equivalent_calls": 238431
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1919,
+   "clones": 13,
+   "births": 2701,
+   "deaths": 795,
+   "composition": {
+    "border": 647,
+    "worker": 164,
+    "expensive": 72,
+    "other": 1036
+   },
+   "type_assortativity": {
+    "observed": 0.6894087069525666,
+    "null_mean": 0.41396686159844054,
+    "null_sd": 0.008192443769799614,
+    "z": 33.62145082637087
+   },
+   "organizer": {
+    "interior_cells": 1272,
+    "on_fraction": 0.0809748427672956,
+    "z": 7.539912633946895
+   },
+   "expensive_calls_per_1000_cell_steps": 2.5487230154497205,
+   "clone_coherence": {
+    "observed": 0.9860298895386614,
+    "null_mean": 0.6318388564002599,
+    "null_sd": 0.007223589304370337,
+    "z": 49.0325540689464
+   },
+   "radial_type_mi_bits": 0.12232278031497387,
+   "task_alignment_r": 0.80456035059092,
+   "demand_coverage": 0.18538615413399673,
+   "expensive_fraction_final": 0.03751954142782699,
+   "expensive_calls": 583,
+   "cheap_updates": 228742,
+   "expensive_cost_share": 0.7182084948173189,
+   "all_expensive_equivalent_calls": 228742
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2010,
+   "clones": 13,
+   "births": 2864,
+   "deaths": 867,
+   "composition": {
+    "border": 582,
+    "worker": 160,
+    "expensive": 71,
+    "other": 1197
+   },
+   "type_assortativity": {
+    "observed": 0.7363304981773997,
+    "null_mean": 0.44618772782503036,
+    "null_sd": 0.0073310273206107735,
+    "z": 39.57736858197884
+   },
+   "organizer": {
+    "interior_cells": 1428,
+    "on_fraction": 0.07703081232492998,
+    "z": 10.74214864461488
+   },
+   "expensive_calls_per_1000_cell_steps": 2.2949531705501687,
+   "clone_coherence": {
+    "observed": 0.9735722964763062,
+    "null_mean": 0.3452035236938032,
+    "null_sd": 0.007279710037864987,
+    "z": 86.3178299017515
+   },
+   "radial_type_mi_bits": 0.11549684456961072,
+   "task_alignment_r": 0.8249192221263485,
+   "demand_coverage": 0.21247076591438224,
+   "expensive_fraction_final": 0.035323383084577116,
+   "expensive_calls": 555,
+   "cheap_updates": 241835,
+   "expensive_cost_share": 0.6965055500825139,
+   "all_expensive_equivalent_calls": 241835
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2004,
+   "clones": 13,
+   "births": 2658,
+   "deaths": 667,
+   "composition": {
+    "border": 484,
+    "worker": 384,
+    "expensive": 49,
+    "other": 1087
+   },
+   "type_assortativity": {
+    "observed": 0.7665876777251185,
+    "null_mean": 0.38947867298578204,
+    "null_sd": 0.007505573481448029,
+    "z": 50.24386286690273
+   },
+   "organizer": {
+    "interior_cells": 1520,
+    "on_fraction": 0.06710526315789474,
+    "z": 14.815957572312321
+   },
+   "expensive_calls_per_1000_cell_steps": 3.2575408818878726,
+   "clone_coherence": {
+    "observed": 0.9851895734597157,
+    "null_mean": 0.5488225710900474,
+    "null_sd": 0.00751450379133119,
+    "z": 58.06996902085083
+   },
+   "radial_type_mi_bits": 0.12758133270915156,
+   "task_alignment_r": 0.8317574482442703,
+   "demand_coverage": 0.3568439029169592,
+   "expensive_fraction_final": 0.02445109780439122,
+   "expensive_calls": 651,
+   "cheap_updates": 199844,
+   "expensive_cost_share": 0.7651226311756326,
+   "all_expensive_equivalent_calls": 199844
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1637,
+   "clones": 13,
+   "births": 2542,
+   "deaths": 918,
+   "composition": {
+    "border": 522,
+    "worker": 78,
+    "expensive": 99,
+    "other": 938
+   },
+   "type_assortativity": {
+    "observed": 0.7134746404239213,
+    "null_mean": 0.43626040878122635,
+    "null_sd": 0.009104191599317432,
+    "z": 30.449077067257516
+   },
+   "organizer": {
+    "interior_cells": 1115,
+    "on_fraction": 0.11390134529147983,
+    "z": 12.41329237497839
+   },
+   "expensive_calls_per_1000_cell_steps": 2.581992711758955,
+   "clone_coherence": {
+    "observed": 0.979560938682816,
+    "null_mean": 0.49744700984102946,
+    "null_sd": 0.009271732595384856,
+    "z": 51.9982564080597
+   },
+   "radial_type_mi_bits": 0.08403804429808785,
+   "task_alignment_r": 0.7508957607828318,
+   "demand_coverage": 0.12539241003874063,
+   "expensive_fraction_final": 0.06047648136835675,
+   "expensive_calls": 581,
+   "cheap_updates": 225020,
+   "expensive_cost_share": 0.7208257859606462,
+   "all_expensive_equivalent_calls": 225020
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1990,
+   "clones": 13,
+   "births": 2747,
+   "deaths": 770,
+   "composition": {
+    "border": 498,
+    "worker": 327,
+    "expensive": 27,
+    "other": 1138
+   },
+   "type_assortativity": {
+    "observed": 0.7709080047789725,
+    "null_mean": 0.4155585424133811,
+    "null_sd": 0.007124929441402901,
+    "z": 49.87410265435877
+   },
+   "organizer": {
+    "interior_cells": 1492,
+    "on_fraction": 0.0596514745308311,
+    "z": 13.228685627843895
+   },
+   "expensive_calls_per_1000_cell_steps": 2.9318841326259037,
+   "clone_coherence": {
+    "observed": 0.980884109916368,
+    "null_mean": 0.5209289127837515,
+    "null_sd": 0.007545733985912765,
+    "z": 60.95566024343201
+   },
+   "radial_type_mi_bits": 0.08677620450932289,
+   "task_alignment_r": 0.8441303307013984,
+   "demand_coverage": 0.30942951055323703,
+   "expensive_fraction_final": 0.013567839195979899,
+   "expensive_calls": 683,
+   "cheap_updates": 232956,
+   "expensive_cost_share": 0.7456690059347829,
+   "all_expensive_equivalent_calls": 232956
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1533,
+   "clones": 13,
+   "births": 2110,
+   "deaths": 590,
+   "composition": {
+    "border": 394,
+    "worker": 340,
+    "expensive": 26,
+    "other": 773
+   },
+   "type_assortativity": {
+    "observed": 0.7577160493827161,
+    "null_mean": 0.3699845679012346,
+    "null_sd": 0.008419249463369293,
+    "z": 46.05297457551704
+   },
+   "organizer": {
+    "interior_cells": 1139,
+    "on_fraction": 0.058823529411764705,
+    "z": 9.024621368770703
+   },
+   "expensive_calls_per_1000_cell_steps": 3.0599755201958385,
+   "clone_coherence": {
+    "observed": 0.9768518518518519,
+    "null_mean": 0.6103452932098766,
+    "null_sd": 0.007565514364257317,
+    "z": 48.44436755992519
+   },
+   "radial_type_mi_bits": 0.3681865519365754,
+   "task_alignment_r": 0.8804773730555177,
+   "demand_coverage": 0.32009319358054733,
+   "expensive_fraction_final": 0.016960208741030658,
+   "expensive_calls": 570,
+   "cheap_updates": 186276,
+   "expensive_cost_share": 0.753693096171239,
+   "all_expensive_equivalent_calls": 186276
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 1394,
+   "clones": 4,
+   "births": 2019,
+   "deaths": 638,
+   "composition": {
+    "border": 487,
+    "worker": 37,
+    "expensive": 86,
+    "other": 784
+   },
+   "type_assortativity": {
+    "observed": 0.6968036529680365,
+    "null_mean": 0.44182191780821917,
+    "null_sd": 0.009317439710729462,
+    "z": 27.366072985285225
+   },
+   "organizer": {
+    "interior_cells": 907,
+    "on_fraction": 0.15986769570011025,
+    "z": 15.187010434846144
+   },
+   "expensive_calls_per_1000_cell_steps": 2.246086895486769,
+   "clone_coherence": {
+    "observed": 0.9794520547945206,
+    "null_mean": 0.35675114155251136,
+    "null_sd": 0.010581533181812777,
+    "z": 58.84789118388712
+   },
+   "radial_type_mi_bits": 0.16493719376347288,
+   "task_alignment_r": 0.6376309979085859,
+   "demand_coverage": 0.062427424218645555,
+   "expensive_fraction_final": 0.06169296987087518,
+   "expensive_calls": 352,
+   "cheap_updates": 156717,
+   "expensive_cost_share": 0.6919367742772504,
+   "all_expensive_equivalent_calls": 156717
+  }
+ },
+ {
+  "arm": "full+lesion",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "full"
+  },
+  "fixed_n": null,
+  "metrics": {
+   "cells": 2044,
+   "clones": 13,
+   "births": 2906,
+   "deaths": 875,
+   "composition": {
+    "border": 639,
+    "worker": 229,
+    "expensive": 94,
+    "other": 1082
+   },
+   "type_assortativity": {
+    "observed": 0.7228374738102364,
+    "null_mean": 0.3924408859622867,
+    "null_sd": 0.0074396480084550866,
+    "z": 44.410244607333205
+   },
+   "organizer": {
+    "interior_cells": 1405,
+    "on_fraction": 0.10533807829181495,
+    "z": 17.055755936362576
+   },
+   "expensive_calls_per_1000_cell_steps": 2.6093403735002436,
+   "clone_coherence": {
+    "observed": 0.9883268482490273,
+    "null_mean": 0.482324154444777,
+    "null_sd": 0.008947849449251066,
+    "z": 56.550201998157526
+   },
+   "radial_type_mi_bits": 0.12747775321747315,
+   "task_alignment_r": 0.8509980049615538,
+   "demand_coverage": 0.2725623528814446,
+   "expensive_fraction_final": 0.04598825831702544,
+   "expensive_calls": 637,
+   "cheap_updates": 244123,
+   "expensive_cost_share": 0.7229410649818471,
+   "all_expensive_equivalent_calls": 244123
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 1,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 127,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1404
+   },
+   "type_assortativity": {
+    "observed": 0.9454177897574124,
+    "null_mean": 0.8479969676549866,
+    "null_sd": 0.0031673663482729418,
+    "z": 30.75767416533492
+   },
+   "organizer": {
+    "interior_cells": 1404,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.110742265303412,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06951325226668548,
+   "task_alignment_r": 0.8646845652129169,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4602,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.859367705551717,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 2,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 130,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1401
+   },
+   "type_assortativity": {
+    "observed": 0.9454177897574124,
+    "null_mean": 0.8444474393530997,
+    "null_sd": 0.0026210599331645467,
+    "z": 38.522717136958306
+   },
+   "organizer": {
+    "interior_cells": 1401,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.049661399548532,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.07015348270871487,
+   "task_alignment_r": 0.8688778078355652,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4556,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.8581492154979187,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 3,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1469,
+   "clones": 1469,
+   "births": 0,
+   "deaths": 1531,
+   "composition": {
+    "border": 126,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1343
+   },
+   "type_assortativity": {
+    "observed": 0.9444834855938159,
+    "null_mean": 0.8428425860857344,
+    "null_sd": 0.003174550849684029,
+    "z": 32.01741106720597
+   },
+   "organizer": {
+    "interior_cells": 1343,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.078457624849378,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06366591325143568,
+   "task_alignment_r": 0.87177339318444,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4540,
+   "cheap_updates": 746900,
+   "expensive_cost_share": 0.8587262857250941,
+   "all_expensive_equivalent_calls": 746900
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 4,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1469,
+   "clones": 1469,
+   "births": 0,
+   "deaths": 1531,
+   "composition": {
+    "border": 126,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1343
+   },
+   "type_assortativity": {
+    "observed": 0.9444834855938159,
+    "null_mean": 0.8431254392129306,
+    "null_sd": 0.003362318161076885,
+    "z": 30.1452871278613
+   },
+   "organizer": {
+    "interior_cells": 1343,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.071763288258134,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06366591325143568,
+   "task_alignment_r": 0.8591361120951055,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4535,
+   "cheap_updates": 746900,
+   "expensive_cost_share": 0.8585925519226036,
+   "all_expensive_equivalent_calls": 746900
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 5,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 129,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1402
+   },
+   "type_assortativity": {
+    "observed": 0.9450808625336927,
+    "null_mean": 0.8455340296495956,
+    "null_sd": 0.0028086067242232143,
+    "z": 35.44349304071012
+   },
+   "organizer": {
+    "interior_cells": 1402,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0815296773336875,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.0697853756969446,
+   "task_alignment_r": 0.865530863615947,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4580,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.8587875719562731,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 6,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 126,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1405
+   },
+   "type_assortativity": {
+    "observed": 0.9450808625336927,
+    "null_mean": 0.8486371293800539,
+    "null_sd": 0.00288451767138763,
+    "z": 33.43496006638902
+   },
+   "organizer": {
+    "interior_cells": 1405,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.0762182977028285,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06919215689890602,
+   "task_alignment_r": 0.8651305828631263,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4576,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.8586815785029367,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 7,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 128,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1403
+   },
+   "type_assortativity": {
+    "observed": 0.9457547169811321,
+    "null_mean": 0.8467671832884096,
+    "null_sd": 0.0029738093659419534,
+    "z": 33.28644224017643
+   },
+   "organizer": {
+    "interior_cells": 1403,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.062939848625681,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06985042208213069,
+   "task_alignment_r": 0.8616126423960062,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4566,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.8584158974262563,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 8,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 129,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1402
+   },
+   "type_assortativity": {
+    "observed": 0.9450808625336927,
+    "null_mean": 0.8454969676549865,
+    "null_sd": 0.0032541968125236287,
+    "z": 30.60168164859056
+   },
+   "organizer": {
+    "interior_cells": 1402,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.058956313902536,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.07076056759407191,
+   "task_alignment_r": 0.8693488108106907,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4563,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.858335998194165,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 9,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 127,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1404
+   },
+   "type_assortativity": {
+    "observed": 0.9444070080862533,
+    "null_mean": 0.8478369272237196,
+    "null_sd": 0.0029614273863610625,
+    "z": 32.609302293647296
+   },
+   "organizer": {
+    "interior_cells": 1404,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.072234762979684,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06909537213474708,
+   "task_alignment_r": 0.8668844640085348,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4573,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.8586019789339291,
+   "all_expensive_equivalent_calls": 753100
+  }
+ },
+ {
+  "arm": "fixed_population+lesion",
+  "seed": 10,
+  "params": {
+   "size": 96,
+   "steps": 300,
+   "max_cells": 5000,
+   "seed_radius": 2,
+   "alpha": 0.25,
+   "noise": 0.02,
+   "inherit_noise": 0.05,
+   "d_a": 0.02,
+   "d_i": 0.2,
+   "decay_a": 0.08,
+   "decay_i": 0.04,
+   "prod_a": 0.3,
+   "prod_i": 0.4,
+   "substeps": 4,
+   "refractory": 4,
+   "grow_threshold": 0.6,
+   "expensive_threshold": 0.5,
+   "call_refractory": 30,
+   "cost_cheap": 1.0,
+   "cost_expensive": 1000.0,
+   "lesion_step": 200,
+   "lesion_fraction_side": "right",
+   "condition": "fixed_population"
+  },
+  "fixed_n": 3000,
+  "metrics": {
+   "cells": 1531,
+   "clones": 1531,
+   "births": 0,
+   "deaths": 1469,
+   "composition": {
+    "border": 128,
+    "worker": 0,
+    "expensive": 0,
+    "other": 1403
+   },
+   "type_assortativity": {
+    "observed": 0.9457547169811321,
+    "null_mean": 0.8468884770889489,
+    "null_sd": 0.0031589649478381355,
+    "z": 31.29703606234795
+   },
+   "organizer": {
+    "interior_cells": 1403,
+    "on_fraction": 0.0,
+    "z": 0.0
+   },
+   "expensive_calls_per_1000_cell_steps": 6.025760191209667,
+   "clone_coherence": {
+    "observed": 0.0,
+    "null_mean": 0.0,
+    "null_sd": 0.0,
+    "z": 0.0
+   },
+   "radial_type_mi_bits": 0.06985042208213069,
+   "task_alignment_r": 0.8670208201216404,
+   "demand_coverage": 0.0,
+   "expensive_fraction_final": 0.0,
+   "expensive_calls": 4538,
+   "cheap_updates": 753100,
+   "expensive_cost_share": 0.857666647767005,
+   "all_expensive_equivalent_calls": 753100
+  }
+ }
+]

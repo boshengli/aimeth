@@ -1,0 +1,35 @@
+{
+ "created_unix": 1791088701.5427272,
+ "elapsed_seconds": 66.16261625289917,
+ "python": "3.13.16",
+ "numpy": "2.5.3",
+ "platform": "Linux-6.18.44-fc-v64-x86_64-with-glibc2.39",
+ "source_sha256": {
+  "aimeth_dev/__init__.py": "a0e0fb34d8473d7224a5489b3942ccee3efc0c377712b331c59144d5794d2de4",
+  "aimeth_dev/metrics.py": "43c87d3a95602a03654c5e97e1ad4262183adbc16399cc756e62f4d6297a2951",
+  "aimeth_dev/sim.py": "3a648752d4e8f34882c22d4d5a703317591b83069d4f996571b2771a5410fb65",
+  "tools/run_p1.py": "50720e057b9a805b016941daf91cc4d5291152733b923df6e7f8198810888d4b",
+  "docs/p1-offline-development-protocol-v1.md": "afe3a56446777b5eaeac65bd70192a9ea11d44a84f743e3adf11ca52d8e0d544"
+ },
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "arms": [
+  "full",
+  "shuffled_signal",
+  "fixed_population",
+  "frozen_expression",
+  "task_blind",
+  "full+lesion",
+  "fixed_population+lesion"
+ ]
+}
