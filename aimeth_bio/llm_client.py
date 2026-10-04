@@ -25,6 +25,11 @@ _lock = threading.Lock()
 
 
 def _key(name: str) -> str:
+    # Prefer the caller's protected process environment. The private config-file
+    # fallback remains for older workflows that have not migrated yet.
+    value = os.environ.get(name)
+    if value:
+        return value
     for line in open(os.path.expanduser("~/.config/aimeth/api.env")):
         line = line.strip()
         if line.startswith(name + "="):

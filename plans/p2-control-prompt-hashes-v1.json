@@ -1,0 +1,39 @@
+{
+  "arc_system_sha256": "1706594a9f0b4301873a15679de78b1bdccf36166cf0d92dc5b00c5354597270",
+  "realized_prompt_policy": "Every model-call record stores SHA-256 of canonical JSON messages; response text is not part of public milestone artifacts.",
+  "role_templates": {
+    "debater_propose": {
+      "sha256": "e6bb8c602fa9f474e090159a20b2c68a39a06c73b71a6172876942e2879fb32e",
+      "text": "Propose an independent program as debater {index}."
+    },
+    "debater_revision": {
+      "sha256": "35115bff2f8b4e9550211e9c4d806ee592d08b048c9fa5f0ce1bf226de694e0c",
+      "text": "Review the programs and visible checks, then return a revised complete program:\n{summaries}"
+    },
+    "evolution_planner": {
+      "sha256": "1fb80c2d350b89b5ac9d3b91c77dfebc7d21f247f3990c576d03a1e1a208830c",
+      "text": "Suggest mutation and crossover strategies for program search; do not write a program."
+    },
+    "evolution_propose": {
+      "sha256": "7f006cef88d676bb3828097d4f09b09b985c8ec848a354dfdfcc6a35083bf68a",
+      "text": "Use non-spatial evolutionary {mode} to propose one new complete program. Parents and visible checks: {parents}"
+    },
+    "orchestrator_assign": {
+      "sha256": "73afe370bdd0ba52ec19d6e1c6bb8c94f7f02f0d0993b7c537a11976d38924d8",
+      "text": "Assign one worker revision using only these programs and visible-check results. Return a concise instruction, not a program:\n{summaries}"
+    },
+    "orchestrator_plan": {
+      "sha256": "56c564a2d062c9f331d16ccbd22e90d6568794e9656ba30d6f39f96f30ac98e1",
+      "text": "Return JSON with a 'plans' array of distinct solution strategies. Do not write the final program. Number of plans: {k}"
+    },
+    "worker": {
+      "sha256": "ec7af8447c2960342809b1daa9dd2cea64b46dce782bf12261b3cdce777dc52e",
+      "text": "Implement this plan as a complete program: {plan}"
+    },
+    "worker_revision": {
+      "sha256": "30b484bb25a635cf3dabaf40e4dddaf007364d49c825da9eadf4595db66fb6c3",
+      "text": "{instruction}\nCurrent program:\n{program}\nVisible feedback:\n{feedback}"
+    }
+  },
+  "version": "p2-control-prompts-v1"
+}

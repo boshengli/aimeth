@@ -1,0 +1,174 @@
+{
+  "answer_outputs_excluded_from_public_view": true,
+  "selection": {
+    "method": "sort ascending by SHA256(salt + ':' + task_id), take first 40",
+    "outcome_blind": true,
+    "salt": "T-20261004-002:ARC2-eval-pilot-v1",
+    "stratification": "none"
+  },
+  "source_archive_sha256": "a87291143a4d5206cb5264eeb280a1b9c367e3523a992f4eff5702265471dbac",
+  "task_id_source": "arc2/data/evaluation/*.json",
+  "tasks": [
+    {
+      "selection_sha256": "021be152d3e8f52437853a59eab7f41133822b2be8be82bf6bebb430f36cd7a8",
+      "task_id": "2ba387bc"
+    },
+    {
+      "selection_sha256": "0310d1ecab5e623b17d1299202a05c844f8231540287ea2e9610002776450681",
+      "task_id": "4c3d4a41"
+    },
+    {
+      "selection_sha256": "0ae4b632185bbcfbb7ce6dced7e94d412609a7c31df76f765d1d399b5dfb5e60",
+      "task_id": "a47bf94d"
+    },
+    {
+      "selection_sha256": "0c8974b0d98a4414c2cc392769be3aab4ae9fa7e1f3cc6782512ff63a70d0fb7",
+      "task_id": "16b78196"
+    },
+    {
+      "selection_sha256": "0cb1077a342c51cc6e98eb07d2ac0c51cd107bbe53c94efc7074eec624909d82",
+      "task_id": "28a6681f"
+    },
+    {
+      "selection_sha256": "0ec8ac58d51cfa6e66e28e87d43828ba42a794db1426fce30e81b5a283c033fa",
+      "task_id": "edb79dae"
+    },
+    {
+      "selection_sha256": "1113465e9f13471e65d67ac6ed4b0f095d91deac7b4ee5f94cf9b712c782ef69",
+      "task_id": "aa4ec2a5"
+    },
+    {
+      "selection_sha256": "115ea7d51c912cb8ea1de27c8678839b571fe5223430c00fb0bb9b66d0a01cbb",
+      "task_id": "6e453dd6"
+    },
+    {
+      "selection_sha256": "1239431b873719c224fb0f2464ee4d96536bc1b5dee2cab70197f68f3699f1de",
+      "task_id": "e87109e9"
+    },
+    {
+      "selection_sha256": "1475f5d0ff40e7d752f3686ea7024fcb87e45709830a1faf7263ff0f02d1a56a",
+      "task_id": "62593bfd"
+    },
+    {
+      "selection_sha256": "15a4f74b564ab611392c508db073a82ae6e59c6b74e52d12150fb32dab27871b",
+      "task_id": "5dbc8537"
+    },
+    {
+      "selection_sha256": "1af8eddc09fc8be79020ad34554eaee6eea9ebbfd7c89f660fc947e6a6f34d4a",
+      "task_id": "35ab12c3"
+    },
+    {
+      "selection_sha256": "1b2145de388e39e70e082cbd7336f8148f3c49dc85f1eb3b272cac2634b9074b",
+      "task_id": "31f7f899"
+    },
+    {
+      "selection_sha256": "1b2d6700d0a1f9e4623b6ece950a9b2cc219101a6c5f47a392b018eb6a97386b",
+      "task_id": "e3721c99"
+    },
+    {
+      "selection_sha256": "1e036e6382bb38185e239ab13f6cc1dd1a511c9b1897a7c14f3e2fa81dd068f3",
+      "task_id": "89565ca0"
+    },
+    {
+      "selection_sha256": "1e398c314e4b2d9184fdcc9bd17f66e583eae419a25c5db730512816772cfa21",
+      "task_id": "a251c730"
+    },
+    {
+      "selection_sha256": "1e9c5c29af2280917e805c8c6f2b902d7f8643ed991a358e1b40ac60d0f0d4c7",
+      "task_id": "7b80bb43"
+    },
+    {
+      "selection_sha256": "200e7281e9702807f0fbfc1fdc9e0ad46ba9fbe911fd254cba2bf6cd3fcc710e",
+      "task_id": "7491f3cf"
+    },
+    {
+      "selection_sha256": "209a10d8b06ea85332435c7dc66cea35e01ac12cf03d72dd9db0e7f773faf32c",
+      "task_id": "58490d8a"
+    },
+    {
+      "selection_sha256": "20e0bd136f8db1f3af9009db5600bac5a4b84ee7751915fad3161970db3fdabe",
+      "task_id": "247ef758"
+    },
+    {
+      "selection_sha256": "217e337e163551fe4a14713b8f86ba376ce949431faaeabed2952348ce18198c",
+      "task_id": "221dfab4"
+    },
+    {
+      "selection_sha256": "2868d531580deb0b2de5fa8e55da784ce800ceedb08adcf322ea7be15b64852f",
+      "task_id": "8b7bacbf"
+    },
+    {
+      "selection_sha256": "28f1afaa2fe7fd476b4972ea6f7bcb487bb0ed3ed6412e7ecac9d440795d7d6c",
+      "task_id": "2c181942"
+    },
+    {
+      "selection_sha256": "29008ccd7f874777419021bfa95cf42aaf2a2788cdb95f2d9b08ec00e4544fe5",
+      "task_id": "b99e7126"
+    },
+    {
+      "selection_sha256": "2908e8379a55edf1ef68f7d147e65244a4e6508e59d5e701192c827fc079307e",
+      "task_id": "dbff022c"
+    },
+    {
+      "selection_sha256": "2b329a69e6b319f99408f2d183ae4c828cb21d6b6e238841eb03b97d0f80f55a",
+      "task_id": "7666fa5d"
+    },
+    {
+      "selection_sha256": "2ea27ec4fbe548eaac4d13b09d7de46db299d2595fa3cfe7c149a6b01dd007ac",
+      "task_id": "20a9e565"
+    },
+    {
+      "selection_sha256": "3097668ecb355dbd858d27886ab4f6e15ae7b2125d51ae741636128fed2fbd56",
+      "task_id": "64efde09"
+    },
+    {
+      "selection_sha256": "35152a4d102bcefa00a2e93a6d1064fbc1bf3bc0ab641172a1d06bab320222e5",
+      "task_id": "7ed72f31"
+    },
+    {
+      "selection_sha256": "35b8e5d2a677640157dc0612c89fecf93ab04c760fd91062f47abdd3a4cc4648",
+      "task_id": "581f7754"
+    },
+    {
+      "selection_sha256": "3827f5e9985ab0efba7949d7b4f067f9a84e157c57afa2bcdbdb861c2f0559f0",
+      "task_id": "dfadab01"
+    },
+    {
+      "selection_sha256": "3858343171b85745ca8b6dd7a6c6e01c80325da35907c2c7035aa9f2ef737b7f",
+      "task_id": "cbebaa4b"
+    },
+    {
+      "selection_sha256": "3c4087b322dea14b5cb0c5ca64808a7c0d8d06adfedb5b61254c7f267c9fc1f6",
+      "task_id": "13e47133"
+    },
+    {
+      "selection_sha256": "3e23531823733f2b38faf92dd6eef0b7ff4bb54e3790bedc71519be018e13016",
+      "task_id": "269e22fb"
+    },
+    {
+      "selection_sha256": "3f08adac2754a3e5b0d72779731da60005463faa63b0a1e38e857d871a3d7f8f",
+      "task_id": "97d7923e"
+    },
+    {
+      "selection_sha256": "3fe256e8ce99c6a1d6ef71b44989e1e24f0a3ce647cf4eba61cfcb9b1ad76920",
+      "task_id": "8698868d"
+    },
+    {
+      "selection_sha256": "43f732958c5ef8107accc1451dbf2aaff1c0ca366ba8611f831c0eaf8b50eb2d",
+      "task_id": "f931b4a8"
+    },
+    {
+      "selection_sha256": "4438b9e607dc85a60b76d982383e514118d4a4c6bd9d2a12cca1a46ce0c75c27",
+      "task_id": "faa9f03d"
+    },
+    {
+      "selection_sha256": "4548808158602b1e0820dbd587f610dfa3a3e02b2f6c0ddee26a760f738974f7",
+      "task_id": "446ef5d2"
+    },
+    {
+      "selection_sha256": "45ef1f0dbad79b65f2d5e21174d222ce7270c1a7ca44905254b3e0fff6eb47e5",
+      "task_id": "bf45cf4b"
+    }
+  ],
+  "version": "p2-arc2-hash-pilot40-v1"
+}

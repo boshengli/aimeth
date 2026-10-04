@@ -20,7 +20,8 @@ MIN_VISIBLE_COUNTS = 10
 
 
 def gene_annotation(path: Path) -> dict[str, dict]:
-    rows = list(csv.reader(open(path, encoding="utf-8-sig")))[1:]
+    with open(path, encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.reader(stream))[1:]
     return {r[0]: {"symbol": r[1], "group": r[2].strip(), "category": r[3].strip()} for r in rows}
 
 

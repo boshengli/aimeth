@@ -6,7 +6,6 @@ import gzip
 from dataclasses import dataclass
 from pathlib import Path
 
-import h5py
 import numpy as np
 
 
@@ -20,6 +19,8 @@ class Section:
 
 
 def load_section(path: Path, name: str | None = None) -> Section:
+    import h5py
+
     path = Path(path)
     with h5py.File(path / "cell_feature_matrix.h5", "r") as f:
         m = f["matrix"]

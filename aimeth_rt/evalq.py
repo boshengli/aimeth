@@ -28,6 +28,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR))
 from tools.bio_evaluate import PY, RUNNER as BIO_RUNNER, static_check  # noqa: E402
 from aimeth_bio.bench import grade  # noqa: E402
+from .private_aggregate import handle_aggregate
 
 ARC_RUNNER = r'''
 import json, resource, signal, traceback
@@ -162,14 +163,20 @@ def handle_bio(job: dict, cfg: dict) -> tuple[dict, dict]:
 def process(path: str, cfg: dict) -> dict:
     job = json.load(open(path))
     t0 = time.time()
-    bad = static_check(job["program"]) if job.get("program") else "no program"
-    if bad:
-        vis, priv = {"status": "rejected_static", "detail": bad}, {}
-    else:
+    if job["kind"] == "aggregate":
         try:
-            vis, priv = {"arc": handle_arc, "bio": handle_bio}[job["kind"]](job, cfg)
-        except Exception as e:  # never let one job kill the daemon
-            vis, priv = {"status": "daemon_error", "detail": f"{type(e).__name__}: {e}"[:500]}, {}
+            vis, priv = handle_aggregate(job, cfg)
+        except Exception as e:
+            vis, priv = {"status": "aggregate_error", "detail": f"{type(e).__name__}: {e}"[:500]}, {}
+    else:
+        bad = static_check(job["program"]) if job.get("program") else "no program"
+        if bad:
+            vis, priv = {"status": "rejected_static", "detail": bad}, {}
+        else:
+            try:
+                vis, priv = {"arc": handle_arc, "bio": handle_bio}[job["kind"]](job, cfg)
+            except Exception as e:  # never let one job kill the daemon
+                vis, priv = {"status": "daemon_error", "detail": f"{type(e).__name__}: {e}"[:500]}, {}
     vis["eval_s"] = round(time.time() - t0, 2)
     root = Path(cfg["root"])
     if priv:
@@ -247,6 +254,12 @@ class EvalClient:
         r = self.wait(jid)
         r["eval_id"] = jid
         return r
+
+    def aggregate(self, kind: str, task_id: str, eval_ids: list[str], mode: str) -> dict:
+        jid = self.submit("aggregate", task_id, None, source_kind=kind, mode=mode, eval_ids=eval_ids)
+        result = self.wait(jid)
+        result["eval_id"] = jid
+        return result
 
 
 if __name__ == "__main__":

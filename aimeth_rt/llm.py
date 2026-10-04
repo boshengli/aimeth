@@ -1,8 +1,7 @@
-"""Thread-safe LLM caller with an AIMD concurrency limiter shared by every workflow in one process.
+"""Thread-safe LLM caller with an AIMD concurrency limiter shared by workflows.
 
-A rate-limit rejection (HTTP 429 with a Zhipu rate code) was never processed, so it is retried after the
-limiter's pause. Any other failure, including an unknown outcome, is returned to the workflow and counts
-as a spent call; it is never resubmitted automatically.
+Documented provider rate-limit rejections are retried after the limiter's pause;
+other failures, including unknown outcomes, are returned and never resubmitted.
 """
 from __future__ import annotations
 
@@ -48,7 +47,9 @@ class LLM:
                 pass
             if rec.get("ok"):
                 outcome = "ok"
-            elif rec.get("http_status") == 429 and code in RATE_CODES:
+            # DeepSeek documents HTTP 429 as a rate-limit rejection; the request
+            # is not accepted for inference and can be retried safely.
+            elif rec.get("http_status") == 429 and (provider == "deepseek" or code in RATE_CODES):
                 outcome = "rate_limited"
             else:
                 outcome = "unknown" if rec.get("outcome") == "unknown" else "error"

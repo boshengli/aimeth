@@ -17,6 +17,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from aimeth_bio.bench import grade  # noqa: E402
+from aimeth_rt.arc_data import grade_arc_attempts  # noqa: E402
 
 
 def main():
@@ -38,7 +39,8 @@ def main():
             p = json.load(open(f))
             if kind == "arc":
                 truth = [t["output"] for t in json.load(open(Path(a.arc_dir) / f"{task_id}.json"))["test"]]
-                res = {"solved": all(x == y for x, y in zip(p["test_preds"], truth)) and len(p["test_preds"]) == len(truth)}
+                attempts = p.get("test_attempts") or [[pred] for pred in p["test_preds"]]
+                res = {"solved": grade_arc_attempts(attempts, truth)}
             elif p.get("pred_file"):
                 t = np.load(Path(a.bench) / "tasks" / f"{task_id}.npz")
                 key = np.load(Path(a.bench) / "keys" / f"{task_id}.key.npz")
@@ -50,11 +52,17 @@ def main():
     for line in open(a.records):
         r = json.loads(line)
         out = {k: r[k] for k in ("arm", "kind", "task_id", "model", "rep", "n_budget", "calls_used", "final_round",
-                                 "final_visible_score") if k in r}
+                                 "final_visible_score", "completion_reasoning_tokens_used",
+                                 "cost_estimate_cny", "stop_reason") if k in r}
         out["final"] = g(r["kind"], r["task_id"], r["final_eval_id"])
         out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
-        out["tokens"] = sum((s.get("prompt_tokens") or 0) + (s.get("completion_tokens") or 0) for s in r["steps"])
-        out["completion_tokens"] = sum((s.get("completion_tokens") or 0) for s in r["steps"])
+        out["tokens"] = sum((s.get("prompt_tokens") or 0) +
+                             (s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                              else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+        out["prompt_tokens"] = sum((s.get("prompt_tokens") or 0) for s in r["steps"])
+        out["completion_tokens"] = sum((s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                                        else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+        out["calls_used"] = r.get("calls_used")
         print(json.dumps(out))
 
 
