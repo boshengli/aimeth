@@ -87,6 +87,7 @@ def summarize(private_root: Path, public_csv: Path, output: Path,
             if record["receipt_sha256"] != audit["providers"][provider]["receipt_sha256"]:
                 raise ValueError(f"{provider}: audit and summary used different receipt snapshots")
         summary["audit"] = {"complete": audit["complete"],
+                            "matched_cross_provider_requests": audit["matched_cross_provider_requests"],
                             "sha256": sha256(audit_path.read_bytes()).hexdigest()}
     else:
         summary["audit"] = None

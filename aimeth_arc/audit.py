@@ -55,6 +55,7 @@ def audit_calibration(private_root: Path, csv_path: Path,
         expected_pooled = str(sum(pooled) / 8) if len(pooled) == 8 else ""
         if row["pooled_pass_at_1"] != expected_pooled:
             raise ValueError(f"{row['task_id']}: pooled pass@1 mismatch")
+    comparable_requests: dict[str, dict[str, str]] = {}
     for provider, cfg in PROVIDERS.items():
         path = private_root / f"{provider}-receipts.jsonl"
         started: dict[str, dict[str, Any]] = {}
@@ -70,11 +71,18 @@ def audit_calibration(private_root: Path, csv_path: Path,
         expected = {f"{provider}-{tid}-{sample}" for tid in task_ids for sample in range(4)}
         if not set(started).issubset(expected) or not set(settled).issubset(set(started)):
             raise ValueError(f"{provider}: unexpected or unreserved request")
+        comparable_requests[provider] = {}
         for rid, event in started.items():
             body = json.dumps(event["request_body"], ensure_ascii=False,
                               separators=(",", ":")).encode()
             if sha256(body).hexdigest() != event["request_sha256"]:
                 raise ValueError(f"{rid}: request hash mismatch")
+            comparable = dict(event["request_body"])
+            comparable.pop("model", None)
+            key = rid.removeprefix(provider + "-")
+            comparable_requests[provider][key] = sha256(json.dumps(
+                comparable, ensure_ascii=False, sort_keys=True,
+                separators=(",", ":")).encode()).hexdigest()
         estimate = sum(event["estimated_cny"] if event.get("estimated_cny") is not None
                        else event["reserve_cny"] for event in settled.values())
         estimate += sum(event["reserve_cny"] for rid, event in started.items()
@@ -95,6 +103,11 @@ def audit_calibration(private_root: Path, csv_path: Path,
             "cap_cny": cfg["cap_cny"], "complete": complete,
             "receipt_sha256": sha256(path.read_bytes()).hexdigest(),
         }
+    common = set(comparable_requests["deepseek"]) & set(comparable_requests["zhipu"])
+    if any(comparable_requests["deepseek"][key] != comparable_requests["zhipu"][key]
+           for key in common):
+        raise ValueError("provider request conditions differ beyond the model identifier")
+    results["matched_cross_provider_requests"] = len(common)
     if require_complete and not results["complete"]:
         raise ValueError("calibration is not complete")
     return results

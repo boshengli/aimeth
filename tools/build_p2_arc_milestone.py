@@ -72,7 +72,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <section id="evidence"><h2>实际证据</h2><div class="scroll"><table><thead><tr><th>模型</th><th>结算 / 计划</th><th>HTTP 200</th><th>提取程序</th><th>可执行</th><th>成功样本 / 1600</th><th>pass@4 任务 / 400</th><th>保守估计 ¥</th></tr></thead><tbody>{rows}</tbody></table></div>
 <ul>{operational}</ul>
 <p class="muted">估算费用采用官方公开的高峰、未缓存输入和输出单价，以及内部 10 元/美元安全换算。它是上界式预算记录，非提供商已核对账单；各家上限 300 元。</p>
-<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>。全仓 182 项单元测试已通过；桌面、窄屏和链接检查见相邻验证记录。</p></section>
+<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>；除模型名外，跨模型匹配请求 {tag((data.get('audit') or {}).get('matched_cross_provider_requests') or '待审计')} 组。全仓 182 项单元测试已通过；桌面、窄屏和链接检查见相邻验证记录。</p></section>
 <section id="mapping"><h2>用户要求与交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>实施及证据</th><th>未解决</th></tr></thead><tbody>
 <tr><td>两条分支推送与独立开发分支</td><td>源分支分别推送；开发基于 <code>{tag(baseline_commit)}</code>，实现提交 <code>{tag(implementation_commit)}</code></td><td>报告交付提交见相邻版本记录</td></tr>
 <tr><td>ARC 评测器</td><td>400 题加载、测试答案隔离、最多两次候选输出的精确评分、2 秒受限执行及单元测试</td><td>沙箱不是敌对代码安全性的形式证明</td></tr>

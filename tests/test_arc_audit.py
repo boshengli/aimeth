@@ -36,8 +36,26 @@ class ArcAuditTests(unittest.TestCase):
                                                           separators=(",", ":")).encode()).hexdigest()}
             path = root / "deepseek-receipts.jsonl"
             path.write_text(json.dumps(event) + "\n")
-            (root / "zhipu-receipts.jsonl").write_text("")
+            zhipu_path = root / "zhipu-receipts.jsonl"
+            zhipu_event = {**event, "request_id": "zhipu-task000-0",
+                           "request_body": {**body, "model": "other"}}
+            zhipu_event["request_sha256"] = sha256(json.dumps(
+                zhipu_event["request_body"], ensure_ascii=False,
+                separators=(",", ":")).encode()).hexdigest()
+            zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
             self.assertFalse(audit_calibration(root, csv_path, False)["complete"])
+            zhipu_event["request_body"]["messages"] = ["different"]
+            zhipu_event["request_sha256"] = sha256(json.dumps(
+                zhipu_event["request_body"], ensure_ascii=False,
+                separators=(",", ":")).encode()).hexdigest()
+            zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
+            with self.assertRaisesRegex(ValueError, "conditions differ"):
+                audit_calibration(root, csv_path, False)
+            zhipu_event["request_body"]["messages"] = []
+            zhipu_event["request_sha256"] = sha256(json.dumps(
+                zhipu_event["request_body"], ensure_ascii=False,
+                separators=(",", ":")).encode()).hexdigest()
+            zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
             with csv_path.open(newline="") as stream:
                 reader = csv.DictReader(stream)
                 rows = list(reader)
