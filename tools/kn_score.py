@@ -106,7 +106,7 @@ def main(ref_path, annot, masks, ans_dir, out_dir):
     ann = {r[0]: {"symbol": r[1], "group": r[2].strip(), "category": r[3].strip()} for r in rows if r and r[0] in panel}
     mask = json.load(open(masks))
     mask = mask.get("sets", mask) if isinstance(mask, dict) else mask
-    sets = {k: set(v) for k, v in mask.items() if isinstance(v, list)}
+    sets = {k: {d["id"] if isinstance(d, dict) else d for d in v} for k, v in mask.items() if isinstance(v, list)}
 
     # model answers
     per = []
