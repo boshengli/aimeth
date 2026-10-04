@@ -31,6 +31,8 @@ def _provider_summary(path: Path) -> dict[str, Any]:
     output = sum((x.get("usage") or {}).get("completion_tokens", 0) for x in events)
     return {"settled": len(events), "http_statuses": dict(Counter(str(x.get("http_status")) for x in events)),
             "finish_reasons": dict(Counter(str(x.get("finish_reason")) for x in events)),
+            "served_models": dict(Counter(str(x.get("served_model")) for x in events)),
+            "failure_classes": dict(Counter(str(x.get("failure")) for x in events if x.get("failure"))),
             "transport_unknown": sum(x.get("http_status") is None for x in events),
             "reported_prompt_tokens": prompt, "reported_completion_tokens": output,
             "usage_missing": sum(x.get("usage") is None for x in events),

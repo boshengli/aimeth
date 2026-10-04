@@ -28,6 +28,14 @@ def build(summary_path: Path, output: Path, baseline_commit: str, implementation
     ready = bool(data["complete"] and data.get("pilot"))
     status = "校准完成；40 题 pilot 清单已冻结" if ready else "校准仍在进行或选题条件未满足"
     rows = "".join(provider_row(k, v) for k, v in data["providers"].items())
+    operational = "".join(
+        "<li><strong>" + tag(name) + "</strong>：served ID "
+        + tag(", ".join(k for k in record["served_models"] if k != "None"))
+        + "；输入 / 输出 token " + tag(record["reported_prompt_tokens"])
+        + " / " + tag(record["reported_completion_tokens"])
+        + "；延迟中位数 / P95 " + tag(record["elapsed_median_s"])
+        + " / " + tag(record["elapsed_p95_s"]) + " 秒。</li>"
+        for name, record in data["providers"].items())
     pilot = data.get("pilot")
     pilot_text = (f"{pilot['count']} 题；合格候选 {pilot['eligible_count']} 题；清单哈希 <code>{tag(pilot['manifest_sha256'])}</code>"
                   if pilot else "尚未形成符合事先条件的 40 题冻结清单。")
@@ -61,6 +69,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <section id="outcome"><h2>结论与范围</h2><p class="lead">本里程碑实现了 ARC 题目加载、受限程序执行、精确评分、双模型单程序校准，以及不含空间与分化机制的进化搜索对照。下表报告的是单模型程序成功率，不能据此推断多 Agent 组织优势。</p>
 <div class="note"><strong>P2 pilot：</strong>{pilot_text}</div></section>
 <section id="evidence"><h2>实际证据</h2><div class="scroll"><table><thead><tr><th>模型</th><th>结算 / 计划</th><th>HTTP 200</th><th>提取程序</th><th>可执行</th><th>成功样本 / 1600</th><th>pass@4 任务 / 400</th><th>保守估计 ¥</th></tr></thead><tbody>{rows}</tbody></table></div>
+<ul>{operational}</ul>
 <p class="muted">估算费用采用官方公开的高峰、未缓存输入和输出单价，以及内部 10 元/美元安全换算。它是上界式预算记录，非提供商已核对账单；各家上限 300 元。</p>
 <p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。</p></section>
 <section id="mapping"><h2>用户要求与交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>实施及证据</th><th>未解决</th></tr></thead><tbody>
