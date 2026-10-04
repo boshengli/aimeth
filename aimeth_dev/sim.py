@@ -52,6 +52,7 @@ class Params:
     lesion_step: int | None = None
     lesion_fraction_side: str = "right"
     condition: str = "full"
+    vectorized_division: bool = False  # True for tissue-scale runs (one random direction per attempt)
 
 
 @dataclass
@@ -160,9 +161,42 @@ def _targets(s: State, p: Params, rng: np.random.Generator):
     return t
 
 
+def _divide_vec(s: State, p: Params, rng: np.random.Generator, step: int):
+    """Vectorised division: each candidate tries one random neighbour; target conflicts
+    are resolved by a random priority; births are truncated at the living-cell ceiling."""
+    n = p.size
+    cand = s.alive & (s.x[..., G["GROW"]] > p.grow_threshold) & (step - s.last_div >= p.refractory)
+    ys, xs = np.nonzero(cand)
+    room = p.max_cells - int(s.alive.sum())
+    if len(ys) == 0 or room <= 0:
+        return
+    order = rng.permutation(len(ys))
+    ys, xs = ys[order], xs[order]
+    d = rng.integers(0, 4, len(ys))
+    ny = ys + np.array([1, -1, 0, 0])[d]
+    nx = xs + np.array([0, 0, 1, -1])[d]
+    ok = (ny >= 0) & (ny < n) & (nx >= 0) & (nx < n)
+    ys, xs, ny, nx = ys[ok], xs[ok], ny[ok], nx[ok]
+    ok = ~s.alive[ny, nx]
+    ys, xs, ny, nx = ys[ok], xs[ok], ny[ok], nx[ok]
+    _, first = np.unique(ny * n + nx, return_index=True)
+    first = np.sort(first)[:room]
+    ys, xs, ny, nx = ys[first], xs[first], ny[first], nx[first]
+    s.alive[ny, nx] = True
+    s.x[ny, nx] = np.clip(s.x[ys, xs] + rng.normal(0, p.inherit_noise, (len(ys), len(GENES))), 0, 1)
+    s.clone[ny, nx] = s.clone[ys, xs]
+    s.birth[ny, nx] = step
+    s.last_div[ny, nx] = step
+    s.last_div[ys, xs] = step
+    s.last_call[ny, nx] = s.last_call[ys, xs]
+    s.births += len(ys)
+
+
 def _divide(s: State, p: Params, rng: np.random.Generator, step: int):
     if p.condition == "fixed_population":
         return
+    if p.vectorized_division:
+        return _divide_vec(s, p, rng, step)
     n = p.size
     cand = s.alive & (s.x[..., G["GROW"]] > p.grow_threshold) & (step - s.last_div >= p.refractory)
     ys, xs = np.nonzero(cand)
