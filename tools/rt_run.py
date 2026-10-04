@@ -24,6 +24,8 @@ PRESETS = {  # request extras per model, matched to the calibration runs
     "glm-5.3-flash": {"thinking": {"type": "enabled"}, "reasoning_effort": "low"},
     "glm-5.3": {"thinking": {"type": "enabled"}},
     "deepseek-flash": {"thinking": {"type": "enabled"}, "reasoning_effort": "low"},
+    ("glm_cc", "glm-5.3"): {"think_budget": 32000, "effort": "high"},
+    ("glm_cc", "glm-5.3-flash"): {"think_budget": 32000, "effort": "high"},
 }
 
 
@@ -93,7 +95,7 @@ def main():
     llm = LLM(a.receipts, start=a.llm_start, cap=a.llm_cap, budget_cny=a.budget_cny)
     ev = EvalClient(a.evalq)
     lock = threading.Lock()
-    extra = dict(PRESETS.get(a.model) or {})
+    extra = dict(PRESETS.get((a.provider, a.model)) or ({} if a.provider == "glm_cc" else PRESETS.get(a.model)) or {})
     if a.reasoning_effort:
         extra["reasoning_effort"] = a.reasoning_effort
 

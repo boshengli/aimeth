@@ -24,6 +24,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("annot"); ap.add_argument("out"); ap.add_argument("queue")
     ap.add_argument("--specs", nargs="+", required=True)
+    ap.add_argument("--provider", default="zhipu_coding", help="zhipu_coding (direct) or glm_cc (through Claude Code)")
+    ap.add_argument("--prefix", default="", help="job_id prefix to keep runs apart")
     a = ap.parse_args()
     rows = [r for r in csv.reader(open(a.annot, encoding="utf-8-sig")) if r and r[0].startswith("Solyc")]
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
@@ -35,14 +37,16 @@ def main():
             for spec in a.specs:
                 model, mode, k = spec.split(":")
                 extra = {"thinking": {"type": "disabled"}} if mode == "nothink" else {}
-                max_tok = 1024 if mode == "nothink" else 16384
+                cc = {"think_budget": 32000, "effort": "high"} if mode == "cchigh" else {}
+                max_tok = 1024 if mode == "nothink" else (16000 if mode == "cc" else 16384)
                 for s in range(int(k)):
                     path = out / f"{gid}__{model}__{mode}__s{s}.json"
                     if path.exists():
                         continue
-                    q.write(json.dumps({"job_id": f"pf:{gid}:{model}:{mode}:s{s}", "workload": "gene_profile", "model": model,
+                    q.write(json.dumps({"job_id": f"{a.prefix}pf:{gid}:{model}:{mode}:s{s}", "workload": "gene_profile", "model": model,
                                         "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}],
                                         "max_tokens": max_tok, "extra": extra, "out_path": str(path),
+                                        "provider": a.provider, "cc": cc,
                                         "meta": {"gene": gid, "symbol": sym, "mode": mode, "sample": s}}, ensure_ascii=False) + "\n")
                     n += 1
     print("enqueued", n)

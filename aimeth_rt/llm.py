@@ -14,6 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from aimeth_bio.glm_pool import Limiter, RATE_CODES  # noqa: E402
 from aimeth_bio.llm_client import chat  # noqa: E402
+from aimeth_bio.cc_client import cc_chat  # noqa: E402
 
 
 # Conservative cost envelope (USD per million tokens, converted at 10 CNY/USD as in the calibration ledger).
@@ -37,8 +38,13 @@ class LLM:
                 return {"ok": False, "error": "budget_exhausted", "outcome": "not_sent"}
             self.lim.acquire()
             try:
-                rec = chat(provider, model, messages, str(self.rdir / f"{workload}.jsonl"), max_tokens=max_tokens,
-                           extra=extra, tag=tag, timeout=300, total_timeout=3000)
+                if provider == "glm_cc":  # GLM Coding Plan through Claude Code
+                    ex = extra or {}
+                    rec = cc_chat(model, messages, str(self.rdir / f"{workload}.jsonl"), max_tokens=max_tokens,
+                                  think_budget=ex.get("think_budget"), effort=ex.get("effort"), tag=tag, timeout=3000)
+                else:
+                    rec = chat(provider, model, messages, str(self.rdir / f"{workload}.jsonl"), max_tokens=max_tokens,
+                               extra=extra, tag=tag, timeout=300, total_timeout=3000)
             except Exception as e:  # defensive: chat() already catches, but keep the limiter consistent
                 rec = {"ok": False, "error": f"{type(e).__name__}: {e}", "outcome": "unknown"}
             code = None

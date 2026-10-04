@@ -32,6 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from aimeth_bio.llm_client import chat  # noqa: E402
+from aimeth_bio.cc_client import cc_chat  # noqa: E402
 
 
 RATE_CODES = {"1302", "1303", "1305"}  # Zhipu rate/concurrency codes; others (e.g. 1311 plan permission) are permanent
@@ -128,10 +129,16 @@ class Pool:
             fh.write(job_id + "\n")
 
     def run_job(self, j: dict):
-        rec = chat(j.get("provider", "zhipu_coding"), j["model"], j["messages"],
-                   str(self.rdir / f"{j['workload']}.jsonl"), max_tokens=j.get("max_tokens", 32768),
-                   extra=j.get("extra"), tag={"job_id": j["job_id"], **j.get("meta", {})},
-                   timeout=300, total_timeout=3000)
+        receipts = str(self.rdir / f"{j['workload']}.jsonl")
+        tag = {"job_id": j["job_id"], **j.get("meta", {})}
+        if j.get("provider") == "glm_cc":  # GLM Coding Plan through Claude Code (officially supported tool)
+            cc = j.get("cc") or {}
+            rec = cc_chat(j["model"], j["messages"], receipts, max_tokens=j.get("max_tokens", 32000),
+                          think_budget=cc.get("think_budget"), effort=cc.get("effort"), tag=tag, timeout=3000)
+        else:
+            rec = chat(j.get("provider", "zhipu_coding"), j["model"], j["messages"], receipts,
+                       max_tokens=j.get("max_tokens", 32768), extra=j.get("extra"), tag=tag,
+                       timeout=300, total_timeout=3000)
         if rec.get("ok"):
             content = rec.get("content") or ""
             body = extract_python(content) if j.get("extract") == "python" else content
