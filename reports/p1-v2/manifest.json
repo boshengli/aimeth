@@ -1,0 +1,15 @@
+{
+ "started_unix": 1791097970.5609202,
+ "python": "3.11.16",
+ "numpy": "2.2.6",
+ "host": "gpu08",
+ "source_sha256": {
+  "aimeth_dev/__init__.py": "a0e0fb34d8473d7224a5489b3942ccee3efc0c377712b331c59144d5794d2de4",
+  "aimeth_dev/metrics.py": "43c87d3a95602a03654c5e97e1ad4262183adbc16399cc756e62f4d6297a2951",
+  "aimeth_dev/sim.py": "84233a5528ee90cf62bb66069e1ae031e229b12b61ec49230ac6fdb5de44d619",
+  "aimeth_dev/tissue.py": "6526e8fb0aa9ca5dd006b1d70bee957a546b05f91bee889e95011dc2b8fdc118",
+  "tools/run_tissue_v2.py": "27baaebc16cf322ac90031ac7fa45934ad625f10963eb29be9d539e7b5a43c12",
+  "docs/p1-v2-mesoscopic-domains-protocol.md": "86a558e01d97d2774668c704fa2468be6ab6f0f5e235ea49d647a0fbf0df5aee"
+ },
+ "finished_unix": 1791105720.1965554
+}
