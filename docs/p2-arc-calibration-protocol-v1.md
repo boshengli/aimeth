@@ -6,7 +6,8 @@ Status: exploratory calibration protocol. Source branch: `codex/p2-arc` from `cl
 
 - ARC-AGI-1 evaluation data are loaded from the locally archived release with SHA-256 `a87291143a4d5206cb5264eeb280a1b9c367e3523a992f4eff5702265471dbac`. The task work order identifies upstream ARC-AGI-1 commit `399030444e0a`. The archive also contains ARC-AGI-2, which this calibration does not use.
 - The prompt contains training input/output pairs and test inputs. Test outputs stay in the local grader and are never sent to a model or mutation operator.
-- Each model is asked for one Python `transform(grid)` program per independent request. Four independent requests are made per task and model. A candidate must produce one exact output for every test input; the grader separately supports ARC's maximum of two attempts per test output for future arms.
+- Each model is asked for one Python `transform(grid)` program per independent request. Four independent requests are made per task and model. A candidate must produce one exact output for every test input; the grader separately supports this project's maximum of two attempts per test output for future arms.
+- The two-attempt limit follows the [ARC Prize 2024 technical report](https://arcprize.org/media/arc-prize-2024-technical-report.pdf) and this work order. The [original ARC-AGI-1 repository](https://github.com/fchollet/ARC-AGI) describes three trials, so the two-attempt rule is an explicit project/competition convention, not an invariant of every ARC release. The four programs here are *calibration samples*, not four guesses in one official submission.
 - Any HTTP error, transport uncertainty, missing program, rejected program, invalid grid, timeout, or wrong answer is counted as unsuccessful. An ambiguous dispatched request is never automatically duplicated.
 
 ## Frozen API condition
@@ -34,3 +35,5 @@ The control keeps a finite population of `transform` programs and scores candida
 ## Evidence limits
 
 The model-generated programs may exploit public ARC task familiarity in model pretraining; the project cannot establish clean training-data provenance for provider weights. Model identity is the served API identifier, not a verified weight digest. Pilot difficulty measured from the same two model APIs must not be presented as a model-independent property of the tasks. Task-level calibration samples cannot be used as independent replicates for the later organization comparison.
+
+These are ARC-derived program-synthesis research measurements, not official ARC Prize scores. The [ARC Prize verified testing policy](https://arcprize.org/policy) evaluates direct task-to-grid predictors without client-side tools, while this project asks models for executable programs and runs an external evaluator.

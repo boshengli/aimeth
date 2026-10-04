@@ -42,6 +42,14 @@ class ArcHarnessTests(unittest.TestCase):
                          "execution_error")
         self.assertEqual(run_program("def transform(grid):\n    return grid.tofile('/tmp/x')", [inp]).status,
                          "invalid_program")
+        self.assertEqual(run_program("import os\ndef transform(grid):\n    return grid", [inp]).status,
+                         "invalid_program")
+
+    def test_wall_timeout_stops_unbounded_program(self):
+        result = run_program("def transform(grid):\n    while True:\n        pass", [[[1]]], timeout_s=0.5)
+        if result.status == "sandbox_unavailable":
+            self.skipTest("OS sandbox unavailable")
+        self.assertEqual(result.status, "timeout")
 
     @unittest.skipUnless(ARCHIVE.exists(), "local ARC archive unavailable")
     def test_train_scoring_and_hidden_test_grading(self):
