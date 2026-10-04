@@ -7,8 +7,11 @@ import csv
 from hashlib import sha256
 import json
 from pathlib import Path
+import platform
 from statistics import median
 from typing import Any
+
+import numpy as np
 
 
 def _quantile(values: list[float], proportion: float) -> float | None:
@@ -51,6 +54,9 @@ def summarize(private_root: Path, public_csv: Path, output: Path,
         rows = list(csv.DictReader(stream))
     summary: dict[str, Any] = {"schema_version": 1, "calibration_tasks": len(rows),
                                "samples_per_task_per_model": 4, "providers": {},
+                               "scoring_runtime": {"python": platform.python_version(),
+                                                   "numpy": np.__version__,
+                                                   "system": platform.system()},
                                "data_scope": "ARC-AGI-1 evaluation, 400 tasks",
                                "interpretation": "descriptive single-program difficulty calibration; no organization effect",
                                "calibration_csv_sha256": sha256(public_csv.read_bytes()).hexdigest()}

@@ -81,9 +81,9 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <tr><td>进化搜索对照</td><td>同一 transform 表达、训练对评分、显式 LLM 调用总预算；仅两题冒烟</td><td>尚无正式进化对照或组织效应估计</td></tr>
 </tbody></table></div></section>
 <section id="limits"><h2>负面结果与科学解释</h2><ul>{negative_html}</ul><p>最初 DeepSeek 8,192-token 配置的一个请求全部用于思考，没有最终程序，独立保留为失败探测。早期评分器对普通局部变量和合法 NumPy 操作过严；初版评分留档，最终全部回执按修正后的同一规则重新评分。修正规则前已看过初步汇总成功数，因此本轮是探索性校准。模型请求成功、程序可执行和测试通过为三个不同层次。</p>
-<p>本研究要求模型编写程序，并由外部执行器评分，不能称为 ARC Prize 官方成绩；其官方核验政策采用直接从题目预测答案网格的设定。两次候选输出遵循 ARC Prize 竞赛口径，原始 ARC-AGI-1 仓库则描述三次尝试。四次独立程序采样只用于本项目的难度校准。</p></section>
+<p>本研究要求模型编写程序，并由外部执行器评分，不能称为 ARC Prize 官方成绩；其官方核验政策采用直接从题目预测答案网格的设定。两次候选输出遵循 ARC Prize 竞赛口径，原始 ARC-AGI-1 仓库则描述三次尝试。公开 ARC 题目可能已进入服务商模型训练材料，权重来源无法独立核实。四次独立程序采样只用于本项目的难度校准。每题跨模型仅八个样本，汇总成功率以 12.5 个百分点为步长；20%–60% 是粗分层规则，不是精确难度估计。</p></section>
 <section id="next"><h2>下一阶段就绪度</h2><p>已可用于设计：ARC 工程接口和难度分层。已可用于实现：同一程序评测器与进化对照代码。可运行 P2 pilot 的条件是两家各 1,600 次结算、账本审计通过、至少 40 题满足预定难度并冻结名单。确认性组织比较仍需独立群体重复、预算匹配和预先冻结的对照；其运行尚未获本里程碑验证。下一决策是冻结组织实验各臂、资源上限、停止规则与独立重复数。数学或生物学能力的涌现尚未从本次校准得到证明。</p>
-<p class="muted">数据包 SHA-256：<code>a87291143a4d5206cb5264eeb280a1b9c367e3523a992f4eff5702265471dbac</code>。源协议：<a href="../docs/p2-arc-calibration-protocol-v1.md">P2 ARC 协议</a>。来源：<a href="https://github.com/fchollet/ARC-AGI">ARC-AGI-1 原始仓库</a>、<a href="https://arcprize.org/policy">ARC Prize 核验政策</a>、<a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek 价格</a>、<a href="https://docs.z.ai/guides/overview/pricing">Z.AI 价格</a>。</p></section>
+<p class="muted">数据包 SHA-256：<code>a87291143a4d5206cb5264eeb280a1b9c367e3523a992f4eff5702265471dbac</code>。评分环境：Python {tag(data['scoring_runtime']['python'])}、NumPy {tag(data['scoring_runtime']['numpy'])}、{tag(data['scoring_runtime']['system'])}。源协议：<a href="../docs/p2-arc-calibration-protocol-v1.md">P2 ARC 协议</a>。来源：<a href="https://github.com/fchollet/ARC-AGI">ARC-AGI-1 原始仓库</a>、<a href="https://arcprize.org/policy">ARC Prize 核验政策</a>、<a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek 价格</a>、<a href="https://docs.z.ai/guides/overview/pricing">Z.AI 价格</a>。</p></section>
 </main><footer>版本化研究报告 · 生成时间 {tag(created)} · AIMeth</footer></body></html>"""
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html)
