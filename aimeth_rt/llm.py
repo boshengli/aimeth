@@ -16,9 +16,15 @@ from aimeth_bio.glm_pool import Limiter, RATE_CODES  # noqa: E402
 from aimeth_bio.llm_client import chat  # noqa: E402
 
 
+# Conservative cost envelope (USD per million tokens, converted at 10 CNY/USD as in the calibration ledger).
+PRICES_USD_PER_M = {"deepseek-flash": (0.30, 1.20)}
+CNY_PER_USD_ENVELOPE = 10.0
+
+
 class LLM:
-    def __init__(self, receipts_dir: str, start: int = 4, cap: int = 8):
+    def __init__(self, receipts_dir: str, start: int = 4, cap: int = 8, budget_cny: float | None = None):
         self.lim = Limiter(start, cap, 4)
+        self.budget_cny, self.spent_cny = budget_cny, 0.0
         self.rdir = Path(receipts_dir)
         self.rdir.mkdir(parents=True, exist_ok=True)
         self.lock = threading.Lock()
@@ -27,6 +33,8 @@ class LLM:
     def call(self, provider: str, model: str, messages: list[dict], *, workload: str, max_tokens: int,
              extra: dict | None = None, tag: dict | None = None) -> dict:
         while True:
+            if self.budget_cny is not None and self.spent_cny >= self.budget_cny:
+                return {"ok": False, "error": "budget_exhausted", "outcome": "not_sent"}
             self.lim.acquire()
             try:
                 rec = chat(provider, model, messages, str(self.rdir / f"{workload}.jsonl"), max_tokens=max_tokens,
@@ -45,7 +53,13 @@ class LLM:
             else:
                 outcome = "unknown" if rec.get("outcome") == "unknown" else "error"
             self.lim.release(outcome)
+            u = rec.get("usage") or {}
+            pin, pout = PRICES_USD_PER_M.get(model, (0.0, 0.0))
             with self.lock:
                 self.stats[outcome] += 1
+                self.spent_cny += ((u.get("prompt_tokens") or 0) * pin + (u.get("completion_tokens") or 0) * pout) \
+                    / 1e6 * CNY_PER_USD_ENVELOPE
+                if outcome == "unknown" and not u:  # unknown outcome: charge a worst case of max_tokens output
+                    self.spent_cny += max_tokens * pout / 1e6 * CNY_PER_USD_ENVELOPE
             if outcome != "rate_limited":
                 return rec

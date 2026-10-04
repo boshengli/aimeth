@@ -119,7 +119,7 @@ def _step(rec: dict, prog: str | None, ev: dict) -> dict:
 
 def run_workflow(arm: str, kind: str, task_id: str, task: dict | None, first_prompt: list[dict], llm, ev_client,
                  *, provider: str, model: str, n: int, max_tokens: int, extra: dict | None, tag: dict,
-                 val_seed: int = 0) -> dict:
+                 val_seed: int = 0, eval_extra: dict | None = None) -> dict:
     extract = extract_arc if kind == "arc" else extract_bio
     steps, best = [], (float("-inf"), None, -1)
     msgs = list(first_prompt)
@@ -128,9 +128,18 @@ def run_workflow(arm: str, kind: str, task_id: str, task: dict | None, first_pro
         rec = llm.call(provider, model, call_msgs, workload=f"rt_{kind}_{arm}", max_tokens=max_tokens, extra=extra,
                        tag={**tag, "round": i})
         content = rec.get("content") if rec.get("ok") else None
+        source = "content"
+        if rec.get("ok") and not (content or "").strip() and rec.get("reasoning_content"):
+            # Some thinking models (observed: deepseek-flash in multi-turn) finish with the final code block inside
+            # the reasoning stream and an empty answer. Same rule for every arm: take the LAST complete block.
+            blocks = [b for b in re.findall(r"```(?:python)?\s*\n(.*?)```", rec["reasoning_content"], flags=re.S)
+                      if ("def transform" in b if kind == "arc" else "def predict" in b)]
+            if blocks:
+                content = "```python\n" + blocks[-1] + "```"
+                source = "reasoning_fallback"
         prog = extract(content)
-        ev = ev_client.run(kind, task_id, prog, val_seed=val_seed) if prog else {"status": "no_program"}
-        steps.append(_step(rec, prog, ev))
+        ev = ev_client.run(kind, task_id, prog, val_seed=val_seed, **(eval_extra or {})) if prog else {"status": "no_program"}
+        steps.append({**_step(rec, prog, ev), "code_source": source if prog else None})
         sc = _score(kind, ev)
         if sc > best[0] or (arm == "self_repair" and sc == best[0] and sc > float("-inf")):
             best = (sc, ev.get("eval_id"), i)

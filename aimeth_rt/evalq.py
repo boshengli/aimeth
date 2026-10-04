@@ -72,8 +72,19 @@ def _bwrap(binds: list[tuple[str, str]], out: Path) -> list[str]:
 
 # ---------------------------------------------------------------- handlers (run inside the daemon on GPU08)
 
+ARC_ROOT = "/data/libs/aimeth/data/arc-agi/"
+
+
+def _arc_dir(job: dict, cfg: dict) -> Path:
+    d = job.get("arc_dir") or cfg["arc_dir"]
+    real = os.path.realpath(d)
+    if not real.startswith(ARC_ROOT):
+        raise ValueError("arc_dir outside the ARC data root")
+    return Path(real)
+
+
 def handle_arc(job: dict, cfg: dict) -> tuple[dict, dict]:
-    task = json.load(open(Path(cfg["arc_dir"]) / f"{job['task_id']}.json"))
+    task = json.load(open(_arc_dir(job, cfg) / f"{job['task_id']}.json"))
     visible = {"train": task["train"], "test": [{"input": p["input"]} for p in task["test"]]}
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
