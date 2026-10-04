@@ -50,12 +50,13 @@ def audit(run_dir: Path, arc_manifest: Path, bio_manifest: Path) -> dict:
                            if r.get("event") == "task_started"]
             if len(started_ids) != len(set(started_ids)):
                 failures.append(f"duplicate task start: {path.name}")
-            if set(started_ids) != set(got):
-                failures.append(f"task start/result mismatch: {path.name}")
+            if not set(started_ids).issubset(set(got)):
+                failures.append(f"task start lacks result or unknown-status record: {path.name}")
             failed_results = sum(not r.get("final_eval_id") for r in rows)
             counts[f"{family}/{arm}"] = {
                 "planned": len(ids), "settled": len(rows), "failed_or_ungraded": failed_results,
                 "unknown_dispatch_outcomes": sum(r.get("dispatch_outcome") == "unknown" for r in rows),
+                "not_started_tasks": sum(r.get("dispatch_outcome") == "not_started" for r in rows),
                 "provider_errors": sum(not s.get("ok", False) for r in rows for s in r.get("steps", [])
                                        if "ok" in s),
                 "completion_reasoning_tokens_known_sum": sum(

@@ -6,6 +6,7 @@ import unittest
 from tools.verify_p2_controls_run import ARMS, audit
 from tools.rt_run import finalize_fenced_tasks
 from aimeth_rt.control_arms import Budget
+from tools.finalize_p2_incomplete import finalize as finalize_interrupted_run
 
 
 class PhaseBAuditTest(unittest.TestCase):
@@ -105,6 +106,28 @@ class PhaseBAuditTest(unittest.TestCase):
             self.assertEqual(counts["unknown_dispatch_outcomes"], 1)
             self.assertEqual(counts["tasks_with_unknown_token_usage"], 1)
             self.assertEqual(counts["completion_reasoning_tokens_known_sum"], 0)
+
+    def test_offline_finalizer_accounts_for_unknown_and_never_started_tasks(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            run_dir = root / "runs"
+            arc = root / "arc.json"
+            bio = root / "bio.json"
+            arc.write_text(json.dumps({"tasks": [{"task_id": "started"},
+                                                   {"task_id": "notstarted"}]}))
+            bio.write_text(json.dumps([{"task_id": "bio1"}]))
+            events = run_dir / "arc2-independent.events.jsonl"
+            events.parent.mkdir(parents=True)
+            events.write_text(json.dumps({"event": "task_started", "task_id": "started", "rep": 0}) + "\n")
+            counts = finalize_interrupted_run(run_dir, arc, bio)
+            self.assertEqual(counts["unknown_started"], 1)
+            self.assertEqual(counts["not_started"], 20)
+            audited = audit(run_dir, arc, bio)
+            self.assertTrue(audited["complete"], audited["integrity_failures"])
+            arm = audited["results"]["arc2/independent"]
+            self.assertEqual(arm["unknown_dispatch_outcomes"], 1)
+            self.assertEqual(arm["not_started_tasks"], 1)
+            self.assertEqual(arm["failed_or_ungraded"], 2)
 
 
 if __name__ == "__main__":
