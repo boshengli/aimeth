@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2.7 v4 · GPU08 10K 提交状态</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f1f5f4;color:#182f32;font:16px/1.65 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1000px;margin:auto;padding:24px}header,section{background:#fff;border:1px solid #d4e0dc;border-radius:12px;padding:22px;margin:14px 0}header{border-top:6px solid #08776a}h1{font-size:clamp(28px,4vw,40px);line-height:1.2}h2{font-size:22px;margin:0 0 10px}.lead{font-size:20px;font-weight:650}.pill{display:inline-block;border-radius:25px;background:#fff0d6;color:#75410a;padding:3px 10px}a{color:#086b60}table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:9px;border-bottom:1px solid #dce5e1}th{width:26%}code{overflow-wrap:anywhere}.note{padding:12px;background:#fff4e4;border-left:4px solid #bd761d}.ok{padding:12px;background:#e6f4ed;border-left:4px solid #16815c}nav{display:flex;gap:12px;flex-wrap:wrap}@media(max-width:620px){main{padding:10px}header,section{padding:15px}table,tbody,tr,th,td{display:block}th{width:auto;border:0;padding-bottom:0}td{padding-top:2px}}@media print{body{background:#fff;font-size:11pt}main{max-width:none;padding:0}header,section{break-inside:avoid;border:0;padding:10px 0}}
+</style></head><body><main>
+<header><small>AIMeth · M2.7 · v4 · 2026-09-30 12:07（Asia/Shanghai）</small><h1>10K GPU08 作业已提交，等待节点恢复</h1><p class="lead"><span class="pill">Slurm 233230 · PENDING · gpu08 不可用</span></p><p>用户指出 CPU 节点执行不符合 GPU 群体运行要求。纠偏后，已将完整 10K 本地推理作业提交到 GPU 分区，并明确请求 gpu08 的全部 8 张 H20。Slurm 接受提交，但 gpu08 当前 DOWN、Not responding，作业尚未获得节点，因而尚未登录、加载模型或发出任何人口请求。</p><nav aria-label="报告章节"><a href="#mapping">要求与证据</a><a href="#slurm">集群状态</a><a href="#identity">执行身份</a><a href="#science">科学边界与就绪状态</a></nav></header>
+<section id="mapping"><h2>用户要求 → 实现 → 证据 → 剩余差距</h2><table><tbody>
+<tr><th>群体研究直接上 10K</th><td>配置为 10,000 分析 Agent + 501 治理角色、两轮 21,002 调用槽、并发 16；无单 Agent 成功或小规模数学门槛。已准备并提交完整群体作业，不执行单 Agent 数学探针。</td></tr>
+<tr><th>GPU 节点运行</th><td>Slurm 作业 233230 请求 <code>gpu</code>、账号 <code>libs</code>、预约 <code>Res_libs</code>、节点 <code>gpu08</code>、8×H20、整节点 CPU/内存。当前状态是排队，尚未分配。</td></tr>
+<tr><th>可追溯与可恢复</th><td>代码包、独立人口配置、Slurm 脚本、SGLang 容器和模型配置均记录 SHA-256；作业数据写入项目私有的版本化目录。</td></tr>
+<tr><th>GPU08 可访问性</th><td>需要有运行中的本项目 Slurm 分配后才能登录。目前作业仍 Pending，故未尝试计算节点 SSH；GPU 使用和服务启动还未验证。</td></tr>
+<tr><th>备选 GPU01</th><td>未提交：GPU01 处于 IDLE+RESERVED，活动预约属于账号 <code>zuodq</code>。未占用、取消或改动该预约。</td></tr></tbody></table></section>
+<section id="slurm"><h2>实际调度证据</h2><div class="ok"><strong>Slurm 已接收作业 233230。</strong> 当前为 <code>PENDING (ReqNodeNotAvail, UnavailableNodes:gpu08)</code>，已用时 00:00:00，尚无 NodeList 分配。</div><table><tbody>
+<tr><th>gpu08</th><td><code>DOWN+RESERVED+NOT_RESPONDING</code>；Slurm reason 为 <code>Not responding</code>。虽有分配给账号 <code>libs</code> 的预约 <code>Res_libs</code>，节点不可调度；普通作业不能将失联节点恢复为 UP。</td></tr>
+<tr><th>gpu01</th><td>8×A100 节点为 <code>IDLE+RESERVED</code>，预约 <code>res_lilei_zuodq</code> 属于其他账号。GPU01 不在本次作业范围。</td></tr>
+<tr><th>运行状态</th><td>没有 SSH 到 gpu08；没有模型进程、GPU 显存占用或数学请求。GPU08 节点恢复前，作业只是排队请求，不是 GPU 执行结果。</td></tr>
+<tr><th>上一条 CPU 路径</th><td><a href="m2-7-direct-10k-v3.html">v3 记录</a>将 233163 作为执行偏差保留：tcu165、0 GPU、受控停止，1,119 个不完整生成失败，不并入 GPU 人口。</td></tr></tbody></table>
+<p class="note">目前无法靠本项目用户权限在 Slurm 中恢复 gpu08 的 DOWN 状态。此报告记录实际限制，不声称节点已被“拿回”。</p></section>
+<section id="identity"><h2>作业与可复现身份</h2><table><tbody>
+<tr><th>源码基线</th><td>commit <code>1297a7ea9199188d3fc7aca15a3e09edf767b4ca</code><br>源码归档 SHA-256 <code>616912cfb95fcd0955110fe40d75d7f1c37ed11ccea5b73142755e76e85e2dae</code></td></tr>
+<tr><th>人口配置</th><td>ID <code>slcw10k-20260930-gpu08-v2</code>，seed <code>20260930</code>；SHA-256 <code>75a2912ea6d4e98955228c03f70c411cb027988dbf6ed720bcf70143275df164</code></td></tr>
+<tr><th>作业脚本</th><td>SHA-256 <code>b16f282d25aaa6e8ce47eed2ae97a678cfbfe86ff5ca2b901cad2573ac16fc89</code></td></tr>
+<tr><th>模型运行时</th><td>SGLang DSV4 Hopper 容器 SHA-256 <code>f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f</code>；模型配置 SHA-256 <code>6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023</code></td></tr>
+<tr><th>私有运行目录</th><td><code>/data/libs/aimeth/slcw10k-20260930-gpu08-v2</code></td></tr></tbody></table></section>
+<section id="science"><h2>科学解释与下一阶段就绪度</h2><p>已完成的是一次 GPU08 全机作业提交，未完成的是 GPU 运行。没有模型输出、群体产物、证明或反例，也没有架构效应数据。已建立的事件、回执和检查点能力必须在作业实际运行中再验证。</p><p><strong>当前结论：</strong>准备就绪可运行，但受集群节点状态阻塞；不能宣称实验已启动。下一项必要事件是管理员/调度器使 gpu08 恢复可调度，或用户指定一个可合法分配的 GPU 节点。作业状态此刻已由 <code>squeue</code> 与 <code>sacct</code> 核验。</p><p class="note">本 HTML 已离线进行内容、章节锚点、链接目标及窄屏 CSS 检查；浏览器桌面/窄屏视觉 QA 仍未完成，遵循项目既有浏览器策略阻止。</p></section>
+<footer>历史报告：<a href="m2-7-direct-10k-v1.html">v1</a> · <a href="m2-7-direct-10k-v2.html">v2</a> · <a href="m2-7-direct-10k-v3.html">v3</a></footer>
+</main></body></html>

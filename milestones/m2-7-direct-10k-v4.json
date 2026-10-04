@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7",
+  "version": "v4",
+  "snapshot_time": "2026-09-30 12:07 Asia/Shanghai",
+  "outcome": "A full 10K local-inference job was submitted to Slurm for gpu08, requesting all 8 H20 GPUs. Slurm accepted it but the job is pending because gpu08 is DOWN and not responding; no GPU execution has started.",
+  "slurm": {"job_id": "233230", "state": "PENDING", "reason": "ReqNodeNotAvail, UnavailableNodes:gpu08", "partition": "gpu", "account": "libs", "reservation": "Res_libs", "node": "gpu08", "requested_gpus": 8, "gpu_type": "nvidia_h20_96gb", "allocated_node": null},
+  "node_observation": {"gpu08_state": "DOWN+RESERVED+NOT_RESPONDING", "gpu08_reason": "Not responding", "gpu01_state": "IDLE+RESERVED", "gpu01_reservation": "res_lilei_zuodq", "gpu01_reservation_owner": "zuodq", "gpu01_used": false},
+  "population": {"run_id": "slcw10k-20260930-gpu08-v2", "analysis_agents": 10000, "governance_roles": 501, "planned_calls": 21002, "max_inflight": 16, "cycles": 2, "seed": 20260930},
+  "execution": {"ssh_to_gpu08": false, "model_started": false, "gpu_activity_observed": false, "population_requests_sent": 0},
+  "identities": {
+    "source_commit": "1297a7ea9199188d3fc7aca15a3e09edf767b4ca",
+    "source_bundle_sha256": "616912cfb95fcd0955110fe40d75d7f1c37ed11ccea5b73142755e76e85e2dae",
+    "population_config_sha256": "75a2912ea6d4e98955228c03f70c411cb027988dbf6ed720bcf70143275df164",
+    "slurm_script_sha256": "b16f282d25aaa6e8ce47eed2ae97a678cfbfe86ff5ca2b901cad2573ac16fc89",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023"
+  },
+  "private_run_root": "/data/libs/aimeth/slcw10k-20260930-gpu08-v2",
+  "interpretation": {"mathematical_validity_checked": false, "organization_superiority_established": false, "gpu_execution_confirmed": false},
+  "html_qa": "static content, anchors, offline links, and narrow-screen CSS checked; browser visual QA not completed under existing project browser-policy block"
+}

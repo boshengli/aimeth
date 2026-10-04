@@ -1,0 +1,67 @@
+{
+  "version": "v0.3",
+  "updated_at": "2026-10-04T12:32:49+08:00",
+  "cycle_started_at": "2026-10-04T12:17:26+08:00",
+  "next_scheduled_at": "2026-10-04T17:05:43+08:00",
+  "trigger": "heartbeat_aimeth",
+  "state_label": "科学评议已完成；主页只呈现目标、原则与证据边界",
+  "completed": [
+    "完整英文稿v0.1已归档；v0.2补入真实原型结果与对照限制",
+    "核对10篇一手来源，包括最初辣椒Nature Plants文章及架构出处",
+    "复算12条既有校准回执并生成可追溯图表",
+    "独立审查提出5项设计缺口，已明确写入方法与后续实现要求",
+    "修复消息可早于细胞出生的缺陷，24项离线测试通过",
+    "SQLite 持久化独立审查暴露并修复 2 项缺陷；19 项 journal + 24 项 contract 测试通过",
+    "三种候选题目/摘要与证据门槛已完成，尚不是三篇完整候选稿",
+    "v0.3 Results/Methods 新增本地中断恢复结果、两项负面发现与明确边界"
+  ],
+  "current_work": "后续先补独立群体功能证据；不从结构或工程检查推出智能结论",
+  "quota_snapshot": {
+    "observed_at": "2026-10-04T12:31:01+08:00",
+    "five_hour_remaining_percent": 97,
+    "weekly_remaining_percent": 19,
+    "ordinary_usage_allowed": true,
+    "shared_account": true
+  },
+  "scientific_readiness": "not_submission_ready",
+  "heartbeat_received_at": "user_scientific_review_request",
+  "artifacts": [
+    {
+      "path": "candidate-framings-v0.html",
+      "label": "三种题目、摘要和图表叙事",
+      "scope": "共享 v0.2 证据；核心结果仍待实验"
+    },
+    {
+      "path": "journal-review-v0.md",
+      "label": "持久化独立审查",
+      "scope": "保留两项真实缺陷及复现"
+    },
+    {
+      "path": "journal-fix-validation-v0.txt",
+      "label": "修复后的 43 项根任务复核",
+      "scope": "本地软件测试，非智能涌现证据"
+    },
+    {
+      "path": "manuscript-review-v0.3.md",
+      "label": "v0.3 独立一致性审查",
+      "scope": "通过证据核对；零结果解释已按意见修订"
+    },
+    {
+      "path": "review-response-v0.3.md",
+      "label": "v0.3 修订响应",
+      "scope": "实质差异与尚未关闭的科学缺口"
+    },
+    {
+      "path": "journal-fit-v0.md",
+      "label": "Nature/Science 官方要求核查",
+      "scope": "Nature 已核对，Science 官方页面不可访问字段保留未知"
+    },
+    {
+      "path": "science-review-v1.html",
+      "label": "科学进度、策略与判别计划",
+      "scope": "科学目标、原则、证据与因果逻辑"
+    }
+  ],
+  "milestone_label": "M2.12 v2 · 恢复证据与主稿 v0.3",
+  "science_readiness": "No independent population evidence of functional emergence; concepts and causal comparison remain proposed."
+}

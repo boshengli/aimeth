@@ -2,11 +2,20 @@
 
 [![Runtime and integrity checks](https://github.com/boshengli/aimeth/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/boshengli/aimeth/actions/workflows/checks.yml)
 
-**Agent organization and verifiable mathematical discovery under constrained compute.**
+**Task-conditioned cellular development and emergent capability in artificial populations.**
 
-Latest: [M2.6 SLCW source-to-mathematics reconciliation v2](milestones/m2-6-slcw-realignment-v2.html). The [source / implementation / mathematical adaptation map](docs/slcw-math-mapping-v2.md) and [current population plan v2](docs/population-plan-v2.md) restore SLCW V1 and V2 as the research architectures. Neither running nor successfully solving a task with a single Agent is a prerequisite; small-population mathematical success is not a prerequisite for scale-up. Current admission checks concern executable organization, auditable records and recovery, bounded resources, isolated evaluator validity and a frozen protocol. Full V1/V2 mathematical runtime behavior and a new live comparison remain to be delivered. GPU08 project use is authorized again; the eight-GPU smoke check did not establish a deployed inference service.
+Current scientific plan: [task-conditioned cellular development v1](docs/organization-development-plan-v1.md). The central question is whether task-conditioned computational cells self-organize, differentiate and proliferate into mesoscopic structures and tissue-like organization that improves task adaptation and problem-solving. Mathematics is one evaluation domain; it is not the definition of intelligence. Two design principles guide work: regulated development across scales, and fast interaction assessed through task performance. The plan loads four sequential design work packages in [T-20261002-002](tasks/T-20261002-002.md). They are design tasks, not runtime implementation or permission to change a frozen run.
 
-M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. M2 provides S/I/L/X organization baselines and a bounded institutional cluster calibration. No topology-superiority or frontier-proof claim is made.
+Latest execution record: [direct 10K exploratory population](docs/direct-10k-v1.md). V8 remains a separate exploratory condition using 100 groups × 100 analysis Agents plus 501 governance roles; it did not implement the new cell-development hypothesis. No single-Agent success prerequisite or N8/N32/N128 ladder is required. The SLCW V1 mathematical extension is implemented in `aimeth_swarm`; this is engineering evidence, not proof of emergent capability.
+
+M2.7 runtime record: [HTML v2](milestones/m2-7-direct-10k-v2.html) documents GPU08 `NODE_FAIL` and the first GLM gateway job, stopped after 964 attempts because no final answer content was returned and the tokenizer counted long prompts as two tokens. Receipts are privately archived with hashes. The corrected direct 10K GLM configuration is prepared under a new population ID; no mathematical output is claimed. [Correction record](docs/direct-10k-gateway-v2.md).
+
+Public API follow-up: [DeepSeek API diagnostic v1](milestones/m2-7-public-api-deepseek-v1.html) records eight synchronous `deepseek-flash` calls. Default thinking exhausted a 2,048-token completion cap with empty final fields; with thinking disabled, all four calls returned parseable JSON, though the synthesis role missed its required five-item checklist. This is an API/format diagnostic only: no Batch submission, 10K population or mathematical validation occurred.
+
+GPU08 local-serving follow-up: [M2.7 GPU08 DeepSeek smoke v1](milestones/m2-7-gpu08-deepseek-local-v1.html) records three preserved startup attempts. The final run used eight H20 GPUs and completed one loopback DeepSeek-V4-Flash-0731 request with a valid JSON response. Earlier FP8 loading and Triton-cache failures remain in the evidence receipt; this is a serving check only, not a math or 10K result. GPU08 returned to `IDLE+RESERVED` after job 233657.
+
+
+M1 established the research/evidence framework. M1.1 implements a durable single-host execution core: transactional events, fenced retries, atomic checkpoints and cross-round messages. The current M2 scientific design is the task-conditioned cellular-development plan above; earlier S/I/L/X organization prototypes remain historical controls and possible comparison components. No topology-superiority or frontier-proof claim is made.
 
 ## Try the runtime
 
@@ -22,7 +31,7 @@ The demo makes no model calls. Its policy and ring graph are engineering fixture
 
 ## Research and review
 
-- [Current population plan v2](docs/population-plan-v2.md): SLCW V1/V2 implementation and experiment acceptance, superseding the future-work sequence in the historical [M2.5 proposal v1](docs/next-population-plan-v1.md).
+- [Current direct 10K plan](docs/direct-10k-v1.md): first exploratory launch and bounded execution. The [v2 plan](docs/population-plan-v2.md) remains a historical design record; completing both architectures is no longer required before the first 10K run.
 - [Original design → implementation → mathematical adaptation](docs/slcw-math-mapping-v2.md), [structured map](docs/slcw-math-mapping-v2.json), and [M2.6 HTML v2](milestones/m2-6-slcw-realignment-v2.html): evidence, gaps and current readiness.
 - [Research protocol v0.1](docs/research-protocol.md): proposed hypotheses, controls, independent population runs, evaluation and stopping rules.
 - [Evidence audit](docs/evidence-audit.md) and [sources](references/sources.json): observed checks and source-reading boundaries.
@@ -44,7 +53,7 @@ Passing integrity/fault tests does not verify a proof. Private databases, infras
 
 Public repository: [boshengli/aimeth](https://github.com/boshengli/aimeth), published on 2026-09-16 with the original commit history and milestone tag. The [publication HTML](milestones/m1-1-publication-v1.html) and [observed hosted checks](https://github.com/boshengli/aimeth/actions/runs/35050227524) document that transition; earlier reports retain their original dates and status. A software license and DOI have not been assigned. Project administration remains in its separate registered control directory.
 
-The milestone sections below are historical records. Their prospective wording, capability prerequisites and GPU08 availability statements describe the plan or observation at that time; the current research sequence is [population plan v2](docs/population-plan-v2.md). Historical protocols, failed format gates, results and manifests remain unchanged.
+The milestone sections below are historical records. Their prospective wording, capability prerequisites and GPU08 availability statements describe the plan or observation at that time; the current scientific direction is [task-conditioned cellular development](docs/organization-development-plan-v1.md). Historical protocols, failed format gates, results and manifests remain unchanged.
 
 ## M2.1 organization design and model-free tests
 
@@ -142,3 +151,8 @@ cmp milestones/m2-3-role-contract-v1.html /tmp/contract.html
 [HTML assessment](milestones/m2-4a-gpu08-restoration-v1.html) · [observed evidence](reports/gpu08-restoration-v1/evidence.json).
 
 The existing eight-GPU allocation was preserved. A read-only audit found no basecalling or model-serving process for the project user and confirmed the original model directories and current mounts. Under a valid CPU job, the same credentials successfully logged in and were adopted into that job; no GPUs were exposed. This establishes the own-job SSH requirement, not restored eight-GPU access or the exact pre-loan state. No unknown job, existing service, mount or shared data was changed. A legitimate GPU allocation/execution path is still required before new model loading.
+
+## Public API submission testing · M2.11
+
+[Human-readable plan](milestones/m2-11-public-api-submission-plan-v1.html) · [Protocol](docs/public-api-submission-test-plan-v1.md) · [Candidate run card](plans/public-api-submission-test-v1.json).
+Planning delivery only: 76 proposed engineering calls, existing DeepSeek evidence reused, no new population dispatched. The 10K developmental comparison remains a candidate.

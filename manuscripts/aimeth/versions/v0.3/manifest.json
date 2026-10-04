@@ -1,0 +1,23 @@
+{
+  "version": "v0.3",
+  "created_at": "2026-10-04T07:15:33+08:00",
+  "files": {
+    "review-response-v0.3.md": "72b7332456c9428506a070bde29f360fbe2c1a7b47b0c28b1ef4e2ff1456dddc",
+    "claim-evidence.json": "e1f3233d32b27481ca084b8300b494dda1d30a346436454481e431573d1e6070",
+    "progress.html": "7994f22a70297bcb8e325ebbf0d942c1398fd074f89be6f5d790825e0eb95c88",
+    "candidate-framings-v0.md": "0bde617b36c68665e996091f0b87c34cbedc6740ba0fad15175c88ddd98c64f7",
+    "references-v0.json": "ea4be576e7b4efb45b888f6a4a4e110e95cc81f164d28089193c8a4d50981ae4",
+    "candidate-framings-v0.html": "d4bb1ac24f3e79ff7edeedd7ec305e4b7303a567e1785e229bdff76d47b68a22",
+    "literature-v0.md": "484285770e086a87277e8b2132335f98ba225d66a10e2466ec85936ec58302ae",
+    "journal-review-v0.md": "00f77d8c18008d66346805dc5ecb77bb5f712bb7d9a28bb75305453fe8c97b88",
+    "next-priorities.md": "3750699fccecf5e707bb5439e87ab17b09e372f39ca7611e105ad3e080f5f2cc",
+    "manuscript.md": "e9d149cb99843fe6622d1c9163dc156fc0db363f4cb400f1f55be8b546a12258",
+    "journal-fix-validation-v0.txt": "e54945879623581b3dd39893560d4f7acc43cd77a16eba693817f1f000c53db5",
+    "journal-fit-v0.md": "e16bfb3b3cdc42e6bfbfd1f7cf1ecb1c029fa302bd39da9830472ac0bf3ad742",
+    "progress.json": "fb9f18d113a88d4c81986895e56e29885e230ae6788d6b62392a48256974805f",
+    "evidence-audit-v0.json": "bef90744f713ab334c6469ef793055bf7e79a67f688416eae130c95effd62e27",
+    "independent-review-v0.md": "a9303a71c99379bcae8f23695fbd80a0b020ea3d0255dee758a4e40b5270afc9",
+    "manuscript-review-v0.3.md": "8c3db73800b1eb53fbbe7ce8c66798ef79c20843d97dca4c89768bc16b127273",
+    "manuscript.html": "9f60b056195ba771dc1c2c864adf297c80eecf1f67cd525859cd98259d99d076"
+  }
+}

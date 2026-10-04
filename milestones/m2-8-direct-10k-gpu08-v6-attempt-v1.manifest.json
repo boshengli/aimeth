@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "report": "m2-8-direct-10k-gpu08-v6-attempt-v1",
+  "version": "v1",
+  "source_baseline_commit": "a5cd8abe8a2fbe93c3e650a4fc91ae1d2d7bfc12",
+  "report_delivery_commit": "7c48bc8a4f288473b3762bbc2078aaa1b0d483f8",
+  "files": [
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.html",
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.json",
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.validation.json",
+    "tools/build_direct_10k_v6_attempt_report.py"
+  ],
+  "sha256": {
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.html": "788f293975245126b435eea5e02929cd97093bdd340e5ca7475287dce9830751",
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.json": "1fceb66f23b0fe68d2c15d546de7ba76866a19952ccd71cfcf6e7bf55f1e4a33",
+    "milestones/m2-8-direct-10k-gpu08-v6-attempt-v1.validation.json": "23d25a395cdb681a8eb910ba155eedd9d9980a0c8f9723529512669da368c5be",
+    "tools/build_direct_10k_v6_attempt_report.py": "19ba175fd2733103aad632209ec93f945060d8f70401c5a529598f1c3681e1e0"
+  }
+}

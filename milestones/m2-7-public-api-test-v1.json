@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7 public API test",
+  "version": "v1",
+  "outcome": "Model discovery and standard synchronous calls worked. The official Batch file-upload validator rejected glm-5.3-flash on both tested public domains. Four concurrent standard calls returned HTTP 200 but all exhausted the 1,200-token cap with empty final content.",
+  "run_id": "slcw-public-api-batch-20260930-v1",
+  "provider": "Z.AI / Zhipu",
+  "api_base": "https://open.bigmodel.cn/api/paas/v4",
+  "model_requested": "glm-5.3-flash",
+  "model_discovery": {
+    "api_z_ai_status": 200,
+    "open_bigmodel_status": 200,
+    "models_per_domain": 11,
+    "model_available": true
+  },
+  "batch": {
+    "upload_http_statuses": [
+      400,
+      400
+    ],
+    "error_code": "1210",
+    "file_id_created": false,
+    "batch_create_called": false,
+    "batch_id": null
+  },
+  "synchronous_calls": {
+    "requests": 4,
+    "concurrency": 4,
+    "http_200": 4,
+    "model_id_returned": "glm-5.3-flash",
+    "finish_reason_length": 4,
+    "nonempty_final_content": 0,
+    "max_tokens": 1200,
+    "prompt_tokens": 755,
+    "completion_tokens": 4800,
+    "total_tokens": 5555
+  },
+  "input_sha256": "86d13fd4294265e4e97afb39c54ebf2c1b69e94e36bcbf8bd21f5ab54f4d6154",
+  "responses_sha256": "ea0f9b40999762432f944f00b447e6550a68b9bf5de014b5616053c74a24d575",
+  "interpretation": {
+    "full_population_launched": false,
+    "cross_agent_interaction_tested": false,
+    "mathematical_validity_checked": false,
+    "organization_effect_established": false,
+    "billed_amount_verified": false
+  },
+  "secret_handling": "API key used only in memory; not written to files, reports, or Git",
+  "public_evidence_files": {
+    "requests": {
+      "path": "milestones/m2-7-public-api-test-v1.requests.jsonl",
+      "sha256": "86d13fd4294265e4e97afb39c54ebf2c1b69e94e36bcbf8bd21f5ab54f4d6154"
+    },
+    "responses": {
+      "path": "milestones/m2-7-public-api-test-v1.responses.jsonl",
+      "sha256": "ea0f9b40999762432f944f00b447e6550a68b9bf5de014b5616053c74a24d575"
+    },
+    "batch_attempts": {
+      "path": "milestones/m2-7-public-api-test-v1.batch-attempts.json",
+      "sha256": "6a4d1454c17d28c1423fa17312d01ef65d500cac0b79fe827b653d7d6d611ae0"
+    },
+    "provider_discovery": {
+      "path": "milestones/m2-7-public-api-test-v1.provider-discovery.json",
+      "sha256": "4eea7c021a7e2e81e825638b49ee69b1b0c18fb759202a420f95177f8ffe5181"
+    }
+  }
+}

@@ -1,0 +1,436 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIMeth 文章进度 v0.2</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f4;color:#1b302a;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{padding:42px max(22px,calc((100vw - 1080px)/2));background:#153f35;color:#fff}header p{color:#e0eee8}h1{font-size:clamp(28px,4vw,46px);line-height:1.17;letter-spacing:-.02em}h2{font-size:25px;line-height:1.3;margin-top:32px}h3{font-size:19px;line-height:1.4;margin-top:28px}main{max-width:1124px;margin:auto;padding:24px 22px}article,section{background:#fff;border:1px solid #d9e3dd;border-radius:14px;padding:28px;margin:20px 0}article{max-width:870px;margin:20px auto;font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.85}article h1,article h2,article h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}p,li,code{overflow-wrap:anywhere}a{color:#096446;text-underline-offset:3px}header a{color:#fff}nav{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}nav a,button{padding:8px 14px;background:#fff;color:#144f3c;border:1px solid #bfd2c7;border-radius:7px;font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #eaa647;outline-offset:3px}.badge{display:inline-block;background:#e8f3dd;color:#254f2b;border-radius:20px;padding:5px 12px;font-size:14px}.warning{border-left:5px solid #d8a140;background:#fff9e8;padding:16px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{padding:20px;background:#fff;border:1px solid #d9e3dd;border-radius:12px}.card strong{display:block;font-size:28px}.card span{font-size:14px;color:#577164}table{border-collapse:collapse;width:100%;font-size:15px}th,td{padding:12px;border-bottom:1px solid #d7e2da;text-align:left;vertical-align:top}th{background:#edf4ef}td{overflow-wrap:anywhere}figure{margin:20px 0;overflow-x:auto}figure svg{width:100%;height:auto}figcaption,.muted{font-size:14px;color:#596e61}code{font-size:.85em;background:#f0f3f1;padding:2px 4px}footer{padding:18px 0;font-size:14px;color:#586b5e}.status{font-weight:600;color:#926000}@media(max-width:640px){header{padding:26px 18px}main{padding:12px}section,article{padding:20px 16px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:16px}.card strong{font-size:23px}article{font-size:17px}figure svg{min-width:740px}table,tbody,tr,td{display:block;width:100%}thead{display:none}tr{border-bottom:2px solid #d7e2da;padding:8px 0}td{padding:5px 0;border:0}td:before{content:attr(data-label)' · ';font-weight:bold}}@media print{body{background:white;color:#111}header{background:white;color:#111;padding:0}header p{color:#333}nav,button{display:none}main{padding:0;max-width:none}section,article{border:0;padding:0;max-width:none}h2,h3{break-after:avoid}figure,tr{break-inside:avoid}.cards{display:block}}</style></head><body><header><span class="badge">M2.12 · 首稿与可见进度</span><h1>文章开始有正文，证据仍须补齐</h1><p>当前版本 v0.2 · 第二版正文已修订；正在完成交付核验</p><p>更新：2026-10-03T16:12:41+08:00　下次计划：2026-10-03T21:05:43+08:00</p></header><main><nav><a href="../manuscripts/aimeth/manuscript.html">阅读完整英文稿</a><a href="#evidence">查看实测证据</a><a href="#gaps">查看科学缺口</a><a href="#versions">查看版本</a><button onclick="location.reload()">刷新快照</button></nav><div class="cards"><div class="card"><strong>4898</strong><span>英文单词（含方法与引用）</span></div><div class="card"><strong>10</strong><span>已核对的一手文献</span></div><div class="card"><strong>12</strong><span>既有 API 校准请求</span></div><div class="card"><strong>0</strong><span>本稿可用的确认性群体结果</span></div></div><section id="work"><h2>本轮实际完成与进行中</h2><ul><li>完整英文稿v0.1已归档；v0.2补入真实原型结果与对照限制</li><li>核对10篇一手来源，包括最初辣椒Nature Plants文章及架构出处</li><li>复算12条既有校准回执并生成可追溯图表</li><li>独立审查提出5项设计缺口，已明确写入方法与后续实现要求</li><li>修复消息可早于细胞出生的缺陷，24项离线测试通过</li></ul><p class="status">当前工作：核验第二版HTML、补全版本差异与里程碑证据并提交GitHub</p><p>触发：heartbeat_aimeth；周期起点：2026-10-03T16:06:36+08:00。周期与账户额度窗口分别记录。</p></section><section id="evidence"><h2>现有实测证据</h2><p>重算此前 12 次 DeepSeek 回执：8 次 fast、4 次 deep，均 HTTP 200、stop、非空、JSON 可解析、必需字段存在。它们不是独立群体重复，未保存最终正文，无法复核数学正确性或完整 schema。</p><figure><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="718.31952pt" height="257.51952pt" viewBox="0 0 718.31952 257.51952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 257.51952
+L 718.31952 257.51952
+L 718.31952 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 33.66625 238.975145
+L 350.118354 238.975145
+L 350.118354 16.749375
+L 33.66625 16.749375
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m6ac64064bf" d="M 0 3.162278
+C 0.838646 3.162278 1.643056 2.82908 2.236068 2.236068
+C 2.82908 1.643056 3.162278 0.838646 3.162278 0
+C 3.162278 -0.838646 2.82908 -1.643056 2.236068 -2.236068
+C 1.643056 -2.82908 0.838646 -3.162278 0 -3.162278
+C -0.838646 -3.162278 -1.643056 -2.82908 -2.236068 -2.236068
+C -2.82908 -1.643056 -3.162278 -0.838646 -3.162278 0
+C -3.162278 0.838646 -2.82908 1.643056 -2.236068 2.236068
+C -1.643056 2.82908 -0.838646 3.162278 0 3.162278
+z
+" style="stroke: #16705b; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#p5a1e2cc7aa)">
+     <use xlink:href="#m6ac64064bf" x="67.617161" y="201.846347" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="72.905465" y="200.718124" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="78.193769" y="200.034352" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="83.482072" y="203.555776" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="88.770376" y="203.316456" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="94.05868" y="207.367803" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="99.346984" y="203.863473" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+     <use xlink:href="#m6ac64064bf" x="104.635288" y="205.812222" style="fill: #16705b; fill-opacity: 0.8; stroke: #16705b; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="madf41a22e3" d="M 0 3.162278
+C 0.838646 3.162278 1.643056 2.82908 2.236068 2.236068
+C 2.82908 1.643056 3.162278 0.838646 3.162278 0
+C 3.162278 -0.838646 2.82908 -1.643056 2.236068 -2.236068
+C 1.643056 -2.82908 0.838646 -3.162278 0 -3.162278
+C -0.838646 -3.162278 -1.643056 -2.82908 -2.236068 -2.236068
+C -2.82908 -1.643056 -3.162278 -0.838646 -3.162278 0
+C -3.162278 0.838646 -2.82908 1.643056 -2.236068 2.236068
+C -1.643056 2.82908 -0.838646 3.162278 0 3.162278
+z
+" style="stroke: #96583a; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#p5a1e2cc7aa)">
+     <use xlink:href="#madf41a22e3" x="289.725924" y="47.587474" style="fill: #96583a; fill-opacity: 0.8; stroke: #96583a; stroke-opacity: 0.8"/>
+     <use xlink:href="#madf41a22e3" x="295.014227" y="52.596101" style="fill: #96583a; fill-opacity: 0.8; stroke: #96583a; stroke-opacity: 0.8"/>
+     <use xlink:href="#madf41a22e3" x="300.302531" y="115.434711" style="fill: #96583a; fill-opacity: 0.8; stroke: #96583a; stroke-opacity: 0.8"/>
+     <use xlink:href="#madf41a22e3" x="305.590835" y="39.792478" style="fill: #96583a; fill-opacity: 0.8; stroke: #96583a; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m02cd7bd32c" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m02cd7bd32c" x="86.126224" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="86.126224" y="253.254832" transform="rotate(-0 86.126224 253.254832)">Fast (n=8)</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m02cd7bd32c" x="297.658379" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="297.658379" y="253.254832" transform="rotate(-0 297.658379 253.254832)">Deep (n=4)</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m84f0f78a3b" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="242.554051" transform="rotate(-0 26.66625 242.554051)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="204.786565" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="208.365471" transform="rotate(-0 26.66625 208.365471)">2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="170.597985" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="174.176891" transform="rotate(-0 26.66625 174.176891)">4</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="136.409405" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="139.988311" transform="rotate(-0 26.66625 139.988311)">6</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="102.220825" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="105.799731" transform="rotate(-0 26.66625 105.799731)">8</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="68.032245" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="71.611151" transform="rotate(-0 26.66625 71.611151)">10</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="33.66625" y="33.843665" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="26.66625" y="37.422571" transform="rotate(-0 26.66625 37.422571)">12</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="9.439688" y="127.86226" transform="rotate(-90 9.439688 127.86226)">Completion latency (s)</text>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 48.050437 203.314319
+L 124.202012 203.314319
+" clip-path="url(#p5a1e2cc7aa)" style="fill: none; stroke: #000000; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 259.582591 63.852691
+L 335.734167 63.852691
+" clip-path="url(#p5a1e2cc7aa)" style="fill: none; stroke: #000000; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 33.66625 238.975145
+L 33.66625 16.749375
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 33.66625 238.975145
+L 350.118354 238.975145
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font: 12px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="191.892302" y="10.749375" transform="rotate(-0 191.892302 10.749375)">a  Individual calibration requests</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 399.707416 238.975145
+L 716.15952 238.975145
+L 716.15952 16.749375
+L 399.707416 16.749375
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 414.091603 238.975145
+L 541.951039 238.975145
+L 541.951039 218.961567
+L 414.091603 218.961567
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #497d67"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 573.915898 238.975145
+L 701.775333 238.975145
+L 701.775333 224.494732
+L 573.915898 224.494732
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #497d67"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 414.091603 218.961567
+L 541.951039 218.961567
+L 541.951039 218.961567
+L 414.091603 218.961567
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #d4a55b"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 573.915898 224.494732
+L 701.775333 224.494732
+L 701.775333 62.737929
+L 573.915898 62.737929
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #d4a55b"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 414.091603 218.961567
+L 541.951039 218.961567
+L 541.951039 211.044431
+L 414.091603 211.044431
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #bdcfbf"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 573.915898 62.737929
+L 701.775333 62.737929
+L 701.775333 27.331555
+L 573.915898 27.331555
+z
+" clip-path="url(#pbe0cc4c1a8)" style="fill: #bdcfbf"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m02cd7bd32c" x="478.021321" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="478.021321" y="253.254832" transform="rotate(-0 478.021321 253.254832)">Fast (8 calls)</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m02cd7bd32c" x="637.845616" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="637.845616" y="253.254832" transform="rotate(-0 637.845616 253.254832)">Deep (4 calls)</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="238.975145" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="242.554051" transform="rotate(-0 392.707416 242.554051)">0</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="209.543412" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="213.122318" transform="rotate(-0 392.707416 213.122318)">1000</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="180.111679" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="183.690586" transform="rotate(-0 392.707416 183.690586)">2000</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="150.679947" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="154.258853" transform="rotate(-0 392.707416 154.258853)">3000</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="121.248214" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="124.82712" transform="rotate(-0 392.707416 124.82712)">4000</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="91.816481" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="95.395387" transform="rotate(-0 392.707416 95.395387)">5000</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="62.384748" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="65.963655" transform="rotate(-0 392.707416 65.963655)">6000</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m84f0f78a3b" x="399.707416" y="32.953015" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: end" x="392.707416" y="36.531922" transform="rotate(-0 392.707416 36.531922)">7000</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font: 10px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="364.476166" y="127.86226" transform="rotate(-90 364.476166 127.86226)">Reported tokens, summed</text>
+    </g>
+   </g>
+   <g id="patch_12">
+    <path d="M 399.707416 238.975145
+L 399.707416 16.749375
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 399.707416 238.975145
+L 716.15952 238.975145
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_23">
+    <text style="font: 12px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="557.933468" y="10.749375" transform="rotate(-0 557.933468 10.749375)">b  Usage accounting</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_14">
+     <path d="M 406.907416 29.675625
+L 422.907416 29.675625
+L 422.907416 24.075625
+L 406.907416 24.075625
+z
+" style="fill: #497d67"/>
+    </g>
+    <g id="text_24">
+     <text style="font: 8px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: start" x="429.307416" y="29.675625" transform="rotate(-0 429.307416 29.675625)">Prompt</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 406.907416 40.991875
+L 422.907416 40.991875
+L 422.907416 35.391875
+L 406.907416 35.391875
+z
+" style="fill: #d4a55b"/>
+    </g>
+    <g id="text_25">
+     <text style="font: 8px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: start" x="429.307416" y="40.991875" transform="rotate(-0 429.307416 40.991875)">Reasoning</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 406.907416 52.504375
+L 422.907416 52.504375
+L 422.907416 46.904375
+L 406.907416 46.904375
+z
+" style="fill: #bdcfbf"/>
+    </g>
+    <g id="text_26">
+     <text style="font: 8px 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: start" x="429.307416" y="52.504375" transform="rotate(-0 429.307416 52.504375)">Other completion</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5a1e2cc7aa">
+   <rect x="33.66625" y="16.749375" width="316.452104" height="222.22577"/>
+  </clipPath>
+  <clipPath id="pbe0cc4c1a8">
+   <rect x="399.707416" y="16.749375" width="316.452104" height="222.22577"/>
+  </clipPath>
+ </defs>
+</svg>
+<figcaption>每个点是一条既有请求。两个通道提示、预算和并发不同，只作描述统计。总计 8,140 tokens；图示不是新实验或 10K 吞吐结果。</figcaption></figure><a href="../manuscripts/aimeth/evidence-audit-v0.json">逐请求派生数据与来源哈希</a></section><section id="gaps"><h2>能写什么，尚不能声称什么</h2><table><thead><tr><th>内容</th><th>状态</th><th>科学边界</th></tr></thead><tbody><tr><td data-label="内容">题目／摘要／引言／讨论</td><td data-label="状态">已有正文</td><td data-label="科学边界">完整段落不等于完整证据</td></tr><tr><td data-label="内容">细胞、模块、信号、谱系与对照</td><td data-label="状态">Methods 提案</td><td data-label="科学边界">发育规则和确认性设计尚未冻结</td></tr><tr><td data-label="内容">接口校准</td><td data-label="状态">本地重新计算</td><td data-label="科学边界">不代表任务正确率或群体优势</td></tr><tr><td data-label="内容">发育→组织→能力因果链</td><td data-label="状态">待实验</td><td data-label="科学边界">不编造效果量、P 值或证明</td></tr><tr><td data-label="内容">投稿状态</td><td data-label="状态">研究草稿</td><td data-label="科学边界">由用户选择修订；目前不具备投稿证据</td></tr></tbody></table><p class="warning">没有展示“科研完成百分比”，因为尚无可靠的完成分母。主张、证据、实现和投稿就绪度分别记录。</p></section><section id="versions"><h2>版本与证据入口</h2><ul><li><a href="../manuscripts/aimeth/manuscript.md">可编辑 Markdown 主稿</a></li><li><a href="../manuscripts/aimeth/claim-evidence.json">主张—证据表</a></li><li><a href="../manuscripts/aimeth/literature-v0.md">文献及核验范围</a></li><li><a href="../manuscripts/aimeth/independent-review-v0.md">独立方法与统计审查</a></li><li><a href="../manuscripts/aimeth/next-priorities.md">断点与下一组工作</a></li></ul><p>版本历史保存在 versions/；交付哈希与验证见该里程碑的 manifest 和 validation 记录。</p></section><section id="requirements"><h2>要求、交付与下一阶段</h2><p>用户要求立即执行并看见文章进度：本轮形成英文稿、已有证据复算、文献/方法审查及此页面。每 5 小时重新计时已保存；真正的定时唤醒仍需未来运行记录验证。</p><p>设计：可以继续细化；局部实现：离线契约单独验证；群体实验：仍需冻结规则、评价和预算并核清既有运行。下一阶段优先处理独立审查中的对照与资源混淆，以及运行器的持久化和真实资源账本。</p></section><footer>来源基线：31740a2eeddeb81795f87b0bbd4c3c77c9e439ea。交付提交另记。此页为带时间的本地快照，不代表后台始终执行；版式核验不等于科学验证。</footer></main></body></html>

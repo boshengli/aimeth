@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.10",
+  "version": "v1",
+  "baseline_commit": "da13962a9c0d9d56218e7545592d7532bde912bf",
+  "report_delivery_commit": "779130cc6497ad69cf627ef2453a380b20dfd2b7",
+  "artifacts": [
+    {
+      "id": "m2-10-01",
+      "path": "m2-10-scientific-main-plan-v1.json",
+      "bytes": 4335,
+      "sha256": "4acb3fce7a78edf61066758b56599b6f247df5da22b7355ed7cf3428d8debf9a"
+    },
+    {
+      "id": "m2-10-02",
+      "path": "m2-10-scientific-main-plan-v1.html",
+      "bytes": 5952,
+      "sha256": "f60a37c69af57c3b8ae64e83c8b3760284525756d80e3d6a8412fca647f9f822"
+    },
+    {
+      "id": "m2-10-03",
+      "path": "m2-10-scientific-main-plan-v1.validation.json",
+      "bytes": 1232,
+      "sha256": "915005cd886fac34dcb5c91a8b059b81707da08735e49d66ecde8c690d830d81"
+    },
+    {
+      "id": "m2-10-04",
+      "path": "m2-10-scientific-main-plan-v1-1440.png",
+      "bytes": 199062,
+      "sha256": "48aed437778e208e93a8f2f6726ae12ed0aa2b4af3650727e7a500b8db61c242"
+    },
+    {
+      "id": "m2-10-05",
+      "path": "m2-10-scientific-main-plan-v1-390.png",
+      "bytes": 137092,
+      "sha256": "bc028052a7b7fb48df2b35499626d6c4b7e0c186e3a33f8e52f0b5c3e5d12887"
+    }
+  ]
+}

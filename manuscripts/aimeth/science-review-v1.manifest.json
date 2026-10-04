@@ -1,0 +1,23 @@
+{
+  "report": "AIMeth scientific progress review v1",
+  "created_at": "2026-10-04T04:30:05Z",
+  "scope": "science-only narrative review; not a frozen study protocol or milestone claim",
+  "sources": {
+    "pepper_spatial_development": "https://www.nature.com/articles/s41477-026-02293-w",
+    "neural_cellular_automata": "https://distill.pub/2020/growing-ca/",
+    "robot_swarm_morphogenesis": "https://doi.org/10.1126/scirobotics.aau9178",
+    "adaptive_agent_graphs": "https://proceedings.mlr.press/v235/zhuge24a.html"
+  },
+  "html_validation": "reports/manuscript-qa/science-review-v1.validation.json",
+  "sha256": {
+    "manuscripts/aimeth/science-review-v1.md": "4dd23d9d313de7d24f7aa56993865456aca776d4e6906627c6846ad45c01f546",
+    "manuscripts/aimeth/science-review-v1.html": "4ed57dc790077f84e0161785748bc4ae949a9f2b5b63e0551d14b5c08138c99e",
+    "manuscripts/aimeth/progress.html": "93f364b0503e0676ae3950ec75faa8b709a76d280a0e84138d70d2d9f77b285b",
+    "tools/build_science_review.py": "3df79ffe402e688ea183825bf2606d2f72a8e3f1a8c3606ed6c93838b6bf7ed2",
+    "tools/build_manuscript_v0.py": "3acfeed557af2fafb688ffccc7ed4854666767b531f15661b7343052ab7e7f7f",
+    "tools/check_manuscript_v0.cjs": "40fc2e28874786f96a1eb18569b12dbda5ef012a5a9315972fe773a7be244fd0",
+    "reports/manuscript-qa/science-review-v1.validation.json": "51378b2410b161f75e31cbacc073ed808324832e77d561c6b5d321eb08950db0",
+    "reports/manuscript-qa/science-review-v1-science-review-v1-1440.png": "cfde4cda973ed73b8d862d83066d125889789702704f1bef2dd9ec4725344472",
+    "reports/manuscript-qa/science-review-v1-science-review-v1-390.png": "3f155b2b223526c2412b1646ab733372bbf60cf8abf5071c72f35e5580a65d75"
+  }
+}

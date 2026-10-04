@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "run_id": "slcw-public-api-deepseek-20260930-v1-nothinking",
+    "thinking_mode": "disabled (documented OpenAI-compatible parameter)",
+    "requested_model": "deepseek-flash",
+    "request_count": 4,
+    "concurrency": 4,
+    "http_200_count": 4,
+    "error_count": 0,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "finish_reasons": {
+      "stop": 4
+    },
+    "empty_final_content_count": 0,
+    "usage_totals": {
+      "completion_tokens": 2118,
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 717,
+      "prompt_tokens": 717,
+      "prompt_tokens_details": 0,
+      "total_tokens": 2835
+    },
+    "elapsed_seconds_total": 20.822,
+    "date_utc": "2026-09-30T06:40:58.346106+00:00"
+  },
+  "requests_sha256": "98f284a40e8b1e74fb9780eff90712d39b067eab2147dfedf42abba1bccc38d0",
+  "responses_sha256": "1a4e2e43078087a955743eaeef66f4fb66fe156ca6cb77f11760f941749da849"
+}

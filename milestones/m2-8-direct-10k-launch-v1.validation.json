@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-01 08:05 Asia/Shanghai",
+  "html_parser": "PASS",
+  "required_anchors": [
+    "run"
+  ],
+  "offline_assets": "PASS: self-contained HTML; remote links are optional SGLang references",
+  "browser_desktop": {
+    "viewport_css_px": 1440,
+    "document_width_px": 1440,
+    "visual": "PASS",
+    "screenshot_sha256": "14aba145e35d78865839dc7ae5209394627e112a62218df2a0b7f72f561cee89"
+  },
+  "browser_narrow": {
+    "viewport_css_px": 390,
+    "document_width_px": 390,
+    "visual": "PASS",
+    "screenshot_sha256": "00ddf6e85a9ca8ed98752eed84bcf4e826f40f5f1ca774a0d551d85512679cb0"
+  },
+  "interaction": "PASS: report navigation anchor opened #run",
+  "scope": "Launch-state snapshot only; no population result inferred."
+}

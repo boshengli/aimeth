@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-01 09:40 Asia/Shanghai",
+  "html_parser": "PASS: local Chrome loaded offline report",
+  "required_anchors": ["mapping", "result", "recovery", "next"],
+  "desktop": {
+    "visual": "PASS: desktop screenshot inspected",
+    "browser": "Google Chrome"
+  },
+  "narrow": {
+    "requested_device_width_px": 390,
+    "effective_device_toolbar_width_px": 390,
+    "visual": "PASS: responsive cards stack vertically; report table remains in horizontal scroll wrapper"
+  },
+  "interaction": "PASS: clicking report navigation changed URL hash to #result",
+  "offline_runtime_dependencies": "NONE",
+  "claim_review": "PASS: 1/16 is explicitly identified as truncated text; no mathematical validity or population success inferred",
+  "limitations": "Chrome DevTools console surfaced a file-origin anchor warning despite the #result navigation visibly succeeding; width and narrow appearance were visually inspected, but page DOM width was not programmatically extracted."
+}

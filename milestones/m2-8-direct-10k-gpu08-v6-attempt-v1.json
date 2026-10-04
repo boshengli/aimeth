@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 population attempt v6",
+  "version": "v1",
+  "snapshot_time": "2026-10-01 09:35 Asia/Shanghai",
+  "outcome": "V6 reached the GPU08 model and produced 16 HTTP 200 responses at the 2,048-token cap. One response contained visible but length-truncated text; 15 had empty final content. The application stopped in the first worker phase.",
+  "source_commit": "a5cd8abe8a2fbe93c3e650a4fc91ae1d2d7bfc12",
+  "source_archive_sha256": "2f0fefdb3e33a20795eed423dad54696d276ad71251b6b37e14808e2905996d9",
+  "slurm": {
+    "job_id": "235507",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "application_state": "halted=true; halt_reason=missing_final_content",
+    "node": "gpu08",
+    "account": "libs",
+    "allocated_gpus": "8 × NVIDIA H20 96 GB",
+    "allocated_cpus": 224,
+    "elapsed": "00:18:31",
+    "start": "2026-10-01T09:12:57+08:00",
+    "end": "2026-10-01T09:31:28+08:00"
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+    "endpoint": "127.0.0.1:31008 loopback only",
+    "shards_loaded": "48/48",
+    "jit_warmup_note": "first per-job DeepGEMM JIT compile; service health 200 at 09:25:51",
+    "health_200": "2026-10-01 09:25:51 Asia/Shanghai"
+  },
+  "population": {
+    "population_id": "slcw10k-20261001-gpu08-v6",
+    "planned_analysis_workers": 10000,
+    "planned_governance_roles": 501,
+    "planned_calls": 21002,
+    "cycles": 2,
+    "max_inflight": 16,
+    "request_timeout_seconds": 1200,
+    "max_output_tokens": 2048,
+    "attempts": 16,
+    "http_200": 16,
+    "finish_reason_length": 16,
+    "nonempty_final_content": 1,
+    "empty_final_content": 15,
+    "truncated_text_chars": 2369,
+    "truncated_text_json_valid": false,
+    "prompt_tokens": 7673,
+    "completion_tokens": 32768,
+    "total_tokens": 40441,
+    "unknown_usage_attempts": 0,
+    "workers_not_attempted": 9984,
+    "finished_phases": 1,
+    "governance_started": false,
+    "single_agent_success_gate": false
+  },
+  "evidence": {
+    "phase_checkpoint": "output/population/cycle-0-worker.json",
+    "summary": "output/population/summary.json",
+    "rolling_backup_generations": 2,
+    "latest_checkpoint": "checkpoint-1790818281821589455-977776",
+    "latest_pointer_sha256": "814d918e716995e581ab0a7949bc19469f33ccd5c5f46eac672b098ee407c1db",
+    "checkpoint_manifest_sha256": "bdddc2b0319f2965c8ea2f7edae5af4d6fd6b244835a111858dc6613dac7ee82",
+    "checkpoint_journal_sha256": "3072cff73135d53a2f80437589e19b8197777c2486fa68b51dafc71838279a39",
+    "journal_integrity_check": "ok",
+    "receipt_count": 16,
+    "receipt_finish_reasons": {
+      "length": 16
+    },
+    "receipt_content_counts": {
+      "empty": 15,
+      "nonempty_truncated_text": 1
+    },
+    "response_bodies": "remain in private cluster-side rolling checkpoint; not published"
+  },
+  "failure": {
+    "category": "missing_final_content",
+    "server_status": "HTTP 200 for all 16",
+    "finish_reason": "length for all 16",
+    "completion_tokens": "2,048 for each of 16",
+    "content": "15 empty; 1 visible textual response (2,369 chars), not valid JSON, still finish_reason=length and therefore truncated",
+    "first_batch_latency": "generation logs began 09:26:30; responses settled by approximately 09:30, within the 1,200-second timeout",
+    "interpretation": "Increasing the cap from 1,024 to 2,048 produced one visible partial text but did not yield a complete worker phase. This is an output-budget failure, not a mathematical evaluation."
+  },
+  "interpretation": {
+    "mathematical_proof_verified": false,
+    "organization_effect_established": false,
+    "independent_population_replicate": false,
+    "scientific_result": "none; the single partial text was length-truncated and unverified."
+  },
+  "next_stage": {
+    "ready_to_design": true,
+    "ready_to_implement": true,
+    "ready_to_run": false,
+    "planned_v7": "Keep the 10K roster, model, task and no-single-Agent gate; raise output cap to 3,072, retain 1,200-second timeout and 16 concurrency, and use a 165-hour deadline to fit within the remaining reservation. New run ID; engineering hypothesis only."
+  }
+}

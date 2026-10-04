@@ -1,0 +1,13 @@
+{
+  "version": "v0.2",
+  "created_at": "2026-10-03T16:12:41+08:00",
+  "files": {
+    "claim-evidence.json": "4aa7ea18bbfde4096d328bff1b1f631084237bf71af7d9b93a028d649743e15e",
+    "progress.html": "c07b23ecbb8136081132dd1a3805635e4390f7d8cc52cba4d60c25d0eb38b6af",
+    "references-v0.json": "ea4be576e7b4efb45b888f6a4a4e110e95cc81f164d28089193c8a4d50981ae4",
+    "manuscript.md": "6865225a2a4afc0f7453eb39d35fba5f1fa0bb694aba72924ca950c7bb1ca4a5",
+    "progress.json": "8febce556f10ce1bd7bcd4ea9e12f17dfd08633470f73a4c81b9a2a58f7a49ed",
+    "evidence-audit-v0.json": "bef90744f713ab334c6469ef793055bf7e79a67f688416eae130c95effd62e27",
+    "manuscript.html": "b90a83e68e61f21968dbbbf46e0bd8abd92de51f7b0b3de7099fabe68cdb0c1c"
+  }
+}

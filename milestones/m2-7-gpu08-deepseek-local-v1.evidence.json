@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "evidence_kind": "bounded local model serving smoke; not mathematical or population evidence",
+  "cluster_authority_path": "/data/libs/aimeth",
+  "model": {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+    "integrity": "64/64 files matched, including 48/48 safetensors; issues=[]",
+    "integrity_record_private": "/data/libs/aimeth/gpu08-deployment-20260924-v1/DeepSeek-V4-Flash-0731.integrity.json",
+    "integrity_record_sha256": "6743ae2717361f5da1ee8607b3a40e28564ea0e1b517b8ef349c7466209f1ac1"
+  },
+  "container": {
+    "path": "/home/approved/dsv4/containers/sglang-dsv4-hopper.sif",
+    "sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "runtime": "SGLang 0.5.16; Singularity CE 4.3.3"
+  },
+  "attempts": [
+    {
+      "id": "v1",
+      "job_id": "233598",
+      "state": "CANCELLED",
+      "elapsed": "00:18:37",
+      "node": "gpu08",
+      "allocation": "8 x NVIDIA H20 (96 GB class), 32 CPUs, 256 GB RAM",
+      "outcome": "48/48 checkpoint shards were read; logs then stopped at Execute dequant fp8 wo_a. MaxRSS 164334024 KiB, GPU utilization 0% at the captured sample; no server health or inference response.",
+      "protocol": "examples/gpu08-local-model-smoke-v1.json",
+      "code_sha256": {
+        "tools/gpu08_model_smoke.sbatch": "6ce2f447ecb1e8d76e6399002aff4a697af9854bbd4c6ad335dae7a2ccc2b1e0",
+        "tools/gpu08_model_smoke_probe.py": "cb45e0a89669db62fc496dffb746d25b7f162bdba52efeec5093f3f2a7001500",
+        "examples/gpu08-local-model-smoke-v1.json": "95d374061261d5d3779a8cec6de7c8a262ffd0034b9d469dd36d3a29de95e3cd"
+      },
+      "cluster_private_root": "/data/libs/aimeth/gpu08-local-smoke-20260930-v1/deepseek",
+      "raw_file_sha256": {
+        "protocol.json": "95d374061261d5d3779a8cec6de7c8a262ffd0034b9d469dd36d3a29de95e3cd",
+        "request.json": "d02d3093b5f8815bd392c13b4e09a46e610608d2976f1a307fee45f99af27e52",
+        "server.log": "db2c67ecb52b4f6d6a7190f9331337dd087c841084002443453c40ae5e294921"
+      }
+    },
+    {
+      "id": "v2",
+      "job_id": "233643",
+      "state": "CANCELLED",
+      "elapsed": "00:04:09",
+      "node": "gpu08",
+      "allocation": "8 x NVIDIA H20 (96 GB class), 32 CPUs, 256 GB RAM",
+      "outcome": "48/48 shards loaded and the HTTP app started; Triton failed to load a compiled module and scheduler processes exited while parsing JIT metadata JSON. No completed inference response.",
+      "protocol": "examples/gpu08-local-model-smoke-v2.json",
+      "code_sha256": {
+        "tools/gpu08_model_smoke_v2.sbatch": "21219948d45cd8e6b52c87b9a47940197c5584e5d61cf566b9c60c171ab643a7",
+        "tools/gpu08_model_smoke_probe_v2.py": "e98e7dbb09209f46d1a80476b5c3bb000ab838ced4279fb415a0a8dfa9c23aa6",
+        "examples/gpu08-local-model-smoke-v2.json": "ed6d4bcfa68c438ac70fd7093f5a91c0db18a7c390a56953d5d05f81524ad183"
+      },
+      "cluster_private_root": "/data/libs/aimeth/gpu08-local-smoke-20260930-v2/deepseek",
+      "raw_file_sha256": {
+        "protocol.json": "ed6d4bcfa68c438ac70fd7093f5a91c0db18a7c390a56953d5d05f81524ad183",
+        "request.json": "d02d3093b5f8815bd392c13b4e09a46e610608d2976f1a307fee45f99af27e52",
+        "server.log": "d24a6198aa59aab71ef6348af09d3156c0499e6e64662caa036cefa4cde07f54"
+      }
+    },
+    {
+      "id": "v3",
+      "job_id": "233657",
+      "state": "COMPLETED",
+      "elapsed": "00:09:36",
+      "node": "gpu08",
+      "allocation": "8 x NVIDIA H20 (96 GB class), 32 CPUs, 256 GB RAM",
+      "outcome": "48/48 shards loaded; loopback health passed; one request returned HTTP 200, finish_reason=stop and valid JSON; Slurm exit 0:0.",
+      "protocol": "examples/gpu08-local-model-smoke-v3.json",
+      "code_sha256": {
+        "tools/gpu08_model_smoke_v3.sbatch": "d45cc6265d4e15ae57aca56bc4b843e4af4c370e401646f9a6d406a73597fcf4",
+        "tools/gpu08_model_smoke_probe_v3.py": "e98e7dbb09209f46d1a80476b5c3bb000ab838ced4279fb415a0a8dfa9c23aa6",
+        "examples/gpu08-local-model-smoke-v3.json": "b5e35ad99c6b471c14d5325ed0c66bdb1c5bf06b616943c54300613402a8f146"
+      },
+      "cluster_private_root": "/data/libs/aimeth/gpu08-local-smoke-20260930-v3/deepseek",
+      "raw_file_sha256": {
+        "protocol.json": "b5e35ad99c6b471c14d5325ed0c66bdb1c5bf06b616943c54300613402a8f146",
+        "request.json": "d02d3093b5f8815bd392c13b4e09a46e610608d2976f1a307fee45f99af27e52",
+        "response.json": "e7bb13631498a9b81c20a9ca309b6f841b46d9af37077d808590805828b7142a",
+        "server.log": "3d3eaf07bfbf74a8fbee8490196ff4afcba09d0418d8b4f61ac27450e268e701",
+        "summary.json": "01d5d430ec8a46b387247557e1f77a498765baf34b51d4a3bdf41091b0dd53db"
+      },
+      "start_utc": "2026-09-30T07:53:45Z",
+      "stop_utc": "2026-09-30T08:03:19Z",
+      "cache_path_node_local": "/tmp/aimeth-triton-233657"
+    }
+  ],
+  "accepted_response": {
+    "id": "c48e3f1b16e94627869547041ee1c6b1",
+    "object": "chat.completion",
+    "created": 1790755392,
+    "model": "DeepSeek-V4-Flash-0731",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"ready\",\"model\":\"DeepSeek-V4-Flash-0731\"}",
+          "reasoning_content": null,
+          "tool_calls": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 1
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 55,
+      "total_tokens": 74,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "metadata": {
+      "weight_version": "default"
+    }
+  },
+  "accepted_summary": {
+    "http_status": 200,
+    "model_requested": "DeepSeek-V4-Flash-0731",
+    "model_returned": "DeepSeek-V4-Flash-0731",
+    "finish_reason": "stop",
+    "final_content_nonempty": true,
+    "structured_output_valid": true,
+    "reasoning_content_present": false,
+    "usage": {
+      "prompt_tokens": 55,
+      "total_tokens": 74,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "elapsed_seconds": 4.4488,
+    "response_id": "c48e3f1b16e94627869547041ee1c6b1",
+    "server_healthy": true
+  },
+  "limitations": [
+    "Raw cluster logs and complete per-attempt files remain at the private cluster run roots listed below. Their SHA-256 hashes are included for provenance.",
+    "Only the accepted one-request response is reproduced in this public evidence receipt. No credentials or API keys were used.",
+    "The public receipt is an engineering evidence record; it makes no mathematical or population claim."
+  ]
+}

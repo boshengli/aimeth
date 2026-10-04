@@ -1,5 +1,10 @@
 # Human-readable milestone reports
 
+- [M2.12 v2 — Manuscript v0.3 and bounded recovery evidence](m2-12-manuscript-progress-v2.html): 43 local checks, two reproduced journal defects and corrections, independent manuscript review, three alternative abstracts, official journal-fit access limits and verified desktop/narrow HTML. Core population outcomes remain absent.
+
+- [M2.12 v1 — First manuscript versions and visible progress](m2-12-manuscript-progress-v1.html): complete-section drafts v0.1/v0.2, ten primary sources and biological/design provenance, twelve-request calibration reanalysis, independent reviews, and a corrected offline cell contract with 24 passing tests. Core developmental-population outcomes remain pending. The mutable working progress page is separate from this milestone snapshot.
+
+- [M2.10 v1 — Scientific main-plan update and work-package loading](m2-10-scientific-main-plan-v1.html): the single task-conditioned cellular-development goal, two design principles, four loaded design work packages, and current readiness boundaries.
 - [M1 v1.0 — Research foundation](m1-foundation-v1.html): requirement mapping, evidence, prototype limitations, and M2 organization-design readiness.
 
 Every completed milestone requires an HTML report under [the milestone reporting policy](../docs/milestone-reporting.md).

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.8 Direct 10K GPU08 run; v2 failure record",
+  "version": "v2",
+  "snapshot_time": "2026-10-01 08:07 Asia/Shanghai",
+  "outcome": "GPU08 与本地 SGLang 服务启动成功，但没有派发任何人口推理请求。DeepSeek-V4 检查点没有 Hugging Face chat_template，驱动在首个请求构造阶段停止。",
+  "source_baseline_commit": "8fc51e6f9522cb8e7b2f67878c953061b8030b26",
+  "slurm": {
+    "job_id": "235412",
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "node": "gpu08",
+    "account": "libs",
+    "allocated_gpus": "8 x NVIDIA H20 96 GB class",
+    "allocated_cpus": 224,
+    "elapsed": "00:18:02",
+    "start": "2026-10-01T07:49:17+08:00",
+    "end": "2026-10-01T08:07:19+08:00"
+  },
+  "model": {
+    "name": "DeepSeek-V4-Flash-0731",
+    "shards_loaded": "48/48",
+    "application_startup": "2026-10-01 08:06:11 Asia/Shanghai",
+    "health_200": "2026-10-01 08:06:57 Asia/Shanghai",
+    "container_sha256": "f5c2b9c5c8ed905b97dd12c88b5c09c73c3063572e57aa8d87495ca453b5009f",
+    "model_config_sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023"
+  },
+  "population": {
+    "id": "slcw10k-20261001-gpu08-v3",
+    "planned_analysis_agents": 10000,
+    "planned_governance_agents": 501,
+    "planned_calls": 21002,
+    "api_requests_dispatched": 0,
+    "attempts": 0,
+    "single_agent_success_gate": false
+  },
+  "failure": {
+    "category": "pre-dispatch tokenizer integration error",
+    "message": "ValueError: Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed!",
+    "evidence": "output/population.log; population directory has only population.json and no journal.sqlite, budget.sqlite, receipt, or model attempt",
+    "root_cause": "The v3 token counter unconditionally called AutoTokenizer.apply_chat_template. This DeepSeek-V4 checkpoint ships without a Hugging Face chat_template; its SGLang serving image implements the DSV4 chat renderer internally."
+  },
+  "fix": {
+    "status": "已实现；102/102 项测试通过；源码已冻结并推送；报告快照时尚未提交新的 GPU08 作业。",
+    "approach": "Use the exact image-provided SGLang 0.5.16 DSV4 encode_messages renderer before tokenizer.encode; freeze thinking_mode=thinking and pass chat_template_kwargs.thinking=true in each request.",
+    "new_source_commit": "88b1f4b72862354f9b4c50c9359e5d4f1de09c93"
+  },
+  "verification": {
+    "unit_tests": "102/102 项通过，覆盖原生 DSV4 编码器选择及缺少模板时 fail-closed 行为",
+    "math_proof_verified": false,
+    "organization_effect_established": false
+  },
+  "limitations": [
+    "No Navier–Stokes prompt reached the model and no population phase ran.",
+    "This attempt is an engineering failure, not an independent population replicate.",
+    "The next run must use a new population ID and source identity; v3 files and Slurm evidence remain immutable."
+  ]
+}

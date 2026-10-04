@@ -1,0 +1,11 @@
+{
+  "html_parser": "PASS",
+  "json_parse": "PASS",
+  "required_anchors": ["req", "batch", "calls", "limits", "identity"],
+  "local_links": "PASS",
+  "narrow_layout_css": "PASS",
+  "print_css": "PASS",
+  "credential_pattern_scan": "PASS",
+  "browser_visual_qa": "NOT DONE under existing project browser-policy block",
+  "api_request_records": "4 final-response receipts; reasoning fields excluded; usage retained"
+}

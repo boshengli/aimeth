@@ -1,0 +1,22 @@
+{
+  "html_parser": "PASS",
+  "json_parse": "PASS",
+  "required_anchors": [
+    "method",
+    "results",
+    "quality",
+    "limits",
+    "identity"
+  ],
+  "anchors_present": "PASS",
+  "local_links": "PASS",
+  "narrow_layout_css": "PASS",
+  "print_css": "PASS",
+  "request_response_pairs": "PASS (4 + 4)",
+  "initial_empty_length_results": "PASS (4/4)",
+  "retry_json_parse_and_required_keys": "PASS (4/4)",
+  "synthesis_task": "FAIL: requested five-item evidence checklist absent",
+  "credential_pattern_scan": "PASS",
+  "browser_visual_qa": "NOT DONE under existing project browser-policy instruction",
+  "execution_metadata": "PASS"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.7",
+  "version": "v3",
+  "source_baseline_commit": "1297a7ea9199188d3fc7aca15a3e09edf767b4ca",
+  "report_delivery_commit": "18f5bae432fe5eb04311a3e6fa229ead6323c19d",
+  "files": {
+    "html": "m2-7-direct-10k-v3.html",
+    "json": "m2-7-direct-10k-v3.json",
+    "template.html": "m2-7-direct-10k-v3.template.html"
+  },
+  "sha256": {
+    "html": "6150e504ab33e444974ee3785defd6a021e95aab1ee13844a42ed27b81974cc8",
+    "json": "5f4a2291eb7437af77442555b185ee272ec28565dab1d6cdd350ab2cf265608a",
+    "template.html": "6150e504ab33e444974ee3785defd6a021e95aab1ee13844a42ed27b81974cc8"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "id": "M2.10",
+  "title": "科学主计划更新与设计工作包加载",
+  "date": "2026-10-02",
+  "version": "v1",
+  "status": "规划已交付；尚未实现或开展实验",
+  "baseline_commit": "da13962a9c0d9d56218e7545592d7532bde912bf",
+  "goal": "模拟并检验计算细胞群体如何依据任务或后训练，通过自组织、分化与增殖形成介观结构，再组合成组织形态；研究这种发育过程是否带来更强任务适应与问题解决能力。",
+  "principles": [
+    "调控驱动细胞发育，从介观结构走向组织：操作化细胞、人工基因、表达、信号、谱系和增殖。",
+    "快速交互服务于可测任务能力：检验局部响应、延迟、带宽和跨域整合对留出任务表现及成本的影响。"
+  ],
+  "work_packages": [
+    {
+      "id": "WP1",
+      "title": "细胞、人工基因与观测量",
+      "dependency": "优先；定义可测实体",
+      "deliverable": "概念表、最小状态字段及观测/干预清单"
+    },
+    {
+      "id": "WP2",
+      "title": "任务条件下的发育与增殖",
+      "dependency": "依赖 WP1",
+      "deliverable": "表达、分化、分裂、状态继承的转移规则"
+    },
+    {
+      "id": "WP3",
+      "title": "介观结构与组织形成",
+      "dependency": "依赖 WP1、WP2",
+      "deliverable": "邻域、形态、谱系和预设/自组织区分对照"
+    },
+    {
+      "id": "WP4",
+      "title": "能力评估与公平比较",
+      "dependency": "可并行准备候选；最终冻结依赖 WP1–WP3",
+      "deliverable": "留出任务与评估矩阵、独立单位、对照和成本核算"
+    }
+  ],
+  "readiness": [
+    {
+      "stage": "设计",
+      "state": "已加载四个设计工作包，WP1 优先。"
+    },
+    {
+      "stage": "实现",
+      "state": "尚未就绪；概念语义、状态转移、增殖成本、连接结构和测量指标待定义。"
+    },
+    {
+      "stage": "实验",
+      "state": "尚未就绪；无可执行发育协议、冻结对照或预算人口。"
+    }
+  ],
+  "limits": [
+    "用户提出的介观与组织细胞数量是项目尺度设想，不是普适生物学界限或当前扩容授权。",
+    "当前 v8 是独立冻结的探索运行，未实现细胞发育假设。",
+    "本里程碑未实现细胞运行器，也未建立数学结果或组织效应。"
+  ],
+  "user_mapping": [
+    {
+      "request": "一个科学目标；数学不再作为智能唯一界定",
+      "response": "任务条件下的细胞发育与功能涌现为唯一目标；数学是重要评估领域之一。"
+    },
+    {
+      "request": "介观结构与组织由细胞群体自组织、分化及增殖形成",
+      "response": "主计划将发育轨迹、结构形成与独立任务能力作为关联但分开测量的对象。"
+    },
+    {
+      "request": "加载更新主计划下的工作任务",
+      "response": "父任务 T-20261002-002 已登记，加载 WP1–WP4 及其依赖，WP1 优先。"
+    },
+    {
+      "request": "每轮保留不超过两至三条最高原则/目标",
+      "response": "一个科学目标和两条设计原则；工作包为研究任务，不增加科学目标。"
+    }
+  ],
+  "evidence": {
+    "main_plan": "docs/organization-development-plan-v1.md",
+    "loaded_task": "tasks/T-20261002-002.md",
+    "implementation_state": "未实现细胞运行器；未开展细胞发育人口实验。",
+    "execution_boundary": "v8 保持独立冻结口径，不是该发育假设的实现或验证。"
+  },
+  "next_action": "完成 WP1 概念定义和观测量，再细化发育规则及形态模型。",
+  "source_sha256": {
+    "main_plan": "49960ca1aa2c7ca90d12a999667765a0ba304f794e74f645be5d75324855ea52",
+    "loaded_task": "e91e66f67ced99b958c82d71225d7d6181a9f618bd70104d0282260ec6efea89",
+    "repository_entry": "1c04cd0324ad5067a77e95a73f4e9af1602c0ee148e7e8227fc12f422980c191",
+    "milestone_builder": "11c0f7ea15643c7f259b5bbfa311a5681e51c45870592681812a50d1e7cf1765",
+    "registered_project_control": "bb981a73b6b5d35dfe439f4f1c1a6d74d6b0715095bba1ab33f1909bf4b82331",
+    "registered_status": "91e7a1b1a40d1313d04d4476b722c121cf513e1ada6bbfe2615503bc55209c67",
+    "registered_decisions": "7386f60cc34b3f6a3a9a4b73066d409004c9e82c03f9cfb3dd6d8d74c9c406ab"
+  }
+}

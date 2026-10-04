@@ -1,0 +1,25 @@
+{
+  "attempted_at_utc": "2026-09-30T04:24:00Z",
+  "model": "glm-5.3-flash",
+  "input_requests": 4,
+  "endpoint_inside_jsonl": "/v4/chat/completions",
+  "hosts": [
+    {
+      "base": "https://api.z.ai/api/paas/v4",
+      "operation": "POST /files with purpose=batch",
+      "http_status": 400,
+      "provider_error_code": "1210",
+      "result": "upload validation rejected glm-5.3-flash against the Batch service model allowlist; no file id returned"
+    },
+    {
+      "base": "https://open.bigmodel.cn/api/paas/v4",
+      "operation": "POST /files with purpose=batch",
+      "http_status": 400,
+      "provider_error_code": "1210",
+      "result": "same model allowlist rejection; no file id returned"
+    }
+  ],
+  "batch_create_called": false,
+  "batch_id": null,
+  "debit_from_batch_processing": "none observed; upload validation failed before a batch was created"
+}

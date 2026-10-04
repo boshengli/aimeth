@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-01 08:53 Asia/Shanghai",
+  "html_parser": "PASS: local Chrome loaded report; self-contained CSS/JS",
+  "required_anchors": [
+    "mapping",
+    "failure",
+    "recovery",
+    "next"
+  ],
+  "desktop": {
+    "requested_viewport_css_px": 1440,
+    "document_width_px": 1440,
+    "body_width_px": 1440,
+    "visual": "PASS; screenshot visually inspected",
+    "screenshot_sha256": "d065e6cad6740a6bc2668dc5744062ef9fc56daae7cd09fbdd413cbf5f9c1b30"
+  },
+  "narrow": {
+    "requested_device_width_px": 390,
+    "effective_css_viewport_px": 562,
+    "document_width_px": 562,
+    "body_width_px": 562,
+    "responsive_breakpoint_740px": "PASS",
+    "visual": "PASS; browser screenshot visually inspected; table is contained in horizontal scroller",
+    "screenshot_sha256": "dad60c2eec343c0560ef78950ceee14c32569cfca7f7b68c452162c487d33b38"
+  },
+  "interaction": "PASS: navigation click changed location.hash to #failure",
+  "offline_external_runtime_dependencies": "NONE; external references omitted from this report",
+  "print_layout": "PASS: embedded @media print",
+  "content_claims": "PASS: distinguishes transport timeout from mathematical failure; no proof or organization effect claimed",
+  "capture_note": "Headless Chrome mobile emulation requested 390 CSS/device px but exposed an effective 562 px layout viewport; measured document and body widths match that effective viewport."
+}

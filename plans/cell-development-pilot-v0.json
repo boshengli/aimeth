@@ -1,0 +1,387 @@
+{
+  "schema_version": "aimeth.cell-development-pilot.v0",
+  "status": "proposal_for_root_review_not_frozen_not_launched",
+  "purpose": "offline_synthetic_implementation_fixture_not_mathematical_benchmark_or_emergence_evidence",
+  "network_enabled": false,
+  "model_calls_allowed": 0,
+  "frozen_v8_changes_allowed": false,
+  "contract": {
+    "implementation": "prototypes/cell_contract.py",
+    "snapshot_schema": "cell-contract.v0",
+    "policy_schema": "cell-policy-fixture.v0",
+    "modules": [
+      "construct",
+      "check",
+      "route",
+      "divide"
+    ],
+    "memory": "immutable genesis input only; never modify contract private attributes",
+    "mutable_policy_state": [
+      "assigned_obligation_ids",
+      "candidate_cursors",
+      "unchecked_candidates",
+      "outbox",
+      "accepted_witness_ids",
+      "handoff_locks",
+      "processed_message_ids",
+      "selected_module_history",
+      "division_attempted_obligation_ids",
+      "per_cell_terminal_submissions",
+      "attempt_ledger",
+      "reserved_allowances"
+    ],
+    "policy_state_storage": "separate bounded hash-chained single-writer journal; deterministically replayed with contract events",
+    "joint_snapshot_fields": [
+      "card_sha256",
+      "fixture_sha256",
+      "policy_version",
+      "contract_json",
+      "policy_events",
+      "head_hash"
+    ],
+    "commit_rule": "validate transition against detached proposed contract and policy states; swap both only after every bound and journal serialization check succeeds",
+    "durability_claim": "none until atomic file persistence and crash tests are implemented"
+  },
+  "fixture": {
+    "id": "catalog-selection.v0",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "obligations": 8,
+    "candidate_domain": [
+      "red",
+      "green",
+      "blue",
+      "amber"
+    ],
+    "public_input": [
+      "obligation_id",
+      "salt",
+      "candidate_domain",
+      "target_sha256"
+    ],
+    "salt_rule": "ASCII fixture-v0:<seed>:<zero_based_obligation_index>",
+    "hash_rule": "SHA256(UTF8(salt + ':' + candidate))",
+    "target_rule_evaluator_only": "domain[(seed + obligation_index) modulo 4] for satisfiable fixture; expose target digest but not target index through cell views",
+    "candidate_order": "candidate_domain order; no direct target-index access or hash-based shortcut in construct",
+    "conditions": [
+      {
+        "id": "satisfiable",
+        "change": "none",
+        "expected_oracle": "all 8 obligations have a valid witness",
+        "allocated_arms": [
+          "develop_4_to_16",
+          "fixed_16",
+          "independent_16",
+          "no_division_4"
+        ]
+      },
+      {
+        "id": "unsatisfiable",
+        "change": "last target digest is 64 zero characters after verifying it matches none of its four candidates",
+        "expected_oracle": "7 witnesses; final obligation exhausts without witness",
+        "allocated_arms": [
+          "develop_4_to_16",
+          "fixed_16",
+          "independent_16",
+          "no_division_4"
+        ]
+      },
+      {
+        "id": "duplicate_replay",
+        "change": "inject an already accepted message_id and event_id after one valid delivery",
+        "expected_oracle": "rejection with unchanged contract/policy states and separate attempted-operation ledger increment",
+        "allocated_arms": [
+          "develop_4_to_16",
+          "fixed_16",
+          "no_division_4"
+        ]
+      },
+      {
+        "id": "stale_delivery",
+        "change": "hold a prepared signal, change its receiver version via a valid event, then attempt the held delivery",
+        "expected_oracle": "stale rejection without hidden rebasing or partial state mutation",
+        "allocated_arms": [
+          "develop_4_to_16",
+          "fixed_16",
+          "no_division_4"
+        ]
+      }
+    ],
+    "training_or_tuning": "none; fixed implementation fixtures only; no efficacy inference from pass counts",
+    "allocation_rule": "Only listed arm-condition pairs are allocated; independent arms have no messages and are prospectively excluded from message-fault cases, never labelled passes.",
+    "allocated_cases": 42
+  },
+  "population": {
+    "developmental_seed_count": 4,
+    "max_population": 16,
+    "seed_ids": [
+      "cell-000",
+      "cell-001",
+      "cell-002",
+      "cell-003"
+    ],
+    "initial_assignment": "obligation index modulo 4 selects seed; each seed initially owns two obligations",
+    "initial_edges": "reciprocal 4-cycle in seed ID order; explicit imposed topology",
+    "child_id_rule": "parent_id + '-d' + parent's zero-based successful division ordinal",
+    "initial_contract_expression": {
+      "construct": 1,
+      "check": 1,
+      "route": 1,
+      "divide": 1
+    },
+    "expression_semantics": "contract gates permit modules; selected-module one-hot activity is separately recorded per activation, not represented as a learned or permanently differentiated cell type",
+    "coordinates": null,
+    "death_rule": "none"
+  },
+  "scheduler": {
+    "kind": "deterministic single-writer round robin",
+    "turn_order": "living cell IDs sorted at start of each sweep; newborns enter next sweep; every listed cell gets one turn",
+    "logical_tick": "increment once for each cell turn, including idle turns",
+    "module_priority": [
+      "check if an unchecked local or accepted incoming candidate exists",
+      "route if outbox nonempty",
+      "divide if eligible",
+      "construct if any locally owned obligation has an untried assigned candidate",
+      "idle"
+    ],
+    "selection_ties": "lexicographic obligation_id, then candidate index, then message_id",
+    "delivery": "one selected route message prepared and delivered in the same turn with current endpoint versions; no background queue in normal fixture",
+    "signal_ttl_ticks": 3,
+    "signal_rejection": "log reason and attempted cost; no automatic retry or version rewriting; explicit new messages only when the policy independently selects them"
+  },
+  "modules": {
+    "construct": {
+      "input": "own unlocked obligation view and assigned candidate-index shard; handoff-locked obligations cannot be constructed",
+      "transition": "emit next untried candidate into local unchecked queue; advance only this cursor once",
+      "output": "candidate record with obligation_id, candidate_index, candidate_value and producer_cell_id",
+      "forbidden": "global candidate lists, evaluator target index, other cells' queues"
+    },
+    "check": {
+      "input": "one locally constructed or received unchecked candidate plus public obligation predicate",
+      "transition": "compute the declared digest once; record validity independently of message acceptance; mark this local check processed",
+      "output": "bounded evidence artifact containing candidate, target digest, observed digest, valid flag, checker cell and policy event hash",
+      "on_valid": "record witness locally in terminal-submission registry and queue its artifact hash for each recorded neighbour in sorted order; registry is read-only to the terminal observer and not visible to other actors",
+      "on_invalid": "retain negative result locally; do not broadcast or erase it",
+      "verification_boundary": "semantic fixture validation only; no claim of mathematical proof"
+    },
+    "route": {
+      "input": "one outbox entry and current recorded local adjacency",
+      "transition": "validate receiver edge and endpoint versions; submit one typed signal; receiver policy view changes only after contract acceptance",
+      "candidate_payload": {
+        "statement": "canonical JSON encoding of candidate record"
+      },
+      "obligation_payload": {
+        "obligation_id": "selected obligation ID",
+        "statement": "canonical JSON encoding of public obligation, assigned candidate shard and transfer ID"
+      },
+      "evidence_payload": {
+        "artifact_sha256": "SHA256 of bounded evidence artifact"
+      },
+      "artifact_access": "only artifacts whose evidence signal this cell accepted, plus artifacts it created itself",
+      "evidence_on_receive": "do not mark complete from hash alone; load the granted artifact, validate schema, enqueue candidate for local check unless this cell already checked the same candidate",
+      "fanout_rule": "send each cell-created valid evidence artifact to each current neighbour at most once; do not blindly rebroadcast received hashes",
+      "encoded_payload_parser": "strict canonical JSON with closed record fields, duplicate-key rejection, matching obligation identity, domain membership and bounded bytes; contract text acceptance alone does not validate this envelope"
+    },
+    "divide": {
+      "eligible_when": [
+        "developmental arm",
+        "at least two locally owned unresolved obligations with untried candidates",
+        "no existing handoff lock",
+        "own outgoing degree below 4",
+        "population below 16",
+        "allowance reserved for division and one obligation delivery"
+      ],
+      "transition": "divide against current parent version and state hash; child inherits exact contract expression/memory; child policy queues start empty; transfer lexicographically greatest eligible obligation",
+      "transfer": "lock the selected obligation in parent; queue one parent-to-child obligation signal; transfer remaining candidate-index shard only upon accepted delivery; then remove lock and parent's ownership",
+      "failed_transfer": "retain parent ownership, release lock after logged terminal rejection, leave daughter alive and idle; no implicit deletion, repeated division or unlogged reassignment",
+      "inheritance": "exact immutable contract memory/expression plus explicitly delivered public obligation and remaining shard; no access to parent's mutable queue unless transferred",
+      "adjacency": "contract adds reciprocal parent-child edges only; no rewiring, distant edges or global topology optimization in this fixture",
+      "reservation": {
+        "module_actions": 2,
+        "division_attempts": 1,
+        "route_attempts": 1,
+        "contract_units": 3,
+        "contract_events": 2,
+        "additional_requirement": "prevalidate daughter memory and complete transfer payload against byte/snapshot bounds; release unused reservation after terminal transfer failure"
+      },
+      "eligibility_after_failed_handoff": "mark this obligation as division_attempted; no new division for that obligation; parent may resume remaining candidate construction"
+    }
+  },
+  "bounds": {
+    "max_turns": 1024,
+    "max_module_actions": 256,
+    "max_construct_calls": 64,
+    "max_check_calls": 128,
+    "max_route_attempts": 128,
+    "max_divisions": 12,
+    "max_contract_units": 512,
+    "max_contract_events": 512,
+    "max_neighbours": 4,
+    "max_payload_bytes": 2048,
+    "max_local_policy_bytes": 16384,
+    "max_joint_snapshot_bytes": 16777216,
+    "max_total_signal_payload_bytes": 262144
+  },
+  "resource_ledger": {
+    "units": "separate named synthetic counters, never tokens or money",
+    "record": [
+      "allocated limits",
+      "turns",
+      "module actions by module",
+      "construct attempts",
+      "distinct obligation-candidate pairs",
+      "checks including repeats",
+      "route attempts/accepted/rejected",
+      "signal payload bytes",
+      "division attempts/accepted/rejected",
+      "contract units",
+      "peak and snapshot resident policy/contract bytes",
+      "terminal verification calls",
+      "wall_time_seconds_as_engineering_observation"
+    ],
+    "contract_costs": {
+      "accepted_signal": 1,
+      "accepted_division": 2
+    },
+    "attempt_accounting": "failed/duplicate/stale attempts count in policy attempt ledger even though contract commits charge nothing",
+    "unused_allowance": "reported; no transfer between named counters or additional runs",
+    "terminal_verifier_allowance": "up to 32 submitted witness checks per arm, separate and equal; no feedback to cells"
+  },
+  "arms": [
+    {
+      "id": "develop_4_to_16",
+      "start_cells": 4,
+      "division": true,
+      "communication": "initial ring plus lineage edges",
+      "work_assignment": "two obligations per initial cell, full candidate domain; explicit handoff on division",
+      "estimand": "fixture implementation behaviour of complete policy"
+    },
+    {
+      "id": "fixed_16",
+      "start_cells": 16,
+      "division": false,
+      "communication": "reciprocal 16-cycle",
+      "work_assignment": "two cells per obligation; candidate indices partitioned by parity, no duplicated assigned candidates",
+      "estimand": "fixed-policy reference under same ceilings, not isolated effect of proliferation"
+    },
+    {
+      "id": "independent_16",
+      "start_cells": 16,
+      "division": false,
+      "communication": "no intercell edges; local construct/check retained",
+      "work_assignment": "same obligation and parity shards as fixed_16",
+      "aggregation": "terminal union of submitted witnesses, deduplicated by obligation_id with identical external verifier",
+      "estimand": "independent-search/aggregation reference under same ceilings"
+    },
+    {
+      "id": "no_division_4",
+      "start_cells": 4,
+      "division": false,
+      "communication": "same reciprocal 4-cycle as developmental seeds",
+      "work_assignment": "same initial obligations and candidate order as developmental arm",
+      "estimand": "matched-initial-condition division-policy contrast, including its overhead and assignment effects"
+    }
+  ],
+  "comparison_rules": {
+    "common": [
+      "identical fixture input",
+      "same four module implementations",
+      "same candidate order and public predicate",
+      "same action/candidate/check/payload ceilings",
+      "same external verifier",
+      "same stopping logic except structural absence of communication/division"
+    ],
+    "tuning": "zero tuning for all fixture arms; any later pilot tuning gets an identical documented allowance and selection criterion",
+    "no_hidden_handicap": "fixed and independent references receive explicit nonoverlapping candidate shards; idle cells incur turns/memory but never mandatory dummy model calls",
+    "interpretation": "ceiling-matched descriptive software checks only; differing realized work is reported, not post-hoc matched or called equal compute",
+    "independent_unit": "whole arm execution on a fixture seed; three fixture seeds are deterministic test cases, not scientific replication or power evidence"
+  },
+  "stopping": {
+    "success": "external read-only observer sees at least one submitted witness per obligation and terminal verifier accepts all; no witness-value feedback to actors",
+    "exhausted": "all cells idle with no unchecked candidates, outbox entries, handoff locks or untried owned candidates for a complete sweep; missing witnesses retained",
+    "limits": "stop before any named bound would be exceeded; report which bound and unresolved obligations",
+    "integrity_error": "stop on unexpected contract/policy replay mismatch, artifact corruption, global-input leakage or failed joint commit",
+    "denominators": "all allocated arm-by-seed-by-condition cases retained, including crash, rejected, capped and incomplete; fixture pass/fail separate from obligation success"
+  },
+  "observables": {
+    "snapshots": "genesis, every completed sweep and terminal state",
+    "structural": [
+      "living cells N",
+      "directed edges E",
+      "weakly connected component count",
+      "out-degree histogram",
+      "maximum lineage depth",
+      "birth count",
+      "fraction of edges added by division"
+    ],
+    "functional_activity": "per-cell fractions of construct/check/route/divide in latest 8 non-idle activations, with count recorded; insufficient window returns null",
+    "differentiation_claim": "none; programmed rules and activity heterogeneity do not establish stable emergent types",
+    "geometry_claim": "none; no coordinates, layers, tubes, spheres or biological tissue shape",
+    "graph_null": "optional descriptive 10 edge-swap realizations preserving node identities, per-node in/out degree and self-loop prohibition; seed fixed by fixture seed; record failed swaps; no performance or mediation inference",
+    "negative_outcomes": [
+      "all arms succeed with no meaningful organization advantage",
+      "development incurs extra actions or fails under a ceiling",
+      "births occur without distinct module-activity patterns",
+      "graph changes without improved obligation completion"
+    ]
+  },
+  "acceptance_for_implementation": [
+    "JSON and fixture schemas validate before allocation",
+    "only local approved views reach module functions",
+    "accepted division and handoff preserve disjoint ownership of remaining candidate shards",
+    "rejected joint transitions leave contract and policy state unchanged except the separately recorded attempt ledger",
+    "snapshot replay reproduces state, ledger and next selected action",
+    "duplicate/stale cases are detected without blind retry",
+    "unsatisfiable condition remains unresolved rather than inventing a witness",
+    "all arms expose complete attempt and failure denominators"
+  ],
+  "real_population_candidate": {
+    "status": "not_launchable",
+    "required": [
+      "cell_gene_mapping",
+      "module_code_hashes",
+      "task_sampling_frame",
+      "protected_evaluator",
+      "provider_model_revision",
+      "initial_topology",
+      "development_rules",
+      "population_schedule",
+      "replicate_count_and_precision",
+      "randomization_and_blocks",
+      "channel_call_and_output_caps",
+      "hard_spend_limit_and_prices",
+      "ambiguity_reservation",
+      "comparator_tuning_and_selection",
+      "fixed_work_intervention",
+      "structure_specific_intervention",
+      "stopping_rules",
+      "persistence_and_recovery_validation",
+      "analysis_and_multiplicity",
+      "frozen_manifest_hash"
+    ],
+    "cell_gene_mapping": null,
+    "module_code_hashes": null,
+    "task_sampling_frame": null,
+    "protected_evaluator": null,
+    "provider_model_revision": null,
+    "initial_topology": null,
+    "development_rules": null,
+    "population_schedule": null,
+    "replicate_count_and_precision": null,
+    "randomization_and_blocks": null,
+    "channel_call_and_output_caps": null,
+    "hard_spend_limit_and_prices": null,
+    "ambiguity_reservation": null,
+    "comparator_tuning_and_selection": null,
+    "fixed_work_intervention": null,
+    "structure_specific_intervention": null,
+    "stopping_rules": null,
+    "persistence_and_recovery_validation": null,
+    "analysis_and_multiplicity": null,
+    "frozen_manifest_hash": null,
+    "single_agent_success_gate": false
+  }
+}

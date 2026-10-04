@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-09-30 12:07 Asia/Shanghai",
+  "html_parser": "PASS",
+  "required_anchors": ["mapping", "slurm", "identity", "science"],
+  "offline_links": "PASS: m2-7-direct-10k-v1.html, v2.html, v3.html all exist",
+  "responsive_css": "PASS: narrow breakpoint and stacked table layout present",
+  "print_css": "PASS",
+  "browser_desktop_narrow_visual_qa": "NOT DONE: blocked by existing project browser policy",
+  "slurm_state_rechecked": "PENDING (ReqNodeNotAvail, UnavailableNodes:gpu08)",
+  "secret_scan": "PASS: no API keys or endpoint credentials in public artifacts"
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29",
-  "current_plan": "docs/population-plan-v2.md",
+  "updated_at": "2026-09-30",
+  "current_plan": "docs/direct-10k-v1.md",
   "current_mapping": "docs/slcw-math-mapping-v2.json",
   "current_report": "milestones/m2-6-slcw-realignment-v2.html",
-  "authorization": "User requested source/implementation/math mapping and removal of the single-Agent-success prerequisite. Numerical budgets and a confirmatory protocol are not yet frozen.",
+  "authorization": "User explicitly requests direct first 10K population, removing incremental scale prerequisites; existing cluster and public Git authorization persists.",
   "superseded": [
     {
       "path": "docs/next-population-plan-v1.md",
@@ -17,6 +17,12 @@
       "scope": "current reconciliation and readiness statements",
       "replacement": "docs/slcw-math-mapping-v2.md",
       "preserve": "original v1 report bundle and hashes"
+    },
+    {
+      "path": "docs/population-plan-v2.md",
+      "scope": "sequential full-V1/V2 and incremental-scale prerequisites for first exploratory launch",
+      "replacement": "docs/direct-10k-v1.md",
+      "preserve": "research integrity, independent population units and archived artifact bytes"
     }
   ]
 }
