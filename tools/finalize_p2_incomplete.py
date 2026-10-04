@@ -5,8 +5,11 @@ import argparse
 import json
 import os
 from pathlib import Path
+import sys
 import threading
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 from aimeth_rt.control_arms import ARMS, Budget
 from tools.rt_run import finalize_fenced_tasks
 
