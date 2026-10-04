@@ -69,7 +69,7 @@ def build(summary_path: Path, output: Path, baseline_commit: str, implementation
             "这是改变分母的描述，不是因果估计或新的选题门槛。"
             "逐题截断次数与非截断通过率见 <a href='../reports/p2-arc-truncation-sensitivity-v1.csv'>逐题表</a>；"
             "<a href='../reports/p2-arc-truncation-sensitivity-v1.json'>分析定义</a>（SHA-256 "
-            + tag(sensitivity["sha256"]) + "）。</p>")
+            + "<code>" + tag(sensitivity["sha256"]) + "</code>）。</p>")
     else:
         sensitivity_html = "<p>长度截断敏感性分析尚未生成。</p>"
     created = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -84,7 +84,7 @@ nav{{border-bottom:1px solid var(--line);padding:.7rem max(1.25rem,calc((100vw -
 main{{max-width:1060px;margin:auto;padding:2rem 1.25rem 4rem}}section{{margin:0 0 2.2rem}}h2{{font-size:1.45rem;line-height:1.3;border-bottom:1px solid var(--line);padding-bottom:.35rem}}
 .lead{{font-size:1.17rem;max-width:860px}}.note{{border-left:4px solid var(--blue);background:var(--pale);padding:1rem 1.2rem;margin:1.2rem 0}}.muted{{color:var(--muted)}}
 .scroll{{overflow-x:auto}}table{{border-collapse:collapse;width:100%;min-width:700px}}th,td{{border-bottom:1px solid var(--line);padding:.6rem .55rem;text-align:left;vertical-align:top}}thead th{{background:var(--pale)}}
-code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}footer{{border-top:1px solid var(--line);padding:1.5rem 1.25rem;color:var(--muted)}}
+code,p,.note{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}footer{{border-top:1px solid var(--line);padding:1.5rem 1.25rem;color:var(--muted)}}
 @media(max-width:520px){{header{{padding:2rem 1.25rem}}main{{padding-top:1.2rem}}body{{font-size:15px}}}}
 @media print{{header{{background:#fff;color:#000;padding:0}}header p{{color:#333}}nav{{display:none}}main{{padding:0}}a{{color:#000;text-decoration:none}}.scroll{{overflow:visible}}table{{min-width:0;font-size:9pt}}th,td{{overflow-wrap:anywhere;padding:.3rem}}}}
 </style></head><body>

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-04T09:24:14.827868+00:00",
+  "report": "milestones/m2-13-p2-arc-calibration-v1.html",
+  "report_sha256": "59960254360335e313bf99efd305589e2ce047901701e517acff959a774652b2",
+  "browser": "Codex in-app browser (IAB)",
+  "desktop": {
+    "viewport_px": [
+      1440,
+      900
+    ],
+    "document_scroll_width_px": 1440,
+    "body_scroll_width_px": 1440,
+    "visual_review": "passed; header, section spacing, evidence table legible"
+  },
+  "narrow": {
+    "viewport_px": [
+      390,
+      844
+    ],
+    "document_scroll_width_px": 390,
+    "body_scroll_width_px": 390,
+    "horizontal_page_overflow": false,
+    "table_scroll_containers": 3,
+    "visual_review": "passed after wrapping long SHA-256 text; tables scroll within containers"
+  },
+  "navigation": {
+    "anchors_present": true,
+    "clicked": "#limits and #evidence",
+    "passed": true
+  },
+  "local_links": {
+    "checked": 4,
+    "http_statuses": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  "print_css_present": true,
+  "tests": {
+    "command": "python3 -m unittest discover -s tests",
+    "passed": 183
+  },
+  "calibration_audit_complete": true,
+  "pilot_manifest_sha256": "da347e42695941ff760a9e75353a98cefaa98271507b1d5c617b7e490f7b1686"
+}
