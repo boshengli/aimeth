@@ -1,6 +1,6 @@
 # P2 matched control arms · v1
 
-Date: 2026-10-04. Status: frozen engineering run card for Amendment 2 of T-20261004-002. The implementation and fake/replay tests are locally verified; the public DeepSeek comparison remains unrun until the detached Phase-B launcher is started.
+Date: 2026-10-04. Status: frozen seven-arm engineering protocol for T-20261004-002. The implementation and fake/replay tests are locally verified. Phase B has been launched; its immutable execution snapshot and the later Amendment 3 task-set pairing audit are recorded in `milestones/m2-14-p2-control-arms-v1.html`.
 
 ## Question and interpretation
 
@@ -45,13 +45,17 @@ The controller and model calls run on the user's Mac. The DeepSeek key stays in 
 
 The evaluation service runs each candidate in the existing no-network sandbox. Private ARC test predictions and callus predictions remain in the evaluator's private directory. The controller can see only training/pseudo-task scores. The vote/mean operation is performed by the evaluator from private predictions and returns contributor IDs, agreement counts, or visible-score summaries; it does not return test grids or answer-bearing arrays to the controller. The fake evaluator tests cover tie rules, task identity checks, path traversal rejection, and non-leakage of aggregate predictions.
 
-Each task gets a durable `task_started` record before model dispatch and an fsynced result record after settlement. A restarted launcher skips completed tasks. A previously started task with no settled record is finalized as an explicit unknown result, with unknown call/token usage, retained in the denominator, and never resent. After the controller is stopped, `tools/finalize_p2_incomplete.py` can account for any remaining never-started items as `not_started`; it makes no model calls. Provider receipts remain under ignored `runs/p2-controls-v1/receipts/`; they are not committed. The run auditor checks the complete 40/36 denominator, one replicate, model identity, call/token ceilings, per-call cap, and start/result pairing.
+Each task gets a durable `task_started` record before model dispatch and an fsynced result record after settlement. A restarted launcher skips completed tasks. A previously started task with no settled record is finalized as an explicit unknown result, with unknown call/token usage, retained in the denominator, and never resent. After the controller is stopped, `tools/finalize_p2_incomplete.py` can account for any remaining never-started items as `not_started`; it makes no model calls. `tools/postprocess_p2_controls_phase_b.sh` is the later grade/audit/analysis path and never invokes the model runner. Provider receipts remain under ignored `runs/p2-controls-v1/receipts/`; they are not committed. The run auditor checks the complete 40/36 denominator, one replicate, model identity, call/token ceilings, per-call cap, and start/result pairing.
 
 ## Grading and analysis
 
 After all generation processes stop, `tools/rt_grade.py` computes exact ARC task success under the existing two-attempt grading rule and callus pattern/cell correlations from the private evaluator keys. The grader does not send answers back to any model. `tools/analyze_p2_controls.py` reports the fixed denominator and ungraded count for every arm. ARC success is binary. For callus, a task without a valid final grade contributes zero to the operational mean and remains in the denominator; it is also reported as ungraded. Paired differences use independent as the reference. Bootstrap resampling is over paired task instances (10,000 draws, seed 1000); it is exploratory because there is only one initialised population per task/arm in this order.
 
 The API-backed Phase B is explicitly approved by Amendment 2, but no call is sent before the code/docs commit, ARC selection manifest, callus prompt hashes, and evaluator readiness checks are complete. The detached launcher runs arms in the fixed order listed above, each with ARC followed by callus, and writes checkpoints/receipts. It uses the same four-budget contract for every arm; it never schedules a second run for a started task.
+
+## Amendment 3 pairing audit (after launch)
+
+Amendment 3 identifies the developmental arm's frozen task set at `/data/libs/aimeth/rt/tasks/arc2-pilot40.json`. The Phase-B controller had already frozen and started the 40 tasks in `plans/arc2-pilot40-v1.json`. A read-only comparison found only 9 shared task IDs out of 40. Both lists are preserved in `plans/arc2-pilot40-developmental-pairing-reference-v1.json`; the running records are not rewritten and no started request is resent. This run remains a budget-matched comparison among the seven control arms on its own task set, but it is **not task-paired to the developmental arm**. Do not report the current developmental-versus-control result as a paired comparison or combine only the 9 overlapping tasks as if they were a prespecified sample. Any new paired run would need its own frozen run card and authorization.
 
 ## Sources and unresolved limits
 

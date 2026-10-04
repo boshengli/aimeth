@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "milestone": "M2.14",
+  "version": "1.0",
+  "scope": "Report, structured snapshot, and rendered browser evidence. Hash verification checks file identity only, not scientific validity.",
+  "artifacts": [
+    {
+      "id": "report-html",
+      "path": "m2-14-p2-control-arms-v1.html",
+      "sha256": "87a806fbc711b9653379a294c7d652c89bb5e016dc6871d5bc1e0a857000f20b",
+      "bytes": 18569
+    },
+    {
+      "id": "report-evidence-json",
+      "path": "m2-14-p2-control-arms-v1.json",
+      "sha256": "fed7958f3a3621266464f28c466711493786ff96179bbe2aa663ca85bdcf09dd",
+      "bytes": 8987
+    },
+    {
+      "id": "browser-qa",
+      "path": "evidence/m2-14/browser-qa.json",
+      "sha256": "04ebb58c7a2d335a67e314751058f837a96604ef2c724b1d91df7d24e016738f",
+      "bytes": 706
+    },
+    {
+      "id": "screenshot-desktop",
+      "path": "evidence/m2-14/desktop.png",
+      "sha256": "0ad94538b73f5ebed7f9cb77a9d9ba624488d14bccc8c0a57660262ad8ac4695",
+      "bytes": 1242942
+    },
+    {
+      "id": "screenshot-narrow",
+      "path": "evidence/m2-14/narrow.png",
+      "sha256": "3f9604c977b3a7bfa9e5c9065191544b72d378c7caeef82d1cd78a010dca0064",
+      "bytes": 1099752
+    },
+    {
+      "id": "screenshot-print",
+      "path": "evidence/m2-14/print.png",
+      "sha256": "d73ecbd2e6b0739e10b090bc63aa4369f1b43f190bd15e6c799664939ea04a8f",
+      "bytes": 1060768
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "tools/build_m2_14_p2_report.py",
+      "sha256": "2908b70d9e2d9a80ada2f5cdb71adf80fed0704a2a039b6cd8965a6a7230693d",
+      "bytes": 16083
+    },
+    {
+      "path": "tools/check_m2_14_report.cjs",
+      "sha256": "b339044d8464cae6907e1b3372ab8993dc1eaa6da957251f46a111bb3a3f010f",
+      "bytes": 3991
+    },
+    {
+      "path": "tools/postprocess_p2_controls_phase_b.sh",
+      "sha256": "4930649f7e2670e802d79b03b0efc04bce6c916442e4d0ff73b34ef1337a42c3",
+      "bytes": 2468
+    },
+    {
+      "path": "tools/finalize_p2_incomplete.py",
+      "sha256": "73baba7fd99507e62895304348409c109e484a23d18ae84a2330d9195cac0ce9",
+      "bytes": 4610
+    },
+    {
+      "path": "tools/rt_run.py",
+      "sha256": "646b01ca4bb2bcfa2d6942289298839b58d10d70f05ffba961ce2b560987abea",
+      "bytes": 16029
+    },
+    {
+      "path": "tools/rt_grade.py",
+      "sha256": "7c3d98f6f57a549bd4df98a5c14acf7870057ce385c06398f66f7710b46975a6",
+      "bytes": 3495
+    },
+    {
+      "path": "tools/verify_p2_controls_run.py",
+      "sha256": "db35bfd53e2467ee18bdc260ef7065d75f72e923306b9d1b3bdf535fa14bc7ea",
+      "bytes": 5078
+    },
+    {
+      "path": "tools/analyze_p2_controls.py",
+      "sha256": "57c1c6e70fe1ae229f2d583e1a47b017b8171ad25b84b0f18d714157b04e9d03",
+      "bytes": 5793
+    },
+    {
+      "path": "aimeth_rt/control_arms.py",
+      "sha256": "76c8c9a8cbc04e9d89736ccdc8ce81c9068e8b65c503dd06a70890a8efdf3fbe",
+      "bytes": 19171
+    },
+    {
+      "path": "aimeth_rt/arc_data.py",
+      "sha256": "b1e7e2b00f57e0111af792847c9b566ca584df9ae95768f49b56696ec3bb0bc2",
+      "bytes": 2776
+    },
+    {
+      "path": "aimeth_rt/remote_eval.py",
+      "sha256": "82803ee9c3ba2b093a7ed7763d8b3d1cc6b74ce66078fcc2aa14fa9ff2af3077",
+      "bytes": 8453
+    },
+    {
+      "path": "docs/p2-control-arms-v1.md",
+      "sha256": "f4b041f2f5684cbbbc9b1a07e036b37a8ddc5ff9b983e9cc3c4127f1a39cc571",
+      "bytes": 11196
+    },
+    {
+      "path": "milestones/README.md",
+      "sha256": "b2a11f7f6e00fc6b30c91c0ff6e85f924541a0fedf7a4219ea231acf42c3eab9",
+      "bytes": 7332
+    },
+    {
+      "path": "plans/arc2-pilot40-v1.json",
+      "sha256": "98d38a453c244e61d3eb4dd18a925663e6f07f26d9f591b6475b93f6fd6d1433",
+      "bytes": 5864
+    },
+    {
+      "path": "plans/arc2-pilot40-developmental-pairing-reference-v1.json",
+      "sha256": "776451e451f54bf640b18f80c841cd5c7a3b24de6e11304656a2d4395dc3ef81",
+      "bytes": 1749
+    },
+    {
+      "path": "plans/callus-public-prompt-hashes-v1.json",
+      "sha256": "26c962fdeca7a774b9de8e1b5cd0f9a62f44d8c769d562344a018d18ac3dda01",
+      "bytes": 6422
+    },
+    {
+      "path": "S0002Claude/codex-reports/T-20261004-002.md",
+      "sha256": "d32c854f3095f7650a7db6eadcc0d9f37644282804557118c6449a9cb2642eee",
+      "bytes": 3405
+    }
+  ]
+}

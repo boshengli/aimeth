@@ -1,0 +1,190 @@
+{
+  "arms": [
+    {
+      "control_for": "parallel sampling with visible-check selection",
+      "mechanism": "Eight independent proposals; keep the highest visible-check score.",
+      "name": "independent"
+    },
+    {
+      "control_for": "within-agent iterative feedback",
+      "mechanism": "Sequential attempts receive the preceding proposal and visible feedback.",
+      "name": "self_repair"
+    },
+    {
+      "control_for": "long-context reasoning without inter-agent exchange",
+      "mechanism": "One uninterrupted model call, capped by the same task token budget.",
+      "name": "single_long"
+    },
+    {
+      "control_for": "aggregation of parallel samples",
+      "mechanism": "Eight independent proposals; ARC outputs are privately voted and callus arrays averaged.",
+      "name": "vote"
+    },
+    {
+      "control_for": "explicit task division and orchestration",
+      "mechanism": "A planner assigns distinct proposals to workers, then uses remaining calls for visible-feedback revisions.",
+      "name": "orchestrator_worker"
+    },
+    {
+      "control_for": "peer critique and iterative revision",
+      "mechanism": "Three initial proposals share only generated programs and visible checks for revision.",
+      "name": "debate"
+    },
+    {
+      "control_for": "general search and selection without differentiation",
+      "mechanism": "A non-spatial population is varied by mutation/crossover and selected by visible checks.",
+      "name": "evolution"
+    }
+  ],
+  "authorization": "T-20261004-002 Amendment 2",
+  "base_commit": "9cc6178e4b8fbf7149d174b203b43087bf6b5b43",
+  "date": "2026-10-04",
+  "implementation_commits": [
+    "75d0c622089b93feb7dfb7e9f3f3e572041360fd",
+    "c91db98bb187906e14fde2eeed68469cf7faac56",
+    "2ab40a0f2905b3eb3a7ca56a20dc52a7cc2f5ee7",
+    "24995749d7aa90b6bfb87333bce0b6b659b3c42a",
+    "ec4c45af1b1398d357b0c9ad8a4bad41a31c731f",
+    "4e17e7e4ac7d351323595021660e8aa5f248558f"
+  ],
+  "interpretation": "This milestone implements and starts matched non-developmental controls. It contains no measured comparison outcome yet and cannot establish a developmental-organization advantage or mechanism.",
+  "limitations": [
+    "One replicate per task and arm is exploratory; tasks are not substitutes for independently initialized population replicates.",
+    "The requested call/token ceilings are matched, but early stopping can leave unused budget.",
+    "The single-long arm is one call; other arms use up to eight logical calls.",
+    "The API model alias and prompts define this pilot's scope; results do not generalize automatically to other model versions or tasks.",
+    "The answer-bearing evaluator records remain on the isolated cluster filesystem; no model receives hidden answers."
+  ],
+  "milestone": "M2.14",
+  "run": {
+    "arc_manifest_sha256": "98d38a453c244e61d3eb4dd18a925663e6f07f26d9f591b6475b93f6fd6d1433",
+    "arms": [
+      "independent",
+      "self_repair",
+      "single_long",
+      "vote",
+      "orchestrator_worker",
+      "debate",
+      "evolution"
+    ],
+    "budget": {
+      "completion_reasoning_tokens_max": 262144,
+      "logical_calls_max": 8,
+      "multi_call_per_call_cap": 32768,
+      "replicates": 1,
+      "seed": 1000,
+      "single_long_effective_cap": 262144
+    },
+    "callus_prompt_manifest_sha256": "2eb0f5356fe285bc46e9c3ca57527e1372f4752965525148ea249f8763de17c8",
+    "controller_commits": [
+      "2ab40a0f2905b3eb3a7ca56a20dc52a7cc2f5ee7",
+      "24995749d7aa90b6bfb87333bce0b6b659b3c42a"
+    ],
+    "evaluator_job_id": "240601",
+    "evaluator_node": "gpu08",
+    "evaluator_resources": {
+      "cpus": 8,
+      "gpus": 0,
+      "memory": "32G"
+    },
+    "existing_jobs_left_untouched": [
+      "240170",
+      "239752"
+    ],
+    "fenced_unknown_task_ids": [
+      "2ba387bc",
+      "a47bf94d",
+      "16b78196",
+      "4c3d4a41"
+    ],
+    "first_controller_attempt": {
+      "dispatch_outcome": "unknown",
+      "receipt_files": 0,
+      "retry_policy": "Never resend; score as ungraded zero and preserve in denominator.",
+      "settled_results": 0,
+      "task_started": 4
+    },
+    "model": "deepseek-flash",
+    "preflight_model_calls": 0,
+    "provider": "deepseek",
+    "results_at_report_snapshot": "2026-10-04T23:02:53+08:00: controller still live; 9 terminal records (6 visible-train-perfect stops, 3 call/token-budget stops), 4 unknown dispatches, 4 started but unsettled, and 515 not started across the 532 task-arm denominator; no hidden grading yet",
+    "run_id": "p2-controls-v1",
+    "started_at": "2026-10-04T22:05:31+08:00",
+    "snapshot": {
+      "captured_at": "2026-10-04T23:02:53+08:00",
+      "controller_tmux_session": "active",
+      "evaluator_job_state": "RUNNING",
+      "task_arm_records": 532,
+      "task_started": 17,
+      "settled": 9,
+      "settled_stop_reasons": {
+        "arc_train_perfect": 6,
+        "planned_calls_or_tokens_exhausted": 3
+      },
+      "unknown_started": 4,
+      "started_unsettled": 4,
+      "not_started_or_pending": 515,
+      "hidden_grade_rows": 0
+    },
+    "amendment3_pairing_audit": {
+      "developmental_manifest": "plans/arc2-pilot40-developmental-pairing-reference-v1.json",
+      "developmental_manifest_source_sha256": "6db032bf2ea0a17c78895261643089b6132122b1082a084ccdf124f233f89e53",
+      "developmental_id_list_sha256": "3db8c46e406d13f050192a002d9ffa4e0f0968f1aeda53dfaf975854a9e11e90",
+      "control_manifest": "plans/arc2-pilot40-v1.json",
+      "control_manifest_sha256": "98d38a453c244e61d3eb4dd18a925663e6f07f26d9f591b6475b93f6fd6d1433",
+      "control_id_list_sha256": "db071f960544e72ea4842d4a49f8e2bfd39f9c82885195c055a2724dc7a4383",
+      "developmental_task_count": 40,
+      "control_task_count": 40,
+      "overlap_count": 9,
+      "identical_task_sets": false,
+      "paired_to_developmental_arm": false,
+      "action": "Preserve both sets; do not rewrite run records or resend started requests; report the current control comparison as unpaired to developmental-arm results."
+    },
+    "task_arm_records": 532,
+    "task_families": {
+      "ARC-AGI-2": 40,
+      "tomato_callus_imputation": 36
+    }
+  },
+  "source_branch": "codex/p2-controls",
+  "sources": [
+    {
+      "label": "T-20261004-002 Amendments 2–3 (control-directory work order)"
+    },
+    {
+      "label": "Frozen arm protocol",
+      "path": "docs/p2-control-arms-v1.md"
+    },
+    {
+      "label": "DeepSeek model and output limits",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/"
+    },
+    {
+      "label": "DeepSeek rate-limit and error behavior",
+      "url": "https://api-docs.deepseek.com/quick_start/error_codes/"
+    },
+    {
+      "label": "Amendment 3 developmental ARC-40 task-set reference",
+      "path": "plans/arc2-pilot40-developmental-pairing-reference-v1.json"
+    }
+  ],
+  "status": "Phase A complete; Phase B running at the recorded snapshot",
+  "title": "Matched comparison arms for developmental organization",
+  "validation": {
+    "full_active_tests": "203 passed; 101 subtests passed in 95.82 s",
+    "other_checks": [
+      "Python compileall passed for runtime, data modules, tools, and tests.",
+      "Shell syntax validation passed for the detached launcher and offline postprocess script.",
+      "Frozen ARC and callus prompt manifests and their SHA-256 hashes validated.",
+      "GPU08 CPU-only evaluator import check passed.",
+      "Model-free remote visible-check smoke passed after a persistent-stream transport defect was corrected.",
+      "Finalizer, grader, run auditor, and paired-analysis CLI help checks passed; none made a model request.",
+      "Amendment 3 developmental task-list reference was retrieved read-only; the two ARC-40 manifests have 9 shared tasks and are not identical.",
+      "Browser review passed at 1440px, 768px, and 390px with no horizontal overflow, seven working in-page anchors, all seven arm rows, print CSS, no-JavaScript core content, and no external resource requests; desktop and narrow screenshots were visually inspected."
+    ],
+    "paid_api_calls_before_launch": 0,
+    "preflight_transport_issue": "The first model-free remote smoke exposed that the SSH proxy waited for stdin EOF before returning results. No model request was made during that smoke. The proxy was corrected, tested, and a model-free visible-check smoke passed. The first nohup controller attempt was then terminated by the execution supervisor after four durable task_started records but before any settled record or local provider receipt; whether those four requests reached the provider is unknown. They are permanently fenced, represented as unknown/zero-score denominator entries, and never resent. The campaign continues only for task instances absent from the start ledger using a persistent tmux session.",
+    "test_command": "uv run --with pytest --with h5py --with scipy --with numpy --with pandas --with requests --with pyyaml python -m pytest --import-mode=importlib -q tests"
+  },
+  "version": "1.0"
+}

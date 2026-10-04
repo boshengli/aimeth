@@ -1,5 +1,7 @@
 # Human-readable milestone reports
 
+- [M2.14 v1 — Matched P2 controls and Phase-B pilot launch](m2-14-p2-control-arms-v1.html): seven same-model, budget-matched non-developmental controls, hidden-answer isolation, frozen ARC-2/callus samples and detached DeepSeek execution. At the recorded snapshot the run is ongoing (9 terminal records, 4 unknown, 4 started/unsettled, 515 pending); no hidden grading or organization effect is reported. Amendment 3's developmental ARC-40 set overlaps the already-running control set on 9/40 tasks, so this run is not paired to the developmental arm.
+
 - [M2.12 v2 — Manuscript v0.3 and bounded recovery evidence](m2-12-manuscript-progress-v2.html): 43 local checks, two reproduced journal defects and corrections, independent manuscript review, three alternative abstracts, official journal-fit access limits and verified desktop/narrow HTML. Core population outcomes remain absent.
 
 - [M2.12 v1 — First manuscript versions and visible progress](m2-12-manuscript-progress-v1.html): complete-section drafts v0.1/v0.2, ten primary sources and biological/design provenance, twelve-request calibration reanalysis, independent reviews, and a corrected offline cell contract with 24 passing tests. Core developmental-population outcomes remain pending. The mutable working progress page is separate from this milestone snapshot.

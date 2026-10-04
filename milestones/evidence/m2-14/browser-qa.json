@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "report": "/Users/ba/projects/0023-aimeth-p2-controls/milestones/m2-14-p2-control-arms-v1.html",
+  "browser": "154.0.8037.95",
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "navigation_anchors": 7,
+  "arm_rows": 7,
+  "print_css": "passed",
+  "no_javascript_core_content": "passed",
+  "external_resource_requests": [],
+  "page_errors": [],
+  "screenshots": [
+    "desktop.png",
+    "narrow.png",
+    "print.png"
+  ],
+  "scope": "HTML presentation/accessibility checks only; no scientific outcome or cluster state validation."
+}
