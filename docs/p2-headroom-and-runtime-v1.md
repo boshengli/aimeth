@@ -44,7 +44,23 @@ sensitivity audit: 43 % of DeepSeek samples truncated, 87 % success when not tru
 3. Budgets must be matched in **tokens**, not only calls, and a **single long call with the same total token budget** must
    be a control arm: otherwise an organisation can win simply by spending more reasoning tokens in total.
 
-## 3. Callus imputation pilot (running)
+## 3. Callus imputation pilot: two single-agent controls
 
-36 tasks × {independent, self_repair} × 4 calls, deepseek-flash, reasoning_effort medium, 65,536 max tokens, one replicate,
-budget stop 60 CNY per arm. Results will be graded with `rt_grade.py` (answer keys) and compared per task.
+36 tasks × {independent, self_repair} × 4 calls, deepseek-flash, reasoning_effort medium, 65,536 max tokens, one
+replicate, pseudo-task seed 1000. Graded with the answer keys by `rt_grade.py`; "baseline" = best of the three non-LLM
+solvers per task (pattern r, 10-NN smoothed).
+
+| Read-out (pattern r) | independent-4 | self_repair-4 |
+| --- | --- | --- |
+| final program − best baseline, mean over 36 tasks | **+0.0185** (35/36 tasks above) | **+0.0136** |
+| first program − best baseline | +0.0039 (23/36 above) | −0.0040 (round 0) |
+| oracle best of the 4 programs − best baseline | +0.0200 | — |
+| mean tokens per task | 114,546 | 104,681 |
+
+Paired self_repair − independent: mean −0.0049, bootstrap 95 % CI [−0.0113, +0.0012], 18 better / 18 worse.
+Self-repair improves round by round (true score vs baseline −0.004, +0.000, +0.007, +0.009 for rounds 0–3) and 18 of its
+144 programs failed at run time; the independent arm's pseudo-task selection recovers almost all of the oracle best-of-4
+gain (0.0185 of 0.0200), so the visible check is a usable selection signal. Under the same call and token budget, the
+sequential repair loop did not beat parallel sampling with selection. Cost (envelope): independent 47.5 CNY; self-repair
+≈ 50 CNY plus ≈ 20 CNY for the stopped first attempt. Two independent-arm calls returned empty answers before the
+extraction rule existed (2 of 144 calls; counted as failures).
