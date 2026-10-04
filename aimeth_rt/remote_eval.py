@@ -54,15 +54,20 @@ def process(req):
         return {"request_id": rid, "result": {"status": "remote_eval_error", "detail": type(exc).__name__}}
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=32) as pool:
-    futures = set()
+    def emit(future):
+        try:
+            result = future.result()
+        except Exception as exc:
+            result = {"request_id": None, "result": {"status": "remote_proxy_error",
+                                                         "detail": type(exc).__name__}}
+        with out_lock:
+            sys.stdout.write(json.dumps(result, separators=(",", ":")) + "\n")
+            sys.stdout.flush()
     for line in sys.stdin:
         if not line.strip():
             continue
-        futures.add(pool.submit(process, json.loads(line)))
-    for future in concurrent.futures.as_completed(futures):
-        with out_lock:
-            sys.stdout.write(json.dumps(future.result(), separators=(",", ":")) + "\n")
-            sys.stdout.flush()
+        future = pool.submit(process, json.loads(line))
+        future.add_done_callback(emit)
 '''
 
 
