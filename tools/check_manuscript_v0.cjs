@@ -16,7 +16,7 @@ if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validatio
     const external = [], errors = [];
     await context.route('**/*', r => /^https?:/.test(r.request().url()) ? (external.push(r.request().url()),r.abort()) : r.continue());
     const page = await context.newPage(); page.on('pageerror', e=>errors.push(e.message));
-    const targets = ['progress','manuscript','candidate-framings-v0'].map(name=>({name,target:path.join(root,'manuscripts/aimeth',name+'.html')}));
+    const targets = ['progress','manuscript','candidate-framings-v0','science-review-v1'].map(name=>({name,target:path.join(root,'manuscripts/aimeth',name+'.html')}));
     targets.push({name:'milestone',target:milestone});
     for (const {name,target} of targets) {
       await page.goto('file://'+target);
@@ -31,9 +31,11 @@ if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validatio
       }
       const anchors = await page.locator('nav a').evaluateAll(as=>as.map(a=>a.getAttribute('href')));
       for (const href of anchors.filter(h=>h.startsWith('#'))) {
-        if(await page.locator(href).count()!==1) throw Error('Missing anchor '+href);
-        await page.locator('nav a[href="'+href+'"]').click();
-        if(!page.url().endsWith(href)) throw Error('Navigation '+href);
+        if(await page.evaluate(id=>document.getElementById(decodeURIComponent(id.slice(1)))?1:0,href)!==1) throw Error('Missing anchor '+href);
+        const navIndex=await page.evaluate(expected=>Array.from(document.querySelectorAll('nav a')).findIndex(a=>a.getAttribute('href')===expected),href);
+        if(navIndex<0)throw Error('Missing navigation link '+href);
+        await page.locator('nav a').nth(navIndex).click();
+        if(decodeURIComponent(new URL(page.url()).hash.slice(1))!==decodeURIComponent(href.slice(1))) throw Error('Navigation '+href);
       }
       const local = await page.locator('a').evaluateAll(as=>as.map(a=>a.getAttribute('href')).filter(h=>h&&!h.startsWith('#')&&!h.startsWith('http')));
       for(const href of local) if(!fs.existsSync(path.resolve(path.dirname(target),href))) throw Error('Missing link '+href);

@@ -93,21 +93,13 @@ def main():
     if (BASE/'candidate-framings-v0.md').exists():
         (BASE/'candidate-framings-v0.html').write_text(document('AIMeth · 三种论文叙事', '<header><span class="badge">同一研究 · 三种叙事</span><h1>候选题目、摘要与证据门槛</h1><p>备选叙事，不是三篇已完成论文。</p><a href="progress.html">← 文章进度</a></header><main><article>'+markdown((BASE/'candidate-framings-v0.md').read_text())+'</article></main>'))
     def progress_page(prefix):
-        h='<header><span class="badge">'+escape(p.get('milestone_label','M2.12 · 首稿与可见进度'))+'</span><h1>文章、实现与证据同步推进</h1><p>当前版本 '+escape(p['version'])+' · '+escape(p['state_label'])+'</p><p>更新：'+escape(p['updated_at'])+'　下次计划：'+escape(p['next_scheduled_at'])+'</p></header><main>'
-        h+='<nav><a href="'+prefix+'manuscript.html">阅读完整英文稿</a><a href="#evidence">查看实测证据</a><a href="#gaps">查看科学缺口</a><a href="#versions">查看版本</a><button onclick="location.reload()">刷新快照</button></nav>'
-        h+='<div class="cards">'+''.join('<div class="card"><strong>'+str(n)+'</strong><span>'+label+'</span></div>' for n,label in [(words,'英文单词（含方法与引用）'),(len(refs),'已核对的一手文献'),(12,'既有 API 校准请求'),(0,'本稿可用的确认性群体结果')])+'</div>'
-        h+='<section id="work"><h2>本轮实际完成与进行中</h2><ul>'+''.join('<li>'+escape(x)+'</li>' for x in p['completed'])+'</ul><p class="status">当前工作：'+escape(p['current_work'])+'</p><p>触发：'+escape(p['trigger'])+'；周期起点：'+escape(p['cycle_started_at'])+'。周期与账户额度窗口分别记录。</p></section>'
-        if p.get('artifacts'):
-            h+='<section id="artifacts"><h2>本轮可检查的成果</h2><ul>'+''.join('<li><a href="'+prefix+escape(item['path'],quote=True)+'">'+escape(item['label'])+'</a> — '+escape(item['scope'])+'</li>' for item in p['artifacts'])+'</ul></section>'
-        h+='<section id="evidence"><h2>现有实测证据</h2><p>重算此前 12 次 DeepSeek 回执：8 次 fast、4 次 deep，均 HTTP 200、stop、非空、JSON 可解析、必需字段存在。它们不是独立群体重复，未保存最终正文，无法复核数学正确性或完整 schema。</p><figure>'+svg+'<figcaption>每个点是一条既有请求。两个通道提示、预算和并发不同，只作描述统计。总计 8,140 tokens；图示不是新实验或 10K 吞吐结果。</figcaption></figure><a href="'+prefix+'evidence-audit-v0.json">逐请求派生数据与来源哈希</a></section>'
-        h+='<section id="gaps"><h2>能写什么，尚不能声称什么</h2><table><thead><tr><th>内容</th><th>状态</th><th>科学边界</th></tr></thead><tbody>'
-        for row in [('题目／摘要／引言／讨论','已有正文','完整段落不等于完整证据'),('细胞、模块、信号、谱系与对照','Methods 提案','发育规则和确认性设计尚未冻结'),('接口校准','本地重新计算','不代表任务正确率或群体优势'),('发育→组织→能力因果链','待实验','不编造效果量、P 值或证明'),('投稿状态','研究草稿','由用户选择修订；目前不具备投稿证据')]:
-            h+='<tr>'+''.join('<td data-label="'+label+'">'+escape(v)+'</td>' for label,v in zip(['内容','状态','科学边界'],row))+'</tr>'
-        h+='</tbody></table><p class="warning">没有展示“科研完成百分比”，因为尚无可靠的完成分母。主张、证据、实现和投稿就绪度分别记录。</p></section>'
-        h+='<section id="versions"><h2>版本与证据入口</h2><ul><li><a href="'+prefix+'manuscript.md">可编辑 Markdown 主稿</a></li><li><a href="'+prefix+'claim-evidence.json">主张—证据表</a></li><li><a href="'+prefix+'literature-v0.md">文献及核验范围</a></li><li><a href="'+prefix+'independent-review-v0.md">独立方法与统计审查</a></li><li><a href="'+prefix+'next-priorities.md">断点与下一组工作</a></li></ul><p>版本历史保存在 versions/；交付哈希与验证见该里程碑的 manifest 和 validation 记录。</p></section>'
-        h+='<section id="requirements"><h2>要求、交付与下一阶段</h2><p>每 5 小时进入实际工作并保存正文和证据；16:06 与 21:06 已收到定时触发。启动记录、实际执行和账户重置分别记录，不把额度中断称为持续执行。</p><p>局部软件验证支持继续集成；群体科学实验仍需冻结任务、规则、评价与预算。优先完成可执行策略和完整失败分母，然后补独立群体的功能证据。三种稿件叙事共享同一证据，不增加科学目标。</p></section>'
-        h+='<footer>来源基线：31740a2eeddeb81795f87b0bbd4c3c77c9e439ea。交付提交另记。此页为带时间的本地快照，不代表后台始终执行；版式核验不等于科学验证。</footer></main>'
-        return document('AIMeth 文章进度 '+p['version'],h)
+        h='<header><span class="badge">AIMeth · 科学评议 · 2026-10-04</span><h1>从细胞发育到群体功能</h1><p>一个科学目标；两条设计原则；关键因果证据仍待验证。</p></header><main>'
+        h+='<nav><a href="'+prefix+'science-review-v1.html">阅读科学进度与判别计划</a></nav>'
+        h+='<section id="goal"><h2>科学目标</h2><p>检验任务条件下的计算细胞群体能否通过自组织、分化、增殖和介观结构形成，带来可独立评价的任务能力提升。结构和数量本身不是能力证据。</p></section>'
+        h+='<section id="principles"><h2>两条原则</h2><ol><li>调控驱动的多尺度发育：从表达和谱系变化追踪到介观组织。</li><li>快速局部交互与独立功能评估：以任务质量、时间和资源代价检验其效用。</li></ol></section>'
+        h+='<section id="evidence"><h2>当前证据位置</h2><p>已有研究提供空间转录组、细胞局部规则和任务适应型组织的学术背景；本项目据此形成了可检验的概念和研究框架。当前尚无独立群体证据证明任务驱动的发育形成组织并改善功能。</p><p class="warning">目前支持的是科学问题的提出与操作化准备，不是“智能涌现”结论。关键缺口与判别标准见科学评议页。</p></section>'
+        h+='<footer>证据边界：数学是独立核验的评价域之一；群体中的细胞、消息和时间点不等于独立重复。页面仅呈现科学逻辑与已知证据范围。</footer></main>'
+        return document('AIMeth 科学进度评议',h)
     (BASE/'progress.html').write_text(progress_page(''))
     if args.milestone:
         milestone=ROOT/'milestones'/f'{args.milestone_name}.html'

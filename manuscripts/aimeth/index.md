@@ -10,3 +10,8 @@ Read the current [manuscript](manuscript.html) or [progress snapshot](progress.h
 | [v0.3](versions/v0.3/manuscript.html) | Adds bounded transactional recovery, two journal defect corrections, 43 checked methods and manuscript consistency review | Internal research draft; core population outcomes still absent |
 
 The [A/B/C candidate titles and abstracts](candidate-framings-v0.html) are alternative narratives based on v0.2, not three complete articles or independent studies. [v0.3 review and response](review-response-v0.3.md) describe the evidence increment and remaining gaps.
+
+
+## 科学进度评议
+
+当前科学问题、证据边界及判别顺序见[科学进度、策略与科学计划](science-review-v1.html)。评议将科学主页面收束为一个目标和两条原则，并与工程状态单独展示。

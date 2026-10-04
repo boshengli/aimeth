@@ -1,10 +1,19 @@
-# Current cycle checkpoint
+# 科学续接重点
 
-Heartbeat: 2026-10-04 07:06:40 Asia/Shanghai. Actual execution start is recorded in progress.json; next scheduled start is 12:05:43. Cadence and shared-account resets are distinct.
+最新回顾：2026-10-04。当前科学评议见 `science-review-v1.html`。
 
-Completed: full-section v0.1/v0.2 and working v0.3; ten-source/biological provenance audit; twelve-request descriptive reanalysis; independent manuscript reviews; 24 contract and 19 journal checks with all reproduced defects preserved; three candidate framings and a partial official journal-fit audit.
+## 可支持的判断
 
-1. Freeze and validate manuscript v0.3 / M2.12 v2, preserving evidence and source identities. The independent review's null-interpretation and shell-command corrections are applied.
-2. Finish the already loaded offline policy runner: tests, 42 allocated synthetic cases, joint replay, local views, handoff, and complete failure/resource-stop reporting. Its outcomes are not yet evidence in v0.3. Review the finished code before any further integration.
+- 任务驱动的细胞发育、组织形成与功能提升是一条待检验的科学假设。
+- 细胞、人工基因/功能模块、表达、分化、谱系和介观组织已形成操作化草案；具体映射仍需比较并事先确定。
+- 空间转录组及人工生命研究提供来源背景和相关先例，不构成 AIMeth 自身的能力结果。
+- 目前没有独立群体证据表明结构发育带来任务能力提升。
 
-No new paid API call, 10K submission or cluster authentication is part of this checkpoint. Current v8 telemetry remains unknown. Core developmental-capability evidence remains absent. Preserve actual quota interruptions and save artifacts early. The temporary checkout lost 515 tracked files and its Git association; only missing HEAD files were restored, preserving new changes. Cause is unknown.
+## 下一阶段最关键的判别工作
+
+1. 先定义由局部规则形成的组织，以及区别于预设结构的观测标准。
+2. 在相同任务条件下比较任务响应的发育群体、经公平调优的固定组织、以及独立探索基线；独立群体才是重复单位。
+3. 对任务质量、证明/结果核验、资源和时长分开报告；失败与未完成不能从分母删除。数学是重要评价域之一，不是唯一智能指标。
+4. 整体策略有可重复效果后，再干预信号、分化或增殖，识别具体因果环节。速度和规模作为后续效应边界单独研究，不视作必然机制。
+
+这些是科学建议，不是已冻结的确认性实验协议；样本量、任务总体、最小有意义效应及停止边界仍需根据可用先导数据预先确定。

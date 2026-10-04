@@ -1,10 +1,10 @@
 {
   "version": "v0.3",
-  "updated_at": "2026-10-04T07:15:33+08:00",
-  "cycle_started_at": "2026-10-04T07:09:43+08:00",
-  "next_scheduled_at": "2026-10-04T12:05:43+08:00",
+  "updated_at": "2026-10-04T12:32:49+08:00",
+  "cycle_started_at": "2026-10-04T12:17:26+08:00",
+  "next_scheduled_at": "2026-10-04T17:05:43+08:00",
   "trigger": "heartbeat_aimeth",
-  "state_label": "v0.3 已补持久化实测与两项缺陷修复证据",
+  "state_label": "科学评议已完成；主页只呈现目标、原则与证据边界",
   "completed": [
     "完整英文稿v0.1已归档；v0.2补入真实原型结果与对照限制",
     "核对10篇一手来源，包括最初辣椒Nature Plants文章及架构出处",
@@ -15,18 +15,16 @@
     "三种候选题目/摘要与证据门槛已完成，尚不是三篇完整候选稿",
     "v0.3 Results/Methods 新增本地中断恢复结果、两项负面发现与明确边界"
   ],
-  "current_work": "v0.3 冻结与版式核验；离线策略夹具仍在执行验证",
+  "current_work": "后续先补独立群体功能证据；不从结构或工程检查推出智能结论",
   "quota_snapshot": {
-    "observed_at": "2026-10-04T07:06:56+08:00",
+    "observed_at": "2026-10-04T12:31:01+08:00",
     "five_hour_remaining_percent": 97,
-    "weekly_remaining_percent": 35,
-    "five_hour_resets_at": 1791086815,
-    "weekly_resets_at": 1791583457,
+    "weekly_remaining_percent": 19,
     "ordinary_usage_allowed": true,
     "shared_account": true
   },
   "scientific_readiness": "not_submission_ready",
-  "heartbeat_received_at": "2026-10-04T07:06:40.028+08:00",
+  "heartbeat_received_at": "user_scientific_review_request",
   "artifacts": [
     {
       "path": "candidate-framings-v0.html",
@@ -57,7 +55,13 @@
       "path": "journal-fit-v0.md",
       "label": "Nature/Science 官方要求核查",
       "scope": "Nature 已核对，Science 官方页面不可访问字段保留未知"
+    },
+    {
+      "path": "science-review-v1.html",
+      "label": "科学进度、策略与判别计划",
+      "scope": "科学目标、原则、证据与因果逻辑"
     }
   ],
-  "milestone_label": "M2.12 v2 · 恢复证据与主稿 v0.3"
+  "milestone_label": "M2.12 v2 · 恢复证据与主稿 v0.3",
+  "science_readiness": "No independent population evidence of functional emergence; concepts and causal comparison remain proposed."
 }
