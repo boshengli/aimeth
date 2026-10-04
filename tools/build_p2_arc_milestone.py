@@ -48,6 +48,30 @@ def build(summary_path: Path, output: Path, baseline_commit: str, implementation
         if record["transport_unknown"]:
             negatives.append(f"{name} 有 {record['transport_unknown']} 次发送后状态不明；未自动重发。")
     negative_html = "".join("<li>" + tag(x) + "</li>" for x in negatives) or "<li>未见传输未知或长度截断。</li>"
+    sensitivity = data.get("truncation_sensitivity")
+    if sensitivity:
+        sensitivity_rows = "".join(
+            "<tr><th scope='row'>" + tag(provider) + "</th><td>"
+            + tag(stats["length_count"]) + "/1600 ("
+            + tag(f"{100 * stats['length_rate']:.1f}%") + ")</td><td>"
+            + tag(stats["nontruncated_successes"]) + "/"
+            + tag(stats["nontruncated_count"]) + " ("
+            + tag(f"{100 * stats['nontruncated_pass_rate']:.1f}%" if stats["nontruncated_pass_rate"] is not None else "未定义")
+            + ")</td></tr>"
+            for provider, stats in sensitivity["providers"].items())
+        sensitivity_html = (
+            "<h3>长度截断敏感性（事后描述）</h3>"
+            "<div class='scroll'><table><thead><tr><th>模型</th><th>截断样本</th>"
+            "<th>仅非截断样本通过率</th></tr></thead><tbody>"
+            + sensitivity_rows + "</tbody></table></div><p>入选 40 题中，"
+            + tag(sensitivity["selected_pilot_length_majority_failure_count"])
+            + " 题的失败以长度截断为主：两模型八个样本合计，截断失败数严格大于其他失败数。"
+            "这是改变分母的描述，不是因果估计或新的选题门槛。"
+            "逐题截断次数与非截断通过率见 <a href='../reports/p2-arc-truncation-sensitivity-v1.csv'>逐题表</a>；"
+            "<a href='../reports/p2-arc-truncation-sensitivity-v1.json'>分析定义</a>（SHA-256 "
+            + tag(sensitivity["sha256"]) + "）。</p>")
+    else:
+        sensitivity_html = "<p>长度截断敏感性分析尚未生成。</p>"
     created = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     html = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -71,8 +95,9 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <div class="note"><strong>P2 pilot：</strong>{pilot_text}</div></section>
 <section id="evidence"><h2>实际证据</h2><div class="scroll"><table><thead><tr><th>模型</th><th>结算 / 计划</th><th>HTTP 200</th><th>提取程序</th><th>可执行</th><th>成功样本 / 1600</th><th>pass@4 任务 / 400</th><th>保守估计 ¥</th></tr></thead><tbody>{rows}</tbody></table></div>
 <ul>{operational}</ul>
+{sensitivity_html}
 <p class="muted">估算费用采用官方公开的高峰、未缓存输入和输出单价，以及内部 10 元/美元安全换算。它是上界式预算记录，非提供商已核对账单；各家上限 300 元。</p>
-<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>；除模型名外，跨模型匹配请求 {tag((data.get('audit') or {}).get('matched_cross_provider_requests') or '待审计')} 组。全仓 182 项单元测试已通过；桌面、窄屏和链接检查见相邻验证记录。</p></section>
+<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>；除模型名外，跨模型匹配请求 {tag((data.get('audit') or {}).get('matched_cross_provider_requests') or '待审计')} 组。单元测试及桌面、窄屏和链接检查见相邻验证记录。</p></section>
 <section id="mapping"><h2>用户要求与交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>实施及证据</th><th>未解决</th></tr></thead><tbody>
 <tr><td>两条分支推送与独立开发分支</td><td>源分支分别推送；开发基于 <code>{tag(baseline_commit)}</code>，实现提交 <code>{tag(implementation_commit)}</code></td><td>报告交付提交见相邻版本记录</td></tr>
 <tr><td>ARC 评测器</td><td>400 题加载、测试答案隔离、最多两次候选输出的精确评分、2 秒受限执行及单元测试</td><td>沙箱不是敌对代码安全性的形式证明</td></tr>

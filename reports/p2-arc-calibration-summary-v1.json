@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "calibration_tasks": 400,
+  "samples_per_task_per_model": 4,
+  "providers": {
+    "deepseek": {
+      "settled": 1600,
+      "http_statuses": {
+        "200": 1600
+      },
+      "finish_reasons": {
+        "stop": 914,
+        "length": 686
+      },
+      "served_models": {
+        "deepseek-flash": 1600
+      },
+      "failure_classes": {},
+      "transport_unknown": 0,
+      "reported_prompt_tokens": 5433008,
+      "reported_completion_tokens": 13805210,
+      "usage_missing": 0,
+      "elapsed_median_s": 41.835,
+      "elapsed_p95_s": 55.898,
+      "conservative_estimated_cny": 181.962,
+      "receipt_sha256": "bb938fdbe1bc4505ae4ba423fcb3b5ff38a88ea70025ff7ce98e36cd16c6672e",
+      "planned_v2": 1600,
+      "task_pass_at_4_count": 258,
+      "sample_successes": 791,
+      "programs_extracted": 932,
+      "execution_ok": 809,
+      "complete": true
+    },
+    "zhipu": {
+      "settled": 1600,
+      "http_statuses": {
+        "200": 1600
+      },
+      "finish_reasons": {
+        "stop": 1125,
+        "length": 475
+      },
+      "served_models": {
+        "glm-5.3-flash": 1600
+      },
+      "failure_classes": {},
+      "transport_unknown": 0,
+      "reported_prompt_tokens": 5399408,
+      "reported_completion_tokens": 9239217,
+      "usage_missing": 0,
+      "elapsed_median_s": 84.586,
+      "elapsed_p95_s": 291.765,
+      "conservative_estimated_cny": 54.295,
+      "receipt_sha256": "c5b360cdfd4691098cfb5c31c4c2dd0f97fd3d448f174be9a8a5cf6af20c0b26",
+      "planned_v2": 1600,
+      "task_pass_at_4_count": 209,
+      "sample_successes": 409,
+      "programs_extracted": 1136,
+      "execution_ok": 657,
+      "complete": true
+    }
+  },
+  "scoring_runtime": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "system": "Darwin"
+  },
+  "data_scope": "ARC-AGI-1 evaluation, 400 tasks",
+  "interpretation": "descriptive single-program difficulty calibration; no organization effect",
+  "calibration_csv_sha256": "2f68b57dbf63f3cadb1c5787e94f0e7b05c25f363128465b649ffe1dbb3c72db",
+  "superseded_deepseek_v1_probe": {
+    "settled": 1,
+    "http_statuses": {
+      "200": 1
+    },
+    "finish_reasons": {
+      "length": 1
+    },
+    "served_models": {
+      "deepseek-flash": 1
+    },
+    "failure_classes": {},
+    "transport_unknown": 0,
+    "reported_prompt_tokens": 333,
+    "reported_completion_tokens": 8192,
+    "usage_missing": 0,
+    "elapsed_median_s": 38.595,
+    "elapsed_p95_s": 38.595,
+    "conservative_estimated_cny": 0.099,
+    "receipt_sha256": "1b90b5c7745df04301952bb83f7153b687ebf9564dcfbe8ee00ce071a78588fb"
+  },
+  "complete": true,
+  "pilot": {
+    "count": 40,
+    "eligible_count": 110,
+    "manifest_sha256": "da347e42695941ff760a9e75353a98cefaa98271507b1d5c617b7e490f7b1686"
+  },
+  "audit": {
+    "complete": true,
+    "matched_cross_provider_requests": 1600,
+    "sha256": "2fc3786eb3c26c1df5a6b5663f349c7c36242f23d628991874fe42746c228f9f"
+  },
+  "truncation_sensitivity": {
+    "providers": {
+      "deepseek": {
+        "length_count": 686,
+        "nontruncated_count": 914,
+        "nontruncated_successes": 791,
+        "length_rate": 0.42875,
+        "nontruncated_pass_rate": 0.8654266958424508
+      },
+      "zhipu": {
+        "length_count": 475,
+        "nontruncated_count": 1125,
+        "nontruncated_successes": 409,
+        "length_rate": 0.296875,
+        "nontruncated_pass_rate": 0.3635555555555556
+      }
+    },
+    "selected_pilot_length_majority_failure_count": 13,
+    "definition": "finish_reason=length is truncation; nontruncated pass rate is successful samples divided by samples with another finish_reason; a pilot task has truncation-majority failures only when pooled length-truncated failed samples exceed all other failed samples across both providers",
+    "sha256": "69100fb73e14d016882ba004412c8e88a016e09c9fd63d5cb373f55fec45f041"
+  }
+}

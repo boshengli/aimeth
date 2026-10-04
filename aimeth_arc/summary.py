@@ -49,7 +49,8 @@ def _provider_summary(path: Path) -> dict[str, Any]:
 
 def summarize(private_root: Path, public_csv: Path, output: Path,
               pilot_manifest: Path | None = None,
-              audit_path: Path | None = None) -> dict[str, Any]:
+              audit_path: Path | None = None,
+              sensitivity_path: Path | None = None) -> dict[str, Any]:
     with public_csv.open(newline="") as stream:
         rows = list(csv.DictReader(stream))
     summary: dict[str, Any] = {"schema_version": 1, "calibration_tasks": len(rows),
@@ -91,6 +92,21 @@ def summarize(private_root: Path, public_csv: Path, output: Path,
                             "sha256": sha256(audit_path.read_bytes()).hexdigest()}
     else:
         summary["audit"] = None
+    if sensitivity_path and sensitivity_path.exists():
+        sensitivity = json.loads(sensitivity_path.read_text())
+        if sensitivity["calibration_csv_sha256"] != summary["calibration_csv_sha256"]:
+            raise ValueError("sensitivity and summary used different calibration CSVs")
+        if summary["pilot"] and sensitivity["pilot_manifest_sha256"] != summary["pilot"]["manifest_sha256"]:
+            raise ValueError("sensitivity and summary used different pilot manifests")
+        if sensitivity["private_score_ledger_sha256"] != sha256((private_root / "scores.jsonl").read_bytes()).hexdigest():
+            raise ValueError("sensitivity and summary used different score ledgers")
+        summary["truncation_sensitivity"] = {
+            "providers": sensitivity["providers"],
+            "selected_pilot_length_majority_failure_count": sensitivity["selected_pilot_length_majority_failure_count"],
+            "definition": sensitivity["definition"],
+            "sha256": sha256(sensitivity_path.read_bytes()).hexdigest()}
+    else:
+        summary["truncation_sensitivity"] = None
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(summary, indent=2) + "\n")
     return summary

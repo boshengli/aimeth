@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "purpose": "post-hoc descriptive sensitivity analysis; not a selection gate",
+  "definition": "finish_reason=length is truncation; nontruncated pass rate is successful samples divided by samples with another finish_reason; a pilot task has truncation-majority failures only when pooled length-truncated failed samples exceed all other failed samples across both providers",
+  "providers": {
+    "deepseek": {
+      "length_count": 686,
+      "nontruncated_count": 914,
+      "nontruncated_successes": 791,
+      "length_rate": 0.42875,
+      "nontruncated_pass_rate": 0.8654266958424508
+    },
+    "zhipu": {
+      "length_count": 475,
+      "nontruncated_count": 1125,
+      "nontruncated_successes": 409,
+      "length_rate": 0.296875,
+      "nontruncated_pass_rate": 0.3635555555555556
+    }
+  },
+  "selected_pilot_count": 40,
+  "selected_pilot_length_majority_failure_count": 13,
+  "calibration_csv_sha256": "2f68b57dbf63f3cadb1c5787e94f0e7b05c25f363128465b649ffe1dbb3c72db",
+  "pilot_manifest_sha256": "da347e42695941ff760a9e75353a98cefaa98271507b1d5c617b7e490f7b1686",
+  "private_score_ledger_sha256": "ae52c263b2787873d9c7c6e4efcdb11f37f655f7dda7fc1e786b827ed20cc278",
+  "limitations": "Excluding truncated samples changes the denominator and is not a causal estimate; truncation can correlate with task difficulty or model behaviour. No pilot task was reselected."
+}

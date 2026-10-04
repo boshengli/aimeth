@@ -1,0 +1,33 @@
+{
+  "task_count": 400,
+  "providers": {
+    "deepseek": {
+      "planned": 1600,
+      "started": 1600,
+      "settled": 1600,
+      "scored": 1600,
+      "http_statuses": {
+        "200": 1600
+      },
+      "budget_envelope_cny": 181.962,
+      "cap_cny": 300.0,
+      "complete": true,
+      "receipt_sha256": "bb938fdbe1bc4505ae4ba423fcb3b5ff38a88ea70025ff7ce98e36cd16c6672e"
+    },
+    "zhipu": {
+      "planned": 1600,
+      "started": 1600,
+      "settled": 1600,
+      "scored": 1600,
+      "http_statuses": {
+        "200": 1600
+      },
+      "budget_envelope_cny": 54.295,
+      "cap_cny": 300.0,
+      "complete": true,
+      "receipt_sha256": "c5b360cdfd4691098cfb5c31c4c2dd0f97fd3d448f174be9a8a5cf6af20c0b26"
+    }
+  },
+  "complete": true,
+  "matched_cross_provider_requests": 1600
+}
