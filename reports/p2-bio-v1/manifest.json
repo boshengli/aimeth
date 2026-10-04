@@ -1,0 +1,22 @@
+{
+ "elapsed_s": 213.6537754535675,
+ "data_root": "/data/libs/aimeth/data/callus-xenium-20251101",
+ "inputs_sha256": {
+  "WT-3D-1": "f30160d78288a799a65516de0d7cf7ff09129cdf7793d7522b670d47d7ad955c",
+  "WT-3D-2": "26ccb38c9fd8d7c5996a54b3a73a7fa0061eff6e71c38bd1dcf3f9335d6d3c80",
+  "WT-12D-1": "0844f0536fbbc935118d3ff70354dbf1a4d31c9de7961731398972951c1617b6",
+  "WT-12D-2": "c4de21151e7e719f57db784763ed971c8f18d8336f0caeb8defca1765eeaadcc",
+  "WT-12D-3": "9bccaacf15f9ed71c64028d881af13344509ac688756da01bcbfec1055da2f67",
+  "WT-15D-1": "64b3cffaa44f63fc7bd4559f1abc96e8611311b2f7c56f19d387ffe1a5d57c22",
+  "WT-15D-2": "ed0854c55e28ba4580e26932946daa423519e23a681ddc6ccb25dd3e6d0eb613",
+  "WT-15D-3": "e8ad4805cede7fe719d35c90fc0ebe8a58847ff116c979db661599d67184ed37",
+  "pi2-3D-1": "d47d771b0e2c395d2b0a4d9514ff830baba5784e1e37585409a378cf4fd62aee",
+  "pi2-3D-2": "8d4a59ebd8779c785c8c473b4c5c06d80c38ea2625e645d0839e996674d7b86c"
+ },
+ "source_sha256": {
+  "aimeth_bio/__init__.py": "94622ab7d3648eb84f62284b99f31a0350fd6f1a59bcfc5b491b0f66cbdf4238",
+  "aimeth_bio/bench.py": "560e4dd7927435ed91c168a800ec9253097a2121dea9b32704fcfe8af31471f3",
+  "aimeth_bio/xenium.py": "d78df49d6c68019c704ef8058cbbf8ed44c148736ec22ba028d13ff07c2d0e74",
+  "tools/build_callus_bench.py": "ebb7489defb3a7310528e854bd2e86953ec57d25c431c56202a2335217ac77a4"
+ }
+}

@@ -1,0 +1,926 @@
+{
+ "immunity_regeneration": [
+  {
+   "id": "Solyc01g044360",
+   "symbol": "SPR7",
+   "group": "Mitochondrial carrier family",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc01g104970",
+   "symbol": "SlSERK3b",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc01g105070",
+   "symbol": "TPOXN1",
+   "group": "Peroxidase",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc01g108240",
+   "symbol": "ERF109-1",
+   "group": "response to auxin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc02g070890",
+   "symbol": "FLS2",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g013030",
+   "symbol": "SUMO5",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g020060",
+   "symbol": "PI-2a",
+   "group": "PIN2 family",
+   "category": "PIN2"
+  },
+  {
+   "id": "Solyc03g082450",
+   "symbol": "SYR2",
+   "group": "Receptor of systemin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g082470",
+   "symbol": "SYR1",
+   "group": "Receptor of systemin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g096300",
+   "symbol": "WOX5",
+   "group": "Root meristem marker gene",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g098795",
+   "symbol": "PI-II",
+   "group": "PIN2 family",
+   "category": "PIN2"
+  },
+  {
+   "id": "Solyc03g111800",
+   "symbol": "SOBIR1-Like",
+   "group": "LRR receptor-like protein kinase",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g118190",
+   "symbol": "ERF115-2",
+   "group": "Cytokinin production induced by jasmonate represses adventitious rooting",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc03g123860",
+   "symbol": "PORK1",
+   "group": "Receptor of REF1",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc04g051360",
+   "symbol": "ERF109-2",
+   "group": "Cytokinin production induced by jasmonate represses adventitious rooting",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc04g072310",
+   "symbol": "PRP",
+   "group": "Precursor of REF1",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc04g081080",
+   "symbol": "RLK66",
+   "group": "RLK family protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc05g013540",
+   "symbol": "ESR1",
+   "group": "LFS response to cytokinin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc05g051750",
+   "symbol": "PRS",
+   "group": "Precursor of systemin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g005980",
+   "symbol": "ASA1-2",
+   "group": "Anthranilate synthase component I-1",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g006100",
+   "symbol": "ASA1-1",
+   "group": "Anthranilate synthase component I family protein expressed,auxin biosynthetic process",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g010000",
+   "symbol": "SIZ1b",
+   "group": "E3 SUMO ligases",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g059750",
+   "symbol": "SEU2",
+   "group": "response to auxin",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g059760",
+   "symbol": "SEU1",
+   "group": "Transcriptional co-regulators involved in the regeneration process",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g068520",
+   "symbol": "SlHypSYS",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g068830",
+   "symbol": "ERF115-3",
+   "group": "Cytokinin production induced by jasmonate represses adventitious rooting",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g071280",
+   "symbol": "EDS1",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g071810",
+   "symbol": "SOBIR1",
+   "group": "LRR receptor-like protein kinase",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc06g072890",
+   "symbol": "WOX11",
+   "group": "Marker for callus formation",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g009030",
+   "symbol": "DLP1",
+   "group": "defensin-like protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g009050",
+   "symbol": "DLP2",
+   "group": "defensin-like protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g009070",
+   "symbol": "DLP3",
+   "group": "defensin-like protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g049180",
+   "symbol": "CERK1",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g049360",
+   "symbol": "SUMO1c",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g062780",
+   "symbol": "MMS21",
+   "group": "E3 SUMO ligases",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc07g064880",
+   "symbol": "SUMO1b",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc08g008130",
+   "symbol": "PIAL2",
+   "group": "E3 SUMO ligases",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc08g065940",
+   "symbol": "TZF20",
+   "group": "CCCH-type Zn-finger protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc09g059970",
+   "symbol": "SUMO1d",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc09g091883",
+   "symbol": "SUMO3",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc09g091887",
+   "symbol": "SUMO4",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc09g092025",
+   "symbol": "SUMO2",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc10g011660",
+   "symbol": "SlJAR1",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc10g047140",
+   "symbol": "SlSERK3a",
+   "group": "",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc11g020960",
+   "symbol": "PI-2b",
+   "group": "PIN2 family",
+   "category": "PIN2"
+  },
+  {
+   "id": "Solyc11g021060",
+   "symbol": "PI-2c",
+   "group": "PIN2 family",
+   "category": "PIN2"
+  },
+  {
+   "id": "Solyc11g067020",
+   "symbol": "HDA9",
+   "group": "Histone deacetylase",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc11g069160",
+   "symbol": "SIZ1a",
+   "group": "E3 SUMO ligases",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc12g006003",
+   "symbol": "SUMO1a",
+   "group": "small ubiquitin-related modifier",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc12g009770",
+   "symbol": "RLP50",
+   "group": "LRR family protein",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc12g042210",
+   "symbol": "ERF115-1",
+   "group": "Cytokinin production induced by jasmonate represses adventitious rooting",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc12g056980",
+   "symbol": "WIND1",
+   "group": "Master transcription factor of regeneration",
+   "category": "Immunity&Regeneration"
+  },
+  {
+   "id": "Solyc12g100010",
+   "symbol": "RLP23",
+   "group": "LRR family protein",
+   "category": "Immunity&Regeneration"
+  }
+ ],
+ "callus_development": [
+  {
+   "id": "Solyc01g006680",
+   "symbol": "JMJD5",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc01g008550",
+   "symbol": "PAR2.6L",
+   "group": "ADH",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc01g028860",
+   "symbol": "ECT2",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc01g087990",
+   "symbol": "AGL15",
+   "group": "MADS box",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc01g091010",
+   "symbol": "AFO",
+   "group": "C2C2-YABBY",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc01g103540",
+   "symbol": "ECT11",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g024070",
+   "symbol": "PHB",
+   "group": "HD ZIP III",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g062740",
+   "symbol": "DRM2",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g067800",
+   "symbol": "LBD25",
+   "group": "LOB",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g070240",
+   "symbol": "CPSF30-L",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g081120",
+   "symbol": "STM",
+   "group": "KNOX",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g083950",
+   "symbol": "WUS",
+   "group": "WOXfamily",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g086480",
+   "symbol": "LOB",
+   "group": "LOB",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g092050",
+   "symbol": "ANT",
+   "group": "AP2/ERF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc02g092070",
+   "symbol": "GRF2",
+   "group": "GRF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc03g020020",
+   "symbol": "AtVIRILIZER",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc03g044380",
+   "symbol": "CLF",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc03g112520",
+   "symbol": "AtFIP37",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc04g005250",
+   "symbol": "DRM1",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc04g072900",
+   "symbol": "RAP2.4-WIND1",
+   "group": "AP2/ERF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc04g078690",
+   "symbol": "SPT",
+   "group": "bHLH",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc05g051380",
+   "symbol": "PLT3a",
+   "group": "AP2/ERF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc05g053260",
+   "symbol": "DRM3",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc05g056220",
+   "symbol": "AtMTB",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc06g075370",
+   "symbol": "DOF2.1",
+   "group": "Dof_zinc_finger_protein",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc07g018290",
+   "symbol": "PLT5",
+   "group": "AP2/ERF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc07g052570",
+   "symbol": "ATXR2",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc07g062840",
+   "symbol": "CUC2",
+   "group": "NAC domain",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc07g064090",
+   "symbol": "FIE",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g005400",
+   "symbol": "CMT2",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g007760",
+   "symbol": "ECT12",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g065420",
+   "symbol": "ATH1",
+   "group": "Knotted",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g066730",
+   "symbol": "AtMTA",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g067070",
+   "symbol": "METL",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g075950",
+   "symbol": "GRF5",
+   "group": "GRF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc08g081140",
+   "symbol": "GL3",
+   "group": "bHLH",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc09g009030",
+   "symbol": "HDA3",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc09g013120",
+   "symbol": "AtHAKA1",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc09g074050",
+   "symbol": "ALKBH10B",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc10g045390",
+   "symbol": "HAG1",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc10g079070",
+   "symbol": "bHLH65",
+   "group": "bHLH",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc10g081320",
+   "symbol": "MYB105",
+   "group": "R2R3MYB",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc10g086640",
+   "symbol": "RPL",
+   "group": "BEL1-like_HD",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc11g010710",
+   "symbol": "PLT3b",
+   "group": "AP2/ERF",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc11g030600",
+   "symbol": "MET1",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc11g062010",
+   "symbol": "SYD",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc11g069470",
+   "symbol": "REV",
+   "group": "HD ZIP III",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc12g044410",
+   "symbol": "ATHB-15",
+   "group": "HD ZIP III",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc12g099090",
+   "symbol": "ECT7",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  },
+  {
+   "id": "Solyc12g100330",
+   "symbol": "CMT3",
+   "group": "Epigenetic",
+   "category": "Callus_development"
+  }
+ ],
+ "random50": [
+  {
+   "id": "Solyc00g500353",
+   "symbol": "PAL",
+   "group": "",
+   "category": "Phenolic synthesis\n酚类"
+  },
+  {
+   "id": "Solyc01g005440",
+   "symbol": "JAZ3",
+   "group": "JA signal",
+   "category": "JA"
+  },
+  {
+   "id": "Solyc01g006370",
+   "symbol": "GSL12/CalS3",
+   "group": "",
+   "category": "Callose synthesis"
+  },
+  {
+   "id": "Solyc01g007760",
+   "symbol": "E2Fa",
+   "group": "G1/S_Callus formation",
+   "category": "Cell_cycle"
+  },
+  {
+   "id": "Solyc01g009170",
+   "symbol": "SlEIL2",
+   "group": "Ethylene signal",
+   "category": "Ethylene"
+  },
+  {
+   "id": "Solyc01g014100",
+   "symbol": "CLE40",
+   "group": "root stele",
+   "category": "Marker"
+  },
+  {
+   "id": "Solyc01g014480",
+   "symbol": "EIL3",
+   "group": "Ethylene signal",
+   "category": "Ethylene"
+  },
+  {
+   "id": "Solyc01g059870",
+   "symbol": "PHYB",
+   "group": "",
+   "category": "Light signaling"
+  },
+  {
+   "id": "Solyc01g094690",
+   "symbol": "PIP1;4",
+   "group": "vascular tissue3",
+   "category": "New marker"
+  },
+  {
+   "id": "Solyc01g095700",
+   "symbol": "RCAR3",
+   "group": "ABA signal",
+   "category": "ABA"
+  },
+  {
+   "id": "Solyc01g099520",
+   "symbol": "RALFa",
+   "group": "small peptide    adjacent_sp",
+   "category": "small peptide"
+  },
+  {
+   "id": "Solyc01g111560",
+   "symbol": "RAC3",
+   "group": "TOR_konwn_upstream",
+   "category": "TOR"
+  },
+  {
+   "id": "Solyc02g070030",
+   "symbol": "HEN1",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc02g072320",
+   "symbol": "CIK4",
+   "group": "receptor     CLE receptor shoot_primordia",
+   "category": "small peptide"
+  },
+  {
+   "id": "Solyc03g007050",
+   "symbol": "ERL1",
+   "group": "receptor",
+   "category": "EPF"
+  },
+  {
+   "id": "Solyc03g044580",
+   "symbol": "CEPb",
+   "group": "small peptide    NO_EXP",
+   "category": "small peptide"
+  },
+  {
+   "id": "Solyc03g093330",
+   "symbol": "SlPXY",
+   "group": "Procambial",
+   "category": "Marker"
+  },
+  {
+   "id": "Solyc03g111570",
+   "symbol": "GSL10",
+   "group": "",
+   "category": "Callose synthesis"
+  },
+  {
+   "id": "Solyc04g009950",
+   "symbol": "CDC5",
+   "group": "",
+   "category": "Programmed cell death"
+  },
+  {
+   "id": "Solyc04g055120",
+   "symbol": "ABCD1",
+   "group": "",
+   "category": "ABC transporters"
+  },
+  {
+   "id": "Solyc04g074180",
+   "symbol": "CRY1",
+   "group": "",
+   "category": "Light signaling"
+  },
+  {
+   "id": "Solyc04g082400",
+   "symbol": "GSD4",
+   "group": "",
+   "category": "starch synthase"
+  },
+  {
+   "id": "Solyc04g150104",
+   "symbol": "MLP34",
+   "group": "root cap",
+   "category": "Marker"
+  },
+  {
+   "id": "Solyc05g008060",
+   "symbol": "PIN3",
+   "group": "Auxin transport",
+   "category": "Auxin"
+  },
+  {
+   "id": "Solyc05g051545",
+   "symbol": "EPFL1",
+   "group": "EPFL_SP",
+   "category": "EPF"
+  },
+  {
+   "id": "Solyc05g056110",
+   "symbol": "DCP2",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc06g005990",
+   "symbol": "SKI2",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc06g064840",
+   "symbol": "STK",
+   "group": "shoot primordium2",
+   "category": "New marker"
+  },
+  {
+   "id": "Solyc06g069790",
+   "symbol": "GASA6",
+   "group": "Air epidermis5-10",
+   "category": "New marker"
+  },
+  {
+   "id": "Solyc06g074060",
+   "symbol": "CLEc",
+   "group": "shoot_primordia",
+   "category": "small peptide"
+  },
+  {
+   "id": "Solyc06g074210",
+   "symbol": "DCP1",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc07g043580",
+   "symbol": "PIF5",
+   "group": "",
+   "category": "Light signaling"
+  },
+  {
+   "id": "Solyc07g045350",
+   "symbol": "cytosolic_1",
+   "group": "",
+   "category": "Terpenoid biosynthesis\n萜烯类"
+  },
+  {
+   "id": "Solyc07g056350",
+   "symbol": "MPK20",
+   "group": "MPK",
+   "category": "MPK signal"
+  },
+  {
+   "id": "Solyc07g162010",
+   "symbol": "Bifunctional_inhibitor",
+   "group": "cortex",
+   "category": "Marker"
+  },
+  {
+   "id": "Solyc08g067210",
+   "symbol": "DCL3",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc08g080120",
+   "symbol": "KNAT7",
+   "group": "cell wall signal",
+   "category": "cell wall"
+  },
+  {
+   "id": "Solyc08g082180",
+   "symbol": "RCAR1",
+   "group": "ABA signal",
+   "category": "ABA"
+  },
+  {
+   "id": "Solyc09g007460",
+   "symbol": "POLAR",
+   "group": "",
+   "category": "Asymmetric cell division"
+  },
+  {
+   "id": "Solyc09g008240",
+   "symbol": "ABCB1",
+   "group": "",
+   "category": "ABC transporters"
+  },
+  {
+   "id": "Solyc09g075440",
+   "symbol": "NR",
+   "group": "Ethylene signal",
+   "category": "Ethylene"
+  },
+  {
+   "id": "Solyc09g082620",
+   "symbol": "EPFL4",
+   "group": "EPFL_around",
+   "category": "EPF"
+  },
+  {
+   "id": "Solyc09g091280",
+   "symbol": "RBR",
+   "group": "G1/S",
+   "category": "Cell_cycle"
+  },
+  {
+   "id": "Solyc09g091760",
+   "symbol": "FAMA",
+   "group": "stoma",
+   "category": "Marker"
+  },
+  {
+   "id": "Solyc10g075110",
+   "symbol": "LTP2/AtLTPI.4",
+   "group": "",
+   "category": "Suberin Biosynthesis\n栓质"
+  },
+  {
+   "id": "Solyc10g083580",
+   "symbol": "PSK5",
+   "group": "shoot_primordia",
+   "category": "small peptide"
+  },
+  {
+   "id": "Solyc12g006790",
+   "symbol": "AGO10b",
+   "group": "DCL2_related",
+   "category": "DCL2"
+  },
+  {
+   "id": "Solyc12g089040",
+   "symbol": "BES1",
+   "group": "Vascular development BR signal",
+   "category": "Graft"
+  },
+  {
+   "id": "Solyc12g094620",
+   "symbol": "CAT",
+   "group": "",
+   "category": "ROS signaling"
+  },
+  {
+   "id": "Solyc12g098225",
+   "symbol": "Prion protein",
+   "group": "Air epidermis5-10",
+   "category": "New marker"
+  }
+ ]
+}
