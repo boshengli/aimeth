@@ -37,3 +37,15 @@ The control keeps a finite population of `transform` programs and scores candida
 The model-generated programs may exploit public ARC task familiarity in model pretraining; the project cannot establish clean training-data provenance for provider weights. Model identity is the served API identifier, not a verified weight digest. Pilot difficulty measured from the same two model APIs must not be presented as a model-independent property of the tasks. Task-level calibration samples cannot be used as independent replicates for the later organization comparison.
 
 These are ARC-derived program-synthesis research measurements, not official ARC Prize scores. The [ARC Prize verified testing policy](https://arcprize.org/policy) evaluates direct task-to-grid predictors without client-side tools, while this project asks models for executable programs and runs an external evaluator.
+
+## Reproduction from preserved receipts
+
+With the archived dataset and private receipt directory available to an authorized reviewer, run the scorer, ledger audit, and pilot freezer in that order. The scorer does not make API calls. Do not put API keys in these commands or copy private response bodies into the repository.
+
+```sh
+python3 -m tools.score_arc_calibration --archive "$ARC_ARCHIVE" --private-root "$ARC_PRIVATE_ROOT" --csv reports/p2-arc-calibration-v1.csv
+python3 -m tools.audit_arc_calibration --private-root "$ARC_PRIVATE_ROOT" --csv reports/p2-arc-calibration-v1.csv --output reports/p2-arc-calibration-audit-v1.json
+python3 -m tools.freeze_arc_pilot --archive "$ARC_ARCHIVE" --csv reports/p2-arc-calibration-v1.csv --output reports/p2-arc-pilot-v1.json
+```
+
+The private `scores.jsonl` is append-only and preserves individual failures. The CSV and pilot manifest are public aggregates and task IDs; neither contains hidden answer grids.

@@ -58,8 +58,9 @@ def summarize(private_root: Path, public_csv: Path, output: Path,
         stats = _provider_summary(private_root / f"{provider}-receipts.jsonl")
         stats["planned_v2"] = len(rows) * 4
         stats["task_pass_at_4_count"] = sum(row[f"{provider}_pass_at_4"] == "1" for row in rows)
-        stats["sample_successes"] = (round(sum(float(row[f"{provider}_pass_at_1"]) * 4
-                                                   for row in rows if row[f"{provider}_pass_at_1"]), 0))
+        stats["sample_successes"] = int(round(sum(
+            float(row[f"{provider}_pass_at_1"]) * 4
+            for row in rows if row[f"{provider}_pass_at_1"])))
         stats["programs_extracted"] = sum(int(row[f"{provider}_programs_extracted"]) for row in rows)
         stats["execution_ok"] = sum(int(row[f"{provider}_execution_ok"]) for row in rows)
         stats["complete"] = stats["settled"] == stats["planned_v2"]
