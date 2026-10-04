@@ -62,5 +62,5 @@ Self-repair improves round by round (true score vs baseline −0.004, +0.000, +0
 144 programs failed at run time; the independent arm's pseudo-task selection recovers almost all of the oracle best-of-4
 gain (0.0185 of 0.0200), so the visible check is a usable selection signal. Under the same call and token budget, the
 sequential repair loop did not beat parallel sampling with selection. Cost (envelope): independent 47.5 CNY; self-repair
-≈ 50 CNY plus ≈ 20 CNY for the stopped first attempt. Two independent-arm calls returned empty answers before the
+39.0 CNY plus 40.5 CNY for the stopped first attempt (138 calls). All runtime DeepSeek calls today: 606 calls, 189 CNY envelope. Two independent-arm calls returned empty answers before the
 extraction rule existed (2 of 144 calls; counted as failures).
