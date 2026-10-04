@@ -40,7 +40,7 @@ def audit(run_dir: Path, arc_manifest: Path, bio_manifest: Path) -> dict:
                 if row.get("calls_used", 0) > 8 or row.get("completion_reasoning_tokens_used", 0) > 262144:
                     failures.append(f"ceiling exceeded: {path.name}:{row.get('task_id')}")
                 for step in row.get("steps", []):
-                    ceiling = 131072 if arm == "single_long" else 32768
+                    ceiling = 262144 if arm == "single_long" else 32768
                     if step.get("requested_max_tokens", 0) > ceiling:
                         failures.append(f"per-call cap exceeded: {path.name}:{row.get('task_id')}")
             starts = read_jsonl(path.with_suffix(".events.jsonl"))

@@ -24,7 +24,7 @@ class PhaseBAuditTest(unittest.TestCase):
                            "budget": {"calls": 8, "completion_reasoning_tokens": 262144},
                            "calls_used": 1, "completion_reasoning_tokens_used": 8,
                            "final_eval_id": "eval1", "cost_estimate_cny": 0.01,
-                           "steps": [{"requested_max_tokens": 131072 if arm == "single_long" else 32768,
+                           "steps": [{"requested_max_tokens": 262144 if arm == "single_long" else 32768,
                                       "ok": True}]}
                     out.write_text(json.dumps(row) + "\n")
                     out.with_suffix(".events.jsonl").write_text(json.dumps({

@@ -15,13 +15,28 @@ if [[ -e "$LOCK_DIR" ]]; then
   echo "phase-B launcher lock exists; inspect its PID before resuming" >&2
   exit 3
 fi
+python3 - "$RUN_DIR/callus-public-prompts-v1.json" plans/callus-public-prompt-hashes-v1.json <<'PY'
+import hashlib, json, sys
+from pathlib import Path
+manifest_path, frozen_path = map(Path, sys.argv[1:])
+manifest_bytes = manifest_path.read_bytes()
+manifest = json.loads(manifest_bytes)
+frozen = json.loads(frozen_path.read_text())
+observed = [(row.get("task_id"), row.get("prompt_sha256")) for row in manifest]
+expected = [(row["task_id"], row["prompt_sha256"]) for row in frozen["tasks"]]
+if hashlib.sha256(manifest_bytes).hexdigest() != frozen["prompt_manifest_sha256"]:
+    raise SystemExit("callus public prompt manifest SHA-256 does not match the frozen run card")
+if len(manifest) != 36 or observed != expected:
+    raise SystemExit("callus task IDs or prompt hashes do not match the frozen run card")
+print("callus prompt manifest hashes verified")
+PY
 mkdir "$LOCK_DIR"
 printf '%s\n' "$$" > "$LOCK_DIR/pid"
 cleanup() { rm -rf "$LOCK_DIR"; }
 trap cleanup EXIT INT TERM
 
 ARMS=(independent self_repair single_long vote orchestrator_worker debate evolution)
-COMMON=(--provider deepseek --model deepseek-flash --model-max-tokens 131072
+COMMON=(--provider deepseek --model deepseek-flash --model-max-tokens 262144
         --budget-calls 8 --budget-tokens 262144 --workers 4 --llm-start 2 --llm-cap 8
         --execute-paid --seed 1000 --k 4 --m 3 --population-size 8
         --eval-transport ssh --remote-target libs@172.16.30.19

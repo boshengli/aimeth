@@ -133,8 +133,8 @@ def main():
     ap.add_argument("--receipts", help="private append-only provider receipts (default: <out dir>/receipts)")
     ap.add_argument("--provider", default="deepseek")
     ap.add_argument("--model", default="deepseek-flash")
-    ap.add_argument("--model-max-tokens", type=int, default=131072,
-                    help="recorded server/model output ceiling; single_long is capped here")
+    ap.add_argument("--model-max-tokens", type=int, default=262144,
+                    help="recorded effective output ceiling; single_long is capped here")
     ap.add_argument("--budget-calls", type=int)
     ap.add_argument("--budget-tokens", type=int, help="completion + reasoning tokens per task instance")
     ap.add_argument("--workers", type=int, default=4)

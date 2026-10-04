@@ -1,0 +1,152 @@
+{
+  "prompt_manifest_sha256": "2eb0f5356fe285bc46e9c3ca57527e1372f4752965525148ea249f8763de17c8",
+  "source": "Existing frozen P2 tomato-callus benchmark task prompts exported from the cluster dataset; public fields only",
+  "task_count": 36,
+  "tasks": [
+    {
+      "prompt_sha256": "e38fda0726b396adafa09ddd6281b6deabc75a7140c84b73273dae9259e7af0c",
+      "task_id": "cross_time__WT-12D-1__WT-15D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "ed1731a2059f4f0936011b3486fd8840da48bf62b3560a43c8f2c60258a989f1",
+      "task_id": "cross_time__WT-12D-1__WT-15D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "9d680c87a001890a1f219e3bf7526ae9e28f90bd03704b4641424b6b907b5ce3",
+      "task_id": "cross_time__WT-12D-1__WT-15D-1__random50"
+    },
+    {
+      "prompt_sha256": "a7ab30c0f35d27cc07dbbae6025954f900006e43300a23cb7d9c3ab4681065d4",
+      "task_id": "cross_time__WT-15D-1__WT-3D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "09c042067a72ff74381acdfd2a9946c1e4cfbc52d77c0a7782d509ea1c8b99f5",
+      "task_id": "cross_time__WT-15D-1__WT-3D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "09ac1ede55ddc5862d24cfc85cc520bc658346f1782c6bb38b4a84630246eaeb",
+      "task_id": "cross_time__WT-15D-1__WT-3D-1__random50"
+    },
+    {
+      "prompt_sha256": "42b8ac287b61fa542dfdf944514adbfc1912646e3e982d353bf3dee0a25b3b88",
+      "task_id": "cross_time__WT-3D-1__WT-12D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "e45ed2b07863f354bed2673073c6f3a8031c242770e79d382a7aa48254075679",
+      "task_id": "cross_time__WT-3D-1__WT-12D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "0cd7c023217ed92cd503c8dc61fdf121ac2e3818d1e5c71f6b34c9660c68c2a7",
+      "task_id": "cross_time__WT-3D-1__WT-12D-1__random50"
+    },
+    {
+      "prompt_sha256": "d73451ff54ddc4366dab3426b6096fc72d46f5b1329cb98bb37de3ce38ccd0d7",
+      "task_id": "cross_time__WT-3D-1__WT-15D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "d83ab117128146afd0736f448aebc80ee78302ec31696f370c4c75437cece479",
+      "task_id": "cross_time__WT-3D-1__WT-15D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "b34f8be84475678c82b80712e9fbf9782aaddb403f69c89401eb87160f896a52",
+      "task_id": "cross_time__WT-3D-1__WT-15D-1__random50"
+    },
+    {
+      "prompt_sha256": "a082c895e79c0f856cf51e974e67aa2a1543ba48e0003f6ce5cd21a49c80d233",
+      "task_id": "mutant__WT-3D-1__pi2-3D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "1216f9c0bcbf502dc96d0988e680f57f134ee05f9513cc07fb7dc675286ab77a",
+      "task_id": "mutant__WT-3D-1__pi2-3D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "094fb8a946f254428b60098e740ed886fb36c091a8ad5c3071c780762b556974",
+      "task_id": "mutant__WT-3D-1__pi2-3D-1__random50"
+    },
+    {
+      "prompt_sha256": "a082c895e79c0f856cf51e974e67aa2a1543ba48e0003f6ce5cd21a49c80d233",
+      "task_id": "mutant__WT-3D-2__pi2-3D-2__callus_development"
+    },
+    {
+      "prompt_sha256": "1216f9c0bcbf502dc96d0988e680f57f134ee05f9513cc07fb7dc675286ab77a",
+      "task_id": "mutant__WT-3D-2__pi2-3D-2__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "094fb8a946f254428b60098e740ed886fb36c091a8ad5c3071c780762b556974",
+      "task_id": "mutant__WT-3D-2__pi2-3D-2__random50"
+    },
+    {
+      "prompt_sha256": "00b6512e172d80c9255d335b38db3a19c42a63a32b11231a06afc2d2a37147c0",
+      "task_id": "same_time__WT-12D-1__WT-12D-2__callus_development"
+    },
+    {
+      "prompt_sha256": "14387c26a3ed9703ec308b4619d61736877aa685a6f71c6f792e3dde92142f09",
+      "task_id": "same_time__WT-12D-1__WT-12D-2__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "2dd0d3e277d89a75290bdda7174b501db9f46ca0ac600ee1ffac9d829f2a7851",
+      "task_id": "same_time__WT-12D-1__WT-12D-2__random50"
+    },
+    {
+      "prompt_sha256": "00b6512e172d80c9255d335b38db3a19c42a63a32b11231a06afc2d2a37147c0",
+      "task_id": "same_time__WT-12D-2__WT-12D-3__callus_development"
+    },
+    {
+      "prompt_sha256": "14387c26a3ed9703ec308b4619d61736877aa685a6f71c6f792e3dde92142f09",
+      "task_id": "same_time__WT-12D-2__WT-12D-3__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "2dd0d3e277d89a75290bdda7174b501db9f46ca0ac600ee1ffac9d829f2a7851",
+      "task_id": "same_time__WT-12D-2__WT-12D-3__random50"
+    },
+    {
+      "prompt_sha256": "70d9a583961d2506c6df794f410a6691adbb35f41953d9489cd7c0fb1797f9f6",
+      "task_id": "same_time__WT-15D-1__WT-15D-2__callus_development"
+    },
+    {
+      "prompt_sha256": "28251db6fd3900f943487329835f276ff721e032f79a7a38f079a461ec4c14f1",
+      "task_id": "same_time__WT-15D-1__WT-15D-2__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "cdbca868b45b1566e840297bf316158616186f24b19717433fbe5442593d056e",
+      "task_id": "same_time__WT-15D-1__WT-15D-2__random50"
+    },
+    {
+      "prompt_sha256": "70d9a583961d2506c6df794f410a6691adbb35f41953d9489cd7c0fb1797f9f6",
+      "task_id": "same_time__WT-15D-2__WT-15D-3__callus_development"
+    },
+    {
+      "prompt_sha256": "28251db6fd3900f943487329835f276ff721e032f79a7a38f079a461ec4c14f1",
+      "task_id": "same_time__WT-15D-2__WT-15D-3__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "cdbca868b45b1566e840297bf316158616186f24b19717433fbe5442593d056e",
+      "task_id": "same_time__WT-15D-2__WT-15D-3__random50"
+    },
+    {
+      "prompt_sha256": "47e31ad6327a14de2fe316d2ad3a7f7e841f3ad2894edbf8aa64d50407118d65",
+      "task_id": "same_time__WT-3D-1__WT-3D-2__callus_development"
+    },
+    {
+      "prompt_sha256": "3e97d0cef00a71f49880e72aa9fc206e70ee5ace7142b4bfe3a931de38252d58",
+      "task_id": "same_time__WT-3D-1__WT-3D-2__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "0821571ff906fcd1baceabdfb878a8a3034c2dde7990bc3bae1450c03a7020aa",
+      "task_id": "same_time__WT-3D-1__WT-3D-2__random50"
+    },
+    {
+      "prompt_sha256": "47e31ad6327a14de2fe316d2ad3a7f7e841f3ad2894edbf8aa64d50407118d65",
+      "task_id": "same_time__WT-3D-2__WT-3D-1__callus_development"
+    },
+    {
+      "prompt_sha256": "3e97d0cef00a71f49880e72aa9fc206e70ee5ace7142b4bfe3a931de38252d58",
+      "task_id": "same_time__WT-3D-2__WT-3D-1__immunity_regeneration"
+    },
+    {
+      "prompt_sha256": "0821571ff906fcd1baceabdfb878a8a3034c2dde7990bc3bae1450c03a7020aa",
+      "task_id": "same_time__WT-3D-2__WT-3D-1__random50"
+    }
+  ],
+  "version": "p2-callus-public-prompt-hashes-v1"
+}

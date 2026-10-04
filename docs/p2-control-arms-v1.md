@@ -17,11 +17,11 @@ All seven arms use the same parameterised model adapter; the Phase-B run card pi
 | Model / replicate | `deepseek-flash`; seed 1000; one run per task and arm | Same; validation seed 1000 |
 | Per-task ceiling | 8 logical calls; 262,144 completion/reasoning tokens across calls | Same |
 | Multi-call arm cap | 32,768 output/reasoning tokens per call | Same |
-| Single-long cap | One call; `min(262,144, configured server cap 131,072)`; the cap is recorded and is therefore lower than the eight-call ceiling | Same |
+| Single-long cap | One call; effective cap `262,144`, equal to the per-task token ceiling and below the current official `deepseek-flash` maximum output of 384K; the requested cap is recorded | Same |
 
 The call and token values are ceilings. Unused tokens after early stopping are not filled with dummy output. Provider-reported prompt tokens are recorded separately and do not count toward the frozen completion/reasoning budget. If usage is unknown after a timeout, the entire requested output cap is reserved against that task's token ceiling, and the request is not repeated. A DeepSeek HTTP 429 is treated as an explicit rate-limit rejection and retried under the existing AIMD pause; other errors and unknown outcomes are retained without retry. Cost estimates are informational only and do not stop this run. They use the repository's conservative historical price estimator and are not a provider invoice.
 
-The ARC-AGI-2 archive SHA-256, all 120 public-view hashes, and the preselected 40 task IDs/hashes are frozen in `plans/arc2-eval120-v1.json` and `plans/arc2-pilot40-v1.json`. The loader returns training input/output pairs and test inputs only. Test outputs are never put in model prompts. The callus generator receives only the public prompt fields; the answer-bearing prediction keys remain on the private evaluator filesystem.
+The ARC-AGI-2 archive SHA-256, all 120 public-view hashes, and the preselected 40 task IDs/hashes are frozen in `plans/arc2-eval120-v1.json` and `plans/arc2-pilot40-v1.json`. The loader returns training input/output pairs and test inputs only. Test outputs are never put in model prompts. The callus generator receives only the public prompt fields; the answer-bearing prediction keys remain on the private evaluator filesystem. The exported callus manifest is checked against the per-task hashes and whole-manifest SHA-256 in `plans/callus-public-prompt-hashes-v1.json` before any model dispatch; the raw prompt manifest stays in ignored run storage.
 
 ## Arm algorithms
 
@@ -58,6 +58,6 @@ The API-backed Phase B is explicitly approved by Amendment 2, but no call is sen
 - D-038 item 5 and D-039 item 1: comparison purpose and non-spatial evolutionary search requirement.
 - D-042: ARC-AGI-2 is the evaluation task family; call and total output-token ceilings are both matched; include a single-long control.
 - T-20261004-002 Amendment 2: DeepSeek may be used throughout all arms; Phase B is approved; one replicate and specified task/budget matrix.
-- [DeepSeek official error codes](https://api-docs.deepseek.com/quick_start/error_codes/) classify HTTP 429 as rate limit reached; [rate-limit documentation](https://api-docs.deepseek.com/quick_start/rate_limit/) explains concurrency constraints.
+- [DeepSeek official model/pricing documentation](https://api-docs.deepseek.com/quick_start/pricing/) currently lists a 384K maximum output for `deepseek-flash`; the frozen 262,144 request ceiling is the lower per-task budget. [Official error codes](https://api-docs.deepseek.com/quick_start/error_codes/) classify HTTP 429 as rate limit reached; [rate-limit documentation](https://api-docs.deepseek.com/quick_start/rate_limit/) explains concurrency constraints.
 
 No results are claimed here. A completed software test is not a mathematical proof or a capability result. A one-replicate pilot cannot establish a general organisation advantage or a developmental mechanism.
