@@ -3,6 +3,7 @@ const path = require('node:path');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..');
 const out = path.resolve(root, process.argv[2] || 'reports/manuscript-qa/current');
+const milestone = path.resolve(root, process.argv[3] || 'milestones/m2-12-manuscript-progress-v1.html');
 fs.mkdirSync(path.dirname(out), {recursive:true});
 if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validation.json')) {
   throw Error('Do not overwrite an archived milestone validation; choose a new version.');
@@ -15,8 +16,9 @@ if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validatio
     const external = [], errors = [];
     await context.route('**/*', r => /^https?:/.test(r.request().url()) ? (external.push(r.request().url()),r.abort()) : r.continue());
     const page = await context.newPage(); page.on('pageerror', e=>errors.push(e.message));
-    for (const name of ['progress','manuscript']) {
-      const target = path.join(root,'manuscripts/aimeth',name+'.html');
+    const targets = ['progress','manuscript','candidate-framings-v0'].map(name=>({name,target:path.join(root,'manuscripts/aimeth',name+'.html')}));
+    targets.push({name:'milestone',target:milestone});
+    for (const {name,target} of targets) {
       await page.goto('file://'+target);
       for (const width of [1440,390]) {
         await page.setViewportSize({width,height:1000});
@@ -48,11 +50,11 @@ if(out.includes(path.sep+'milestones'+path.sep) && fs.existsSync(out+'.validatio
     const nojs=await browser.newContext({javaScriptEnabled:false}); const np=await nojs.newPage();
     await np.goto('file://'+root+'/manuscripts/aimeth/manuscript.html');
     if((await np.locator('article').innerText()).length<18000)throw Error('Missing offline body');
-    await np.goto('file://'+root+'/milestones/m2-12-manuscript-progress-v1.html');
+    await np.goto('file://'+milestone);
     if(await np.locator('#requirements').count()!==1)throw Error('Missing milestone mapping');
     if(external.length||errors.length)throw Error('Unexpected resources/errors');
     result.checks.navigation='passed';result.checks.local_links='passed';result.checks.no_js_content='passed';
-    result.checks.print_layout='passed';result.external_requests=external;result.page_errors=errors;result.status='passed';
+    result.checks.print_layout='passed';result.external_requests=external;result.page_errors=errors;result.status='passed';result.milestone=path.relative(root,milestone);
     fs.writeFileSync(out+'.validation.json',JSON.stringify(result,null,2)+'\n'); console.log(JSON.stringify(result));
   } finally {await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

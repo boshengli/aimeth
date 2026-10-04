@@ -31,6 +31,10 @@ def markdown(text):
             level = len(m[1]); title = m[2]
             ident = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
             blocks.append(f'<h{level} id="{ident}">{inline(title)}</h{level}>')
+        elif block.startswith('|') and len(block.splitlines()) > 2:
+            rows = [[c.strip() for c in line.strip('|').split('|')] for line in block.splitlines()]
+            labels = rows[0]
+            blocks.append('<table><thead><tr>'+''.join('<th>'+inline(c)+'</th>' for c in labels)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td data-label="'+escape(labels[i],quote=True)+'">'+inline(c)+'</td>' for i,c in enumerate(row))+'</tr>' for row in rows[2:])+'</tbody></table>')
         elif all(re.match(r'^(?:- |\d+\. )', s) for s in block.splitlines()):
             blocks.append('<ul>'+''.join('<li>'+inline(re.sub(r'^(?:- |\d+\. )','',s))+'</li>' for s in block.splitlines())+'</ul>')
         else:
@@ -77,38 +81,46 @@ def figure(audit):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--freeze',action='store_true');parser.add_argument('--milestone',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--freeze',action='store_true');parser.add_argument('--milestone',action='store_true');parser.add_argument('--milestone-name',default='m2-12-manuscript-progress-v1');args=parser.parse_args()
+    if not re.fullmatch(r'm\d+-\d+-[a-z0-9-]+-v\d+', args.milestone_name):
+        parser.error('Milestone name must be a versioned mX-Y-name-vN basename')
     p=json.loads((BASE/'progress.json').read_text()); audit=json.loads((BASE/'evidence-audit-v0.json').read_text())
     text=(BASE/'manuscript.md').read_text();words=len(re.findall(r"\b[\w'-]+\b",text))
     refs=json.loads((BASE/'references-v0.json').read_text())['references']
     svg=figure(audit)
     ms=document('AIMeth manuscript '+p['version'],'<header><span class="badge">'+escape(p['version'])+' · research draft</span><h1>AIMeth working manuscript</h1><p>Full text with explicit evidence boundaries. Core population results remain pending.</p><a href="progress.html">← 进度页面</a></header><main><nav><a href="#abstract">Abstract</a><a href="#introduction">Introduction</a><a href="#results-and-current-evidence">Results</a><a href="#discussion">Discussion</a><a href="#methods-proposed-study-protocol">Methods</a><a href="#references">References</a><button onclick="window.print()">Print / PDF</button></nav><article>'+markdown(text)+'</article><section id="calibration-figure"><h2>Supplementary Figure 1</h2><figure>'+svg+'<figcaption>Existing interface calibration. Different conditions; no causal channel comparison, proof result or population effect.</figcaption></figure></section></main>','en')
     (BASE/'manuscript.html').write_text(ms)
+    if (BASE/'candidate-framings-v0.md').exists():
+        (BASE/'candidate-framings-v0.html').write_text(document('AIMeth · 三种论文叙事', '<header><span class="badge">同一研究 · 三种叙事</span><h1>候选题目、摘要与证据门槛</h1><p>备选叙事，不是三篇已完成论文。</p><a href="progress.html">← 文章进度</a></header><main><article>'+markdown((BASE/'candidate-framings-v0.md').read_text())+'</article></main>'))
     def progress_page(prefix):
-        h='<header><span class="badge">M2.12 · 首稿与可见进度</span><h1>文章开始有正文，证据仍须补齐</h1><p>当前版本 '+escape(p['version'])+' · '+escape(p['state_label'])+'</p><p>更新：'+escape(p['updated_at'])+'　下次计划：'+escape(p['next_scheduled_at'])+'</p></header><main>'
+        h='<header><span class="badge">'+escape(p.get('milestone_label','M2.12 · 首稿与可见进度'))+'</span><h1>文章、实现与证据同步推进</h1><p>当前版本 '+escape(p['version'])+' · '+escape(p['state_label'])+'</p><p>更新：'+escape(p['updated_at'])+'　下次计划：'+escape(p['next_scheduled_at'])+'</p></header><main>'
         h+='<nav><a href="'+prefix+'manuscript.html">阅读完整英文稿</a><a href="#evidence">查看实测证据</a><a href="#gaps">查看科学缺口</a><a href="#versions">查看版本</a><button onclick="location.reload()">刷新快照</button></nav>'
         h+='<div class="cards">'+''.join('<div class="card"><strong>'+str(n)+'</strong><span>'+label+'</span></div>' for n,label in [(words,'英文单词（含方法与引用）'),(len(refs),'已核对的一手文献'),(12,'既有 API 校准请求'),(0,'本稿可用的确认性群体结果')])+'</div>'
         h+='<section id="work"><h2>本轮实际完成与进行中</h2><ul>'+''.join('<li>'+escape(x)+'</li>' for x in p['completed'])+'</ul><p class="status">当前工作：'+escape(p['current_work'])+'</p><p>触发：'+escape(p['trigger'])+'；周期起点：'+escape(p['cycle_started_at'])+'。周期与账户额度窗口分别记录。</p></section>'
+        if p.get('artifacts'):
+            h+='<section id="artifacts"><h2>本轮可检查的成果</h2><ul>'+''.join('<li><a href="'+prefix+escape(item['path'],quote=True)+'">'+escape(item['label'])+'</a> — '+escape(item['scope'])+'</li>' for item in p['artifacts'])+'</ul></section>'
         h+='<section id="evidence"><h2>现有实测证据</h2><p>重算此前 12 次 DeepSeek 回执：8 次 fast、4 次 deep，均 HTTP 200、stop、非空、JSON 可解析、必需字段存在。它们不是独立群体重复，未保存最终正文，无法复核数学正确性或完整 schema。</p><figure>'+svg+'<figcaption>每个点是一条既有请求。两个通道提示、预算和并发不同，只作描述统计。总计 8,140 tokens；图示不是新实验或 10K 吞吐结果。</figcaption></figure><a href="'+prefix+'evidence-audit-v0.json">逐请求派生数据与来源哈希</a></section>'
         h+='<section id="gaps"><h2>能写什么，尚不能声称什么</h2><table><thead><tr><th>内容</th><th>状态</th><th>科学边界</th></tr></thead><tbody>'
         for row in [('题目／摘要／引言／讨论','已有正文','完整段落不等于完整证据'),('细胞、模块、信号、谱系与对照','Methods 提案','发育规则和确认性设计尚未冻结'),('接口校准','本地重新计算','不代表任务正确率或群体优势'),('发育→组织→能力因果链','待实验','不编造效果量、P 值或证明'),('投稿状态','研究草稿','由用户选择修订；目前不具备投稿证据')]:
             h+='<tr>'+''.join('<td data-label="'+label+'">'+escape(v)+'</td>' for label,v in zip(['内容','状态','科学边界'],row))+'</tr>'
         h+='</tbody></table><p class="warning">没有展示“科研完成百分比”，因为尚无可靠的完成分母。主张、证据、实现和投稿就绪度分别记录。</p></section>'
         h+='<section id="versions"><h2>版本与证据入口</h2><ul><li><a href="'+prefix+'manuscript.md">可编辑 Markdown 主稿</a></li><li><a href="'+prefix+'claim-evidence.json">主张—证据表</a></li><li><a href="'+prefix+'literature-v0.md">文献及核验范围</a></li><li><a href="'+prefix+'independent-review-v0.md">独立方法与统计审查</a></li><li><a href="'+prefix+'next-priorities.md">断点与下一组工作</a></li></ul><p>版本历史保存在 versions/；交付哈希与验证见该里程碑的 manifest 和 validation 记录。</p></section>'
-        h+='<section id="requirements"><h2>要求、交付与下一阶段</h2><p>用户要求立即执行并看见文章进度：本轮形成英文稿、已有证据复算、文献/方法审查及此页面。每 5 小时重新计时已保存；真正的定时唤醒仍需未来运行记录验证。</p><p>设计：可以继续细化；局部实现：离线契约单独验证；群体实验：仍需冻结规则、评价和预算并核清既有运行。下一阶段优先处理独立审查中的对照与资源混淆，以及运行器的持久化和真实资源账本。</p></section>'
+        h+='<section id="requirements"><h2>要求、交付与下一阶段</h2><p>每 5 小时进入实际工作并保存正文和证据；16:06 与 21:06 已收到定时触发。启动记录、实际执行和账户重置分别记录，不把额度中断称为持续执行。</p><p>局部软件验证支持继续集成；群体科学实验仍需冻结任务、规则、评价与预算。优先完成可执行策略和完整失败分母，然后补独立群体的功能证据。三种稿件叙事共享同一证据，不增加科学目标。</p></section>'
         h+='<footer>来源基线：31740a2eeddeb81795f87b0bbd4c3c77c9e439ea。交付提交另记。此页为带时间的本地快照，不代表后台始终执行；版式核验不等于科学验证。</footer></main>'
         return document('AIMeth 文章进度 '+p['version'],h)
     (BASE/'progress.html').write_text(progress_page(''))
     if args.milestone:
-        milestone=ROOT/'milestones/m2-12-manuscript-progress-v1.html'
+        milestone=ROOT/'milestones'/f'{args.milestone_name}.html'
         if milestone.exists():
             raise FileExistsError('Milestone snapshots are immutable; create a new report version.')
         milestone.write_text(progress_page('../manuscripts/aimeth/'))
     if args.freeze:
         v=BASE/'versions'/p['version'];v.mkdir(parents=True,exist_ok=False)
-        for f in ['manuscript.md','manuscript.html','claim-evidence.json','progress.json','evidence-audit-v0.json','references-v0.json']:
-            (v/f).write_bytes((BASE/f).read_bytes())
-        (v/'progress.html').write_text(progress_page('../../'))
+        frozen_files=['manuscript.md','manuscript.html','claim-evidence.json','progress.json','evidence-audit-v0.json','references-v0.json','literature-v0.md','independent-review-v0.md','next-priorities.md','candidate-framings-v0.md','candidate-framings-v0.html','journal-review-v0.md','journal-fix-validation-v0.txt','journal-fit-v0.md','manuscript-review-v0.3.md','review-response-v0.3.md']
+        for f in frozen_files:
+            if (BASE/f).exists():
+                (v/f).write_bytes((BASE/f).read_bytes())
+        (v/'progress.html').write_text(progress_page(''))
         # Snapshot manuscript links refer to its matching frozen progress page.
         (v/'manifest.json').write_text(json.dumps({'version':p['version'],'created_at':p['updated_at'],'files':{x.name:sha256(x.read_bytes()).hexdigest() for x in v.iterdir() if x.is_file()}},indent=2)+'\n')
     print(json.dumps({'version':p['version'],'word_count':words,'references':len(refs),'html':'manuscripts/aimeth/progress.html'}))

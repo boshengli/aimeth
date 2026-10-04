@@ -1,0 +1,60 @@
+Root verification after independent review and correction
+Observed: 2026-10-03T21:44:50+08:00
+Command: python3 -B -m unittest discover -s tests -p test_cell_*.py -v
+Python: 3.9.6
+Exit code: 0
+Scope: local software regression checks; no model or population experiment
+
+prototypes/cell_contract.py sha256=05092feca2766ef4142db9292391273acb9b918ba3422d62ef0613ea56344d03
+prototypes/cell_journal.py sha256=123964b126a4aa3a8b000e7e44734efd2a44cd08cff567f73571976e499c86e2
+tests/test_cell_contract.py sha256=e1694575106032564791485cd97f909f80994629efcbee4685499b31fab470c3
+tests/test_cell_journal.py sha256=7890072ba4d0fa079cbc57793545053d8590153fdfdecb3c532469027aa43914
+
+test_all_five_signal_types_are_accepted_with_valid_payloads (test_cell_contract.CellContractTests) ... ok
+test_closed_payload_schema_and_byte_bound (test_cell_contract.CellContractTests) ... ok
+test_delivery_updates_only_receiver_and_counts_resource (test_cell_contract.CellContractTests) ... ok
+test_directed_adjacency_rejects_reverse_and_non_neighbour (test_cell_contract.CellContractTests) ... ok
+test_division_inherits_exact_snapshot_and_sets_lineage (test_cell_contract.CellContractTests) ... ok
+test_division_rejects_stale_hash_and_duplicate_child (test_cell_contract.CellContractTests) ... ok
+test_duplicate_event_and_duplicate_message_cannot_reapply (test_cell_contract.CellContractTests) ... ok
+test_expiry_and_future_creation_boundaries (test_cell_contract.CellContractTests) ... ok
+test_expression_rejects_missing_nonfinite_boolean_and_out_of_range (test_cell_contract.CellContractTests) ... ok
+test_legitimate_delayed_signal_keeps_creation_tick_and_replays (test_cell_contract.CellContractTests) ... ok
+test_parent_chain_requires_previous_receiver_and_exact_hash (test_cell_contract.CellContractTests) ... ok
+test_population_resource_and_neighbour_caps_do_not_partially_mutate (test_cell_contract.CellContractTests) ... ok
+test_replay_detects_payload_hash_and_envelope_damage (test_cell_contract.CellContractTests) ... ok
+test_replay_rejects_backdated_message_even_with_consistent_hashes (test_cell_contract.CellContractTests) ... ok
+test_replay_restores_lineage_resources_and_duplicate_protection (test_cell_contract.CellContractTests) ... ok
+test_reply_cannot_predate_parent_delivery (test_cell_contract.CellContractTests) ... ok
+test_resource_and_event_exhaustion_reject_further_delivery (test_cell_contract.CellContractTests) ... ok
+test_returned_state_is_a_detached_copy (test_cell_contract.CellContractTests) ... ok
+test_signal_cannot_predate_either_endpoint_birth (test_cell_contract.CellContractTests) ... ok
+test_signal_cannot_predate_either_referenced_state_version (test_cell_contract.CellContractTests) ... ok
+test_snapshot_bound_rejects_transition_before_mutating_state (test_cell_contract.CellContractTests) ... ok
+test_stale_sender_and_receiver_versions_are_rejected (test_cell_contract.CellContractTests) ... ok
+test_time_and_integer_types_are_strict (test_cell_contract.CellContractTests) ... ok
+test_unknown_parent_signal_is_rejected (test_cell_contract.CellContractTests) ... ok
+test_changed_seed_or_unreceipted_initial_history_is_rejected (test_cell_journal.CellJournalTests) ... ok
+test_committed_signal_survives_close_and_verified_reopen (test_cell_journal.CellJournalTests) ... ok
+test_corrupt_snapshot_prevents_startup (test_cell_journal.CellJournalTests) ... ok
+test_division_lineage_and_parent_hash_persist (test_cell_journal.CellJournalTests) ... ok
+test_exceptions_at_all_precommit_boundaries_roll_back_both_records (test_cell_journal.CellJournalTests) ... ok
+test_failed_initialization_rolls_back_schema_and_can_retry (test_cell_journal.CellJournalTests) ... ok
+test_identical_duplicate_returns_receipt_without_reapplication (test_cell_journal.CellJournalTests) ... ok
+test_live_duplicate_and_new_transition_reject_damaged_receipt (test_cell_journal.CellJournalTests) ... ok
+test_lost_acknowledgement_after_commit_is_resolved_without_duplicate (test_cell_journal.CellJournalTests) ... ok
+test_new_store_requires_explicit_initial_state (test_cell_journal.CellJournalTests) ... ok
+test_older_duplicate_returns_original_receipt_after_later_commits (test_cell_journal.CellJournalTests) ... ok
+test_process_exit_before_and_after_commit_preserves_atomicity (test_cell_journal.CellJournalTests) ... ok
+test_receipt_chain_damage_prevents_startup (test_cell_journal.CellJournalTests) ... ok
+test_receipts_are_immutable_through_normal_sql (test_cell_journal.CellJournalTests) ... ok
+test_replace_cannot_overwrite_existing_sequence_or_event_identity (test_cell_journal.CellJournalTests) ... ok
+test_reused_event_identity_with_changed_inputs_conflicts (test_cell_journal.CellJournalTests) ... ok
+test_stale_version_is_rejected_without_receipt_or_state_change (test_cell_journal.CellJournalTests) ... ok
+test_two_connections_use_latest_committed_state (test_cell_journal.CellJournalTests) ... ok
+test_unsupported_schema_rejection_does_not_change_database (test_cell_journal.CellJournalTests) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.364s
+
+OK

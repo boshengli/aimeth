@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-03T23:16:10.690Z",
+  "browser": "154.0.8037.95",
+  "viewports": [
+    {
+      "name": "progress",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "progress",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "manuscript",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "manuscript",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "candidate-framings-v0",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "candidate-framings-v0",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "milestone",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "name": "milestone",
+      "width": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "checks": {
+    "print_control": "passed",
+    "navigation": "passed",
+    "local_links": "passed",
+    "no_js_content": "passed",
+    "print_layout": "passed"
+  },
+  "scope": "HTML accessibility, layout and links only; not scientific validation.",
+  "external_requests": [],
+  "page_errors": [],
+  "status": "passed",
+  "milestone": "milestones/m2-12-manuscript-progress-v2.html",
+  "visual_review": {
+    "reviewed_at": "2026-10-04T07:17:45+08:00",
+    "screens": [
+      "progress desktop 1440",
+      "manuscript narrow 390",
+      "candidate framings narrow 390"
+    ],
+    "outcome": "Readable headings, body and navigation; no clipping seen. Automated layout checks cover all four pages in both sizes."
+  }
+}

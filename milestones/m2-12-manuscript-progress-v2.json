@@ -1,0 +1,106 @@
+{
+  "milestone": "M2.12",
+  "version": "v2",
+  "created_at": "2026-10-04T07:17:45+08:00",
+  "outcome": "Full-section manuscript v0.3 adds restricted local persistence evidence, two corrected journal defects, internal consistency review and three alternative framing abstracts. Core developmental outcomes remain absent.",
+  "manuscript_version": "v0.3",
+  "baseline_commit": "00064b30940581632b5951a2e2860f3ef96efb42",
+  "journal_fix_commit": "548dd14fe24ead0ed44264cc006e7b29361da5f4",
+  "delivery_commit": "recorded separately after content commit",
+  "progress_snapshot": {
+    "version": "v0.3",
+    "updated_at": "2026-10-04T07:15:33+08:00",
+    "cycle_started_at": "2026-10-04T07:09:43+08:00",
+    "next_scheduled_at": "2026-10-04T12:05:43+08:00",
+    "trigger": "heartbeat_aimeth",
+    "state_label": "v0.3 已补持久化实测与两项缺陷修复证据",
+    "completed": [
+      "完整英文稿v0.1已归档；v0.2补入真实原型结果与对照限制",
+      "核对10篇一手来源，包括最初辣椒Nature Plants文章及架构出处",
+      "复算12条既有校准回执并生成可追溯图表",
+      "独立审查提出5项设计缺口，已明确写入方法与后续实现要求",
+      "修复消息可早于细胞出生的缺陷，24项离线测试通过",
+      "SQLite 持久化独立审查暴露并修复 2 项缺陷；19 项 journal + 24 项 contract 测试通过",
+      "三种候选题目/摘要与证据门槛已完成，尚不是三篇完整候选稿",
+      "v0.3 Results/Methods 新增本地中断恢复结果、两项负面发现与明确边界"
+    ],
+    "current_work": "v0.3 冻结与版式核验；离线策略夹具仍在执行验证",
+    "quota_snapshot": {
+      "observed_at": "2026-10-04T07:06:56+08:00",
+      "five_hour_remaining_percent": 97,
+      "weekly_remaining_percent": 35,
+      "five_hour_resets_at": 1791086815,
+      "weekly_resets_at": 1791583457,
+      "ordinary_usage_allowed": true,
+      "shared_account": true
+    },
+    "scientific_readiness": "not_submission_ready",
+    "heartbeat_received_at": "2026-10-04T07:06:40.028+08:00",
+    "artifacts": [
+      {
+        "path": "candidate-framings-v0.html",
+        "label": "三种题目、摘要和图表叙事",
+        "scope": "共享 v0.2 证据；核心结果仍待实验"
+      },
+      {
+        "path": "journal-review-v0.md",
+        "label": "持久化独立审查",
+        "scope": "保留两项真实缺陷及复现"
+      },
+      {
+        "path": "journal-fix-validation-v0.txt",
+        "label": "修复后的 43 项根任务复核",
+        "scope": "本地软件测试，非智能涌现证据"
+      },
+      {
+        "path": "manuscript-review-v0.3.md",
+        "label": "v0.3 独立一致性审查",
+        "scope": "通过证据核对；零结果解释已按意见修订"
+      },
+      {
+        "path": "review-response-v0.3.md",
+        "label": "v0.3 修订响应",
+        "scope": "实质差异与尚未关闭的科学缺口"
+      },
+      {
+        "path": "journal-fit-v0.md",
+        "label": "Nature/Science 官方要求核查",
+        "scope": "Nature 已核对，Science 官方页面不可访问字段保留未知"
+      }
+    ],
+    "milestone_label": "M2.12 v2 · 恢复证据与主稿 v0.3"
+  },
+  "evidence": {
+    "contract_tests": 24,
+    "journal_tests": 19,
+    "root_test_seconds": 0.364,
+    "journal_defects_reproduced_and_corrected": 2,
+    "source_records": 10,
+    "historical_calibration_requests": 12,
+    "independent_confirmatory_population_results": 0,
+    "policy_fixture": "under execution; excluded from v0.3 evidence"
+  },
+  "requirements_mapping": [
+    {
+      "requirement": "Visible substantive article progress",
+      "delivered": "Complete v0.3 text, immutable versions, three evidence-consistent abstracts and responsive HTML",
+      "gap": "Core scientific results and three full candidate articles remain pending"
+    },
+    {
+      "requirement": "Recovery and auditable process",
+      "delivered": "Local transaction/process-exit checks, preserved independent defects and regression records",
+      "gap": "Integrated policy journal, 10K performance and remote inference reconciliation not demonstrated"
+    },
+    {
+      "requirement": "Critical scientific evaluation",
+      "delivered": "Independent manuscript consistency review, null-result interpretation correction, journal-fit source audit",
+      "gap": "Frozen protocol and independent population comparisons remain necessary"
+    }
+  ],
+  "readiness": {
+    "design": "ready to continue",
+    "local_implementation": "journal subset verified; policy fixture under validation",
+    "population_launch": "not established"
+  },
+  "validation": "1440/390 browser checks, links/navigation/printing/offline body; representative screenshots visually reviewed; no scientific inference from layout tests."
+}
