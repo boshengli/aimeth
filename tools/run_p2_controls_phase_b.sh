@@ -38,7 +38,7 @@ trap cleanup EXIT INT TERM
 ARMS=(independent self_repair single_long vote orchestrator_worker debate evolution)
 COMMON=(--provider deepseek --model deepseek-flash --model-max-tokens 262144
         --budget-calls 8 --budget-tokens 262144 --workers 4 --llm-start 2 --llm-cap 8
-        --execute-paid --seed 1000 --k 4 --m 3 --population-size 8
+        --execute-paid --finalize-fenced --seed 1000 --k 4 --m 3 --population-size 8
         --eval-transport ssh --remote-target libs@172.16.30.19
         --evalq /data/libs/aimeth/rt/runs/p2-controls-v1/evalq)
 

@@ -56,12 +56,17 @@ def main():
                                  "cost_estimate_cny", "stop_reason") if k in r}
         out["final"] = g(r["kind"], r["task_id"], r["final_eval_id"])
         out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
-        out["tokens"] = sum((s.get("prompt_tokens") or 0) +
-                             (s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
-                              else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
-        out["prompt_tokens"] = sum((s.get("prompt_tokens") or 0) for s in r["steps"])
-        out["completion_tokens"] = sum((s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
-                                        else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+        unknown_dispatch = r.get("dispatch_outcome") == "unknown"
+        out["unknown_dispatch_outcome"] = unknown_dispatch
+        if unknown_dispatch:
+            out["tokens"] = out["prompt_tokens"] = out["completion_tokens"] = None
+        else:
+            out["tokens"] = sum((s.get("prompt_tokens") or 0) +
+                                 (s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                                  else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+            out["prompt_tokens"] = sum((s.get("prompt_tokens") or 0) for s in r["steps"])
+            out["completion_tokens"] = sum((s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                                            else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
         out["calls_used"] = r.get("calls_used")
         print(json.dumps(out))
 

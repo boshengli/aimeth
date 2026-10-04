@@ -116,6 +116,43 @@ def _jsonl_append(path: Path, row: dict, lock: threading.Lock):
         os.fsync(stream.fileno())
 
 
+def finalize_fenced_tasks(out: Path, state_log: Path, fenced: set[tuple[str, int]], *,
+                          kind: str, arm: str, provider: str, model: str,
+                          budget: Budget | None, model_max_tokens: int, seed: int,
+                          run_name: str) -> int:
+    """Persist interrupted starts as unknown without ever dispatching them again."""
+    existing = set()
+    if out.exists():
+        for line in out.read_text().splitlines():
+            if line.strip():
+                row = json.loads(line)
+                existing.add((row["task_id"], row["rep"]))
+    lock = threading.Lock()
+    added = 0
+    for task_id, rep in sorted(fenced):
+        if (task_id, rep) in existing:
+            continue
+        budget_spec = ({"calls": budget.calls,
+                        "completion_reasoning_tokens": budget.tokens} if budget else None)
+        config = {"kind": kind, "arm": arm, "task_id": task_id, "rep": rep,
+                  "provider": provider, "model": model,
+                  "budget": budget_spec, "seed": seed + rep}
+        row = {**config, "arm": arm, "condition": "single_model",
+               "model_max_tokens": model_max_tokens,
+               "n_budget": budget.calls if budget else None,
+               "calls_used": None, "completion_reasoning_tokens_used": None,
+               "prompt_tokens_reported": None, "final_eval_id": None,
+               "final_round": -1, "final_visible_score": None, "contributor_eval_ids": [],
+               "steps": [], "stop_reason": "started_task_outcome_unknown_not_retried",
+               "dispatch_outcome": "unknown", "cost_estimate_cny": None,
+               "run_cost_estimate_cny_cumulative": None, "run": run_name}
+        _jsonl_append(out, row, lock)
+        _jsonl_append(state_log, {"event": "task_finalized_unknown", **config}, lock)
+        existing.add((task_id, rep))
+        added += 1
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("kind", choices=["arc", "bio"])
@@ -143,6 +180,8 @@ def main():
     ap.add_argument("--reasoning-effort", default=None)
     ap.add_argument("--execute-paid", action="store_true",
                     help="explicit phase-B gate; this task amendment authorizes the DeepSeek matrix")
+    ap.add_argument("--finalize-fenced", action="store_true",
+                    help="record previously started but unsettled tasks as unknown; never resend them")
     ap.add_argument("--seed", type=int, default=1000)
     ap.add_argument("--k", type=int); ap.add_argument("--m", type=int, default=3)
     ap.add_argument("--population-size", type=int, default=8)
@@ -186,6 +225,15 @@ def main():
                 if row.get("event") == "task_started":
                     started.add((row["task_id"], row["rep"]))
     fenced = started - completed
+    if fenced and not a.finalize_fenced:
+        ap.error("started but unsettled tasks are fenced; use --finalize-fenced to record them as unknown without retry")
+    if fenced:
+        count = finalize_fenced_tasks(out, state_log, fenced, kind=a.kind, arm=a.arm,
+                                      provider=a.provider, model=a.model, budget=budget,
+                                      model_max_tokens=a.model_max_tokens, seed=a.seed,
+                                      run_name=out.stem)
+        completed.update(fenced)
+        print(f"finalized_fenced_unknown={count}; no model request was repeated", flush=True)
     jobs = [(tid, task, msgs, rep) for rep in range(1) for tid, task, msgs in tasks
             if (tid, rep) not in completed and (tid, rep) not in started]
     print(time.strftime("%Y-%m-%dT%H:%M:%S%z"),

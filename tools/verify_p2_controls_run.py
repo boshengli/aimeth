@@ -37,7 +37,9 @@ def audit(run_dir: Path, arc_manifest: Path, bio_manifest: Path) -> dict:
                 budget = row.get("budget") or {}
                 if budget.get("calls") != 8 or budget.get("completion_reasoning_tokens") != 262144:
                     failures.append(f"budget mismatch: {path.name}:{row.get('task_id')}")
-                if row.get("calls_used", 0) > 8 or row.get("completion_reasoning_tokens_used", 0) > 262144:
+                if ((row.get("calls_used") is not None and row["calls_used"] > 8)
+                        or (row.get("completion_reasoning_tokens_used") is not None
+                            and row["completion_reasoning_tokens_used"] > 262144)):
                     failures.append(f"ceiling exceeded: {path.name}:{row.get('task_id')}")
                 for step in row.get("steps", []):
                     ceiling = 262144 if arm == "single_long" else 32768
@@ -53,10 +55,15 @@ def audit(run_dir: Path, arc_manifest: Path, bio_manifest: Path) -> dict:
             failed_results = sum(not r.get("final_eval_id") for r in rows)
             counts[f"{family}/{arm}"] = {
                 "planned": len(ids), "settled": len(rows), "failed_or_ungraded": failed_results,
+                "unknown_dispatch_outcomes": sum(r.get("dispatch_outcome") == "unknown" for r in rows),
                 "provider_errors": sum(not s.get("ok", False) for r in rows for s in r.get("steps", [])
                                        if "ok" in s),
-                "completion_reasoning_tokens": sum(r.get("completion_reasoning_tokens_used", 0) for r in rows),
-                "cost_estimate_cny": round(sum(r.get("cost_estimate_cny", 0.0) for r in rows), 6),
+                "completion_reasoning_tokens_known_sum": sum(
+                    r.get("completion_reasoning_tokens_used") or 0 for r in rows),
+                "tasks_with_unknown_token_usage": sum(
+                    r.get("completion_reasoning_tokens_used") is None for r in rows),
+                "cost_estimate_cny_known_sum": round(
+                    sum(r.get("cost_estimate_cny") or 0.0 for r in rows), 6),
             }
     report = {"run_version": "p2-controls-v1", "arc2_expected": len(arc_ids),
               "callus_expected": len(bio_ids), "arms": list(ARMS),
