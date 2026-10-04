@@ -72,7 +72,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <section id="evidence"><h2>实际证据</h2><div class="scroll"><table><thead><tr><th>模型</th><th>结算 / 计划</th><th>HTTP 200</th><th>提取程序</th><th>可执行</th><th>成功样本 / 1600</th><th>pass@4 任务 / 400</th><th>保守估计 ¥</th></tr></thead><tbody>{rows}</tbody></table></div>
 <ul>{operational}</ul>
 <p class="muted">估算费用采用官方公开的高峰、未缓存输入和输出单价，以及内部 10 元/美元安全换算。它是上界式预算记录，非提供商已核对账单；各家上限 300 元。</p>
-<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>。</p></section>
+<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256') or '待审计')}</code>。全仓 182 项单元测试已通过；桌面、窄屏和链接检查见相邻验证记录。</p></section>
 <section id="mapping"><h2>用户要求与交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>实施及证据</th><th>未解决</th></tr></thead><tbody>
 <tr><td>两条分支推送与独立开发分支</td><td>源分支分别推送；开发基于 <code>{tag(baseline_commit)}</code>，实现提交 <code>{tag(implementation_commit)}</code></td><td>报告交付提交见相邻版本记录</td></tr>
 <tr><td>ARC 评测器</td><td>400 题加载、测试答案隔离、最多两次候选输出的精确评分、2 秒受限执行及单元测试</td><td>沙箱不是敌对代码安全性的形式证明</td></tr>
@@ -82,7 +82,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 </tbody></table></div></section>
 <section id="limits"><h2>负面结果与科学解释</h2><ul>{negative_html}</ul><p>最初 DeepSeek 8,192-token 配置的一个请求全部用于思考，没有最终程序，独立保留为失败探测。早期评分器对普通局部变量和合法 NumPy 操作过严；初版评分留档，最终全部回执按修正后的同一规则重新评分。修正规则前已看过初步汇总成功数，因此本轮是探索性校准。模型请求成功、程序可执行和测试通过为三个不同层次。</p>
 <p>本研究要求模型编写程序，并由外部执行器评分，不能称为 ARC Prize 官方成绩；其官方核验政策采用直接从题目预测答案网格的设定。两次候选输出遵循 ARC Prize 竞赛口径，原始 ARC-AGI-1 仓库则描述三次尝试。四次独立程序采样只用于本项目的难度校准。</p></section>
-<section id="next"><h2>下一阶段就绪度</h2><p>ARC 工程接口可供后续设计；pilot 清单只有在两家各 1,600 次结算且不少于 40 题满足预定难度时才可用于 P2 组织试验。确认性组织比较仍需独立群体重复、预算匹配和预先冻结的对照。数学或生物学能力的涌现尚未从本次校准得到证明。</p>
+<section id="next"><h2>下一阶段就绪度</h2><p>已可用于设计：ARC 工程接口和难度分层。已可用于实现：同一程序评测器与进化对照代码。可运行 P2 pilot 的条件是两家各 1,600 次结算、账本审计通过、至少 40 题满足预定难度并冻结名单。确认性组织比较仍需独立群体重复、预算匹配和预先冻结的对照；其运行尚未获本里程碑验证。下一决策是冻结组织实验各臂、资源上限、停止规则与独立重复数。数学或生物学能力的涌现尚未从本次校准得到证明。</p>
 <p class="muted">数据包 SHA-256：<code>a87291143a4d5206cb5264eeb280a1b9c367e3523a992f4eff5702265471dbac</code>。源协议：<a href="../docs/p2-arc-calibration-protocol-v1.md">P2 ARC 协议</a>。来源：<a href="https://github.com/fchollet/ARC-AGI">ARC-AGI-1 原始仓库</a>、<a href="https://arcprize.org/policy">ARC Prize 核验政策</a>、<a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek 价格</a>、<a href="https://docs.z.ai/guides/overview/pricing">Z.AI 价格</a>。</p></section>
 </main><footer>版本化研究报告 · 生成时间 {tag(created)} · AIMeth</footer></body></html>"""
     output.parent.mkdir(parents=True, exist_ok=True)
