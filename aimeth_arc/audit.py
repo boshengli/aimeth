@@ -73,6 +73,13 @@ def audit_calibration(private_root: Path, csv_path: Path,
             raise ValueError(f"{provider}: unexpected or unreserved request")
         comparable_requests[provider] = {}
         for rid, event in started.items():
+            messages = event["request_body"]["messages"]
+            if (len(messages) != 2 or "Task data:\n" not in messages[1]["content"]):
+                raise ValueError(f"{rid}: missing structured ARC prompt")
+            task_view = json.loads(messages[1]["content"].split("Task data:\n", 1)[1])
+            if (not task_view.get("test") or
+                    any(set(pair) != {"input"} for pair in task_view["test"])):
+                raise ValueError(f"{rid}: test output leaked into generation prompt")
             body = json.dumps(event["request_body"], ensure_ascii=False,
                               separators=(",", ":")).encode()
             if sha256(body).hexdigest() != event["request_sha256"]:

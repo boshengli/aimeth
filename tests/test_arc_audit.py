@@ -29,7 +29,10 @@ class ArcAuditTests(unittest.TestCase):
                     row["task_id"] = f"task{i:03}"
                     writer.writerow(row)
             (root / "scores.jsonl").write_text("")
-            body = {"model": "test", "messages": []}
+            body = {"model": "test", "messages": [
+                {"role": "system", "content": "test"},
+                {"role": "user", "content": 'Task data:\n{"train":[],"test":[{"input":[[1]]}]}'},
+            ]}
             event = {"event": "dispatch_started", "request_id": "deepseek-task000-0",
                      "request_body": body, "reserve_cny": 0.01,
                      "request_sha256": sha256(json.dumps(body, ensure_ascii=False,
@@ -38,20 +41,33 @@ class ArcAuditTests(unittest.TestCase):
             path.write_text(json.dumps(event) + "\n")
             zhipu_path = root / "zhipu-receipts.jsonl"
             zhipu_event = {**event, "request_id": "zhipu-task000-0",
-                           "request_body": {**body, "model": "other"}}
+                           "request_body": json.loads(json.dumps({**body, "model": "other"}))}
             zhipu_event["request_sha256"] = sha256(json.dumps(
                 zhipu_event["request_body"], ensure_ascii=False,
                 separators=(",", ":")).encode()).hexdigest()
             zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
             self.assertFalse(audit_calibration(root, csv_path, False)["complete"])
-            zhipu_event["request_body"]["messages"] = ["different"]
+            zhipu_event["request_body"]["messages"][0]["content"] = "different"
             zhipu_event["request_sha256"] = sha256(json.dumps(
                 zhipu_event["request_body"], ensure_ascii=False,
                 separators=(",", ":")).encode()).hexdigest()
             zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
             with self.assertRaisesRegex(ValueError, "conditions differ"):
                 audit_calibration(root, csv_path, False)
-            zhipu_event["request_body"]["messages"] = []
+            zhipu_event["request_body"]["messages"][0]["content"] = "test"
+            zhipu_event["request_sha256"] = sha256(json.dumps(
+                zhipu_event["request_body"], ensure_ascii=False,
+                separators=(",", ":")).encode()).hexdigest()
+            zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
+            zhipu_event["request_body"]["messages"][1]["content"] = (
+                'Task data:\n{"train":[],"test":[{"input":[[1]],"output":[[2]]}]}')
+            zhipu_event["request_sha256"] = sha256(json.dumps(
+                zhipu_event["request_body"], ensure_ascii=False,
+                separators=(",", ":")).encode()).hexdigest()
+            zhipu_path.write_text(json.dumps(zhipu_event) + "\n")
+            with self.assertRaisesRegex(ValueError, "test output leaked"):
+                audit_calibration(root, csv_path, False)
+            zhipu_event["request_body"]["messages"][1]["content"] = body["messages"][1]["content"]
             zhipu_event["request_sha256"] = sha256(json.dumps(
                 zhipu_event["request_body"], ensure_ascii=False,
                 separators=(",", ":")).encode()).hexdigest()
