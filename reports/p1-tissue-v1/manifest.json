@@ -1,0 +1,15 @@
+{
+ "started_unix": 1791089428.9747815,
+ "python": "3.11.16",
+ "numpy": "2.2.6",
+ "host": "gpu08",
+ "source_sha256": {
+  "aimeth_dev/__init__.py": "a0e0fb34d8473d7224a5489b3942ccee3efc0c377712b331c59144d5794d2de4",
+  "aimeth_dev/metrics.py": "43c87d3a95602a03654c5e97e1ad4262183adbc16399cc756e62f4d6297a2951",
+  "aimeth_dev/sim.py": "2a9f103c3fe890c9750c3deb58ff85c455e6c826e1f65f8c7c64d41b96d9bf0c",
+  "aimeth_dev/tissue.py": "8e956645724ce61ce0eca93f87dbe0d2acd14cb1e946c3dde3dfe1c1d396d616",
+  "tools/run_tissue.py": "bda64c283adc792a1959d407d1d9a0a780fedd7b17980562f37f4e1e96e715c5",
+  "docs/p1-tissue-scale-protocol-v1.md": "2d59b8b1e99e8f610bf071af529daea405cab2bfdfb22a5194b21ccaf506a83d"
+ },
+ "finished_unix": 1791094247.809692
+}
