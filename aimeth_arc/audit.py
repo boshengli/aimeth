@@ -22,13 +22,39 @@ def audit_calibration(private_root: Path, csv_path: Path,
     results: dict[str, Any] = {"task_count": 400, "providers": {}, "complete": True}
     score_path = private_root / "scores.jsonl"
     with score_path.open() as stream:
-        score_ids = [json.loads(line)["request_id"] for line in stream]
+        score_rows = [json.loads(line) for line in stream]
+    score_ids = [row["request_id"] for row in score_rows]
     if len(score_ids) != len(set(score_ids)):
         raise ValueError("duplicate scored request ID")
     if not set(score_ids).issubset({f"{provider}-{tid}-{sample}"
                                    for provider in PROVIDERS for tid in task_ids
                                    for sample in range(4)}):
         raise ValueError("score ledger contains an unexpected request ID")
+    scores = {row["request_id"]: row for row in score_rows}
+    for row in rows:
+        pooled: list[bool] = []
+        for provider in PROVIDERS:
+            available = [scores[f"{provider}-{row['task_id']}-{sample}"]
+                         for sample in range(4)
+                         if f"{provider}-{row['task_id']}-{sample}" in scores]
+            expected = {
+                f"{provider}_samples": str(len(available)),
+                f"{provider}_pass_at_1": str(sum(bool(x["test_success"]) for x in available) / 4)
+                if len(available) == 4 else "",
+                f"{provider}_pass_at_4": str(int(any(x["test_success"] for x in available)))
+                if len(available) == 4 else "",
+                f"{provider}_programs_extracted": str(sum(bool(x["program_extracted"])
+                                                       for x in available)),
+                f"{provider}_execution_ok": str(sum(x["execution_status"] == "ok"
+                                                  for x in available)),
+            }
+            for field, value in expected.items():
+                if row[field] != value:
+                    raise ValueError(f"{row['task_id']}: calibration CSV mismatch in {field}")
+            pooled.extend(bool(x["test_success"]) for x in available)
+        expected_pooled = str(sum(pooled) / 8) if len(pooled) == 8 else ""
+        if row["pooled_pass_at_1"] != expected_pooled:
+            raise ValueError(f"{row['task_id']}: pooled pass@1 mismatch")
     for provider, cfg in PROVIDERS.items():
         path = private_root / f"{provider}-receipts.jsonl"
         started: dict[str, dict[str, Any]] = {}

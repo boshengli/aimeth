@@ -16,9 +16,18 @@ class ArcAuditTests(unittest.TestCase):
             root = Path(temporary)
             csv_path = root / "scores.csv"
             with csv_path.open("w", newline="") as stream:
-                writer = csv.DictWriter(stream, fieldnames=["task_id"])
+                fieldnames = ["task_id", "pooled_pass_at_1"]
+                for provider in ("deepseek", "zhipu"):
+                    fieldnames.extend(f"{provider}_{field}" for field in (
+                        "samples", "pass_at_1", "pass_at_4",
+                        "programs_extracted", "execution_ok"))
+                writer = csv.DictWriter(stream, fieldnames=fieldnames)
                 writer.writeheader()
-                writer.writerows({"task_id": f"task{i:03}"} for i in range(400))
+                for i in range(400):
+                    row = {field: "" if field.endswith("pass_at_1") or field.endswith("pass_at_4")
+                           else "0" for field in fieldnames}
+                    row["task_id"] = f"task{i:03}"
+                    writer.writerow(row)
             (root / "scores.jsonl").write_text("")
             body = {"model": "test", "messages": []}
             event = {"event": "dispatch_started", "request_id": "deepseek-task000-0",
@@ -29,6 +38,21 @@ class ArcAuditTests(unittest.TestCase):
             path.write_text(json.dumps(event) + "\n")
             (root / "zhipu-receipts.jsonl").write_text("")
             self.assertFalse(audit_calibration(root, csv_path, False)["complete"])
+            with csv_path.open(newline="") as stream:
+                reader = csv.DictReader(stream)
+                rows = list(reader)
+            rows[0]["deepseek_samples"] = "1"
+            with csv_path.open("w", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(rows)
+            with self.assertRaisesRegex(ValueError, "CSV mismatch"):
+                audit_calibration(root, csv_path, False)
+            rows[0]["deepseek_samples"] = "0"
+            with csv_path.open("w", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(rows)
             event["request_body"]["model"] = "tampered"
             path.write_text(json.dumps(event) + "\n")
             with self.assertRaisesRegex(ValueError, "hash mismatch"):
