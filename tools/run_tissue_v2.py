@@ -59,7 +59,7 @@ def main(out: Path, procs: int):
         "started_unix": time.time(), "python": platform.python_version(), "numpy": np.__version__,
         "host": platform.node(),
         "source_sha256": {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest()
-                          for f in sorted((ROOT / "aimeth_dev").glob("*.py")) + [ROOT / "tools/run_tissue.py",
+                          for f in sorted((ROOT / "aimeth_dev").glob("*.py")) + [ROOT / "tools/run_tissue_v2.py",
                                                                                   ROOT / "docs/p1-v2-mesoscopic-domains-protocol.md"]},
     }
     (out / "manifest.json").write_text(json.dumps(manifest, indent=1))
