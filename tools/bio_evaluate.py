@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT))
 from aimeth_bio.bench import grade  # noqa: E402
 
 PY = "/data/libs/aimeth/envs/dev"
-ALLOWED_IMPORT = re.compile(r"^\s*(import|from)\s+(numpy|scipy|math)(\.|\s|$)")
+ALLOWED_IMPORT = re.compile(r"^\s*(import|from)\s+(numpy|scipy|math|collections|itertools|functools|heapq|statistics)(\.|\s|$)")
 BANNED_NAMES = {"open", "exec", "eval", "compile", "__import__", "os", "sys", "subprocess", "socket", "shutil",
                 "pathlib", "importlib", "loadtxt", "genfromtxt", "fromfile", "load", "save", "savez", "savetxt",
                 "tofile", "memmap", "pickle", "ctypes", "builtins", "__builtins__", "globals", "locals", "getattr",
