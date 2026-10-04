@@ -45,7 +45,8 @@ def _provider_summary(path: Path) -> dict[str, Any]:
 
 
 def summarize(private_root: Path, public_csv: Path, output: Path,
-              pilot_manifest: Path | None = None) -> dict[str, Any]:
+              pilot_manifest: Path | None = None,
+              audit_path: Path | None = None) -> dict[str, Any]:
     with public_csv.open(newline="") as stream:
         rows = list(csv.DictReader(stream))
     summary: dict[str, Any] = {"schema_version": 1, "calibration_tasks": len(rows),
@@ -73,6 +74,15 @@ def summarize(private_root: Path, public_csv: Path, output: Path,
                             "manifest_sha256": sha256(pilot_manifest.read_bytes()).hexdigest()}
     else:
         summary["pilot"] = None
+    if audit_path and audit_path.exists():
+        audit = json.loads(audit_path.read_text())
+        for provider, record in summary["providers"].items():
+            if record["receipt_sha256"] != audit["providers"][provider]["receipt_sha256"]:
+                raise ValueError(f"{provider}: audit and summary used different receipt snapshots")
+        summary["audit"] = {"complete": audit["complete"],
+                            "sha256": sha256(audit_path.read_bytes()).hexdigest()}
+    else:
+        summary["audit"] = None
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(summary, indent=2) + "\n")
     return summary

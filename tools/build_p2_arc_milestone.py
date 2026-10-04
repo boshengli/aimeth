@@ -25,7 +25,8 @@ def provider_row(name, record):
 
 def build(summary_path: Path, output: Path, baseline_commit: str, implementation_commit: str):
     data = json.loads(summary_path.read_text())
-    ready = bool(data["complete"] and data.get("pilot"))
+    ready = bool(data["complete"] and data.get("pilot")
+                 and (data.get("audit") or {}).get("complete"))
     status = "校准完成；40 题 pilot 清单已冻结" if ready else "校准仍在进行或选题条件未满足"
     rows = "".join(provider_row(k, v) for k, v in data["providers"].items())
     operational = "".join(
@@ -50,7 +51,7 @@ def build(summary_path: Path, output: Path, baseline_commit: str, implementation
     created = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     html = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AIMeth M2.12 · ARC P2 校准 v1</title>
+<title>AIMeth M2.13 · ARC P2 校准 v1</title>
 <style>
 :root{{--ink:#17233d;--muted:#53627a;--line:#dce4ee;--blue:#1c5c9d;--pale:#f2f7fc}}
 *{{box-sizing:border-box}}body{{margin:0;font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:var(--ink);background:#fff}}
@@ -63,7 +64,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 @media(max-width:520px){{header{{padding:2rem 1.25rem}}main{{padding-top:1.2rem}}body{{font-size:15px}}}}
 @media print{{header{{background:#fff;color:#000;padding:0}}header p{{color:#333}}nav{{display:none}}main{{padding:0}}a{{color:#000;text-decoration:none}}}}
 </style></head><body>
-<header><div class="muted" style="color:#bcd3ec">AIMeth · M2.12 · v1 · {tag(created)}</div><h1>ARC P2 难度校准与进化对照</h1><p>{tag(status)}</p></header>
+<header><div class="muted" style="color:#bcd3ec">AIMeth · M2.13 · v1 · {tag(created)}</div><h1>ARC P2 难度校准与进化对照</h1><p>{tag(status)}</p></header>
 <nav aria-label="报告导航"><a href="#outcome">结论</a><a href="#evidence">实际证据</a><a href="#mapping">需求对照</a><a href="#limits">解释边界</a><a href="#next">下一阶段</a></nav>
 <main>
 <section id="outcome"><h2>结论与范围</h2><p class="lead">本里程碑实现了 ARC 题目加载、受限程序执行、精确评分、双模型单程序校准，以及不含空间与分化机制的进化搜索对照。下表报告的是单模型程序成功率，不能据此推断多 Agent 组织优势。</p>
@@ -71,7 +72,7 @@ code{{overflow-wrap:anywhere}}ul{{padding-left:1.35rem}}li{{margin:.35rem 0}}foo
 <section id="evidence"><h2>实际证据</h2><div class="scroll"><table><thead><tr><th>模型</th><th>结算 / 计划</th><th>HTTP 200</th><th>提取程序</th><th>可执行</th><th>成功样本 / 1600</th><th>pass@4 任务 / 400</th><th>保守估计 ¥</th></tr></thead><tbody>{rows}</tbody></table></div>
 <ul>{operational}</ul>
 <p class="muted">估算费用采用官方公开的高峰、未缓存输入和输出单价，以及内部 10 元/美元安全换算。它是上界式预算记录，非提供商已核对账单；各家上限 300 元。</p>
-<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。</p></section>
+<p>原始请求和完整响应、usage、延迟、失败与未知状态保存在访问受限的本地追加式回执中。公开表仅含汇总、任务 ID 和哈希。独立账本核对：<a href="../reports/p2-arc-calibration-audit-v1.json">审计记录</a>，SHA-256 <code>{tag((data.get('audit') or {}).get('sha256'))}</code>。</p></section>
 <section id="mapping"><h2>用户要求与交付</h2><div class="scroll"><table><thead><tr><th>要求</th><th>实施及证据</th><th>未解决</th></tr></thead><tbody>
 <tr><td>两条分支推送与独立开发分支</td><td>源分支分别推送；开发基于 <code>{tag(baseline_commit)}</code>，实现提交 <code>{tag(implementation_commit)}</code></td><td>报告交付提交见相邻版本记录</td></tr>
 <tr><td>ARC 评测器</td><td>400 题加载、测试答案隔离、最多两次候选输出的精确评分、2 秒受限执行及单元测试</td><td>沙箱不是敌对代码安全性的形式证明</td></tr>
