@@ -31,10 +31,16 @@ class ExecutionResult:
 
 
 def _sandbox_profile(worker: Path, python_exe: Path) -> str:
-    # macOS's Python launcher and numpy need system reads outside their install
-    # tree. Candidate I/O names are unavailable in the reduced builtins; the OS
-    # profile additionally denies all writes and network access.
-    return "(version 1)\n(deny default)\n(allow process*)\n(allow file-read*)\n(allow sysctl-read)\n"
+    # macOS Python's launcher needs several system paths. Deny sensitive data
+    # roots explicitly; the reduced language namespace forbids candidate I/O.
+    denies = (Path("/Volumes/Expand/0023-AIMeth_scratch"),
+              Path.home() / "Library/Keychains", Path.home() / ".ssh",
+              Path.home() / ".config", Path.home() / "Downloads")
+    blocked = "\n".join(
+        "(deny file-read* (subpath " + json.dumps(str(root)) + "))"
+        for root in denies)
+    return ("(version 1)\n(deny default)\n(allow process*)\n"
+            "(allow file-read*)\n(allow sysctl-read)\n" + blocked + "\n")
 
 
 def run_program(source: str, grids: list[Grid], timeout_s: float = 2.0) -> ExecutionResult:

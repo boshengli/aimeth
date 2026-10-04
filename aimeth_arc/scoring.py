@@ -66,6 +66,8 @@ def score_receipt(task: ArcTask, event: dict[str, Any]) -> dict[str, Any]:
         return base
     grids = [p["input"] for p in (*task.train, *task.test)]
     result = run_program(code, grids)
+    if result.status == "sandbox_unavailable":
+        raise RuntimeError("candidate scoring requires an OS sandbox")
     base["execution_status"] = result.status
     if result.status != "ok" or result.outputs is None:
         return base

@@ -123,6 +123,8 @@ class PublicLLMMutationOperator:
 
 def evaluate_candidate(task: ArcTask, code: str, generation: int) -> Candidate:
     result = run_program(code, [pair["input"] for pair in task.train])
+    if result.status == "sandbox_unavailable":
+        raise RuntimeError("evolutionary search requires an OS sandbox")
     correct = (sum(exact_match(output, pair["output"])
                    for output, pair in zip(result.outputs, task.train))
                if result.outputs is not None else 0)
