@@ -52,9 +52,15 @@ def main():
         out = {k: r[k] for k in ("arm", "kind", "task_id", "model", "rep", "n_budget", "calls_used", "final_round",
                                  "final_visible_score") if k in r}
         out["final"] = g(r["kind"], r["task_id"], r["final_eval_id"])
-        out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
-        out["tokens"] = sum((s.get("prompt_tokens") or 0) + (s.get("completion_tokens") or 0) for s in r["steps"])
-        out["completion_tokens"] = sum((s.get("completion_tokens") or 0) for s in r["steps"])
+        if isinstance(r.get("steps"), list):  # single-agent workflows: one entry per call
+            out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
+            out["tokens"] = sum((s.get("prompt_tokens") or 0) + (s.get("completion_tokens") or 0) for s in r["steps"])
+            out["completion_tokens"] = sum((s.get("completion_tokens") or 0) for s in r["steps"])
+        else:  # developmental arm: budget ledger kept by the organisation itself
+            out["rounds"] = []
+            out["completion_tokens"] = r.get("tokens_used")
+            out["dev_steps"], out["n_cells"], out["knockout"] = r.get("steps"), r.get("n_cells"), r.get("knockout")
+            out["final_origin"] = r.get("final_origin")
         print(json.dumps(out))
 
 

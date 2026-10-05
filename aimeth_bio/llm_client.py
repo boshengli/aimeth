@@ -20,6 +20,8 @@ ENDPOINTS = {
     "zhipu": ("https://open.bigmodel.cn/api/paas/v4/chat/completions", "ZHIPU_API_KEY"),
     # GLM Coding Plan quota endpoint (same key)
     "zhipu_coding": ("https://open.bigmodel.cn/api/coding/paas/v4/chat/completions", "ZHIPU_API_KEY"),
+    # Local DeepSeek-V4-Flash-0731 served by SGLang on GPU08 (cluster shared weights; key generated locally)
+    "local_dsv4": ("http://gpu08:30500/v1/chat/completions", "LOCAL_DSV4_KEY"),
 }
 _lock = threading.Lock()
 
@@ -37,7 +39,7 @@ def chat(provider: str, model: str, messages: list[dict], receipts_path: str, *,
     """timeout = max silence between stream chunks; total_timeout = wall cap for one call."""
     url, key_name = ENDPOINTS[provider]
     body = {"model": model, "messages": messages, "max_tokens": max_tokens, "stream": True}
-    if provider == "deepseek":
+    if provider in ("deepseek", "local_dsv4"):
         body["stream_options"] = {"include_usage": True}
     if extra:
         body.update(extra)

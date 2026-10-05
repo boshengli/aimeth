@@ -26,6 +26,7 @@ PRESETS = {  # request extras per model, matched to the calibration runs
     "deepseek-flash": {"thinking": {"type": "enabled"}, "reasoning_effort": "low"},
     ("glm_cc", "glm-5.3"): {"think_budget": 32000, "effort": "high"},
     ("glm_cc", "glm-5.3-flash"): {"think_budget": 32000, "effort": "high"},
+    ("local_dsv4", "deepseek-v4-flash-0731"): {"reasoning_effort": "low", "chat_template_kwargs": {"thinking": True}},
 }
 
 
@@ -62,7 +63,7 @@ def load_tasks_bio(a):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("kind", choices=["arc", "bio"])
-    ap.add_argument("arm", choices=["independent", "self_repair"])
+    ap.add_argument("arm", choices=["independent", "self_repair", "independent_cheap"])
     ap.add_argument("--tasks"); ap.add_argument("--arc-dir"); ap.add_argument("--bench"); ap.add_argument("--annot")
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--out", required=True)
