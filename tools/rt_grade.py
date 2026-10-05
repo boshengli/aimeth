@@ -55,19 +55,25 @@ def main():
                                  "final_visible_score", "completion_reasoning_tokens_used",
                                  "cost_estimate_cny", "stop_reason") if k in r}
         out["final"] = g(r["kind"], r["task_id"], r["final_eval_id"])
-        out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
-        unknown_dispatch = r.get("dispatch_outcome") == "unknown"
-        out["unknown_dispatch_outcome"] = unknown_dispatch
-        if unknown_dispatch:
-            out["tokens"] = out["prompt_tokens"] = out["completion_tokens"] = None
-        else:
-            out["tokens"] = sum((s.get("prompt_tokens") or 0) +
-                                 (s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
-                                  else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
-            out["prompt_tokens"] = sum((s.get("prompt_tokens") or 0) for s in r["steps"])
-            out["completion_tokens"] = sum((s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
-                                            else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
-        out["calls_used"] = r.get("calls_used")
+        if isinstance(r.get("steps"), list):  # control arms: one entry per model/evaluator step
+            out["rounds"] = [g(r["kind"], r["task_id"], s.get("eval_id")) for s in r["steps"]]
+            unknown_dispatch = r.get("dispatch_outcome") == "unknown"
+            out["unknown_dispatch_outcome"] = unknown_dispatch
+            if unknown_dispatch:
+                out["tokens"] = out["prompt_tokens"] = out["completion_tokens"] = None
+            else:
+                out["tokens"] = sum((s.get("prompt_tokens") or 0) +
+                                     (s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                                      else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+                out["prompt_tokens"] = sum((s.get("prompt_tokens") or 0) for s in r["steps"])
+                out["completion_tokens"] = sum((s.get("completion_tokens") if isinstance(s.get("completion_tokens"), int)
+                                                else (s.get("completion_reasoning_tokens") or 0)) for s in r["steps"])
+            out["calls_used"] = r.get("calls_used")
+        else:  # developmental arm: budget ledger kept by the organisation itself
+            out["rounds"] = []
+            out["completion_tokens"] = r.get("tokens_used")
+            out["dev_steps"], out["n_cells"], out["knockout"] = r.get("steps"), r.get("n_cells"), r.get("knockout")
+            out["final_origin"] = r.get("final_origin")
         print(json.dumps(out))
 
 

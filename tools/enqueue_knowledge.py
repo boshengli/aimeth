@@ -26,6 +26,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("annot"); ap.add_argument("out"); ap.add_argument("queue")
     ap.add_argument("--specs", nargs="+", required=True)
+    ap.add_argument("--provider", default="zhipu_coding", help="zhipu_coding (direct) or glm_cc (through Claude Code)")
+    ap.add_argument("--prefix", default="", help="job_id prefix to keep runs apart")
     a = ap.parse_args()
     rows = list(csv.reader(open(a.annot, encoding="utf-8-sig")))[1:]
     genes = [(r[0], r[1], r[2].strip(), r[3].strip()) for r in rows]
@@ -38,14 +40,16 @@ def main():
             for spec in a.specs:
                 model, mode, k = spec.split(":")
                 extra = {"thinking": {"type": "disabled"}} if mode == "nothink" else {}
-                max_tok = 2048 if mode == "nothink" else 32768
+                cc = {"think_budget": 32000, "effort": "high"} if mode == "cchigh" else {}
+                max_tok = 2048 if mode == "nothink" else (16000 if mode == "cc" else 32768)
                 for s in range(int(k)):
                     path = out / f"{gid}__{model}__{mode}__s{s}.json"
                     if path.exists():
                         continue
-                    q.write(json.dumps({"job_id": f"kn:{gid}:{model}:{mode}:s{s}", "workload": "gene_knowledge", "model": model,
+                    q.write(json.dumps({"job_id": f"{a.prefix}kn:{gid}:{model}:{mode}:s{s}", "workload": "gene_knowledge", "model": model,
                                         "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}],
                                         "max_tokens": max_tok, "extra": extra, "out_path": str(path),
+                                        "provider": a.provider, "cc": cc,
                                         "meta": {"gene": gid, "symbol": sym, "mode": mode, "sample": s}}, ensure_ascii=False) + "\n")
                     n += 1
     print("enqueued", n)

@@ -30,6 +30,9 @@ PRESETS = {
     "deepseek-flash": {"thinking": {"type": "enabled"}, "reasoning_effort": "low"},
     "glm-5.3-flash": {"thinking": {"type": "enabled"}, "reasoning_effort": "low"},
     "glm-5.3": {"thinking": {"type": "enabled"}},
+    ("glm_cc", "glm-5.3"): {"think_budget": 32000, "effort": "high"},
+    ("glm_cc", "glm-5.3-flash"): {"think_budget": 32000, "effort": "high"},
+    ("local_dsv4", "deepseek-v4-flash-0731"): {"reasoning_effort": "low", "chat_template_kwargs": {"thinking": True}},
 }
 
 
@@ -179,7 +182,7 @@ def main():
     ap.add_argument("--llm-cap", type=int, default=8)
     ap.add_argument("--reasoning-effort", default=None)
     ap.add_argument("--execute-paid", action="store_true",
-                    help="explicit phase-B gate; this task amendment authorizes the DeepSeek matrix")
+                    help="explicit gate for external billed providers; local_dsv4 does not use paid APIs")
     ap.add_argument("--finalize-fenced", action="store_true",
                     help="record previously started but unsettled tasks as unknown; never resend them")
     ap.add_argument("--seed", type=int, default=1000)
@@ -194,8 +197,8 @@ def main():
         ap.error("ARC requires a frozen --tasks manifest or ALL")
     if budgeted and (a.budget_calls is None or a.budget_tokens is None):
         ap.error("budgeted P2 controls require both --budget-calls and --budget-tokens")
-    if budgeted and not a.execute_paid:
-        ap.error("budgeted calls are disabled unless --execute-paid is explicit")
+    if budgeted and a.provider != "local_dsv4" and not a.execute_paid:
+        ap.error("budgeted external-provider calls are disabled unless --execute-paid is explicit")
     if budgeted and a.provider == "deepseek" and not os.environ.get("DEEPSEEK_API_KEY"):
         ap.error("DEEPSEEK_API_KEY must be supplied through the process environment")
     if a.model_max_tokens < 1 or a.workers < 1:
@@ -255,7 +258,7 @@ def main():
         from aimeth_rt.evalq import EvalClient
         ev = EvalClient(a.evalq)
     lock = threading.Lock()
-    extra = dict(PRESETS.get(a.model) or {})
+    extra = dict(PRESETS.get((a.provider, a.model)) or ({} if a.provider == "glm_cc" else PRESETS.get(a.model)) or {})
     if a.reasoning_effort:
         extra["reasoning_effort"] = a.reasoning_effort
 

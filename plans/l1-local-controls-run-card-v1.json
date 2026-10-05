@@ -1,0 +1,40 @@
+{
+  "id": "L1-local-controls-v1",
+  "protocol_source": "tasks/T-20261005-001.md",
+  "decision_source": "D-044",
+  "status": "frozen_for_launch",
+  "task_manifest": {
+    "path": "/data/libs/aimeth/rt/tasks/arc2-pilot40.json",
+    "sha256": "6db032bf2ea0a17c78895261643089b6132122b1082a084ccdf124f233f89e53",
+    "n_tasks": 40,
+    "selection": "Use the exact developmental L1 task list; task-by-task pairing is the estimand."
+  },
+  "model": {
+    "provider": "local_dsv4",
+    "model": "deepseek-v4-flash-0731",
+    "backend": "SGLang on GPU08, internal endpoint http://gpu08:30500/v1/chat/completions",
+    "reasoning_effort": "low",
+    "chat_template_kwargs": {"thinking": true},
+    "paid_api_calls": false
+  },
+  "budget_per_task_instance": {
+    "calls": 8,
+    "completion_plus_reasoning_tokens": 262144,
+    "max_tokens_per_call": 32768,
+    "replicates": 1,
+    "seed": 1000
+  },
+  "evaluation": {
+    "queue": "/data/libs/aimeth/rt/evalq",
+    "private_answers_exposed_to_generation_controller": false,
+    "grading_after_all_L1_arms_settle": true
+  },
+  "arms": ["vote", "orchestrator_worker", "debate", "evolution"],
+  "concurrency": {
+    "max_local_model_requests": 32,
+    "per_arm_workers": 8,
+    "launch_gate": "Wait for existing local_dsv4 generation controllers to exit and the shared eval queue to drain before launching these four arms."
+  },
+  "output_pattern": "/data/libs/aimeth/rt/runs/L1-<arm>.jsonl",
+  "inference": "One launch per arm; retain unknown outcomes without resending; use only the shared evaluator queue."
+}

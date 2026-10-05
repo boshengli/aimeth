@@ -123,8 +123,9 @@ def run_workflow(arm: str, kind: str, task_id: str, task: dict | None, first_pro
     extract = extract_arc if kind == "arc" else extract_bio
     steps, best = [], (float("-inf"), None, -1)
     msgs = list(first_prompt)
+    pool = []  # (program, visible eval) for the cheap-gene control
     for i in range(n):
-        call_msgs = list(first_prompt) if arm == "independent" else msgs
+        call_msgs = list(first_prompt) if arm in ("independent", "independent_cheap") else msgs
         rec = llm.call(provider, model, call_msgs, workload=f"rt_{kind}_{arm}", max_tokens=max_tokens, extra=extra,
                        tag={**tag, "round": i})
         content = rec.get("content") if rec.get("ok") else None
@@ -140,6 +141,8 @@ def run_workflow(arm: str, kind: str, task_id: str, task: dict | None, first_pro
         prog = extract(content)
         ev = ev_client.run(kind, task_id, prog, val_seed=val_seed, **(eval_extra or {})) if prog else {"status": "no_program"}
         steps.append({**_step(rec, prog, ev), "code_source": source if prog else None})
+        if prog:
+            pool.append((prog, ev))
         sc = _score(kind, ev)
         if sc > best[0] or (arm == "self_repair" and sc == best[0] and sc > float("-inf")):
             best = (sc, ev.get("eval_id"), i)
@@ -150,5 +153,53 @@ def run_workflow(arm: str, kind: str, task_id: str, task: dict | None, first_pro
                 msgs = msgs + [{"role": "assistant", "content": content},
                                {"role": "user", "content": arc_feedback(task, ev) if kind == "arc" else bio_feedback(ev)}]
             # a failed call leaves the conversation unchanged; the next round re-asks
+    cheap = None
+    if arm == "independent_cheap" and kind == "arc" and best[0] < 1.0:
+        cheap = cheap_closure(task_id, task, pool, ev_client, eval_extra or {})
+        if cheap["best"] and cheap["best"][0] > best[0]:
+            best = (cheap["best"][0], cheap["best"][1], "cheap:" + cheap["best"][2])
     return {"arm": arm, "kind": kind, "task_id": task_id, "model": model, "n_budget": n, "calls_used": len(steps),
-            "final_eval_id": best[1], "final_round": best[2], "final_visible_score": best[0], "steps": steps, **tag}
+            "final_eval_id": best[1], "final_round": best[2], "final_visible_score": best[0], "steps": steps,
+            "cheap": {k: v for k, v in (cheap or {}).items() if k != "best"} or None, **tag}
+
+
+def cheap_closure(task_id: str, task: dict, pool: list, ev_client, eval_extra: dict, cap: int = 60) -> dict:
+    """Control for the developmental arm's cheap genes: one round of the same symbolic operations
+    (colour remap learned from training outputs, output re-orientation, colour-literal substitution, composition)
+    applied to the independent samples, without space, division, signals or extra model calls."""
+    import random
+    from . import cheap_genes as CG
+    rng = random.Random(0)
+    palette = CG.task_palette(task)
+    ok = [(p, e) for p, e in pool if e.get("status") == "ok"]
+    variants = []
+    for p, e in ok:
+        m = CG.learn_color_map(p, task, e["train"])
+        if m:
+            variants.append((m, "colormap"))
+        if e["train_frac"] == 0:
+            for op in CG.WRAPS:
+                w = CG.wrap_output(p, op)
+                if w:
+                    variants.append((w, "wrap:" + op))
+            variants += [(s, "color") for s in CG.color_literals(p, palette, rng, k=2)]
+    pos = [p for p, e in ok if e["train_frac"] > 0]
+    for a in pos:
+        for b in pos:
+            if a != b:
+                c = CG.compose(a, b)
+                if c:
+                    variants.append((c, "compose"))
+    seen, uniq = set(), []
+    for v, op in variants:
+        if v not in seen:
+            seen.add(v)
+            uniq.append((v, op))
+    uniq = uniq[:cap]
+    ids = [(ev_client.submit("arc", task_id, v, **eval_extra), op) for v, op in uniq]
+    best = None
+    for jid, op in ids:
+        r = ev_client.wait(jid)
+        if r.get("status") == "ok" and (best is None or r["train_frac"] > best[0]):
+            best = (r["train_frac"], jid, op)
+    return {"n_variants": len(uniq), "best": best}
